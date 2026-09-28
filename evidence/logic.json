@@ -1,5 +1,5 @@
 {
-  "checks": 8,
+  "checks": 18,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -73,8 +73,94 @@
       "id": "state-restart-not-from-menu",
       "observed": {},
       "status": "PASS"
+    },
+    {
+      "id": "prog-multi-level",
+      "observed": {
+        "gained": 3,
+        "levels": [
+          2,
+          3,
+          4
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "prog-offer-three-unique",
+      "observed": {
+        "offer": [
+          "moth_new",
+          "pass_magnet",
+          "beam_pierce"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "prog-branches-offered",
+      "observed": {
+        "eligible": [
+          "beam_rate",
+          "beam_pierce",
+          "moth_new",
+          "pass_speed",
+          "pass_magnet",
+          "pass_hp"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "prog-beam-rate",
+      "observed": {
+        "cooldown": 30
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "prog-not-ready-at-moth-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "prog-maxed-weapons",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "prog-sunflare-offered-first",
+      "observed": {
+        "offer": [
+          "sunflare",
+          "pass_hp",
+          "pass_magnet"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "prog-after-evolve-no-weapon-cards",
+      "observed": {
+        "eligible": [
+          "pass_speed",
+          "pass_magnet",
+          "pass_hp"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "prog-exhausted-pool-pads-heal",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "prog-deterministic",
+      "observed": {},
+      "status": "PASS"
     }
   ],
   "suite": "logic",
-  "utc": "2026-09-28T19:23:30"
+  "utc": "2026-09-28T19:23:45"
 }
