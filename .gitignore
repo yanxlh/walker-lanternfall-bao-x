@@ -1,0 +1,9 @@
+.godot/
+.DS_Store
+*.mp3
+*.mp4
+*.avi
+.env
+*.safetensors
+*.ckpt
+models/
