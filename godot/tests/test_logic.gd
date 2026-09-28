@@ -1,11 +1,13 @@
 extends "res://tests/harness.gd"
 const GS = preload("res://game/game_state.gd")
+const Gate = preload("res://audio/sfx_gate.gd")
 const Prog = preload("res://features/progression/progression.gd")
 
 func run() -> void:
 	suite = "logic"
 	_state_tests()
 	_progression_tests()
+	_gate_tests()
 
 func _state_tests() -> void:
 	var s = GS.new()
@@ -56,3 +58,15 @@ func _progression_tests() -> void:
 	var r1 := RandomNumberGenerator.new(); r1.seed = 7
 	var r2 := RandomNumberGenerator.new(); r2.seed = 7
 	check("prog-deterministic", a.offer_cards(r1) == b.offer_cards(r2))
+
+func _gate_tests() -> void:
+	var g = Gate.new({"kill": {"cooldown_ms": 60, "max_voices": 3}, "evolve": {"once": true, "max_voices": 1}, "hurt": {"cooldown_ms": 800, "max_voices": 1}})
+	check("gate-first-plays", g.request("kill", 0, 0))
+	check("gate-cooldown-blocks", not g.request("kill", 30, 1))
+	check("gate-cooldown-releases", g.request("kill", 60, 1))
+	check("gate-voice-cap", not g.request("kill", 200, 3) and g.request("kill", 200, 2))
+	check("gate-hurt-boundary-inclusive", g.request("hurt", 0, 0) and not g.request("hurt", 799, 0) and g.request("hurt", 800, 0))
+	check("gate-once", g.request("evolve", 0, 0) and not g.request("evolve", 99999, 0))
+	g.reset()
+	check("gate-reset", g.request("evolve", 0, 0) and g.request("kill", 0, 0))
+	check("gate-unknown-id-single-voice", g.request("mystery", 0, 0) and not g.request("mystery", 1, 1))

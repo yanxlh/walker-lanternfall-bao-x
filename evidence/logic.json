@@ -1,5 +1,5 @@
 {
-  "checks": 18,
+  "checks": 26,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -159,8 +159,48 @@
       "id": "prog-deterministic",
       "observed": {},
       "status": "PASS"
+    },
+    {
+      "id": "gate-first-plays",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gate-cooldown-blocks",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gate-cooldown-releases",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gate-voice-cap",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gate-hurt-boundary-inclusive",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gate-once",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gate-reset",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gate-unknown-id-single-voice",
+      "observed": {},
+      "status": "PASS"
     }
   ],
   "suite": "logic",
-  "utc": "2026-09-28T19:23:45"
+  "utc": "2026-09-28T19:23:57"
 }
