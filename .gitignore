@@ -3,7 +3,15 @@
 *.mp3
 *.mp4
 *.avi
+*.mov
 .env
 *.safetensors
 *.ckpt
-models/
+*.bin
+gen/.venv-*/
+gen/raw/
+gen/cache/
+film/**/media/
+film/**/exports/
+film/**/renders/
+.superpowers/
