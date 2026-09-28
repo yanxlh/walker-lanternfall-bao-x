@@ -1,0 +1,121 @@
+# Lanternfall — Storyboard
+
+`walker-lanternfall-bao-x` · Bao Xing · **v1 written 2026-09-28, before any generation**
+
+Nine 16:9 greybox panels (1920 × 1080 SVG) drawn by `design/storyboard/make_panels.py` from simple shapes only; no generated art. Hand-drawn replacements, if any, will be added under **Revisions**. Asset IDs refer to the list in [CHANGE-BRIEF.md](CHANGE-BRIEF.md).
+
+| ID | Beat | Shot | Angle | Movement |
+|---|---|---|---|---|
+| P1 | First thing seen: title over the fogged market | Wide | High angle (3/4 overhead) | Slow push-in |
+| P2 | Run starts, courier centred, music begins | Medium | Top-down (bird's-eye) | — |
+| P3 | Core action: move, beam fires, moth dies, gem flies in | Medium | Top-down | Player motion + gem path |
+| P4 | Level-up: 3 cards, cheering portrait | Close-up | Eye level (UI portrait) | — |
+| P5 | Hurt: wraith contact, red flash, knockback | Close-up | Dutch (tilted) top-down | Knockback |
+| P6 | Evolution: Sunflare burst clears the ring | Wide | High angle | Zoom-out + ring expansion |
+| P7 | Failure: lamp goes out, defeat pose, result panel | Close-up | Top-down | — |
+| P8 | Retry: R → straight back to P2 framing | Medium | Top-down | Hard cut |
+| P9 | End of run: 3:00, fog lifts, victory portrait | Wide | Low angle (end-panel portrait) | Fog pull-back |
+
+---
+
+## P1 · First look: LANTERNFALL
+![P1](design/storyboard/panel-01.svg)
+- **Shot / angle / movement:** Wide · High angle · slow push-in from the dashed outer frame to the inner one over ~3 s
+- **Player does:** nothing yet; reads the title; presses Enter / A
+- **Screen shows:** the fogged market square with lantern stalls, the courier small in the middle, title, "Enter / A to start"
+- **Sound:** silence (menu is silent by design)
+- **Assets:** ART-ENV-01, ART-ENV-02, ART-PC-01 (turn_front)
+- **Why:** the first frame sells the premise without text: one warm light in a cold place. Silence makes the first note of music on P2 an event.
+
+## P2 · Run begins
+![P2](design/storyboard/panel-02.svg)
+- **Shot / angle / movement:** Medium · Top-down · static
+- **Player does:** first movement input
+- **Screen shows:** courier centred, timer 0:00, first two moths entering from off-screen
+- **Sound:** MUS-01 starts from the top (MUS-02 running silently in sync)
+- **Assets:** ART-PC-01 (idle, walk_contact, walk_passing), ART-EN-01, ART-ENV-01
+- **Why:** the gameplay camera: centred player, enough room on every side to see what is coming.
+
+## P3 · Core action: move, fire, collect
+![P3](design/storyboard/panel-03.svg)
+- **Shot / angle / movement:** Medium · Top-down · player motion arrow and dashed gem path
+- **Player does:** holds a direction
+- **Screen shows:** courier in cast pose, beam leaving along the movement direction, moth breaking, gem flying into the satchel
+- **Sound:** SFX-01 on the kill (throttled), SFX-02 when the gem lands; MUS-01 underneath
+- **Assets:** ART-PC-01 (cast, walk_contact, walk_passing), ART-EN-01, ART-FX-01, ART-PK-01, ART-ENV-01
+- **Why:** proves the only verb (movement) produces every reward; the gem path shows the loop with no text.
+
+## P4 · Level up: choose one
+![P4](design/storyboard/panel-04.svg)
+- **Shot / angle / movement:** Close-up · Eye level (UI portrait bottom-left) · static
+- **Player does:** presses 1 / 2 / 3, or d-pad + A
+- **Screen shows:** dimmed frozen field, three cards (e.g. Quick Wick / Lamp-Moths / Magnet Satchel), the courier cheering
+- **Sound:** SFX-04 once per level gained; MUS-01 ducks by 6 dB
+- **Assets:** ART-PC-01 (levelup), ART-FX-02 (icon on the moth card)
+- **Why:** a success beat and the main decision point. Freezing the field removes time pressure from the choice.
+
+## P5 · Hurt: wraith contact
+![P5](design/storyboard/panel-05.svg)
+- **Shot / angle / movement:** Close-up · Dutch (tilted) top-down · knockback arrow away from the wraith
+- **Player does:** gets caught by a fog-wraith
+- **Screen shows:** red screen tint, courier flashing red in the hurt pose, knocked away, HP bar dropping
+- **Sound:** SFX-03 once per hit (hits are separated by 0.8 s of invulnerability)
+- **Assets:** ART-PC-01 (hurt), ART-EN-02
+- **Why:** harm must be unmistakable even muted: colour, pose, motion and the bar all change together. The tilt is the storyboard's way of saying "something went wrong"; in game this is the tint + knockback.
+
+## P6 · Evolution: Sunflare Lighthouse
+![P6](design/storyboard/panel-06.svg)
+- **Shot / angle / movement:** Wide · High angle · zoom-out while the gold ring expands outward
+- **Player does:** takes the Sunflare card after maxing Beam and Moths
+- **Screen shows:** "SUNFLARE LIGHTHOUSE" banner, courier in the power pose, a ring of light erasing the moths around him
+- **Sound:** SFX-05 once per run; MUS-02 fades in over 2 s
+- **Assets:** ART-PC-01 (sunflare), ART-FX-03, ART-EN-01
+- **Why:** the big success moment and the payoff of pillar 1 (light is power); wide framing shows how much of the crowd one burst clears.
+
+## P7 · Failure: the lamp goes out
+![P7](design/storyboard/panel-07.svg)
+- **Shot / angle / movement:** Close-up · Top-down · static
+- **Player does:** loses the last HP
+- **Screen shows:** courier collapsed with a dark lamp, result panel "The lamp went out — m:ss", "R / Y to retry"
+- **Sound:** music fades out over 0.5 s, SFX-06a once
+- **Assets:** ART-PC-01 (defeat)
+- **Why:** failure is quiet and clear, and the retry prompt is on screen at the moment frustration peaks.
+
+## P8 · Retry: straight back in
+![P8](design/storyboard/panel-08.svg)
+- **Shot / angle / movement:** Medium · Top-down · hard cut from P7 in under 0.2 s
+- **Player does:** presses R / Y
+- **Screen shows:** the P2 composition again, timer 0:00
+- **Sound:** MUS-01 restarts from the top at full volume, no filter
+- **Assets:** ART-PC-01 (idle), ART-ENV-01
+- **Why:** pillar 4 — the cost of losing is one key press. Reusing P2's framing tells the player nothing carried over.
+
+## P9 · End of run: the fog lifts
+![P9](design/storyboard/panel-09.svg)
+- **Shot / angle / movement:** Wide · Low angle (portrait on the end panel, looking up at the courier) · fog pulls back
+- **Player does:** survives to 3:00
+- **Screen shows:** lighter screen, large victory portrait, "3:00 — The fog lifts", kills and level, "R / Y to play again"
+- **Sound:** music fades over 1 s, SFX-06b once
+- **Assets:** ART-PC-01 (victory)
+- **Why:** the end of a run; the low angle makes the small courier heroic for the first time.
+
+---
+
+## Coverage
+
+| Requirement | Panels |
+|---|---|
+| First thing the player sees | P1 |
+| Core action | P3 |
+| Success | P4, P6 |
+| Failure | P5 (hurt), P7 (lose) |
+| Recovery / retry | P8 |
+| End of a run | P9 |
+| Shot sizes (≥ 3) | Wide P1 P6 P9 · Medium P2 P3 P8 · Close-up P4 P5 P7 |
+| Camera angles (≥ 3) | High P1 P6 · Top-down P2 P3 P7 P8 · Eye level P4 · Dutch P5 · Low P9 |
+| Movement / camera motion (≥ 2) | P1 push-in · P3 player + gem motion · P5 knockback · P6 zoom-out · P9 pull-back |
+| Aspect | all 16:9 |
+
+## Revisions
+
+_None yet._
