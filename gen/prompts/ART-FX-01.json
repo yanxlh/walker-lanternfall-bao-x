@@ -1,0 +1,12 @@
+{
+  "asset_id": "ART-FX-01",
+  "storyboard_panels": [
+    "P3"
+  ],
+  "width": 1024,
+  "height": 512,
+  "steps": 4,
+  "quantize": 4,
+  "prompt": "a short horizontal bolt of warm cream and golden light pointing right, soft rounded tip, plain flat white background, simple flat vector shapes, thick uniform dark outline, no gradients, no text, no letters, no watermark",
+  "negative_prompt": "N/A \u2014 FLUX.1-schnell is guidance-distilled and mflux does not accept a negative prompt for it; exclusions are written into the positive prompt."
+}

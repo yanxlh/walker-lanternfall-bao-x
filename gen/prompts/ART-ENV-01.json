@@ -1,0 +1,14 @@
+{
+  "asset_id": "ART-ENV-01",
+  "storyboard_panels": [
+    "P2",
+    "P3",
+    "P8"
+  ],
+  "width": 1024,
+  "height": 1024,
+  "steps": 4,
+  "quantize": 4,
+  "prompt": "top-down seamless tileable texture of old rounded cobblestones at night, cool dark blue and grey stones, thin dark gaps, even lighting, no objects, no text, no watermark",
+  "negative_prompt": "N/A \u2014 FLUX.1-schnell is guidance-distilled and mflux does not accept a negative prompt for it; exclusions are written into the positive prompt."
+}

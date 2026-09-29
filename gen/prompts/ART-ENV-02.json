@@ -1,0 +1,13 @@
+{
+  "asset_id": "ART-ENV-02",
+  "storyboard_panels": [
+    "P1",
+    "P2"
+  ],
+  "width": 1024,
+  "height": 768,
+  "steps": 4,
+  "quantize": 4,
+  "prompt": "a small wooden night-market stall seen from a high three-quarter angle, red cloth awning, one glowing paper lantern hanging at the front, crates underneath, plain flat white background, simple flat vector shapes, thick uniform dark outline, no gradients, no text, no letters, no watermark",
+  "negative_prompt": "N/A \u2014 FLUX.1-schnell is guidance-distilled and mflux does not accept a negative prompt for it; exclusions are written into the positive prompt."
+}

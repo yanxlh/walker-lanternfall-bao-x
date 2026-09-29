@@ -1,0 +1,13 @@
+{
+  "asset_id": "ART-FX-02",
+  "storyboard_panels": [
+    "P4",
+    "P6"
+  ],
+  "width": 512,
+  "height": 512,
+  "steps": 4,
+  "quantize": 4,
+  "prompt": "a tiny round glowing lamp-moth made of warm golden light seen from above, wings spread, plain flat white background, simple flat vector shapes, thick uniform dark outline, no gradients, no text, no letters, no watermark",
+  "negative_prompt": "N/A \u2014 FLUX.1-schnell is guidance-distilled and mflux does not accept a negative prompt for it; exclusions are written into the positive prompt."
+}

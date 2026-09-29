@@ -1,0 +1,12 @@
+{
+  "asset_id": "MUS-02",
+  "storyboard_panels": [
+    "P6"
+  ],
+  "model": "facebook/musicgen-melody",
+  "duration_s": 30,
+  "guidance_scale": 3.0,
+  "prompt": "bright energetic layer to play on top of a night market loop, 96 bpm, shimmering bells, driving shaker and tambourine, rising synth pad, same key, even dynamics, no intro, no ending, no vocals",
+  "negative_prompt": "N/A \u2014 MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.",
+  "condition_on": "godot/assets/music/mus_01_night_market.ogg"
+}
