@@ -15,6 +15,7 @@ ap.add_argument("dst")
 ap.add_argument("--max-s", type=float, required=True)
 ap.add_argument("--top-db", type=float, default=40)
 ap.add_argument("--peak-db", type=float, default=-1.0)
+ap.add_argument("--sidecar", help="gen/log/<ID>/<run>.json to record this edit in")
 a = ap.parse_args()
 y, sr = librosa.load(a.src, sr=44100, mono=True)
 y, _ = librosa.effects.trim(y, top_db=a.top_db)
@@ -25,4 +26,9 @@ y[-fo:] *= np.linspace(1, 0, fo)
 y *= 10 ** (a.peak_db / 20) / max(1e-9, np.abs(y).max())
 Path(a.dst).parent.mkdir(parents=True, exist_ok=True)
 sf.write(a.dst, y, sr, subtype="PCM_16")
-print(json.dumps({"dst": a.dst, "seconds": round(len(y) / sr, 3), "peak_db": a.peak_db}))
+result = {"tool": "gen/sfx_process.py", "src": a.src, "dst": a.dst, "trim_top_db": a.top_db, "max_s": a.max_s,
+          "fade_in_ms": 4, "fade_out_ms": round(fo / sr * 1000), "peak_db": a.peak_db, "seconds": round(len(y) / sr, 3)}
+import sys; sys.path.insert(0, str(Path(__file__).resolve().parent))
+from common import log_processing
+log_processing(a.sidecar, result)
+print(json.dumps(result))

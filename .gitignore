@@ -15,3 +15,5 @@ film/**/media/
 film/**/exports/
 film/**/renders/
 .superpowers/
+__pycache__/
+*.pyc

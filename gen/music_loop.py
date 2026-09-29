@@ -21,6 +21,7 @@ ap.add_argument("--beats-per-bar", type=int, default=4)
 ap.add_argument("--skip-s", type=float, default=1.0)
 ap.add_argument("--xfade-s", type=float, default=0.25)
 ap.add_argument("--match-frames")
+ap.add_argument("--sidecar", help="gen/log/<ID>/<run>.json to record this edit in")
 a = ap.parse_args()
 SR = 44100
 y, _ = librosa.load(a.src, sr=SR, mono=True)
@@ -50,4 +51,10 @@ out[:xf] = seg[:xf] * np.sin(t) + seg[L:L + xf] * np.cos(t)
 out *= 10 ** (-3 / 20) / max(1e-9, np.abs(out).max())
 Path(a.dst).parent.mkdir(parents=True, exist_ok=True)
 sf.write(a.dst, out, SR, format="OGG", subtype="VORBIS")
-print(json.dumps({"dst": a.dst, "bpm": bpm, "start_sample": start, "loop_frames": int(L), "seconds": round(L / SR, 3), "xfade_s": a.xfade_s}))
+result = {"tool": "gen/music_loop.py", "src": a.src, "dst": a.dst, "bpm": bpm, "bars": None if a.match_frames else a.bars,
+          "skip_s": a.skip_s, "start_sample": int(start), "loop_frames": int(L), "seconds": round(L / SR, 3),
+          "xfade_s": a.xfade_s, "match_frames": a.match_frames}
+import sys; sys.path.insert(0, str(Path(__file__).resolve().parent))
+from common import log_processing
+log_processing(a.sidecar, result)
+print(json.dumps(result))

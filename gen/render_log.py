@@ -32,7 +32,12 @@ for asset in sorted(runs):
                 f"| Reason | {d.get('reason', '—')} |",
                 f"| Manual edits | {d.get('edits') or '—'} |",
                 f"| Project files | {', '.join(d.get('final_paths', [])) or '—'} |",
-                f"| Thumbnail | ![]({m['thumbnail']}) |", "",
+                f"| Thumbnail | ![]({m['thumbnail']}) |", ""]
+        if m.get("processing"):
+            out += ["**Processing (every edit, in order)**", ""]
+            out += [f"{i}. `{json.dumps(step, ensure_ascii=False)}`" for i, step in enumerate(m["processing"], start=1)]
+            out += [""]
+        out += [
                 "**Prompt**", "", FENCE, m["prompt"], FENCE, "",
                 "**Negative prompt**", "", FENCE, m.get("negative_prompt") or "(none)", FENCE, ""]
 (ROOT / "ASSET-LOG.md").write_text("\n".join(out) + "\n")

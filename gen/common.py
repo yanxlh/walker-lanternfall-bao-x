@@ -57,3 +57,15 @@ def thumbnail_audio(src: Path, asset_id: str, run_id: str) -> Path:
     fig.savefig(out)
     plt.close(fig)
     return out
+
+
+def log_processing(sidecar: str | None, step: dict) -> None:
+    """Append one processing step (tool, parameters, result) to a generation sidecar, so every edit is on record."""
+    if not sidecar:
+        return
+    path = Path(sidecar)
+    if not path.is_absolute() and not path.exists():
+        path = ROOT / path
+    meta = json.loads(path.read_text())
+    meta.setdefault("processing", []).append({"utc": utc_now(), **step})
+    path.write_text(json.dumps(meta, indent=2) + "\n")
