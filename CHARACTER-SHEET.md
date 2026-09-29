@@ -92,4 +92,21 @@ Priority when several apply: levelup/defeat/victory/sunflare override > hurt > c
 
 ## Revisions
 
-_None yet._
+### R2 · 2026-09-29 · 10 poses, generated as 2D pixel art
+
+Bao's direction after the first batch: 2D pixel art, not many actions. The sheet keeps the rubric minimum of **10 poses**; the two reference-only turnaround views that no game state uses (**turn_side**, **turn_back**) are dropped. New frame order in `pc_sheet.png` (320 × 32):
+
+| # | Pose | Game state |
+|---|---|---|
+| 1 | turn_front | title menu portrait |
+| 2 | idle | PLAYING, still |
+| 3 | walk_contact | PLAYING, moving (alternates with 4 every 8 ticks) |
+| 4 | walk_passing | PLAYING, moving |
+| 5 | cast | 8 ticks after each Beam shot / 12 after each Sunflare pulse |
+| 6 | hurt | first 12 of the 48 invulnerable ticks |
+| 7 | levelup | LEVELUP |
+| 8 | sunflare | 60 ticks after evolving |
+| 9 | defeat | LOST |
+| 10 | victory | WON |
+
+Every other rule on this page is unchanged (palette, 32 × 32, binary alpha, feet on row 31, hurtbox r = 10 at (16, 20), right-facing master with code flip). The pre-generation blockout above still shows 12 poses; it is kept as the original record. Verified by `test_gameplay.gd::pose-table-matches-sheet` (10 poses, sheet width = 32 × 10).

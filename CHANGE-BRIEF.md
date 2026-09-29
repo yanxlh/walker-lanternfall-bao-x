@@ -96,3 +96,8 @@ MUS-01 and MUS-02 have identical length, start together and loop together, so th
 ### R1 · 2026-09-29 · Beam targeting (see CONCEPT R1)
 
 Not one of the five predictions above — a design problem the greybox exposed before any asset existed: firing along the direction of travel made the survival move (running away) aim the Beam away from the threat. The Beam now targets the nearest enemy. No asset, event→sound mapping or music rule changes; storyboard P3 still reads correctly (the bolt goes toward the moth). Counted as the first *observe → change → re-verify* loop; evidence in `evidence/balance-probe-*.txt` and `test_gameplay.gd::beam-aims-nearest`.
+
+### R2 · 2026-09-29 · Pixel-art prompts; ART-PC-01 is 10 poses (see CONCEPT R2, CHARACTER-SHEET R2)
+
+- ART-PC-01 becomes **320 × 32 (10 × 32²)**; everything else in the asset table is unchanged.
+- Prediction 2 ("generated poses drift") showed up in a different form than predicted: FLUX kept the identity well but ignored the requested 3 × 4 grid and drew mostly standing poses. Response: frames are now cut per figure (`gen/figures.py`) and each pose is generated with its own prompt around one fixed character description, so a pose can be regenerated alone.

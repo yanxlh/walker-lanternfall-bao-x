@@ -23,6 +23,8 @@ melody = "melody" in repo
 revision = Path(snapshot_download(repo, local_files_only=True)).name
 proc = AutoProcessor.from_pretrained(repo)
 model = (MusicgenMelodyForConditionalGeneration if melody else MusicgenForConditionalGeneration).from_pretrained(repo)
+device = "mps" if torch.backends.mps.is_available() else "cpu"
+model = model.to(device)
 sr = model.config.audio_encoder.sampling_rate
 tokens = int(spec["duration_s"] * model.config.audio_encoder.frame_rate)
 
@@ -35,7 +37,7 @@ for seed in a.seeds:
     if melody:
         cond, _ = librosa.load(ROOT / spec["condition_on"], sr=proc.feature_extractor.sampling_rate, mono=True)
         kwargs.update(audio=cond, sampling_rate=proc.feature_extractor.sampling_rate)
-    inputs = proc(**kwargs)
+    inputs = {k: (v.to(device) if hasattr(v, "to") else v) for k, v in proc(**kwargs).items()}
     t0 = time.time()
     audio = model.generate(**inputs, do_sample=True, guidance_scale=spec.get("guidance_scale", 3.0), max_new_tokens=tokens)
     sf.write(out, audio[0, 0].cpu().numpy(), sr)
@@ -46,6 +48,6 @@ for seed in a.seeds:
         "license": "MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT",
         "prompt": spec["prompt"], "negative_prompt": spec["negative_prompt"],
         "settings": {"seed": seed, "duration_s": spec["duration_s"], "max_new_tokens": tokens, "guidance_scale": spec.get("guidance_scale", 3.0),
-                     "sample_rate": sr, "condition_on": spec.get("condition_on"), "seconds": round(time.time() - t0, 1)},
+                     "sample_rate": sr, "device": device, "condition_on": spec.get("condition_on"), "seconds": round(time.time() - t0, 1)},
         "raw_outputs": [rel(out)], "thumbnail": rel(thumb), "storyboard_panels": spec["storyboard_panels"],
     }))

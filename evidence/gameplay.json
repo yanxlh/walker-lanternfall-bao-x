@@ -1,11 +1,29 @@
 {
-  "checks": 37,
+  "checks": 38,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
     {
       "id": "run-starts-playing",
       "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "pose-table-matches-sheet",
+      "observed": {
+        "poses": [
+          "turn_front",
+          "idle",
+          "walk_contact",
+          "walk_passing",
+          "cast",
+          "hurt",
+          "levelup",
+          "sunflare",
+          "defeat",
+          "victory"
+        ]
+      },
       "status": "PASS"
     },
     {
@@ -275,5 +293,5 @@
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-09-29T19:44:25"
+  "utc": "2026-09-29T20:54:11"
 }

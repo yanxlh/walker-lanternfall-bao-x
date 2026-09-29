@@ -18,6 +18,9 @@ func run() -> void:
 	suite = "gameplay"
 	await fresh()
 	check("run-starts-playing", game.state.current == GS.PLAYING and game.tick_count == 0 and game.player.hp == Tuning.PLAYER_MAX_HP)
+	var poses: Array = game.player.POSES
+	var sheet_ok: bool = game.player.sheet == null or game.player.sheet.get_width() == 32 * poses.size()
+	check("pose-table-matches-sheet", poses.size() == 10 and not ("turn_side" in poses) and not ("turn_back" in poses) and sheet_ok, {"poses": poses})
 	game.test_axis = Vector2.RIGHT
 	game.step_ticks(60)
 	check("move-speed", absf(game.player.position.x - 90.0) < 0.5, {"x": game.player.position.x})

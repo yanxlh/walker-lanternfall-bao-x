@@ -84,3 +84,9 @@ More weapons and evolution recipes, a boss at the end of the fog, between-run pr
 - **Tried:** A — tuning only (slower moths, 15 HP, slower first wave): still dead by 77–156 s, level ≤ 4, ≤ 22 kills. B — Beam targets the nearest enemy, tuning unchanged: 107 s / 141 s / **won at 3:00**, level 7–11, 169–296 kills. Raw numbers: `evidence/balance-probe-before-aim.txt`, `evidence/balance-probe-after-aim.txt`.
 - **Decision (Bao):** B. The Beam now flies toward the nearest enemy; with no enemy on screen it uses the last movement direction. The courier's **facing still follows horizontal movement** exactly as the character sheet says; only the projectile's direction changed.
 - **Verified by:** `test_gameplay.gd::beam-aims-nearest` (an enemy above the standing courier dies, a farther one to the right does not).
+
+### R2 · 2026-09-29 · 2D pixel art, and fewer poses (Bao's direction)
+
+- **Observed:** the first ART-PC-01 batch (FLUX.1-schnell, "flat vector" prompt; seeds 11, 23, 37) came out as a shaded, 3D-looking illustration. After seeing it I decided: "不用3d就是2d像素游戏，然后不用太多动作" — this is a 2D pixel-art game, and the courier does not need many actions.
+- **Change:** art direction is now **2D pixel art**: every sprite is prompted as a pixel-art game sprite (hard-edged pixels, flat colour, 1-px dark outline, no gradients or 3D shading) and still reduced to its game size and locked to the palettes. The map stays top-down with side-view sprites. The courier's pose set drops to the rubric minimum of **10** (see CHARACTER-SHEET R2).
+- **Evidence:** the rejected batch and the reason are in ASSET-LOG (ART-PC-01) and `gen/rejected/ART-PC-01-contact.png`.

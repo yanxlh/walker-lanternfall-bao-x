@@ -7,7 +7,9 @@ Mapping file:
 {
   "out": "godot/assets/art/pc_sheet.png", "preview": "design/character/pc_sheet_x8.png",
   "palette": "character", "frame": [32, 32], "fill": 0.95, "anchor": "bottom", "bg_threshold": 235, "outline": true,
-  "frames": [{"name": "turn_front", "src": "gen/accepted/ART-PC-01/<run>.png", "grid": [3, 4], "cell": [0, 0]}, ...]
+  "frames": [{"name": "turn_front", "src": "gen/accepted/ART-PC-01/<run>.png", "box": [x0, y0, x1, y1]}, ...]
+}
+A frame is cut by "box" (pixel box from gen/figures.py), by "grid" + "cell", or is the whole image.
 }
 """
 import json, sys
@@ -32,9 +34,13 @@ def cut(src: Image.Image, grid, cell, inset=0.02) -> Image.Image:
 
 
 def key_background(im: Image.Image, threshold: int) -> Image.Image:
+    """White background and pale grey drop shadows become transparent."""
     a = np.array(im.convert("RGBA"))
-    bg = (a[..., 0] > threshold) & (a[..., 1] > threshold) & (a[..., 2] > threshold)
-    a[bg, 3] = 0
+    rgb = a[..., :3].astype(np.float32)
+    mx, mn = rgb.max(-1), rgb.min(-1)
+    white = mn > threshold
+    shadow = (mx > 185) & ((mx - mn) < 0.12 * np.maximum(mx, 1))
+    a[white | shadow, 3] = 0
     return Image.fromarray(a)
 
 
@@ -52,14 +58,44 @@ def fit(im: Image.Image, fw: int, fh: int, fill: float, anchor: str) -> Image.Im
     return canvas
 
 
-def lock_palette(im: Image.Image, palette, outline_rgb=None) -> Image.Image:
-    a = np.array(im).astype(np.int32)
-    pal = np.array(palette)
+def _lab(rgb: np.ndarray) -> np.ndarray:
+    c = rgb / 255.0
+    c = np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+    xyz = c @ np.array([[0.4124, 0.2126, 0.0193], [0.3576, 0.7152, 0.1192], [0.1805, 0.0722, 0.9505]])
+    xyz /= np.array([0.9505, 1.0, 1.089])
+    f = np.where(xyz > 0.008856, np.cbrt(xyz), 7.787 * xyz + 16 / 116)
+    return np.stack([116 * f[..., 1] - 16, 500 * (f[..., 0] - f[..., 1]), 200 * (f[..., 1] - f[..., 2])], -1)
+
+
+def lock_palette(im: Image.Image, palette, outline_rgb=None, ink_below_l: float = 14.0, supersample: int = 1) -> Image.Image:
+    """Map every opaque pixel to the palette in Lab space. The outline colour is reserved for pixels darker than
+    L* = ink_below_l and for the 1-px ring added around the silhouette. With supersample = k the input is k times
+    the frame size and each k x k block becomes the block's most common palette colour (keeps pixel edges crisp)."""
+    a = np.array(im).astype(np.float32)
+    pal = np.array(palette, dtype=np.float32)
+    lab, pal_lab = _lab(a[..., :3]), _lab(pal)
+    d = ((lab[..., None, :] - pal_lab[None, None]) ** 2).sum(-1)
+    if outline_rgb is not None:
+        ink = [i for i, c in enumerate(palette) if tuple(c) == tuple(outline_rgb)]
+        for i in ink:
+            d[..., i] = np.where(lab[..., 0] < ink_below_l, -1.0, d[..., i] + 1e9)
+    idx = d.argmin(-1)
     opaque = a[..., 3] >= 128
-    d = ((a[..., None, :3] - pal[None, None, :, :]) ** 2).sum(-1)
-    nearest = pal[d.argmin(-1)]
-    out = np.zeros_like(a)
-    out[opaque, :3] = nearest[opaque]
+    k = supersample
+    if k > 1:
+        h, w = idx.shape[0] // k, idx.shape[1] // k
+        blocks_idx = idx[:h * k, :w * k].reshape(h, k, w, k).transpose(0, 2, 1, 3).reshape(h, w, k * k)
+        blocks_op = opaque[:h * k, :w * k].reshape(h, k, w, k).transpose(0, 2, 1, 3).reshape(h, w, k * k)
+        new_idx = np.zeros((h, w), dtype=np.int64)
+        new_op = blocks_op.sum(-1) * 2 >= k * k
+        for y in range(h):
+            for x in range(w):
+                vals = blocks_idx[y, x][blocks_op[y, x]]
+                if len(vals):
+                    new_idx[y, x] = np.bincount(vals, minlength=len(palette)).argmax()
+        idx, opaque = new_idx, new_op
+    out = np.zeros(idx.shape + (4,), dtype=np.uint8)
+    out[opaque, :3] = pal[idx[opaque]].astype(np.uint8)
     out[opaque, 3] = 255
     if outline_rgb is not None:
         o = opaque
@@ -68,7 +104,7 @@ def lock_palette(im: Image.Image, palette, outline_rgb=None) -> Image.Image:
         ring = edge & ~o
         out[ring, :3] = outline_rgb
         out[ring, 3] = 255
-    return Image.fromarray(out.astype(np.uint8))
+    return Image.fromarray(out)
 
 
 def main():
@@ -79,23 +115,34 @@ def main():
     frames = []
     for f in spec["frames"]:
         src = Image.open(ROOT / f["src"]).convert("RGBA")
-        cell = cut(src, f.get("grid", [1, 1]), f.get("cell", [0, 0])) if "grid" in f else src
+        if "box" in f:
+            x0, y0, x1, y1 = f["box"]
+            m = f.get("margin", 6)
+            cell = src.crop((max(0, x0 - m), max(0, y0 - m), min(src.width, x1 + m), min(src.height, y1 + m)))
+        elif "grid" in f:
+            cell = cut(src, f["grid"], f.get("cell", [0, 0]))
+        else:
+            cell = src
         cell = key_background(cell, spec.get("bg_threshold", 235))
-        cell = fit(cell, fw, fh, spec.get("fill", 0.95), spec.get("anchor", "bottom"))
+        k = spec.get("supersample", 4)
+        fill = spec.get("fill", 0.95) * (fw - 2) / fw if spec.get("outline") else spec.get("fill", 0.95)
+        cell = fit(cell, fw * k, fh * k, fill, spec.get("anchor", "bottom"))
         if f.get("mirror"):
             cell = cell.transpose(Image.FLIP_LEFT_RIGHT)
-        frames.append(lock_palette(cell, palette, rgb("#14121C") if spec.get("outline") else None))
+        locked = lock_palette(cell, palette, rgb("#14121C") if spec.get("outline") else None,
+                              spec.get("ink_below_l", 14.0), supersample=k)
+        frames.append(locked)
     strip = Image.new("RGBA", (fw * len(frames), fh), (0, 0, 0, 0))
     for i, fr in enumerate(frames):
         strip.paste(fr, (i * fw, 0))
-    out = ROOT / spec["out"]
+    out = ROOT / spec["out"] if not spec["out"].startswith("/") else Path(spec["out"])
     out.parent.mkdir(parents=True, exist_ok=True)
     strip.save(out)
     if spec.get("preview"):
-        prev = ROOT / spec["preview"]
+        prev = ROOT / spec["preview"] if not spec["preview"].startswith("/") else Path(spec["preview"])
         prev.parent.mkdir(parents=True, exist_ok=True)
         strip.resize((strip.width * 8, strip.height * 8), Image.NEAREST).save(prev)
-    print(f"{out.relative_to(ROOT)}: {len(frames)} frames")
+    print(f"{out}: {len(frames)} frames")
 
 
 if __name__ == "__main__":

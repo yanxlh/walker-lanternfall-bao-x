@@ -1,0 +1,47 @@
+[
+  {
+    "file": "pc_sheet.png",
+    "id": "ART-PC-01",
+    "status": "MISSING"
+  },
+  {
+    "file": "enemy_moth.png",
+    "id": "ART-EN-01",
+    "status": "MISSING"
+  },
+  {
+    "file": "enemy_wraith.png",
+    "id": "ART-EN-02",
+    "status": "MISSING"
+  },
+  {
+    "file": "env_ground_tile.png",
+    "id": "ART-ENV-01",
+    "status": "MISSING"
+  },
+  {
+    "file": "env_stall.png",
+    "id": "ART-ENV-02",
+    "status": "MISSING"
+  },
+  {
+    "file": "fx_beam.png",
+    "id": "ART-FX-01",
+    "status": "MISSING"
+  },
+  {
+    "file": "fx_orbit_moth.png",
+    "id": "ART-FX-02",
+    "status": "MISSING"
+  },
+  {
+    "file": "fx_sunflare.png",
+    "id": "ART-FX-03",
+    "status": "MISSING"
+  },
+  {
+    "file": "pickup_gem.png",
+    "id": "ART-PK-01",
+    "status": "MISSING"
+  }
+]

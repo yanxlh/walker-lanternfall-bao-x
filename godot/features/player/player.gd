@@ -7,7 +7,8 @@ const Art = preload("res://features/art.gd")
 signal damaged(hp: int)
 signal died
 
-const POSES := ["turn_front", "turn_side", "turn_back", "idle", "walk_contact", "walk_passing",
+## Frame order in pc_sheet.png (10 x 32 px). CHARACTER-SHEET R2 reduced 12 -> 10 poses.
+const POSES := ["turn_front", "idle", "walk_contact", "walk_passing",
 	"cast", "hurt", "levelup", "sunflare", "defeat", "victory"]
 const FRAME := 32
 const WALK_FRAME_TICKS := 8
