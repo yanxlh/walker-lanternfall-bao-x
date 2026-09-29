@@ -1,0 +1,217 @@
+{
+  "checks": 31,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "run-starts-playing",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "move-speed",
+      "observed": {
+        "x": 90.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-pose",
+      "observed": {
+        "pose": "walk_passing"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "diagonal-normalized",
+      "observed": {
+        "dist": 90.0000305175781
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "facing-left",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "facing-deadzone",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "idle-pose",
+      "observed": {
+        "pose": "cast"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "arena-clamp",
+      "observed": {
+        "x": -944.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cast-pose-on-fire",
+      "observed": {
+        "pose": "cast"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "beam-kills-moth",
+      "observed": {
+        "gems": 1,
+        "kills": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "gem-flies-and-collects",
+      "observed": {
+        "xp": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "beam-aims-nearest",
+      "observed": {
+        "far_dead": false,
+        "nearest_dead": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-opens",
+      "observed": {
+        "offered": [
+          "beam_rate",
+          "moth_new",
+          "pass_magnet"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-freezes-sim",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "choose-card",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "choose-card-rejected-when-playing",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-queue",
+      "observed": {
+        "opens": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-while-paused",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-after-unpause",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "hurt-iframes",
+      "observed": {
+        "hurt_ticks": [
+          1,
+          49,
+          97,
+          145
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hurt-knockback-and-hp",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "death-lost",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lost-freezes-sim",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "won-at-3min",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "death-and-timer-same-tick",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "sunflare-offered",
+      "observed": {
+        "offered": [
+          "sunflare",
+          "pass_magnet",
+          "pass_hp"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "sunflare-evolves-once",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "sunflare-burst-kills",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "restart-resets",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "missing-art-no-crash",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "long-run-smoke",
+      "observed": {
+        "cards": [
+          "beam_rate",
+          "beam_pierce",
+          "pass_hp",
+          "pass_magnet",
+          "moth_new"
+        ],
+        "kills": 64,
+        "level": 6,
+        "seconds": 52,
+        "state": "lost"
+      },
+      "status": "PASS"
+    }
+  ],
+  "suite": "gameplay",
+  "utc": "2026-09-29T19:41:26"
+}

@@ -93,4 +93,6 @@ MUS-01 and MUS-02 have identical length, start together and loop together, so th
 
 ## Revisions
 
-_None yet._
+### R1 · 2026-09-29 · Beam targeting (see CONCEPT R1)
+
+Not one of the five predictions above — a design problem the greybox exposed before any asset existed: firing along the direction of travel made the survival move (running away) aim the Beam away from the threat. The Beam now targets the nearest enemy. No asset, event→sound mapping or music rule changes; storyboard P3 still reads correctly (the bolt goes toward the moth). Counted as the first *observe → change → re-verify* loop; evidence in `evidence/balance-probe-*.txt` and `test_gameplay.gd::beam-aims-nearest`.

@@ -78,4 +78,9 @@ More weapons and evolution recipes, a boss at the end of the fog, between-run pr
 
 ## Revisions
 
-_None yet._
+### R1 · 2026-09-29 · Beam aims at the nearest enemy (was: along the direction of travel)
+
+- **Observed:** with the greybox build, scripted bots died in 22–98 s at level 1–3 with 4–15 kills. Firing along the direction of travel means that fleeing — the natural survival move — points the Beam *away* from the enemies chasing you. Aiming and dodging were the same input, which contradicts pillar 2 ("feet, not fingers").
+- **Tried:** A — tuning only (slower moths, 15 HP, slower first wave): still dead by 77–156 s, level ≤ 4, ≤ 22 kills. B — Beam targets the nearest enemy, tuning unchanged: 107 s / 141 s / **won at 3:00**, level 7–11, 169–296 kills. Raw numbers: `evidence/balance-probe-before-aim.txt`, `evidence/balance-probe-after-aim.txt`.
+- **Decision (Bao):** B. The Beam now flies toward the nearest enemy; with no enemy on screen it uses the last movement direction. The courier's **facing still follows horizontal movement** exactly as the character sheet says; only the projectile's direction changed.
+- **Verified by:** `test_gameplay.gd::beam-aims-nearest` (an enemy above the standing courier dies, a farther one to the right does not).
