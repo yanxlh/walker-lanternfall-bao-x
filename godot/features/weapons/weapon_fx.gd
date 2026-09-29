@@ -15,6 +15,10 @@ func reload() -> void:
 	moth_tex = Art.texture(Art.ORBIT_MOTH)
 	flare_tex = Art.texture(Art.SUNFLARE)
 
+## The burst ring is hidden once the run has ended so the result panel reads cleanly.
+func ring_visible() -> bool:
+	return session != null and session.sunflare_ring > 0 and not session.state.is_terminal()
+
 func _process(_d: float) -> void:
 	queue_redraw()
 
@@ -26,7 +30,7 @@ func _draw() -> void:
 			draw_texture(moth_tex, p - moth_tex.get_size() / 2)
 		else:
 			draw_circle(p, 4, Color("#FFF1C9"))
-	if session.sunflare_ring > 0:
+	if ring_visible():
 		var t := 1.0 - float(session.sunflare_ring) / Tuning.SUNFLARE_RING_TICKS
 		var r := Tuning.SUNFLARE_RADIUS * t
 		var c: Vector2 = session.player.position

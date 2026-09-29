@@ -4,12 +4,16 @@ extends SceneTree
 var suite := "unnamed"
 var results: Array[Dictionary] = []
 var failures := 0
+## Each suite sets this as the last line of run(); a script error aborts run() early and leaves it false.
+var completed := false
 
 func _initialize() -> void:
 	call_deferred("_main")
 
 func _main() -> void:
 	await run()
+	if not completed:
+		check("suite-ran-to-end", false, {"hint": "run() aborted early - look for SCRIPT ERROR above"})
 	var out_dir := ProjectSettings.globalize_path("res://../evidence")
 	DirAccess.make_dir_recursive_absolute(out_dir)
 	var path := "%s/%s.json" % [out_dir, suite]

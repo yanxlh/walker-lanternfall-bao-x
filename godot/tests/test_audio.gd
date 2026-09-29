@@ -137,3 +137,4 @@ func run() -> void:
 	game.start_run(4)
 	check("restart-from-pause", not AudioServer.is_bus_effect_enabled(music, 0) and is_equal_approx(AudioServer.get_bus_volume_db(music), 0.0) and game.audio.music_state == "playing")
 	check("music-loop-flag", game.audio.base.stream == null or game.audio.base.stream.loop)
+	completed = true

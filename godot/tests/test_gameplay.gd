@@ -173,3 +173,38 @@ func run() -> void:
 		game.test_axis = Vector2(cos(a), sin(a))
 		game.tick()
 	check("long-run-smoke", game.state.is_terminal(), {"state": GS.NAMES[game.state.current], "seconds": game.tick_count / 60, "kills": game.kills, "level": game.prog.level, "cards": chosen})
+	await fresh()
+	check("hud-shows-timer-hp-level", _has(game.hud.lines(), "0:00") and _has(game.hud.lines(), "HP 10/10") and _has(game.hud.lines(), "Lv 1"), {"lines": game.hud.lines()})
+	game.prog.add_xp(3)
+	game.tick()
+	check("hud-shows-cards", _has(game.hud.lines(), "[1]") and _has(game.hud.lines(), "[3]"), {"lines": game.hud.lines()})
+	game.choose_card(0)
+	game.toggle_pause()
+	check("hud-shows-paused", _has(game.hud.lines(), "PAUSED"))
+	game.toggle_pause()
+	game.player.hp = 1
+	var wx = game.spawn_enemy("wraith", game.player.position)
+	wx.hp = 9999
+	game.tick()
+	check("hud-shows-lost-and-retry", _has(game.hud.lines(), "The lamp went out") and _has(game.hud.lines(), "R / Y to retry"))
+	game.audio.toggle_bus("Music")
+	check("hud-shows-mute-state", _has(game.hud.lines(), "MUSIC off"))
+	game.audio.toggle_bus("Music")
+	await fresh()
+	for c in ["beam_rate", "beam_pierce", "moth_new", "moth_count", "moth_radius"]:
+		game.prog.apply(c)
+	game.prog.add_xp(3)
+	game.tick()
+	game.choose_card(0)
+	game.player.hp = 1
+	var wb = game.spawn_enemy("wraith", game.player.position)
+	wb.hp = 9999
+	game.step_ticks(40)
+	check("end-panel-hides-banner-and-ring", game.state.current == GS.LOST and not _has(game.hud.lines(), "SUNFLARE LIGHTHOUSE") and not game.fx.ring_visible(), {"lines": game.hud.lines()})
+	completed = true
+
+func _has(lines: PackedStringArray, needle: String) -> bool:
+	for l in lines:
+		if needle in l:
+			return true
+	return false

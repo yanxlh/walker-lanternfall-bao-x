@@ -8,6 +8,7 @@ func run() -> void:
 	_state_tests()
 	_progression_tests()
 	_gate_tests()
+	completed = true
 
 func _state_tests() -> void:
 	var s = GS.new()
