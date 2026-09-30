@@ -110,3 +110,34 @@ Bao's direction after the first batch: 2D pixel art, not many actions. The sheet
 | 10 | victory | WON |
 
 Every other rule on this page is unchanged (palette, 32 × 32, binary alpha, feet on row 31, hurtbox r = 10 at (16, 20), right-facing master with code flip). The pre-generation blockout above still shows 12 poses; it is kept as the original record. Verified by `test_gameplay.gd::pose-table-matches-sheet` (10 poses, sheet width = 32 × 10).
+
+### R3 · 2026-09-29 · Generated sheet vs this page vs the game
+
+![sheet vs game](design/character/sheet-vs-game.png)
+
+Rows: pre-generation blockout · generated, palette-locked frame · the frame captured in the running game (`godot/tests/capture.gd`) · silhouette of the generated frame at 32 px. Source runs and every processing step: ASSET-LOG → ART-PC-01; mapping `gen/mappings/ART-PC-01.json`.
+
+**Measured on `pc_sheet.png`:**
+
+| Pose | Height (px) | Coat centre (x, y) | Lamp rows |
+|---|---|---|---|
+| turn_front | 20 | (15.4, 24.9) | 13–20 |
+| idle | 19 | (16.1, 22.8) | 14–21 |
+| walk_contact | 23 | (16.2, 22.3) | 11–19 |
+| walk_passing | 22 | (16.3, 22.5) | 12–19 |
+| cast | 20 | (15.8, 23.6) | 13–21 |
+| hurt | 24 | (15.6, 20.2) | 10–19 |
+| levelup | 20 | (15.5, 21.7) | 14–21 |
+| sunflare | 21 | (15.5, 22.8) | 12–20 |
+| defeat | 21 | (15.5, 24.3) | — (lamp recoloured out) |
+| victory | 20 | (15.7, 22.3) | 13–21 |
+
+**Rules that held:** 32 × 32, transparent, binary alpha; only the 5 palette colours (`palette_check.py` PASS); feet on row 31; lamp normalised to 12 px (rule 11–13); every stored frame faces right (left-facing sources mirrored once, logged); code flips for left.
+
+**Rules that broke, and what was done:**
+
+1. **Torso centre (rule 5, "±1 px of (16, 20)").** The generated courier is shorter than the blockout (19–23 px tall vs ~30), so the coat centre sits at y ≈ 22–24. Observed in the table above; changed `player.gd` to draw the frame from `SPRITE_ORIGIN = (16, 23)` so the hurtbox is centred on the coat again; verified by the new `test_gameplay.gd::hurtbox-centred-on-torso` (it failed at (16, 20) with every coat centre 1.7–3.6 px low, and passes at (16, 23)). **The hurtbox is now circle r = 10 at frame pixel (16, 23)** ([overlay on the generated frame](design/character/collision-overlay-generated-x8.png)).
+2. **"Lamp outside the hurtbox" (section 5).** Because the figure is shorter, an r = 10 circle on the torso also covers the lower half of the lamp. Only partly kept. Not changed yet: shrinking the hurtbox (≈ r = 7) would make the game easier, so it is a playtest decision.
+3. **Silhouettes (section 2).** Less distinct than the blockout: idle / walk_contact / walk_passing differ mostly in the legs, and levelup and victory both raise one arm (FLUX did not give "both arms up"). In motion the walk frames alternate every 8 ticks, which reads; levelup and victory are never on screen together.
+4. **Glow.** The blockout's soft halo does not survive: FLUX drew none and binary alpha removes soft light. The empowered state is a brighter modulate in code instead.
+5. **Satchel side (rule 6).** The satchel is on the hip facing the viewer in most generated poses rather than strictly on the trailing side.

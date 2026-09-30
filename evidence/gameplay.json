@@ -1,11 +1,51 @@
 {
-  "checks": 38,
+  "checks": 39,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
     {
       "id": "run-starts-playing",
       "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "hurtbox-centred-on-torso",
+      "observed": {
+        "coat_centres": {
+          "cast": [
+            15.8,
+            23.6
+          ],
+          "idle": [
+            16.1,
+            22.8
+          ],
+          "levelup": [
+            15.5,
+            21.7
+          ],
+          "sunflare": [
+            15.5,
+            22.8
+          ],
+          "victory": [
+            15.7,
+            22.3
+          ],
+          "walk_contact": [
+            16.2,
+            22.3
+          ],
+          "walk_passing": [
+            16.3,
+            22.5
+          ]
+        },
+        "sprite_origin": [
+          16.0,
+          23.0
+        ]
+      },
       "status": "PASS"
     },
     {
@@ -293,5 +333,5 @@
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-09-30T01:34:17"
+  "utc": "2026-09-30T02:59:36"
 }

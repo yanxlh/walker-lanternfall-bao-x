@@ -20,6 +20,26 @@ func run() -> void:
 	check("run-starts-playing", game.state.current == GS.PLAYING and game.tick_count == 0 and game.player.hp == Tuning.PLAYER_MAX_HP)
 	var poses: Array = game.player.POSES
 	var sheet_ok: bool = game.player.sheet == null or game.player.sheet.get_width() == 32 * poses.size()
+	var origin: Vector2 = game.player.SPRITE_ORIGIN
+	var torso_ok := true
+	var torso := {}
+	if game.player.sheet:
+		var img: Image = game.player.sheet.get_image()
+		var navy := Color("#2E3A59")
+		for pose in ["idle", "walk_contact", "walk_passing", "cast", "levelup", "sunflare", "victory"]:
+			var i: int = poses.find(pose)
+			var sum := Vector2.ZERO
+			var n := 0
+			for y in 32:
+				for x in 32:
+					var c := img.get_pixel(i * 32 + x, y)
+					if c.a > 0.5 and c.is_equal_approx(navy):
+						sum += Vector2(x, y)
+						n += 1
+			var centre := sum / maxi(n, 1)
+			torso[pose] = [snappedf(centre.x, 0.1), snappedf(centre.y, 0.1)]
+			torso_ok = torso_ok and n > 0 and absf(centre.x - origin.x) <= 1.5 and absf(centre.y - origin.y) <= 1.5
+	check("hurtbox-centred-on-torso", game.player.sheet == null or torso_ok, {"sprite_origin": [origin.x, origin.y], "coat_centres": torso})
 	check("pose-table-matches-sheet", poses.size() == 10 and not ("turn_side" in poses) and not ("turn_back" in poses) and sheet_ok, {"poses": poses})
 	game.test_axis = Vector2.RIGHT
 	game.step_ticks(60)

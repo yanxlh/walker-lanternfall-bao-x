@@ -11,6 +11,8 @@ signal died
 const POSES := ["turn_front", "idle", "walk_contact", "walk_passing",
 	"cast", "hurt", "levelup", "sunflare", "defeat", "victory"]
 const FRAME := 32
+## Frame pixel that sits on the node origin, i.e. the centre of the r = 10 hurtbox.
+const SPRITE_ORIGIN := Vector2(16, 23)
 const WALK_FRAME_TICKS := 8
 
 var sheet: Texture2D
@@ -101,7 +103,7 @@ func _draw() -> void:
 	draw_set_transform(Vector2.ZERO, 0.0, Vector2(facing, 1))
 	if sheet:
 		var i := POSES.find(pose)
-		draw_texture_rect_region(sheet, Rect2(-16, -20, FRAME, FRAME), Rect2(i * FRAME, 0, FRAME, FRAME))
+		draw_texture_rect_region(sheet, Rect2(-SPRITE_ORIGIN, Vector2(FRAME, FRAME)), Rect2(i * FRAME, 0, FRAME, FRAME))
 	else:
 		_draw_placeholder()
 	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)

@@ -1,5 +1,35 @@
 {
-  "stage": "design",
-  "files_checked": 31,
-  "problems": []
+  "stage": "final",
+  "files_checked": 352,
+  "problems": [
+    "SFX-01: missing file godot/assets/sfx/sfx_01_kill.wav",
+    "SFX-02: missing file godot/assets/sfx/sfx_02_pickup.wav",
+    "SFX-03: missing file godot/assets/sfx/sfx_03_hurt.wav",
+    "SFX-04: missing file godot/assets/sfx/sfx_04_levelup.wav",
+    "SFX-05: missing file godot/assets/sfx/sfx_05_evolve.wav",
+    "SFX-06a: missing file godot/assets/sfx/sfx_06a_lose.wav",
+    "SFX-06b: missing file godot/assets/sfx/sfx_06b_win.wav"
+  ],
+  "design_v1_committed": "2026-09-28T15:21:05-04:00",
+  "first_generation_commit": "e3849339e20f5d9e8aca405ac6d7f5f516b70092",
+  "asset_ids_checked": [
+    "ART-EN-01",
+    "ART-EN-02",
+    "ART-ENV-01",
+    "ART-ENV-02",
+    "ART-FX-01",
+    "ART-FX-02",
+    "ART-FX-03",
+    "ART-PC-01",
+    "ART-PK-01",
+    "MUS-01",
+    "MUS-02",
+    "SFX-01",
+    "SFX-02",
+    "SFX-03",
+    "SFX-04",
+    "SFX-05",
+    "SFX-06a",
+    "SFX-06b"
+  ]
 }
