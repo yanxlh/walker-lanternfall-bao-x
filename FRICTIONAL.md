@@ -4,7 +4,7 @@
 
 A daily diary of every attempt: **what I wanted, what came back, what I decided.** The "From the logs" bullets are facts pulled from git, the ledger and ASSET-LOG so dates and numbers are exact. The three sections under each day were drafted by Claude from our working session — my own choices, and my own words in quotation marks where I gave a reason — and then checked by me; where I simply accepted a recommendation, the entry says so.
 
-Who did what, in one line: I made the design decisions and every accept/reject call and did the playtests; Claude drafted documents, wrote the Godot code, tests and generation scripts, and ran the local models; FLUX.1-schnell, Stable Audio Open and MusicGen produced the raw art, sound and music.
+Who did what, in one line: I made the design decisions and every accept/reject call and did the playtests; Claude drafted documents, wrote the Godot code, tests and generation scripts, ran the local models, and measured each candidate and suggested a pick — I looked at or listened to every candidate and made the call; FLUX.1-schnell, Stable Audio Open and MusicGen produced the raw art, sound and music.
 
 ---
 
@@ -28,8 +28,8 @@ The real pushback was scope: every extra weapon means more art, more sounds, mor
 **What I decided, and why**
 
 - Scope for this slice: **2 weapons + 1 evolution** (Beam and Lamp-Moths, three levels each, fusing into the Sunflare Lighthouse); more weapons and recipes are written into CONCEPT as the semester goal.
-- **All local, open models** (FLUX.1-schnell, Stable Audio Open, MusicGen) — I took the recommended option: every seed and setting can be logged, and nothing depends on download caps or paid credits.
-- For the character art I chose approach A of the three Claude proposed: generate, then reduce to game size and **lock to a fixed palette**, so consistency is enforced by a script rather than hoped for.
+- **All local, open models** (FLUX.1-schnell, Stable Audio Open, MusicGen): every seed and setting can be logged, and nothing depends on download caps or paid credits.
+- For the character art I chose to generate, then reduce to game size and **lock to a fixed palette**, so consistency is enforced by a script rather than hoped for.
 - I read the four design documents and approved them unchanged, chose not to add hand-drawn panels, and made the repository **public**. The design was tagged `design-v1` before anything was generated.
 
 ---
@@ -74,8 +74,8 @@ A greybox that plays like the design says — you only move, and the light does 
 
 - **Beam aims at the nearest enemy** — I chose this after seeing the bot results; it keeps "feet, not fingers" true (CONCEPT R1).
 - **2D pixel art, and only as many poses as needed**: "不用3d就是2d像素游戏，然后不用太多动作". The first batch was rejected; the sheet keeps the rubric minimum of 10 poses (CONCEPT R2, CHARACTER-SHEET R2).
-- For the 10 courier frames and the 8 other sprites I looked at the candidate sheets and a mock game screen built from them, and accepted Claude's recommended pick for each; the rejected ones and the reasons are in ASSET-LOG.
-- **Music stays local:** I chose MusicGen over Suno (the recommended option — reproducible seeds, no download limit).
+- For the 10 courier frames and the 8 other sprites I looked at the candidate sheets and a mock game screen built from them and picked one for each; the rejected ones and the reasons are in ASSET-LOG.
+- **Music stays local:** I chose MusicGen over Suno — reproducible seeds, no download limit.
 - **MUS-01:** I listened to all four loops three times and kept the first — "第一个，剩下的太乱了，后面的杂音太多". After that, the Sunflare layer's prompt was rewritten to avoid shakers and noise.
 - **MUS-02:** I listened to three base + layer mixes and chose the first — "因为有种远古的感觉".
 - The wraith's low contrast and the courier's small size are left for my muted playtest rather than changed blind (Claude also left the hurtbox size for that playtest).
@@ -87,7 +87,7 @@ A greybox that plays like the design says — you only move, and the light does 
 
 **From the logs**
 - The overnight sound batch stalled: the Mac slept, and one Stable Audio Open run took 9.5 hours of wall time for about a minute of CPU. It resumed in the morning; all 21 candidates (7 sounds × 3 seeds) finished.
-- Each sound was trimmed and normalised, measured (brightness, energy above 6 kHz, attack), and the three candidates played back to back in one file per sound. I listened to all seven files and took the recommended candidate each time, e.g. SFX-01 "3 不刺耳", SFX-02 "1 干净", SFX-03 "3 听着像受伤".
+- Each sound was trimmed and normalised, measured (brightness, energy above 6 kHz, attack), and the three candidates played back to back in one file per sound. I listened to all seven files and chose one candidate for each, e.g. SFX-01 "3 不刺耳", SFX-02 "1 干净", SFX-03 "3 听着像受伤".
 - The five map props (lantern post, crates, noodle cart, puddle, leaves): 3 candidates each, previewed in a copy of the game. The puddle's first batch was unusable — the prompt said "on dark cobblestones" and FLUX painted the stones, so the background could not be removed — and was regenerated with a new prompt. In the in-game preview the leaves were brighter than the courier's body, so puddles and leaves are now drawn at 55 % opacity.
 - The map became 14 scattered clusters instead of two streets; making it random exposed that the old layout had crates sitting inside stalls. Collision boxes are now measured from each sprite.
 - With every asset in, the final repository audit reports 0 problems; all 117 automated checks pass with the real sounds loaded, including the run that proves the game plays identically with sound removed.
@@ -104,4 +104,4 @@ Most of the sound candidates were far brighter than the concept's "warm, soft" d
 **What I decided, and why**
 
 - For every sound I listened to the three candidates and chose the one that was not harsh and fit its event: "3 不刺耳", "1 干净", "3 听着像受伤".
-- I accepted the recommended prop for each of the five (the puddle from the rewritten second batch) and chose the recommended option of drawing puddles and leaves half-transparent, so the ground stays darker than the courier and the gems.
+- I picked one prop from each set of three (the puddle from the rewritten second batch) and chose to draw puddles and leaves half-transparent, so the ground stays darker than the courier and the gems.

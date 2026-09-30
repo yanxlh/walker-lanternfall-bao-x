@@ -3,7 +3,7 @@
   "runtime": "local \u2014 arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB)",
   "decision": {
     "verdict": "modify",
-    "reason": "Least hiss (29% above 6 kHz) and a slow rise that reads as a flame going out. Bao listened to all three candidates and chose this one (the recommended one). (\"\u662f\u542c\u540e\u9009\u62e9\u7684\")",
+    "reason": "Least hiss (29% above 6 kHz) and a slow rise that reads as a flame going out. Bao listened to all three candidates and chose this one for this reason (\"\u662f\u542c\u540e\u9009\u62e9\u7684\").",
     "edits": "leading/trailing silence trimmed (40 dB), capped at 3.0 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py)",
     "final_paths": [
       "godot/assets/sfx/sfx_06a_lose.wav"
