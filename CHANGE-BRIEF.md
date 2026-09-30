@@ -107,3 +107,15 @@ Not one of the five predictions above — a design problem the greybox exposed b
 - **Loop length (was 30–40 s):** MusicGen generates at most 30 s per run; after a 1 s skip and the crossfade margin, 8 bars at 95.7 BPM (= **20.0 s**) is the longest clean cut. MUS-01 and MUS-02 are both exactly 882176 frames. A 3-minute run hears the loop 9 times.
 - **Prediction 3 (loop seam):** all four MUS-01 candidates passed `loop_check.py`; I listened to each loop three times and picked s5 — the others were "too chaotic, too much noise". Final MUS-01: wrap jump 0.001 vs 99th-percentile step 0.009.
 - **Prediction 5 (layer drift) — happened, then fixed:** the planned musicgen-melody layer (conditioned on MUS-01, drum-less "bells + pad" prompt) came out near 106 BPM on 3 of 4 runs and as hiss on the fourth; none could be fitted to the 20 s loop within a ±10% stretch. A second batch from musicgen-medium (which held 96 BPM on every MUS-01 run) gave three in-tempo layers; I picked s34 by ear ("有种远古的感觉"). Stretch 0.9897, frame counts equal (`layer-length-match` PASS). The fallback (drop MUS-02) was not needed.
+
+### R4 · 2026-09-29 · Five new map props (see CONCEPT R4)
+
+| Asset ID | What | Game file | Size | Panels |
+|---|---|---|---|---|
+| ART-ENV-03 | Lantern post: pole with a hanging paper lantern | `godot/assets/art/env_lantern_post.png` | 24×48 | P1, P2, P3, P8 |
+| ART-ENV-04 | Stack of crates and a barrel | `godot/assets/art/env_crates.png` | 40×32 | P1, P2 |
+| ART-ENV-05 | Noodle cart with a blue awning (second stall type) | `godot/assets/art/env_noodle_cart.png` | 64×48 | P1, P2 |
+| ART-ENV-06 | Rain puddle reflecting lantern light (ground decal) | `godot/assets/art/env_puddle.png` | 32×16 | P2, P3, P8 |
+| ART-ENV-07 | Fallen leaves (ground decal) | `godot/assets/art/env_leaves.png` | 16×16 | P2, P3, P8 |
+
+Environment palette: `#8A5A3C` added (wood). No new sounds; the event→sound map and music rules are unchanged. The new props are decoration only, so prediction 4 (readability) is re-checked with the enemy-vs-ground contrast check after they are in.

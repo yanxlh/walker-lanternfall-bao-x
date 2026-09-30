@@ -6,7 +6,7 @@ const RUN_SECONDS := 180
 const ARENA := Rect2(-960, -540, 1920, 1080)
 
 const PLAYER_SPEED := 90.0
-const SPEED_PER_LEVEL := 15.0
+const SPEED_PER_LEVEL := 12.0
 const PLAYER_RADIUS := 10.0
 const PLAYER_MAX_HP := 10
 const HP_PER_LEVEL := 4
@@ -21,6 +21,11 @@ const PICKUP_RADIUS := 28.0
 const PICKUP_RADIUS_PER_LEVEL := 20.0
 const COLLECT_RADIUS := 8.0
 const GEM_PULL_SPEED := 260.0
+## Passive cards (Bao, 2026-09-29): damage and attack speed apply to every weapon.
+const DAMAGE_PER_LEVEL := 0.2
+const HASTE_PER_LEVEL := 0.12
+## Monsters spawned later are tougher, in proportion to the time survived: HP x (1 + 0.5 per whole minute).
+const ENEMY_HP_GROWTH_PER_MINUTE := 0.5
 const XP_TO_LEVEL := [3, 5, 7, 9, 12, 15, 18, 22, 26, 30, 35, 40]
 
 const BEAM_SPEED := 320.0

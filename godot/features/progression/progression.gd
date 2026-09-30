@@ -6,14 +6,16 @@ const Tuning = preload("res://features/tuning.gd")
 signal leveled_up(level: int)
 
 const WEAPON_MAX := 3
-const PASSIVE_MAX := 2
+const PASSIVE_MAX := {"damage": 5, "haste": 5, "speed": 5, "magnet": 5, "hp": 2}
 const CARD_TEXT := {
 	"beam_rate": ["Beam: Quick Wick", "Beam fires 25% faster"],
 	"beam_pierce": ["Beam: Long Wick", "Beam passes through one more enemy"],
 	"moth_new": ["Lamp-Moths", "Two moths circle you and burn what they touch"],
 	"moth_count": ["Moths: Another Wing", "One more orbiting moth"],
 	"moth_radius": ["Moths: Wider Flight", "Moths circle further out"],
-	"pass_speed": ["Light Boots", "Move 15 px/s faster"],
+	"pass_damage": ["Hotter Flame", "All weapons deal 20% more damage"],
+	"pass_haste": ["Quick Hands", "All weapons attack 12% faster"],
+	"pass_speed": ["Light Boots", "Move 12 px/s faster"],
 	"pass_magnet": ["Magnet Satchel", "Collect oil from further away"],
 	"pass_hp": ["Thick Glass", "+4 max HP, healed now"],
 	"heal": ["Trim the Wick", "Restore 3 HP"],
@@ -29,7 +31,7 @@ var beam_cooldown_ticks: int = Tuning.BEAM_BASE_COOLDOWN
 var moth_level := 0
 var moth_count := 0
 var moth_radius: float = Tuning.MOTH_BASE_RADIUS
-var passive := {"speed": 0, "magnet": 0, "hp": 0}
+var passive := {"damage": 0, "haste": 0, "speed": 0, "magnet": 0, "hp": 0}
 var evolved_sunflare := false
 
 ## Every level needs more than the one before: the table, then each step one bigger than the last (46, 53, 61, ...).
@@ -57,6 +59,20 @@ func add_xp(amount: int) -> int:
 	pending_levelups += gained
 	return gained
 
+func damage_mult() -> float:
+	return 1.0 + Tuning.DAMAGE_PER_LEVEL * int(passive["damage"])
+
+func attack_rate_mult() -> float:
+	return 1.0 + Tuning.HASTE_PER_LEVEL * int(passive["haste"])
+
+## Card title with the level it would reach, e.g. "Quick Hands (4/5)" for passives.
+func card_title(card: String) -> String:
+	var title: String = CARD_TEXT[card][0]
+	if card.begins_with("pass_"):
+		var k := card.trim_prefix("pass_")
+		return "%s (%d/%d)" % [title, int(passive[k]) + 1, int(PASSIVE_MAX[k])]
+	return title
+
 func evolution_ready() -> bool:
 	return beam_level >= WEAPON_MAX and moth_level >= WEAPON_MAX and not evolved_sunflare
 
@@ -69,8 +85,8 @@ func eligible_cards() -> Array[String]:
 			out.append("moth_new")
 		elif moth_level < WEAPON_MAX:
 			out.append_array(["moth_count", "moth_radius"])
-	for k in ["speed", "magnet", "hp"]:
-		if int(passive[k]) < PASSIVE_MAX:
+	for k in ["damage", "haste", "speed", "magnet", "hp"]:
+		if int(passive[k]) < int(PASSIVE_MAX[k]):
 			out.append("pass_" + k)
 	return out
 
@@ -109,7 +125,7 @@ func apply(card: String) -> void:
 		"moth_radius":
 			moth_level += 1
 			moth_radius += Tuning.MOTH_RADIUS_STEP
-		"pass_speed", "pass_magnet", "pass_hp":
+		"pass_damage", "pass_haste", "pass_speed", "pass_magnet", "pass_hp":
 			var k := card.trim_prefix("pass_")
 			passive[k] = int(passive[k]) + 1
 		"sunflare":

@@ -79,5 +79,50 @@
       12
     ],
     "frames": 1
+  },
+  "env_lantern_post.png": {
+    "id": "ART-ENV-03",
+    "palette": "environment",
+    "frame": [
+      24,
+      48
+    ],
+    "frames": 1
+  },
+  "env_crates.png": {
+    "id": "ART-ENV-04",
+    "palette": "environment",
+    "frame": [
+      40,
+      32
+    ],
+    "frames": 1
+  },
+  "env_noodle_cart.png": {
+    "id": "ART-ENV-05",
+    "palette": "environment",
+    "frame": [
+      64,
+      48
+    ],
+    "frames": 1
+  },
+  "env_puddle.png": {
+    "id": "ART-ENV-06",
+    "palette": "environment",
+    "frame": [
+      32,
+      16
+    ],
+    "frames": 1
+  },
+  "env_leaves.png": {
+    "id": "ART-ENV-07",
+    "palette": "environment",
+    "frame": [
+      16,
+      16
+    ],
+    "frames": 1
   }
 }

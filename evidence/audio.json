@@ -6,16 +6,16 @@
     {
       "id": "once-levelup",
       "observed": {
-        "events": 4,
-        "plays": 4
+        "events": 7,
+        "plays": 7
       },
       "status": "PASS"
     },
     {
       "id": "once-hurt",
       "observed": {
-        "events": 9,
-        "plays": 9
+        "events": 14,
+        "plays": 14
       },
       "status": "PASS"
     },
@@ -27,17 +27,17 @@
     {
       "id": "kill-throttled",
       "observed": {
-        "kills": 51,
-        "min_gap": 67,
-        "plays": 50
+        "kills": 88,
+        "min_gap": 117,
+        "plays": 88
       },
       "status": "PASS"
     },
     {
       "id": "pickup-merged",
       "observed": {
-        "events": 29,
-        "plays": 23
+        "events": 73,
+        "plays": 54
       },
       "status": "PASS"
     },
@@ -53,26 +53,26 @@
       "id": "independence",
       "observed": {
         "silent": {
-          "enemies": 28,
+          "enemies": 35,
           "evolved": false,
           "hp": 0,
-          "kills": 51,
-          "level": 5,
+          "kills": 88,
+          "level": 8,
           "state": "lost",
-          "tick": 2914,
-          "x": 87.29,
-          "y": 52.36
+          "tick": 3850,
+          "x": -148.94,
+          "y": 95.37
         },
         "with_sound": {
-          "enemies": 28,
+          "enemies": 35,
           "evolved": false,
           "hp": 0,
-          "kills": 51,
-          "level": 5,
+          "kills": 88,
+          "level": 8,
           "state": "lost",
-          "tick": 2914,
-          "x": 87.29,
-          "y": 52.36
+          "tick": 3850,
+          "x": -148.94,
+          "y": 95.37
         }
       },
       "status": "PASS"
@@ -158,5 +158,5 @@
     }
   ],
   "suite": "audio",
-  "utc": "2026-09-30T03:30:44"
+  "utc": "2026-09-30T03:36:21"
 }

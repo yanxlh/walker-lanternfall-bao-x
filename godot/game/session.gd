@@ -149,6 +149,7 @@ func spawn_enemy(kind: String, at: Vector2) -> Node2D:
 		return null
 	var e = EnemyScript.new()
 	e.setup(kind, at)
+	e.hp *= hp_scale()
 	actors.add_child(e)
 	enemies.append(e)
 	return e
@@ -160,7 +161,18 @@ func drop_gem(at: Vector2, value: int) -> Node2D:
 	gems.append(g)
 	return g
 
-func damage(e, amount: int) -> void:
+## Later monsters are tougher in proportion to the whole minutes survived (x1.5 from 1:00, x2 from 2:00, x2.5 at 3:00).
+## Stepped, not continuous: a continuous curve made every moth need two Beam hits from the first second.
+func hp_scale() -> float:
+	return 1.0 + Tuning.ENEMY_HP_GROWTH_PER_MINUTE * floorf(float(tick_count) / Tuning.TICK_HZ / 60.0)
+
+func weapon_damage(base: float) -> float:
+	return base * prog.damage_mult()
+
+func beam_cooldown() -> int:
+	return maxi(4, roundi(prog.beam_cooldown_ticks / prog.attack_rate_mult()))
+
+func damage(e, amount: float) -> void:
 	if e.dead:
 		return
 	e.hp -= amount
@@ -199,18 +211,18 @@ func _step_weapons() -> void:
 	if prog.evolved_sunflare:
 		sunflare_timer -= 1
 		if sunflare_timer <= 0:
-			sunflare_timer = Tuning.SUNFLARE_PERIOD
+			sunflare_timer = roundi(Tuning.SUNFLARE_PERIOD / prog.attack_rate_mult())
 			sunflare_ring = Tuning.SUNFLARE_RING_TICKS
 			player.cast_ticks = 12
 			for e in enemies.duplicate():
 				if e.position.distance_to(player.position) <= Tuning.SUNFLARE_RADIUS:
-					damage(e, Tuning.SUNFLARE_DAMAGE)
+					damage(e, weapon_damage(Tuning.SUNFLARE_DAMAGE))
 		if sunflare_ring > 0:
 			sunflare_ring -= 1
 		return
 	beam_timer -= 1
 	if beam_timer <= 0:
-		beam_timer = prog.beam_cooldown_ticks
+		beam_timer = beam_cooldown()
 		var s = BeamShot.new()
 		s.setup(player.position, aim_dir(), prog.beam_pierce)
 		actors.add_child(s)
@@ -223,7 +235,7 @@ func _step_weapons() -> void:
 				continue
 			if e.touches_segment(s.position - s.dir * Tuning.BEAM_HALF_LENGTH, s.position + s.dir * Tuning.BEAM_HALF_LENGTH, Tuning.BEAM_HALF_WIDTH):
 				s.hit_ids[e.get_instance_id()] = true
-				damage(e, Tuning.BEAM_DAMAGE)
+				damage(e, weapon_damage(Tuning.BEAM_DAMAGE))
 				s.pierce -= 1
 				if s.pierce <= 0:
 					s.dead = true
@@ -232,16 +244,16 @@ func _step_weapons() -> void:
 			shots.erase(s)
 			s.queue_free()
 	if prog.moth_count > 0:
-		orbit_angle += Tuning.MOTH_SPIN / Tuning.TICK_HZ
+		orbit_angle += Tuning.MOTH_SPIN * prog.attack_rate_mult() / Tuning.TICK_HZ
 		var moths := orbit_positions()
 		for e in enemies.duplicate():
 			var id: int = e.get_instance_id()
-			if tick_count - int(orbit_hit.get(id, -9999)) < Tuning.MOTH_HIT_COOLDOWN:
+			if tick_count - int(orbit_hit.get(id, -9999)) < roundi(Tuning.MOTH_HIT_COOLDOWN / prog.attack_rate_mult()):
 				continue
 			for p in moths:
 				if e.touches(p, Tuning.MOTH_HIT_RADIUS):
 					orbit_hit[id] = tick_count
-					damage(e, Tuning.MOTH_DAMAGE)
+					damage(e, weapon_damage(Tuning.MOTH_DAMAGE))
 					break
 
 func _step_enemies() -> void:

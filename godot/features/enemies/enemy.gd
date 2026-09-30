@@ -3,7 +3,7 @@ const Tuning = preload("res://features/tuning.gd")
 const Art = preload("res://features/art.gd")
 
 var kind := "moth"
-var hp := 1
+var hp := 1.0
 var speed := 0.0
 var radius := 6.0
 var hit_half := Vector2(6, 6)
@@ -20,7 +20,7 @@ func setup(k: String, at: Vector2) -> void:
 	kind = k
 	position = at
 	var d: Dictionary = Tuning.ENEMIES[k]
-	hp = d["hp"]; speed = d["speed"]; radius = d["radius"]; damage = d["damage"]; xp = d["xp"]; frame = d["frame"]
+	hp = float(d["hp"]); speed = d["speed"]; radius = d["radius"]; damage = d["damage"]; xp = d["xp"]; frame = d["frame"]
 	hit_half = Vector2(d["hit_half"][0], d["hit_half"][1])
 	tex = Art.texture(Art.MOTH if k == "moth" else Art.WRAITH)
 

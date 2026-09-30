@@ -65,7 +65,7 @@ func lines() -> PackedStringArray:
 		GameState.LEVELUP:
 			for i in session.offered.size():
 				var t: Array = Progression.CARD_TEXT[session.offered[i]]
-				_lines.append("[%d] %s — %s" % [i + 1, t[0], t[1]])
+				_lines.append("[%d] %s — %s" % [i + 1, session.prog.card_title(session.offered[i]), t[1]])
 		GameState.PAUSED:
 			_lines.append("PAUSED — Esc/P resume · R restart")
 		GameState.LOST:
@@ -125,7 +125,7 @@ func _draw_view() -> void:
 				view.draw_rect(r, CREAM if i != card_cursor else GOLD)
 				view.draw_rect(r, INK, false, 2.0)
 				_text(r.position + Vector2(8, 22), "[%d]" % (i + 1), 12, INK)
-				_text(r.position + Vector2(8, 60), t[0], 13, INK)
+				_text(r.position + Vector2(8, 60), session.prog.card_title(session.offered[i]), 13, INK, HORIZONTAL_ALIGNMENT_LEFT, r.size.x - 16)
 				_text(r.position + Vector2(8, 90), t[1], 10, INK, HORIZONTAL_ALIGNMENT_LEFT, r.size.x - 16)
 			_pose("levelup", Rect2(8, H - 104, 96, 96))
 		GameState.PAUSED:

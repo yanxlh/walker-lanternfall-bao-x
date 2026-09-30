@@ -78,6 +78,24 @@ func run() -> void:
 	game.step_ticks(60)
 	check("gem-flies-and-collects", picked[0] == 1 and game.prog.xp == 1 and game.gems.is_empty(), {"xp": game.prog.xp})
 
+	# monsters get tougher with time, proportionally (Bao, 2026-09-29)
+	await fresh()
+	var m0 = game.spawn_enemy("moth", Vector2(300, 0))
+	game.tick_count = 59 * Tuning.TICK_HZ
+	var m59 = game.spawn_enemy("moth", Vector2(300, 20))
+	game.tick_count = 60 * Tuning.TICK_HZ
+	var m1 = game.spawn_enemy("moth", Vector2(300, 40))
+	game.tick_count = 120 * Tuning.TICK_HZ
+	var w2x = game.spawn_enemy("wraith", Vector2(300, 80))
+	check("enemy-hp-grows-with-time", is_equal_approx(m0.hp, 2.0) and is_equal_approx(m59.hp, 2.0) and is_equal_approx(m1.hp, 3.0) and is_equal_approx(w2x.hp, 16.0), {"moth_0s": m0.hp, "moth_59s": m59.hp, "moth_60s": m1.hp, "wraith_120s": w2x.hp})
+	await fresh()
+	for i in 5:
+		game.prog.apply("pass_damage")
+	for i in 5:
+		game.prog.apply("pass_haste")
+	check("damage-card-scales-weapons", is_equal_approx(game.weapon_damage(Tuning.BEAM_DAMAGE), 4.0), {"beam": game.weapon_damage(Tuning.BEAM_DAMAGE)})
+	check("haste-card-shortens-beam-cooldown", game.beam_cooldown() == 25, {"cooldown": game.beam_cooldown()})
+
 	# the market map (Bao, 2026-09-29: "整体地图再丰富一点材料"): streets of stalls and carts, lantern posts,
 	# crates, puddles and leaves; decoration only, deterministic, clear of the spawn plaza, inside the arena
 	var ground = game.ground

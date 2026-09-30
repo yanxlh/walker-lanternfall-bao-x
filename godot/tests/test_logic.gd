@@ -52,9 +52,24 @@ func _progression_tests() -> void:
 	p.apply("sunflare")
 	var after: Array[String] = p.eligible_cards()
 	check("prog-after-evolve-no-weapon-cards", p.evolved_sunflare and not p.evolution_ready() and not ("beam_rate" in after) and not ("moth_count" in after), {"eligible": after})
-	for k in ["pass_speed", "pass_speed", "pass_magnet", "pass_magnet", "pass_hp", "pass_hp"]:
-		p.apply(k)
-	check("prog-exhausted-pool-pads-heal", p.offer_cards(rng) == ["heal", "heal", "heal"])
+	var guard := 0
+	while not p.eligible_cards().is_empty() and guard < 100:
+		p.apply(p.eligible_cards()[0])
+		guard += 1
+	check("prog-exhausted-pool-pads-heal", p.offer_cards(rng) == ["heal", "heal", "heal"], {"applied": guard})
+	# Bao, 2026-09-29: new cards — damage, weapon attack speed; pickup range and move speed go to 5 levels
+	var c = Prog.new()
+	var pool: Array[String] = c.eligible_cards()
+	check("prog-new-passives-offered", "pass_damage" in pool and "pass_haste" in pool and "pass_magnet" in pool and "pass_speed" in pool, {"pool": pool})
+	for i in 5:
+		c.apply("pass_damage")
+		c.apply("pass_speed")
+	check("prog-passive-caps", not ("pass_damage" in c.eligible_cards()) and not ("pass_speed" in c.eligible_cards()) and int(c.passive["damage"]) == 5 and int(c.passive["speed"]) == 5)
+	check("prog-damage-mult", is_equal_approx(c.damage_mult(), 2.0), {"mult": c.damage_mult()})
+	for i in 3:
+		c.apply("pass_haste")
+	check("prog-attack-rate-mult", is_equal_approx(c.attack_rate_mult(), 1.36), {"mult": c.attack_rate_mult()})
+	check("prog-card-title-shows-level", c.card_title("pass_haste") == "Quick Hands (4/5)" and c.card_title("beam_rate") == "Beam: Quick Wick", {"haste": c.card_title("pass_haste")})
 	# Bao, 2026-09-29: "每升一次等级后续所需要的经验会增加" — every level must need more XP than the last
 	var q = Prog.new()
 	var needs: Array = []
