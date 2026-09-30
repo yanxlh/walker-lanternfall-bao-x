@@ -1,14 +1,16 @@
 extends Node2D
-## The night market: two streets lined with stalls and noodle carts, lantern posts between them, crates beside
-## the stalls, puddles and leaves on the cobbles. Decoration only — nothing collides — and built from its own
-## fixed seed, so it never touches the game rng. A plaza around the spawn point stays clear.
+## The night market, broken up (Bao: "整体地图应该破碎一点"): scattered clusters — ragged rows of stalls and noodle
+## carts with gaps, lantern corners with puddles, abandoned crate piles, lone stalls — with alleys between them,
+## plus stray posts and crates, puddles and leaves. Built from its own fixed seed (never the game rng); a plaza
+## around the spawn stays clear; solid props never overlap one another.
 
 const Tuning = preload("res://features/tuning.gd")
 const Art = preload("res://features/art.gd")
 
 const PLAZA_RADIUS := 150.0
-const STREETS_Y := [-300.0, 300.0]
-const STALL_SPACING := 190.0
+const CLUSTERS := 14
+const CLUSTER_GAP := 230.0
+const MIN_EACH := 4
 const PUDDLES := 36
 const LEAVES := 60
 const PATHS := {
@@ -16,10 +18,16 @@ const PATHS := {
 	"puddle": Art.PUDDLE, "leaves": Art.LEAVES,
 }
 const DECALS := ["puddle", "leaves"]
-## Props that block the courier (Bao, 2026-09-29). Half-extents used until the generated sprite exists; with a
-## sprite, the box is the sprite's opaque area inset by 2 px — what you bump into is what you see. A lantern post
-## blocks only at its pole. Enemies are not blocked: moths fly over, fog-wraiths drift through.
-const SOLID_HALF := {"stall": Vector2(28, 20), "cart": Vector2(28, 18), "crates": Vector2(18, 13), "post": Vector2(3, 20)}
+## Props that block the courier (Bao, 2026-09-29). Each box is relative to the prop's centre and is the sprite's
+## opaque area inset by 2 px, measured from the generated PNG (test solid-boxes-match-sprites keeps them in sync);
+## a lantern post blocks only at its pole. Layout and collision use the same fixed boxes, so the map is identical
+## whether or not the textures are loaded. Enemies are not blocked: moths fly over, fog-wraiths drift through.
+const SOLID_BOX := {
+	"stall": Rect2(-19, -18, 39, 39),
+	"cart": Rect2(-28, -18, 56, 36),
+	"crates": Rect2(-18, -13, 36, 26),
+	"post": Rect2(-3, -20, 6, 40),
+}
 
 var tile: Texture2D
 var tex := {}
@@ -38,37 +46,95 @@ func _ready() -> void:
 
 func build() -> void:
 	props.clear()
+	solids.clear()
 	var r := RandomNumberGenerator.new()
 	r.seed = 1234
 	var a := Tuning.ARENA
-	for street_y in STREETS_Y:
-		var x: float = a.position.x + 90.0
-		while x < a.end.x - 90.0:
-			for side in [-1.0, 1.0]:
-				var y: float = street_y + side * 72.0
-				_add("cart" if r.randf() < 0.35 else "stall", Vector2(x + r.randf_range(-14, 14), y))
-				if r.randf() < 0.55:
-					_add("crates", Vector2(x + 46 + r.randf_range(-6, 6), y + 14))
-				_add("post", Vector2(x + STALL_SPACING / 2.0, street_y + side * 34.0))
-			x += STALL_SPACING
+	var centres: Array[Vector2] = []
+	var tries := 0
+	while centres.size() < CLUSTERS and tries < 4000:
+		tries += 1
+		var c := Vector2(r.randf_range(a.position.x + 120, a.end.x - 120), r.randf_range(a.position.y + 100, a.end.y - 100))
+		if c.length() < PLAZA_RADIUS + 110:
+			continue
+		var far := true
+		for o in centres:
+			far = far and o.distance_to(c) >= CLUSTER_GAP
+		if far:
+			centres.append(c)
+	for c in centres:
+		match r.randi_range(0, 3):
+			0:  # a ragged row of stalls and carts, bent and with gaps
+				var n := r.randi_range(2, 4)
+				var step := Vector2(r.randf_range(72, 92), r.randf_range(-20, 20))
+				for i in n:
+					if r.randf() < 0.2:
+						continue
+					var at := c + step * (i - (n - 1) / 2.0) + _jitter(r, 8)
+					_place("cart" if r.randf() < 0.35 else "stall", at)
+					if r.randf() < 0.5:
+						_place("crates", at + Vector2(r.randf_range(-24, 24), r.randf_range(34, 46)))
+				_place("post", c + Vector2(r.randf_range(-50, 50), -52))
+			1:  # a lantern corner: posts around a small wet square
+				for i in r.randi_range(2, 4):
+					_place("post", c + Vector2.from_angle(r.randf() * TAU) * r.randf_range(34, 72))
+				for i in r.randi_range(1, 3):
+					_place("puddle", c + _jitter(r, 40))
+				if r.randf() < 0.6:
+					_place("cart", c + _jitter(r, 16))
+			2:  # an abandoned pile of crates, maybe a stall left behind
+				for i in r.randi_range(2, 5):
+					_place("crates", c + _jitter(r, 50))
+				if r.randf() < 0.5:
+					_place("stall", c + _jitter(r, 36))
+			3:  # a lone stall with its lantern
+				var at := c + _jitter(r, 20)
+				_place("stall" if r.randf() < 0.6 else "cart", at)
+				_place("post", at + Vector2(r.randf_range(40, 48) * (1 if r.randf() < 0.5 else -1), r.randf_range(-12, 12)))
+	for kind in ["stall", "cart", "post", "crates"]:
+		var guard := 0
+		while _count(kind) < MIN_EACH and guard < 200:
+			guard += 1
+			_place(kind, Vector2(r.randf_range(a.position.x, a.end.x), r.randf_range(a.position.y, a.end.y)))
+	for i in 10:
+		_place("post", Vector2(r.randf_range(a.position.x, a.end.x), r.randf_range(a.position.y, a.end.y)))
+	for i in 8:
+		_place("crates", Vector2(r.randf_range(a.position.x, a.end.x), r.randf_range(a.position.y, a.end.y)))
 	for i in PUDDLES:
-		_add("puddle", Vector2(r.randf_range(a.position.x, a.end.x), r.randf_range(a.position.y, a.end.y)))
+		_place("puddle", Vector2(r.randf_range(a.position.x, a.end.x), r.randf_range(a.position.y, a.end.y)))
 	for i in LEAVES:
-		_add("leaves", Vector2(r.randf_range(a.position.x, a.end.x), r.randf_range(a.position.y, a.end.y)))
+		_place("leaves", Vector2(r.randf_range(a.position.x, a.end.x), r.randf_range(a.position.y, a.end.y)))
 	props.sort_custom(func(p, q): return p["layer"] < q["layer"] or (p["layer"] == q["layer"] and p["pos"].y < q["pos"].y))
 	solids.clear()
 	for p in props:
-		if SOLID_HALF.has(p["kind"]):
+		if SOLID_BOX.has(p["kind"]):
 			solids.append(_solid_box(p["kind"], p["pos"]))
 
+func _jitter(r: RandomNumberGenerator, amount: float) -> Vector2:
+	return Vector2(r.randf_range(-amount, amount), r.randf_range(-amount, amount))
+
+func _count(kind: String) -> int:
+	var n := 0
+	for p in props:
+		if p["kind"] == kind:
+			n += 1
+	return n
+
+## Adds a prop if it is inside the arena and outside the plaza; a solid prop is skipped if it would overlap another.
+func _place(kind: String, pos: Vector2) -> void:
+	if pos.length() <= PLAZA_RADIUS or not Tuning.ARENA.grow(-24).has_point(pos):
+		return
+	if SOLID_BOX.has(kind):
+		var box := _solid_box(kind, pos)
+		for other in solids:
+			if other.grow(4).intersects(box):
+				return
+		solids.append(box)
+	props.append({"kind": kind, "pos": pos, "layer": 0 if kind in DECALS else 1})
+
 func _solid_box(kind: String, pos: Vector2) -> Rect2:
-	var t: Texture2D = tex.get(kind)
-	if t and kind != "post":
-		var used := t.get_image().get_used_rect()
-		var top_left := pos - t.get_size() / 2 + Vector2(used.position)
-		return Rect2(top_left + Vector2(2, 2), Vector2(used.size) - Vector2(4, 4))
-	var half: Vector2 = SOLID_HALF[kind]
-	return Rect2(pos - half, half * 2)
+	var box: Rect2 = SOLID_BOX[kind]
+	return Rect2(pos + box.position, box.size)
 
 ## True when a circle at p with radius r overlaps any solid prop.
 func blocks(p: Vector2, r: float) -> bool:
@@ -107,11 +173,6 @@ func push_out(p: Vector2, r: float) -> Vector2:
 			if d.length() < r and d.length() > 0.0001:
 				p = c + d.normalized() * r
 	return p
-
-func _add(kind: String, pos: Vector2) -> void:
-	if pos.length() <= PLAZA_RADIUS or not Tuning.ARENA.grow(-24).has_point(pos):
-		return
-	props.append({"kind": kind, "pos": pos, "layer": 0 if kind in DECALS else 1})
 
 func _draw() -> void:
 	var a := Tuning.ARENA

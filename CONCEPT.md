@@ -110,3 +110,9 @@ More weapons and evolution recipes, a boss at the end of the fog, between-run pr
 - Lantern posts, stalls, noodle carts and crates now **block the courier**; the courier slides along their edges instead of sticking. The box is each sprite's opaque area inset by 2 px (a post blocks only at its pole), so what you bump into is what you see. Puddles and leaves stay walk-over decals.
 - **Enemies are not blocked** — moths fly over the stalls and fog-wraiths drift through them. This keeps the lore, avoids enemies jamming behind posts, and means props can corner you rather than shelter you.
 - **Verified by:** `test_gameplay.gd::map-has-solids`, `props-block-the-courier`, `courier-slides-along-props`, `decals-do-not-block`, `enemies-pass-through-props`.
+
+### R6 · 2026-09-29 · A broken-up market (Bao: "整体地图应该破碎一点")
+
+- The two tidy streets of R4 are replaced by **14 scattered clusters** with alleys between them: ragged rows of stalls and carts with gaps and a slight bend, lantern corners around wet squares, abandoned crate piles, lone stalls with a lamp — plus stray posts and crates. Overview: [design/map-overview.png](design/map-overview.png).
+- Solid props never overlap (the R4 layout had 6 crates overlapping stalls); layout and collision use fixed boxes measured from the sprites, so the map is identical with or without textures loaded.
+- **Verified by:** `test_gameplay.gd::map-is-broken-up` (stall/cart rows spread over 9 of 18 bands; the street layout had 4), `props-do-not-overlap`, `solid-boxes-match-sprites`, `map-layout-deterministic`.

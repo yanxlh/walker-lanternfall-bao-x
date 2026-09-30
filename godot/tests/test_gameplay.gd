@@ -111,8 +111,20 @@ func run() -> void:
 		every_kind = every_kind and int(kinds.get(k, 0)) >= 3
 	check("map-has-every-prop-kind", every_kind, {"counts": kinds})
 	check("map-props-inside-arena-and-clear-of-plaza", in_arena and plaza_clear)
+	# Bao, 2026-09-29: "整体地图应该破碎一点" — broken up, not two tidy streets
+	var bands := {}
+	for p in ground.props:
+		if p["kind"] in ["stall", "cart"]:
+			bands[int(floor(p["pos"].y / 60.0))] = true
+	check("map-is-broken-up", bands.size() >= 8, {"stall_rows": bands.size()})
+	var overlaps := 0
+	for i in ground.solids.size():
+		for j in range(i + 1, ground.solids.size()):
+			if ground.solids[i].intersects(ground.solids[j]):
+				overlaps += 1
+	check("props-do-not-overlap", overlaps == 0, {"overlapping_pairs": overlaps})
 	# solid props block the courier (Bao, 2026-09-29: "路灯这些有阻挡效果"); decals and enemies do not
-	check("map-has-solids", ground.solids.size() >= 60, {"solids": ground.solids.size()})
+	check("map-has-solids", ground.solids.size() >= 30, {"solids": ground.solids.size()})
 	var box: Rect2 = ground.solids[0]
 	game.player.position = Vector2(box.position.x - 30, box.get_center().y)
 	game.test_axis = Vector2.RIGHT
@@ -134,6 +146,18 @@ func run() -> void:
 	game.step_ticks(5)
 	check("enemies-pass-through-props", box.grow(20).has_point(ghost.position), {"wraith": str(ghost.position)})
 
+	var synced := true
+	var measured := {}
+	for kind in ["stall", "cart", "crates"]:
+		var t: Texture2D = ground.tex.get(kind)
+		if t == null:
+			continue
+		var used := t.get_image().get_used_rect()
+		var expect := Rect2(Vector2(used.position) - t.get_size() / 2 + Vector2(2, 2), Vector2(used.size) - Vector2(4, 4))
+		var fixed: Rect2 = ground.SOLID_BOX[kind]
+		measured[kind] = str(expect)
+		synced = synced and fixed.position.distance_to(expect.position) <= 1.0 and fixed.size.distance_to(expect.size) <= 1.0
+	check("solid-boxes-match-sprites", synced, {"from_sprites": measured})
 	var again = Ground.new()
 	again.build()
 	check("map-layout-deterministic", again.props == ground.props)

@@ -1,5 +1,5 @@
 {
-  "checks": 59,
+  "checks": 62,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -161,12 +161,12 @@
       "id": "map-has-every-prop-kind",
       "observed": {
         "counts": {
-          "cart": 19,
-          "crates": 22,
-          "leaves": 53,
-          "post": 40,
-          "puddle": 32,
-          "stall": 21
+          "cart": 4,
+          "crates": 15,
+          "leaves": 55,
+          "post": 28,
+          "puddle": 39,
+          "stall": 11
         }
       },
       "status": "PASS"
@@ -177,24 +177,38 @@
       "status": "PASS"
     },
     {
+      "id": "map-is-broken-up",
+      "observed": {
+        "stall_rows": 9
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "props-do-not-overlap",
+      "observed": {
+        "overlapping_pairs": 0
+      },
+      "status": "PASS"
+    },
+    {
       "id": "map-has-solids",
       "observed": {
-        "solids": 102
+        "solids": 58
       },
       "status": "PASS"
     },
     {
       "id": "props-block-the-courier",
       "observed": {
-        "box": "[P: (828.7316, -390.0), S: (39.0, 39.0)]",
-        "courier": "(818.7316, -370.5)"
+        "box": "[P: (458.6938, -502.4509), S: (6.0, 40.0)]",
+        "courier": "(448.6938, -482.4509)"
       },
       "status": "PASS"
     },
     {
       "id": "courier-slides-along-props",
       "observed": {
-        "moved_y": 32.8685607910156
+        "moved_y": 32.8445434570312
       },
       "status": "PASS"
     },
@@ -206,7 +220,16 @@
     {
       "id": "enemies-pass-through-props",
       "observed": {
-        "wraith": "(847.0932, -368.0924)"
+        "wraith": "(461.6141, -479.7881)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "solid-boxes-match-sprites",
+      "observed": {
+        "from_sprites": {
+          "stall": "[P: (-19.0, -18.0), S: (39.0, 39.0)]"
+        }
       },
       "status": "PASS"
     },
@@ -362,14 +385,16 @@
       "observed": {
         "cards": [
           "pass_magnet",
-          "pass_speed",
+          "beam_pierce",
+          "pass_hp",
+          "beam_rate",
+          "pass_hp",
           "moth_new",
-          "pass_magnet",
-          "pass_haste"
+          "pass_damage"
         ],
-        "kills": 59,
-        "level": 6,
-        "seconds": 51,
+        "kills": 104,
+        "level": 8,
+        "seconds": 68,
         "state": "lost"
       },
       "status": "PASS"
@@ -469,7 +494,7 @@
     {
       "id": "camera-menu-push-in",
       "observed": {
-        "after": 0.820971608161926,
+        "after": 0.820926904678345,
         "start": 0.800000011920929
       },
       "status": "PASS"
@@ -482,12 +507,12 @@
     {
       "id": "fog-lifts-on-win",
       "observed": {
-        "lift": 0.218115753358583,
-        "zoom": 0.960739135742188
+        "lift": 0.217464965455962,
+        "zoom": 0.960856318473816
       },
       "status": "PASS"
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-09-30T03:59:57"
+  "utc": "2026-09-30T04:07:31"
 }
