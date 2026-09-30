@@ -39,7 +39,9 @@ for seed in a.seeds:
     if melody:
         cond, _ = librosa.load(ROOT / spec["condition_on"], sr=proc.feature_extractor.sampling_rate, mono=True)
         kwargs.update(audio=cond, sampling_rate=proc.feature_extractor.sampling_rate)
-    inputs = {k: (v.to(device) if hasattr(v, "to") else v) for k, v in proc(**kwargs).items()}
+    # floating inputs (the melody model's chroma features) must match the model dtype on MPS
+    inputs = {k: (v.to(device, dtype=dtype) if v.is_floating_point() else v.to(device)) if hasattr(v, "to") else v
+              for k, v in proc(**kwargs).items()}
     t0 = time.time()
     audio = model.generate(**inputs, do_sample=True, guidance_scale=spec.get("guidance_scale", 3.0), max_new_tokens=tokens)
     sf.write(out, audio[0, 0].float().cpu().numpy(), sr)

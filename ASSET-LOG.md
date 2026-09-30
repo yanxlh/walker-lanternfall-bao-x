@@ -1457,3 +1457,351 @@ a single small faceted golden oil drop gem with a cream highlight, seen from abo
 N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
 ```
 
+## MUS-01
+
+### MUS-01-20260930T013739Z-s5
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T01:39:14+00:00 |
+| Model / version | facebook/musicgen-medium / snapshot d3bd7b00761b78ad7a8a05145ee31e7832e9916c, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 5, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 94.9}` |
+| Storyboard panels | P2, P3, P4, P5, P7, P8 |
+| Decision | **modify** by Bao Xing at 2026-09-30T01:48:34+00:00 |
+| Reason | Bao, after listening to all four loops three times: picked the first one; the rest were too chaotic ("第一个 剩下的太乱了 后面的杂音太多"). Measured: steadiest tempo (beat-interval CV 0.009), even loudness (RMS CV 0.17), no fade-out ending, warmest timbre (centroid 359 Hz, 0.8% energy above 6 kHz), smallest seam jump. |
+| Manual edits | 8-bar loop cut on detected beats after a 1 s skip (95.7 BPM, 20.0 s); 0.25 s equal-power crossfade of the tail into the head; normalised to -3 dBFS peak; OGG Vorbis; loop flag set in Godot |
+| Project files | godot/assets/music/mus_01_night_market.ogg |
+| Thumbnail | ![](gen/thumbs/MUS-01/MUS-01-20260930T013739Z-s5.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T01:48:35+00:00", "tool": "gen/music_loop.py", "src": "accepted/MUS-01/MUS-01-20260930T013739Z-s5.wav", "dst": "../godot/assets/music/mus_01_night_market.ogg", "bpm": 95.703125, "bars": 8, "skip_s": 1.0, "start_sample": 57856, "loop_frames": 882176, "seconds": 20.004, "xfade_s": 0.25, "match_frames": null}`
+
+**Prompt**
+
+```
+instrumental loop for a cozy but tense night market video game, 96 bpm, steady soft hand percussion, plucked kalimba and warm glassy mallets, low upright bass, mysterious minor key, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-01-20260930T013914Z-s8
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T01:40:49+00:00 |
+| Model / version | facebook/musicgen-medium / snapshot d3bd7b00761b78ad7a8a05145ee31e7832e9916c, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 8, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 95.1}` |
+| Storyboard panels | P2, P3, P4, P5, P7, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T01:48:34+00:00 |
+| Reason | Bao: too chaotic / too much noise ("太乱了，杂音太多"). Measured: uneven loudness (RMS CV 0.41) and a fade-out ending (last 1 s at 34% of the mean). |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-01/MUS-01-20260930T013914Z-s8.png) |
+
+**Prompt**
+
+```
+instrumental loop for a cozy but tense night market video game, 96 bpm, steady soft hand percussion, plucked kalimba and warm glassy mallets, low upright bass, mysterious minor key, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-01-20260930T014049Z-s13
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T01:42:25+00:00 |
+| Model / version | facebook/musicgen-medium / snapshot d3bd7b00761b78ad7a8a05145ee31e7832e9916c, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 13, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 95.3}` |
+| Storyboard panels | P2, P3, P4, P5, P7, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T01:48:34+00:00 |
+| Reason | Bao: too chaotic / too much noise ("太乱了，杂音太多"). Measured: brightest candidate (centroid 859 Hz, 6.6% energy above 6 kHz - 8x s5) and a fade-out ending. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-01/MUS-01-20260930T014049Z-s13.png) |
+
+**Prompt**
+
+```
+instrumental loop for a cozy but tense night market video game, 96 bpm, steady soft hand percussion, plucked kalimba and warm glassy mallets, low upright bass, mysterious minor key, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-01-20260930T014225Z-s21
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T01:44:00+00:00 |
+| Model / version | facebook/musicgen-medium / snapshot d3bd7b00761b78ad7a8a05145ee31e7832e9916c, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 21, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 95.0}` |
+| Storyboard panels | P2, P3, P4, P5, P7, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T01:48:34+00:00 |
+| Reason | Bao: too chaotic / too much noise ("太乱了，杂音太多"). Measured: gets quieter towards the end (69% of the mean) and the beat tracker locked onto double time (191 BPM). |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-01/MUS-01-20260930T014225Z-s21.png) |
+
+**Prompt**
+
+```
+instrumental loop for a cozy but tense night market video game, 96 bpm, steady soft hand percussion, plucked kalimba and warm glassy mallets, low upright bass, mysterious minor key, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+## MUS-02
+
+### MUS-02-20260930T015010Z-s5
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T01:51:34+00:00 |
+| Model / version | facebook/musicgen-melody / snapshot 68d653a95788ec0d2b0abccab22c0b3a200c2d90, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 5, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": "godot/assets/music/mus_01_night_market.ogg", "seconds": 83.6}` |
+| Storyboard panels | P6 |
+| Decision | **reject** by Claude (automated layer check: tempo fit / high-frequency energy) - not listened to by Bao at 2026-09-30T01:56:59+00:00 |
+| Reason | Wrong tempo for a layer: musicgen-melody with a drum-less prompt came out near 106 BPM; fitting 8 bars into the 20 s MUS-01 loop needs a stretch outside 0.9-1.1 (measured by gen/music_loop.py), so it would drift against MUS-01. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T015010Z-s5.png) |
+
+**Prompt**
+
+```
+gentle brighter layer to play on top of a calm night market loop, 96 bpm, warm glass bells and a soft sustained pad, simple and sparse, not busy, clean, no noise, no drums, same key, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-02-20260930T015134Z-s8
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T01:52:56+00:00 |
+| Model / version | facebook/musicgen-melody / snapshot 68d653a95788ec0d2b0abccab22c0b3a200c2d90, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 8, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": "godot/assets/music/mus_01_night_market.ogg", "seconds": 81.8}` |
+| Storyboard panels | P6 |
+| Decision | **reject** by Claude (automated layer check: tempo fit / high-frequency energy) - not listened to by Bao at 2026-09-30T01:56:59+00:00 |
+| Reason | In tempo (101 BPM, stretch 0.94) but 46% of its energy is above 6 kHz (centroid 5959 Hz vs 337 Hz for MUS-01): hiss, the 'noise' Bao rejected in MUS-01. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T015134Z-s8.png) |
+
+**Prompt**
+
+```
+gentle brighter layer to play on top of a calm night market loop, 96 bpm, warm glass bells and a soft sustained pad, simple and sparse, not busy, clean, no noise, no drums, same key, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-02-20260930T015256Z-s13
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T01:54:13+00:00 |
+| Model / version | facebook/musicgen-melody / snapshot 68d653a95788ec0d2b0abccab22c0b3a200c2d90, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 13, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": "godot/assets/music/mus_01_night_market.ogg", "seconds": 77.1}` |
+| Storyboard panels | P6 |
+| Decision | **reject** by Claude (automated layer check: tempo fit / high-frequency energy) - not listened to by Bao at 2026-09-30T01:56:59+00:00 |
+| Reason | Wrong tempo for a layer: musicgen-melody with a drum-less prompt came out near 106 BPM; fitting 8 bars into the 20 s MUS-01 loop needs a stretch outside 0.9-1.1 (measured by gen/music_loop.py), so it would drift against MUS-01. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T015256Z-s13.png) |
+
+**Prompt**
+
+```
+gentle brighter layer to play on top of a calm night market loop, 96 bpm, warm glass bells and a soft sustained pad, simple and sparse, not busy, clean, no noise, no drums, same key, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-02-20260930T015413Z-s21
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T01:55:35+00:00 |
+| Model / version | facebook/musicgen-melody / snapshot 68d653a95788ec0d2b0abccab22c0b3a200c2d90, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 21, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": "godot/assets/music/mus_01_night_market.ogg", "seconds": 81.9}` |
+| Storyboard panels | P6 |
+| Decision | **reject** by Claude (automated layer check: tempo fit / high-frequency energy) - not listened to by Bao at 2026-09-30T01:56:59+00:00 |
+| Reason | Wrong tempo for a layer: musicgen-melody with a drum-less prompt came out near 106 BPM; fitting 8 bars into the 20 s MUS-01 loop needs a stretch outside 0.9-1.1 (measured by gen/music_loop.py), so it would drift against MUS-01. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T015413Z-s21.png) |
+
+**Prompt**
+
+```
+gentle brighter layer to play on top of a calm night market loop, 96 bpm, warm glass bells and a soft sustained pad, simple and sparse, not busy, clean, no noise, no drums, same key, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-02-20260930T015711Z-s34
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T01:58:44+00:00 |
+| Model / version | facebook/musicgen-medium / snapshot d3bd7b00761b78ad7a8a05145ee31e7832e9916c, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 34, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 92.5}` |
+| Storyboard panels | P6 |
+| Decision | **modify** by Bao Xing at 2026-09-30T02:34:59+00:00 |
+| Reason | Bao, after listening to the three base+layer mixes (x3 loops): picked s34 because it has an ancient feel ("有种远古的感觉"). Measured: 97.5 BPM (stretch 0.99 to the MUS-01 loop), closest harmony to MUS-01 (chroma correlation 0.40), brighter than the base (centroid 769 Hz vs 337 Hz) with little hiss (2.6% above 6 kHz). |
+| Manual edits | 8 bars cut on detected beats after a 1 s skip, time-stretched by 0.9897 to exactly MUS-01's 882176 frames; 0.25 s equal-power tail-into-head crossfade; normalised to -3 dBFS peak; OGG Vorbis; plays silently in sync with MUS-01 and fades in over 2 s on evolution |
+| Project files | godot/assets/music/mus_02_sunflare_layer.ogg |
+| Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T015711Z-s34.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T02:35:00+00:00", "tool": "gen/music_loop.py", "src": "accepted/MUS-02/MUS-02-20260930T015711Z-s34.wav", "dst": "../godot/assets/music/mus_02_sunflare_layer.ogg", "bpm": 97.50884433962264, "bars": 8, "skip_s": 1.0, "start_sample": 0, "loop_frames": 882176, "seconds": 20.004, "xfade_s": 0.25, "match_frames": "../godot/assets/music/mus_01_night_market.ogg", "stretch": 0.9897}`
+
+**Prompt**
+
+```
+brighter layer for the same cozy night market video game loop, 96 bpm, soft plucked kalimba and warm glassy mallets playing a higher gentle counter-melody over a light sustained pad, clean, sparse, not busy, no noise, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-02-20260930T015844Z-s55
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T02:00:17+00:00 |
+| Model / version | facebook/musicgen-medium / snapshot d3bd7b00761b78ad7a8a05145ee31e7832e9916c, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 55, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 93.3}` |
+| Storyboard panels | P6 |
+| Decision | **reject** by Bao Xing at 2026-09-30T02:34:59+00:00 |
+| Reason | Bao listened to the base+layer mix and chose s34 instead ("1 因为有种远古的感觉"). Measured: best tempo fit (stretch 1.004) but weakest harmonic match to MUS-01 (chroma correlation 0.27). |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T015844Z-s55.png) |
+
+**Prompt**
+
+```
+brighter layer for the same cozy night market video game loop, 96 bpm, soft plucked kalimba and warm glassy mallets playing a higher gentle counter-melody over a light sustained pad, clean, sparse, not busy, no noise, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-02-20260930T020017Z-s89
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T02:01:52+00:00 |
+| Model / version | facebook/musicgen-medium / snapshot d3bd7b00761b78ad7a8a05145ee31e7832e9916c, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 89, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 94.3}` |
+| Storyboard panels | P6 |
+| Decision | **reject** by Claude (automated layer check: tempo fit) - not listened to by Bao at 2026-09-30T02:04:06+00:00 |
+| Reason | Wrong tempo for a layer: fitting 8 bars into the 20 s MUS-01 loop needs a 0.75 stretch (limit 0.9-1.1), so it would drift against MUS-01. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T020017Z-s89.png) |
+
+**Prompt**
+
+```
+brighter layer for the same cozy night market video game loop, 96 bpm, soft plucked kalimba and warm glassy mallets playing a higher gentle counter-melody over a light sustained pad, clean, sparse, not busy, no noise, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+### MUS-02-20260930T020152Z-s144
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T02:03:28+00:00 |
+| Model / version | facebook/musicgen-medium / snapshot d3bd7b00761b78ad7a8a05145ee31e7832e9916c, transformers 5.17.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | MusicGen weights CC-BY-NC-4.0 (non-commercial coursework use); AudioCraft code MIT |
+| Settings | `{"seed": 144, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 96.8}` |
+| Storyboard panels | P6 |
+| Decision | **reject** by Bao Xing at 2026-09-30T02:34:59+00:00 |
+| Reason | Bao listened to the base+layer mix and chose s34 instead. Measured: noisiest in-tempo layer (14.9% energy above 6 kHz, centroid 2487 Hz) and uneven loudness (RMS CV 0.40). |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T020152Z-s144.png) |
+
+**Prompt**
+
+```
+brighter layer for the same cozy night market video game loop, 96 bpm, soft plucked kalimba and warm glassy mallets playing a higher gentle counter-melody over a light sustained pad, clean, sparse, not busy, no noise, even dynamics from start to end, no intro, no ending, no vocals
+```
+
+**Negative prompt**
+
+```
+N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+

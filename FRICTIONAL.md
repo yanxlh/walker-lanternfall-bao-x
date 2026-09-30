@@ -45,6 +45,8 @@ _Bao writes here._
 - The other 8 sprites: 3 seeds each, judged on a mock 640 x 360 scene built from the candidates. Rejects included a stall sign with text-like marks, a beam too thin to survive 16 x 8, and two ground tiles that failed the seam check. By the end of the day: 48 art runs logged, 30 rejected with a reason.
 - Contrast check against the ground: moth 0.40, courier 0.11, fog-wraith **0.03** — the wraith nearly disappears on the cobbles (prediction 4). Left for the muted playtest.
 - MusicGen in fp32 grew to 14 GB and stalled in swap (first 30 s clip unfinished after 19 minutes); switched to fp16 on the GPU: a 10 s clip in 28 s.
+- Music, same evening: four MUS-01 loops (MusicGen medium, 96 BPM prompt), each looped three times for listening. I kept the first one — "剩下的太乱了，后面的杂音太多". Measurements agreed: it had the steadiest beat, no fade-out ending and the least high-frequency energy.
+- MUS-02 took two batches. The melody-conditioned model ignored the tempo (≈106 BPM) and one run was mostly hiss; Claude rejected those four on the measurements (I did not listen to them). The second batch used the same model as MUS-01; I listened to three base+layer mixes and chose s34 because "有种远古的感觉".
 - The course email on audio (generate something every day, record rejections, trim/loop and listen ≥ 3 times, log every edit) arrived today; this diary starts using that structure.
 
 **What I wanted**
