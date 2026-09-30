@@ -23,11 +23,13 @@ const DECALS := ["puddle", "leaves"]
 ## a lantern post blocks only at its pole. Layout and collision use the same fixed boxes, so the map is identical
 ## whether or not the textures are loaded. Enemies are not blocked: moths fly over, fog-wraiths drift through.
 const SOLID_BOX := {
-	"stall": Rect2(-19, -18, 39, 39),
-	"cart": Rect2(-28, -18, 56, 36),
-	"crates": Rect2(-18, -13, 36, 26),
-	"post": Rect2(-3, -20, 6, 40),
+	"stall": Rect2(-19, -18, 39, 39),   # env_stall.png
+	"cart": Rect2(-12, -19, 24, 41),    # env_noodle_cart.png (narrow, tall cart)
+	"crates": Rect2(-17, -12, 34, 26),  # env_crates.png
+	"post": Rect2(-6, -18, 4, 40),      # env_lantern_post.png: the pole is sprite columns 6-9
 }
+## Puddles and leaves are drawn at this opacity so they add texture without outshining the courier or the gems.
+const DECAL_ALPHA := 0.55
 
 var tile: Texture2D
 var tex := {}
@@ -191,7 +193,7 @@ func _draw() -> void:
 			# a soft pool of lantern light on the cobbles (drawn, not generated)
 			draw_circle(pos + Vector2(0, 18), 30.0, Color(0.95, 0.72, 0.29, 0.07))
 		if t:
-			draw_texture(t, pos - t.get_size() / 2)
+			draw_texture(t, pos - t.get_size() / 2, Color(1, 1, 1, DECAL_ALPHA if p["layer"] == 0 else 1.0))
 		else:
 			_draw_placeholder(p["kind"], pos)
 	draw_rect(a, Color(0.95, 0.72, 0.29, 0.6), false, 2.0)

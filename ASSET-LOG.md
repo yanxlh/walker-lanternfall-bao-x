@@ -373,6 +373,550 @@ a small wooden night-market stall seen from a high three-quarter angle, red clot
 N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
 ```
 
+## ART-ENV-03
+
+![ART-ENV-03 contact sheet](gen/rejected/ART-ENV-03-contact.png)
+
+### ART-ENV-03-20260930T160625Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:07:18+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 3, "width": 512, "height": 768, "steps": 4, "quantize": 4, "seconds": 53.1, "peak_gb": 14.18}` |
+| Storyboard panels | P1, P2, P3, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:57+00:00 |
+| Reason | Ornate lamp on top of the post rather than a hanging paper lantern. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-03/ART-ENV-03-20260930T160625Z-s3.png) |
+
+**Prompt**
+
+```
+a tall thin dark wooden lamp post with one round glowing red and gold paper lantern hanging from a short arm at the top, night market street furniture, seen from a high three-quarter angle, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-03-20260930T160718Z-s7
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:08:14+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 7, "width": 512, "height": 768, "steps": 4, "quantize": 4, "seconds": 56.2, "peak_gb": 14.18}` |
+| Storyboard panels | P1, P2, P3, P8 |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:38:57+00:00 |
+| Reason | A lantern hanging from an arm on a slender pole - the post the brief asked for; reads at 24x48. |
+| Manual edits | keyed white bg + grey shadow; reduced 4x-supersampled; locked to the environment palette (with #8A5A3C wood) in Lab space; 1-px outline; bottom-anchored |
+| Project files | godot/assets/art/env_lantern_post.png |
+| Thumbnail | ![](gen/thumbs/ART-ENV-03/ART-ENV-03-20260930T160718Z-s7.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:39:08+00:00", "tool": "gen/art_process.py", "mapping": "gen/mappings/ART-ENV-03.json", "frame": "f0", "out": "godot/assets/art/env_lantern_post.png", "index": 0, "mirror": false, "recolor": null, "trim_shadow": false, "post_squash_y": null, "box": null, "lamp_px": null, "frame_px": [24, 48], "palette": "environment", "supersample": 4, "outline": true}`
+
+**Prompt**
+
+```
+a tall thin dark wooden lamp post with one round glowing red and gold paper lantern hanging from a short arm at the top, night market street furniture, seen from a high three-quarter angle, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-03-20260930T160814Z-s9
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:09:29+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 9, "width": 512, "height": 768, "steps": 4, "quantize": 4, "seconds": 74.7, "peak_gb": 14.18}` |
+| Storyboard panels | P1, P2, P3, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:57+00:00 |
+| Reason | Square frame with a hanging lantern reads like a gallows at 24x48. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-03/ART-ENV-03-20260930T160814Z-s9.png) |
+
+**Prompt**
+
+```
+a tall thin dark wooden lamp post with one round glowing red and gold paper lantern hanging from a short arm at the top, night market street furniture, seen from a high three-quarter angle, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+## ART-ENV-04
+
+![ART-ENV-04 contact sheet](gen/rejected/ART-ENV-04-contact.png)
+
+### ART-ENV-04-20260930T160933Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:10:45+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 3, "width": 768, "height": 512, "steps": 4, "quantize": 4, "seconds": 71.2, "peak_gb": 14.18}` |
+| Storyboard panels | P1, P2 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:57+00:00 |
+| Reason | Floor shadow left pale pixels under the pile; crates and barrel merge. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-04/ART-ENV-04-20260930T160933Z-s3.png) |
+
+**Prompt**
+
+```
+a small stack of two wooden crates and one wooden barrel for a night market, brown wood with dark bands, seen from a high three-quarter angle, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-04-20260930T161045Z-s7
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:11:54+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 7, "width": 768, "height": 512, "steps": 4, "quantize": 4, "seconds": 69.0, "peak_gb": 14.18}` |
+| Storyboard panels | P1, P2 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:57+00:00 |
+| Reason | Bulky stack becomes one brown block at 40x32. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-04/ART-ENV-04-20260930T161045Z-s7.png) |
+
+**Prompt**
+
+```
+a small stack of two wooden crates and one wooden barrel for a night market, brown wood with dark bands, seen from a high three-quarter angle, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-04-20260930T161154Z-s9
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:14:14+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 9, "width": 768, "height": 512, "steps": 4, "quantize": 4, "seconds": 140.5, "peak_gb": 14.18}` |
+| Storyboard panels | P1, P2 |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:38:57+00:00 |
+| Reason | Crates and barrel keep separate, clear shapes at 40x32. |
+| Manual edits | keyed white bg + grey shadow; reduced 4x-supersampled; locked to the environment palette (with #8A5A3C wood) in Lab space; 1-px outline; bottom-anchored; floor shadow trimmed |
+| Project files | godot/assets/art/env_crates.png |
+| Thumbnail | ![](gen/thumbs/ART-ENV-04/ART-ENV-04-20260930T161154Z-s9.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:39:08+00:00", "tool": "gen/art_process.py", "mapping": "gen/mappings/ART-ENV-04.json", "frame": "f0", "out": "godot/assets/art/env_crates.png", "index": 0, "mirror": false, "recolor": null, "trim_shadow": true, "post_squash_y": null, "box": null, "lamp_px": null, "frame_px": [40, 32], "palette": "environment", "supersample": 4, "outline": true}`
+
+**Prompt**
+
+```
+a small stack of two wooden crates and one wooden barrel for a night market, brown wood with dark bands, seen from a high three-quarter angle, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+## ART-ENV-05
+
+![ART-ENV-05 contact sheet](gen/rejected/ART-ENV-05-contact.png)
+
+### ART-ENV-05-20260930T161420Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:16:05+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 3, "width": 768, "height": 768, "steps": 4, "quantize": 4, "seconds": 105.3, "peak_gb": 16.45}` |
+| Storyboard panels | P1, P2 |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | Blue awning, pot, lantern and wheels - clearly a different stall from the red one. |
+| Manual edits | keyed white bg + grey shadow; reduced 4x-supersampled; locked to the environment palette (with #8A5A3C wood) in Lab space; 1-px outline; bottom-anchored; floor shadow trimmed |
+| Project files | godot/assets/art/env_noodle_cart.png |
+| Thumbnail | ![](gen/thumbs/ART-ENV-05/ART-ENV-05-20260930T161420Z-s3.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:39:08+00:00", "tool": "gen/art_process.py", "mapping": "gen/mappings/ART-ENV-05.json", "frame": "f0", "out": "godot/assets/art/env_noodle_cart.png", "index": 0, "mirror": false, "recolor": null, "trim_shadow": true, "post_squash_y": null, "box": null, "lamp_px": null, "frame_px": [64, 48], "palette": "environment", "supersample": 4, "outline": true}`
+
+**Prompt**
+
+```
+a small wooden noodle cart with a blue cloth awning, a steaming pot on top and one glowing paper lantern, night market food stall, seen from a high three-quarter angle, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-05-20260930T161605Z-s7
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:17:50+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 7, "width": 768, "height": 768, "steps": 4, "quantize": 4, "seconds": 105.0, "peak_gb": 16.46}` |
+| Storyboard panels | P1, P2 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | Brown body merges into one dark shape at 64x48. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-05/ART-ENV-05-20260930T161605Z-s7.png) |
+
+**Prompt**
+
+```
+a small wooden noodle cart with a blue cloth awning, a steaming pot on top and one glowing paper lantern, night market food stall, seen from a high three-quarter angle, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-05-20260930T161750Z-s9
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:19:33+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 9, "width": 768, "height": 768, "steps": 4, "quantize": 4, "seconds": 102.3, "peak_gb": 16.46}` |
+| Storyboard panels | P1, P2 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | Wide cart loses its awning shape; a floor-shadow line remains. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-05/ART-ENV-05-20260930T161750Z-s9.png) |
+
+**Prompt**
+
+```
+a small wooden noodle cart with a blue cloth awning, a steaming pot on top and one glowing paper lantern, night market food stall, seen from a high three-quarter angle, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+## ART-ENV-06
+
+![ART-ENV-06 contact sheet](gen/rejected/ART-ENV-06-contact.png)
+
+### ART-ENV-06-20260930T161937Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:21:04+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 3, "width": 768, "height": 512, "steps": 4, "quantize": 4, "seconds": 87.8, "peak_gb": 14.18}` |
+| Storyboard panels | P2, P3, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | First batch: the prompt said 'on dark cobblestones', so FLUX painted the stones too; the white-background keying failed and the puddle became a dark or pale blob at 32x16. Prompt rewritten for the second batch. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-06/ART-ENV-06-20260930T161937Z-s3.png) |
+
+**Prompt**
+
+```
+a single shallow rain puddle on dark cobblestones seen from directly above, dark blue water with a small warm golden reflection of a lantern, flat oval shape, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-06-20260930T162104Z-s7
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:22:40+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 7, "width": 768, "height": 512, "steps": 4, "quantize": 4, "seconds": 95.9, "peak_gb": 14.18}` |
+| Storyboard panels | P2, P3, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | First batch: the prompt said 'on dark cobblestones', so FLUX painted the stones too; the white-background keying failed and the puddle became a dark or pale blob at 32x16. Prompt rewritten for the second batch. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-06/ART-ENV-06-20260930T162104Z-s7.png) |
+
+**Prompt**
+
+```
+a single shallow rain puddle on dark cobblestones seen from directly above, dark blue water with a small warm golden reflection of a lantern, flat oval shape, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-06-20260930T162240Z-s9
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:23:58+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 9, "width": 768, "height": 512, "steps": 4, "quantize": 4, "seconds": 77.9, "peak_gb": 14.18}` |
+| Storyboard panels | P2, P3, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | First batch: the prompt said 'on dark cobblestones', so FLUX painted the stones too; the white-background keying failed and the puddle became a dark or pale blob at 32x16. Prompt rewritten for the second batch. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-06/ART-ENV-06-20260930T162240Z-s9.png) |
+
+**Prompt**
+
+```
+a single shallow rain puddle on dark cobblestones seen from directly above, dark blue water with a small warm golden reflection of a lantern, flat oval shape, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-06-20260930T162823Z-s11
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:29:16+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 11, "width": 768, "height": 512, "steps": 4, "quantize": 4, "seconds": 53.1, "peak_gb": 14.18}` |
+| Storyboard panels | P2, P3, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | Second batch: a lighter rim, but no reflection left at 32x16. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-06/ART-ENV-06-20260930T162823Z-s11.png) |
+
+**Prompt**
+
+```
+a single small shallow rain puddle seen from directly above, isolated on a plain flat white background, dark blue water with a thin lighter blue rim and one small warm golden reflection spot, flat oval shape, 16-bit pixel art video game sprite, crisp hard-edged square pixels, flat 2D colours, no cobblestones, no ground, no 3D rendering, no shading, no gradients, no text, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-06-20260930T162916Z-s23
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:30:13+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 23, "width": 768, "height": 512, "steps": 4, "quantize": 4, "seconds": 57.2, "peak_gb": 14.18}` |
+| Storyboard panels | P2, P3, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | Second batch: a plain blob with no rim or reflection. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-06/ART-ENV-06-20260930T162916Z-s23.png) |
+
+**Prompt**
+
+```
+a single small shallow rain puddle seen from directly above, isolated on a plain flat white background, dark blue water with a thin lighter blue rim and one small warm golden reflection spot, flat oval shape, 16-bit pixel art video game sprite, crisp hard-edged square pixels, flat 2D colours, no cobblestones, no ground, no 3D rendering, no shading, no gradients, no text, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-06-20260930T163013Z-s37
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:31:28+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 37, "width": 768, "height": 512, "steps": 4, "quantize": 4, "seconds": 74.9, "peak_gb": 14.18}` |
+| Storyboard panels | P2, P3, P8 |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | Second batch: an isolated puddle whose golden lantern reflection and pale rim survive at 32x16. |
+| Manual edits | keyed white bg + grey shadow; reduced 4x-supersampled; locked to the environment palette (with #8A5A3C wood) in Lab space; no outline (a ground decal); drawn at 55% opacity in game so it adds texture without competing with the courier and gems |
+| Project files | godot/assets/art/env_puddle.png |
+| Thumbnail | ![](gen/thumbs/ART-ENV-06/ART-ENV-06-20260930T163013Z-s37.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:39:08+00:00", "tool": "gen/art_process.py", "mapping": "gen/mappings/ART-ENV-06.json", "frame": "f0", "out": "godot/assets/art/env_puddle.png", "index": 0, "mirror": false, "recolor": null, "trim_shadow": false, "post_squash_y": null, "box": null, "lamp_px": null, "frame_px": [32, 16], "palette": "environment", "supersample": 4, "outline": false}`
+
+**Prompt**
+
+```
+a single small shallow rain puddle seen from directly above, isolated on a plain flat white background, dark blue water with a thin lighter blue rim and one small warm golden reflection spot, flat oval shape, 16-bit pixel art video game sprite, crisp hard-edged square pixels, flat 2D colours, no cobblestones, no ground, no 3D rendering, no shading, no gradients, no text, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+## ART-ENV-07
+
+![ART-ENV-07 contact sheet](gen/rejected/ART-ENV-07-contact.png)
+
+### ART-ENV-07-20260930T162403Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:25:03+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 3, "width": 512, "height": 512, "steps": 4, "quantize": 4, "seconds": 59.9, "peak_gb": 12.75}` |
+| Storyboard panels | P2, P3, P8 |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | Red-orange leaves with a gold fleck read at 16 px. |
+| Manual edits | keyed white bg + grey shadow; reduced 4x-supersampled; locked to the environment palette (with #8A5A3C wood) in Lab space; 1-px outline; drawn at 55% opacity in game (it was brighter than the courier's body) |
+| Project files | godot/assets/art/env_leaves.png |
+| Thumbnail | ![](gen/thumbs/ART-ENV-07/ART-ENV-07-20260930T162403Z-s3.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:39:08+00:00", "tool": "gen/art_process.py", "mapping": "gen/mappings/ART-ENV-07.json", "frame": "f0", "out": "godot/assets/art/env_leaves.png", "index": 0, "mirror": false, "recolor": null, "trim_shadow": false, "post_squash_y": null, "box": null, "lamp_px": null, "frame_px": [16, 16], "palette": "environment", "supersample": 4, "outline": true}`
+
+**Prompt**
+
+```
+a small cluster of three fallen autumn leaves seen from directly above, muted brown and dark red leaves, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-07-20260930T162503Z-s7
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:25:53+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 7, "width": 512, "height": 512, "steps": 4, "quantize": 4, "seconds": 50.8, "peak_gb": 12.75}` |
+| Storyboard panels | P2, P3, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | Five leaves become one red blotch at 16 px. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-07/ART-ENV-07-20260930T162503Z-s7.png) |
+
+**Prompt**
+
+```
+a small cluster of three fallen autumn leaves seen from directly above, muted brown and dark red leaves, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
+### ART-ENV-07-20260930T162553Z-s9
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:26:55+00:00 |
+| Model / version | black-forest-labs/FLUX.1-schnell / mflux 0.20.0 (Python API); 4-bit copy saved locally with mflux-save from FLUX.1-schnell @ 741f7c3 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction |
+| Settings | `{"seed": 9, "width": 512, "height": 512, "steps": 4, "quantize": 4, "seconds": 61.4, "peak_gb": 12.75}` |
+| Storyboard panels | P2, P3, P8 |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:38:58+00:00 |
+| Reason | Two dull leaves read as a smudge at 16 px. |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/ART-ENV-07/ART-ENV-07-20260930T162553Z-s9.png) |
+
+**Prompt**
+
+```
+a small cluster of three fallen autumn leaves seen from directly above, muted brown and dark red leaves, 16-bit pixel art video game sprite, plain flat white background, crisp hard-edged square pixels, flat 2D colours, 1-pixel dark outline, no 3D rendering, no shading, no gradients, no anti-aliasing, no text, no letters, no watermark
+```
+
+**Negative prompt**
+
+```
+N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt for it. Exclusions (3D shading, gradients, text) are written into the positive prompt.
+```
+
 ## ART-FX-01
 
 ![ART-FX-01 contact sheet](gen/rejected/ART-FX-01-contact.png)
@@ -1803,5 +2347,607 @@ brighter layer for the same cozy night market video game loop, 96 bpm, soft pluc
 
 ```
 N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are in the positive prompt.
+```
+
+## SFX-01
+
+### SFX-01-20260930T025240Z-s1
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T02:57:09+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 1, "duration_s": 0.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 268.6}` |
+| Storyboard panels | P3 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-01/SFX-01-20260930T025240Z-s1.png) |
+
+**Prompt**
+
+```
+a single soft glassy pop of a small moth bursting into sparks, short, warm, dry, video game sound effect
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-01-20260930T025755Z-s2
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:03:18+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 2, "duration_s": 0.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 323.3}` |
+| Storyboard panels | P3 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-01/SFX-01-20260930T025755Z-s2.png) |
+
+**Prompt**
+
+```
+a single soft glassy pop of a small moth bursting into sparks, short, warm, dry, video game sound effect
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-01-20260930T030318Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:09:13+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 3, "duration_s": 0.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 355.4}` |
+| Storyboard panels | P3 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-01/SFX-01-20260930T030318Z-s3.png) |
+
+**Prompt**
+
+```
+a single soft glassy pop of a small moth bursting into sparks, short, warm, dry, video game sound effect
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+## SFX-02
+
+### SFX-02-20260930T030924Z-s1
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:15:02+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 1, "duration_s": 0.4, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 338.1}` |
+| Storyboard panels | P3 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-02/SFX-02-20260930T030924Z-s1.png) |
+
+**Prompt**
+
+```
+a single tiny bright bell-like chime of picking up a drop of oil, short, soft attack, video game sound effect
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-02-20260930T031502Z-s2
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:20:44+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 2, "duration_s": 0.4, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 341.8}` |
+| Storyboard panels | P3 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-02/SFX-02-20260930T031502Z-s2.png) |
+
+**Prompt**
+
+```
+a single tiny bright bell-like chime of picking up a drop of oil, short, soft attack, video game sound effect
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-02-20260930T032044Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:26:33+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 3, "duration_s": 0.4, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 348.7}` |
+| Storyboard panels | P3 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-02/SFX-02-20260930T032044Z-s3.png) |
+
+**Prompt**
+
+```
+a single tiny bright bell-like chime of picking up a drop of oil, short, soft attack, video game sound effect
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+## SFX-03
+
+### SFX-03-20260930T032646Z-s1
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:32:13+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 1, "duration_s": 0.6, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 327.0}` |
+| Storyboard panels | P5 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-03/SFX-03-20260930T032646Z-s1.png) |
+
+**Prompt**
+
+```
+a single dull muffled thud with a low glass rattle, being hit, short, no voice, video game sound effect
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-03-20260930T033213Z-s2
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:37:33+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 2, "duration_s": 0.6, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 320.0}` |
+| Storyboard panels | P5 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-03/SFX-03-20260930T033213Z-s2.png) |
+
+**Prompt**
+
+```
+a single dull muffled thud with a low glass rattle, being hit, short, no voice, video game sound effect
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-03-20260930T033733Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:42:40+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 3, "duration_s": 0.6, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 307.1}` |
+| Storyboard panels | P5 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-03/SFX-03-20260930T033733Z-s3.png) |
+
+**Prompt**
+
+```
+a single dull muffled thud with a low glass rattle, being hit, short, no voice, video game sound effect
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+## SFX-04
+
+### SFX-04-20260930T034251Z-s1
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:48:06+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 1, "duration_s": 1.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 315.0}` |
+| Storyboard panels | P4 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-04/SFX-04-20260930T034251Z-s1.png) |
+
+**Prompt**
+
+```
+a short rising warm three-note chime arpeggio made of glass bells, uplifting, video game level up sound
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-04-20260930T034806Z-s2
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:53:24+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 2, "duration_s": 1.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 318.0}` |
+| Storyboard panels | P4 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-04/SFX-04-20260930T034806Z-s2.png) |
+
+**Prompt**
+
+```
+a short rising warm three-note chime arpeggio made of glass bells, uplifting, video game level up sound
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-04-20260930T035324Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T03:58:37+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 3, "duration_s": 1.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 313.2}` |
+| Storyboard panels | P4 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-04/SFX-04-20260930T035324Z-s3.png) |
+
+**Prompt**
+
+```
+a short rising warm three-note chime arpeggio made of glass bells, uplifting, video game level up sound
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+## SFX-05
+
+### SFX-05-20260930T035848Z-s1
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T04:04:20+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 1, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 331.5}` |
+| Storyboard panels | P6 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-05/SFX-05-20260930T035848Z-s1.png) |
+
+**Prompt**
+
+```
+a swelling whoosh of warm light building into a bright shimmering burst, magical, video game power up
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-05-20260930T040420Z-s2
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T04:09:54+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 2, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 334.6}` |
+| Storyboard panels | P6 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-05/SFX-05-20260930T040420Z-s2.png) |
+
+**Prompt**
+
+```
+a swelling whoosh of warm light building into a bright shimmering burst, magical, video game power up
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-05-20260930T040954Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T04:14:59+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 3, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 304.4}` |
+| Storyboard panels | P6 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-05/SFX-05-20260930T040954Z-s3.png) |
+
+**Prompt**
+
+```
+a swelling whoosh of warm light building into a bright shimmering burst, magical, video game power up
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+## SFX-06a
+
+### SFX-06a-20260930T041510Z-s1
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T04:20:23+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 1, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 313.5}` |
+| Storyboard panels | P7 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-06a/SFX-06a-20260930T041510Z-s1.png) |
+
+**Prompt**
+
+```
+a lamp flame guttering out, soft descending glassy tones fading to silence, sad, gentle
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-06a-20260930T042023Z-s2
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T13:55:54+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 2, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 34530.9}` |
+| Storyboard panels | P7 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-06a/SFX-06a-20260930T042023Z-s2.png) |
+
+**Prompt**
+
+```
+a lamp flame guttering out, soft descending glassy tones fading to silence, sad, gentle
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-06a-20260930T135554Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T15:51:14+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 3, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 6919.3}` |
+| Storyboard panels | P7 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-06a/SFX-06a-20260930T135554Z-s3.png) |
+
+**Prompt**
+
+```
+a lamp flame guttering out, soft descending glassy tones fading to silence, sad, gentle
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+## SFX-06b
+
+### SFX-06b-20260930T155126Z-s1
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T15:55:52+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 1, "duration_s": 4.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 265.3}` |
+| Storyboard panels | P9 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-06b/SFX-06b-20260930T155126Z-s1.png) |
+
+**Prompt**
+
+```
+a gentle warm triumphant flourish of glass bells and soft chimes, fog clearing, calm resolution
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-06b-20260930T155552Z-s2
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:00:22+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 2, "duration_s": 4.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 269.8}` |
+| Storyboard panels | P9 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-06b/SFX-06b-20260930T155552Z-s2.png) |
+
+**Prompt**
+
+```
+a gentle warm triumphant flourish of glass bells and soft chimes, fog clearing, calm resolution
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
+```
+
+### SFX-06b-20260930T160022Z-s3
+
+| Field | Value |
+|---|---|
+| Created (UTC) | 2026-09-30T16:05:17+00:00 |
+| Model / version | stabilityai/stable-audio-open-1.0 / snapshot f21265c1e2710b3bd2386596943f0007f55f802e, diffusers 0.40.0 |
+| Runtime | local — arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB) |
+| Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
+| Settings | `{"seed": 3, "duration_s": 4.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 295.1}` |
+| Storyboard panels | P9 |
+| Decision | **PENDING** by — at — |
+| Reason | — |
+| Manual edits | — |
+| Project files | — |
+| Thumbnail | ![](gen/thumbs/SFX-06b/SFX-06b-20260930T160022Z-s3.png) |
+
+**Prompt**
+
+```
+a gentle warm triumphant flourish of glass bells and soft chimes, fog clearing, calm resolution
+```
+
+**Negative prompt**
+
+```
+music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
 ```
 

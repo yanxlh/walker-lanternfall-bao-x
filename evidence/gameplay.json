@@ -1,5 +1,5 @@
 {
-  "checks": 62,
+  "checks": 63,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -164,7 +164,7 @@
           "cart": 4,
           "crates": 15,
           "leaves": 55,
-          "post": 28,
+          "post": 29,
           "puddle": 39,
           "stall": 11
         }
@@ -193,15 +193,15 @@
     {
       "id": "map-has-solids",
       "observed": {
-        "solids": 58
+        "solids": 59
       },
       "status": "PASS"
     },
     {
       "id": "props-block-the-courier",
       "observed": {
-        "box": "[P: (458.6938, -502.4509), S: (6.0, 40.0)]",
-        "courier": "(448.6938, -482.4509)"
+        "box": "[P: (455.6938, -500.4509), S: (4.0, 40.0)]",
+        "courier": "(445.6938, -480.4509)"
       },
       "status": "PASS"
     },
@@ -220,7 +220,7 @@
     {
       "id": "enemies-pass-through-props",
       "observed": {
-        "wraith": "(461.6141, -479.7881)"
+        "wraith": "(457.6878, -477.7868)"
       },
       "status": "PASS"
     },
@@ -228,8 +228,17 @@
       "id": "solid-boxes-match-sprites",
       "observed": {
         "from_sprites": {
+          "cart": "[P: (-12.0, -19.0), S: (24.0, 41.0)]",
+          "crates": "[P: (-17.0, -12.0), S: (34.0, 26.0)]",
           "stall": "[P: (-19.0, -18.0), S: (39.0, 39.0)]"
         }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "decals-are-subtle",
+      "observed": {
+        "alpha": 0.55
       },
       "status": "PASS"
     },
@@ -494,7 +503,7 @@
     {
       "id": "camera-menu-push-in",
       "observed": {
-        "after": 0.820926904678345,
+        "after": 0.82092559337616,
         "start": 0.800000011920929
       },
       "status": "PASS"
@@ -507,12 +516,12 @@
     {
       "id": "fog-lifts-on-win",
       "observed": {
-        "lift": 0.217464965455962,
-        "zoom": 0.960856318473816
+        "lift": 0.218897504124824,
+        "zoom": 0.960598468780518
       },
       "status": "PASS"
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-09-30T04:07:31"
+  "utc": "2026-09-30T16:39:43"
 }

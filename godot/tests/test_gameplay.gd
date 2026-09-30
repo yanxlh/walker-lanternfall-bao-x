@@ -158,6 +158,8 @@ func run() -> void:
 		measured[kind] = str(expect)
 		synced = synced and fixed.position.distance_to(expect.position) <= 1.0 and fixed.size.distance_to(expect.size) <= 1.0
 	check("solid-boxes-match-sprites", synced, {"from_sprites": measured})
+	# Bao, 2026-09-30: puddles and leaves drawn half-transparent so they never outshine the courier or the gems
+	check("decals-are-subtle", ground.DECAL_ALPHA >= 0.4 and ground.DECAL_ALPHA <= 0.6, {"alpha": ground.DECAL_ALPHA})
 	var again = Ground.new()
 	again.build()
 	check("map-layout-deterministic", again.props == ground.props)

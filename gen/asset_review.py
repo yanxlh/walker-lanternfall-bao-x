@@ -17,7 +17,7 @@ from figures import find_figures  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 ART = ROOT / "godot" / "assets" / "art"
-OUTLINE = {"ART-ENV-01": False, "ART-FX-03": False, "ART-FX-01": False}
+OUTLINE = {"ART-ENV-01": False, "ART-FX-03": False, "ART-FX-01": False, "ART-ENV-06": False}
 
 
 def frames_for(raw: Image.Image, n: int) -> list:

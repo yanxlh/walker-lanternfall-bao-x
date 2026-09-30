@@ -119,3 +119,7 @@ Not one of the five predictions above — a design problem the greybox exposed b
 | ART-ENV-07 | Fallen leaves (ground decal) | `godot/assets/art/env_leaves.png` | 16×16 | P2, P3, P8 |
 
 Environment palette: `#8A5A3C` added (wood). No new sounds; the event→sound map and music rules are unchanged. The new props are decoration only, so prediction 4 (readability) is re-checked with the enemy-vs-ground contrast check after they are in.
+
+### R5 · 2026-09-30 · The five props as generated
+
+All five generated with FLUX.1-schnell and accepted by Bao from 3 candidates each (the puddle from a second batch after its prompt was rewritten — the first asked for "dark cobblestones" and FLUX painted them). Collision boxes are measured from the sprites (`SOLID_BOX` in `ground.gd`, checked by `solid-boxes-match-sprites`); the noodle cart is narrower than planned (24 × 41 px solid). Puddles and leaves are drawn at 55 % opacity so that ground decals stay darker than the courier and the pickups (CONCEPT value rule).
