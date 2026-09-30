@@ -17,6 +17,13 @@ def rgb(h: str) -> tuple:
     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
 
+def luminance(path: Path) -> float:
+    a = np.asarray(Image.open(path).convert("RGBA")).astype(float) / 255
+    opaque = a[..., 3] > 0.5
+    lin = np.where(a[..., :3] <= 0.04045, a[..., :3] / 12.92, ((a[..., :3] + 0.055) / 1.055) ** 2.4)
+    return float((lin[opaque] @ np.array([0.2126, 0.7152, 0.0722])).mean())
+
+
 def main() -> int:
     allow_missing = "--allow-missing" in sys.argv
     manifest = json.loads((ART / "manifest.json").read_text())
@@ -42,6 +49,17 @@ def main() -> int:
         ok_all = ok_all and ok
         r.update(status="PASS" if ok else "FAIL", size=list(im.size), want=list(want), bad_alpha=bad_alpha, bad_color=bad_color, opaque=opaque)
         results.append(r)
+    # prediction 4: enemies must stand out from the ground (moth gated; wraith recorded for the muted playtest)
+    ground = ART / "env_ground_tile.png"
+    if ground.exists():
+        g = luminance(ground)
+        for name, need in (("enemy_moth.png", 0.25), ("enemy_wraith.png", None), ("pc_sheet.png", None)):
+            if (ART / name).exists():
+                diff = abs(luminance(ART / name) - g)
+                ok = need is None or diff >= need
+                ok_all = ok_all and ok
+                results.append({"file": name, "id": "contrast-vs-ground", "status": "PASS" if ok else "FAIL",
+                                "luminance_diff": round(diff, 3), "required": need})
     (ROOT / "evidence").mkdir(exist_ok=True)
     (ROOT / "evidence" / "palette-check.json").write_text(json.dumps(results, indent=2) + "\n")
     for r in results:

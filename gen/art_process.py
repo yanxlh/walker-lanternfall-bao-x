@@ -108,6 +108,36 @@ def lock_palette(im: Image.Image, palette, outline_rgb=None, ink_below_l: float 
     return Image.fromarray(out)
 
 
+def trim_shadow(im: Image.Image, band: float = 0.12) -> Image.Image:
+    """Drop the pale, low-saturation cast shadow in the bottom band of the figure's box (keeps eyes/highlights higher up)."""
+    a = np.array(im)
+    bbox = im.getbbox()
+    if bbox is None:
+        return im
+    x0, y0, x1, y1 = bbox
+    top = int(y1 - (y1 - y0) * band)
+    rgb_ = a[top:y1, x0:x1, :3].astype(np.float32)
+    mx, mn = rgb_.max(-1), rgb_.min(-1)
+    pale = (mx > 140) & ((mx - mn) < 0.22 * np.maximum(mx, 1))
+    a[top:y1, x0:x1, 3] = np.where(pale, 0, a[top:y1, x0:x1, 3])
+    return Image.fromarray(a)
+
+
+def post_squash(frame: Image.Image, sy: float) -> Image.Image:
+    """Nearest-neighbour vertical squash of a finished frame, re-centred (a cheap wing-beat / breathing frame)."""
+    w, h = frame.size
+    bbox = frame.getbbox()
+    if bbox is None:
+        return frame
+    part = frame.crop(bbox)
+    nh = max(1, round(part.height * sy))
+    part = part.resize((part.width, nh), Image.NEAREST)
+    out = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    cy = (bbox[1] + bbox[3]) // 2
+    out.alpha_composite(part, (bbox[0], max(0, min(h - nh, cy - nh // 2))))
+    return out
+
+
 def is_lamp(rgb: np.ndarray) -> np.ndarray:
     """Warm gold/yellow pixels: the lamp housing and lens."""
     r, g, b = rgb[..., 0].astype(int), rgb[..., 1].astype(int), rgb[..., 2].astype(int)
@@ -172,6 +202,8 @@ def main():
         else:
             cell = src
         cell = key_background(cell, spec.get("bg_threshold", 235))
+        if f.get("trim_shadow"):
+            cell = trim_shadow(cell)
         if f.get("mirror"):
             cell = cell.transpose(Image.FLIP_LEFT_RIGHT)
         k = spec.get("supersample", 4)
@@ -181,16 +213,20 @@ def main():
         else:
             fill = spec.get("fill", 0.95) * (fw - 2) / fw if spec.get("outline") else spec.get("fill", 0.95)
             cell = fit(cell, fw * k, fh * k, fill, spec.get("anchor", "bottom"))
+            report.append({"name": f.get("name"), "lamp_px": None})
         locked = lock_palette(cell, palette, rgb("#14121C") if spec.get("outline") else None,
                               spec.get("ink_below_l", 14.0), supersample=k)
         if f.get("recolor"):
             locked = recolor(locked, f["recolor"])
+        if f.get("post_squash_y"):
+            locked = post_squash(locked, f["post_squash_y"])
         frames.append(locked)
         if f.get("run") and spec.get("asset_id"):
             from common import log_processing
             log_processing(f"gen/log/{spec['asset_id']}/{f['run']}.json", {
                 "tool": "gen/art_process.py", "mapping": sys.argv[1], "frame": f.get("name"), "out": spec["out"],
                 "index": len(frames) - 1, "mirror": bool(f.get("mirror")), "recolor": f.get("recolor"),
+                "trim_shadow": bool(f.get("trim_shadow")), "post_squash_y": f.get("post_squash_y"), "box": f.get("box"),
                 "lamp_px": report[-1]["lamp_px"] if report else None, "frame_px": spec["frame"],
                 "palette": spec["palette"], "supersample": spec.get("supersample", 4), "outline": bool(spec.get("outline"))})
     strip = Image.new("RGBA", (fw * len(frames), fh), (0, 0, 0, 0))
