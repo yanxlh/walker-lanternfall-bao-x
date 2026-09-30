@@ -144,6 +144,31 @@
     "opaque": 62
   },
   {
+    "file": "env_lantern_post.png",
+    "id": "ART-ENV-03",
+    "status": "MISSING"
+  },
+  {
+    "file": "env_crates.png",
+    "id": "ART-ENV-04",
+    "status": "MISSING"
+  },
+  {
+    "file": "env_noodle_cart.png",
+    "id": "ART-ENV-05",
+    "status": "MISSING"
+  },
+  {
+    "file": "env_puddle.png",
+    "id": "ART-ENV-06",
+    "status": "MISSING"
+  },
+  {
+    "file": "env_leaves.png",
+    "id": "ART-ENV-07",
+    "status": "MISSING"
+  },
+  {
     "file": "enemy_moth.png",
     "id": "contrast-vs-ground",
     "status": "PASS",

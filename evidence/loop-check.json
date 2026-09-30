@@ -1,6 +1,6 @@
 [
   {
-    "file": "../godot/assets/music/mus_01_night_market.ogg",
+    "file": "godot/assets/music/mus_01_night_market.ogg",
     "frames": 882176,
     "sr": 44100,
     "seconds": 20.004,
@@ -11,7 +11,7 @@
     "status": "PASS"
   },
   {
-    "file": "../godot/assets/music/mus_02_sunflare_layer.ogg",
+    "file": "godot/assets/music/mus_02_sunflare_layer.ogg",
     "frames": 882176,
     "sr": 44100,
     "seconds": 20.004,
