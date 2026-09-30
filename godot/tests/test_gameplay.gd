@@ -4,6 +4,7 @@ const GS = preload("res://game/game_state.gd")
 const Tuning = preload("res://features/tuning.gd")
 const Art = preload("res://features/art.gd")
 const BeamShot = preload("res://features/weapons/beam_shot.gd")
+const Ground = preload("res://features/world/ground.gd")
 var game
 
 func fresh(seed_value: int = 1, no_spawn: bool = true) -> void:
@@ -76,6 +77,26 @@ func run() -> void:
 	game.test_axis = Vector2.RIGHT
 	game.step_ticks(60)
 	check("gem-flies-and-collects", picked[0] == 1 and game.prog.xp == 1 and game.gems.is_empty(), {"xp": game.prog.xp})
+
+	# the market map (Bao, 2026-09-29: "整体地图再丰富一点材料"): streets of stalls and carts, lantern posts,
+	# crates, puddles and leaves; decoration only, deterministic, clear of the spawn plaza, inside the arena
+	var ground = game.ground
+	var kinds := {}
+	var in_arena := true
+	var plaza_clear := true
+	for p in ground.props:
+		kinds[p["kind"]] = int(kinds.get(p["kind"], 0)) + 1
+		in_arena = in_arena and Tuning.ARENA.grow(-24).has_point(p["pos"])
+		plaza_clear = plaza_clear and p["pos"].length() > ground.PLAZA_RADIUS
+	var every_kind := true
+	for k in ["stall", "cart", "post", "crates", "puddle", "leaves"]:
+		every_kind = every_kind and int(kinds.get(k, 0)) >= 3
+	check("map-has-every-prop-kind", every_kind, {"counts": kinds})
+	check("map-props-inside-arena-and-clear-of-plaza", in_arena and plaza_clear)
+	var again = Ground.new()
+	again.build()
+	check("map-layout-deterministic", again.props == ground.props)
+	again.free()
 
 	# bullets hit what you see (Bao, playtest 2026-09-29: "子弹打到怪物之后要求消失")
 	await fresh()

@@ -1,5 +1,5 @@
 {
-  "checks": 48,
+  "checks": 51,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -131,6 +131,30 @@
       "observed": {
         "xp": 1
       },
+      "status": "PASS"
+    },
+    {
+      "id": "map-has-every-prop-kind",
+      "observed": {
+        "counts": {
+          "cart": 19,
+          "crates": 22,
+          "leaves": 53,
+          "post": 40,
+          "puddle": 32,
+          "stall": 21
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "map-props-inside-arena-and-clear-of-plaza",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "map-layout-deterministic",
+      "observed": {},
       "status": "PASS"
     },
     {
@@ -390,7 +414,7 @@
     {
       "id": "camera-menu-push-in",
       "observed": {
-        "after": 0.820821523666382,
+        "after": 0.820920705795288,
         "start": 0.800000011920929
       },
       "status": "PASS"
@@ -403,12 +427,12 @@
     {
       "id": "fog-lifts-on-win",
       "observed": {
-        "lift": 0.220307445039092,
-        "zoom": 0.960344672203064
+        "lift": 0.216842845673205,
+        "zoom": 0.960968315601349
       },
       "status": "PASS"
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-09-30T03:30:42"
+  "utc": "2026-09-30T03:32:55"
 }

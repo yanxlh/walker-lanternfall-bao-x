@@ -31,6 +31,7 @@ var prog
 var rng := RandomNumberGenerator.new()
 var spawner = Spawner.new()
 var player
+var ground
 var actors: Node2D
 var fx
 var camera
@@ -54,7 +55,8 @@ var last_dir := Vector2.RIGHT
 
 func _ready() -> void:
 	_ensure_inputs()
-	add_child(Ground.new())
+	ground = Ground.new()
+	add_child(ground)
 	actors = Node2D.new()
 	add_child(actors)
 	player = PlayerScript.new()
