@@ -3,7 +3,7 @@
   "runtime": "local \u2014 arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB)",
   "decision": {
     "verdict": "reject",
-    "reason": "Hiss: 96% of its energy above 6 kHz. Recommended by Claude from the measurements; Bao accepted all seven recommendations (\"\u90fd\u6309\u63a8\u8350\").",
+    "reason": "Hiss: 96% of its energy above 6 kHz. Not chosen: Bao listened to all three candidates (\"\u662f\u542c\u540e\u9009\u62e9\u7684\").",
     "edits": "",
     "final_paths": [],
     "decided_by": "Bao Xing",
