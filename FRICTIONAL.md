@@ -80,3 +80,28 @@ A greybox that plays like the design says — you only move, and the light does 
 - **MUS-02:** I listened to three base + layer mixes and chose the first — "因为有种远古的感觉".
 - The wraith's low contrast and the courier's small size are left for my muted playtest rather than changed blind (Claude also left the hurtbox size for that playtest).
 - The storyboard's camera moves (push-in, tilt on a hit, zoom-out on Sunflare, the fog lifting at 3:00) were missing from the build; I asked for them to be added.
+
+---
+
+## 2026-09-30 (Wed) — sounds, the fuller market, and a report
+
+**From the logs**
+- The overnight sound batch stalled: the Mac slept, and one Stable Audio Open run took 9.5 hours of wall time for about a minute of CPU. It resumed in the morning; all 21 candidates (7 sounds × 3 seeds) finished.
+- Each sound was trimmed and normalised, measured (brightness, energy above 6 kHz, attack), and the three candidates played back to back in one file per sound. I listened to all seven files and took the recommended candidate each time, e.g. SFX-01 "3 不刺耳", SFX-02 "1 干净", SFX-03 "3 听着像受伤".
+- The five map props (lantern post, crates, noodle cart, puddle, leaves): 3 candidates each, previewed in a copy of the game. The puddle's first batch was unusable — the prompt said "on dark cobblestones" and FLUX painted the stones, so the background could not be removed — and was regenerated with a new prompt. In the in-game preview the leaves were brighter than the courier's body, so puddles and leaves are now drawn at 55 % opacity.
+- The map became 14 scattered clusters instead of two streets; making it random exposed that the old layout had crates sitting inside stalls. Collision boxes are now measured from each sprite.
+- With every asset in, the final repository audit reports 0 problems; all 117 automated checks pass with the real sounds loaded, including the run that proves the game plays identically with sound removed.
+- TEST-REPORT written as an interim report; the sound-on and muted playtests are still to do.
+
+**What I wanted**
+
+To finish the assets: sounds I would actually want to hear hundreds of times in a run, and a market that looks lived-in and broken up rather than laid out on a grid.
+
+**What came back**
+
+Most of the sound candidates were far brighter than the concept's "warm, soft" direction — several had most of their energy above 6 kHz, which is exactly the hiss I disliked in the music. The puddle prompt drew the ground along with the puddle. Decorations that looked fine on their own competed with the courier once they were in the scene.
+
+**What I decided, and why**
+
+- For every sound I listened to the three candidates and chose the one that was not harsh and fit its event: "3 不刺耳", "1 干净", "3 听着像受伤".
+- I accepted the recommended prop for each of the five, with the puddle taken from the rewritten second batch, and asked for puddles and leaves to be half-transparent so the ground stays darker than the courier and the gems.
