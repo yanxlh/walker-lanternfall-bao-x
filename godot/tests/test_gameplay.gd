@@ -111,6 +111,29 @@ func run() -> void:
 		every_kind = every_kind and int(kinds.get(k, 0)) >= 3
 	check("map-has-every-prop-kind", every_kind, {"counts": kinds})
 	check("map-props-inside-arena-and-clear-of-plaza", in_arena and plaza_clear)
+	# solid props block the courier (Bao, 2026-09-29: "路灯这些有阻挡效果"); decals and enemies do not
+	check("map-has-solids", ground.solids.size() >= 60, {"solids": ground.solids.size()})
+	var box: Rect2 = ground.solids[0]
+	game.player.position = Vector2(box.position.x - 30, box.get_center().y)
+	game.test_axis = Vector2.RIGHT
+	game.step_ticks(90)
+	var inside := Rect2(box.position - Vector2(Tuning.PLAYER_RADIUS, Tuning.PLAYER_RADIUS) * 0.9, box.size + Vector2(Tuning.PLAYER_RADIUS, Tuning.PLAYER_RADIUS) * 1.8).has_point(game.player.position)
+	check("props-block-the-courier", not inside and game.player.position.x < box.position.x, {"box": str(box), "courier": str(game.player.position)})
+	var before_y: float = game.player.position.y
+	game.test_axis = Vector2(1, 1).normalized()
+	game.step_ticks(30)
+	check("courier-slides-along-props", game.player.position.y > before_y + 10.0 and game.player.position.x < box.position.x, {"moved_y": game.player.position.y - before_y})
+	var puddle_pos: Vector2 = Vector2.ZERO
+	for p in ground.props:
+		if p["kind"] == "puddle":
+			puddle_pos = p["pos"]
+			break
+	check("decals-do-not-block", not ground.blocks(puddle_pos, Tuning.PLAYER_RADIUS) or _near_solid(ground, puddle_pos))
+	var ghost = game.spawn_enemy("wraith", box.get_center())
+	ghost.hp = 9999
+	game.step_ticks(5)
+	check("enemies-pass-through-props", box.grow(20).has_point(ghost.position), {"wraith": str(ghost.position)})
+
 	var again = Ground.new()
 	again.build()
 	check("map-layout-deterministic", again.props == ground.props)
@@ -339,5 +362,11 @@ func run() -> void:
 func _has(lines: PackedStringArray, needle: String) -> bool:
 	for l in lines:
 		if needle in l:
+			return true
+	return false
+
+func _near_solid(ground, p: Vector2) -> bool:
+	for r in ground.solids:
+		if r.grow(Tuning.PLAYER_RADIUS).has_point(p):
 			return true
 	return false

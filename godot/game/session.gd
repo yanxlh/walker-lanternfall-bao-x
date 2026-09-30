@@ -60,6 +60,7 @@ func _ready() -> void:
 	actors = Node2D.new()
 	add_child(actors)
 	player = PlayerScript.new()
+	player.blocker = ground
 	add_child(player)
 	fx = WeaponFx.new()
 	fx.session = self

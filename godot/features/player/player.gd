@@ -29,6 +29,8 @@ var walk_ticks := 0
 var cast_ticks := 0
 var empowered := false
 var show_collision := false
+## Anything with push_out(position, radius) -> Vector2 (the market ground); null = open field.
+var blocker
 
 func _ready() -> void:
 	z_index = 2
@@ -55,6 +57,8 @@ func step() -> void:
 	var axis := input_axis.limit_length(1.0)
 	position += (axis * speed + knock) / Tuning.TICK_HZ
 	knock = knock.move_toward(Vector2.ZERO, Tuning.KNOCKBACK_DECAY / Tuning.TICK_HZ)
+	if blocker:
+		position = blocker.push_out(position, Tuning.PLAYER_RADIUS)
 	var margin := Vector2(16, 16)
 	position = position.clamp(Tuning.ARENA.position + margin, Tuning.ARENA.end - margin)
 	if axis.x > Tuning.FACING_DEADZONE:

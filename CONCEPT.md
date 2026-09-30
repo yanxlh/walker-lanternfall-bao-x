@@ -104,3 +104,9 @@ More weapons and evolution recipes, a boss at the end of the fog, between-run pr
 - **Monsters over time** — "随着时间增加怪兽的血量也随时间按比例增加": a monster's HP is its base HP × (1 + 0.5 × whole minutes survived) at the moment it spawns (×1.5 from 1:00, ×2 from 2:00, ×2.5 at 3:00). A continuous curve was tried first: it made every moth need two Beam hits from the first second, and scripted bots died in 36–84 s; stepped per minute, a gem-collecting bot evolved at ~1:30 and survived 3:00 in 2 of 3 runs (`evidence/balance-probe-after-hp-growth.txt`).
 - **New cards** — "增加伤害和增加武器的攻击速度，人物吸取经验的范围，人物移动速度": **Hotter Flame** (+20% damage for every weapon) and **Quick Hands** (+12% attack speed for every weapon: Beam cooldown, moth spin and hit rate, Sunflare period), 5 levels each; **Magnet Satchel** (pickup range) and **Light Boots** (move speed, now +12 px/s per level) go from 2 to 5 levels. Cards show the level they would reach, e.g. "Quick Hands (4/5)".
 - **Verified by:** `test_gameplay.gd::enemy-hp-grows-with-time`, `damage-card-scales-weapons`, `haste-card-shortens-beam-cooldown`, `map-*`; `test_logic.gd::prog-new-passives-offered`, `prog-passive-caps`, `prog-damage-mult`, `prog-attack-rate-mult`, `prog-card-title-shows-level`.
+
+### R5 · 2026-09-29 · Solid props (Bao: "路灯这些有阻挡效果")
+
+- Lantern posts, stalls, noodle carts and crates now **block the courier**; the courier slides along their edges instead of sticking. The box is each sprite's opaque area inset by 2 px (a post blocks only at its pole), so what you bump into is what you see. Puddles and leaves stay walk-over decals.
+- **Enemies are not blocked** — moths fly over the stalls and fog-wraiths drift through them. This keeps the lore, avoids enemies jamming behind posts, and means props can corner you rather than shelter you.
+- **Verified by:** `test_gameplay.gd::map-has-solids`, `props-block-the-courier`, `courier-slides-along-props`, `decals-do-not-block`, `enemies-pass-through-props`.

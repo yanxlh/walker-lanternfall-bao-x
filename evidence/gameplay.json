@@ -1,5 +1,5 @@
 {
-  "checks": 54,
+  "checks": 59,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -177,6 +177,40 @@
       "status": "PASS"
     },
     {
+      "id": "map-has-solids",
+      "observed": {
+        "solids": 102
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "props-block-the-courier",
+      "observed": {
+        "box": "[P: (828.7316, -390.0), S: (39.0, 39.0)]",
+        "courier": "(818.7316, -370.5)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "courier-slides-along-props",
+      "observed": {
+        "moved_y": 32.8685607910156
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "decals-do-not-block",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "enemies-pass-through-props",
+      "observed": {
+        "wraith": "(847.0932, -368.0924)"
+      },
+      "status": "PASS"
+    },
+    {
       "id": "map-layout-deterministic",
       "observed": {},
       "status": "PASS"
@@ -328,16 +362,14 @@
       "observed": {
         "cards": [
           "pass_magnet",
-          "beam_pierce",
-          "pass_hp",
-          "beam_rate",
-          "pass_hp",
+          "pass_speed",
           "moth_new",
-          "pass_damage"
+          "pass_magnet",
+          "pass_haste"
         ],
-        "kills": 104,
-        "level": 8,
-        "seconds": 68,
+        "kills": 59,
+        "level": 6,
+        "seconds": 51,
         "state": "lost"
       },
       "status": "PASS"
@@ -437,7 +469,7 @@
     {
       "id": "camera-menu-push-in",
       "observed": {
-        "after": 0.821029841899872,
+        "after": 0.820971608161926,
         "start": 0.800000011920929
       },
       "status": "PASS"
@@ -450,12 +482,12 @@
     {
       "id": "fog-lifts-on-win",
       "observed": {
-        "lift": 0.216118100538979,
-        "zoom": 0.961098730564117
+        "lift": 0.218115753358583,
+        "zoom": 0.960739135742188
       },
       "status": "PASS"
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-09-30T03:36:19"
+  "utc": "2026-09-30T03:59:57"
 }
