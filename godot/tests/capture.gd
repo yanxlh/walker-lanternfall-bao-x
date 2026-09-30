@@ -19,6 +19,7 @@ func _main() -> void:
 	game.test_mode = true
 	game.test_no_spawn = true
 	root.add_child(game)
+	await shot("sb-P1")
 	game.start_run(21)
 	for p in game.player.POSES:
 		game.player.set_override(p)
@@ -52,6 +53,9 @@ func _main() -> void:
 	w2.hp = 9999
 	game.step_ticks(60)
 	await shot("sb-P7")
+	game.start_run(22)
+	game.step_ticks(2)
+	await shot("sb-P8")
 	game.start_run(22)
 	game.tick_count = Tuning.RUN_SECONDS * Tuning.TICK_HZ - 1
 	game.tick()

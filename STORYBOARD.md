@@ -118,4 +118,22 @@ Nine 16:9 greybox panels (1920 × 1080 SVG) drawn by `design/storyboard/make_pan
 
 ## Revisions
 
-_None yet._
+### R1 · 2026-09-29 · Storyboard vs the running game
+
+![storyboard vs game](design/storyboard/storyboard-vs-game.png)
+
+Left: the design-v1 panel (rasterised with Godot's SVG loader, which drops the panels' text labels). Right: the same moment captured from the game by `godot/tests/capture.gd` with the generated assets.
+
+| Panel | Matches | Differs, and why |
+|---|---|---|
+| P1 first look | title, "Enter / A to start", market stalls, courier portrait | static camera: the slow **push-in is not implemented**; stalls and courier are much smaller than drawn |
+| P2 run begins | centred courier, 0:00, HUD | the courier is ~20 px tall on a 360 px screen — far smaller than the panel suggests |
+| P3 core action | beam fires at the nearest enemy (CONCEPT R1), moth breaks, gem flies in | the beam aims at enemies, not along the arrow of travel as drawn |
+| P4 level up | dimmed field, three cards, cheering portrait bottom-left | — |
+| P5 hurt | red tint, knockback, HP bar | **no Dutch tilt** (the camera never rotates); the fog-wraith is nearly invisible on the cobbles (contrast 0.03 — CHANGE-BRIEF prediction 4) |
+| P6 evolution | banner, sunburst, enemies cleared into gems | **no zoom-out** |
+| P7 failure | defeat pose with the lamp out, result panel, "R / Y to retry" | — |
+| P8 retry | back to the P2 framing at 0:00 | — |
+| P9 end of run | "3:00 — The fog lifts", victory portrait, kills/level | the screen does **not** lighten ("fog pull-back" not implemented) |
+
+Camera moves were storyboard intentions for mood; the slice implements none of them. They are listed as known limitations and next steps rather than faked in the capture.
