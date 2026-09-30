@@ -1,20 +1,7 @@
 {
   "stage": "final",
-  "files_checked": 382,
-  "problems": [
-    "ART-ENV-03: missing file godot/assets/art/env_lantern_post.png",
-    "ART-ENV-04: missing file godot/assets/art/env_crates.png",
-    "ART-ENV-05: missing file godot/assets/art/env_noodle_cart.png",
-    "ART-ENV-06: missing file godot/assets/art/env_puddle.png",
-    "ART-ENV-07: missing file godot/assets/art/env_leaves.png",
-    "SFX-01: missing file godot/assets/sfx/sfx_01_kill.wav",
-    "SFX-02: missing file godot/assets/sfx/sfx_02_pickup.wav",
-    "SFX-03: missing file godot/assets/sfx/sfx_03_hurt.wav",
-    "SFX-04: missing file godot/assets/sfx/sfx_04_levelup.wav",
-    "SFX-05: missing file godot/assets/sfx/sfx_05_evolve.wav",
-    "SFX-06a: missing file godot/assets/sfx/sfx_06a_lose.wav",
-    "SFX-06b: missing file godot/assets/sfx/sfx_06b_win.wav"
-  ],
+  "files_checked": 494,
+  "problems": [],
   "design_v1_committed": "2026-09-28T15:21:05-04:00",
   "first_generation_commit": "e3849339e20f5d9e8aca405ac6d7f5f516b70092",
   "asset_ids_checked": [

@@ -2361,8 +2361,8 @@ N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are 
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 1, "duration_s": 0.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 268.6}` |
 | Storyboard panels | P3 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
+| Reason | Bright (centroid 7.2 kHz, 62% above 6 kHz). Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-01/SFX-01-20260930T025240Z-s1.png) |
@@ -2389,8 +2389,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 2, "duration_s": 0.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 323.3}` |
 | Storyboard panels | P3 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
+| Reason | Harshest: 95% of its energy above 6 kHz (centroid 11.1 kHz). Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-01/SFX-01-20260930T025755Z-s2.png) |
@@ -2417,11 +2417,15 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 3, "duration_s": 0.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 355.4}` |
 | Storyboard panels | P3 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
-| Manual edits | — |
-| Project files | — |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:50:04+00:00 |
+| Reason | Warmest pop (centroid 4.8 kHz, 38% of energy above 6 kHz) - the brief wants no harsh transients on the most frequent sound. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
+| Manual edits | leading/trailing silence trimmed (40 dB), capped at 0.35 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
+| Project files | godot/assets/sfx/sfx_01_kill.wav |
 | Thumbnail | ![](gen/thumbs/SFX-01/SFX-01-20260930T030318Z-s3.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:50:05+00:00", "tool": "gen/sfx_process.py", "src": "accepted/SFX-01/SFX-01-20260930T030318Z-s3.wav", "dst": "../godot/assets/sfx/sfx_01_kill.wav", "trim_top_db": 40, "max_s": 0.35, "fade_in_ms": 4, "fade_out_ms": 30, "peak_db": -1.0, "seconds": 0.093}`
 
 **Prompt**
 
@@ -2447,11 +2451,15 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 1, "duration_s": 0.4, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 338.1}` |
 | Storyboard panels | P3 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
-| Manual edits | — |
-| Project files | — |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:50:05+00:00 |
+| Reason | Cleanest bell (tonal, 32% above 6 kHz). Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
+| Manual edits | leading/trailing silence trimmed (40 dB), capped at 0.3 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
+| Project files | godot/assets/sfx/sfx_02_pickup.wav |
 | Thumbnail | ![](gen/thumbs/SFX-02/SFX-02-20260930T030924Z-s1.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:50:05+00:00", "tool": "gen/sfx_process.py", "src": "accepted/SFX-02/SFX-02-20260930T030924Z-s1.wav", "dst": "../godot/assets/sfx/sfx_02_pickup.wav", "trim_top_db": 40, "max_s": 0.3, "fade_in_ms": 4, "fade_out_ms": 30, "peak_db": -1.0, "seconds": 0.3}`
 
 **Prompt**
 
@@ -2475,8 +2483,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 2, "duration_s": 0.4, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 341.8}` |
 | Storyboard panels | P3 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
+| Reason | Hiss: 96% of its energy above 6 kHz. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-02/SFX-02-20260930T031502Z-s2.png) |
@@ -2503,8 +2511,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 3, "duration_s": 0.4, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 348.7}` |
 | Storyboard panels | P3 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
+| Reason | 70% above 6 kHz. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-02/SFX-02-20260930T032044Z-s3.png) |
@@ -2533,8 +2541,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 1, "duration_s": 0.6, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 327.0}` |
 | Storyboard panels | P5 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
+| Reason | Bright (centroid 4.5 kHz) - not a dull hit. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-03/SFX-03-20260930T032646Z-s1.png) |
@@ -2561,8 +2569,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 2, "duration_s": 0.6, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 320.0}` |
 | Storyboard panels | P5 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
+| Reason | Dull enough (695 Hz) but s3 is duller. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-03/SFX-03-20260930T033213Z-s2.png) |
@@ -2589,11 +2597,15 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 3, "duration_s": 0.6, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 307.1}` |
 | Storyboard panels | P5 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
-| Manual edits | — |
-| Project files | — |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:50:05+00:00 |
+| Reason | The dull, muffled thud the brief asks for harm (centroid 505 Hz, 1% above 6 kHz). Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
+| Manual edits | leading/trailing silence trimmed (40 dB), capped at 0.5 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
+| Project files | godot/assets/sfx/sfx_03_hurt.wav |
 | Thumbnail | ![](gen/thumbs/SFX-03/SFX-03-20260930T033733Z-s3.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:50:05+00:00", "tool": "gen/sfx_process.py", "src": "accepted/SFX-03/SFX-03-20260930T033733Z-s3.wav", "dst": "../godot/assets/sfx/sfx_03_hurt.wav", "trim_top_db": 40, "max_s": 0.5, "fade_in_ms": 4, "fade_out_ms": 30, "peak_db": -1.0, "seconds": 0.197}`
 
 **Prompt**
 
@@ -2619,8 +2631,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 1, "duration_s": 1.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 315.0}` |
 | Storyboard panels | P4 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
+| Reason | Brightest of the three (centroid 3.5 kHz). Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-04/SFX-04-20260930T034251Z-s1.png) |
@@ -2647,8 +2659,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 2, "duration_s": 1.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 318.0}` |
 | Storyboard panels | P4 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
+| Reason | Warm (2.2 kHz) but s3 is warmer. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-04/SFX-04-20260930T034806Z-s2.png) |
@@ -2675,11 +2687,15 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 3, "duration_s": 1.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 313.2}` |
 | Storyboard panels | P4 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
-| Manual edits | — |
-| Project files | — |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:50:05+00:00 |
+| Reason | Warmest chime (centroid 1.2 kHz, 4.5% above 6 kHz). Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
+| Manual edits | leading/trailing silence trimmed (40 dB), capped at 1.2 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
+| Project files | godot/assets/sfx/sfx_04_levelup.wav |
 | Thumbnail | ![](gen/thumbs/SFX-04/SFX-04-20260930T035324Z-s3.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:50:06+00:00", "tool": "gen/sfx_process.py", "src": "accepted/SFX-04/SFX-04-20260930T035324Z-s3.wav", "dst": "../godot/assets/sfx/sfx_04_levelup.wav", "trim_top_db": 40, "max_s": 1.2, "fade_in_ms": 4, "fade_out_ms": 30, "peak_db": -1.0, "seconds": 1.033}`
 
 **Prompt**
 
@@ -2705,8 +2721,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 1, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 331.5}` |
 | Storyboard panels | P6 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
+| Reason | Very slow 0.3 s swell, mostly low rumble (centroid 82 Hz). Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-05/SFX-05-20260930T035848Z-s1.png) |
@@ -2733,8 +2749,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 2, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 334.6}` |
 | Storyboard panels | P6 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
+| Reason | Slow 0.1 s attack, low. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-05/SFX-05-20260930T040420Z-s2.png) |
@@ -2761,11 +2777,15 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 3, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 304.4}` |
 | Storyboard panels | P6 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
-| Manual edits | — |
-| Project files | — |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:50:06+00:00 |
+| Reason | Quickest to arrive (19 ms attack) so the burst lands on the evolution moment. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
+| Manual edits | leading/trailing silence trimmed (40 dB), capped at 2.5 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
+| Project files | godot/assets/sfx/sfx_05_evolve.wav |
 | Thumbnail | ![](gen/thumbs/SFX-05/SFX-05-20260930T040954Z-s3.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:50:06+00:00", "tool": "gen/sfx_process.py", "src": "accepted/SFX-05/SFX-05-20260930T040954Z-s3.wav", "dst": "../godot/assets/sfx/sfx_05_evolve.wav", "trim_top_db": 40, "max_s": 2.5, "fade_in_ms": 4, "fade_out_ms": 30, "peak_db": -1.0, "seconds": 1.695}`
 
 **Prompt**
 
@@ -2791,8 +2811,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 1, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 313.5}` |
 | Storyboard panels | P7 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
+| Reason | 69% above 6 kHz. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-06a/SFX-06a-20260930T041510Z-s1.png) |
@@ -2819,8 +2839,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 2, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 34530.9}` |
 | Storyboard panels | P7 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
+| Reason | 42% above 6 kHz vs 29% for s3. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-06a/SFX-06a-20260930T042023Z-s2.png) |
@@ -2847,11 +2867,15 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 3, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 6919.3}` |
 | Storyboard panels | P7 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
-| Manual edits | — |
-| Project files | — |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:50:06+00:00 |
+| Reason | Least hiss (29% above 6 kHz) and a slow rise that reads as a flame going out. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
+| Manual edits | leading/trailing silence trimmed (40 dB), capped at 3.0 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
+| Project files | godot/assets/sfx/sfx_06a_lose.wav |
 | Thumbnail | ![](gen/thumbs/SFX-06a/SFX-06a-20260930T135554Z-s3.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:50:06+00:00", "tool": "gen/sfx_process.py", "src": "accepted/SFX-06a/SFX-06a-20260930T135554Z-s3.wav", "dst": "../godot/assets/sfx/sfx_06a_lose.wav", "trim_top_db": 40, "max_s": 3.0, "fade_in_ms": 4, "fade_out_ms": 30, "peak_db": -1.0, "seconds": 2.554}`
 
 **Prompt**
 
@@ -2877,8 +2901,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 1, "duration_s": 4.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 265.3}` |
 | Storyboard panels | P9 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:07+00:00 |
+| Reason | Takes 1.8 s to reach full level; 47% above 6 kHz. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-06b/SFX-06b-20260930T155126Z-s1.png) |
@@ -2905,11 +2929,15 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 2, "duration_s": 4.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 269.8}` |
 | Storyboard panels | P9 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
-| Manual edits | — |
-| Project files | — |
+| Decision | **modify** by Bao Xing at 2026-09-30T16:50:07+00:00 |
+| Reason | Cleanest and warmest (centroid 3.6 kHz, 4.5% above 6 kHz), full level at once. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
+| Manual edits | leading/trailing silence trimmed (40 dB), capped at 4.0 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
+| Project files | godot/assets/sfx/sfx_06b_win.wav |
 | Thumbnail | ![](gen/thumbs/SFX-06b/SFX-06b-20260930T155552Z-s2.png) |
+
+**Processing (every edit, in order)**
+
+1. `{"utc": "2026-09-30T16:50:07+00:00", "tool": "gen/sfx_process.py", "src": "accepted/SFX-06b/SFX-06b-20260930T155552Z-s2.wav", "dst": "../godot/assets/sfx/sfx_06b_win.wav", "trim_top_db": 40, "max_s": 4.0, "fade_in_ms": 4, "fade_out_ms": 30, "peak_db": -1.0, "seconds": 3.901}`
 
 **Prompt**
 
@@ -2933,8 +2961,8 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Licence / terms | Stability AI Community License (free for non-commercial and < $1M revenue use; outputs owned by the user) |
 | Settings | `{"seed": 3, "duration_s": 4.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 295.1}` |
 | Storyboard panels | P9 |
-| Decision | **PENDING** by — at — |
-| Reason | — |
+| Decision | **reject** by Bao Xing at 2026-09-30T16:50:07+00:00 |
+| Reason | 68% above 6 kHz. Recommended by Claude from the measurements; Bao accepted all seven recommendations ("都按推荐"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-06b/SFX-06b-20260930T160022Z-s3.png) |
