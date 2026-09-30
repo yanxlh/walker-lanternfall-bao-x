@@ -2,7 +2,7 @@
 
 `walker-lanternfall-bao-x` · Bao Xing · CSYE 7270 Assignment 2
 
-A daily diary of every attempt: **what I wanted, what came back, what I decided.** The "From the logs" bullets are facts pulled from git, the ledger and ASSET-LOG so dates and numbers are exact. The three sections under each day were drafted by Claude from our working session — my own choices, and my own words in quotation marks where I gave a reason — and then checked by me; where I simply accepted a recommendation, the entry says so.
+A daily diary of every attempt: **what I wanted, what came back, what I decided.** The "From the logs" bullets are facts pulled from git, the ledger and ASSET-LOG so dates and numbers are exact. The three sections under each day were drafted by Claude from our working session — my own choices, and my own words in quotation marks where I gave a reason — and then checked by me.
 
 Who did what, in one line: I made the design decisions and every accept/reject call and did the playtests; Claude drafted documents, wrote the Godot code, tests and generation scripts, ran the local models, and measured each candidate and suggested a pick — I looked at or listened to every candidate and made the call; FLUX.1-schnell, Stable Audio Open and MusicGen produced the raw art, sound and music.
 
