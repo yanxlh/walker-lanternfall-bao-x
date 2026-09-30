@@ -11,6 +11,7 @@ const BeamShot = preload("res://features/weapons/beam_shot.gd")
 const WeaponFx = preload("res://features/weapons/weapon_fx.gd")
 const Spawner = preload("res://features/enemies/spawner.gd")
 const Ground = preload("res://features/world/ground.gd")
+const CameraFx = preload("res://features/world/camera_fx.gd")
 const AudioBusScript = preload("res://audio/audio_bus.gd")
 const Hud = preload("res://ui/hud.gd")
 
@@ -32,7 +33,7 @@ var spawner = Spawner.new()
 var player
 var actors: Node2D
 var fx
-var camera: Camera2D
+var camera
 var audio
 var hud
 
@@ -61,12 +62,13 @@ func _ready() -> void:
 	fx = WeaponFx.new()
 	fx.session = self
 	add_child(fx)
-	camera = Camera2D.new()
+	camera = CameraFx.new()
 	camera.limit_left = int(Tuning.ARENA.position.x)
 	camera.limit_top = int(Tuning.ARENA.position.y)
 	camera.limit_right = int(Tuning.ARENA.end.x)
 	camera.limit_bottom = int(Tuning.ARENA.end.y)
 	player.add_child(camera)
+	camera.setup(self)
 	player.damaged.connect(func(hp): player_hurt.emit(hp))
 	player.died.connect(_on_player_died)
 	audio = AudioBusScript.new()
@@ -120,6 +122,7 @@ func tick() -> void:
 	if state.current != GameState.PLAYING:
 		return
 	_step_gems()
+	camera.on_tick()
 	if not test_no_spawn:
 		for s in spawner.step(tick_count, rng):
 			var at: Vector2 = player.position + Vector2.from_angle(s["angle"]) * Tuning.SPAWN_DISTANCE

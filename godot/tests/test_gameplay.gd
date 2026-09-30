@@ -224,6 +224,43 @@ func run() -> void:
 	wb.hp = 9999
 	game.step_ticks(40)
 	check("end-panel-hides-banner-and-ring", game.state.current == GS.LOST and not _has(game.hud.lines(), "SUNFLARE LIGHTHOUSE") and not game.fx.ring_visible(), {"lines": game.hud.lines()})
+	# storyboard camera moves (visual only; the simulation never reads the camera)
+	await fresh()
+	for c in ["beam_rate", "beam_pierce", "moth_new", "moth_count", "moth_radius"]:
+		game.prog.apply(c)
+	game.prog.add_xp(3)
+	game.tick()
+	game.choose_card(game.offered.find("sunflare"))
+	game.step_ticks(game.camera.SUNFLARE_OUT_TICKS)
+	var zoomed_out: float = game.camera.zoom.x
+	game.step_ticks(game.camera.SUNFLARE_BACK_TICKS + 5)
+	check("camera-sunflare-zoom-out", zoomed_out < 0.8 and is_equal_approx(game.camera.zoom.x, 1.0), {"at_peak": zoomed_out, "after": game.camera.zoom.x})
+
+	await fresh()
+	var wt = game.spawn_enemy("wraith", game.player.position)
+	wt.hp = 9999
+	game.tick()
+	var tilt: float = game.camera.rotation
+	game.enemies.erase(wt)
+	wt.queue_free()
+	game.step_ticks(Tuning.HURT_POSE_TICKS + 2)
+	check("camera-hurt-tilt", absf(tilt) > 0.02 and is_zero_approx(game.camera.rotation), {"tilt": tilt, "after": game.camera.rotation})
+
+	# the title push-in and the fog lifting run on real time, because the simulation is stopped then
+	game.free()
+	game = Session.new()
+	game.test_mode = true
+	game.test_no_spawn = true
+	root.add_child(game)
+	var z0: float = game.camera.zoom.x
+	await create_timer(0.6).timeout
+	check("camera-menu-push-in", game.state.current == GS.MENU and z0 < game.camera.zoom.x and game.camera.zoom.x <= 1.0, {"start": z0, "after": game.camera.zoom.x})
+	game.start_run(1)
+	check("camera-reset-on-start", is_equal_approx(game.camera.zoom.x, 1.0) and is_zero_approx(game.camera.rotation))
+	game.tick_count = Tuning.RUN_SECONDS * Tuning.TICK_HZ - 1
+	game.tick()
+	await create_timer(0.6).timeout
+	check("fog-lifts-on-win", game.state.current == GS.WON and game.camera.fog_lift() > 0.1 and game.camera.zoom.x < 1.0, {"lift": game.camera.fog_lift(), "zoom": game.camera.zoom.x})
 	completed = true
 
 func _has(lines: PackedStringArray, needle: String) -> bool:

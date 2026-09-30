@@ -1,5 +1,5 @@
 {
-  "checks": 39,
+  "checks": 44,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -330,8 +330,45 @@
         ]
       },
       "status": "PASS"
+    },
+    {
+      "id": "camera-sunflare-zoom-out",
+      "observed": {
+        "after": 1.0,
+        "at_peak": 0.720000028610229
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "camera-hurt-tilt",
+      "observed": {
+        "after": 0.0,
+        "tilt": -0.0700000002980232
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "camera-menu-push-in",
+      "observed": {
+        "after": 0.821203470230103,
+        "start": 0.800000011920929
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "camera-reset-on-start",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "fog-lifts-on-win",
+      "observed": {
+        "lift": 0.220341121199139,
+        "zoom": 0.960338592529297
+      },
+      "status": "PASS"
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-09-30T02:59:36"
+  "utc": "2026-09-30T03:14:16"
 }

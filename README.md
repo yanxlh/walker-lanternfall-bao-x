@@ -70,7 +70,6 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 
 ## Known limitations
 
-- The storyboard's camera moves (push-in, Dutch tilt, zoom-out, fog pull-back) are not implemented.
 - The fog-wraith has very low contrast against the ground (0.03) and the courier is small (≈20 px on a 360 px screen) — being judged in the muted playtest.
 - Music loops are 20 s (MusicGen's 30 s limit), so a 3-minute run hears the loop 9 times.
 - One map, two weapons, one evolution, no saving; balance is only roughly tuned.

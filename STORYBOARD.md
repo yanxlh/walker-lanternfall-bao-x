@@ -137,3 +137,16 @@ Left: the design-v1 panel (rasterised with Godot's SVG loader, which drops the p
 | P9 end of run | "3:00 — The fog lifts", victory portrait, kills/level | the screen does **not** lighten ("fog pull-back" not implemented) |
 
 Camera moves were storyboard intentions for mood; the slice implements none of them. They are listed as known limitations and next steps rather than faked in the capture.
+
+### R2 · 2026-09-29 · The storyboard's camera moves, added after R1
+
+Bao asked for the camera moves R1 listed as missing. `godot/features/world/camera_fx.gd` implements them; the simulation never reads the camera, and `test_audio.gd::independence` still passes.
+
+| Panel | Now in the game | Verified by |
+|---|---|---|
+| P1 | title opens at zoom 0.8 and pushes in to 1.0 over 3 s | `test_gameplay.gd::camera-menu-push-in` |
+| P5 | on each hit the camera tilts up to 0.07 rad (≈ 4°) and settles over the 12 hurt-pose ticks | `camera-hurt-tilt` |
+| P6 | on Sunflare the camera zooms out to 0.72 over 20 ticks and back over 70 | `camera-sunflare-zoom-out` |
+| P9 | at 3:00 the screen washes towards mist (up to 45 %) while the camera pulls back to 0.82 over 2 s | `fog-lifts-on-win` |
+
+The comparison image above was re-captured with these moves (P1 wide, P5 tilted, P6 zoomed out, P9 lightened).

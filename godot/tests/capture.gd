@@ -59,5 +59,6 @@ func _main() -> void:
 	game.start_run(22)
 	game.tick_count = Tuning.RUN_SECONDS * Tuning.TICK_HZ - 1
 	game.tick()
+	await create_timer(2.2).timeout
 	await shot("sb-P9")
 	quit()

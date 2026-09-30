@@ -134,7 +134,12 @@ func _draw_view() -> void:
 			_text(Vector2(0, 210), "Esc/P resume · R restart · M/9/0 audio", 11, CREAM, HORIZONTAL_ALIGNMENT_CENTER, W)
 		GameState.LOST, GameState.WON:
 			var won := st == GameState.WON
-			view.draw_rect(Rect2(0, 0, W, H), Color(INK, 0.65))
+			if won:
+				# P9: the fog lifts — the screen washes towards mist while the camera pulls back
+				view.draw_rect(Rect2(0, 0, W, H), Color(MIST, 0.45 * session.camera.fog_lift()))
+				view.draw_rect(Rect2(0, 44, W, 262), Color(INK, 0.55))
+			else:
+				view.draw_rect(Rect2(0, 0, W, H), Color(INK, 0.65))
 			_pose("victory" if won else "defeat", Rect2(W / 2 - 64, 60, 128, 128))
 			_text(Vector2(0, 220), l[-2], 22, GOLD if won else CREAM, HORIZONTAL_ALIGNMENT_CENTER, W)
 			_text(Vector2(0, 246), "Kills %d · Level %d" % [session.kills, prog.level], 12, MIST, HORIZONTAL_ALIGNMENT_CENTER, W)
