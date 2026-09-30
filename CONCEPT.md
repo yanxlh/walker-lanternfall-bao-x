@@ -90,3 +90,10 @@ More weapons and evolution recipes, a boss at the end of the fog, between-run pr
 - **Observed:** the first ART-PC-01 batch (FLUX.1-schnell, "flat vector" prompt; seeds 11, 23, 37) came out as a shaded, 3D-looking illustration. After seeing it I decided: "不用3d就是2d像素游戏，然后不用太多动作" — this is a 2D pixel-art game, and the courier does not need many actions.
 - **Change:** art direction is now **2D pixel art**: every sprite is prompted as a pixel-art game sprite (hard-edged pixels, flat colour, 1-px dark outline, no gradients or 3D shading) and still reduced to its game size and locked to the palettes. The map stays top-down with side-view sprites. The courier's pose set drops to the rubric minimum of **10** (see CHARACTER-SHEET R2).
 - **Evidence:** the rejected batch and the reason are in ASSET-LOG (ART-PC-01) and `gen/rejected/ART-PC-01-contact.png`.
+
+### R3 · 2026-09-29 · Every level needs more XP (Bao's request after the first play)
+
+- **Asked:** "每升一次等级后续所需要的经验会增加".
+- **Found:** the table already rose (3, 5, 7, … 40) but stopped at 40 from level 13 on.
+- **Change:** the table is kept for levels 1–12; after that each step is one bigger than the last (46, 53, 61, 70, …; level 30 needs 301). The HUD now shows `XP have/need` next to the level so the rising cost is visible, including with sound off.
+- **Verified by:** `test_logic.gd::prog-xp-need-always-increases` (failed on the plateau, passes now) and `test_gameplay.gd::hud-shows-xp-need`.

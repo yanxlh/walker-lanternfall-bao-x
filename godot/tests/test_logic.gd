@@ -55,6 +55,16 @@ func _progression_tests() -> void:
 	for k in ["pass_speed", "pass_speed", "pass_magnet", "pass_magnet", "pass_hp", "pass_hp"]:
 		p.apply(k)
 	check("prog-exhausted-pool-pads-heal", p.offer_cards(rng) == ["heal", "heal", "heal"])
+	# Bao, 2026-09-29: "每升一次等级后续所需要的经验会增加" — every level must need more XP than the last
+	var q = Prog.new()
+	var needs: Array = []
+	for lv in range(1, 31):
+		q.level = lv
+		needs.append(q.xp_needed())
+	var rising := true
+	for i in range(1, needs.size()):
+		rising = rising and needs[i] > needs[i - 1]
+	check("prog-xp-need-always-increases", rising and needs[0] == 3 and needs[11] == 40, {"needs_lv1_to_30": needs})
 	var a = Prog.new(); var b = Prog.new()
 	var r1 := RandomNumberGenerator.new(); r1.seed = 7
 	var r2 := RandomNumberGenerator.new(); r2.seed = 7

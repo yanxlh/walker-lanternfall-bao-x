@@ -53,7 +53,7 @@ func lines() -> PackedStringArray:
 	var secs: int = session.tick_count / Tuning.TICK_HZ
 	_lines.append("%d:%02d" % [secs / 60, secs % 60])
 	_lines.append("HP %d/%d" % [session.player.hp, session.player.max_hp])
-	_lines.append("Lv %d" % session.prog.level)
+	_lines.append("Lv %d   XP %d/%d" % [session.prog.level, session.prog.xp, session.prog.xp_needed()])
 	_lines.append("Kills %d" % session.kills)
 	if session.prog.evolved_sunflare:
 		_lines.append("Sunflare Lighthouse")

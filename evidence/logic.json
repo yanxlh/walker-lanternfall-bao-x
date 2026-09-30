@@ -1,5 +1,5 @@
 {
-  "checks": 26,
+  "checks": 27,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -156,6 +156,44 @@
       "status": "PASS"
     },
     {
+      "id": "prog-xp-need-always-increases",
+      "observed": {
+        "needs_lv1_to_30": [
+          3,
+          5,
+          7,
+          9,
+          12,
+          15,
+          18,
+          22,
+          26,
+          30,
+          35,
+          40,
+          46,
+          53,
+          61,
+          70,
+          80,
+          91,
+          103,
+          116,
+          130,
+          145,
+          161,
+          178,
+          196,
+          215,
+          235,
+          256,
+          278,
+          301
+        ]
+      },
+      "status": "PASS"
+    },
+    {
       "id": "prog-deterministic",
       "observed": {},
       "status": "PASS"
@@ -202,5 +240,5 @@
     }
   ],
   "suite": "logic",
-  "utc": "2026-09-30T03:26:42"
+  "utc": "2026-09-30T03:30:41"
 }

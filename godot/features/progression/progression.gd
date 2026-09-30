@@ -32,9 +32,18 @@ var moth_radius: float = Tuning.MOTH_BASE_RADIUS
 var passive := {"speed": 0, "magnet": 0, "hp": 0}
 var evolved_sunflare := false
 
+## Every level needs more than the one before: the table, then each step one bigger than the last (46, 53, 61, ...).
 func xp_needed() -> int:
 	var table: Array = Tuning.XP_TO_LEVEL
-	return int(table[mini(level - 1, table.size() - 1)])
+	var i := level - 1
+	if i < table.size():
+		return int(table[i])
+	var need := int(table[-1])
+	var step := int(table[-1]) - int(table[-2])
+	for k in i - table.size() + 1:
+		step += 1
+		need += step
+	return need
 
 ## Returns how many levels were gained. Each one emits leveled_up and is queued.
 func add_xp(amount: int) -> int:

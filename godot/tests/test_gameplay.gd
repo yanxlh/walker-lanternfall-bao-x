@@ -230,6 +230,7 @@ func run() -> void:
 		game.tick()
 	check("long-run-smoke", game.state.is_terminal(), {"state": GS.NAMES[game.state.current], "seconds": game.tick_count / 60, "kills": game.kills, "level": game.prog.level, "cards": chosen})
 	await fresh()
+	check("hud-shows-xp-need", _has(game.hud.lines(), "XP 0/3"), {"lines": game.hud.lines()})
 	check("hud-shows-timer-hp-level", _has(game.hud.lines(), "0:00") and _has(game.hud.lines(), "HP 10/10") and _has(game.hud.lines(), "Lv 1"), {"lines": game.hud.lines()})
 	game.prog.add_xp(3)
 	game.tick()
