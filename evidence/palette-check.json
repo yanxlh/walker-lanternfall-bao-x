@@ -2,7 +2,18 @@
   {
     "file": "pc_sheet.png",
     "id": "ART-PC-01",
-    "status": "MISSING"
+    "status": "PASS",
+    "size": [
+      320,
+      32
+    ],
+    "want": [
+      320,
+      32
+    ],
+    "bad_alpha": 0,
+    "bad_color": 0,
+    "opaque": 1780
   },
   {
     "file": "enemy_moth.png",

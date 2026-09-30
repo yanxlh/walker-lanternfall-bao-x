@@ -1,7 +1,14 @@
 {
   "created_utc": "2026-09-29T20:55:50+00:00",
   "runtime": "local \u2014 arm64 macOS 26.6.2 (Apple M4 Pro, 16 GB)",
-  "decision": null,
+  "decision": {
+    "verdict": "reject",
+    "reason": "Superseded: earlier prompt without 'bright golden brass' gave a brown housing that maps off-palette.",
+    "edits": "",
+    "final_paths": [],
+    "decided_by": "Bao Xing",
+    "decided_utc": "2026-09-30T00:41:38+00:00"
+  },
   "asset_id": "ART-PC-01",
   "run_id": "ART-PC-01-20260929T205508Z-s11-idle",
   "model": "black-forest-labs/FLUX.1-schnell",

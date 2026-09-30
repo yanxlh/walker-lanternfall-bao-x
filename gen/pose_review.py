@@ -25,7 +25,7 @@ def faces_left(im: Image.Image) -> bool:
     lens = body & (a[..., 0] > 200) & (a[..., 1] > 150) & (a[..., 2] < 120)
     if lens.sum() < 20 or body.sum() == 0:
         return False
-    return np.nonzero(lens)[1].mean() < np.nonzero(body)[1].mean()
+    return bool(np.nonzero(lens)[1].mean() < np.nonzero(body)[1].mean())
 
 
 def game_preview(src: Path, palette) -> tuple:

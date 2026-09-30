@@ -18,6 +18,7 @@ import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 
 def rgb(h):
@@ -107,12 +108,59 @@ def lock_palette(im: Image.Image, palette, outline_rgb=None, ink_below_l: float 
     return Image.fromarray(out)
 
 
+def is_lamp(rgb: np.ndarray) -> np.ndarray:
+    """Warm gold/yellow pixels: the lamp housing and lens."""
+    r, g, b = rgb[..., 0].astype(int), rgb[..., 1].astype(int), rgb[..., 2].astype(int)
+    return (r > 170) & (g > 110) & (b < 120) & (r >= g) & (g > b + 30)
+
+
+def is_coat(rgb: np.ndarray) -> np.ndarray:
+    r, g, b = rgb[..., 0].astype(int), rgb[..., 1].astype(int), rgb[..., 2].astype(int)
+    return (b > r + 10) & (b > 40) & (r < 110)
+
+
+def fit_normalized(im: Image.Image, fw: int, fh: int, lamp_px: float, pad: int) -> tuple:
+    """Scale so the lamp is lamp_px tall (the character-sheet rule), feet on the bottom row, coat centred.
+    If that would not fit the frame, shrink just enough to fit and report the lamp size actually used."""
+    bbox = im.getbbox()
+    if bbox is None:
+        raise SystemExit("empty frame after background keying")
+    im = im.crop(bbox)
+    a = np.asarray(im)
+    opaque = a[..., 3] > 0
+    lamp = opaque & is_lamp(a[..., :3])
+    if lamp.sum() < 10:
+        raise SystemExit("no lamp pixels found; cannot normalise this frame")
+    ys = np.nonzero(lamp)[0]
+    lamp_h = ys.max() - ys.min() + 1
+    scale = lamp_px / lamp_h
+    scale = min(scale, (fh - pad) / im.height, (fw - 2 * pad) / im.width)
+    w, h = max(1, round(im.width * scale)), max(1, round(im.height * scale))
+    small = im.resize((w, h), Image.LANCZOS)
+    coat = opaque & is_coat(a[..., :3])
+    cx = (np.nonzero(coat)[1].mean() if coat.sum() else im.width / 2) * scale
+    x = int(round(fw / 2 - cx))
+    x = max(pad, min(fw - pad - w, x))
+    y = fh - pad // 2 - h
+    canvas = Image.new("RGBA", (fw, fh), (0, 0, 0, 0))
+    canvas.alpha_composite(small, (x, max(0, y)))
+    return canvas, round(lamp_h * scale, 2)
+
+
+def recolor(im: Image.Image, mapping: dict) -> Image.Image:
+    a = np.array(im)
+    for src, dst in mapping.items():
+        m = (a[..., 3] == 255) & np.all(a[..., :3] == np.array(rgb(src)), axis=-1)
+        a[m, :3] = rgb(dst)
+    return Image.fromarray(a)
+
+
 def main():
     spec = json.loads(Path(sys.argv[1]).read_text())
     palettes = json.loads((ROOT / "godot/assets/art/palettes.json").read_text())
     palette = [rgb(c) for c in palettes[spec["palette"]]]
     fw, fh = spec["frame"]
-    frames = []
+    frames, report = [], []
     for f in spec["frames"]:
         src = Image.open(ROOT / f["src"]).convert("RGBA")
         if "box" in f:
@@ -124,14 +172,27 @@ def main():
         else:
             cell = src
         cell = key_background(cell, spec.get("bg_threshold", 235))
-        k = spec.get("supersample", 4)
-        fill = spec.get("fill", 0.95) * (fw - 2) / fw if spec.get("outline") else spec.get("fill", 0.95)
-        cell = fit(cell, fw * k, fh * k, fill, spec.get("anchor", "bottom"))
         if f.get("mirror"):
             cell = cell.transpose(Image.FLIP_LEFT_RIGHT)
+        k = spec.get("supersample", 4)
+        if spec.get("normalize_lamp_px"):
+            cell, lamp = fit_normalized(cell, fw * k, fh * k, spec["normalize_lamp_px"] * k, 2 * k)
+            report.append({"name": f.get("name"), "lamp_px": round(lamp / k, 1)})
+        else:
+            fill = spec.get("fill", 0.95) * (fw - 2) / fw if spec.get("outline") else spec.get("fill", 0.95)
+            cell = fit(cell, fw * k, fh * k, fill, spec.get("anchor", "bottom"))
         locked = lock_palette(cell, palette, rgb("#14121C") if spec.get("outline") else None,
                               spec.get("ink_below_l", 14.0), supersample=k)
+        if f.get("recolor"):
+            locked = recolor(locked, f["recolor"])
         frames.append(locked)
+        if f.get("run") and spec.get("asset_id"):
+            from common import log_processing
+            log_processing(f"gen/log/{spec['asset_id']}/{f['run']}.json", {
+                "tool": "gen/art_process.py", "mapping": sys.argv[1], "frame": f.get("name"), "out": spec["out"],
+                "index": len(frames) - 1, "mirror": bool(f.get("mirror")), "recolor": f.get("recolor"),
+                "lamp_px": report[-1]["lamp_px"] if report else None, "frame_px": spec["frame"],
+                "palette": spec["palette"], "supersample": spec.get("supersample", 4), "outline": bool(spec.get("outline"))})
     strip = Image.new("RGBA", (fw * len(frames), fh), (0, 0, 0, 0))
     for i, fr in enumerate(frames):
         strip.paste(fr, (i * fw, 0))
@@ -143,6 +204,8 @@ def main():
         prev.parent.mkdir(parents=True, exist_ok=True)
         strip.resize((strip.width * 8, strip.height * 8), Image.NEAREST).save(prev)
     print(f"{out}: {len(frames)} frames")
+    if report:
+        print(json.dumps(report))
 
 
 if __name__ == "__main__":
