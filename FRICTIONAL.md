@@ -40,6 +40,7 @@ _Bao writes here._
 - MusicGen on CPU produced no 30 s clip in 19 minutes; moved to the Apple GPU (MPS): a 5 s clip in 67 s.
 - First ART-PC-01 batch (FLUX, "flat vector" prompt, seeds 11 / 23 / 37): the character identity was consistent, but it came out as a shaded, 3D-looking illustration, FLUX ignored the requested 3 × 4 grid, and most figures were standing. I rejected all three: "不用3d就是2d像素游戏，然后不用太多动作" → CONCEPT R2 / CHARACTER-SHEET R2: 2D pixel art, 10 poses (the rubric minimum).
 - Reducing a generated sprite to 32 px first turned the navy coat into black and the floor shadow into cream; the processing now keys out grey shadows and matches colours in Lab space.
+- Running FLUX with one model kept loaded for many images looked fast at first (~40 s per image) and then collapsed: 53 s → 345 s → 1505 s → 6620 s. The process held 12 GB on a 16 GB Mac and lived in swap. Fix: a 4-bit copy of the model saved locally (9 GB), MLX's cache capped and cleared after every image, and one process per pose; active memory now stays at 9.6 GB.
 - The course email on audio (generate something every day, record rejections, trim/loop and listen ≥ 3 times, log every edit) arrived today; this diary starts using that structure.
 
 **What I wanted**

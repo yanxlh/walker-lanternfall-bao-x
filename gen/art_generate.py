@@ -30,11 +30,23 @@ if "poses" in spec:
 else:
     jobs = [(None, spec["prompt"])]
 
+import mlx.core as mx
+from huggingface_hub.constants import HF_HUB_CACHE
 from mflux.models.common.config.model_config import ModelConfig
 from mflux.models.flux.variants.txt2img.flux import Flux1
 
 quantize = spec.get("quantize", 4)
-flux = Flux1(model_config=ModelConfig.schnell(), quantize=quantize)
+# A 16 GB machine swaps itself to a standstill if MLX keeps its buffer cache between images
+# (2026-09-29: 40 s -> 6620 s per image within one process). Cap the cache and clear it after every image.
+mx.set_cache_limit(512 * 1024 * 1024)
+saved = ROOT / "gen" / "cache" / f"flux-schnell-{quantize}bit"
+revision = (Path(HF_HUB_CACHE) / "models--black-forest-labs--FLUX.1-schnell" / "refs" / "main").read_text().strip()
+if saved.exists():
+    flux = Flux1(model_config=ModelConfig.schnell(), model_path=str(saved))
+    weights = f"{quantize}-bit copy saved locally with mflux-save from FLUX.1-schnell @ {revision[:7]}"
+else:
+    flux = Flux1(model_config=ModelConfig.schnell(), quantize=quantize)
+    weights = f"FLUX.1-schnell @ {revision[:7]}, quantized to {quantize}-bit at load"
 
 for pose, prompt in jobs:
     for seed in a.seeds:
@@ -45,17 +57,22 @@ for pose, prompt in jobs:
         image = flux.generate_image(seed=seed, prompt=prompt, num_inference_steps=spec.get("steps", 4),
                                     width=spec["width"], height=spec["height"])
         image.save(path=str(out))
+        del image
+        mx.clear_cache()
         thumb = thumbnail_image(out, spec["asset_id"], run_id)
         settings = {"seed": seed, "width": spec["width"], "height": spec["height"], "steps": spec.get("steps", 4),
-                    "quantize": quantize, "seconds": round(time.time() - t0, 1)}
+                    "quantize": quantize, "seconds": round(time.time() - t0, 1),
+                    "peak_gb": round(mx.get_peak_memory() / 1e9, 2)}
         if pose:
             settings["pose"] = pose
         side = write_sidecar({
             "asset_id": spec["asset_id"], "run_id": run_id,
-            "model": "black-forest-labs/FLUX.1-schnell", "model_version": f"mflux {version('mflux')} (Python API), {quantize}-bit",
+            "model": "black-forest-labs/FLUX.1-schnell", "model_version": f"mflux {version('mflux')} (Python API); {weights}",
             "license": "Apache-2.0 (FLUX.1-schnell weights); outputs usable without restriction",
             "prompt": prompt, "negative_prompt": spec.get("negative_prompt", ""),
             "settings": settings, "raw_outputs": [rel(out)], "thumbnail": rel(thumb),
             "storyboard_panels": spec["storyboard_panels"],
         })
-        print(side.name, settings["seconds"], "s", flush=True)
+        print(side.name, settings["seconds"], "s, peak", settings["peak_gb"], "GB, active",
+              round(mx.get_active_memory() / 1e9, 2), "GB", flush=True)
+        mx.reset_peak_memory()
