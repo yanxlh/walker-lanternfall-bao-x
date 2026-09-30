@@ -47,6 +47,7 @@ _Bao writes here._
 - MusicGen in fp32 grew to 14 GB and stalled in swap (first 30 s clip unfinished after 19 minutes); switched to fp16 on the GPU: a 10 s clip in 28 s.
 - Music, same evening: four MUS-01 loops (MusicGen medium, 96 BPM prompt), each looped three times for listening. I kept the first one — "剩下的太乱了，后面的杂音太多". Measurements agreed: it had the steadiest beat, no fade-out ending and the least high-frequency energy.
 - MUS-02 took two batches. The melody-conditioned model ignored the tempo (≈106 BPM) and one run was mostly hiss; Claude rejected those four on the measurements (I did not listen to them). The second batch used the same model as MUS-01; I listened to three base+layer mixes and chose s34 because "有种远古的感觉".
+- Stable Audio Open would not finish a single sound: RecursionError inside the sampler. A first guess (MPS float32 precision) was wrong; reproducing the sampler alone showed it fails on CPU too, always on the last step, where it asks for noise between sigma 0.3 and 0 — outside the range its noise tree was built for. That noise is multiplied by zero in that step, so `gen/sfx_sampler_fix.py` returns zeros there. Each sound still costs ~4.6 minutes, because the model always renders a ~47 s window and crops it.
 - The course email on audio (generate something every day, record rejections, trim/loop and listen ≥ 3 times, log every edit) arrived today; this diary starts using that structure.
 
 **What I wanted**
