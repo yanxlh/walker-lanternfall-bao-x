@@ -6,6 +6,7 @@ var kind := "moth"
 var hp := 1
 var speed := 0.0
 var radius := 6.0
+var hit_half := Vector2(6, 6)
 var damage := 1
 var xp := 1
 var flash := 0
@@ -20,7 +21,21 @@ func setup(k: String, at: Vector2) -> void:
 	position = at
 	var d: Dictionary = Tuning.ENEMIES[k]
 	hp = d["hp"]; speed = d["speed"]; radius = d["radius"]; damage = d["damage"]; xp = d["xp"]; frame = d["frame"]
+	hit_half = Vector2(d["hit_half"][0], d["hit_half"][1])
 	tex = Art.texture(Art.MOTH if k == "moth" else Art.WRAITH)
+
+## True when a point (grown by pad) is inside the visible sprite's box.
+func touches(p: Vector2, pad: float) -> bool:
+	var q := (p - position).abs()
+	return q.x <= hit_half.x + pad and q.y <= hit_half.y + pad
+
+## True when any part of the segment a-b (grown by pad) touches the visible sprite's box.
+func touches_segment(a: Vector2, b: Vector2, pad: float) -> bool:
+	var n := maxi(2, ceili(a.distance_to(b) / 2.0) + 1)
+	for i in n:
+		if touches(a.lerp(b, float(i) / (n - 1)), pad):
+			return true
+	return false
 
 func step(target: Vector2) -> void:
 	var to := target - position

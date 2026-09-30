@@ -3,6 +3,7 @@ const Session = preload("res://game/session.gd")
 const GS = preload("res://game/game_state.gd")
 const Tuning = preload("res://features/tuning.gd")
 const Art = preload("res://features/art.gd")
+const BeamShot = preload("res://features/weapons/beam_shot.gd")
 var game
 
 func fresh(seed_value: int = 1, no_spawn: bool = true) -> void:
@@ -75,6 +76,38 @@ func run() -> void:
 	game.test_axis = Vector2.RIGHT
 	game.step_ticks(60)
 	check("gem-flies-and-collects", picked[0] == 1 and game.prog.xp == 1 and game.gems.is_empty(), {"xp": game.prog.xp})
+
+	# bullets hit what you see (Bao, playtest 2026-09-29: "子弹打到怪物之后要求消失")
+	await fresh()
+	game.beam_timer = 99999
+	var wing = game.spawn_enemy("moth", Vector2(0, -100))
+	wing.speed = 0.0
+	var s1 = BeamShot.new()
+	s1.setup(Vector2(10, -150), Vector2.DOWN, 1)
+	game.actors.add_child(s1)
+	game.shots.append(s1)
+	game.step_ticks(20)
+	check("beam-stops-on-moth-wing", game.shots.is_empty() and wing.dead, {"shots_left": game.shots.size(), "moth_dead": wing.dead})
+	await fresh()
+	game.beam_timer = 99999
+	var hood = game.spawn_enemy("wraith", Vector2(120, 0))
+	hood.speed = 0.0
+	var s2 = BeamShot.new()
+	s2.setup(Vector2(60, -18), Vector2.RIGHT, 1)
+	game.actors.add_child(s2)
+	game.shots.append(s2)
+	game.step_ticks(20)
+	check("beam-stops-on-wraith-hood", game.shots.is_empty() and hood.hp < Tuning.ENEMIES["wraith"]["hp"], {"shots_left": game.shots.size(), "wraith_hp": hood.hp})
+	await fresh()
+	game.beam_timer = 99999
+	var clear = game.spawn_enemy("moth", Vector2(0, -100))
+	clear.speed = 0.0
+	var s3 = BeamShot.new()
+	s3.setup(Vector2(20, -150), Vector2.DOWN, 1)
+	game.actors.add_child(s3)
+	game.shots.append(s3)
+	game.step_ticks(20)
+	check("beam-misses-when-clear-of-sprite", game.shots.size() == 1 and not clear.dead, {"shots_left": game.shots.size()})
 
 	await fresh()
 	var above = game.spawn_enemy("moth", Vector2(0, -90))

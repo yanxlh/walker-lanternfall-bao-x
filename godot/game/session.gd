@@ -219,7 +219,7 @@ func _step_weapons() -> void:
 		for e in enemies.duplicate():
 			if e.dead or s.hit_ids.has(e.get_instance_id()):
 				continue
-			if s.position.distance_to(e.position) < e.radius + Tuning.BEAM_RADIUS:
+			if e.touches_segment(s.position - s.dir * Tuning.BEAM_HALF_LENGTH, s.position + s.dir * Tuning.BEAM_HALF_LENGTH, Tuning.BEAM_HALF_WIDTH):
 				s.hit_ids[e.get_instance_id()] = true
 				damage(e, Tuning.BEAM_DAMAGE)
 				s.pierce -= 1
@@ -237,7 +237,7 @@ func _step_weapons() -> void:
 			if tick_count - int(orbit_hit.get(id, -9999)) < Tuning.MOTH_HIT_COOLDOWN:
 				continue
 			for p in moths:
-				if p.distance_to(e.position) < e.radius + Tuning.MOTH_HIT_RADIUS:
+				if e.touches(p, Tuning.MOTH_HIT_RADIUS):
 					orbit_hit[id] = tick_count
 					damage(e, Tuning.MOTH_DAMAGE)
 					break

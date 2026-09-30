@@ -1,5 +1,5 @@
 {
-  "checks": 44,
+  "checks": 47,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -134,6 +134,29 @@
       "status": "PASS"
     },
     {
+      "id": "beam-stops-on-moth-wing",
+      "observed": {
+        "moth_dead": true,
+        "shots_left": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "beam-stops-on-wraith-hood",
+      "observed": {
+        "shots_left": 0,
+        "wraith_hp": 6
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "beam-misses-when-clear-of-sprite",
+      "observed": {
+        "shots_left": 1
+      },
+      "status": "PASS"
+    },
+    {
       "id": "beam-aims-nearest",
       "observed": {
         "far_dead": false,
@@ -257,14 +280,17 @@
       "observed": {
         "cards": [
           "beam_rate",
-          "beam_pierce",
-          "pass_hp",
+          "beam_rate",
           "pass_magnet",
-          "moth_new"
+          "pass_hp",
+          "pass_speed",
+          "moth_new",
+          "pass_hp",
+          "moth_count"
         ],
-        "kills": 64,
-        "level": 6,
-        "seconds": 52,
+        "kills": 126,
+        "level": 9,
+        "seconds": 76,
         "state": "lost"
       },
       "status": "PASS"
@@ -350,7 +376,7 @@
     {
       "id": "camera-menu-push-in",
       "observed": {
-        "after": 0.821203470230103,
+        "after": 0.821174085140228,
         "start": 0.800000011920929
       },
       "status": "PASS"
@@ -363,12 +389,12 @@
     {
       "id": "fog-lifts-on-win",
       "observed": {
-        "lift": 0.220341121199139,
-        "zoom": 0.960338592529297
+        "lift": 0.218630190248842,
+        "zoom": 0.960646569728851
       },
       "status": "PASS"
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-09-30T03:14:16"
+  "utc": "2026-09-30T03:26:43"
 }

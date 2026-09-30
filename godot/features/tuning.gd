@@ -25,7 +25,9 @@ const XP_TO_LEVEL := [3, 5, 7, 9, 12, 15, 18, 22, 26, 30, 35, 40]
 
 const BEAM_SPEED := 320.0
 const BEAM_LIFE_TICKS := 60
-const BEAM_RADIUS := 4.0
+## The bolt as drawn (fx_beam.png is 14 x 2 visible px): bullets hit what the player sees.
+const BEAM_HALF_LENGTH := 7.0
+const BEAM_HALF_WIDTH := 1.0
 const BEAM_DAMAGE := 2
 const BEAM_BASE_COOLDOWN := 40
 const BEAM_RATE_FACTOR := 0.75
@@ -48,9 +50,11 @@ const BANNER_TICKS := 120
 
 const SPAWN_DISTANCE := 400.0
 const MAX_ENEMIES := 220
+## radius: the body that hurts the courier on contact. hit_half: half-extents of the visible sprite that
+## the courier's weapons can hit (measured from enemy_moth.png / enemy_wraith.png, 2026-09-29).
 const ENEMIES := {
-	"moth": {"hp": 2, "speed": 55.0, "radius": 6.0, "damage": 1, "xp": 1, "frame": 24},
-	"wraith": {"hp": 8, "speed": 32.0, "radius": 14.0, "damage": 2, "xp": 3, "frame": 40},
+	"moth": {"hp": 2, "speed": 55.0, "radius": 6.0, "hit_half": [11.0, 7.0], "damage": 1, "xp": 1, "frame": 24},
+	"wraith": {"hp": 8, "speed": 32.0, "radius": 14.0, "hit_half": [13.0, 19.0], "damage": 2, "xp": 3, "frame": 40},
 }
 const SPAWN_TABLE := [
 	{"until_s": 30, "interval_ticks": 60, "batch": 1, "wraith_chance": 0.0},
