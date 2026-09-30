@@ -95,7 +95,7 @@ A greybox that plays like the design says — you only move, and the light does 
 
 **What I wanted**
 
-To finish the assets: sounds I would actually want to hear hundreds of times in a run, and a market that looks lived-in and broken up rather than laid out on a grid.
+To finish the assets: the seven sounds, and the fuller, broken-up market I asked for the day before.
 
 **What came back**
 
@@ -104,4 +104,4 @@ Most of the sound candidates were far brighter than the concept's "warm, soft" d
 **What I decided, and why**
 
 - For every sound I listened to the three candidates and chose the one that was not harsh and fit its event: "3 不刺耳", "1 干净", "3 听着像受伤".
-- I accepted the recommended prop for each of the five, with the puddle taken from the rewritten second batch, and asked for puddles and leaves to be half-transparent so the ground stays darker than the courier and the gems.
+- I accepted the recommended prop for each of the five (the puddle from the rewritten second batch) and chose the recommended option of drawing puddles and leaves half-transparent, so the ground stays darker than the courier and the gems.
