@@ -104,6 +104,10 @@ func sfx(id: String) -> bool:
 
 func _on_run_started() -> void:
 	_kill_tweens()
+	# a fresh run starts clean: the previous run's lose/win stinger must not ring on into it
+	for id in ["lose", "win"]:
+		for p in pools[id]:
+			p.stop()
 	gate.reset()
 	voice_end_ms.clear()
 	_set_lowpass(false)

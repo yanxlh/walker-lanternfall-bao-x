@@ -102,6 +102,17 @@ func run() -> void:
 	game.tick()
 	check("no-levelup-chime-when-run-ends", game.state.current == GS.WON and plays("levelup").is_empty() and plays("win").size() == 1, {"state": GS.NAMES[game.state.current], "levelup": plays("levelup").size()})
 
+	# a restart must not carry the previous run's lose/win stinger into the new run (review finding)
+	fresh(1, true, false)
+	game.player.hp = 1
+	var ws = game.spawn_enemy("wraith", game.player.position)
+	ws.hp = 9999
+	game.tick()
+	var lose_ringing: bool = game.audio.pools["lose"].any(func(pl): return pl.playing)
+	game.start_run(2)
+	var still_ringing: bool = game.audio.pools["lose"].any(func(pl): return pl.playing) or game.audio.pools["win"].any(func(pl): return pl.playing)
+	check("restart-silences-stingers", (lose_ringing or game.audio.streams.get("lose") == null) and not still_ringing, {"stinger_was_playing": lose_ringing, "after_restart": still_ringing})
+
 	fresh(1, true, false)
 	for i in 20:
 		game.spawn_enemy("moth", Vector2(30 + i, 0))
