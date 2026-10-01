@@ -18,6 +18,15 @@ func fresh(seed_value: int = 1, no_spawn: bool = true) -> void:
 
 func run() -> void:
 	suite = "gameplay"
+	# every generated asset listed in the manifest must actually load (a fresh clone needs the import step first)
+	var manifest = JSON.parse_string(FileAccess.get_file_as_string("res://assets/manifest.json"))
+	var missing: Array = []
+	for asset_id in manifest:
+		for rel in manifest[asset_id]:
+			var res_path: String = "res://" + str(rel).trim_prefix("godot/")
+			if not ResourceLoader.exists(res_path) or load(res_path) == null:
+				missing.append(res_path)
+	check("generated-assets-load", missing.is_empty() and manifest.size() == 23, {"assets": manifest.size(), "not_loaded": missing})
 	await fresh()
 	check("run-starts-playing", game.state.current == GS.PLAYING and game.tick_count == 0 and game.player.hp == Tuning.PLAYER_MAX_HP)
 	var poses: Array = game.player.POSES
