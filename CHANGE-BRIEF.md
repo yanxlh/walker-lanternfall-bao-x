@@ -123,3 +123,11 @@ Environment palette: `#8A5A3C` added (wood). No new sounds; the event→sound ma
 ### R5 · 2026-09-30 · The five props as generated
 
 All five generated with FLUX.1-schnell and accepted by Bao from 3 candidates each (the puddle from a second batch after its prompt was rewritten — the first asked for "dark cobblestones" and FLUX painted them). Collision boxes are measured from the sprites (`SOLID_BOX` in `ground.gd`, checked by `solid-boxes-match-sprites`); the noodle cart is narrower than planned (24 × 41 px solid). Puddles and leaves are drawn at 55 % opacity so that ground decals stay darker than the courier and the pickups (CONCEPT value rule).
+
+### R6 · 2026-10-01 · Changes from the whole-branch code review
+
+- **SFX-04 (level up) now plays when the card screen opens**, not when XP crosses a threshold. One pickup worth two levels used to play two stacked chimes on the same tick and open the second card screen in silence; a level gained on the 3:00 tick chimed with no card at all. Now: one chime per card screen, none at the end of a run (`levelup-sfx-on-card-screen`, `no-levelup-chime-when-run-ends`).
+- **A restart silences the previous run's lose/win stinger** (`restart-silences-stingers`).
+- **Enemies always spawn off-screen.** Near a wall or in a corner the 400 px spawn ring used to put spawns inside the view (83 of 200 in the test), even on the courier; now the angle is re-rolled with the seeded rng and falls back to the widest strip of arena outside the view (`spawns-arrive-off-screen`).
+- **The double-click launcher imports the assets on first run.** A fresh clone or the submission ZIP has no Godot import cache, and ran with placeholder art and no sound; `generated-assets-load` now fails whenever that happens.
+- Correction to §2 above: with one voice and a 300 ms voice slot, pickups are effectively merged within **300 ms**, not 80 ms.

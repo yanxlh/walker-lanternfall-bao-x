@@ -15,8 +15,8 @@ A **blank Godot 4.7.2 project**. The protagonist concept is carried over from my
 ## Run it
 
 - Engine: **Godot 4.7.2.stable.official.ed1daf0bf** (GL Compatibility). Tested on macOS 26, Apple M4 Pro.
-- macOS: double-click [`walker-lanternfall.command`](walker-lanternfall.command) (expects Godot in `/Applications`).
-- Anywhere: `godot --path godot`, or import `godot/project.godot` in the Godot editor. All assets are committed; nothing is downloaded at run time.
+- macOS: double-click [`walker-lanternfall.command`](walker-lanternfall.command) (expects Godot in `/Applications`). On the first run it imports the assets, then starts the game.
+- Anywhere else: import once, then run — `godot --headless --path godot --import --quit` then `godot --path godot` — or open `godot/project.godot` in the Godot editor (which imports automatically). **Without the import step a fresh clone runs with placeholder shapes and no sound.** All assets are committed; nothing is downloaded at run time.
 
 ## Controls
 
@@ -35,7 +35,7 @@ The HUD always shows `MUSIC on/off  SFX on/off`. The game is fully playable mute
 ## What this slice proves
 
 - **Design before generation.** CONCEPT, STORYBOARD, CHARACTER-SHEET and CHANGE-BRIEF were committed and tagged [`design-v1`](https://github.com/yanxlh/walker-lanternfall-bao-x/releases/tag/design-v1) (2026-09-28 15:21 EDT) before the first generation; `scripts/audit_repo.py --stage final` checks that every generation sidecar is newer than the tag. Later changes are appended as dated **Revisions**.
-- **Generated art in the scene:** a 10-pose courier sheet, two 2-frame enemies, a seamless ground tile, a market stall, three effects and a pickup — FLUX.1-schnell, run locally, reduced to game size and locked to two fixed palettes.
+- **Generated art in the scene:** a 10-pose courier sheet, two 2-frame enemies, a seamless ground tile, a broken-up market of stalls, noodle carts, lantern posts, crates, puddles and leaves, three weapon effects and a pickup — 14 sprites from FLUX.1-schnell, run locally, reduced to game size and locked to two fixed palettes.
 - **Sound tied to events, once per event:** 7 effects (Stable Audio Open) triggered only by game signals and throttled by a pure `SfxGate` (cooldowns, voice caps, once-per-run).
 - **Seamless music:** a 20 s night-market loop plus a Sunflare layer of exactly the same length (MusicGen), cut on beats with a crossfaded seam; pause muffles and ducks it, level-up ducks it, lose/win fade it out while the stinger plays.
 - **Sound never drives the game:** a full seeded run with every stream removed and the master bus muted ends in exactly the same state as a run with sound (`test_audio.gd::independence`).
@@ -59,7 +59,7 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 
 ## Read in this order
 
-1. [CONCEPT.md](CONCEPT.md) — the game, pillars, art/audio/music direction (+ revisions R1 aiming, R2 pixel art)
+1. [CONCEPT.md](CONCEPT.md) — the game, pillars, art/audio/music direction, and revisions R1–R6 (aiming, pixel art, XP, map, HP growth and cards, solid props, broken-up map)
 2. [STORYBOARD.md](STORYBOARD.md) — nine panels, and the storyboard-vs-game comparison
 3. [CHARACTER-SHEET.md](CHARACTER-SHEET.md) — silhouettes, facing, poses, hurtbox, palette, and the sheet-vs-game comparison
 4. [CHANGE-BRIEF.md](CHANGE-BRIEF.md) — asset list, event→sound map, music behaviour, predictions and how they turned out
@@ -70,9 +70,10 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 
 ## Known limitations
 
-- The fog-wraith has very low contrast against the ground (0.03) and the courier is small (≈20 px on a 360 px screen) — being judged in the muted playtest.
+- The fog-wraith has the lowest measured contrast against the ground (0.03) and the courier is small (≈20 px on a 360 px screen); both were readable in my muted playtest, but they are the first things to revisit.
 - Music loops are 20 s (MusicGen's 30 s limit), so a 3-minute run hears the loop 9 times.
-- One map, two weapons, one evolution, no saving; balance is only roughly tuned.
+- One map, two weapons, one evolution, no saving; balance is only roughly tuned (my playtests and scripted bots).
+- Gamepad support exists but is untested; on the card screen the left stick can skip several cards.
 
 ## Film
 

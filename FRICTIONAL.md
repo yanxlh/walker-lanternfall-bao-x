@@ -115,6 +115,7 @@ Most of the sound candidates were far brighter than the concept's "warm, soft" d
 - Run A, sound on: "只响一次，不会连起来，不会，没有空白" — each sound once, kills never machine-gun, no extra sound from tapping or holding a key, no gap at the 20 s loop. Ticked afterwards: pause muffles the music, level-up dips it, the Sunflare layer comes in, lose/win fade with the stinger, R during the fade restarts cleanly, M/9/0 work.
 - Run B, muted from the title screen: "第二局都能" — every event readable without sound, wraiths and the courier visible.
 - Storyboard and character-sheet comparisons re-captured with the final map.
+- A whole-branch code review (a fresh Claude context, read-only) found that a fresh clone or the ZIP, run by double-clicking, showed only placeholder shapes and no sound — my own checkout had Godot's import cache, so I never saw it. Also: two level-ups from one pickup stacked their chimes, enemies could spawn on screen near walls, and a lose stinger rang on after a restart. All four fixed test-first; the launcher now imports the assets on first run.
 
 **What I wanted**
 
