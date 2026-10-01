@@ -126,5 +126,4 @@ It did. Nothing repeated, the loop had no gap, and the muted run was fully reada
 
 **What I decided, and why**
 
-- Keep the wraith's colours as generated: the number said "low contrast", but in the muted run I could see them, and the playtest is the test that matters.
-- Keep the hurtbox at r = 10: collisions felt fair in play.
+- The wraith's colours stay as generated: its measured contrast is low, but I could see the wraiths in the muted run.
