@@ -25,7 +25,9 @@ func autoplay(ticks: int) -> Dictionary:
 	game.enemy_killed.connect(func(_p): counts["kill"] += 1)
 	game.gem_collected.connect(func(_v): counts["pickup"] += 1)
 	game.player_hurt.connect(func(_h): counts["hurt"] += 1)
-	game.leveled_up.connect(func(_l): counts["levelup"] += 1)
+	game.state.changed.connect(func(_f, t):
+		if t == GS.LEVELUP:
+			counts["levelup"] += 1)
 	game.evolved.connect(func(): counts["evolve"] += 1)
 	for t in ticks:
 		if game.state.is_terminal():
@@ -79,6 +81,26 @@ func run() -> void:
 	game.choose_card(game.offered.find("sunflare"))
 	game.step_ticks(5)
 	check("evolve-sfx-once", plays("evolve").size() == 1 and plays("levelup").size() == 1, {"evolve": plays("evolve").size()})
+
+	# SFX-04 belongs to the card screen, not to the XP threshold (review finding)
+	fresh(1, true, false)
+	var opens: Array = []
+	game.state.changed.connect(func(_f, t):
+		if t == GS.LEVELUP:
+			opens.append(game.tick_count))
+	game.prog.add_xp(3 + 5)
+	for i in 4:
+		game.tick()
+		if game.state.current == GS.LEVELUP:
+			game.choose_card(0)
+	var chimes: Array = plays("levelup").map(func(e): return e["tick"])
+	check("levelup-sfx-on-card-screen", opens.size() == 2 and chimes == opens, {"card_screens_at": opens, "chimes_at": chimes})
+	fresh(1, true, false)
+	game.prog.xp = game.prog.xp_needed() - 1
+	game.drop_gem(game.player.position, 1)
+	game.tick_count = Tuning.RUN_SECONDS * Tuning.TICK_HZ - 1
+	game.tick()
+	check("no-levelup-chime-when-run-ends", game.state.current == GS.WON and plays("levelup").is_empty() and plays("win").size() == 1, {"state": GS.NAMES[game.state.current], "levelup": plays("levelup").size()})
 
 	fresh(1, true, false)
 	for i in 20:

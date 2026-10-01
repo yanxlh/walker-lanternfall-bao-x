@@ -63,7 +63,6 @@ func setup(s) -> void:
 	s.enemy_killed.connect(func(_p): sfx("kill"))
 	s.gem_collected.connect(func(_v): sfx("pickup"))
 	s.player_hurt.connect(func(_h): sfx("hurt"))
-	s.leveled_up.connect(func(_l): sfx("levelup"))
 	s.evolved.connect(_on_evolved)
 	s.run_started.connect(_on_run_started)
 	s.state.changed.connect(_on_state_changed)
@@ -127,6 +126,9 @@ func _on_state_changed(from: int, to: int) -> void:
 			_set_music_db(PAUSE_DB)
 			music_state = "paused"
 		GameState.LEVELUP:
+			# SFX-04 marks the card screen the player sees, not the XP threshold: several levels from one pickup
+			# open one card screen each, one chime each, and a level gained on the final tick (no card) is silent.
+			sfx("levelup")
 			_set_music_db(LEVELUP_DB)
 			music_state = "ducked"
 		GameState.PLAYING:
