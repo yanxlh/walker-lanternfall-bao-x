@@ -105,3 +105,26 @@ Most of the sound candidates were far brighter than the concept's "warm, soft" d
 
 - For every sound I listened to the three candidates and chose the one that was not harsh and fit its event: "3 不刺耳", "1 干净", "3 听着像受伤".
 - I picked one prop from each set of three (the puddle from the rewritten second batch) and chose to draw puddles and leaves half-transparent, so the ground stays darker than the courier and the gems.
+
+---
+
+## 2026-10-01 (Thu) — the two full playtests
+
+**From the logs**
+- Build `1b24721`, all 23 assets in. Fresh local clone: 117/117 automated checks, repository audit 0 problems. The engine log for my session has no errors.
+- Run A, sound on: "只响一次，不会连起来，不会，没有空白" — each sound once, kills never machine-gun, no extra sound from tapping or holding a key, no gap at the 20 s loop. Ticked afterwards: pause muffles the music, level-up dips it, the Sunflare layer comes in, lose/win fade with the stinger, R during the fade restarts cleanly, M/9/0 work.
+- Run B, muted from the title screen: "第二局都能" — every event readable without sound, wraiths and the courier visible.
+- Storyboard and character-sheet comparisons re-captured with the final map.
+
+**What I wanted**
+
+To check, with my own ears and eyes, that the finished slice does what the CHANGE-BRIEF promised: one sound per event, a seamless loop, sensible pause and end behaviour, and a game I can follow with the sound off.
+
+**What came back**
+
+It did. Nothing repeated, the loop had no gap, and the muted run was fully readable — including the fog-wraith, whose measured contrast against the ground is the lowest of all the sprites.
+
+**What I decided, and why**
+
+- Keep the wraith's colours as generated: the number said "low contrast", but in the muted run I could see them, and the playtest is the test that matters.
+- Keep the hurtbox at r = 10: collisions felt fair in play.

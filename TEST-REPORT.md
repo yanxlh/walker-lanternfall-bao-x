@@ -2,7 +2,7 @@
 
 `walker-lanternfall-bao-x` · Bao Xing · CSYE 7270 Assignment 2
 
-> **Status: interim, written 2026-09-30 against commit `89ae6ed`.** Sound effects (SFX-01…06b) and the five new map props (ART-ENV-03…07) are still being generated. Everything marked **PENDING** below is checked after they are in the build, in my two full playtests (sound on, then muted). Nothing here is claimed before it was observed.
+> **Status: updated 2026-10-01 for build `1b24721`, with all 23 assets in.** My two full playtests (sound on, then muted) are done; the only item still open is the fresh clone from GitHub at the final commit (§2). Nothing here is claimed before it was observed.
 
 ## 1. Environment
 
@@ -15,20 +15,20 @@
 
 ## 2. Fresh copy
 
-- **Local fresh clone of `89ae6ed`** (2026-09-30): `git clone` into an empty folder → `godot --headless --path godot --import` → all three suites: **logic 32/32, gameplay 62/62, audio 22/22**, no script errors. All 9 committed sprites and both music loops were present; nothing is downloaded at run time.
-- **PENDING:** the same from a fresh clone of the GitHub repository at the final commit (22 local commits were not yet pushed when this was written).
+- **Local fresh clone of `1b24721`** (2026-10-01): `git clone` into an empty folder → `godot --headless --path godot --import` → all three suites: **logic 32/32, gameplay 63/63, audio 22/22**, no script errors; `audit_repo.py --stage final`: 0 problems. All 14 sprites, 7 sound effects and 2 music loops were present; nothing is downloaded at run time. (An earlier clone of `89ae6ed`, before the sounds and new props, also passed.)
+- **PENDING:** the same from a fresh clone of the GitHub repository at the final commit.
 
 ## 3. Automated checks (all added for this project)
 
 | Check | Result (2026-09-30) | What it proves | Evidence |
 |---|---|---|---|
 | `godot/tests/test_logic.gd` | 32 / 32 | state machine; branching cards, 5-level passives, damage/haste multipliers, evolution rule; XP needed always rises; SFX gate cooldowns, voice caps, once-per-run | `evidence/logic.json` |
-| `godot/tests/test_gameplay.gd` | 62 / 62 | movement, diagonal normalisation, facing dead-zone, poses, nearest-enemy aim, bullets stop on visible contact, gems, level-up queue (incl. while paused), i-frames, win/lose incl. same-tick, evolution, restart, missing-art fallback, HUD text, hurtbox on the torso, HP growth, damage/haste cards, camera moves, map layout, solid props | `evidence/gameplay.json` |
-| `godot/tests/test_audio.gd` | 22 / 22 | once-per-event SFX, bursts, held/rapid input, music duck/filter/fade, restart during fade, mute, **sound-independence** | `evidence/audio.json` |
-| `gen/checks/palette_check.py` | 9 / 9 sprites PASS | exact size, binary alpha, palette-only; enemy-vs-ground contrast | `evidence/palette-check.json` |
+| `godot/tests/test_gameplay.gd` | 63 / 63 | movement, diagonal normalisation, facing dead-zone, poses, nearest-enemy aim, bullets stop on visible contact, gems, level-up queue (incl. while paused), i-frames, win/lose incl. same-tick, evolution, restart, missing-art fallback, HUD text, hurtbox on the torso, HP growth, damage/haste cards, camera moves, map layout, solid props | `evidence/gameplay.json` |
+| `godot/tests/test_audio.gd` | 22 / 22 (with the real sounds loaded) | once-per-event SFX, bursts, held/rapid input, music duck/filter/fade, restart during fade, mute, **sound-independence** | `evidence/audio.json` |
+| `gen/checks/palette_check.py` | 14 / 14 sprites PASS | exact size, binary alpha, palette-only; enemy-vs-ground contrast | `evidence/palette-check.json` |
 | `gen/checks/loop_check.py` | MUS-01, MUS-02 PASS; layer length PASS | loop wrap has no click or gap; layer = base length | `evidence/loop-check.json` |
 | `gen/tile_process.py` seam metric | PASS (seam 7.52 vs interior 6.05) | the ground tile tiles without a visible seam | `evidence/tile-seam.json` |
-| `scripts/audit_repo.py --stage final` | 12 problems = the 12 assets not generated yet; order check PASS | no MP3/MP4/large files/caches/keys; every CHANGE-BRIEF asset exists; **every generation is newer than `design-v1`** (tag 2026-09-28 15:21 EDT; first generation commit `e384933`, 2026-09-29 16:57 EDT, a descendant of the tag) | `evidence/repo-audit.json` |
+| `scripts/audit_repo.py --stage final` | 0 problems (all 23 asset IDs present); order check PASS | no MP3/MP4/large files/caches/keys; every CHANGE-BRIEF asset exists; **every generation is newer than `design-v1`** (tag 2026-09-28 15:21 EDT; first generation commit `e384933`, 2026-09-29 16:57 EDT, a descendant of the tag) | `evidence/repo-audit.json` |
 | balance probe `godot/tests/probe_balance.gd` | informational | scripted bots to compare tuning | `evidence/balance-probe-*.txt` |
 
 The test harness fails a suite that stops early; my runner also fails on any `SCRIPT ERROR` (both added after a script error once aborted a helper silently).
@@ -41,8 +41,8 @@ Full notes in my words: [`evidence/playtest/2026-09-29-bao-notes.md`](evidence/p
 |---|---|---|---|
 | 1 — 2026-09-29, music only, no SFX yet | `40102ab` | first play of the greybox with generated art | bullets flew through monsters → loop L1 below; asked for a fuller map, rising XP cost, tougher monsters over time, more cards |
 | 2 — 2026-09-29/30, music only | `79c2874` | re-test after the fixes | "子弹对的" (bullets fixed), "撞墙手感还行" (collisions feel fine), "不难" (not hard), "有合成出来" (I reached the Sunflare); asked for a more broken-up map |
-| **Run A — sound on** | final | the full sound checklist | **PENDING** (needs SFX) |
-| **Run B — muted (M on the title screen)** | final | can I read every event without sound? | **PENDING** |
+| **Run A — sound on** — 2026-10-01 | `1b24721` | the full sound checklist | "只响一次，不会连起来，不会，没有空白" — each sound once, kills never machine-gun, no extra sounds from tapping/holding, no gap at the loop; pause, level-up duck, Sunflare layer, lose/win fade + stinger, R during the fade, M/9/0 all confirmed — [`evidence/playtest/2026-10-01-runs-A-B.md`](evidence/playtest/2026-10-01-runs-A-B.md) |
+| **Run B — muted (M on the title screen)** — 2026-10-01 | `1b24721` | can I read every event without sound? | "第二局都能" — hits, level-ups and the evolution all readable from the picture; wraiths and the courier visible |
 
 ## 5. Movement and state changes
 
@@ -63,7 +63,7 @@ All nine panels were captured from the build (`godot/tests/capture.gd`). The fir
 
 ## 8. Sound: once per event
 
-Automated (current build, streams not yet present — the gate and counts do not depend on the files):
+Automated (the gate and the counts do not depend on the audio files; re-run with the real sounds loaded):
 
 | Check | Observed |
 |---|---|
@@ -74,11 +74,11 @@ Automated (current build, streams not yet present — the gate and counts do not
 | `burst-20-kills-one-sfx` | 20 kills in one tick → 1 play |
 | `evolve-sfx-once` / `one-stinger` | 1 evolution sound; 1 stinger at the end |
 
-**PENDING (Run A):** hearing each of the seven sounds on its event in play.
+**Run A (me):** each of the seven sounds played once on its event — "只响一次" — and kills in dense waves did not run together — "不会连起来".
 
 ## 9. Rapid and held input
 
-Automated: `hold-input-no-sfx` (100 ticks holding a direction → 0 sounds), `rapid-pause-no-sfx` (20 pause toggles → 0 sounds, state correct) — PASS. Key presses ignore key-repeat echo, and no sound is attached to input. **PENDING (Run A):** tapping and holding by hand.
+Automated: `hold-input-no-sfx` (100 ticks holding a direction → 0 sounds), `rapid-pause-no-sfx` (20 pause toggles → 0 sounds, state correct) — PASS. Key presses ignore key-repeat echo, and no sound is attached to input. **Run A (me):** tapping fast and holding a direction produced no extra sounds — "不会".
 
 ## 10. Music loop seam
 
@@ -88,15 +88,15 @@ Automated: `hold-input-no-sfx` (100 ticks holding a direction → 0 sounds), `ra
 | MUS-02 Sunflare layer | 20.004 s | 0.00844 vs 0.02508 | 1.74 / 2.29 | PASS |
 | layer length = base length | 882176 = 882176 frames | — | — | PASS |
 
-By ear: I listened to each of the four MUS-01 candidates as a loop played three times in a row and picked the one without audible clutter; I listened to three MUS-01 + MUS-02 mixes looped three times and picked s34. **PENDING (Run A):** listening to the loop point inside the game.
+By ear: I listened to each of the four MUS-01 candidates as a loop played three times in a row and picked the one without audible clutter; I listened to three MUS-01 + MUS-02 mixes looped three times and picked s34. **Run A (me):** no click or gap at the loop point in the game — "没有空白".
 
 ## 11. Pause and end behaviour
 
-Automated: `pause-lowpass-and-duck` (low-pass on, −10 dB), `resume-restores`, `levelup-duck` / `levelup-unduck` (−6 dB), `lost-fades` → `lost-stops`, `restart-during-fade` (new run's music at full volume, filter off), `restart-from-pause`, `mute-flags`, `mute-no-state-change` — PASS. `independence`: a seeded run with every stream removed and the master bus muted ends in exactly the same state as the run with sound (same tick 3850, kills 88, level 8, position). **PENDING (Run A):** hearing these in play.
+Automated: `pause-lowpass-and-duck` (low-pass on, −10 dB), `resume-restores`, `levelup-duck` / `levelup-unduck` (−6 dB), `lost-fades` → `lost-stops`, `restart-during-fade` (new run's music at full volume, filter off), `restart-from-pause`, `mute-flags`, `mute-no-state-change` — PASS. `independence`: a seeded run with every stream removed and the master bus muted ends in exactly the same state as the run with sound (same tick 3850, kills 88, level 8, position). **Run A (me):** confirmed in play — pause muffles and quietens the music and resume restores it; level-up dips it; the Sunflare layer comes in; lose/win fade with the stinger; R during the fade restarts the music cleanly; M/9/0 work.
 
 ## 12. Understandable without sound
 
-Design: every sound event has a visual — hit: red flash, screen tint, knockback, HP bar; pickup: the gem flies to the courier and the XP bar/number rises; level-up: the field freezes and cards appear; evolution: banner, zoom-out, brighter courier; end: result panel; the HUD shows `MUSIC on/off SFX on/off`. **PENDING (Run B):** my muted run — especially whether the fog-wraiths are visible (contrast 0.03).
+Design: every sound event has a visual — hit: red flash, screen tint, knockback, HP bar; pickup: the gem flies to the courier and the XP bar/number rises; level-up: the field freezes and cards appear; evolution: banner, zoom-out, brighter courier; end: result panel; the HUD shows `MUSIC on/off SFX on/off`. **Run B (me), muted from the title screen:** "第二局都能" — I could tell being hit, levelling up and evolving without sound, and I could see the fog-wraiths and the courier. Measured contrast for the wraith is still the lowest (0.03), but in play it read well enough, so its colours stay as generated.
 
 ## 13. Observe → change → re-verify
 
@@ -118,15 +118,16 @@ Design: every sound event has a visual — hit: red flash, screen tint, knockbac
 
 | # | Prediction | What happened |
 |---|---|---|
-| 1 | Kill SFX machine-guns in dense waves | Not in the automated runs (min gap 117 ms; 20 kills → 1 sound). **PENDING** by ear. |
+| 1 | Kill SFX machine-guns in dense waves | Did not happen: min gap 117 ms and 20 kills → 1 sound in the automated runs; by ear in Run A, "不会连起来". |
 | 2 | Generated poses drift after downscaling | Happened, differently than predicted: identity held, but FLUX ignored the pose grid and the lamp size varied; fixed by per-pose prompts and lamp normalisation (L2–L4). |
 | 3 | MusicGen loops click or drift | Did not happen after processing: all loops PASS; confirmed by ear on the candidates. |
-| 4 | Enemies unreadable against the ground | **Confirmed for the wraith** (contrast 0.03 vs 0.40 for the moth). Decision waits for my muted run. |
+| 4 | Enemies unreadable against the ground | Measured low for the wraith (contrast 0.03 vs 0.40 for the moth), but in my muted run it was readable ("第二局都能"); kept. The props added later were made subtle (decals at 55 %) so the ground stays darkest. |
 | 5 | MUS-02 drifts against MUS-01 | Happened with the melody-conditioned model; fixed with a second batch (L7). |
 
 ## 15. Open questions and not yet verified
 
-- All **PENDING** items above (SFX by ear, muted run, fresh GitHub clone).
-- Fog-wraith visibility; courier size on screen; whether to shrink the hurtbox to r ≈ 7.
+- Fresh clone from GitHub at the final commit (§2).
+- Hurtbox kept at r = 10 (it reaches the lower lamp); it was not raised as a problem in play.
+- The courier is small on screen (~20 px tall); readable in both runs, but worth revisiting if the camera ever zooms out further.
 - No gamepad test is recorded.
 - Balance is tuned against my own play and scripted bots only.
