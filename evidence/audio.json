@@ -1,13 +1,13 @@
 {
-  "checks": 22,
+  "checks": 25,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
     {
       "id": "once-levelup",
       "observed": {
-        "events": 7,
-        "plays": 7
+        "events": 6,
+        "plays": 6
       },
       "status": "PASS"
     },
@@ -27,17 +27,17 @@
     {
       "id": "kill-throttled",
       "observed": {
-        "kills": 88,
-        "min_gap": 117,
-        "plays": 88
+        "kills": 80,
+        "min_gap": 184,
+        "plays": 78
       },
       "status": "PASS"
     },
     {
       "id": "pickup-merged",
       "observed": {
-        "events": 73,
-        "plays": 54
+        "events": 68,
+        "plays": 50
       },
       "status": "PASS"
     },
@@ -53,26 +53,26 @@
       "id": "independence",
       "observed": {
         "silent": {
-          "enemies": 35,
+          "enemies": 43,
           "evolved": false,
           "hp": 0,
-          "kills": 88,
-          "level": 8,
+          "kills": 80,
+          "level": 7,
           "state": "lost",
-          "tick": 3850,
-          "x": -148.94,
-          "y": 95.37
+          "tick": 3817,
+          "x": -220.11,
+          "y": 202.53
         },
         "with_sound": {
-          "enemies": 35,
+          "enemies": 43,
           "evolved": false,
           "hp": 0,
-          "kills": 88,
-          "level": 8,
+          "kills": 80,
+          "level": 7,
           "state": "lost",
-          "tick": 3850,
-          "x": -148.94,
-          "y": 95.37
+          "tick": 3817,
+          "x": -220.11,
+          "y": 202.53
         }
       },
       "status": "PASS"
@@ -81,6 +81,36 @@
       "id": "evolve-sfx-once",
       "observed": {
         "evolve": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-sfx-on-card-screen",
+      "observed": {
+        "card_screens_at": [
+          1,
+          2
+        ],
+        "chimes_at": [
+          1,
+          2
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "no-levelup-chime-when-run-ends",
+      "observed": {
+        "levelup": 0,
+        "state": "won"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "restart-silences-stingers",
+      "observed": {
+        "after_restart": false,
+        "stinger_was_playing": true
       },
       "status": "PASS"
     },
@@ -158,5 +188,5 @@
     }
   ],
   "suite": "audio",
-  "utc": "2026-10-01T16:38:17"
+  "utc": "2026-10-01T17:40:03"
 }

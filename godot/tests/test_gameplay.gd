@@ -174,6 +174,29 @@ func run() -> void:
 	check("map-layout-deterministic", again.props == ground.props)
 	again.free()
 
+	# enemies always arrive from off-screen, even with the courier in a corner (review finding)
+	await fresh()
+	var spots := [Vector2.ZERO, Tuning.ARENA.position + Vector2(30, 30), Vector2(Tuning.ARENA.end.x - 30, 0), Vector2(0, Tuning.ARENA.end.y - 30)]
+	var visible := 0
+	var outside_arena := 0
+	var r := RandomNumberGenerator.new()
+	r.seed = 5
+	for spot in spots:
+		game.player.position = spot
+		var view: Rect2 = game.view_rect()
+		var wave := []
+		for i in 50:
+			wave.append({"kind": "moth", "angle": r.randf() * TAU})
+		for e in game.spawn_wave(wave):
+			if view.grow(Tuning.SPAWN_MARGIN - 1).has_point(e.position):
+				visible += 1
+			if not Tuning.ARENA.has_point(e.position):
+				outside_arena += 1
+		for e in game.enemies.duplicate():
+			game.enemies.erase(e)
+			e.free()
+	check("spawns-arrive-off-screen", visible == 0 and outside_arena == 0, {"visible_spawns": visible, "outside_arena": outside_arena, "of": 200})
+
 	# bullets hit what you see (Bao, playtest 2026-09-29: "子弹打到怪物之后要求消失")
 	await fresh()
 	game.beam_timer = 99999
@@ -304,15 +327,14 @@ func run() -> void:
 	game.start_run(5)
 	check("restart-resets", lost_first and game.state.current == GS.PLAYING and game.tick_count == 0 and game.enemies.is_empty() and game.gems.is_empty() and game.player.hp == Tuning.PLAYER_MAX_HP and game.prog.level == 1)
 
+	# a missing asset must change nothing but the look: same seeded run with and without art, and the
+	# placeholders must actually draw (frames are rendered before the session is freed)
+	var with_art := await _seeded_summary(9)
 	Art.disabled = true
-	await fresh(9, false)
-	game.test_axis = Vector2(1, 0.3)
-	for i in 600:
-		if game.state.current == GS.LEVELUP:
-			game.choose_card(0)
-		game.tick()
-	check("missing-art-no-crash", game.tick_count > 0 and game.player.sheet == null)
+	var without_art := await _seeded_summary(9)
+	var placeholder_sheet = game.player.sheet
 	Art.disabled = false
+	check("missing-art-same-run-and-draws", with_art == without_art and placeholder_sheet == null, {"with_art": with_art, "without_art": without_art})
 
 	await fresh(3, false)
 	var chosen: Array = []
@@ -405,3 +427,15 @@ func _near_solid(ground, p: Vector2) -> bool:
 		if r.grow(Tuning.PLAYER_RADIUS).has_point(p):
 			return true
 	return false
+
+func _seeded_summary(seed_value: int) -> Dictionary:
+	await fresh(seed_value, false)
+	game.test_axis = Vector2(1, 0.3)
+	for i in 600:
+		if game.state.current == GS.LEVELUP:
+			game.choose_card(0)
+		game.tick()
+	for i in 2:
+		await process_frame
+	return {"state": GS.NAMES[game.state.current], "tick": game.tick_count, "kills": game.kills, "level": game.prog.level,
+		"hp": game.player.hp, "x": snappedf(game.player.position.x, 0.01), "y": snappedf(game.player.position.y, 0.01)}

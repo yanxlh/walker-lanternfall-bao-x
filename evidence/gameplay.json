@@ -1,8 +1,16 @@
 {
-  "checks": 63,
+  "checks": 65,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
+    {
+      "id": "generated-assets-load",
+      "observed": {
+        "assets": 23,
+        "not_loaded": []
+      },
+      "status": "PASS"
+    },
     {
       "id": "run-starts-playing",
       "observed": {},
@@ -248,6 +256,15 @@
       "status": "PASS"
     },
     {
+      "id": "spawns-arrive-off-screen",
+      "observed": {
+        "of": 200,
+        "outside_arena": 0,
+        "visible_spawns": 0
+      },
+      "status": "PASS"
+    },
+    {
       "id": "beam-stops-on-moth-wing",
       "observed": {
         "moth_dead": true,
@@ -385,8 +402,27 @@
       "status": "PASS"
     },
     {
-      "id": "missing-art-no-crash",
-      "observed": {},
+      "id": "missing-art-same-run-and-draws",
+      "observed": {
+        "with_art": {
+          "hp": 10,
+          "kills": 6,
+          "level": 1,
+          "state": "playing",
+          "tick": 600,
+          "x": 718.01,
+          "y": 257.38
+        },
+        "without_art": {
+          "hp": 10,
+          "kills": 6,
+          "level": 1,
+          "state": "playing",
+          "tick": 600,
+          "x": 718.01,
+          "y": 257.38
+        }
+      },
       "status": "PASS"
     },
     {
@@ -398,12 +434,12 @@
           "pass_hp",
           "beam_rate",
           "pass_hp",
-          "moth_new",
-          "pass_damage"
+          "pass_magnet",
+          "pass_speed"
         ],
-        "kills": 104,
+        "kills": 101,
         "level": 8,
-        "seconds": 68,
+        "seconds": 67,
         "state": "lost"
       },
       "status": "PASS"
@@ -503,7 +539,7 @@
     {
       "id": "camera-menu-push-in",
       "observed": {
-        "after": 0.8211430311203,
+        "after": 0.821086168289185,
         "start": 0.800000011920929
       },
       "status": "PASS"
@@ -516,12 +552,12 @@
     {
       "id": "fog-lifts-on-win",
       "observed": {
-        "lift": 0.21965207807072,
-        "zoom": 0.960462629795074
+        "lift": 0.216516030981888,
+        "zoom": 0.961027085781097
       },
       "status": "PASS"
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-09-30T16:50:24"
+  "utc": "2026-10-01T17:40:23"
 }

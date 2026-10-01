@@ -54,6 +54,9 @@ const EVOLVE_POSE_TICKS := 60
 const BANNER_TICKS := 120
 
 const SPAWN_DISTANCE := 400.0
+## Spawns must land at least this far outside the visible 640x360 view.
+const SPAWN_MARGIN := 24.0
+const VIEW_HALF := Vector2(320, 180)
 const MAX_ENEMIES := 220
 ## radius: the body that hurts the courier on contact. hit_half: half-extents of the visible sprite that
 ## the courier's weapons can hit (measured from enemy_moth.png / enemy_wraith.png, 2026-09-29).

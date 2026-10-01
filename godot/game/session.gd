@@ -127,9 +127,7 @@ func tick() -> void:
 	_step_gems()
 	camera.on_tick()
 	if not test_no_spawn:
-		for s in spawner.step(tick_count, rng):
-			var at: Vector2 = player.position + Vector2.from_angle(s["angle"]) * Tuning.SPAWN_DISTANCE
-			spawn_enemy(s["kind"], at.clamp(Tuning.ARENA.position, Tuning.ARENA.end))
+		spawn_wave(spawner.step(tick_count, rng))
 	if banner_ticks > 0:
 		banner_ticks -= 1
 	if pose_override_ticks > 0:
@@ -144,6 +142,49 @@ func tick() -> void:
 		offered = prog.offer_cards(rng)
 		player.set_override("levelup")
 		state.go(GameState.LEVELUP)
+
+## The rectangle the player can see: the camera follows the courier but stops at the arena edge.
+func view_rect() -> Rect2:
+	var centre: Vector2 = player.position.clamp(Tuning.ARENA.position + Tuning.VIEW_HALF, Tuning.ARENA.end - Tuning.VIEW_HALF)
+	return Rect2(centre - Tuning.VIEW_HALF, Tuning.VIEW_HALF * 2)
+
+## Places a wave of [{kind, angle}] on a ring around the courier and returns the spawned enemies. A spawn
+## always lands off-screen: near a wall or in a corner the ring point can fall inside the view, so its angle is
+## re-rolled (seeded rng) a few times, then it falls back to the widest strip of arena outside the view.
+func spawn_wave(spawns: Array) -> Array:
+	var out := []
+	var keep_out: Rect2 = view_rect().grow(Tuning.SPAWN_MARGIN)
+	var inner: Rect2 = Tuning.ARENA.grow(-8)
+	for s in spawns:
+		var angle: float = s["angle"]
+		var at := _ring_point(angle, inner)
+		var tries := 0
+		while keep_out.has_point(at) and tries < 6:
+			angle = rng.randf() * TAU
+			at = _ring_point(angle, inner)
+			tries += 1
+		if keep_out.has_point(at):
+			at = _outside_view(keep_out, inner)
+		var e = spawn_enemy(s["kind"], at)
+		if e:
+			out.append(e)
+	return out
+
+func _ring_point(angle: float, inner: Rect2) -> Vector2:
+	return (player.position + Vector2.from_angle(angle) * Tuning.SPAWN_DISTANCE).clamp(inner.position, inner.end)
+
+func _outside_view(keep_out: Rect2, inner: Rect2) -> Vector2:
+	var strips := [
+		Rect2(inner.position, Vector2(keep_out.position.x - inner.position.x, inner.size.y)),
+		Rect2(Vector2(keep_out.end.x, inner.position.y), Vector2(inner.end.x - keep_out.end.x, inner.size.y)),
+		Rect2(inner.position, Vector2(inner.size.x, keep_out.position.y - inner.position.y)),
+		Rect2(Vector2(inner.position.x, keep_out.end.y), Vector2(inner.size.x, inner.end.y - keep_out.end.y)),
+	]
+	var best: Rect2 = strips[0]
+	for strip in strips:
+		if strip.get_area() > best.get_area():
+			best = strip
+	return Vector2(rng.randf_range(best.position.x, best.end.x), rng.randf_range(best.position.y, best.end.y))
 
 func spawn_enemy(kind: String, at: Vector2) -> Node2D:
 	if enemies.size() >= Tuning.MAX_ENEMIES:
