@@ -2,7 +2,7 @@
 
 `walker-lanternfall-bao-x` · Bao Xing · CSYE 7270 Assignment 2
 
-> **Status: 2026-10-02.** Source revision **`8a6f988`** (the revision the film shows; `godot/` is unchanged after it) for every automated check, capture and comparison below; engine **Godot 4.7.2.stable.official.ed1daf0bf**. My two full playtests (sound on, then muted) were on build `1b24721`, before the code-review fixes `491892a`–`8a6f988`; those fixes are covered by automated checks, not by a new playtest. Still open: the fresh clone from GitHub at the final commit (§2). Nothing here is claimed before it was observed.
+> **Status: 2026-10-02.** Source revision **`8a6f988`** (the revision the film shows; `godot/` is unchanged after it) for every automated check, capture and comparison below; engine **Godot 4.7.2.stable.official.ed1daf0bf**. My two full playtests (sound on, then muted) were on build `1b24721`, before the code-review fixes `491892a`–`8a6f988`; those fixes are covered by automated checks, not by a new playtest. The fresh clone from GitHub is done (§2). Nothing here is claimed before it was observed.
 
 ## 1. Environment
 
@@ -16,7 +16,7 @@
 ## 2. Fresh copy
 
 - **Local fresh clone of `1b24721`** (2026-10-01): `git clone` into an empty folder → `godot --headless --path godot --import` → all three suites: **logic 32/32, gameplay 63/63, audio 22/22**, no script errors; `audit_repo.py --stage final`: 0 problems. All 14 sprites, 7 sound effects and 2 music loops were present; nothing is downloaded at run time. (An earlier clone of `89ae6ed`, before the sounds and new props, also passed.)
-- **PENDING:** the same from a fresh clone of the GitHub repository at the final commit.
+- **Fresh clone from GitHub** (2026-10-02, commit `a600e65`; `godot/` identical to `8a6f988`): `git clone https://github.com/yanxlh/walker-lanternfall-bao-x.git` into an empty folder — a 63 MB checkout with no Godot cache, no file over 25 MB and no MP3/MP4 → `godot --headless --path godot --import --quit` (46 files imported, 0 errors) → **logic 32/32, gameplay 65/65 (including `generated-assets-load`), audio 25/25**, no script errors → `scripts/audit_repo.py --stage final`: 0 problems → all 23 asset files listed in `godot/assets/manifest.json` present → the game starts and runs (5 s launch, no errors in the log). Commits after `a600e65` change documents only.
 
 ## 3. Automated checks (all added for this project)
 
@@ -153,7 +153,6 @@ A fresh-context reviewer read the whole branch (Godot code, tests, pipeline, che
 
 ## 16. Open questions and not yet verified
 
-- Fresh clone from GitHub at the final commit (§2).
 - Hurtbox kept at r = 10 (it reaches the lower lamp); it was not raised as a problem in play.
 - The courier is small on screen (~20 px tall); readable in both runs, but worth revisiting if the camera ever zooms out further.
 - No gamepad test is recorded.
