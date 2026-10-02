@@ -4,11 +4,13 @@
 
 A daily diary of every attempt: **what I wanted, what came back, what I decided.** The "From the logs" bullets are facts pulled from git, the ledger and ASSET-LOG so dates and numbers are exact. The three sections under each day were drafted by Claude from our working session — my own choices, and my own words in quotation marks where I gave a reason — and then checked by me.
 
-Who did what, in one line: I made the design decisions and every accept/reject call and did the playtests; Claude drafted documents, wrote the Godot code, tests and generation scripts, ran the local models, and measured each candidate and suggested a pick — I looked at or listened to every candidate and made the call, except five MUS-02 layers that an automated check rejected (logged as such); FLUX.1-schnell, Stable Audio Open and MusicGen produced the raw art, sound and music.
+Who did what, in one line: I made the design decisions and the accept/reject calls and did the playtests; Claude drafted documents, wrote the Godot code, tests and generation scripts, ran the local models, and measured each candidate and suggested a pick — I looked at or listened to every candidate and made the call, except five MUS-02 layers that an automated check rejected (logged as such); FLUX.1-schnell, Stable Audio Open and MusicGen produced the raw art, sound and music.
 
 ---
 
 ## 2026-09-28 (Mon) — choosing the game, freezing the design
+
+*Retrospective: written the next day (2026-09-29, commits `6f1796a`, `67a5b3f`) from the session record and the commits below. The other days were written on the day.*
 
 **From the logs**
 - Started from a blank Godot 4.7.2 project instead of extending the A1 platformer; the Lamp-Head Courier carried over as the protagonist.
@@ -16,6 +18,7 @@ Who did what, in one line: I made the design decisions and every accept/reject c
 - Models chosen: all local and open (FLUX.1-schnell, Stable Audio Open 1.0, MusicGen).
 - CONCEPT, STORYBOARD (9 panels), CHARACTER-SHEET (12-pose blockout) and CHANGE-BRIEF committed; tag `design-v1` at 2026-09-28 15:21 EDT, before any generation.
 - The first blockout script produced silhouettes that could not be told apart at 32 px (idle vs turn_side, levelup vs victory); poses were redrawn before the tag.
+- Trace: `9e8a56e` CONCEPT v1 · `d93c6db` STORYBOARD (9 panels) · `f7a26a8` CHARACTER-SHEET (blockout, silhouettes, collision overlay) · `46d2fe2` CHANGE-BRIEF v1 = tag `design-v1` · `5a39e1d`, `6360697`, `b6b6478` the first headless logic (state machine, cards, SfxGate) with its tests.
 
 **What I wanted**
 
@@ -57,6 +60,7 @@ The real pushback was scope: every extra weapon means more art, more sounds, mor
 - Next: "路灯这些有阻挡效果". Props now block the courier (sliding along their edges) but not the enemies — moths fly, wraiths are fog — so the market can trap you, not hide you.
 - Played again: "子弹对的，撞墙手感还行，不难，有合成出来" — the bullet fix confirmed in play, collisions fine, not hard, and I reached the Sunflare. One more request: "整体地图应该破碎一点" — the two neat streets became scattered clusters with gaps and alleys. Making the layout random also exposed that the old one had crates sitting inside stalls.
 - The course email on audio (generate something every day, record rejections, trim/loop and listen ≥ 3 times, log every edit) arrived today; this diary starts using that structure.
+- Trace: `e384933` first generation commit (R2: pixel art, 10 poses) · ASSET-LOG ART-PC-01 run `ART-PC-01-20260929T202956Z-s11` (rejected first batch) and `…T210117Z-s11-walk_contact` (accepted, traced in the film) · `5d1cc9b` courier sheet · `40811de` the eight other sprites · `baf75c7` MUS-01 / MUS-02 · `05b3bdc` Stable Audio Open sampler fix · `40102ab` camera moves · `a51af69` bullet fix, tests `beam-stops-on-moth-wing`, `beam-stops-on-wraith-hood` · `6520bb2` XP (R3, `prog-xp-need-always-increases`) · `2b5bb4e` HP growth and cards (R4, `enemy-hp-grows-with-time`) · `evidence/balance-probe-*.txt`.
 
 **What I wanted**
 
@@ -86,6 +90,7 @@ A greybox that plays like the design says — you only move, and the light does 
 ## 2026-09-30 (Wed) — sounds, the fuller market, and a report
 
 **From the logs**
+- Trace for this day: `79c2874` solid props (R5, `props-block-the-courier`, `courier-slides-along-props`) · `89ae6ed` broken-up market (R6, `map-is-broken-up`) · `ce9b679` my playtest notes (`evidence/playtest/2026-09-29-bao-notes.md`) · `a90aa4c` the five map props (ART-ENV-03 … 07) · `87f3d94` the seven sounds (ASSET-LOG SFX-01 … SFX-06b, 21 runs) · `37e1b13` my SFX choices and reasons · `b670405` interim TEST-REPORT.
 - The overnight sound batch stalled: the Mac slept, and one Stable Audio Open run took 9.5 hours of wall time for about a minute of CPU. It resumed in the morning; all 21 candidates (7 sounds × 3 seeds) finished.
 - Each sound was trimmed and normalised, measured (brightness, energy above 6 kHz, attack), and the three candidates played back to back in one file per sound. I listened to all seven files and chose one candidate for each, e.g. SFX-01 "3 不刺耳", SFX-02 "1 干净", SFX-03 "3 听着像受伤".
 - The five map props (lantern post, crates, noodle cart, puddle, leaves): 3 candidates each, previewed in a copy of the game. The puddle's first batch was unusable — the prompt said "on dark cobblestones" and FLUX painted the stones, so the background could not be removed — and was regenerated with a new prompt. In the in-game preview the leaves were brighter than the courier's body, so puddles and leaves are now drawn at 55 % opacity.
@@ -118,6 +123,7 @@ Most of the sound candidates were far brighter than the concept's "warm, soft" d
 - A whole-branch code review (a fresh Claude context, read-only) found that a fresh clone or the ZIP, run by double-clicking, showed only placeholder shapes and no sound — my own checkout had Godot's import cache, so I never saw it. Also: two level-ups from one pickup stacked their chimes, enemies could spawn on screen near walls, and a lose stinger rang on after a restart. All four fixed test-first; the launcher now imports the assets on first run.
 - The film (godot-gamedev + walker) was built from source revision `8a6f988`. All gameplay is real 4K Movie Maker capture from an isolated copy, played through the game's input map by a disclosed script. The first full take froze for 50 s because macOS stops drawing a covered window; the capture script now pauses the game while the window can't draw and those frames are cut. Card screens are held 2 s on screen so they can be read.
 - A fact-check of the film's narration corrected seven lines before the final render (`youtube/…/FACTCHECK.md`), for example "every accept and reject was Bao's" → "every asset that shipped was Bao's pick", because five MUS-02 rejects came from an automated check I did not listen to.
+- Trace: `ced1323` Runs A and B (`evidence/playtest/2026-10-01-runs-A-B.md`) · review fixes `491892a` (`generated-assets-load`), `7669fd0` launcher import, `8aaad72` (`levelup-sfx-on-card-screen`), `73f6956` (`restart-silences-stingers`), `8a6f988` (`spawns-arrive-off-screen`, `missing-art-same-run-and-draws`) — the film's source revision · `75babe0` the film package (beat sheet, evidence ledger, FACTCHECK) · film SHA-256 `585a89d4…c779`.
 
 **What I wanted**
 

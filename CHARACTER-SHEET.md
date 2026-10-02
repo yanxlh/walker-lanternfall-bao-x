@@ -141,3 +141,26 @@ Rows: pre-generation blockout · generated, palette-locked frame · the frame ca
 3. **Silhouettes (section 2).** Less distinct than the blockout: idle / walk_contact / walk_passing differ mostly in the legs, and levelup and victory both raise one arm (FLUX did not give "both arms up"). In motion the walk frames alternate every 8 ticks, which reads; levelup and victory are never on screen together.
 4. **Glow.** The blockout's soft halo does not survive: FLUX drew none and binary alpha removes soft light. The empowered state is a brighter modulate in code instead.
 5. **Satchel side (rule 6).** The satchel is on the hip facing the viewer in most generated poses rather than strictly on the trailing side.
+
+### R4 · 2026-10-02 · Loop or once, both facings and the hurtbox in the engine (added after the slice was built)
+
+Written after generation, from the code at `8a6f988`; it labels the shipped poses and adds evidence, and changes no rule above.
+
+| # | Pose | Game state | Loops or once | How long (60 ticks = 1 s) |
+|---|---|---|---|---|
+| 1 | turn_front | title-menu portrait (`hud.gd`) | held, static | while the menu is up |
+| 2 | idle | PLAYING, not moving | held, static | while still |
+| 3 | walk_contact | PLAYING, moving | **loops** with 4 | 8 ticks each (`WALK_FRAME_TICKS`) |
+| 4 | walk_passing | PLAYING, moving | **loops** with 3 | 8 ticks each |
+| 5 | cast | each Beam shot / each Sunflare pulse | once per shot | 8 ticks (`CAST_POSE_TICKS`) / 12 ticks |
+| 6 | hurt | damage taken | once per hit | the first 12 of the 48 invulnerable ticks |
+| 7 | levelup | LEVELUP (also the card-screen portrait) | held | while the cards are up |
+| 8 | sunflare | Sunflare card taken | once per run | 60 ticks (`EVOLVE_POSE_TICKS`), then idle/walk with the brighter coat |
+| 9 | defeat | LOST (also the result-panel portrait) | once, held | until R |
+| 10 | victory | WON (also the result-panel portrait) | once, held | until R |
+
+Facing left is the runtime mirror of every frame (`player.gd` line 107); no left-facing art exists. In-engine evidence for both facings and the hurtbox on every pose:
+
+![sheet vs game, facing left and with the F3 hurtbox](design/character/sheet-vs-game-facing.png)
+
+Rows: blockout · generated frame · in game facing right · in game facing left · facing left with the F3 hurtbox (r = 10 at sprite origin (16, 23)), captured by `scripts/capture_facing.gd` on an isolated copy of `8a6f988`. Art outside the hurtbox: the upper lamp in every standing pose (fair: the light never makes the courier easier to hit — section 5); the lamp leaning back in **hurt** (in the player's favour); the lying body in **defeat** (the run is over, nothing collides). Art inside it that the sheet wanted outside: the lower half of the lamp (R3, item 2 — still open, a playtest decision).

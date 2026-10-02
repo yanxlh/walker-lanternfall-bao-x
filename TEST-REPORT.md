@@ -2,7 +2,7 @@
 
 `walker-lanternfall-bao-x` · Bao Xing · CSYE 7270 Assignment 2
 
-> **Status: updated 2026-10-01 for build `1b24721`, with all 23 assets in.** My two full playtests (sound on, then muted) are done; the only item still open is the fresh clone from GitHub at the final commit (§2). Nothing here is claimed before it was observed.
+> **Status: 2026-10-02.** Source revision **`8a6f988`** (the revision the film shows; `godot/` is unchanged after it) for every automated check, capture and comparison below; engine **Godot 4.7.2.stable.official.ed1daf0bf**. My two full playtests (sound on, then muted) were on build `1b24721`, before the code-review fixes `491892a`–`8a6f988`; those fixes are covered by automated checks, not by a new playtest. Still open: the fresh clone from GitHub at the final commit (§2). Nothing here is claimed before it was observed.
 
 ## 1. Environment
 
@@ -20,7 +20,7 @@
 
 ## 3. Automated checks (all added for this project)
 
-| Check | Result (2026-09-30) | What it proves | Evidence |
+| Check | Result on `8a6f988` (re-run 2026-10-01/02) | What it proves | Evidence |
 |---|---|---|---|
 | `godot/tests/test_logic.gd` | 32 / 32 | state machine; branching cards, 5-level passives, damage/haste multipliers, evolution rule; XP needed always rises; SFX gate cooldowns, voice caps, once-per-run | `evidence/logic.json` |
 | `godot/tests/test_gameplay.gd` | 65 / 65 | movement, diagonal normalisation, facing dead-zone, poses, nearest-enemy aim, bullets stop on visible contact, gems, level-up queue (incl. while paused), i-frames, win/lose incl. same-tick, evolution, restart, missing-art fallback, HUD text, hurtbox on the torso, HP growth, damage/haste cards, camera moves, map layout, solid props | `evidence/gameplay.json` |
@@ -32,6 +32,20 @@
 | balance probe `godot/tests/probe_balance.gd` | informational | scripted bots to compare tuning | `evidence/balance-probe-*.txt` |
 
 The test harness fails a suite that stops early; my runner also fails on any `SCRIPT ERROR` (both added after a script error once aborted a helper silently).
+
+Commands (from the repository root; Python checks use the venvs from `gen/requirements-*.txt`):
+
+```
+godot --headless --path godot --import --quit
+godot --headless --path godot --script res://tests/test_logic.gd       # -> logic: 32 checks, 0 failures
+godot --headless --path godot --script res://tests/test_gameplay.gd    # -> gameplay: 65 checks, 0 failures
+godot --headless --path godot --script res://tests/test_audio.gd       # -> audio: 25 checks, 0 failures
+gen/.venv-art/bin/python gen/checks/palette_check.py
+gen/.venv-audio/bin/python gen/checks/loop_check.py godot/assets/music/mus_01_night_market.ogg godot/assets/music/mus_02_sunflare_layer.ogg
+python3 scripts/audit_repo.py --stage final
+```
+
+The suites' full output on a fresh `git archive 8a6f988` copy is kept in `youtube/claude-liam-walker-lanternfall-bao-x-gamedev/capture/test-run-film-build-raw.txt` (122 PASS, 0 FAIL, no script errors).
 
 ## 4. My playtests
 
@@ -53,7 +67,13 @@ Full notes in my words: [`evidence/playtest/2026-09-29-bao-notes.md`](evidence/p
 
 ![sheet vs game](design/character/sheet-vs-game.png)
 
-Blockout (design-v1) · generated frame · the frame captured in the running game · generated silhouette. Held: 32 × 32, palette-only, binary alpha, feet on row 31, lamp normalised to 12 px, right-facing master with code flip. Broke and fixed: the generated courier is shorter, so the torso sat 1.7–3.6 px below the hurtbox centre → sprite origin moved to (16, 23) (loop L8). Still open: an r = 10 hurtbox now also covers the lower lamp; silhouettes are less distinct than the blockout (levelup vs victory). Details: CHARACTER-SHEET R2–R3.
+Blockout (design-v1) · generated frame · the frame captured in the running game · generated silhouette.
+
+**Both facings and the hurtbox, in the engine (added 2026-10-02):**
+
+![sheet vs game, facing left and with the F3 hurtbox](design/character/sheet-vs-game-facing.png)
+
+Rows: blockout · generated frame · in game facing right · in game facing left · facing left with the F3 hurtbox (r = 10 at sprite origin (16, 23)). Captured on an isolated copy of `8a6f988` by `scripts/capture_facing.gd` (same seed and setup as `godot/tests/capture.gd`; screens `evidence/screens/pose-*-left*.png`). Facing left is the code's mirror of the right-facing frame for every pose, as the sheet specifies. Mismatches with the collision shape, pose by pose: in the standing poses (turn_front, idle, walk, cast, levelup, sunflare, victory) the circle covers the coat and also the lower half of the lamp; in **hurt** the lamp leans back outside the circle (in the courier's favour); in **defeat** the body lies partly outside it, which does not matter because the run has ended. Held: 32 × 32, palette-only, binary alpha, feet on row 31, lamp normalised to 12 px, right-facing master with code flip. Broke and fixed: the generated courier is shorter, so the torso sat 1.7–3.6 px below the hurtbox centre → sprite origin moved to (16, 23) (loop L8). Still open: an r = 10 hurtbox now also covers the lower lamp; silhouettes are less distinct than the blockout (levelup vs victory). Details: CHARACTER-SHEET R2–R3.
 
 ## 7. Storyboard vs game
 

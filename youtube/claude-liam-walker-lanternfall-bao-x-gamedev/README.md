@@ -8,6 +8,7 @@ A 4K landscape teardown of this repository's game, made with the **godot-gamedev
 | `gamedev-evidence.json` | every file of `godot/` hashed and tied to a component; verbatim excerpts; each code beat paired with its hashed result clip |
 | `COMPONENTS.md` | the components the film explains, and the three files it leaves out (with reasons) |
 | `SHOTLIST.md` | what each beat shows and where it came from (take and frames, or file) |
+| `SCRIPT.md` | the narration, beat by beat, with timings and what is on screen |
 | `FACTCHECK.md` | every claim and its source; the corrections made before the final render |
 | `CAPTURE.md` | how the gameplay was captured (isolated copies, driver, seeds, dry runs, rejected takes) |
 | `SOURCES.md` | captures with hashes, files shown, tools, licences |
