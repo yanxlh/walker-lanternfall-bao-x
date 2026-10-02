@@ -63,14 +63,14 @@ All nine panels were captured from the build (`godot/tests/capture.gd`). The fir
 
 ## 8. Sound: once per event
 
-Automated (the gate and the counts do not depend on the audio files; re-run with the real sounds loaded):
+Automated (the gate and the counts do not depend on the audio files; re-run with the real sounds loaded). Numbers are from the final build `8a6f988` (`evidence/audio.json`); the review fix that keeps spawns off-screen changed how seed 11 plays out, so builds before it reported 88 kills → 88 plays (min gap 117 ms), 73 pickups → 54 plays and an independence end state at tick 3850. The verdicts did not change.
 
 | Check | Observed |
 |---|---|
 | `once-levelup` | one chime per card screen over a full run (count compared with card screens opened) |
 | `once-hurt` | 14 hits → 14 plays (one per i-frame window) |
-| `kill-throttled` | 88 kills → 88 plays, never closer than 60 ms (min gap 117 ms) |
-| `pickup-merged` | 73 pickups → 54 plays (pickups within one 300 ms voice slot merge — CHANGE-BRIEF R6) |
+| `kill-throttled` | 80 kills → 78 plays, never closer than 60 ms (min gap 184 ms) |
+| `pickup-merged` | 68 pickups → 50 plays (pickups within one 300 ms voice slot merge — CHANGE-BRIEF R6) |
 | `burst-20-kills-one-sfx` | 20 kills in one tick → 1 play |
 | `evolve-sfx-once` / `one-stinger` | 1 evolution sound; 1 stinger at the end |
 
@@ -92,7 +92,7 @@ By ear: I listened to each of the four MUS-01 candidates as a loop played three 
 
 ## 11. Pause and end behaviour
 
-Automated: `pause-lowpass-and-duck` (low-pass on, −10 dB), `resume-restores`, `levelup-duck` / `levelup-unduck` (−6 dB), `lost-fades` → `lost-stops`, `restart-during-fade` (new run's music at full volume, filter off), `restart-from-pause`, `mute-flags`, `mute-no-state-change` — PASS. `independence`: a seeded run with every stream removed and the master bus muted ends in exactly the same state as the run with sound (same tick 3850, kills 88, level 8, position). **Run A (me):** confirmed in play — pause muffles and quietens the music and resume restores it; level-up dips it; the Sunflare layer comes in; lose/win fade with the stinger; R during the fade restarts the music cleanly; M/9/0 work.
+Automated: `pause-lowpass-and-duck` (low-pass on, −10 dB), `resume-restores`, `levelup-duck` / `levelup-unduck` (−6 dB), `lost-fades` → `lost-stops`, `restart-during-fade` (new run's music at full volume, filter off), `restart-from-pause`, `mute-flags`, `mute-no-state-change` — PASS. `independence`: a seeded run with every stream removed and the master bus muted ends in exactly the same state as the run with sound (same tick 3817, kills 80, level 7, position −220.11, 202.53 — build `8a6f988`). **Run A (me):** confirmed in play — pause muffles and quietens the music and resume restores it; level-up dips it; the Sunflare layer comes in; lose/win fade with the stinger; R during the fade restarts the music cleanly; M/9/0 work.
 
 ## 12. Understandable without sound
 
@@ -121,7 +121,7 @@ Design: every sound event has a visual — hit: red flash, screen tint, knockbac
 
 | # | Prediction | What happened |
 |---|---|---|
-| 1 | Kill SFX machine-guns in dense waves | Did not happen: min gap 117 ms and 20 kills → 1 sound in the automated runs; by ear in Run A, "不会连起来". |
+| 1 | Kill SFX machine-guns in dense waves | Did not happen: min gap 184 ms and 20 kills → 1 sound in the automated runs (8a6f988); by ear in Run A, "不会连起来". |
 | 2 | Generated poses drift after downscaling | Happened, differently than predicted: identity held, but FLUX ignored the pose grid and the lamp size varied; fixed by per-pose prompts and lamp normalisation (L2–L4). |
 | 3 | MusicGen loops click or drift | Did not happen after processing: all loops PASS; confirmed by ear on the candidates. |
 | 4 | Enemies unreadable against the ground | Measured low for the wraith (contrast 0.03 vs 0.40 for the moth), but in my muted run it was readable ("第二局都能"); kept. The props added later were made subtle (decals at 55 %) so the ground stays darkest. |

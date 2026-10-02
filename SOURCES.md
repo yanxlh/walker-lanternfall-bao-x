@@ -13,7 +13,7 @@ Everything in this repository is original to this project or was generated for i
 
 | Model | Exact revision | Runtime | Licence / terms | Used for |
 |---|---|---|---|---|
-| [black-forest-labs/FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) | `741f7c3` | mflux 0.20.0 (MLX 0.32.2) Python API; 4-bit copy saved locally with `mflux-save` | Apache-2.0 | ART-PC-01, ART-EN-01, ART-EN-02, ART-ENV-01, ART-ENV-02, ART-FX-01, ART-FX-02, ART-FX-03, ART-PK-01 |
+| [black-forest-labs/FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) | `741f7c3` | mflux 0.20.0 (MLX 0.32.2) Python API; 4-bit copy saved locally with `mflux-save` | Apache-2.0 | ART-PC-01, ART-EN-01, ART-EN-02, ART-ENV-01 … ART-ENV-07, ART-FX-01, ART-FX-02, ART-FX-03, ART-PK-01 (all 14 art assets) |
 | [stabilityai/stable-audio-open-1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0) | `f21265c` | diffusers 0.40.0, torch 2.14.0 (MPS), fp32; sampler fix in `gen/sfx_sampler_fix.py` | Stability AI Community License (free for non-commercial use and for organisations under USD 1 M revenue; outputs owned by the user) — accepted on Hugging Face by Bao | SFX-01 … SFX-06b |
 | [facebook/musicgen-medium](https://huggingface.co/facebook/musicgen-medium) | `d3bd7b0` | transformers 5.17.0, torch 2.14.0 (MPS), fp16 | weights CC-BY-NC-4.0 (non-commercial; this is non-commercial coursework); AudioCraft code MIT | MUS-01, MUS-02 |
 | [facebook/musicgen-melody](https://huggingface.co/facebook/musicgen-melody) | `68d653a` | same as above | weights CC-BY-NC-4.0 | first MUS-02 batch only — all four rejected, none shipped |

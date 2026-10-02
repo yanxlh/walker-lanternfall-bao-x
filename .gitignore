@@ -17,3 +17,17 @@ film/**/renders/
 .superpowers/
 __pycache__/
 *.pyc
+
+# film working files (MP4/AVI/renders never committed; beat sheet, ledgers and docs are)
+youtube/**/capture/**/*.avi
+youtube/**/capture/**/*.mov
+youtube/**/capture/**/*.mp4
+youtube/**/capture/**/*.wav
+youtube/**/media/
+youtube/**/exports/
+youtube/**/clips/
+youtube/**/mp3/
+youtube/**/mp4/
+youtube/**/_qc/frames/
+youtube/**/*.mp4
+youtube/**/build-state.json

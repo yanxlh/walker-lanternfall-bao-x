@@ -77,4 +77,13 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 
 ## Film
 
-To be added after the walkthrough film is rendered: filename, course media-space link, SHA-256 and the source revision shown.
+**Lanternfall, Taken Apart** — a 4K landscape teardown made with the godot-gamedev skill + walker modifier (9 min 44 s).
+
+| | |
+|---|---|
+| File | `claude-liam-walker-lanternfall-bao-x-gamedev.mp4` (3840 × 2160, 30 fps, H.264 + AAC, 322.6 MB) |
+| Link | *course media space — added after upload* |
+| SHA-256 | `585a89d4a1818588e659e20b69f835176d490790bf03f49efec30b5538ddc779` |
+| Source revision shown | `8a6f9881e0e2858e523d22bb09f1a423695f04e1` (`godot/` is unchanged since) |
+
+Beat sheet, script, prompts, evidence ledger, capture method and checks: [`youtube/claude-liam-walker-lanternfall-bao-x-gamedev/`](youtube/claude-liam-walker-lanternfall-bao-x-gamedev/README.md). The video file itself is not in git.

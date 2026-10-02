@@ -4,7 +4,7 @@
 
 A daily diary of every attempt: **what I wanted, what came back, what I decided.** The "From the logs" bullets are facts pulled from git, the ledger and ASSET-LOG so dates and numbers are exact. The three sections under each day were drafted by Claude from our working session — my own choices, and my own words in quotation marks where I gave a reason — and then checked by me.
 
-Who did what, in one line: I made the design decisions and every accept/reject call and did the playtests; Claude drafted documents, wrote the Godot code, tests and generation scripts, ran the local models, and measured each candidate and suggested a pick — I looked at or listened to every candidate and made the call; FLUX.1-schnell, Stable Audio Open and MusicGen produced the raw art, sound and music.
+Who did what, in one line: I made the design decisions and every accept/reject call and did the playtests; Claude drafted documents, wrote the Godot code, tests and generation scripts, ran the local models, and measured each candidate and suggested a pick — I looked at or listened to every candidate and made the call, except five MUS-02 layers that an automated check rejected (logged as such); FLUX.1-schnell, Stable Audio Open and MusicGen produced the raw art, sound and music.
 
 ---
 
@@ -116,6 +116,8 @@ Most of the sound candidates were far brighter than the concept's "warm, soft" d
 - Run B, muted from the title screen: "第二局都能" — every event readable without sound, wraiths and the courier visible.
 - Storyboard and character-sheet comparisons re-captured with the final map.
 - A whole-branch code review (a fresh Claude context, read-only) found that a fresh clone or the ZIP, run by double-clicking, showed only placeholder shapes and no sound — my own checkout had Godot's import cache, so I never saw it. Also: two level-ups from one pickup stacked their chimes, enemies could spawn on screen near walls, and a lose stinger rang on after a restart. All four fixed test-first; the launcher now imports the assets on first run.
+- The film (godot-gamedev + walker) was built from source revision `8a6f988`. All gameplay is real 4K Movie Maker capture from an isolated copy, played through the game's input map by a disclosed script. The first full take froze for 50 s because macOS stops drawing a covered window; the capture script now pauses the game while the window can't draw and those frames are cut. Card screens are held 2 s on screen so they can be read.
+- A fact-check of the film's narration corrected seven lines before the final render (`youtube/…/FACTCHECK.md`), for example "every accept and reject was Bao's" → "every asset that shipped was Bao's pick", because five MUS-02 rejects came from an automated check I did not listen to.
 
 **What I wanted**
 
@@ -128,3 +130,4 @@ It did. Nothing repeated, the loop had no gap, and the muted run was fully reada
 **What I decided, and why**
 
 - The wraith's colours stay as generated: its measured contrast is low, but I could see the wraiths in the muted run.
+- Make the film from this build, with no more game changes first: "不用，直接开始做视频".
