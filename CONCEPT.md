@@ -116,3 +116,15 @@ More weapons and evolution recipes, a boss at the end of the fog, between-run pr
 - The two tidy streets of R4 are replaced by **14 scattered clusters** with alleys between them: ragged rows of stalls and carts with gaps and a slight bend, lantern corners around wet squares, abandoned crate piles, lone stalls with a lamp — plus stray posts and crates. Overview: [design/map-overview.png](design/map-overview.png).
 - Solid props never overlap (the R4 layout had 6 crates overlapping stalls); layout and collision use fixed boxes measured from the sprites, so the map is identical with or without textures loaded.
 - **Verified by:** `test_gameplay.gd::map-is-broken-up` (stall/cart rows spread over 9 of 18 bands; the street layout had 4), `props-do-not-overlap`, `solid-boxes-match-sprites`, `map-layout-deterministic`.
+
+### R7 · 2026-10-02 · Art references in words, and one visual or audio choice per pillar
+
+- **References (words, no artists):**
+  1. a brass oil lamp and paper-lantern light at night — small, warm, hard-edged light sources;
+  2. wet cobblestones under fog — cool blue-grey, low contrast, the darkest values on screen;
+  3. a late-night street market of wooden stalls, cloth awnings, noodle carts and crates — worn wood, an old town, quiet and slightly eerie.
+- **One choice per pillar:**
+  1. *Light is power* — warm gold for everything that helps, cool fog for everything that hurts; the Sunflare brightens the courier's coat and adds a music layer.
+  2. *Feet, not fingers* — the card screen freezes the field and ducks the music by 6 dB, so the one real decision has no time pressure.
+  3. *Readable in silence* — every sound has a visual twin (hit flash and knockback, gem flight, cards, banner, result panel), and the HUD prints MUSIC/SFX on/off.
+  4. *Three-minute runs* — the result panel shows "R / Y" to retry or play again; R stops the stinger and restarts the music from the top at once.

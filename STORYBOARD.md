@@ -150,3 +150,17 @@ Bao asked for the camera moves R1 listed as missing. `godot/features/world/camer
 | P9 | at 3:00 the screen washes towards mist (up to 45 %) while the camera pulls back to 0.82 over 2 s | `fog-lifts-on-win` |
 
 The comparison image above was re-captured with these moves (P1 wide, P5 tilted, P6 zoomed out, P9 lightened).
+
+### R3 · 2026-10-02 · View and pillar for each panel
+
+| Panel | View | Pillar the panel serves |
+|---|---|---|
+| P1 · First look | title screen, outside play | 1 · Light is power — one warm light in a cold place; silence before the first note |
+| P2 · Run begins | gameplay camera | 2 · Feet, not fingers — room on every side to move |
+| P3 · Core action | gameplay camera | 2 · Feet, not fingers — the only verb produces every reward |
+| P4 · Level up | gameplay, card-screen UI with portrait | 2 · Feet, not fingers — the decision, without time pressure |
+| P5 · Hurt | gameplay camera (the tilt is the hit feedback) | 3 · Readable in silence — harm unmistakable even muted |
+| P6 · Evolution | gameplay camera, zoom-out | 1 · Light is power — the payoff |
+| P7 · Failure | gameplay with the result panel | 4 · Three-minute runs — the retry prompt at once |
+| P8 · Retry | gameplay camera | 4 · Three-minute runs — losing costs one key press |
+| P9 · End of run | result-panel portrait, low angle (design view) | 1 and 4 — the fog lifts at 3:00 and the run ends |
