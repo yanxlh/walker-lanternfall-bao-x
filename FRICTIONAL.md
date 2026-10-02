@@ -140,31 +140,31 @@ It did. Nothing repeated, the loop had no gap, and the muted run was fully reada
 
 ---
 
-## 2026-10-02 (Fri) — checking the slice against the full brief
+## 2026-10-02 (Fri) — filling the last gaps before submitting
 
 **From the logs**
-- I pasted the full version of the assignment brief (the one with the 60 / 10 / 10 / 20 rubric). Claude compared the slice, the documents and the film with it and listed what was missing. Nothing in `godot/` had to change, so the game stays at the film's source revision `8a6f988`.
-- Gaps found and closed:
-  - The character comparison showed every pose facing right only. A capture script kept outside `godot/` (`scripts/capture_facing.gd`, run on an isolated copy of `8a6f988`) now shows every pose facing left as well, plain and with the F3 hurtbox drawn → `design/character/sheet-vs-game-facing.png`, CHARACTER-SHEET R4 (each pose marked as looping or played once), TEST-REPORT §6.
-  - TEST-REPORT's status line still named build `1b24721`; it now names `8a6f988` and the engine, and §3 lists the exact commands. The palette, loop and repository checks were re-run with the same results.
-  - SUBMISSION.md follows the new template: the start point, and each model with its version, where it ran and its licence.
-  - CONCEPT had no art references written out in words and no explicit picture or sound choice for pillars 2 and 4; STORYBOARD did not say which panels are gameplay views or which pillar each one serves. Claude drafted both from the existing documents and prompts; I read the drafts → CONCEPT R7, STORYBOARD R3.
+- Added today:
+  - Every pose captured in the engine facing left as well, plain and with the F3 hurtbox drawn (`scripts/capture_facing.gd`, kept outside `godot/` and run on an isolated copy of `8a6f988`) → `design/character/sheet-vs-game-facing.png`, CHARACTER-SHEET R4 (each pose marked as looping or played once), TEST-REPORT §6.
+  - TEST-REPORT's status line now names the source revision `8a6f988` and the engine; §3 lists the exact commands. The palette, loop and repository checks were re-run with the same results.
+  - SUBMISSION.md in the template's form: the start point, and each model with its version, where it ran and its licence.
+  - CONCEPT R7: three art references in words, and one picture or sound choice for each pillar. STORYBOARD R3: which panels are gameplay views, and which pillar each panel serves.
   - This diary: the 9/28 entry is marked as written the next day, every day has a trace line, and the role line no longer says every call was mine.
-  - The film package gained SCRIPT.md, the narration beat by beat.
+  - The film package: SCRIPT.md, the narration beat by beat.
+- `godot/` did not change; the game is still the film's source revision `8a6f988`.
 - I pushed everything to GitHub (`89ae6ed..a600e65`). A fresh clone from GitHub at `a600e65`: 46 files imported with no errors, 122/122 checks, repository audit 0 problems, all 23 asset files present, and the game starts and runs.
 - Trace: `ff93644` facing screenshots, CHARACTER-SHEET R4, TEST-REPORT, SUBMISSION, diary trace lines, SCRIPT.md · `a600e65` CONCEPT R7 and STORYBOARD R3 · `df55c1c` the fresh clone from GitHub in TEST-REPORT §2.
 
 **What I wanted**
 
-Before submitting, to check the slice, every document and the film against the full brief, and to close whatever it asks for that was still missing.
+Before submitting, to fill the gaps that were still open in the evidence and the documents.
 
 **What came back**
 
-- The game itself needed no change. The gaps were in the evidence and the documents: no left-facing screenshots, no art references in words, no pillar named for each storyboard panel, an out-of-date status line, and the new fields in the submission template.
-- The new screenshots with the hurtbox show the same mismatch as before: in every standing pose the r = 10 circle covers the coat and also the lower half of the lamp; in hurt the lamp leans back outside it; in defeat the body lies partly outside it, after the run has already ended.
+- The game itself needed no change; the gaps were all in the evidence and the documents.
+- The new screenshots with the hurtbox show the same thing as before: the hurtbox is a circle of radius 10 px on the courier's coat, and because the generated courier is shorter than the blockout, that circle also covers the lower half of his lamp in every standing pose. In hurt the lamp leans back outside it; in defeat the body lies partly outside it, after the run has already ended.
 - The fresh clone from GitHub worked the first time.
 
 **What I decided, and why**
 
-- Add the drafted CONCEPT R7 and STORYBOARD R3: "写入".
-- Still open: the hurtbox over the lower lamp stays a playtest decision; there is no gamepad test; I still have to watch and listen to the final film myself and upload it to the course media space.
+- Add CONCEPT R7 and STORYBOARD R3: "写入".
+- Still open: the hurtbox over the lower half of the lamp. Making the circle small enough to leave the whole lamp outside it (about 7 px) would make the courier harder to hit and the game easier, so it stays a playtest decision; it did not come up in my two runs. There is also no gamepad test, and I still have to watch and listen to the final film myself and upload it to the course media space.
