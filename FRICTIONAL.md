@@ -4,7 +4,7 @@
 
 A daily diary of every attempt: **what I wanted, what came back, what I decided.** The "From the logs" bullets are facts pulled from git, the ledger and ASSET-LOG so dates and numbers are exact. The three sections under each day were drafted by Claude from our working session — my own choices, and my own words in quotation marks where I gave a reason — and then checked by me.
 
-Who did what, in one line: I made the design decisions and the accept/reject calls and did the playtests; Claude drafted documents, wrote the Godot code, tests and generation scripts, ran the local models, and measured each candidate and suggested a pick — I looked at or listened to every candidate and made the call, except five MUS-02 layers that an automated check rejected (logged as such); FLUX.1-schnell, Stable Audio Open and MusicGen produced the raw art, sound and music.
+Who did what, in one line: I made the design decisions and the accept/reject calls and did the playtests; Claude drafted the documents, the build plan and the prompts, wrote the Godot code, tests and generation scripts, ran the local models, measured each candidate and suggested a pick, and wrote and built the film — I looked at or listened to every candidate and made the call, except five MUS-02 layers that an automated check rejected (logged as such); FLUX.1-schnell, Stable Audio Open and MusicGen produced the raw art, sound and music, and Kokoro voiced the film. The full table is in SOURCES.md.
 
 ---
 

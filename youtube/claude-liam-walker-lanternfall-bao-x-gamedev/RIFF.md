@@ -10,7 +10,7 @@ Teardown register: describe the mechanism, then judge it. Every judgment below p
 | B08 | what held and what broke | the comparison image; the origin change and its test |
 | B11–B12 | one throttle table is enough to stop machine-gunning | counters from the take: kills vs kill sounds |
 | B13–B15 | music follows state, never the other way | the code path is one-way (`state.changed` in, mixer out); heard in B15 |
-| B16–B17 | the hit-test change fixed what Bao actually saw | before/after frames from the build he played and the film build, with the old circle and the sprite box drawn from the engine's transform |
+| B16–B17 | the hit-test change fixed what Bao actually saw | before/after frames from the build Bao played and the film build, with the old circle and the sprite box drawn from the engine's transform |
 | B21–B22 | "what stops him is what you see" | the solid box drawn over the stall sprite |
 | B23–B25 | mute is presentation only | HUD line flips, run continues; heard in B25 |
 | B27–B28 | sound cannot decide the game | the independence record: identical summaries with and without sound |

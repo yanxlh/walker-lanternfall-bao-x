@@ -2663,7 +2663,7 @@ gen/.venv-audio/bin/python -c "import torch, diffusers, transformers; print(torc
 ```
 Expected: help text lists `--model --prompt --seed --steps --width --height --quantize --output` (if a flag name differs in the installed mflux version, update `art_generate.py` in Task 15 to match and note it in SOURCES.md); torch prints `True` for MPS.
 
-- [ ] **Step 4: HUMAN — Stable Audio Open licence.** Ask Bao to (a) open https://huggingface.co/stabilityai/stable-audio-open-1.0, read and accept the Stability AI Community License himself, and (b) run `gen/.venv-audio/bin/huggingface-cli login` himself in his own terminal. Claude never handles the token.
+- [ ] **Step 4: HUMAN — Stable Audio Open licence.** Ask Bao to (a) open https://huggingface.co/stabilityai/stable-audio-open-1.0, read and accept the Stability AI Community License in person, and (b) run `gen/.venv-audio/bin/huggingface-cli login` in Bao's own terminal. Claude never handles the token.
 
 - [ ] **Step 5: Pre-download weights** (after Step 4)
 
@@ -3720,8 +3720,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 - [ ] **Step 1: Fresh-copy run.** `git clone <remote> /tmp/lf-fresh && cd /tmp/lf-fresh/godot && $GODOT --headless --path . --import --quit && $GODOT --path .` — record whether it runs with all assets.
 - [ ] **Step 2: Give Bao a playtest sheet** (in `evidence/playtest/sheet.md`) with checkboxes for: movement & facing; each pose seen; each of the 6 SFX heard exactly once per event; rapid tapping and long-holding produce no repeats; music loop point (listen at ~0:36/1:12); pause → muffled & quieter; level-up duck; lose fade + stinger; win fade + stinger; restart during fade; M/9/0.
-- [ ] **Step 3: HUMAN — Playtest A, sound on, full run.** Bao plays and fills the sheet himself; Claude records nothing on his behalf.
-- [ ] **Step 4: HUMAN — Playtest B, press M at the menu, full run muted.** Bao notes anything he could not understand without sound.
+- [ ] **Step 3: HUMAN — Playtest A, sound on, full run.** Bao plays and fills the sheet in person; Claude records nothing on Bao's behalf.
+- [ ] **Step 4: HUMAN — Playtest B, press M at the menu, full run muted.** Bao notes anything that could not be understood without sound.
 - [ ] **Step 5: Revision loop (≥ 1).** Take one concrete observation (e.g. wraith hard to see when muted, kill SFX harsh, loop click). Make the change (asset regen / prompt edit / loop point / palette), log it via `decide.py` or a CHANGE-BRIEF Revision, rerun the relevant check, and have Bao re-verify by playing. Capture before/after evidence.
 - [ ] **Step 6: Write `TEST-REPORT.md`** with sections: environment; fresh-copy result; automated checks table (suite, checks, failures, evidence file) for logic/gameplay/audio/palette/loop/tile/repo-audit; playtest A; playtest B; character sheet vs game (link Task 19 table); storyboard vs game; SFX once-per-event table (from `evidence/audio.json` + Bao's ears); rapid/hold input; music seam; pause/end behaviour; muted comprehension; the revision loop(s) as *observation → change → re-verification*; predictions from CHANGE-BRIEF scored right/wrong; open questions.
 - [ ] **Step 7: Commit**

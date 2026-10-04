@@ -59,12 +59,12 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 
 ## Read in this order
 
-1. [CONCEPT.md](CONCEPT.md) — the game, pillars, art/audio/music direction, and revisions R1–R6 (aiming, pixel art, XP, map, HP growth and cards, solid props, broken-up map)
+1. [CONCEPT.md](CONCEPT.md) — the game, pillars, art/audio/music direction, and revisions R1–R7 (aiming, pixel art, XP, map, HP growth and cards, solid props, broken-up map, art references in words)
 2. [STORYBOARD.md](STORYBOARD.md) — nine panels, and the storyboard-vs-game comparison
 3. [CHARACTER-SHEET.md](CHARACTER-SHEET.md) — silhouettes, facing, poses, hurtbox, palette, and the sheet-vs-game comparison
 4. [CHANGE-BRIEF.md](CHANGE-BRIEF.md) — asset list, event→sound map, music behaviour, predictions and how they turned out
 5. [ASSET-LOG.md](ASSET-LOG.md) — every generation, accepted or rejected, with prompts, seeds and edits
-6. [SOURCES.md](SOURCES.md) — models, exact revisions, licences, tools
+6. [SOURCES.md](SOURCES.md) — models, exact revisions, licences, tools, who contributed what, and how to re-run any logged generation
 7. [TEST-REPORT.md](TEST-REPORT.md) — automated checks and my two playtests
 8. [FRICTIONAL.md](FRICTIONAL.md) — the daily diary of what I wanted, what came back, what I decided
 
@@ -74,6 +74,8 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 - Music loops are 20 s (MusicGen's 30 s limit), so a 3-minute run hears the loop 9 times.
 - One map, two weapons, one evolution, no saving; balance is only roughly tuned (my playtests and scripted bots).
 - Gamepad support exists but is untested; on the card screen the left stick can skip several cards.
+- The courier's hurtbox (a circle of radius 10 px) also covers the lower half of his lamp in the standing poses ([CHARACTER-SHEET R4](CHARACTER-SHEET.md)); it did not come up in my two playtests.
+- My two playtests were on build `1b24721`; the code-review fixes after it (up to `8a6f988`) are covered by the automated checks, not by another full playtest.
 
 ## Film
 
