@@ -168,3 +168,27 @@ Before submitting, to fill the gaps that were still open in the evidence and the
 
 - Add CONCEPT R7 and STORYBOARD R3: "写入".
 - Still open: the hurtbox over the lower half of the lamp. Making the circle small enough to leave the whole lamp outside it (about 7 px) would make the courier harder to hit and the game easier, so it stays a playtest decision; it did not come up in my two runs. There is also no gamepad test, and I still have to watch and listen to the final film myself and upload it to the course media space.
+
+---
+
+## 2026-10-06 (Tue) — the film checked and linked
+
+**From the logs**
+- I watched and listened to the whole final film (`claude-liam-walker-lanternfall-bao-x-gamedev.mp4`, SHA-256 `585a89d4…c779`).
+- I uploaded it to Google Drive. The link opens without signing in, and Drive lists the file at 322,567,779 bytes, the same as the export; the link is in README and SUBMISSION.
+- Added on 10/04: SOURCES now says who did what (code, prompts, assets, film script, narration), lists every model including Kokoro for the narration, and explains how to reproduce an asset. Four logged generations re-run from their log entries came out identical to the originals: the walking pose, the rejected first puddle, MUS-01 and SFX-01 (`evidence/reproduce-2026-10-04.txt`).
+- Fresh clone from GitHub at `2ddf701`: 122/122 checks, repository audit 0 problems, all 23 asset files present, the game starts; `godot/` is still the film's source revision `8a6f988`.
+- Trace: `51e711c` SOURCES and `gen/reproduce.py` · `2ddf701` film link.
+
+**What I wanted**
+
+To see and hear the film myself before submitting it, and to make sure a reviewer can open it.
+
+**What came back**
+
+"看过了 没问题" — I found no problems in the film.
+
+**What I decided, and why**
+
+- Submit this version: "我确定是这个了".
+
