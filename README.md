@@ -82,8 +82,8 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 | | |
 |---|---|
 | File | `claude-liam-walker-lanternfall-bao-x-gamedev.mp4` (3840 × 2160, 30 fps, H.264 + AAC, 322.6 MB) |
-| Link | *course media space — added after upload* |
+| Link | https://drive.google.com/file/d/1gTWvQ8B_j_6DBn81V0L9I-onbXgtg0nU/view?usp=sharing |
 | SHA-256 | `585a89d4a1818588e659e20b69f835176d490790bf03f49efec30b5538ddc779` |
 | Source revision shown | `8a6f9881e0e2858e523d22bb09f1a423695f04e1` (`godot/` is unchanged since) |
 
-Beat sheet, script, prompts, evidence ledger, capture method and checks: [`youtube/claude-liam-walker-lanternfall-bao-x-gamedev/`](youtube/claude-liam-walker-lanternfall-bao-x-gamedev/README.md). The video file itself is not in git.
+Beat sheet, script, prompts, evidence ledger, capture method and checks: [`youtube/claude-liam-walker-lanternfall-bao-x-gamedev/`](youtube/claude-liam-walker-lanternfall-bao-x-gamedev/README.md). The video file itself is not in git. The link was opened without signing in on 2026-10-06; Google Drive lists the file at 322,567,779 bytes, the same size as the export.
