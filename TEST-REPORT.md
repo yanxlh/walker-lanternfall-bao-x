@@ -2,7 +2,7 @@
 
 `walker-lanternfall-bao-x` · Bao Xing · CSYE 7270 Assignment 2
 
-> **Status: 2026-10-02.** Source revision **`8a6f988`** (the revision the film shows; `godot/` is unchanged after it) for every automated check, capture and comparison below; engine **Godot 4.7.2.stable.official.ed1daf0bf**. My two full playtests (sound on, then muted) were on build `1b24721`, before the code-review fixes `491892a`–`8a6f988`; those fixes are covered by automated checks, not by a new playtest. The fresh clone from GitHub is done (§2). Nothing here is claimed before it was observed.
+> **Status: 2026-10-02.** Source revision **`8a6f988`** (the revision the film shows; `godot/` is unchanged after it) for every automated check, capture and comparison below; engine **Godot 4.7.2.stable.official.ed1daf0bf**. My two full playtests (sound on, then muted) are in §4, with the build each was played on. The fresh clone from GitHub is done (§2). Nothing here is claimed before it was observed.
 
 ## 1. Environment
 
