@@ -68,6 +68,13 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 7. [TEST-REPORT.md](TEST-REPORT.md) — automated checks and my two playtests
 8. [FRICTIONAL.md](FRICTIONAL.md) — the daily diary of what I wanted, what came back, what I decided
 
+## Known limitations
+
+- The fog-wraith has the lowest measured contrast against the ground (0.03) and the courier is small (≈20 px on a 360 px screen); both were readable in my muted playtest, but they are the first things to revisit.
+- Music loops are 20 s (MusicGen's 30 s limit), so a 3-minute run hears the loop 9 times.
+- One map, two weapons, one evolution, no saving; balance is only roughly tuned (my playtests and scripted bots).
+- Gamepad support exists but is untested; on the card screen the left stick can skip several cards.
+
 ## Film
 
 **Lanternfall, Taken Apart** — a 4K landscape teardown made with the godot-gamedev skill + walker modifier (9 min 44 s).
