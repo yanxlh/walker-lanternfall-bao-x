@@ -203,3 +203,10 @@ that its materials look right under the room lighting, or that its collision
 margin feels fair. Bao must play it with normal controls and Visible Collision
 Shapes, record what was seen, and drive any visual/collider revision before the
 `a3` tag. No human verdict is claimed here yet.
+
+Claude's separate visual inspection of the captured running scene found the
+double lantern silhouette readable, the emissive panels distinct from the dark
+wood/brass, and the debug collider confined to the base and centre post rather
+than the cross-arm. Evidence: `evidence/a3/lantern-gate-room.png` and
+`evidence/a3/lantern-gate-colliders.png`. This is labelled as an AI inspection,
+not substituted for Bao's required human playtest.

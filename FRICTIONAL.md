@@ -228,3 +228,7 @@ To see and hear the film myself before submitting it, and to make sure a reviewe
   beside the gate with Visible Collision Shapes and say whether the object reads
   correctly and the invisible margin feels fair. That observation, not an
   automated substitute, decides whether another revision is needed.
+- Claude captured both the normal room and the engine's collision overlay. Its
+  labelled visual inspection: the paired lights read as lanterns, the materials
+  separate under the room light, and collision stays on the base/post. This is
+  retained as AI evidence, not written as Bao's experience.

@@ -67,6 +67,8 @@ compound static blocker on named physics layer 3 (`market_prop`). Press **F4**
 from the 2D game to enter the 3D prop room; use WASD/arrows to drive the orange
 courier stand-in into and around it, and Esc to return.
 
+![Lantern Gate running in the 3D prop room](evidence/a3/lantern-gate-room.png)
+
 ```bash
 /Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python-exit-code 1 --python tools/blender/build_lantern_gate.py
 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import
