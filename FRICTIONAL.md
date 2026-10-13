@@ -237,3 +237,11 @@ To see and hear the film myself before submitting it, and to make sure a reviewe
   session's setup and skipped every other action. A3-R2 removes only that early
   return; the action-by-action guard stays. This was found from the running
   integration, not the isolated headless suites.
+
+**Owner playtest result**
+
+- Bao played the running A3 room with the normal controls and F3 collision
+  display. Asked whether any visual or collision problem remained, Bao answered
+  exactly: "目前没有，都正常". Therefore the submitted collider and placement
+  stay unchanged; this is a successful inspect-and-keep decision, not an
+  invented revision.

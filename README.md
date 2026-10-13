@@ -100,9 +100,9 @@ mutations. The earlier suites remain **122/122 PASS**.
 - Music loops are 20 s (MusicGen's 30 s limit), so a 3-minute run hears the loop 9 times.
 - One map, two weapons, one evolution, no saving; balance is only roughly tuned (my playtests and scripted bots).
 - Gamepad support exists but is untested; on the card screen the left stick can skip several cards.
-- The A3 room uses a labelled stand-in instead of the 2D courier because the
-  cumulative game is otherwise 2D. The required owner playtest with Visible
-  Collision Shapes still needs Bao's recorded observation before tagging `a3`.
+- The A3 room uses a labelled orange stand-in instead of the 2D courier because
+  the cumulative game is otherwise 2D. Bao's 2026-10-13 owner playtest found no
+  visual or collision problem ("目前没有，都正常").
 
 ## Film
 

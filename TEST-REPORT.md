@@ -195,14 +195,13 @@ macOS 26 on Apple M4. The brief was written before the first Blender build.
 Regression: logic **32/32**, gameplay **65/65**, audio **25/25** — total
 earlier checks **122/122**, unchanged.
 
-### HUMAN CHECK — not yet claimed
+### HUMAN CHECK — Bao, 2026-10-13
 
-The scene is `res://a3/lantern_gate_room.tscn` (F4 from the 2D game). The
-automated results do **not** establish that the prop reads as a lantern gate,
-that its materials look right under the room lighting, or that its collision
-margin feels fair. Bao must play it with normal controls and Visible Collision
-Shapes, record what was seen, and drive any visual/collider revision before the
-`a3` tag. No human verdict is claimed here yet.
+The scene is `res://a3/lantern_gate_room.tscn` (F4 from the 2D game). Bao used
+the normal controls and the F3 collision display, approached the base/post and
+moved around the prop. Asked whether there was any visual or collision problem,
+Bao reported: **"目前没有，都正常"** (none at present; everything is normal).
+No visual or collider revision was requested from this playtest.
 
 Claude's separate visual inspection of the captured running scene found the
 double lantern silhouette readable, the emissive panels distinct from the dark
