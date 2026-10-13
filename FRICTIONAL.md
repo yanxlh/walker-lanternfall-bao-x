@@ -245,3 +245,21 @@ To see and hear the film myself before submitting it, and to make sure a reviewe
   exactly: "目前没有，都正常". Therefore the submitted collider and placement
   stay unchanged; this is a successful inspect-and-keep decision, not an
   invented revision.
+
+**Canvas audit corrected the scope**
+
+- Reading the assignment page directly exposed a larger miss: it requires
+  three assets and no more than six visible basic shapes per asset. The first
+  gate had 18 visible mesh objects. I kept the old brief and evidence as
+  history, wrote A3-R0 before building the two missing assets, then simplified
+  the gate rather than pretending the first interpretation was sufficient.
+- Script-route rebuild results: gate 6 primitives / 88 triangles; Supply Stack
+  3 / 68; Lamp-oil Shrine 3 / 60. `test_a3_assets.gd` passed 17/17 and the
+  updated gate suite passed 14/14. The running room shows all three separately.
+- The MCP setup logs remain honest evidence of the attempt; MCP tools were not
+  available in this coding session, so the allowed script fallback was used for
+  all three assets. I do not claim the full MCP-route points.
+- The earlier human verdict covered the old one-gate room. Because the gate was
+  simplified and two new assets were added, the final-room human look and Bao's
+  required mouse edit in Blender remain open; neither is being back-filled by
+  Claude.

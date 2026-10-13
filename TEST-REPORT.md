@@ -160,32 +160,48 @@ A fresh-context reviewer read the whole branch (Godot code, tests, pipeline, che
 
 ---
 
-## Assignment 3 — Lantern Gate (2026-10-13)
+## Assignment 3 — three Blender assets (2026-10-13)
 
 Environment: Godot 4.7.2.stable.official.ed1daf0bf, Blender 5.2.2 LTS,
 macOS 26 on Apple M4. The brief was written before the first Blender build.
 
 ### Rebuild and import
 
-- The required background Blender command exited 0. A repeat build produced
-  the same GLB SHA-256 both times:
-  `69c66a2403752a2c717c8d45c948164331fd0232dabc66d270153c1ff3e7070d`.
+- All three required background Blender commands exited 0 and produced a
+  separate `.blend`, `.glb` and JSON measurement record for each asset.
 - The first build failed two frozen targets: 1.36 m wide and 248 triangles.
   A3-R1 records the response; the second build measured 1.20 × 0.80 × 2.85 m
   and exactly 240 triangles.
-- Godot generated `lantern_gate.glb.import`; it records
+- Godot generated all three `.glb.import` records; `lantern_gate.glb.import` records
   `nodes/use_node_type_suffixes=true`. The import output contained no `ERROR:`
   lines. No `.import` file was copied or hand-written.
 
-### Automated result
+### Automated result — all three assets
 
-`test_lantern_gate.gd`: **13 checks, 0 failures**.
+`test_a3_assets.gd`: **17 checks, 0 failures**.
+
+| Asset | Blender/Godot observed size W × D × H | Meshes / triangles | Materials |
+|---|---|---:|---|
+| Lantern Gate | 1.20 × 0.80 × 2.85 m | 6 / 88 | AgedBrass, DarkWood, EmberGlass |
+| Supply Stack | 1.20 × 0.80 × 1.10 m | 3 / 68 | CrateBrass, MarketTimber |
+| Lamp-oil Shrine | 0.80 × 0.80 × 1.45 m | 3 / 60 | OilGlow, ShrineBrass, ShrineStone |
+
+Every imported mesh had scale `(1, 1, 1)`, each merged AABB began at y = 0,
+the assets were separated at x = −2, 0 and 2 m in a room containing a floor,
+light and camera, and mutating one imported mesh to scale `(2, 1, 1)` made the
+unit-scale predicate fail before restoration. This establishes dimensions,
+orientation, scale, material names and placement; it does not establish that a
+human reads the shapes correctly or likes the lighting.
+
+### Automated result — gate collision
+
+`test_lantern_gate.gd`: **14 checks, 0 failures**.
 
 | Check | Observed |
 |---|---|
 | Size / axes / origin | AABB position (−0.6, 0, −0.4), size (1.2, 2.85, 0.8); height on +Y |
-| Scale | all 18 imported visual mesh nodes unit scale |
-| Budget / materials | 240 triangles; exactly AgedBrass, DarkWood, EmberGlass |
+| Scale | all 6 imported visual mesh nodes unit scale |
+| Budget / materials | 6 primitives, 88 triangles; exactly AgedBrass, DarkWood, EmberGlass |
 | Collider | base 0.80×0.32×0.80 m; post 0.42×2.55×0.42 m; no cross-arm collider |
 | Layers | both imported static bodies layer 3 / bit 4, mask 0 |
 | Behaviour | 0.25 m-radius stand-in driven for 120 ticks stopped at x = −0.6501 m |
@@ -195,7 +211,7 @@ macOS 26 on Apple M4. The brief was written before the first Blender build.
 Regression: logic **32/32**, gameplay **65/65**, audio **25/25** — total
 earlier checks **122/122**, unchanged.
 
-### HUMAN CHECK — Bao, 2026-10-13
+### HUMAN CHECK — earlier one-gate room only, Bao, 2026-10-13
 
 The scene is `res://a3/lantern_gate_room.tscn` (F4 from the 2D game). Bao used
 the normal controls and the F3 collision display, approached the base/post and
@@ -203,12 +219,17 @@ moved around the prop. Asked whether there was any visual or collision problem,
 Bao reported: **"目前没有，都正常"** (none at present; everything is normal).
 No visual or collider revision was requested from this playtest.
 
-Claude's separate visual inspection of the captured running scene found the
-double lantern silhouette readable, the emissive panels distinct from the dark
-wood/brass, and the debug collider confined to the base and centre post rather
-than the cross-arm. Evidence: `evidence/a3/lantern-gate-room.png` and
-`evidence/a3/lantern-gate-colliders.png`. This is labelled as an AI inspection,
-not substituted for Bao's required human playtest.
+The gate was subsequently simplified to meet the six-primitive course limit,
+and two assets were added. Therefore that earlier verdict is retained as true
+history but **does not cover the final three-asset room**. Bao must still orbit
+or walk the final room from the front, rear and below and record any missing
+faces, wrong colours, floating origin or readability problem.
+
+Claude's separate visual inspection found the final simplified paired-lantern
+silhouette and the other two assets readable, with emissive elements distinct
+from the dark wood/brass. Evidence: `evidence/a3/a3-assets-room.png` and
+`evidence/a3/blender-interface-session.png`. This is labelled as an AI
+inspection, not substituted for Bao's final required human playtest.
 
 The first Esc → F4 round trip failed with missing InputMap actions after the A3
 room had created only movement actions. A3-R2 removed the old partial-setup

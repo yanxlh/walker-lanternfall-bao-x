@@ -1,0 +1,24 @@
+{
+  "asset": "Lamp-oil Shrine",
+  "output": "godot/a3/oil_shrine.glb",
+  "blend_source": "blender/a3/oil_shrine.blend",
+  "visual_bounds_blender_xyz_m": [
+    0.8,
+    0.8,
+    1.45
+  ],
+  "origin_blender_xyz_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "visual_triangles": 60,
+  "triangle_budget": 120,
+  "visible_primitives": 3,
+  "primitive_budget": 6,
+  "materials": [
+    "OilGlow",
+    "ShrineBrass",
+    "ShrineStone"
+  ]
+}

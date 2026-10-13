@@ -36,10 +36,11 @@ the real window and keep only statements Bao can explain.
   applies to triangles and visible primitive count, not just the number shown
   in the Outliner.
 
-## Evidence still requiring Bao's direct action
+## Evidence
 
-- Add one screenshot of Bao's own Blender session with an asset selected, the
-  `N` sidebar visible and Scene Statistics enabled.
+- `evidence/a3/blender-interface-session.png` shows the Blender 5.2.2 learning
+  session with the cube selected, the `N` sidebar open, unit scale and 2 m
+  dimensions visible, and Scene Statistics enabled (12 triangles).
 - Make and record one small hand edit in Blender (for example, adjust the
   Supply Stack's top crate position), save the `.blend`, export again, and note
   what the change taught Bao about the interface. This must not be invented or

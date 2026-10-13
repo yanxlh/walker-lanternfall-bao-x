@@ -93,18 +93,24 @@ The walking pose was first made with FLUX quantized to 4-bit at load; the re-run
 
 ## Assignment 3 geometry and tools
 
-- **Lantern Gate geometry:** authored procedurally for this project in
-  `tools/blender/build_lantern_gate.py` with Blender's built-in `bpy` mesh
-  primitives; no downloaded or generated mesh, material texture, or external
-  model is used. The script, its exact command and JSON build log are committed.
+- **Geometry:** authored procedurally for this project in
+  `tools/blender/build_lantern_gate.py`, `build_supply_stack.py` and
+  `build_oil_shrine.py` with Blender's built-in `bpy` primitives. No downloaded
+  or generated mesh, texture or external model is used. Each script, `.blend`
+  source, `.glb` export and JSON build record is committed.
 - **Blender:** 5.2.2 LTS, local `/Applications/Blender.app`; binary glTF export
   through Blender's bundled glTF 2.0 exporter. `AgedBrass`, `DarkWood` and
   `EmberGlass` are numeric Principled BSDF materials defined in the script.
 - **Godot:** 4.7.2 imports the GLB. Its generated import record keeps
   `nodes/use_node_type_suffixes=true`, converting the two Blender objects whose
   names end in `-convcolonly` into collision-only static bodies.
+- **Blender MCP:** community `mcp-for-blender` 2.1.9 was attempted through the
+  manual course setup; retained setup logs show the actual commands. Its tools
+  were not available in this coding session, so all three assets use the
+  assignment's documented background-script fallback. Remote model/download
+  services stayed off. This is a limitation, not a claim of MCP success.
 - **Work split:** Bao chose to continue the Assignment 3 work and must make the
-  final visual/playability judgment. Claude specified the measurable proposal,
-  wrote the Blender/Godot/test code, ran the local tools and recorded observed
-  output. The first over-budget build and its correction are retained in
-  CHANGE-BRIEF A3-R1 rather than hidden.
+  final three-asset visual judgment and one hand edit. Claude specified the
+  measurable proposal, wrote the Blender/Godot/test code, ran local builds and
+  recorded observed output. The first one-asset scope error and over-budget
+  build are retained in CHANGE-BRIEF rather than hidden.

@@ -29,7 +29,7 @@ A **blank Godot 4.7.2 project**. The protagonist concept is carried over from my
 | Restart | R | Y |
 | **Mute everything / music only / effects only** | **M / 9 / 0** | — |
 | Show the hurtbox | F3 | — |
-| Enter the Assignment 3 Lantern Gate room | F4 | — |
+| Enter the Assignment 3 three-asset room | F4 | — |
 
 The HUD always shows `MUSIC on/off  SFX on/off`. The game is fully playable muted: every sound has a visual (hit flash + knockback + HP bar, gem flight, paused card screen, evolution banner, result panel).
 
@@ -58,30 +58,39 @@ cd godot && godot --headless --path . --import --quit && for s in logic gameplay
 
 Python checks run with the generation environment: `gen/.venv-audio/bin/python gen/checks/palette_check.py`, etc. (setup in `gen/requirements-*.txt`, Python 3.12 via uv).
 
-## Assignment 3 — Lantern Gate
+## Assignment 3 — three Blender assets
 
-Assignment 3 adds a **1.20 × 0.80 × 2.85 m** 3D market landmark built
-entirely by [`tools/blender/build_lantern_gate.py`](tools/blender/build_lantern_gate.py)
-in Blender 5.2.2 LTS. Godot imports the two `-convcolonly` meshes as a
-compound static blocker on named physics layer 3 (`market_prop`). Press **F4**
-from the 2D game to enter the 3D prop room; use WASD/arrows to drive the orange
-courier stand-in into and around it, and Esc to return.
-Press **F3** in the room to toggle Visible Collision Shapes.
+Assignment 3 adds three simple, metre-scale assets for Lanternfall's midnight
+market. Each has its own Blender source, reproducible build script and binary
+glTF export:
 
-![Lantern Gate running in the 3D prop room](evidence/a3/lantern-gate-room.png)
+| Asset | Purpose | Size W × D × H | Visible primitives / triangles |
+|---|---|---:|---:|
+| Lantern Gate | entrance landmark and static blocker | 1.20 × 0.80 × 2.85 m | 6 / 88 |
+| Supply Stack | market-stall obstacle | 1.20 × 0.80 × 1.10 m | 3 / 68 |
+| Lamp-oil Shrine | upgrade-area collectible landmark | 0.80 × 0.80 × 1.45 m | 3 / 60 |
+
+Press **F4** from the 2D game to enter their shared 3D room (floor, moon light,
+two practical lights and one camera). Use WASD/arrows to drive the orange
+courier stand-in around the assets, **F3** to request the collision overlay and
+Esc to return. Only the gate is a blocker; its two `-convcolonly` meshes import
+on named physics layer 3 (`market_prop`).
+
+![the three Assignment 3 assets running together](evidence/a3/a3-assets-room.png)
 
 ```bash
 /Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python-exit-code 1 --python tools/blender/build_lantern_gate.py
+/Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python-exit-code 1 --python tools/blender/build_supply_stack.py
+/Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python-exit-code 1 --python tools/blender/build_oil_shrine.py
 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import
-gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_lantern_gate.gd --fixed-fps 60
+gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_a3_assets.gd --fixed-fps 60
 ```
 
-The deterministic rebuild SHA-256 is
-`69c66a2403752a2c717c8d45c948164331fd0232dabc66d270153c1ff3e7070d`.
-The A3 suite reports **13/13 PASS**: imported size and origin, +Y height, unit
-scale, 240-triangle budget, exact material names, authored collider dimensions,
-layer/mask values, floor placement, blocker behaviour, and two caught/restored
-mutations. The earlier suites remain **122/122 PASS**.
+The three-asset suite reports **17/17 PASS**: imported size and floor origin,
++Y height, unit scale, primitive and triangle budgets, exact material names,
+shared-room placement and a caught/restored non-unit-scale mutation. The gate's
+separate collision suite reports **14/14 PASS**. The earlier Assignment 2
+suites remain **122/122 PASS**.
 
 ## Read in this order
 
@@ -101,8 +110,12 @@ mutations. The earlier suites remain **122/122 PASS**.
 - One map, two weapons, one evolution, no saving; balance is only roughly tuned (my playtests and scripted bots).
 - Gamepad support exists but is untested; on the card screen the left stick can skip several cards.
 - The A3 room uses a labelled orange stand-in instead of the 2D courier because
-  the cumulative game is otherwise 2D. Bao's 2026-10-13 owner playtest found no
-  visual or collision problem ("目前没有，都正常").
+  the cumulative game is otherwise 2D. Bao's first owner playtest covered the
+  earlier one-gate room and found no visual/collision problem. The final
+  three-asset room still needs Bao's look-from-behind/below check and one manual
+  Blender edit before it can be described as submission-ready.
+- The Blender MCP route did not become available in the coding session. The
+  committed Blender Python scripts are the documented course fallback.
 
 ## Film
 

@@ -12,6 +12,7 @@ import bpy
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "godot" / "a3" / "lantern_gate.glb"
+BLEND = ROOT / "blender" / "a3" / "lantern_gate.blend"
 LOG = ROOT / "evidence" / "a3" / "lantern_gate-build.json"
 
 
@@ -48,23 +49,6 @@ def cylinder(name, radius, depth, centre, mat, vertices=10):
     return obj
 
 
-def cone(name, radius, depth, centre, mat):
-    bpy.ops.mesh.primitive_cone_add(vertices=4, radius1=radius, radius2=0.06, depth=depth, location=centre)
-    obj = bpy.context.object
-    obj.name = name
-    obj.data.materials.append(mat)
-    return obj
-
-
-def build_lantern(prefix, x, brass, wood, glow):
-    cube(prefix + "Glow", (0.30, 0.30, 0.42), (x, 0.0, 2.18), glow)
-    for dx in (-0.17, 0.17):
-        for dy in (-0.17, 0.17):
-            cube(prefix + f"Frame_{dx}_{dy}", (0.035, 0.035, 0.50), (x + dx, dy, 2.18), brass)
-    cube(prefix + "Bottom", (0.40, 0.40, 0.05), (x, 0.0, 1.92), wood)
-    cone(prefix + "Roof", 0.27, 0.22, (x, 0.0, 2.55), wood)
-
-
 def main():
     bpy.ops.wm.read_factory_settings(use_empty=True)
     scene = bpy.context.scene
@@ -76,11 +60,13 @@ def main():
     glow = material("EmberGlass", (1.0, 0.34, 0.06, 1.0), emission=(1.0, 0.12, 0.01, 1.0))
 
     cube("GateBase", (0.80, 0.80, 0.18), (0.0, 0.0, 0.09), wood)
-    cylinder("GatePost", 0.12, 2.37, (0.0, 0.0, 1.365), brass)
+    cylinder("GatePost", 0.12, 2.37, (0.0, 0.0, 1.365), brass, vertices=8)
     cube("GateCrossArm", (1.20, 0.16, 0.16), (0.0, 0.0, 2.55), brass)
     cube("GateFinial", (0.16, 0.16, 0.30), (0.0, 0.0, 2.70), brass)
-    build_lantern("LeftLantern", -0.33, brass, wood, glow)
-    build_lantern("RightLantern", 0.33, brass, wood, glow)
+    # One glowing block per lantern keeps the complete asset at six visible
+    # primitives, as required by Assignment 3.
+    cube("LeftLantern", (0.44, 0.40, 0.48), (-0.38, 0.0, 2.18), glow)
+    cube("RightLantern", (0.44, 0.40, 0.48), (0.38, 0.0, 2.18), glow)
 
     # Blender importer suffix route: these meshes become collision-only static bodies.
     cube("BaseCollider-convcolonly", (0.80, 0.80, 0.32), (0.0, 0.0, 0.16))
@@ -93,7 +79,9 @@ def main():
     maxs = [max((o.matrix_world @ v.co)[i] for o in visual for v in o.data.vertices) for i in range(3)]
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
+    BLEND.parent.mkdir(parents=True, exist_ok=True)
     LOG.parent.mkdir(parents=True, exist_ok=True)
+    bpy.ops.wm.save_as_mainfile(filepath=str(BLEND), check_existing=False)
     bpy.ops.export_scene.gltf(
         filepath=str(OUT),
         export_format="GLB",
@@ -104,10 +92,13 @@ def main():
     record = {
         "asset": "Lantern Gate",
         "output": str(OUT.relative_to(ROOT)),
+        "blend_source": str(BLEND.relative_to(ROOT)),
         "visual_bounds_blender_xyz_m": [round(maxs[i] - mins[i], 4) for i in range(3)],
         "origin_blender_xyz_m": [0.0, 0.0, 0.0],
         "visual_triangles": tri_count,
-        "triangle_budget": 240,
+        "triangle_budget": 160,
+        "visible_primitives": len(visual),
+        "primitive_budget": 6,
         "materials": sorted(m.name for m in (brass, wood, glow)),
         "colliders": {
             "BaseCollider-convcolonly": [0.80, 0.80, 0.32],

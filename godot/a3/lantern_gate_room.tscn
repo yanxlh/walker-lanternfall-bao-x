@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="PackedScene" path="res://a3/lantern_gate.tscn" id="1_gate"]
 [ext_resource type="Script" path="res://a3/lantern_gate_room.gd" id="2_room"]
+[ext_resource type="PackedScene" path="res://a3/supply_stack.glb" id="3_stack"]
+[ext_resource type="PackedScene" path="res://a3/oil_shrine.glb" id="4_shrine"]
 
 [sub_resource type="Environment" id="Environment_market"]
 background_mode = 1
@@ -45,13 +47,13 @@ light_color = Color(0.55, 0.65, 1, 1)
 light_energy = 1.2
 
 [node name="LanternLight" type="OmniLight3D" parent="."]
-position = Vector3(0, 2.15, 0)
+position = Vector3(-2, 2.15, 0)
 light_color = Color(1, 0.34, 0.08, 1)
 light_energy = 5.0
 omni_range = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-position = Vector3(4.2, 3.2, 5.2)
+position = Vector3(5.8, 3.8, 7.6)
 current = true
 
 [node name="Floor" type="StaticBody3D" parent="."]
@@ -68,16 +70,42 @@ position = Vector3(0, -0.1, 0)
 shape = SubResource("BoxShape_floor")
 
 [node name="LanternGate" parent="." instance=ExtResource("1_gate")]
+position = Vector3(-2, 0, 0)
 
-[node name="PropLabel" type="Label3D" parent="."]
-position = Vector3(0, 3.25, 0)
-text = "LANTERN GATE — STATIC BLOCKER"
-font_size = 36
+[node name="GateLabel" type="Label3D" parent="."]
+position = Vector3(-2, 3.25, 0)
+text = "LANTERN GATE\n6 PRIMITIVES · 88 TRIANGLES"
+font_size = 30
 outline_size = 8
 billboard = 1
 
+[node name="SupplyStack" parent="." instance=ExtResource("3_stack")]
+
+[node name="StackLabel" type="Label3D" parent="."]
+position = Vector3(-0.15, 1.70, -0.15)
+text = "SUPPLY STACK\n3 PRIMITIVES · 68 TRIANGLES"
+font_size = 24
+outline_size = 7
+billboard = 1
+
+[node name="OilShrine" parent="." instance=ExtResource("4_shrine")]
+position = Vector3(2, 0, 0)
+
+[node name="ShrineLight" type="OmniLight3D" parent="OilShrine"]
+position = Vector3(0, 1.25, 0)
+light_color = Color(1, 0.25, 0.04, 1)
+light_energy = 3.0
+omni_range = 2.5
+
+[node name="ShrineLabel" type="Label3D" parent="."]
+position = Vector3(2.25, 2.05, -0.15)
+text = "LAMP-OIL SHRINE\n3 PRIMITIVES · 60 TRIANGLES"
+font_size = 24
+outline_size = 7
+billboard = 1
+
 [node name="StandIn" type="CharacterBody3D" parent="."]
-position = Vector3(-2, 0.6, 0)
+position = Vector3(-3.5, 0.6, 1.5)
 collision_layer = 2
 collision_mask = 5
 
@@ -90,7 +118,7 @@ shape = SubResource("CapsuleShape_standin")
 
 [node name="Label" type="Label3D" parent="StandIn"]
 position = Vector3(0, 1.0, 0)
-text = "COURIER STAND-IN\nWASD / ARROWS · F3 COLLIDERS"
+text = "COURIER STAND-IN\nWASD / ARROWS · F3 COLLIDERS · ESC RETURN"
 font_size = 26
 outline_size = 6
 billboard = 1

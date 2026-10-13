@@ -4,7 +4,7 @@ extends Node3D
 
 func _ready() -> void:
 	_ensure_inputs()
-	$Camera3D.look_at(Vector3(0.0, 1.25, 0.0))
+	$Camera3D.look_at(Vector3(0.0, 1.15, 0.0))
 
 func _physics_process(_delta: float) -> void:
 	var axis := Input.get_vector("move_left", "move_right", "move_up", "move_down")

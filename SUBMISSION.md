@@ -1,16 +1,16 @@
-```
-Assignment: Assignment 2 - Generate Art, Sound, and Music for Your Game
+Assignment: Assignment 3 - Your First 3D Game Assets with Claude, the Blender MCP, and Blender
 Student: Bao Xing
-Project name: walker-lanternfall-bao-x (game title: Lanternfall)
-Game concept in one sentence: A lamp-headed courier is trapped in a fog-bound midnight market, and the light on his shoulders is his only weapon — keep moving, grow the light, and survive three minutes until the fog lifts.
-GitHub repository/folder URL: https://github.com/yanxlh/walker-lanternfall-bao-x
-Started from (walker-jumpman, my Assignment 1 project, or an empty project): an empty project (blank Godot 4.7.2). Only the protagonist concept, the Lamp-Head Courier, comes from my Assignment 1 (yanxlh/walker-jumpman-bao-x, which extended nikbearbrown/walker-jumpman); no files from either were copied.
-Submitted commit SHA: given in the Canvas submission comment (a file cannot contain the hash of the commit that contains it); the ZIP is `git archive` of that commit.
-Source revision shown in the film: 8a6f9881e0e2858e523d22bb09f1a423695f04e1 — `godot/` is identical at the submitted commit (`git diff 8a6f988 <submitted> -- godot/` is empty).
-Godot version and operating system: Godot 4.7.2.stable.official.ed1daf0bf (GL Compatibility) on macOS 26, Apple M4 Pro, 16 GB.
-Generative models used (name, version, where run, license): all run locally on my MacBook (Apple M4 Pro, 16 GB, macOS 26), no paid service or API key — FLUX.1-schnell, Hugging Face revision 741f7c3, via mflux 0.20.0 (4-bit), Apache-2.0: all 14 art assets · Stable Audio Open 1.0, revision f21265c, via diffusers 0.40.0, Stability AI Community License: 7 sound effects · MusicGen-medium, revision d3bd7b0, via transformers 5.17.0, weights CC-BY-NC-4.0 (non-commercial coursework): 2 music loops · MusicGen-melody, revision 68d653a, same runtime and licence: one MUS-02 batch, all rejected · for the film's narration only: Kokoro-82M v1.0 (ONNX files from kokoro-onnx release model-files-v1.0), via kokoro-onnx 0.4.7 in the course's Brutalist toolkit, run locally, Apache-2.0 (kokoro-onnx code MIT), stock voice am_onyx.
-Final film URL and filename: https://drive.google.com/file/d/1gTWvQ8B_j_6DBn81V0L9I-onbXgtg0nU/view?usp=sharing · claude-liam-walker-lanternfall-bao-x-gamedev.mp4
-Final film SHA-256: 585a89d4a1818588e659e20b69f835176d490790bf03f49efec30b5538ddc779
-Summary of my work: I chose the game (a survivors-like with two weapons, branching upgrades and one evolution), the theme, the scope and the local-only models, and committed the concept, storyboard, character sheet and change brief before any generation (tag design-v1). I picked every asset that shipped and listened to every sound-effect candidate before choosing (five MUS-02 layer candidates were rejected by an automated check I did not listen to; the log says so). I played the slice twice for the test report (sound on, then muted) and asked for the changes that came out of play: bullets that vanish on a hit, a fuller and then more broken-up map, blocking props, rising XP cost, tougher monsters over time and new cards. Claude (Claude Code, Claude Opus 5.5) drafted the design documents, the plan and every prompt from my choices, wrote the Godot code, tests and generation scripts, ran the models and measured the candidates, and wrote and built the film, which Kokoro narrates. Who did what: SOURCES.md, and day by day FRICTIONAL.md. Any logged generation can be re-run from its log entry (gen/reproduce.py; four re-runs on 2026-10-04 matched the originals exactly).
-Known limitations: one map, two weapons and one evolution, no saving; balance tuned only against my play and scripted bots; the fog-wraith has the lowest measured contrast against the ground (readable in my muted run); the r = 10 hurtbox also covers the lower lamp; gamepad bindings exist but are untested (the left stick can skip cards).
-```
+Project name: walker-lanternfall-bao-x (Lanternfall)
+GitHub repository URL: https://github.com/yanxlh/walker-lanternfall-bao-x
+Git tag and submitted commit SHA: NOT CREATED — preparation only; user requested no submission
+Game-source revision shown in the film: PENDING FINAL A3 FILM
+Godot version, Blender version, and operating system: Godot 4.7.2.stable.official.ed1daf0bf; Blender 5.2.2 LTS; macOS 26 on Apple M4 Pro
+The three assets and what each is for: Lantern Gate — market-entrance landmark and static blocker; Supply Stack — obstacle beside a market stall; Lamp-oil Shrine — collectible landmark near the upgrade area
+MCP project and version, or script route: mcp-for-blender 2.1.9 setup attempted; tools unavailable in this coding session; documented script route used for all three assets
+My hand edit in Blender: PENDING BAO — move Supply Stack UpperCrate Y from 0.05 m to 0.12 m in Blender's window, save, and describe what the interface showed
+Checks run (command and result): Godot import PASS; test_a3_assets.gd 17/17 PASS; test_lantern_gate.gd 14/14 PASS; earlier Assignment 2 suites 122/122 PASS
+Final film URL and filename: PENDING — do not submit this file with placeholders
+Final film SHA-256: PENDING
+Summary of my changes: Added three simple metre-scale Blender assets, their .blend sources, .glb exports, build scripts and measurement records; simplified the original over-complex gate to the six-primitive course limit; placed all three in a lit Godot 3D room; added numeric import/placement/budget checks and labelled evidence.
+Known limitations: MCP route unavailable, so the allowed script fallback was used; the final three-asset room still needs Bao's human view from front/rear/below; Bao's manual Blender edit and the required A3 Brutalist explainer remain pending.
+Changed games since Assignment 2: no

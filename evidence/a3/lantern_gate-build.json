@@ -1,6 +1,7 @@
 {
   "asset": "Lantern Gate",
   "output": "godot/a3/lantern_gate.glb",
+  "blend_source": "blender/a3/lantern_gate.blend",
   "visual_bounds_blender_xyz_m": [
     1.2,
     0.8,
@@ -11,8 +12,10 @@
     0.0,
     0.0
   ],
-  "visual_triangles": 240,
-  "triangle_budget": 240,
+  "visual_triangles": 88,
+  "triangle_budget": 160,
+  "visible_primitives": 6,
+  "primitive_budget": 6,
   "materials": [
     "AgedBrass",
     "DarkWood",

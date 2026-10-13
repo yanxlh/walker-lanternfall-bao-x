@@ -50,7 +50,8 @@ func run() -> void:
 	var size := bounds.size
 	check("size-axis-and-origin", size.distance_to(Vector3(1.20, 2.85, 0.80)) <= 0.01 and absf(bounds.position.y) <= 0.01, {"position": str(bounds.position), "size": str(size)})
 	check("unit-mesh-scale", _unit_scale(meshes), {"mesh_count": meshes.size()})
-	check("triangle-budget", triangles <= 240, {"triangles": triangles, "budget": 240})
+	check("six-visible-primitives", meshes.size() == 6, {"visible_primitives": meshes.size(), "budget": 6})
+	check("triangle-budget", triangles <= 160, {"triangles": triangles, "budget": 160})
 	var material_names: Array = materials.keys()
 	material_names.sort()
 	check("material-names", material_names == ["AgedBrass", "DarkWood", "EmberGlass"], {"materials": material_names})

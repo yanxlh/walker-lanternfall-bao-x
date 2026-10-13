@@ -4,6 +4,7 @@
 *.mp4
 *.avi
 *.mov
+*.blend1
 .env
 *.safetensors
 *.ckpt

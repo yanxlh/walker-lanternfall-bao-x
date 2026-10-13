@@ -1,0 +1,24 @@
+{
+  "asset": "Supply Stack",
+  "output": "godot/a3/supply_stack.glb",
+  "blend_source": "blender/a3/supply_stack.blend",
+  "visual_bounds_blender_xyz_m": [
+    1.2,
+    0.8,
+    1.1
+  ],
+  "origin_blender_xyz_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "visual_triangles": 68,
+  "triangle_budget": 180,
+  "visible_primitives": 3,
+  "primitive_budget": 6,
+  "materials": [
+    "CrateBrass",
+    "MarketTimber"
+  ],
+  "hand_edit_target": "UpperCrate Y location; baseline is 0.05 m"
+}
