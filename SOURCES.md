@@ -90,3 +90,21 @@ The walking pose was first made with FLUX quantized to 4-bit at load; the re-run
 - **Font:** Godot's built-in default font (bundled with the engine), used by the HUD.
 - **Storyboard, character blockout and palettes:** drawn by scripts in `design/` from simple shapes; no generated or external art.
 - **Code and documents:** written for this project with Claude Code as described above; Claude is not an asset generator here. The day-by-day record of who decided what is [FRICTIONAL.md](FRICTIONAL.md).
+
+## Assignment 3 geometry and tools
+
+- **Lantern Gate geometry:** authored procedurally for this project in
+  `tools/blender/build_lantern_gate.py` with Blender's built-in `bpy` mesh
+  primitives; no downloaded or generated mesh, material texture, or external
+  model is used. The script, its exact command and JSON build log are committed.
+- **Blender:** 5.2.2 LTS, local `/Applications/Blender.app`; binary glTF export
+  through Blender's bundled glTF 2.0 exporter. `AgedBrass`, `DarkWood` and
+  `EmberGlass` are numeric Principled BSDF materials defined in the script.
+- **Godot:** 4.7.2 imports the GLB. Its generated import record keeps
+  `nodes/use_node_type_suffixes=true`, converting the two Blender objects whose
+  names end in `-convcolonly` into collision-only static bodies.
+- **Work split:** Bao chose to continue the Assignment 3 work and must make the
+  final visual/playability judgment. Claude specified the measurable proposal,
+  wrote the Blender/Godot/test code, ran the local tools and recorded observed
+  output. The first over-budget build and its correction are retained in
+  CHANGE-BRIEF A3-R1 rather than hidden.

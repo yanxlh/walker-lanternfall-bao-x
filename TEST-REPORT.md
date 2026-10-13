@@ -157,3 +157,49 @@ A fresh-context reviewer read the whole branch (Godot code, tests, pipeline, che
 - The courier is small on screen (~20 px tall); readable in both runs, but worth revisiting if the camera ever zooms out further.
 - No gamepad test is recorded.
 - Balance is tuned against my own play and scripted bots only.
+
+---
+
+## Assignment 3 — Lantern Gate (2026-10-13)
+
+Environment: Godot 4.7.2.stable.official.ed1daf0bf, Blender 5.2.2 LTS,
+macOS 26 on Apple M4. The brief was written before the first Blender build.
+
+### Rebuild and import
+
+- The required background Blender command exited 0. A repeat build produced
+  the same GLB SHA-256 both times:
+  `69c66a2403752a2c717c8d45c948164331fd0232dabc66d270153c1ff3e7070d`.
+- The first build failed two frozen targets: 1.36 m wide and 248 triangles.
+  A3-R1 records the response; the second build measured 1.20 × 0.80 × 2.85 m
+  and exactly 240 triangles.
+- Godot generated `lantern_gate.glb.import`; it records
+  `nodes/use_node_type_suffixes=true`. The import output contained no `ERROR:`
+  lines. No `.import` file was copied or hand-written.
+
+### Automated result
+
+`test_lantern_gate.gd`: **13 checks, 0 failures**.
+
+| Check | Observed |
+|---|---|
+| Size / axes / origin | AABB position (−0.6, 0, −0.4), size (1.2, 2.85, 0.8); height on +Y |
+| Scale | all 18 imported visual mesh nodes unit scale |
+| Budget / materials | 240 triangles; exactly AgedBrass, DarkWood, EmberGlass |
+| Collider | base 0.80×0.32×0.80 m; post 0.42×2.55×0.42 m; no cross-arm collider |
+| Layers | both imported static bodies layer 3 / bit 4, mask 0 |
+| Behaviour | 0.25 m-radius stand-in driven for 120 ticks stopped at x = −0.6501 m |
+| Placement | floor ray excluding prop RIDs hit `Floor` at y ≈ 0 |
+| Mutations | non-unit mesh scale and wrong layer bit both failed their predicate, then passed after restoration |
+
+Regression: logic **32/32**, gameplay **65/65**, audio **25/25** — total
+earlier checks **122/122**, unchanged.
+
+### HUMAN CHECK — not yet claimed
+
+The scene is `res://a3/lantern_gate_room.tscn` (F4 from the 2D game). The
+automated results do **not** establish that the prop reads as a lantern gate,
+that its materials look right under the room lighting, or that its collision
+margin feels fair. Bao must play it with normal controls and Visible Collision
+Shapes, record what was seen, and drive any visual/collider revision before the
+`a3` tag. No human verdict is claimed here yet.

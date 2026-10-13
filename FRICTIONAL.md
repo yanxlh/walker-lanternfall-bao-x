@@ -192,3 +192,39 @@ To see and hear the film myself before submitting it, and to make sure a reviewe
 
 - Submit this version: "我确定是这个了".
 
+---
+
+## 2026-10-13 (Tue) — Assignment 3 setup and first Lantern Gate build
+
+**What was tried**
+
+- Blender 5.2.2 LTS and the local MCP add-on were installed/configured; setup
+  command output is retained under `evidence/a3/setup/`. A small script opened
+  the sidebar and statistics for learning Blender's window, but no owner
+  screenshot or visual verdict is claimed from that step.
+- Before the first background build, the A3 addendum in CHANGE-BRIEF froze the
+  gate at 1.20 × 0.80 × 2.85 m, 240 triangles, three named materials, two box
+  colliders and physics layer 3.
+- Claude wrote and ran the headless Blender build, Godot wrapper/room, and test.
+
+**What came back**
+
+- The first real build contradicted the brief: the roofs made it 1.36 m wide,
+  and the 12-sided post raised the result to 248 triangles.
+- After moving the lanterns inward, narrowing both roofs and changing only the
+  post from 12 to 10 sides, the build measured exactly 1.20 m wide and 240
+  triangles. Rebuilding produced the same GLB SHA-256.
+- Godot imported two collision-only static bodies. The stand-in stopped at
+  x = −0.6501 m; 13/13 A3 checks and all 122 earlier checks passed. The collider
+  test initially reported FAIL even while printing the exact expected sizes;
+  the cause was exact floating-point `Vector3` equality. The assertion was
+  corrected to the brief's 1 cm tolerance; no collider or expected size changed.
+
+**Decision and open human question**
+
+- Keep the corrected 10-sided post: it meets the prewritten silhouette and
+  performance limits without weakening them.
+- Do not claim the HUMAN CHECK. Bao still needs to drive the stand-in into and
+  beside the gate with Visible Collision Shapes and say whether the object reads
+  correctly and the invisible margin feels fair. That observation, not an
+  automated substitute, decides whether another revision is needed.

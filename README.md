@@ -1,6 +1,6 @@
 # walker-lanternfall-bao-x — Lanternfall
 
-**CSYE 7270 · Assignment 2 — Generate Art, Sound, and Music for Your Game · Bao Xing**
+**CSYE 7270 · Assignments 2–3 · Bao Xing**
 
 A lamp-headed courier is trapped in a fog-bound midnight market, and the light on his shoulders is his only weapon. Keep moving, grow the light, and survive three minutes until the fog lifts.
 
@@ -29,6 +29,7 @@ A **blank Godot 4.7.2 project**. The protagonist concept is carried over from my
 | Restart | R | Y |
 | **Mute everything / music only / effects only** | **M / 9 / 0** | — |
 | Show the hurtbox | F3 | — |
+| Enter the Assignment 3 Lantern Gate room | F4 | — |
 
 The HUD always shows `MUSIC on/off  SFX on/off`. The game is fully playable muted: every sound has a visual (hit flash + knockback + HP bar, gem flight, paused card screen, evolution banner, result panel).
 
@@ -57,6 +58,28 @@ cd godot && godot --headless --path . --import --quit && for s in logic gameplay
 
 Python checks run with the generation environment: `gen/.venv-audio/bin/python gen/checks/palette_check.py`, etc. (setup in `gen/requirements-*.txt`, Python 3.12 via uv).
 
+## Assignment 3 — Lantern Gate
+
+Assignment 3 adds a **1.20 × 0.80 × 2.85 m** 3D market landmark built
+entirely by [`tools/blender/build_lantern_gate.py`](tools/blender/build_lantern_gate.py)
+in Blender 5.2.2 LTS. Godot imports the two `-convcolonly` meshes as a
+compound static blocker on named physics layer 3 (`market_prop`). Press **F4**
+from the 2D game to enter the 3D prop room; use WASD/arrows to drive the orange
+courier stand-in into and around it, and Esc to return.
+
+```bash
+/Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python-exit-code 1 --python tools/blender/build_lantern_gate.py
+/Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import
+gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_lantern_gate.gd --fixed-fps 60
+```
+
+The deterministic rebuild SHA-256 is
+`69c66a2403752a2c717c8d45c948164331fd0232dabc66d270153c1ff3e7070d`.
+The A3 suite reports **13/13 PASS**: imported size and origin, +Y height, unit
+scale, 240-triangle budget, exact material names, authored collider dimensions,
+layer/mask values, floor placement, blocker behaviour, and two caught/restored
+mutations. The earlier suites remain **122/122 PASS**.
+
 ## Read in this order
 
 1. [CONCEPT.md](CONCEPT.md) — the game, pillars, art/audio/music direction, and revisions R1–R7 (aiming, pixel art, XP, map, HP growth and cards, solid props, broken-up map, art references in words)
@@ -74,6 +97,9 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 - Music loops are 20 s (MusicGen's 30 s limit), so a 3-minute run hears the loop 9 times.
 - One map, two weapons, one evolution, no saving; balance is only roughly tuned (my playtests and scripted bots).
 - Gamepad support exists but is untested; on the card screen the left stick can skip several cards.
+- The A3 room uses a labelled stand-in instead of the 2D courier because the
+  cumulative game is otherwise 2D. The required owner playtest with Visible
+  Collision Shapes still needs Bao's recorded observation before tagging `a3`.
 
 ## Film
 
