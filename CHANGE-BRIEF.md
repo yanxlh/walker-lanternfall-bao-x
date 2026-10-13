@@ -131,3 +131,76 @@ All five generated with FLUX.1-schnell and accepted by Bao from 3 candidates eac
 - **Enemies always spawn off-screen.** Near a wall or in a corner the 400 px spawn ring used to put spawns inside the view (83 of 200 in the test), even on the courier; now the angle is re-rolled with the seeded rng and falls back to the widest strip of arena outside the view (`spawns-arrive-off-screen`).
 - **The double-click launcher imports the assets on first run.** A fresh clone or the submission ZIP has no Godot import cache, and ran with placeholder art and no sound; `generated-assets-load` now fails whenever that happens.
 - Correction to §2 above: with one voice and a 300 ms voice slot, pickups are effectively merged within **300 ms**, not 80 ms.
+
+---
+
+# Assignment 3 addendum — Lantern Gate (written before the first Blender build)
+
+**Frozen 2026-10-13.** This addendum specifies the Assignment 3 prop before
+`tools/blender/build_lantern_gate.py` is run. Later corrections belong under a
+dated A3 revision; the table below is not rewritten to match the result.
+
+## Purpose and numerical specification
+
+The Lantern Gate turns the flat lantern-post motif from storyboard panels P1,
+P2, P3 and P8 into a 3D landmark for the same fog-bound market. It is a static
+blocker in a small 3D prop room: the labelled courier stand-in must stop at its
+base while the lantern arms remain non-blocking.
+
+| Property | Frozen requirement |
+|---|---|
+| Format | `godot/a3/lantern_gate.glb`, rebuilt only by the committed Blender script |
+| Axes and size | Blender Z becomes Godot Y; merged visual bounds **1.20 m wide × 0.80 m deep × 2.85 m high**, tolerance 0.01 m |
+| Origin | centre of the underside at floor level, within 0.01 m |
+| Scale | every imported `MeshInstance3D` has unit scale |
+| Triangle budget | at most **240 visual triangles**; justified because the room shows one hero prop and the Assignment 2 pixel art stays deliberately simple |
+| Materials | exactly `AgedBrass`, `DarkWood`, `EmberGlass` |
+| Collider | two authored boxes: 0.80 × 0.80 × 0.32 m base and 0.42 × 0.42 × 2.55 m post; no collision on the 1.20 m cross-arm or lantern shades |
+| Physics role | static blocker |
+| Behaviour | a 0.25 m-radius labelled stand-in driven at 2 m/s stops within 120 frames at 60 fps and never crosses the base |
+
+## Layer plan
+
+| Object | Layer number / bit | Mask | Detects or blocks |
+|---|---:|---:|---|
+| Floor | 1 / 1 | 0 | stand-in |
+| Stand-in | 2 / 2 | 5 | floor (1) and prop (4) |
+| Lantern Gate | 3 / 4 (`market_prop`) | 0 | stand-in through its mask |
+
+The room owns and frees the prop instance. Existing 2D player tuning, audio,
+simulation, layers, masks and tests are invariants and must not change.
+
+## Answers before delegation
+
+- Height is Godot **Y** after Blender's Z-up glTF export.
+- Unapplied Blender scale can arrive as a non-unit node transform even when the
+  visible dimensions look correct; the test checks both AABB and node scale.
+- A copied `.import` can preserve the wrong `nodes/use_node_type_suffixes`
+  setting, turning `-convcolonly` geometry into visible geometry instead of a
+  collider. Godot must generate the import record itself.
+- The stand-in's mask, not the static prop's mask, must include layer 3.
+- `body_entered` is irrelevant for a static blocker; if this were an Area3D,
+  an overlap that began before signal connection would not emit a new entry.
+
+## Predicted failures and checks
+
+1. **Wrong up axis or unapplied scale.** Merge imported visual AABBs and assert
+   1.20 × 2.85 × 0.80 m in Godot, plus unit scale on every mesh node.
+2. **Suffix import disabled.** Assert that two `StaticBody3D` nodes and no
+   visible collider meshes arrive from the GLB.
+3. **Collider feels like an invisible wall under the arms.** Sample the two box
+   volumes and drive the stand-in into the base; the cross-arm volume must stay
+   free. Confirm visually with Visible Collision Shapes.
+4. **Wrong collision bit.** Read the running bodies and assert layer 3 / bit 4;
+   a mutation to layer 1 must make the same predicate fail.
+
+## A3 revisions
+
+### A3-R1 · 2026-10-13 · First Blender build exceeded two frozen limits
+
+The first script run measured 1.36 m wide and 248 visual triangles. The two
+lantern roofs extended 0.08 m past each end of the 1.20 m cross-arm, and the
+12-sided post put the otherwise simple prop eight triangles over budget. I did
+not change the specification: the lantern centres move from ±0.38 m to ±0.33 m,
+their roof radius drops from 0.30 m to 0.27 m, and the post becomes a 10-sided
+cylinder. Rebuild must now report exactly 1.20 m and at most 240 triangles.

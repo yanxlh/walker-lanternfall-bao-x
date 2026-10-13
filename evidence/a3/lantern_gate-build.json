@@ -1,0 +1,33 @@
+{
+  "asset": "Lantern Gate",
+  "output": "godot/a3/lantern_gate.glb",
+  "visual_bounds_blender_xyz_m": [
+    1.2,
+    0.8,
+    2.85
+  ],
+  "origin_blender_xyz_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "visual_triangles": 240,
+  "triangle_budget": 240,
+  "materials": [
+    "AgedBrass",
+    "DarkWood",
+    "EmberGlass"
+  ],
+  "colliders": {
+    "BaseCollider-convcolonly": [
+      0.8,
+      0.8,
+      0.32
+    ],
+    "PostCollider-convcolonly": [
+      0.42,
+      0.42,
+      2.55
+    ]
+  }
+}
