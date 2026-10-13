@@ -196,6 +196,47 @@ simulation, layers, masks and tests are invariants and must not change.
 
 ## A3 revisions
 
+### A3-R0 · 2026-10-13 · Scope correction before assets two and three
+
+My first reading treated the Assignment 3 deliverable as one hero prop. Reading
+the Canvas page directly showed that it requires **three** simple assets and
+limits each to no more than six visible basic shapes. The existing Lantern Gate
+used 18 visible mesh objects, so it must also be simplified. This correction is
+written and committed before building the two missing assets or rebuilding the
+gate. The original one-prop brief above remains frozen as evidence of the miss.
+
+The three assets all belong to Lanternfall's midnight market and will appear
+side by side in the Assignment 3 prop room:
+
+| Asset | Game purpose and location | Frozen size W x D x H | Origin | Recognisable look / materials | Shape and triangle budget |
+|---|---|---|---|---|---|
+| Lantern Gate | landmark and static blocker at the market entrance | 1.20 x 0.80 x 2.85 m | centre of underside, on floor | dark base/post, brass cross-arm, two glowing orange lantern blocks | 6 visible primitives, <= 160 triangles |
+| Supply Stack | obstacle beside a market stall | 1.20 x 0.80 x 1.10 m | centre of underside, on floor | two offset wood crates, one low-poly brass-bound barrel | 3 visible primitives, <= 180 triangles |
+| Lamp-oil Shrine | collectible landmark near the upgrade area | 0.80 x 0.80 x 1.45 m | centre of underside, on floor | dark plinth, brass stem, emissive faceted oil gem | 3 visible primitives, <= 120 triangles |
+
+All three are upright on Blender +Z and Godot +Y, use metre units, have rotation
+and scale applied before export, and must import with node scale `(1, 1, 1)`.
+The Godot room places them at x = -2.0, 0.0 and 2.0 metres on the same floor.
+Only the Lantern Gate needs collision for this assignment; the other two are
+display props so the shared camera can move behind and below them unobstructed.
+
+Predicted failures for the three-asset rebuild:
+
+1. **The simplified gate loses its silhouette.** Check it from the front and
+   rear in Blender and in the running Godot room; both orange lantern blocks
+   must remain separated and readable.
+2. **A GLB arrives with the wrong axis, size or unapplied scale.** The headless
+   check compares each merged AABB with the table, verifies floor-level origin,
+   +Y height in Godot and unit scale on every imported mesh.
+3. **Cylinder segments break the budget.** Each build log records the visible
+   primitive count and triangulated face count; the check compares those values
+   with the frozen per-asset limits.
+4. **Materials disappear or the emissive gem/lantern becomes ordinary grey.**
+   Inspect the Blender material names, then inspect the running Godot scene and
+   enumerate imported active material names in the headless check.
+5. **The three assets overlap or float in the shared room.** Ray-check the floor
+   beneath each placement, merge their world AABBs, and verify pairwise gaps.
+
 ### A3-R1 · 2026-10-13 · First Blender build exceeded two frozen limits
 
 The first script run measured 1.36 m wide and 248 visual triangles. The two
