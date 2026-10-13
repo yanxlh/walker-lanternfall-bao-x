@@ -12,7 +12,9 @@ func _physics_process(_delta: float) -> void:
 	stand_in.move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("debug_collision"):
+		get_tree().debug_collisions_hint = not get_tree().debug_collisions_hint
+	elif event.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://game/main.tscn")
 
 func _ensure_inputs() -> void:
@@ -21,6 +23,7 @@ func _ensure_inputs() -> void:
 		"move_right": [KEY_D, KEY_RIGHT],
 		"move_up": [KEY_W, KEY_UP],
 		"move_down": [KEY_S, KEY_DOWN],
+		"debug_collision": [KEY_F3],
 	}
 	for action in keys:
 		if not InputMap.has_action(action):

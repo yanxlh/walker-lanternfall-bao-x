@@ -66,6 +66,7 @@ in Blender 5.2.2 LTS. Godot imports the two `-convcolonly` meshes as a
 compound static blocker on named physics layer 3 (`market_prop`). Press **F4**
 from the 2D game to enter the 3D prop room; use WASD/arrows to drive the orange
 courier stand-in into and around it, and Esc to return.
+Press **F3** in the room to toggle Visible Collision Shapes.
 
 ![Lantern Gate running in the 3D prop room](evidence/a3/lantern-gate-room.png)
 

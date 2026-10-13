@@ -90,7 +90,7 @@ shape = SubResource("CapsuleShape_standin")
 
 [node name="Label" type="Label3D" parent="StandIn"]
 position = Vector3(0, 1.0, 0)
-text = "COURIER STAND-IN\nWASD / ARROWS"
+text = "COURIER STAND-IN\nWASD / ARROWS · F3 COLLIDERS"
 font_size = 26
 outline_size = 6
 billboard = 1
