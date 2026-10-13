@@ -390,8 +390,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			choose_card(hud.card_cursor)
 
 func _ensure_inputs() -> void:
-	if InputMap.has_action("move_left"):
-		return
 	var keys := {
 		"move_left": [KEY_A, KEY_LEFT], "move_right": [KEY_D, KEY_RIGHT],
 		"move_up": [KEY_W, KEY_UP], "move_down": [KEY_S, KEY_DOWN],

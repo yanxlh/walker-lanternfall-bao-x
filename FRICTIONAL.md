@@ -232,3 +232,8 @@ To see and hear the film myself before submitting it, and to make sure a reviewe
   labelled visual inspection: the paired lights read as lanterns, the materials
   separate under the room light, and collision stays on the base/post. This is
   retained as AI evidence, not written as Bao's experience.
+- The first real Esc → F4 round trip exposed missing InputMap actions. The room
+  had already installed movement, which triggered an old early return in the 2D
+  session's setup and skipped every other action. A3-R2 removes only that early
+  return; the action-by-action guard stays. This was found from the running
+  integration, not the isolated headless suites.

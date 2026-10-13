@@ -210,3 +210,8 @@ wood/brass, and the debug collider confined to the base and centre post rather
 than the cross-arm. Evidence: `evidence/a3/lantern-gate-room.png` and
 `evidence/a3/lantern-gate-colliders.png`. This is labelled as an AI inspection,
 not substituted for Bao's required human playtest.
+
+The first Esc → F4 round trip failed with missing InputMap actions after the A3
+room had created only movement actions. A3-R2 removed the old partial-setup
+early return. A fresh run then returned to the 2D game and re-entered the room
+without missing-action errors; gameplay remained 65/65 PASS.

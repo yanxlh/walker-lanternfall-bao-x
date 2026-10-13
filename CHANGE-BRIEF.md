@@ -204,3 +204,12 @@ lantern roofs extended 0.08 m past each end of the 1.20 m cross-arm, and the
 not change the specification: the lantern centres move from ±0.38 m to ±0.33 m,
 their roof radius drops from 0.30 m to 0.27 m, and the post becomes a 10-sided
 cylinder. Rebuild must now report exactly 1.20 m and at most 240 triangles.
+
+### A3-R2 · 2026-10-13 · Returning from the room exposed partial input setup
+
+The first Esc → F4 integration check printed missing-action errors. The A3 room
+had created the four movement actions; when the 2D session loaded, its old
+`_ensure_inputs()` returned as soon as it saw `move_left`, so it never added
+start, pause, mute, card, collision-debug or A3-room actions. The early return
+is removed. The existing per-action guard remains, so actions are added only
+when absent and the 2D controls/tuning do not change.
