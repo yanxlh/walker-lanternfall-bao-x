@@ -360,7 +360,9 @@ func _on_player_died() -> void:
 	state.go(GameState.LOST)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("start") and state.current == GameState.MENU:
+	if event.is_action_pressed("a3_room"):
+		get_tree().change_scene_to_file("res://a3/lantern_gate_room.tscn")
+	elif event.is_action_pressed("start") and state.current == GameState.MENU:
 		start_run()
 	elif event.is_action_pressed("restart") and state.current != GameState.MENU:
 		start_run()
@@ -396,6 +398,7 @@ func _ensure_inputs() -> void:
 		"start": [KEY_ENTER, KEY_SPACE], "restart": [KEY_R], "pause": [KEY_ESCAPE, KEY_P],
 		"mute_all": [KEY_M], "mute_music": [KEY_9], "mute_sfx": [KEY_0],
 		"card_1": [KEY_1], "card_2": [KEY_2], "card_3": [KEY_3], "debug_collision": [KEY_F3],
+		"a3_room": [KEY_F4],
 	}
 	for action in keys:
 		if InputMap.has_action(action):

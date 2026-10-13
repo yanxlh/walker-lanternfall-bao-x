@@ -15,6 +15,12 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="stand_in"
+3d_physics/layer_3="market_prop"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

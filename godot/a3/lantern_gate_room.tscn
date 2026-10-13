@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="PackedScene" path="res://a3/lantern_gate.tscn" id="1_gate"]
+[ext_resource type="Script" path="res://a3/lantern_gate_room.gd" id="2_room"]
+
+[sub_resource type="Environment" id="Environment_market"]
+background_mode = 1
+background_color = Color(0.035, 0.045, 0.09, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.18, 0.22, 0.38, 1)
+ambient_light_energy = 0.8
+
+[sub_resource type="BoxMesh" id="BoxMesh_floor"]
+size = Vector3(8, 0.2, 8)
+
+[sub_resource type="StandardMaterial3D" id="Material_floor"]
+albedo_color = Color(0.08, 0.10, 0.18, 1)
+roughness = 0.85
+
+[sub_resource type="BoxShape3D" id="BoxShape_floor"]
+size = Vector3(8, 0.2, 8)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_standin"]
+radius = 0.25
+height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="Material_standin"]
+albedo_color = Color(1, 0.47, 0.08, 1)
+emission_enabled = true
+emission = Color(0.35, 0.06, 0.01, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape_standin"]
+radius = 0.25
+height = 1.2
+
+[node name="LanternGateRoom" type="Node3D"]
+script = ExtResource("2_room")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_market")
+
+[node name="Moon" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-52, -28, 0)
+light_color = Color(0.55, 0.65, 1, 1)
+light_energy = 1.2
+
+[node name="LanternLight" type="OmniLight3D" parent="."]
+position = Vector3(0, 2.15, 0)
+light_color = Color(1, 0.34, 0.08, 1)
+light_energy = 5.0
+omni_range = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(4.2, 3.2, 5.2)
+current = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+position = Vector3(0, -0.1, 0)
+mesh = SubResource("BoxMesh_floor")
+material_override = SubResource("Material_floor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+position = Vector3(0, -0.1, 0)
+shape = SubResource("BoxShape_floor")
+
+[node name="LanternGate" parent="." instance=ExtResource("1_gate")]
+
+[node name="PropLabel" type="Label3D" parent="."]
+position = Vector3(0, 3.25, 0)
+text = "LANTERN GATE — STATIC BLOCKER"
+font_size = 36
+outline_size = 8
+billboard = 1
+
+[node name="StandIn" type="CharacterBody3D" parent="."]
+position = Vector3(-2, 0.6, 0)
+collision_layer = 2
+collision_mask = 5
+
+[node name="Mesh" type="MeshInstance3D" parent="StandIn"]
+mesh = SubResource("CapsuleMesh_standin")
+material_override = SubResource("Material_standin")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StandIn"]
+shape = SubResource("CapsuleShape_standin")
+
+[node name="Label" type="Label3D" parent="StandIn"]
+position = Vector3(0, 1.0, 0)
+text = "COURIER STAND-IN\nWASD / ARROWS"
+font_size = 26
+outline_size = 6
+billboard = 1
