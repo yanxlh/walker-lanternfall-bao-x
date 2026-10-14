@@ -7,7 +7,7 @@ from pathlib import Path
 import bpy
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / "godot" / "a3" / "oil_shrine.glb"
 BLEND = ROOT / "blender" / "a3" / "oil_shrine.blend"
 LOG = ROOT / "evidence" / "a3" / "oil_shrine-build.json"

@@ -1,11 +1,17 @@
 {
   "asset": "Lantern Gate",
+  "route": "Blender MCP execute_blender_code (mcp-for-blender 2.1.9, add-on 1.8, Blender 5.2.2 LTS)",
   "output": "godot/a3/lantern_gate.glb",
   "blend_source": "blender/a3/lantern_gate.blend",
   "visual_bounds_blender_xyz_m": [
     1.2,
     0.8,
     2.85
+  ],
+  "visual_min_blender_xyz_m": [
+    -0.6,
+    -0.4,
+    0.0
   ],
   "origin_blender_xyz_m": [
     0.0,
@@ -21,6 +27,7 @@
     "DarkWood",
     "EmberGlass"
   ],
+  "unit_scale": true,
   "colliders": {
     "BaseCollider-convcolonly": [
       0.8,
