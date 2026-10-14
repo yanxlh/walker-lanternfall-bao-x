@@ -74,8 +74,10 @@ binary glTF export:
 
 Press **F4** from the 2D game to enter their shared 3D room (floor, moon light,
 two practical lights and one camera). Use WASD/arrows to drive the orange
-courier stand-in around the assets, **F3** to request the collision overlay and
-Esc to return. Only the gate is a blocker; its two `-convcolonly` meshes import
+courier stand-in around the assets, **Q / E** (or right-drag) to orbit the
+camera, **R / F** to tilt it (down to 50° below the floor, which then hides its
+mesh so the undersides show), **Z / X** or the wheel to zoom, **F3** to request
+the collision overlay and Esc to return. Only the gate is a blocker; its two `-convcolonly` meshes import
 on named physics layer 3 (`market_prop`).
 
 ![the three Assignment 3 assets running together](evidence/a3/a3-assets-room.png)
@@ -93,6 +95,7 @@ GLBs byte for byte:
 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import
 gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_a3_assets.gd --fixed-fps 60
 gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_lantern_gate.gd --fixed-fps 60
+gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_a3_camera.gd --fixed-fps 60
 ```
 
 **The Lamp-oil Shrine's source is `blender/a3/oil_shrine.blend`, not its
@@ -108,7 +111,8 @@ The scripts from before the MCP connected are kept in
 The three-asset suite reports **17/17 PASS**: imported size and floor origin,
 +Y height, unit scale, primitive and triangle budgets, exact material names,
 shared-room placement and a caught/restored non-unit-scale mutation. The gate's
-separate collision suite reports **14/14 PASS**. The earlier Assignment 2
+separate collision suite reports **14/14 PASS**, and the orbit-camera suite
+(A3-R3) **9/9 PASS**. The earlier Assignment 2
 suites remain **122/122 PASS** (all re-run 2026-10-14 after the hand edit).
 Build logs: [`evidence/a3/mcp/`](evidence/a3/mcp/).
 

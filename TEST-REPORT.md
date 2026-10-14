@@ -298,6 +298,42 @@ the re-exported gem within 1.84e-8 m; the gem's node has no rotation or scale.
 
 No assertion, tolerance or earlier test was changed.
 
+### Inspect and revise — A3-R3 orbit camera (2026-10-14, 12:52–12:55 EDT)
+
+Observation: A3-R0 says the room camera "can move behind and below" the
+assets, but the room had one fixed `Camera3D` at (5.8, 3.8, 7.6); the running
+scene could not show the back or the underside. CHANGE-BRIEF A3-R3 was
+committed (`2505638`) before the change. The room now orbits around
+(0, 1.15, 0) from the same start view; below the floor's top only the floor's
+mesh is hidden.
+
+`test_a3_camera.gd --fixed-fps 60`: **9 checks, 0 failures**.
+
+| Check | Observed |
+|---|---|
+| Start view unchanged | camera (5.8, 3.8, 7.6), aimed at (0, 1.15, 0), floor drawn |
+| Half orbit (E held 118 frames) | camera (−5.63, 3.8, −7.72): behind the props |
+| Tilt to minimum (F held) | pitch −50.0°, camera y −6.45, floor mesh hidden |
+| Floor collider while hidden | enabled; a downward ray still hits `Floor` |
+| Mutation | drawing the floor while below fails the predicate, then passes after `orbit()` restores it |
+| Tilt to maximum (R held) | pitch 80.0°, floor mesh drawn again |
+| Zoom (X / Z held) | clamps at 14.0 m and 3.0 m |
+| Right-drag 100 px | orbit turns −0.8 rad; drag state released |
+
+The drag check first failed (−1.72 rad): `push_input` in window coordinates
+applies the 2D stretch factor (640 × 360 base, 1280 × 720 window). The test now
+pushes the events in local (viewport) coordinates; the code did not change.
+After the change: `test_a3_assets` 17/17, `test_lantern_gate` 14/14, logic
+32/32, gameplay 65/65, audio 25/25, audit 0 problems.
+
+Rendered with a window (`capture_a3_orbit.gd`, 1280 × 720):
+`evidence/a3/orbit/a3-room-front.png`, `a3-room-behind.png`,
+`a3-room-below.png`. Seen by Claude, not a human check: from behind both
+lanterns and all three labels read; from below the floor is hidden and the
+undersides show. In Godot the EmberGlass and OilGlow emission draws as a pale
+yellow rather than Blender's orange, and the orange lantern light tints the
+Supply Stack red.
+
 ### HUMAN CHECK — final three-asset room
 
 PENDING BAO: front, behind and below in the F4 room.

@@ -27,7 +27,12 @@ Import and test with:
 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import
 gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_a3_assets.gd --fixed-fps 60
 gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_lantern_gate.gd --fixed-fps 60
+gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_a3_camera.gd --fixed-fps 60
 ```
+
+Rendered captures need a window, not `--headless` (a headless run never
+reaches `frame_post_draw`):
+`/Applications/Godot.app/Contents/MacOS/Godot --path godot --resolution 1280x720 --script res://tests/capture_a3_orbit.gd`
 
 Do not hand-write `.import` files or invent Godot UIDs. Do not change existing
 2D movement tuning, audio rules, or earlier tests to make an A3 check pass.
