@@ -324,5 +324,4 @@ The real MCP route for the assets instead of the fallback, and documents that sa
 - The barrel stays floor-to-top as in the script route: "和旧版一样".
 - Hand edit: chose "Shrine：转油晶"; re-exported with "File > Export".
 - Duplicates in the documents: none word for word. The hand edit stays in the entry above and is not repeated here.
-- BLENDER-NOTES: "不要用中文 用英文写这个 然后 将我的用你的话来写 用你的格式", and "不用在开头注明来源说明 不用写具体事谁写的".
 - Still open: my look at the final room from the front, behind and below; the film; the tag, push and Canvas submission.
