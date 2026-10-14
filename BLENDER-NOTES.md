@@ -21,6 +21,10 @@ turn back.
   orientation and scale problems do not appear later.
 - After the re-export, every test still passed.
 
+**Consequence for the repository.** `blender/a3/oil_shrine.blend` is now the
+shrine's source. `tools/blender/build_oil_shrine.py` rebuilds only the
+pre-edit MCP version and would overwrite this edit if run.
+
 ## Six parts of the interface
 
 1. **3D Viewport**: the main area for viewing and editing models. I used it to
@@ -37,6 +41,18 @@ turn back.
    material.
 6. **Mode Selector**: switches between Object Mode and Edit Mode. I stayed in
    Object Mode to rotate and apply the whole `OilGem` object.
+
+## What the window exercise established
+
+- Blender uses +Z as up. With `+Y Up` enabled, the glTF exporter converts this
+  to Godot's +Y-up convention.
+- A default cube has scale `(1, 1, 1)` and dimensions `2 x 2 x 2 m`. The brief
+  is measured in dimensions.
+- **Ctrl+A → Scale** keeps the visible dimensions and bakes the scale back to
+  one, so Godot receives no unexpected transforms.
+- Scene Statistics reports vertices, faces and triangles. The assignment
+  limits triangles and the number of visible primitives; the Outliner's object
+  count alone does not show either.
 
 ## Evidence
 
