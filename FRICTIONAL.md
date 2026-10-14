@@ -291,3 +291,38 @@ To see and hear the film myself before submitting it, and to make sure a reviewe
   visible rotation was undone.
 - The final three-asset human look and the A3 film are still open. Nothing was
   pushed, tagged or submitted.
+
+---
+
+## 2026-10-14 (Wed) — all three assets rebuilt through the Blender MCP
+
+**From the logs**
+- 11:53–12:04 EDT, before the hand edit in the entry above. The MCP connected on the first `get_addon_status` call: add-on 1.8, protocol 13, telemetry consent off, every asset library and generator off (`evidence/a3/setup/04-mcp-connect.log`).
+- Rebuilt the Lantern Gate, Supply Stack and Lamp-oil Shrine in my running Blender: one `execute_blender_code` call per object with `get_scene_info` after it, one call applying rotation and scale, then save, `look` from front, back, three-quarter and below, and GLB export. 27 calls in all; one gate export call failed (`AssertionError: []`) and was sent again without that check (`evidence/a3/mcp/`).
+- Added `tools/blender/build_<asset>.py` with every call verbatim and in order; the 10/13 scripts moved to `tools/blender/script_route/`. Run headless, each saved script wrote a byte-identical GLB.
+- Same sizes, budgets, material names and gate colliders as the script route: gate 6 primitives / 88 triangles, stack 3 / 68, shrine 3 / 60.
+- After the hand edit: Godot import exit 0, `test_a3_assets` 17/17, `test_lantern_gate` 14/14, Assignment 2 suites 122/122, repository audit 0 problems.
+- Corrected README, SOURCES, SUBMISSION and TEST-REPORT, which said the MCP never became available. Moved the TEST-REPORT hand-edit section out of the middle of the 10/13 human check, wording unchanged. BLENDER-NOTES now in English. README and AGENTS say the shrine's `.blend` is its source.
+- Trace: `0c11398` gate · `7f6293d` stack · `f7da21f` shrine · this entry's commit for the documents.
+
+**What I wanted**
+
+The real MCP route for the assets instead of the fallback, and documents that say what actually happened.
+
+**What came back**
+
+- The 10/13 entry was true for that session, which had no MCP tools. Today's session had them, and the setup needed no change.
+- From below, the Supply Stack's barrel cap and the crate's underside lie in one plane and flicker (seen in the `look` images, not yet in my own check of the room).
+- After my edit the shrine's build script no longer reproduces its GLB; the `.blend` is the source.
+
+**What I decided, and why**
+
+- Decided 2026-10-13, written down today: keep the current three assets, "用现在这组" (this replaces my earlier lantern post / crate / lamp-oil gem pick); use the MCP, "试 MCP"; the interface screenshot is mine, "截图是我截的".
+- The unsaved `*` in `supply_stack.blend`: "只是选择/视角，可以丢".
+- Old scripts: chose "旧脚本移到 script_route/".
+- Each build plan approved before it ran: "批准，开始建 Gate", "批准，开始建 Stack", "批准，开始建 Shrine".
+- The barrel stays floor-to-top as in the script route: "和旧版一样".
+- Hand edit: chose "Shrine：转油晶"; re-exported with "File > Export".
+- Duplicates in the documents: none word for word. The hand edit stays in the entry above and is not repeated here.
+- BLENDER-NOTES: "不要用中文 用英文写这个 然后 将我的用你的话来写 用你的格式", and "不用在开头注明来源说明 不用写具体事谁写的".
+- Still open: my look at the final room from the front, behind and below; the film; the tag, push and Canvas submission.

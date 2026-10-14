@@ -10,6 +10,11 @@ self-contained, so the file also runs headless from the repository root:
     /Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python-exit-code 1 --python tools/blender/build_oil_shrine.py
 
 The pre-MCP script route is kept in tools/blender/script_route/.
+
+After this build Bao hand-edited blender/a3/oil_shrine.blend in Blender
+(OilGem rotated 20 degrees about Z, Rotation applied) and re-exported the GLB
+with File > Export. That .blend is now the shrine's source: running this file
+rebuilds the pre-edit version and overwrites the edit.
 """
 
 # ==== MCP call 1 of 7 ====

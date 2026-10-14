@@ -61,8 +61,10 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 ## Assignment 3 — three Blender assets
 
 Assignment 3 adds three simple, metre-scale assets for Lanternfall's midnight
-market. Each has its own Blender source, reproducible build script and binary
-glTF export:
+market. All three were built through the Blender MCP (`mcp-for-blender` 2.1.9)
+in a running Blender 5.2.2, one `execute_blender_code` call per object. Each
+has its own `.blend` source, the saved MCP calls as a build script, and a
+binary glTF export:
 
 | Asset | Purpose | Size W × D × H | Visible primitives / triangles |
 |---|---|---:|---:|
@@ -78,19 +80,37 @@ on named physics layer 3 (`market_prop`).
 
 ![the three Assignment 3 assets running together](evidence/a3/a3-assets-room.png)
 
+*Captured 2026-10-13 from the script-route build. The MCP rebuild has the same
+parts and sizes; only the shrine's gem has since been turned 20°.*
+
+`tools/blender/build_<asset>.py` holds every MCP call for that asset, verbatim
+and in order. Run headless, the gate and stack scripts reproduce the committed
+GLBs byte for byte:
+
 ```bash
 /Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python-exit-code 1 --python tools/blender/build_lantern_gate.py
 /Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python-exit-code 1 --python tools/blender/build_supply_stack.py
-/Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python-exit-code 1 --python tools/blender/build_oil_shrine.py
 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import
 gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_a3_assets.gd --fixed-fps 60
+gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_lantern_gate.gd --fixed-fps 60
 ```
+
+**The Lamp-oil Shrine's source is `blender/a3/oil_shrine.blend`, not its
+script.** Its `OilGem` was rotated 20° around Z by hand in Blender (Rotation
+applied) after the MCP build, and the GLB was re-exported with File > Export.
+`build_oil_shrine.py` rebuilds only the pre-edit version and would overwrite
+that edit. To change the shrine, edit the `.blend` and export again (glTF
+Binary, +Y Up, Apply Modifiers, materials exported).
+
+The scripts from before the MCP connected are kept in
+`tools/blender/script_route/`; they write the same output paths.
 
 The three-asset suite reports **17/17 PASS**: imported size and floor origin,
 +Y height, unit scale, primitive and triangle budgets, exact material names,
 shared-room placement and a caught/restored non-unit-scale mutation. The gate's
 separate collision suite reports **14/14 PASS**. The earlier Assignment 2
-suites remain **122/122 PASS**.
+suites remain **122/122 PASS** (all re-run 2026-10-14 after the hand edit).
+Build logs: [`evidence/a3/mcp/`](evidence/a3/mcp/).
 
 ## Read in this order
 
@@ -115,8 +135,9 @@ suites remain **122/122 PASS**.
   three-asset room still needs Bao's look-from-behind/below check before it can
   be described as submission-ready. The required Blender hand edit is complete:
   `OilGem` was rotated 20° around Z, Rotation was applied, and the file was saved.
-- The Blender MCP route did not become available in the coding session. The
-  committed Blender Python scripts are the documented course fallback.
+- From below, the Supply Stack's barrel cap shares a plane with the lower
+  crate's underside, so the two faces flicker against each other (z-fighting).
+  On the floor of the room the underside is normally hidden.
 
 ## Film
 

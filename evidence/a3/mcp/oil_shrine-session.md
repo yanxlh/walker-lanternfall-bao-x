@@ -40,3 +40,16 @@ the gem's edge is visible.
 Not verifiable here: whether the gem reads as glowing lamp oil in Godot, since
 the Blender material preview shows the emission as flat pale orange with no
 glow.
+
+## After the build: hand edit (not an MCP call)
+
+- 12:19 EDT: `blender/a3/oil_shrine.blend` saved after the mouse edit in
+  Blender (`OilGem` rotated 20° about Z, Ctrl+A → Rotation). 12:20 EDT:
+  `godot/a3/oil_shrine.glb` re-exported with File > Export (8,064 bytes,
+  SHA-256 `e5fb2c65…3f07`). Recorded in commit `7fae834`; described in
+  `BLENDER-NOTES.md`.
+- 12:23 EDT, read-only `get_scene_info`: `OilGem` at (0, 0, 1.15), rotation 0,
+  scale (1, 1, 1), size 0.52 × 0.54 × 0.6 (was 0.54 × 0.51 × 0.6).
+- Comparing the two GLBs: the MCP export's gem vertices rotated 20.0° about
+  Blender Z match the re-exported gem within 1.84e-8 m. The shrine's
+  `build_oil_shrine.py` therefore no longer reproduces the committed GLB.

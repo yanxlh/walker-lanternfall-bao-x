@@ -219,17 +219,6 @@ moved around the prop. Asked whether there was any visual or collision problem,
 Bao reported: **"目前没有，都正常"** (none at present; everything is normal).
 No visual or collider revision was requested from this playtest.
 
-### Blender hand edit — OilGem, 2026-10-14
-
-In Blender's 3D Viewport, `OilGem` was selected by name, rotated 20° around Z,
-and then **Ctrl+A → Rotation** was applied before saving `oil_shrine.blend`.
-The Item transform visibly changed from Z = 20° to Z = 0° when the rotation was
-applied. An independent read-only mesh comparison recovered a 20° applied
-rotation with maximum vertex delta `1.49e-8`; object scale remained `(1,1,1)`.
-The saved source was re-exported to `godot/a3/oil_shrine.glb`. Godot reimported
-it without errors; `test_a3_assets.gd` remained **17/17 PASS** and
-`test_lantern_gate.gd` remained **14/14 PASS**.
-
 The gate was subsequently simplified to meet the six-primitive course limit,
 and two assets were added. Therefore that earlier verdict is retained as true
 history but **does not cover the final three-asset room**. Bao must still orbit
@@ -246,3 +235,69 @@ The first Esc → F4 round trip failed with missing InputMap actions after the A
 room had created only movement actions. A3-R2 removed the old partial-setup
 early return. A fresh run then returned to the 2D game and re-entered the room
 without missing-action errors; gameplay remained 65/65 PASS.
+
+---
+
+## Assignment 3 — rebuild through the Blender MCP (2026-10-14)
+
+Environment as above, plus `mcp-for-blender` 2.1.9 (add-on 1.8, protocol 13)
+driving Bao's running Blender 5.2.2 LTS. On 2026-10-13 the coding session had
+no MCP tools, so the builds above came from background scripts. On 2026-10-14
+`get_addon_status` succeeded on the first call and all three assets were
+rebuilt through `execute_blender_code`. Telemetry consent was `false`; every
+asset library and generator was `off`; no generator, library or trajectory
+tool was called. Logs: `evidence/a3/setup/04-mcp-connect.log` and
+`evidence/a3/mcp/<asset>-session.md`.
+
+### MCP build results
+
+| Asset | MCP calls | After apply: rotation / scale | Blender bounds W × D × H | Primitives / triangles | Saved script reproduces GLB |
+|---|---:|---|---|---:|---|
+| Lantern Gate | 13 (1 failed) | 0 / (1, 1, 1) on all 8 meshes | 1.20 × 0.80 × 2.85 m | 6 / 88 | byte-identical |
+| Supply Stack | 7 | 0 / (1, 1, 1) on all 3 | 1.20 × 0.80 × 1.10 m | 3 / 68 | byte-identical |
+| Lamp-oil Shrine | 7 | 0 / (1, 1, 1) on all 3 | 0.80 × 0.80 × 1.45 m | 3 / 60 | byte-identical (pre-edit) |
+
+Each object was made by its own call and checked with `get_scene_info`
+(location, size, rotation, scale) before a separate call applied rotation and
+scale; `look` then showed every asset from the front, back, three-quarter and
+below (`evidence/a3/mcp/<asset>-look.png`). The gate's 12th call failed with
+`AssertionError: []`: it read the exporter's format list, which is generated
+at run time and came back empty. Nothing was exported by that call; the 13th
+call exported without the check. "Byte-identical" means the saved
+`tools/blender/build_<asset>.py`, run headless in a scratch copy of the
+repository, wrote a GLB with the same SHA-256 as the MCP export.
+
+Seen by Claude in the `look` images, not a human check: from below, the Supply
+Stack's barrel cap is coplanar with the lower crate's underside and a faint
+circle shows (z-fighting). Bao kept the barrel as in the script route ("和旧版一样").
+
+### Blender hand edit — OilGem, 2026-10-14
+
+In Blender's 3D Viewport, `OilGem` was selected by name, rotated 20° around Z,
+and then **Ctrl+A → Rotation** was applied before saving `oil_shrine.blend`.
+The Item transform visibly changed from Z = 20° to Z = 0° when the rotation was
+applied. An independent read-only mesh comparison recovered a 20° applied
+rotation with maximum vertex delta `1.49e-8`; object scale remained `(1,1,1)`.
+The saved source was re-exported to `godot/a3/oil_shrine.glb`. Godot reimported
+it without errors; `test_a3_assets.gd` remained **17/17 PASS** and
+`test_lantern_gate.gd` remained **14/14 PASS**.
+
+Re-export method, from Bao: File > Export. Claude's separate check of the two
+GLBs: rotating the MCP export's gem vertices by 20.0° about Blender Z matches
+the re-exported gem within 1.84e-8 m; the gem's node has no rotation or scale.
+
+### Re-run after the hand edit (2026-10-14, 12:23–12:24 EDT)
+
+| Command | Result |
+|---|---|
+| `Godot --headless --path godot --import` | exit 0, no `ERROR` lines |
+| `test_a3_assets.gd --fixed-fps 60` | **17 / 17** |
+| `test_lantern_gate.gd --fixed-fps 60` | **14 / 14** |
+| `test_logic.gd`, `test_gameplay.gd`, `test_audio.gd` | **32 / 32**, **65 / 65**, **25 / 25** (122 / 122) |
+| `python3 scripts/audit_repo.py --stage final` | 0 problems, 662 files |
+
+No assertion, tolerance or earlier test was changed.
+
+### HUMAN CHECK — final three-asset room
+
+PENDING BAO: front, behind and below in the F4 room.

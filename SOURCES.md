@@ -93,26 +93,35 @@ The walking pose was first made with FLUX quantized to 4-bit at load; the re-run
 
 ## Assignment 3 geometry and tools
 
-- **Geometry:** authored procedurally for this project in
-  `tools/blender/build_lantern_gate.py`, `build_supply_stack.py` and
-  `build_oil_shrine.py` with Blender's built-in `bpy` primitives. No downloaded
-  or generated mesh, texture or external model is used. Each script, `.blend`
-  source, `.glb` export and JSON build record is committed.
+- **Geometry:** authored for this project from Blender's built-in `bpy`
+  primitives (cubes, cylinders, one icosphere). No downloaded or generated
+  mesh, texture or external model is used. Each `.blend` source, `.glb` export
+  and JSON build record is committed. `tools/blender/build_lantern_gate.py`,
+  `build_supply_stack.py` and `build_oil_shrine.py` hold the Blender MCP calls
+  that built them; the earlier background scripts are in
+  `tools/blender/script_route/`. The shrine's source is its `.blend`, because
+  Bao's hand edit is not in the script.
 - **Blender:** 5.2.2 LTS, local `/Applications/Blender.app`; binary glTF export
   through Blender's bundled glTF 2.0 exporter. `AgedBrass`, `DarkWood` and
   `EmberGlass` are numeric Principled BSDF materials defined in the script.
 - **Godot:** 4.7.2 imports the GLB. Its generated import record keeps
   `nodes/use_node_type_suffixes=true`, converting the two Blender objects whose
   names end in `-convcolonly` into collision-only static bodies.
-- **Blender MCP:** community `mcp-for-blender` 2.1.9 was attempted through the
-  manual course setup; retained setup logs show the actual commands. Its tools
-  were not available in this coding session, so all three assets use the
-  assignment's documented background-script fallback. Remote model/download
-  services stayed off. This is a limitation, not a claim of MCP success.
-- **Work split:** Bao chose to continue the Assignment 3 work. The required
-  Blender hand edit is recorded: `OilGem` was selected, rotated 20° around Z,
-  Rotation was applied, and the source was saved. The final three-asset visual
+- **Blender MCP:** community `mcp-for-blender` 2.1.9 (add-on 1.8, by Siddharth
+  Ahuja; PyPI hashes in `evidence/a3/setup/00-pypi.log`), registered for this
+  folder only with `DISABLE_TELEMETRY=true`; safe mode off by Bao's choice.
+  On 2026-10-13 the coding session had no MCP tools, so the first builds used
+  background scripts. On 2026-10-14 the MCP connected on the first call and
+  all three assets were rebuilt through `execute_blender_code` in Bao's
+  running Blender (`evidence/a3/setup/04-mcp-connect.log`,
+  `evidence/a3/mcp/`). Telemetry consent was off and every asset library and
+  generator (Poly Haven, Sketchfab, Poly Pizza, Hyper3D, Hunyuan3D, Tripo) was
+  off; no generator, library, import or trajectory tool was called.
+- **Work split:** Bao chose the three assets and the MCP route, approved each build
+  plan before it ran, made the required hand edit with the mouse (`OilGem`
+  rotated 20° around Z, Rotation applied, saved, re-exported with File > Export)
+  and took the Blender interface screenshot. The final three-asset visual
   judgment is still open. Claude specified the measurable proposal, wrote the
-  Blender/Godot/test code, ran local builds and recorded observed output. The
-  first one-asset scope error and over-budget build are retained in CHANGE-BRIEF
-  rather than hidden.
+  Blender/Godot/test code, sent the MCP calls, ran local builds and recorded
+  observed output. The first one-asset scope error and over-budget build are
+  retained in CHANGE-BRIEF rather than hidden.
