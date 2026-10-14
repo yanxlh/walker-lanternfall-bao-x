@@ -254,3 +254,28 @@ had created the four movement actions; when the 2D session loaded, its old
 start, pause, mute, card, collision-debug or A3-room actions. The early return
 is removed. The existing per-action guard remains, so actions are added only
 when absent and the 2D controls/tuning do not change.
+
+### A3-R3 · 2026-10-14 · The room camera could not look behind or below
+
+A3-R0 says the shared camera "can move behind and below" the three assets,
+and the assignment's human check walks the camera around each asset,
+including from behind and below. Checking the room against that sentence
+showed a fixed `Camera3D` at (5.8, 3.8, 7.6) aimed at (0, 1.15, 0): only a
+front three-quarter view exists in the running scene. The room gains an orbit
+camera; nothing else changes.
+
+- Start view: the same position and aim as before.
+- Q / E or right-mouse drag orbit around (0, 1.15, 0); R / F or vertical drag
+  tilt between −50° and +80°; Z / X or the mouse wheel zoom between 3 and 14 m.
+- While the camera is below the floor's top (y < 0), only the floor's mesh is
+  hidden so the undersides can be seen; the floor's collider stays, so the
+  stand-in still stands on it.
+- The stand-in's WASD movement, layers, masks, the props and every 2D control
+  are unchanged.
+
+Prediction and check: a new headless suite `test_a3_camera.gd` drives the
+orbit inputs. It must find the start view unchanged (within 0.01 m), the
+camera behind the props (z < 0) after a half orbit, below the floor with the
+floor mesh hidden and its collider still enabled at minimum tilt, the floor
+mesh visible again above it, and the zoom clamped. The existing A3 suites must
+stay 17/17 and 14/14, and the Assignment 2 suites 122/122.
