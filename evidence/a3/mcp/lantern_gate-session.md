@@ -34,7 +34,7 @@ The code of every `execute_blender_code` call is in
 ## Afterwards
 
 - Godot import exit 0; `test_lantern_gate.gd` 14/14 and `test_a3_assets.gd`
-  17/17 PASS (12:00 EDT).
+  17/17 PASS (11:57 EDT, from the suites' own UTC stamps).
 - Running the saved `build_lantern_gate.py` headless in a scratch copy of the
   repository produced a byte-identical GLB (same SHA-256).
 
