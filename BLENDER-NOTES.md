@@ -21,41 +21,22 @@ turn back.
   orientation and scale problems do not appear later.
 - After the re-export, every test still passed.
 
-**Consequence for the repository.** `blender/a3/oil_shrine.blend` is now the
-shrine's source. `tools/blender/build_oil_shrine.py` rebuilds only the
-pre-edit MCP version and would overwrite this edit if run.
-
 ## Six parts of the interface
 
-1. **3D Viewport**: the large work area for orbiting, panning and zooming.
-   The selected object has an orange outline.
-2. **Toolbar**: the vertical strip on the left of the viewport, with the
-   select, move, rotate and scale tools. Choosing one switches the mouse from
-   navigating the view to editing the selected object.
-3. **Outliner**: the object list at the upper right. It selects an item by
-   name and shows whether the scene holds extra cameras, lights or meshes.
-4. **Properties editor**: the tabbed area at the lower right, with object,
-   material, render and scene settings. Material colours and the scene's unit
-   system are inspected here.
-5. **Sidebar**: the panel toggled with `N` inside the viewport. Its Item tab
-   shows the selected object's location, rotation, scale and dimensions. Scale
-   and dimensions differ: after transforms are applied, a two-metre cube still
-   shows scale 1.
-6. **Mode selector**: the menu in the viewport header that switches between
-   Object Mode and Edit Mode. Object Mode transforms a whole part; Edit Mode
-   exposes its vertices, edges and faces.
-
-## What the window exercise established
-
-- Blender uses +Z as up. With `+Y Up` enabled, the glTF exporter converts this
-  to Godot's +Y-up convention.
-- A default cube has scale `(1, 1, 1)` and dimensions `2 x 2 x 2 m`. The brief
-  is measured in dimensions.
-- **Ctrl+A → Scale** keeps the visible dimensions and bakes the scale back to
-  one, so Godot receives no unexpected transforms.
-- Scene Statistics reports vertices, faces and triangles. The assignment
-  limits triangles and the number of visible primitives; the Outliner's object
-  count alone does not show either.
+1. **3D Viewport**: the main area for viewing and editing models. I used it to
+   look at `OilGem` and confirm how it looked after the rotation.
+2. **Outliner**: the list of objects in the scene. I used it to select
+   `OilGem` exactly, by name.
+3. **Toolbar**: the select, move, rotate and scale tools on the left. I used
+   its rotate function to change the object's direction.
+4. **Sidebar (N panel)**: shows the object's location, rotation, scale and
+   dimensions. I used it to confirm that Z first became 20° and went back to
+   0° after I applied the rotation.
+5. **Properties Editor**: the area that manages object, material and scene
+   settings. I used it to check the object's settings and the glowing
+   material.
+6. **Mode Selector**: switches between Object Mode and Edit Mode. I stayed in
+   Object Mode to rotate and apply the whole `OilGem` object.
 
 ## Evidence
 
