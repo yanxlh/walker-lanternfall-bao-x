@@ -112,8 +112,9 @@ suites remain **122/122 PASS**.
 - The A3 room uses a labelled orange stand-in instead of the 2D courier because
   the cumulative game is otherwise 2D. Bao's first owner playtest covered the
   earlier one-gate room and found no visual/collision problem. The final
-  three-asset room still needs Bao's look-from-behind/below check and one manual
-  Blender edit before it can be described as submission-ready.
+  three-asset room still needs Bao's look-from-behind/below check before it can
+  be described as submission-ready. The required Blender hand edit is complete:
+  `OilGem` was rotated 20° around Z, Rotation was applied, and the file was saved.
 - The Blender MCP route did not become available in the coding session. The
   committed Blender Python scripts are the documented course fallback.
 

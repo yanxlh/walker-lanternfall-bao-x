@@ -41,7 +41,11 @@ the real window and keep only statements Bao can explain.
 - `evidence/a3/blender-interface-session.png` shows the Blender 5.2.2 learning
   session with the cube selected, the `N` sidebar open, unit scale and 2 m
   dimensions visible, and Scene Statistics enabled (12 triangles).
-- Make and record one small hand edit in Blender (for example, adjust the
-  Supply Stack's top crate position), save the `.blend`, export again, and note
-  what the change taught Bao about the interface. This must not be invented or
-  silently performed by Claude.
+- On 2026-10-14, `OilGem` was selected by name in Blender, rotated **20° around
+  Z**, then **Ctrl+A → Rotation** was applied and `oil_shrine.blend` was saved.
+  The Item transform first showed Z = 20° and then returned to Z = 0° after
+  applying it: applying a transform preserves the visible orientation by
+  baking it into the mesh data rather than leaving an object-level rotation.
+- A read-only vertex comparison recovered the applied angle as exactly 20°
+  (maximum vertex delta `1.49e-8`). The saved file was re-exported to GLB;
+  `test_a3_assets.gd` remained 17/17 PASS and the gate suite 14/14 PASS.

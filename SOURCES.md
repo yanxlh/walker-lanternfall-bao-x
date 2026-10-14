@@ -109,8 +109,10 @@ The walking pose was first made with FLUX quantized to 4-bit at load; the re-run
   were not available in this coding session, so all three assets use the
   assignment's documented background-script fallback. Remote model/download
   services stayed off. This is a limitation, not a claim of MCP success.
-- **Work split:** Bao chose to continue the Assignment 3 work and must make the
-  final three-asset visual judgment and one hand edit. Claude specified the
-  measurable proposal, wrote the Blender/Godot/test code, ran local builds and
-  recorded observed output. The first one-asset scope error and over-budget
-  build are retained in CHANGE-BRIEF rather than hidden.
+- **Work split:** Bao chose to continue the Assignment 3 work. The required
+  Blender hand edit is recorded: `OilGem` was selected, rotated 20° around Z,
+  Rotation was applied, and the source was saved. The final three-asset visual
+  judgment is still open. Claude specified the measurable proposal, wrote the
+  Blender/Godot/test code, ran local builds and recorded observed output. The
+  first one-asset scope error and over-budget build are retained in CHANGE-BRIEF
+  rather than hidden.

@@ -263,3 +263,31 @@ To see and hear the film myself before submitting it, and to make sure a reviewe
   simplified and two new assets were added, the final-room human look and Bao's
   required mouse edit in Blender remain open; neither is being back-filled by
   Claude.
+
+---
+
+## 2026-10-14 (Wed) — OilGem hand edit completed and verified
+
+**What was done in Blender**
+
+- Opened `blender/a3/oil_shrine.blend` and selected only `OilGem`.
+- Rotated it 20° around the Z axis. The Item transform showed Z = 20°.
+- Applied Rotation with `Ctrl+A`, which returned the object-level Z rotation to
+  0° while keeping the visible turn, then saved the `.blend`.
+
+**What came back**
+
+- A separate read-only vertex comparison found the best applied Z angle was
+  exactly 20°, with maximum vertex delta `1.49e-8`; scale remained `(1,1,1)`.
+- The edited source was re-exported as `godot/a3/oil_shrine.glb`. Godot imported
+  it without errors. The three-asset suite stayed 17/17 PASS and the gate suite
+  stayed 14/14 PASS.
+
+**Decision**
+
+- Keep this small visual change as the required Blender hand edit. It taught me
+  that applying Rotation moves the orientation into the mesh data, so the Item
+  panel returning to zero is evidence of the apply step, not evidence that the
+  visible rotation was undone.
+- The final three-asset human look and the A3 film are still open. Nothing was
+  pushed, tagged or submitted.

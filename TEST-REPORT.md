@@ -219,6 +219,17 @@ moved around the prop. Asked whether there was any visual or collision problem,
 Bao reported: **"目前没有，都正常"** (none at present; everything is normal).
 No visual or collider revision was requested from this playtest.
 
+### Blender hand edit — OilGem, 2026-10-14
+
+In Blender's 3D Viewport, `OilGem` was selected by name, rotated 20° around Z,
+and then **Ctrl+A → Rotation** was applied before saving `oil_shrine.blend`.
+The Item transform visibly changed from Z = 20° to Z = 0° when the rotation was
+applied. An independent read-only mesh comparison recovered a 20° applied
+rotation with maximum vertex delta `1.49e-8`; object scale remained `(1,1,1)`.
+The saved source was re-exported to `godot/a3/oil_shrine.glb`. Godot reimported
+it without errors; `test_a3_assets.gd` remained **17/17 PASS** and
+`test_lantern_gate.gd` remained **14/14 PASS**.
+
 The gate was subsequently simplified to meet the six-primitive course limit,
 and two assets were added. Therefore that earlier verdict is retained as true
 history but **does not cover the final three-asset room**. Bao must still orbit
