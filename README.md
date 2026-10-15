@@ -159,7 +159,7 @@ wrong, and who did what.
 | | |
 |---|---|
 | File | `claude-liam-walker-lanternfall-bao-x-a3-gamedev.mp4` (3840 × 2160, 30 fps, H.264 + AAC, 35,380,091 bytes) |
-| Link | PENDING — Bao uploads after watching it |
+| Link | https://drive.google.com/file/d/18uATsiaC6W5U8WSwVLngP1uRZnvHrw56/view?usp=drivesdk |
 | SHA-256 | `0517f3e0c65f977b1324467eacb84054b7e3f7e477d817c258fd27aaeb92a87b` |
 | Source revision shown | `c0dba4c000330c4b770c4244ad85cde2d55d3440` (`godot/` is unchanged since) |
 
