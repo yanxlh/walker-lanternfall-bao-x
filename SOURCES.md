@@ -117,6 +117,10 @@ The walking pose was first made with FLUX quantized to 4-bit at load; the re-run
   `evidence/a3/mcp/`). Telemetry consent was off and every asset library and
   generator (Poly Haven, Sketchfab, Poly Pizza, Hyper3D, Hunyuan3D, Tripo) was
   off; no generator, library, import or trajectory tool was called.
+- **Assignment 3 film:** the course's Brutalist toolkit (godot-gamedev skill + walker modifier, its Remotion
+  scenes and checks, stock outro jingle `bear-brown-1.mp3`); narration Kokoro-82M v1.0 `am_onyx`, local; Blender
+  stills are Blender's own window screenshots through the MCP; Godot shots are Movie Maker captures of an isolated
+  copy of c0dba4c. Details and hashes: `youtube/claude-liam-walker-lanternfall-bao-x-a3-gamedev/SOURCES.md`.
 - **Work split:** Bao chose the three assets and the MCP route, approved each build
   plan before it ran, made the required hand edit with the mouse (`OilGem`
   rotated 20° around Z, Rotation applied, saved, re-exported with File > Export)

@@ -334,6 +334,35 @@ undersides show. In Godot the EmberGlass and OilGlow emission draws as a pale
 yellow rather than Blender's orange, and the orange lantern light tints the
 Supply Stack red.
 
-### HUMAN CHECK — final three-asset room
+### HUMAN CHECK — final three-asset room, Bao, 2026-10-15
 
-PENDING BAO: front, behind and below in the F4 room.
+Bao ran the game (`Godot --path godot`), pressed F4, and used the orbit camera
+(Q/E, R/F down below the floor, Z/X) and the stand-in (WASD) around all three
+props. His words, verbatim:
+
+> 正面和背面看起来都正常，灯和 OilGem 虽然偏黄、Stack 被照得偏红，但整体颜色统一，我觉得可以接受。从下方能看到 Stack 底部那块重叠的圆面，有一点 z-fighting，不过只在很低的角度明显，正常游戏视角基本看不到。替身撞 Gate 时会停在底座和立柱前面，位置感觉合理，灯臂下面可以通过，没有发现影响游玩的问题。
+
+Claude's translation: the front and back both look normal. The lanterns and
+the OilGem are yellowish and the Stack is lit reddish, but the overall colour
+is consistent, and Bao finds it acceptable. From below he can see the
+overlapping round face under the Stack, a little z-fighting, but it is obvious
+only at very low angles and basically invisible from a normal game view. The
+stand-in stops in front of the base and the post, the position feels
+reasonable, it passes under the lantern arm, and he found no problem that
+affects play.
+
+Decision: no revision from this look. The z-fighting stays recorded as a known
+limitation with a stated fix (barrel 0.60 m tall at z = 0.80); the colour shift
+is accepted. Only one person has looked at the room.
+
+### What Claude got wrong (Assignment 3)
+
+| What | How it was found | Response |
+|---|---|---|
+| Read the assignment as one hero prop; the first gate had 18 visible meshes | reading the Canvas page directly | A3-R0 before building assets two and three |
+| First gate build 1.36 m wide and 248 triangles | the build's own measurement | A3-R1: lanterns moved in, post 10-sided |
+| Collider test compared `Vector3`s exactly and failed on matching sizes | the test printed the expected values | 1 cm tolerance from the brief |
+| MCP export call 12 of 13 asserted on a run-time enum list (`AssertionError: []`) | the call's error | call 13 without the check; both kept in the build script |
+| The room shipped with a fixed camera, against A3-R0 | checking the room against the brief for the human look | A3-R3 orbit camera, `test_a3_camera.gd` |
+| Documents said the MCP never became available | the 2026-10-14 connection | README, SOURCES, SUBMISSION, TEST-REPORT corrected |
+| The earlier suggested hand edit (UpperCrate Y 0.05 → 0.12 m) would have made the stack 0.86 m deep | checking it against the frozen 0.80 m depth | not used; Bao chose the OilGem rotation |

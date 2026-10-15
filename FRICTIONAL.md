@@ -325,3 +325,31 @@ The real MCP route for the assets instead of the fallback, and documents that sa
 - Hand edit: chose "Shrine：转油晶"; re-exported with "File > Export".
 - Duplicates in the documents: none word for word. The hand edit stays in the entry above and is not repeated here.
 - Still open: my look at the final room from the front, behind and below; the film; the tag, push and Canvas submission.
+
+---
+
+## 2026-10-14 (Wed) to 2026-10-15 (Thu) — orbit camera, my look at the room, and the Assignment 3 film
+
+**From the logs**
+- Checking the room against A3-R0 before my look: the brief promised a camera that "can move behind and below" the props, but the room had one fixed camera. A3-R3 was written and committed first (`2505638`), then Claude added the orbit camera (`c0dba4c`): Q/E orbit, R/F tilt down below the floor (the floor mesh is hidden there, its collider stays), Z/X zoom. New suite `test_a3_camera.gd` 9/9; its drag check first failed because the input was pushed in window coordinates and picked up the 2D stretch factor, and the test, not the code, was corrected. All earlier suites stayed green.
+- I wrote my six interface notes in Chinese; BLENDER-NOTES has them in English (Claude's translation of my notes) (`423974d`, sections kept at my request `12062e3`).
+- The film, made with the godot-gamedev skill and the walker modifier, 21 beats, about 6 minutes, source revision `c0dba4c`. Claude captured my Blender window with Blender's own screenshot through the MCP, because the Claude app has no screen-recording permission on this Mac; the Supply Stack calls were sent again into a scratch file for those stills, labelled as a film re-run. The Godot shots are 4K Movie Maker takes of an isolated copy, driven through the room's real input actions. My hand edit was not recorded live; the film says so and shows before/after captures.
+- `art godot-gamedev --check`: PASS (17 A3 files hashed, 73 Assignment 2 files excluded with a reason, 3 code/result pairs). The final compile's frame check first refused the master: the summary beat filled too little of the frame, so its lines were shortened and enlarged.
+- Who did what: I approved each plan, made the hand edit, wrote the interface notes and looked at the room myself; Claude wrote and sent the MCP calls, the orbit camera and its tests, captured the stills and takes, and built the film and its narration (Kokoro `am_onyx`).
+- Trace: `2505638` A3-R3 · `c0dba4c` orbit camera · `423974d`/`12062e3` BLENDER-NOTES · this entry's commit for the film package and the documents.
+
+**What I wanted**
+
+To finish everything the assignment still needed: "做 把作业没完成的都做完", "根据作业要求 做到100分".
+
+**What came back**
+
+- My look at the final room, from the front, behind and below: "正面和背面看起来都正常，灯和 OilGem 虽然偏黄、Stack 被照得偏红，但整体颜色统一，我觉得可以接受。从下方能看到 Stack 底部那块重叠的圆面，有一点 z-fighting，不过只在很低的角度明显，正常游戏视角基本看不到。替身撞 Gate 时会停在底座和立柱前面，位置感觉合理，灯臂下面可以通过，没有发现影响游玩的问题。"
+- So the flicker noted on 10/14 from the `look` images is real, but only at very low angles.
+
+**What I decided, and why**
+
+- Recording: "你帮我录".
+- Keep the two Claude sections in BLENDER-NOTES next to my notes: "不要删除".
+- No revision from my look: the colour shift is acceptable, and the z-fighting stays a known limitation with its fix written down (barrel 0.60 m tall at z = 0.80).
+- Still open: watching and listening to the whole film myself, uploading it, then the tag, push, fresh-clone check and Canvas submission.

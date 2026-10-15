@@ -136,14 +136,37 @@ Build logs: [`evidence/a3/mcp/`](evidence/a3/mcp/).
 - The A3 room uses a labelled orange stand-in instead of the 2D courier because
   the cumulative game is otherwise 2D. Bao's first owner playtest covered the
   earlier one-gate room and found no visual/collision problem. The final
-  three-asset room still needs Bao's look-from-behind/below check before it can
-  be described as submission-ready. The required Blender hand edit is complete:
+  three-asset room was checked by Bao on 2026-10-15 from the front, behind and
+  below with the orbit camera (TEST-REPORT). The required Blender hand edit is complete:
   `OilGem` was rotated 20° around Z, Rotation was applied, and the file was saved.
 - From below, the Supply Stack's barrel cap shares a plane with the lower
-  crate's underside, so the two faces flicker against each other (z-fighting).
-  On the floor of the room the underside is normally hidden.
+  crate's underside (z-fighting). Bao's look: visible only at very low angles,
+  basically invisible from a normal game view. Fix, not yet made: barrel 0.60 m
+  tall at z = 0.80.
+- In Godot the lanterns and the gem draw pale yellow and the orange lamp light
+  tints the Supply Stack red; Bao accepted this as consistent.
 
 ## Film
+
+### Assignment 3 — Lanternfall in 3D, Taken Apart
+
+A 4K landscape teardown of the three Blender props, made with the godot-gamedev skill + walker modifier (6 min 02 s).
+It shows the brief, the MCP route, one plan Bao approved, Blender's own window during the build calls (a labelled
+film re-run), Bao's hand edit (not recorded live; before/after and the measured check), the headless numbers beside
+the brief, the gate blocking in the running room, the orbit camera from behind and below, Bao's look, what Claude got
+wrong, and who did what.
+
+| | |
+|---|---|
+| File | `claude-liam-walker-lanternfall-bao-x-a3-gamedev.mp4` (3840 × 2160, 30 fps, H.264 + AAC, 35,380,091 bytes) |
+| Link | PENDING — Bao uploads after watching it |
+| SHA-256 | `0517f3e0c65f977b1324467eacb84054b7e3f7e477d817c258fd27aaeb92a87b` |
+| Source revision shown | `c0dba4c000330c4b770c4244ad85cde2d55d3440` (`godot/` is unchanged since) |
+
+Beat sheet, script, prompts, evidence ledger, capture method and checks:
+[`youtube/claude-liam-walker-lanternfall-bao-x-a3-gamedev/`](youtube/claude-liam-walker-lanternfall-bao-x-a3-gamedev/README.md).
+
+### Assignment 2 — Lanternfall, Taken Apart
 
 **Lanternfall, Taken Apart** — a 4K landscape teardown made with the godot-gamedev skill + walker modifier (9 min 44 s).
 
