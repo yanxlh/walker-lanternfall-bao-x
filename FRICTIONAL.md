@@ -372,7 +372,7 @@ To finish everything the assignment still needed: "做 把作业没完成的都�
 - Cost: every CPU delta is under 0.03 ms per frame (A's spawn spike about 0.10 ms). GPU time reads 0 under Compatibility on this Mac; on a Mobile/Vulkan proxy, the deltas sit within ±0.1 ms of noise.
 - The study scene's process material was converted to a ShaderMaterial in the editor and saved as `godot/shaders/particles_generated.gdshader` (379 lines). Line numbers are mapped in TEST-REPORT.
 - The particle film "Lanternfall, Sparked" (4K, 8:08) was built with the godot-gamedev + walker workflow from real captures of c3e1273. A sampled review by Codex found one wording error: a 3 px radius narrated as 3 px wide. It was fixed and re-exported. In the editor's Visual Profiler, with the game window minimized, every GPU entry read 0.0 ms. The film is on Google Drive with link sharing (README).
-- Trace: `3a5be66` effects · `8535049` tests and tools · `f85990b` captures, results and cost data · `c930886` shader study · `c3e1273` documents and diary · `4eedf34` film build · `b7b4e48` film wording fix · `4bec76e`, `0bb97f6` Visual Profiler record · `15aaf06` Codex credited · `5d518b2` contributions · `3c18a0d` film link.
+- Trace (this repository; replayed onto tag `a3` from the course repository, whose SHAs are in TEST-REPORT): `b03a307` effects · `a1c9a84` tests and tools · `611e0d8` captures, results and cost data · `960c77c` shader study · `7637dbf` documents and diary · `a2ac880` film build · `c187ff6` film wording fix · `da90131`, `0805925` Visual Profiler record · `a343598` Codex credited · `a705c16` contributions · `903bfcc` film link.
 
 **What I wanted**
 

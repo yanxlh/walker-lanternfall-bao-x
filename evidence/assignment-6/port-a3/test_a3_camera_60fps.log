@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS start-view-unchanged {"position":"(5.8, 3.8, 7.6)"}
+PASS half-orbit-reaches-behind {"position":"(-5.634557, 3.8, -7.723456)"}
+PASS tilt-goes-below-floor-and-clamps {"floor_mesh_visible":false,"pitch_deg":-49.999997390488,"position":"(-3.758386, -6.449782, -5.151732)"}
+PASS floor-collider-stays-while-hidden {"ray_hit":"Floor"}
+PASS mutation-floor-shown-below-caught {}
+PASS mutation-floor-shown-below-restored {}
+PASS tilt-up-clamps-and-floor-returns {"pitch_deg":79.9999807328175}
+PASS zoom-clamps-3-to-14-m {"far":13.9999990463257,"near":2.99999976158142}
+PASS right-drag-orbits {"yaw_after":2.97186913621714,"yaw_before":-2.51131617096245}
+a3-camera: 9 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/a3-camera.json

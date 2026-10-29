@@ -528,3 +528,22 @@ Student explanation of the process stage and the draw stage (29 October 2026):
 > So even if the particle motion is computed correctly, the result can still be hard to see if the texture, blend mode or draw layer is wrong.
 
 In this project, the process side is the generated shader's `start()` and `process()` (lines 225–379), which write `TRANSFORM`, `VELOCITY` and `COLOR`. The draw side is the GPUParticles2D's `texture` (`spark.png`), its additive `CanvasItemMaterial` and its canvas layer. The level-up celebration's earlier visibility fix worked on the draw side. The particles had been on the world canvas below the upgrade HUD (layer 10); they were moved to an overlay on layer 11, and their process settings did not change.
+
+## 29 October 2026 — Assignment 6 moved onto this repository after `a3`
+
+The Assignment 6 work was done in the course repository's copy of this game (branch `xinghe-b/assignment-2`, folder `fall-2026/xinghe-b/assignment-2/walker-lanternfall-bao-x`). That copy's starting snapshot is byte-identical to this repository's `86d1441`. At Bao's choice, the 16 A6 commits were replayed here onto tag `a3` (`git format-patch --relative` and `git am -3`), keeping their messages and author dates:
+
+| Course repository | This repository | Commit |
+|---|---|---|
+| 8eb16a2 · a46c055 · ec024c5 | be39f4a · 1e07e7f · f7a79c9 | design and project context, before implementation |
+| 3a5be66 · 8535049 · f85990b · c930886 | b03a307 · a1c9a84 · 611e0d8 · 960c77c | effects, tests and tools, captures and cost data, shader study |
+| **c3e1273** | **7637dbf** | documents and diary; the film's game-source revision |
+| 4eedf34 · b7b4e48 · 4bec76e · 0bb97f6 · 15aaf06 · 5d518b2 · 3c18a0d · 26ab741 | a2ac880 · c187ff6 · da90131 · 0805925 · a343598 · a705c16 · 903bfcc · f9731ca | film, its fix, Visual Profiler record, attribution, contributions, film link, Bao's review |
+
+Conflict resolution:
+- `CHANGE-BRIEF.md` takes the A6 brief. The A2 brief stays in `design/CHANGE-BRIEF-assignment-2.md`, and the brief as it stood at `a3` (A2 brief plus the A3 addendum) is kept unchanged as `design/CHANGE-BRIEF-assignment-3.md`.
+- `FRICTIONAL.md`, `SOURCES.md` and `TEST-REPORT.md`: both appended sections were kept, A3 first, then A6. `README.md`, `.gitignore` and `godot/game/session.gd` merged automatically.
+
+`godot/` here equals the film's revision `c3e1273` except for A3's additions (`godot/a3/`, `tests/test_a3_assets.gd`, `test_lantern_gate.gd`, `test_a3_camera.gd`, `capture_a3_orbit.gd`, `capture_lantern_gate.gd`) and two A3 edits. One edit is the F4 `a3_room` action in `session.gd`, after line 360 (`weapon_hit.emit` stays on line 227). The other is the 3D physics layer names in `project.godot`. None of these touches the particle code or the gameplay the film shows.
+
+Regression on the merged tree (`evidence/assignment-6/port-a3/`): logic 32, gameplay 65, audio 25 (realtime), A configuration 39, trail/upgrade configuration 79, state 34, edges 18, A3 assets 17, Lantern Gate 14, A3 camera 9. That is 332 checks, 0 failures, with no script or shader errors. `scripts/audit_repo.py --stage final`: 0 problems.

@@ -22,6 +22,7 @@
 - Trail/upgrade configuration: `./scripts/run-test.sh test_extra_particles_config.gd 60`.
 - Real-input state suite: `./scripts/run-test.sh test_particles_state.gd 60`.
 - Edge-case suite (blocker, discontinuity, LOST/WON): `./scripts/run-test.sh test_particles_edges.gd 60`.
+- Assignment 3 suites: `./scripts/run-test.sh test_a3_assets.gd 60`, `test_lantern_gate.gd 60`, `test_a3_camera.gd 60` (17 + 14 + 9 checks).
 - A fixture capture: `bash scripts/capture-defeat-sparks.command rN` (windowed; refuses an existing revision folder).
 - Windowed play checks: `/Applications/Godot.app/Contents/MacOS/Godot --path godot --fixed-fps 60 --script res://tests/capture_play_checks.gd -- --out captures/play-checks/<stamp>`.
 - Test definitions: corresponding scripts under `godot/tests/`; wrapper: `scripts/run-test.sh`.
@@ -64,7 +65,7 @@ Do not publish, push, create submission tags, or overwrite earlier reports as pa
 
 # Unconfirmed
 
-- This local course-repository snapshot has no `a5` tag or previous shader directory; do not claim an A5 baseline exists.
+- Neither the course-repository copy nor this repository has an `a5` tag or an earlier shader directory; do not claim an A5 baseline exists. This repository carries tag `a3` (Assignment 3); the A6 work was replayed onto it on 2026-10-29.
 - The recorded game GitHub URL does not establish that this snapshot matches its latest revision.
 - GPU timing: `RenderingServer.viewport_get_measured_render_time_gpu` reads 0 under GL Compatibility (and Mobile/Metal) on this Mac; only a Mobile/Vulkan override exposes it (`evidence/assignment-6/cost/COST-REPORT.md`). The editor's Visual Profiler showed 0.0 ms for every GPU entry and an empty GPU graph (game window minimized; `evidence/assignment-6/cost/VISUAL-PROFILER-COMPATIBILITY.md`). Zeros mean no usable timing, not zero cost.
 - Student verdicts recorded so far: portrait placement kept, trail visibility kept, A scale r1 kept (`TUNING.md`). Crowded-play judgments in `captures/play-checks/*/PLAY-CHECKS.md` are pending.

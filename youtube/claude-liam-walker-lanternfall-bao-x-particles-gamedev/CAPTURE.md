@@ -51,3 +51,7 @@ The full fixture frame sequences under `captures/defeat_sparks/r*/` are kept loc
 ## Not committed
 
 The AVI takes and the rendered `media/*.mp4` are large and stay out of git (`.gitignore`). The driver, the scenes, the commands above, the seeds and the source revision are enough to regenerate them.
+
+## Source revision in this repository
+
+`c3e1273` is a commit of the course repository (github.com/nikbearbrown/csye-7270-building-virtual-environments, branch `xinghe-b/assignment-2`), where this film was built. In this repository the same commits were replayed onto tag `a3`; `c3e1273` corresponds to **`7637dbf`**. Its `godot/` is c3e1273's plus Assignment 3's files and two A3 edits that the film does not show (TEST-REPORT, "Assignment 6 moved onto this repository"). Every code excerpt in the film is identical at both. `./art godot-gamedev --check` was run against the course copy at c3e1273 (PASS), because it hashes the whole `godot/` and needs the rendered `media/`, which is not in git.

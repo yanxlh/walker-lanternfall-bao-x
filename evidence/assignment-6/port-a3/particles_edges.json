@@ -1,0 +1,108 @@
+{
+  "checks": 18,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "blocked-input-held-no-displacement",
+      "observed": {
+        "moved": 0.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "blocked-push-never-emits",
+      "observed": {
+        "emitting_frames": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "slide-along-blocker-emits",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "moving-before-jump-emits",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "jump-frame-no-emission",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "jump-trail-follows-feet",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "after-jump-real-movement-resumes",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "restart-history-at-new-origin",
+      "observed": {
+        "player": "(3.0, 0.0)",
+        "previous": "(3.0, 0.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "restart-player-near-origin",
+      "observed": {
+        "player": "(3.0, 0.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lost-fixture-has-live-effects",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "real-contact-reaches-lost",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lost-clears-hit-bursts",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lost-stops-freezes-trail",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "restart-from-lost-clean",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "won-fixture-has-live-hit",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "clock-reaches-won",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "won-clears-hit-bursts",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "won-stops-freezes-trail",
+      "observed": {},
+      "status": "PASS"
+    }
+  ],
+  "suite": "particles_edges",
+  "utc": "2026-10-29T21:49:59"
+}
