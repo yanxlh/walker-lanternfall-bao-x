@@ -1,0 +1,4 @@
+[gd_scene format=3]
+
+[node name="LevelUpOverlay" type="CanvasLayer"]
+layer = 11

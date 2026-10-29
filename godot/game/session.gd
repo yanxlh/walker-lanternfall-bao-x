@@ -14,9 +14,11 @@ const Ground = preload("res://features/world/ground.gd")
 const CameraFx = preload("res://features/world/camera_fx.gd")
 const AudioBusScript = preload("res://audio/audio_bus.gd")
 const Hud = preload("res://ui/hud.gd")
+const ParticlePresentation = preload("res://effects/particle_presentation.gd")
 
 signal run_started
 signal enemy_killed(pos: Vector2)
+signal weapon_hit(pos: Vector2)
 signal gem_collected(value: int)
 signal player_hurt(hp: int)
 signal leveled_up(level: int)
@@ -37,6 +39,7 @@ var fx
 var camera
 var audio
 var hud
+var particles
 
 var enemies: Array = []
 var gems: Array = []
@@ -80,6 +83,10 @@ func _ready() -> void:
 	hud = Hud.new()
 	add_child(hud)
 	hud.setup(self)
+	particles = ParticlePresentation.new()
+	particles.name = "ParticlePresentation"
+	add_child(particles)
+	particles.setup(self)
 
 func start_run(seed_value: int = -1) -> void:
 	if seed_value < 0:
@@ -217,6 +224,7 @@ func beam_cooldown() -> int:
 func damage(e, amount: float) -> void:
 	if e.dead:
 		return
+	weapon_hit.emit(e.position)
 	e.hp -= amount
 	e.flash = 3
 	if e.hp <= 0:
