@@ -82,7 +82,7 @@ Now sound. Every effect goes through one table. A kill sound can repeat only eve
 
 ## B12 · RESULT · 3:59.3 (15.3 s)
 
-*On screen:* real capture of a dense wave; live counters from the take's own logs: kills vs kill sounds played; Bao's Run A note, quoted on screen: 不会连起来
+*On screen:* real capture of a dense wave; live counters from the take's own logs: kills vs kill sounds played; Bao's Run A note, quoted on screen: They do not run together
 
 In a dense wave the throttle shows up in these counters, read from this very take: monsters die faster than the kill sound is allowed to fire, so several kills share one sound instead of machine-gunning. In Bao's sound-on playtest, his note was simply that nothing ran together.
 
@@ -112,7 +112,7 @@ The code change. In his first playtest Bao saw bullets fly on through monsters, 
 
 ## B17 · RESULT · 5:23.2 (17.3 s)
 
-*On screen:* left: build 40102ab (Bao's first playtest), held frame, bolt inside a moth's wing; right: film build; left: the next frames, the bolt flies on; right: held frame at a wing-tip hit, then the bolt is gone; RED → GREEN test names; Bao: 子弹对的
+*On screen:* left: build 40102ab (Bao's first playtest), held frame, bolt inside a moth's wing; right: film build; left: the next frames, the bolt flies on; right: held frame at a wing-tip hit, then the bolt is gone; RED → GREEN test names; Bao: Bullets work correctly
 
 Here is what the player sees. On the left, the build Bao played: this bolt clips the moth's wing and keeps going. On the right, the film build: a bolt meets a wing tip, outside the old ten-pixel circle, and stops there. Two tests failed before the fix and pass after it, and Bao's next playtest note read: the bullets are right.
 
@@ -207,3 +207,5 @@ Your turn. Paste this: Please use Walker to read the audio bus in my Lanternfall
 **[Outro card — stock jingle only, no narration.]**
 
 Total: 9 min 43.9 s.
+
+Student feedback quotations above are English translations of the recorded statements.

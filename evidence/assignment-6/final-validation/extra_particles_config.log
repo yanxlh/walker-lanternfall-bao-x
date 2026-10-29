@@ -1,0 +1,84 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+PASS lantern_trail/cpu-2d {}
+PASS lantern_trail/amount {"actual":"24","expected":"24"}
+PASS lantern_trail/one_shot {"actual":"false","expected":"false"}
+PASS lantern_trail/emitting {"actual":"false","expected":"false"}
+PASS lantern_trail/lifetime {"actual":"0.35","expected":"0.35"}
+PASS lantern_trail/explosiveness {"actual":"0.0","expected":"0.0"}
+PASS lantern_trail/preprocess {"actual":"0.0","expected":"0.0"}
+PASS lantern_trail/emission_shape {"actual":"1","expected":"1"}
+PASS lantern_trail/emission_sphere_radius {"actual":"3.0","expected":"3.0"}
+PASS lantern_trail/direction {"actual":"(0.0, -1.0)","expected":"(0.0, -1.0)"}
+PASS lantern_trail/spread {"actual":"25.0","expected":"25.0"}
+PASS lantern_trail/initial_velocity_min {"actual":"2.0","expected":"2.0"}
+PASS lantern_trail/initial_velocity_max {"actual":"6.0","expected":"6.0"}
+PASS lantern_trail/gravity {"actual":"(0.0, -4.0)","expected":"(0.0, -4.0)"}
+PASS lantern_trail/damping_min {"actual":"1.0","expected":"1.0"}
+PASS lantern_trail/damping_max {"actual":"3.0","expected":"3.0"}
+PASS lantern_trail/scale_amount_min {"actual":"0.34999999403954","expected":"0.35"}
+PASS lantern_trail/scale_amount_max {"actual":"0.69999998807907","expected":"0.7"}
+PASS lantern_trail/local_coords {"actual":"false","expected":"false"}
+PASS lantern_trail/use_fixed_seed {"actual":"false","expected":"false"}
+PASS lantern_trail/texture {}
+PASS lantern_trail/nearest {}
+PASS lantern_trail/additive-material {}
+PASS lantern_trail/curve-present {}
+PASS lantern_trail/curve-count {}
+PASS lantern_trail/curve-point-0 {}
+PASS lantern_trail/curve-tangents-0 {}
+PASS lantern_trail/curve-point-1 {}
+PASS lantern_trail/curve-tangents-1 {}
+PASS lantern_trail/curve-point-2 {}
+PASS lantern_trail/curve-tangents-2 {}
+PASS lantern_trail/ramp-present {}
+PASS lantern_trail/ramp-count {}
+PASS lantern_trail/ramp-offset-0 {}
+PASS lantern_trail/ramp-colour-0 {}
+PASS lantern_trail/ramp-offset-1 {}
+PASS lantern_trail/ramp-colour-1 {}
+PASS lantern_trail/ramp-offset-2 {}
+PASS lantern_trail/ramp-colour-2 {}
+PASS level_up_sparks/cpu-2d {}
+PASS level_up_sparks/amount {"actual":"32","expected":"32"}
+PASS level_up_sparks/one_shot {"actual":"true","expected":"true"}
+PASS level_up_sparks/emitting {"actual":"false","expected":"false"}
+PASS level_up_sparks/lifetime {"actual":"0.7","expected":"0.7"}
+PASS level_up_sparks/explosiveness {"actual":"1.0","expected":"1.0"}
+PASS level_up_sparks/preprocess {"actual":"0.0","expected":"0.0"}
+PASS level_up_sparks/emission_shape {"actual":"1","expected":"1"}
+PASS level_up_sparks/emission_sphere_radius {"actual":"12.0","expected":"12.0"}
+PASS level_up_sparks/direction {"actual":"(0.0, -1.0)","expected":"(0.0, -1.0)"}
+PASS level_up_sparks/spread {"actual":"180.0","expected":"180.0"}
+PASS level_up_sparks/initial_velocity_min {"actual":"35.0","expected":"35.0"}
+PASS level_up_sparks/initial_velocity_max {"actual":"65.0","expected":"65.0"}
+PASS level_up_sparks/gravity {"actual":"(0.0, 8.0)","expected":"(0.0, 8.0)"}
+PASS level_up_sparks/damping_min {"actual":"15.0","expected":"15.0"}
+PASS level_up_sparks/damping_max {"actual":"25.0","expected":"25.0"}
+PASS level_up_sparks/scale_amount_min {"actual":"0.80000001192093","expected":"0.8"}
+PASS level_up_sparks/scale_amount_max {"actual":"1.5","expected":"1.5"}
+PASS level_up_sparks/local_coords {"actual":"false","expected":"false"}
+PASS level_up_sparks/use_fixed_seed {"actual":"false","expected":"false"}
+PASS level_up_sparks/texture {}
+PASS level_up_sparks/nearest {}
+PASS level_up_sparks/additive-material {}
+PASS level_up_sparks/curve-present {}
+PASS level_up_sparks/curve-count {}
+PASS level_up_sparks/curve-point-0 {}
+PASS level_up_sparks/curve-tangents-0 {}
+PASS level_up_sparks/curve-point-1 {}
+PASS level_up_sparks/curve-tangents-1 {}
+PASS level_up_sparks/curve-point-2 {}
+PASS level_up_sparks/curve-tangents-2 {}
+PASS level_up_sparks/ramp-present {}
+PASS level_up_sparks/ramp-count {}
+PASS level_up_sparks/ramp-offset-0 {}
+PASS level_up_sparks/ramp-colour-0 {}
+PASS level_up_sparks/ramp-offset-1 {}
+PASS level_up_sparks/ramp-colour-1 {}
+PASS level_up_sparks/ramp-offset-2 {}
+PASS level_up_sparks/ramp-colour-2 {}
+PASS level-up-overlay-layer-11 {}
+extra_particles_config: 79 checks, 0 failures -> /private/tmp/lanternfall-a6-release-20261029/godot/../evidence/extra_particles_config.json

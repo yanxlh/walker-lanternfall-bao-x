@@ -27,7 +27,7 @@ The student confirmed weapon-hit sparks and level-up celebration, with the movem
 
 ## 29 October 2026 — first integrated-game observation
 
-Student's exact report: “升级火花不明显 移动也不明显” (the level-up sparks and movement trail are not obvious).
+Student's report (English translation): “The level-up sparks and movement trail are not obvious” (the level-up sparks and movement trail are not obvious).
 
 Code inspection: the upgrade HUD is on CanvasLayer 10, draws a full-screen dark overlay at alpha 0.6, and draws opaque cards over gameplay. Level-up particles currently belong to the world canvas, so the HUD is drawn above them. This is a plausible contributor, not a verified visual comparison.
 
@@ -40,7 +40,7 @@ Approval is pending. Before/after captures and the student's post-change verdict
 
 ## 29 October 2026 — visibility trial r1 implemented
 
-Approval: the student replied “同意” to the specific overlay and alpha proposals above.
+Approval: the student replied “Agreed” to the specific overlay and alpha proposals above.
 
 Upgrade change: world canvas -> CanvasLayer 11, above HUD layer 10, with camera-transform synchronization. Prediction: unchanged sparks now render above the dark veil and opaque cards while remaining centered on the courier. Particle count, size, duration, colour and speed are unchanged.
 
@@ -56,7 +56,7 @@ The student requested that upgrade sparks appear on the small character displaye
 
 ## 29 October 2026 — upgrade portrait placement accepted
 
-After running the updated game with the celebration anchored to the upgrade UI portrait, the student replied “可以的” to the request to check that position. Verdict: keep the portrait placement. This confirms the placement is acceptable; it does not establish a separate verdict on the movement trail, GPU performance, or before/after image evidence. Required frame strips remain pending.
+After running the updated game with the celebration anchored to the upgrade UI portrait, the student replied “That works” to the request to check that position. Verdict: keep the portrait placement. This confirms the placement is acceptable; it does not establish a separate verdict on the movement trail, GPU performance, or before/after image evidence. Required frame strips remain pending.
 
 
 ### 29 October 2026 — movement trail accepted
@@ -75,7 +75,7 @@ The student's separate running-game verdict was to keep the visibility revision.
 
 ## 29 October 2026 — first running-game observation of weapon-hit sparks
 
-The student ran the integrated game and watched the weapon-hit sparks. Exact report: “完成 没什么问题” (done; no problem). No specific size, brightness, spread, or disappearance problem was reported. No setting was changed from this observation.
+The student ran the integrated game and watched the weapon-hit sparks. Report (English translation): “Done; no problem” (done; no problem). No specific size, brightness, spread, or disappearance problem was reported. No setting was changed from this observation.
 
 Next: capture the `r0` fixture strip (frames 10, 12, 15, 20, 30, 50) with `scripts/capture-defeat-sparks.command` and read it against the brief's visual intent: initial span about one character height, widest point at most two, complete fade by 0.45 s, and readability on both dark floor and bright props. Any revision must cite a specific frame reading; none is proposed yet.
 
@@ -104,7 +104,7 @@ No setting has been changed from this reading.
 
 ## 29 October 2026 — Effect A scale trial r1 implemented and compared
 
-Approval: the student replied “同意” to the proposal to change `scale_amount_max` from 1.2 to 1.8, with the frame-by-frame prediction recorded in `CHANGE-BRIEF.md`.
+Approval: the student replied “Agreed” to the proposal to change `scale_amount_max` from 1.2 to 1.8, with the frame-by-frame prediction recorded in `CHANGE-BRIEF.md`.
 
 Implementation: the config test expectation was changed first and failed on `setting-scale_amount_max` alone (actual 1.2, expected 1.8; `evidence/assignment-6/tuning/a-r1-tests/defeat_sparks_config-expected-failure.log`). The scene was then changed, after which every suite passed: logic 32, gameplay 65, audio 25 (realtime), A configuration 39, trail/upgrade configuration 79, real-input state 34. The existing ObjectDB/resource exit warnings remain. Pre-change source: `evidence/assignment-6/tuning/a-r0-source/`.
 
@@ -117,4 +117,6 @@ Running-game keep/revert verdict: pending.
 
 ## 29 October 2026 — Effect A scale trial r1 kept
 
-After playing the game with `scale_amount_max` 1.8, the student replied “保留 更清晰了” (keep it; clearer). Verdict: keep r1. This running-game verdict is separate from the fixture comparison above, which measured a modest increase in lit spark area without a larger footprint or longer fade. No further A setting change is made. This completes A's observation-driven revision cycle: r0 strip, reading, prediction, approval, one-value edit, r1 strip, comparison and running-game verdict.
+After playing the game with `scale_amount_max` 1.8, the student replied “Keep it; it is clearer” (keep it; clearer). Verdict: keep r1. This running-game verdict is separate from the fixture comparison above, which measured a modest increase in lit spark area without a larger footprint or longer fade. No further A setting change is made. This completes A's observation-driven revision cycle: r0 strip, reading, prediction, approval, one-value edit, r1 strip, comparison and running-game verdict.
+
+Quoted student feedback in this report is translated into English from the recorded conversation.

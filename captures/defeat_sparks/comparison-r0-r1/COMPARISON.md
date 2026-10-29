@@ -40,7 +40,7 @@ In the contact sheet the r1 sparks read as chunkier yellow-orange squares from 0
 
 ## Human verdict
 
-After playing the revised game, the student replied “保留 更清晰了” (keep it; clearer). Keep r1. The measured reading above is the image comparison, distinct from this running-game verdict.
+After playing the revised game, the student replied “Keep it; it is clearer” (keep it; clearer). Keep r1. The measured reading above is the image comparison, distinct from this running-game verdict.
 
 ## Files
 
@@ -48,3 +48,5 @@ After playing the revised game, the student replied “保留 更清晰了” (k
 - `comparison-contact-sheet.png`: 3× crops, files 9, 10, 12, 15, 17, 20; r0 top, r1 bottom; courier on the left for scale.
 - `comparison-detail.png`: 6× crops of files 9, 11, 13.
 - `manifest.json`: SHA-256 for every strip frame and sheet.
+
+Quoted student feedback in this report is translated into English from the recorded conversation.

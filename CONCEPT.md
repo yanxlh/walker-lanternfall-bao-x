@@ -87,31 +87,31 @@ More weapons and evolution recipes, a boss at the end of the fog, between-run pr
 
 ### R2 · 2026-09-29 · 2D pixel art, and fewer poses (Bao's direction)
 
-- **Observed:** the first ART-PC-01 batch (FLUX.1-schnell, "flat vector" prompt; seeds 11, 23, 37) came out as a shaded, 3D-looking illustration. After seeing it I decided: "不用3d就是2d像素游戏，然后不用太多动作" — this is a 2D pixel-art game, and the courier does not need many actions.
+- **Observed:** the first ART-PC-01 batch (FLUX.1-schnell, "flat vector" prompt; seeds 11, 23, 37) came out as a shaded, 3D-looking illustration. After seeing it I decided: "Use 2D pixel art rather than 3D, with fewer animations" — this is a 2D pixel-art game, and the courier does not need many actions.
 - **Change:** art direction is now **2D pixel art**: every sprite is prompted as a pixel-art game sprite (hard-edged pixels, flat colour, 1-px dark outline, no gradients or 3D shading) and still reduced to its game size and locked to the palettes. The map stays top-down with side-view sprites. The courier's pose set drops to the rubric minimum of **10** (see CHARACTER-SHEET R2).
 - **Evidence:** the rejected batch and the reason are in ASSET-LOG (ART-PC-01) and `gen/rejected/ART-PC-01-contact.png`.
 
 ### R3 · 2026-09-29 · Every level needs more XP (Bao's request after the first play)
 
-- **Asked:** "每升一次等级后续所需要的经验会增加".
+- **Asked:** "Each level should require more experience than the previous level".
 - **Found:** the table already rose (3, 5, 7, … 40) but stopped at 40 from level 13 on.
 - **Change:** the table is kept for levels 1–12; after that each step is one bigger than the last (46, 53, 61, 70, …; level 30 needs 301). The HUD now shows `XP have/need` next to the level so the rising cost is visible, including with sound off.
 - **Verified by:** `test_logic.gd::prog-xp-need-always-increases` (failed on the plateau, passes now) and `test_gameplay.gd::hud-shows-xp-need`.
 
 ### R4 · 2026-09-29 · A fuller market, tougher monsters over time, more cards (Bao's requests after the first play)
 
-- **Map** — "整体地图再丰富一点材料": the arena becomes two market streets — stalls and noodle carts facing each other, lantern posts between them (with a soft pool of light), crates beside stalls, puddles and fallen leaves on the cobbles, and a clear plaza around the spawn. All decoration: nothing collides. Five new generated props (CHANGE-BRIEF R4); the environment palette gains the satchel brown `#8A5A3C` for wood.
-- **Monsters over time** — "随着时间增加怪兽的血量也随时间按比例增加": a monster's HP is its base HP × (1 + 0.5 × whole minutes survived) at the moment it spawns (×1.5 from 1:00, ×2 from 2:00, ×2.5 at 3:00). A continuous curve was tried first: it made every moth need two Beam hits from the first second, and scripted bots died in 36–84 s; stepped per minute, a gem-collecting bot evolved at ~1:30 and survived 3:00 in 2 of 3 runs (`evidence/balance-probe-after-hp-growth.txt`).
-- **New cards** — "增加伤害和增加武器的攻击速度，人物吸取经验的范围，人物移动速度": **Hotter Flame** (+20% damage for every weapon) and **Quick Hands** (+12% attack speed for every weapon: Beam cooldown, moth spin and hit rate, Sunflare period), 5 levels each; **Magnet Satchel** (pickup range) and **Light Boots** (move speed, now +12 px/s per level) go from 2 to 5 levels. Cards show the level they would reach, e.g. "Quick Hands (4/5)".
+- **Map** — "Add more environmental detail to the map": the arena becomes two market streets — stalls and noodle carts facing each other, lantern posts between them (with a soft pool of light), crates beside stalls, puddles and fallen leaves on the cobbles, and a clear plaza around the spawn. All decoration: nothing collides. Five new generated props (CHANGE-BRIEF R4); the environment palette gains the satchel brown `#8A5A3C` for wood.
+- **Monsters over time** — "Enemy health should increase proportionally over time": a monster's HP is its base HP × (1 + 0.5 × whole minutes survived) at the moment it spawns (×1.5 from 1:00, ×2 from 2:00, ×2.5 at 3:00). A continuous curve was tried first: it made every moth need two Beam hits from the first second, and scripted bots died in 36–84 s; stepped per minute, a gem-collecting bot evolved at ~1:30 and survived 3:00 in 2 of 3 runs (`evidence/balance-probe-after-hp-growth.txt`).
+- **New cards** — "Increase damage, weapon attack speed, pickup range, and movement speed": **Hotter Flame** (+20% damage for every weapon) and **Quick Hands** (+12% attack speed for every weapon: Beam cooldown, moth spin and hit rate, Sunflare period), 5 levels each; **Magnet Satchel** (pickup range) and **Light Boots** (move speed, now +12 px/s per level) go from 2 to 5 levels. Cards show the level they would reach, e.g. "Quick Hands (4/5)".
 - **Verified by:** `test_gameplay.gd::enemy-hp-grows-with-time`, `damage-card-scales-weapons`, `haste-card-shortens-beam-cooldown`, `map-*`; `test_logic.gd::prog-new-passives-offered`, `prog-passive-caps`, `prog-damage-mult`, `prog-attack-rate-mult`, `prog-card-title-shows-level`.
 
-### R5 · 2026-09-29 · Solid props (Bao: "路灯这些有阻挡效果")
+### R5 · 2026-09-29 · Solid props (Bao: "Props such as lamp posts should block movement")
 
 - Lantern posts, stalls, noodle carts and crates now **block the courier**; the courier slides along their edges instead of sticking. The box is each sprite's opaque area inset by 2 px (a post blocks only at its pole), so what you bump into is what you see. Puddles and leaves stay walk-over decals.
 - **Enemies are not blocked** — moths fly over the stalls and fog-wraiths drift through them. This keeps the lore, avoids enemies jamming behind posts, and means props can corner you rather than shelter you.
 - **Verified by:** `test_gameplay.gd::map-has-solids`, `props-block-the-courier`, `courier-slides-along-props`, `decals-do-not-block`, `enemies-pass-through-props`.
 
-### R6 · 2026-09-29 · A broken-up market (Bao: "整体地图应该破碎一点")
+### R6 · 2026-09-29 · A broken-up market (Bao: "Make the overall map more broken up")
 
 - The two tidy streets of R4 are replaced by **14 scattered clusters** with alleys between them: ragged rows of stalls and carts with gaps and a slight bend, lantern corners around wet squares, abandoned crate piles, lone stalls with a lamp — plus stray posts and crates. Overview: [design/map-overview.png](design/map-overview.png).
 - Solid props never overlap (the R4 layout had 6 crates overlapping stalls); layout and collision use fixed boxes measured from the sprites, so the map is identical with or without textures loaded.
@@ -128,3 +128,5 @@ More weapons and evolution recipes, a boss at the end of the fog, between-run pr
   2. *Feet, not fingers* — the card screen freezes the field and ducks the music by 6 dB, so the one real decision has no time pressure.
   3. *Readable in silence* — every sound has a visual twin (hit flash and knockback, gem flight, cards, banner, result panel), and the HUD prints MUSIC/SFX on/off.
   4. *Three-minute runs* — the result panel shows "R / Y" to retry or play again; R stops the stinger and restarts the music from the top at once.
+
+Quoted student feedback in this report is translated into English from the recorded conversation.

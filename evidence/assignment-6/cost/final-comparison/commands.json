@@ -1,0 +1,67 @@
+[
+  {
+    "case": "headless",
+    "exit_code": 0,
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "godot",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cost_effects.gd",
+      "--",
+      "--out",
+      "/tmp/lanternfall-a6-release-20261029/evidence/assignment-6/cost/final-comparison/headless.json",
+      "--rev",
+      "ab2a082f2689505f9b4c69e12de51310f764163c",
+      "--trials",
+      "3"
+    ]
+  },
+  {
+    "case": "compatibility",
+    "exit_code": 0,
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "godot",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cost_effects.gd",
+      "--",
+      "--out",
+      "/tmp/lanternfall-a6-release-20261029/evidence/assignment-6/cost/final-comparison/compatibility.json",
+      "--rev",
+      "ab2a082f2689505f9b4c69e12de51310f764163c",
+      "--trials",
+      "3"
+    ]
+  },
+  {
+    "case": "mobile-vulkan",
+    "exit_code": 0,
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--rendering-method",
+      "mobile",
+      "--rendering-driver",
+      "vulkan",
+      "--path",
+      "godot",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cost_effects.gd",
+      "--",
+      "--out",
+      "/tmp/lanternfall-a6-release-20261029/evidence/assignment-6/cost/final-comparison/mobile-vulkan.json",
+      "--rev",
+      "ab2a082f2689505f9b4c69e12de51310f764163c",
+      "--trials",
+      "3"
+    ]
+  }
+]

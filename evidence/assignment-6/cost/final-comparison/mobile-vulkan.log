@@ -1,0 +1,37 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.2.334 - Forward Mobile - Using Device #0: Apple - Apple M4
+
+empty-off trial 0 frame mean 16.6676 ms
+idle-off trial 0 frame mean 16.6673 ms
+idle-on trial 0 frame mean 16.6664 ms
+acap-off trial 0 frame mean 16.6658 ms
+acap-on trial 0 frame mean 16.6674 ms
+move-off trial 0 frame mean 16.6665 ms
+move-on trial 0 frame mean 16.6663 ms
+celebration-off trial 0 frame mean 16.6857 ms
+celebration-on trial 0 frame mean 16.6341 ms
+empty-off trial 1 frame mean 13.6217 ms
+idle-off trial 1 frame mean 16.6677 ms
+idle-on trial 1 frame mean 16.6682 ms
+acap-off trial 1 frame mean 16.6669 ms
+acap-on trial 1 frame mean 16.6680 ms
+move-off trial 1 frame mean 16.6655 ms
+move-on trial 1 frame mean 16.6673 ms
+celebration-off trial 1 frame mean 16.6866 ms
+celebration-on trial 1 frame mean 16.6385 ms
+empty-off trial 2 frame mean 16.6662 ms
+idle-off trial 2 frame mean 16.6643 ms
+idle-on trial 2 frame mean 16.6670 ms
+acap-off trial 2 frame mean 16.6671 ms
+acap-on trial 2 frame mean 16.6678 ms
+move-off trial 2 frame mean 16.6662 ms
+move-on trial 2 frame mean 16.6667 ms
+celebration-off trial 2 frame mean 16.6465 ms
+celebration-on trial 2 frame mean 16.6679 ms
+celebration-off trial 3 frame mean 16.6721 ms
+celebration-on trial 3 frame mean 16.6704 ms
+celebration-off trial 4 frame mean 16.6606 ms
+celebration-on trial 4 frame mean 16.6713 ms
+celebration-off trial 5 frame mean 16.6870 ms
+celebration-on trial 5 frame mean 16.6498 ms
+saved /tmp/lanternfall-a6-release-20261029/evidence/assignment-6/cost/final-comparison/mobile-vulkan.json

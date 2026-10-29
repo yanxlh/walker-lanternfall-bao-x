@@ -33,9 +33,11 @@ These are recorded image readings from scripted play, not the student's running-
 
 ## Student's running-game verdict
 
-After playing a normal run, the student replied “没有挡住都正常” (nothing is hidden; everything is normal). Recorded verdict: the trail does not hide enemies, pickups or the courier in ordinary play, and the effects behave normally through pause, card choice, death, victory and restart. The student made no separate comment on bright-prop visibility; the reading above remains the only record for that case.
+After playing a normal run, the student replied “Nothing is obscured; everything behaves normally” (nothing is hidden; everything is normal). Recorded verdict: the trail does not hide enemies, pickups or the courier in ordinary play, and the effects behave normally through pause, card choice, death, victory and restart. The student made no separate comment on bright-prop visibility; the reading above remains the only record for that case.
 
 ## Files
 
 - 56 PNG shots named `<scene>-<moment>.png`; `states.json`; labelled crops under `sheets/`; `SHA256SUMS`.
 - Driver: `godot/tests/capture_play_checks.gd`. Headless edge assertions added alongside: `godot/tests/test_particles_edges.gd`.
+
+Quoted student feedback in this report is translated into English from the recorded conversation.

@@ -58,7 +58,7 @@ Now the tuning. In the game, Bao saw no problem. The frame strip disagreed with 
 
 ## B09 · RESULT · 2:30.8 (19.6 s)
 
-*On screen:* r0 (top) vs r1 (bottom) contact sheet, 3× crops; prediction vs measured table, row by row; the miss marked: predicted +3–4 px, measured +1 px; Bao's verdict: 保留 更清晰了
+*On screen:* r0 (top) vs r1 (bottom) contact sheet, 3× crops; prediction vs measured table, row by row; the miss marked: predicted +3–4 px, measured +1 px; Bao's verdict: Keep it; it is clearer
 
 Before on top, after below, same seed, same frames. The first frame grew from eleven to fourteen pixels, close to the predicted fifteen. The sparks got chunkier, with up to eighty-five percent more lit area. But the footprint widened by one pixel, not the predicted three or four, because positions set the spread. Fade timing didn't change. Bao played it and kept it: clearer.
 
@@ -94,7 +94,7 @@ The extra effect: a gold celebration on every level-up. Its first version was dr
 
 ## B15 · RESULT · 4:23.7 (15.7 s)
 
-*On screen:* real 4K capture, main take: level-up, card screen opens; crop of the portrait: white → gold → gone; Bao's verdict: 可以的
+*On screen:* real 4K capture, main take: level-up, card screen opens; crop of the portrait: white → gold → gone; Bao's verdict: That works
 
 In the real take, the level-up arrives and the card screen opens. The burst lands on the small courier in the lower-left portrait, white first, then gold, and it's gone well before the scripted pick two seconds later. The cards stay readable. Bao looked at exactly this placement and said: that works.
 
@@ -106,7 +106,7 @@ One policy runs every frame, and it only reads the game. When the game isn't pla
 
 ## B17 · RESULT · 4:57.5 (19.7 s)
 
-*On screen:* real 4K capture, main take: pause at run 0:30, held 2.5 s; two paused frames a second apart, side by side: 0 pixels differ; resume: the trail carries on; play-check shots: lost+00 and won+00, particles cleared (scripted, 1280 × 720); Bao's verdict: 没有挡住都正常
+*On screen:* real 4K capture, main take: pause at run 0:30, held 2.5 s; two paused frames a second apart, side by side: 0 pixels differ; resume: the trail carries on; play-check shots: lost+00 and won+00, particles cleared (scripted, 1280 × 720); Bao's verdict: Nothing is obscured; everything behaves normally
 
 At thirty seconds the script presses pause. Under the pause screen, the trail's embers hang exactly where they were: two frames a second apart match pixel for pixel. Then play resumes and they carry on. The scripted play checks cover the endings: on the first frame of a loss or a win, every particle is gone. And after a normal run of their own, Bao's note was that nothing got in the way.
 
@@ -165,3 +165,5 @@ Your turn. Paste this: Please use Walker to read the trail scene in my Lanternfa
 **[Outro card — stock jingle only, no narration.]**
 
 Total: 8 min 7.7 s.
+
+Student feedback quotations above are English translations of the recorded statements.

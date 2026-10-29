@@ -1,0 +1,30 @@
+{
+  "logic": {
+    "checks": 32,
+    "failures": 0
+  },
+  "defeat_sparks_config": {
+    "checks": 39,
+    "failures": 0
+  },
+  "extra_particles_config": {
+    "checks": 79,
+    "failures": 0
+  },
+  "particles_edges": {
+    "checks": 18,
+    "failures": 0
+  },
+  "audio": {
+    "checks": 25,
+    "failures": 0
+  },
+  "gameplay": {
+    "checks": 65,
+    "failures": 0
+  },
+  "particles_state": {
+    "checks": 34,
+    "failures": 0
+  }
+}

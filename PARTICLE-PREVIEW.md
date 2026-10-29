@@ -1,43 +1,9 @@
-# 查看敌人死亡火花
+# Particle preview fixtures
 
-目前完成的是独立预览，不是已经接入正式游戏的效果。原来的游戏运行方式没有改变。
+The preview scenes are independent fixtures, not normal gameplay captures. The integrated game includes weapon-hit sparks, a movement trail and a level-up celebration.
 
-## 1. 双击预览
+Open the project with Godot 4.7.2. Run `scripts/preview-defeat-sparks.command` for the hit-spark fixture. Space triggers a burst, R triggers two bursts 0.1 seconds apart, and Escape closes the preview.
 
-在 Finder 里打开本项目的 `scripts` 文件夹，双击 `preview-defeat-sparks.command`。
+For a new capture revision, run `bash scripts/capture-defeat-sparks.command rN`. Existing revision directories are protected from replacement. Selected frames are stored below `captures/defeat_sparks/rN/strip/`; label them as fixtures. Compare the strips and record the student's separate running-game verdict in `TUNING.md`.
 
-窗口里使用真实夜市背景和角色尺寸，自动触发两次火花。
-
-- 空格：再播放一次火花。
-- R：相隔 0.1 秒播放两次。
-- Esc：关闭预览。
-
-请看：火花是否太小或太暗、有没有挡住角色、扩散是否合适、消失是否太快，以及 R 连续触发是否清楚。告诉我你的实际感受即可。初次观察保存在 `TUNING.md`。
-
-## 2. 保存第一组截图
-
-双击 `scripts/capture-defeat-sparks.command`。它会打开真实渲染窗口，输出 60 帧，再自动选取第 10、12、15、20、30、50 帧。
-
-结果在 `captures/defeat_sparks/r0/strip/`。这是预览 fixture，不能当作真实战斗截图。
-
-脚本保留完整序列；提交时只放选中的 strip。若 r0 已存在，脚本会停止，防止覆盖证据。
-
-后续版本从项目目录运行：
-
-```bash
-./scripts/capture-defeat-sparks.command r1
-```
-
-## 3. 运行配置检查
-
-在项目目录的终端运行：
-
-```bash
-./scripts/run-test.sh test_defeat_sparks_config.gd 60
-```
-
-应看到 `39 checks, 0 failures`。已有自动运行记录；你自己的运行确认尚未记录。
-
-## 后续
-
-先记录你看到的问题，再提出并确认单项参数修改，保存修改后的截图。之后接入敌人死亡信号，测试真实游戏事件，再完成角色移动拖尾。当前没有填写游玩结论、性能数值或最终视频完成记录。
+Run `./scripts/run-test.sh test_defeat_sparks_config.gd 60` for the configuration check (39 assertions). Full state, edge, extra configuration and regression commands are in `CLAUDE.md`.

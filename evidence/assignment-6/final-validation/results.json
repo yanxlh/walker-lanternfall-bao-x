@@ -1,0 +1,37 @@
+[
+  {
+    "test": "logic",
+    "mode": "60",
+    "exit_code": 0
+  },
+  {
+    "test": "gameplay",
+    "mode": "60",
+    "exit_code": 0
+  },
+  {
+    "test": "audio",
+    "mode": "realtime",
+    "exit_code": 0
+  },
+  {
+    "test": "defeat_sparks_config",
+    "mode": "60",
+    "exit_code": 0
+  },
+  {
+    "test": "extra_particles_config",
+    "mode": "60",
+    "exit_code": 0
+  },
+  {
+    "test": "particles_state",
+    "mode": "60",
+    "exit_code": 0
+  },
+  {
+    "test": "particles_edges",
+    "mode": "60",
+    "exit_code": 0
+  }
+]

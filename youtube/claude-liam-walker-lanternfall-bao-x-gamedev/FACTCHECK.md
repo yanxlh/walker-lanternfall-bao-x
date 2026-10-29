@@ -9,7 +9,7 @@ Every factual claim in the narration and on screen, with where it was checked. S
 | B01, B29, B31 | "Bao made every accept and reject call" | 5 of the 99 runs (MUS-02 rejects) were rejected by an automated layer check that Bao did not listen to; the logs say so | "every one that shipped was Bao's pick"; B29 shows "94 of 99 runs" and the automated-check note |
 | B29 | "listened to every sound candidate" | true for the 21 sound-effect candidates, not for the 5 automated MUS-02 rejects | "listened to every sound-effect candidate" |
 | B08 | "the hurtbox sat low" | the generated torso sat **below** the hurtbox centre (coat centre y ≈ 22–24 vs 20) | "his torso sat below the hurtbox" |
-| B16 | "bullets flew straight through monsters" (as Bao's note) | Bao's words were "子弹 打到怪物之后 要求消失" (bullets should vanish when they hit a monster); TEST-REPORT L1 records what he saw | "Bao saw bullets fly on through monsters, and asked for them to vanish on a hit"; his words are on screen |
+| B16 | "bullets flew straight through monsters" (as Bao's note) | Bao's words were "Bullets should disappear after hitting monsters" (bullets should vanish when they hit a monster); TEST-REPORT L1 records what he saw | "Bao saw bullets fly on through monsters, and asked for them to vanish on a hit"; his words are on screen |
 | B17 | "this bolt crosses the moth's wing" | the diagnostic shows the bolt touching the wing's sprite box at the tip | "clips the moth's wing" |
 | B27 | "the audio suite's full seeded run" | the autoplay bot loses at tick 3817 (1:04), well before 3:00 | "seeded autoplay run" |
 | B14, B24 | narration timed to each key press | the real pause lasts 3 s and the mute keys are 2 s apart; narration cannot follow that rhythm without retiming footage | narration describes the sequence; exact key presses are labelled on screen at their real frames |
@@ -36,13 +36,13 @@ Every factual claim in the narration and on screen, with where it was checked. S
 | B10 | the seven poses on screen are the ones chosen | main take (walk, hurt at run 0:53.9, levelup portrait, sunflare after 0:58.5, victory at 3:00), props take (cast/idle), lose take (defeat) |
 | B11 | kill 60 ms / 3 voices; pickup 1 voice; hurt 800 ms; evolve once; simulation clock | `audio_bus.gd` 19–28 and 81–82; `sfx_gate.gd`. Note: kill sounds get a random ±5 % pitch (line 101, global RNG); which sounds play and when is deterministic |
 | B12 | kills outnumber kill sounds in a dense wave | counters from the main take: SFX plays from its own `AudioBus.play_log`, kills from the identical dry run's `enemy_killed` signal (main take frames 5670–6128, run 2:34–2:49) |
-| B12 | Bao's note "不会连起来" | `evidence/playtest/2026-10-01-runs-A-B.md`, TEST-REPORT §8 |
+| B12 | Bao's note "They do not run together" | `evidence/playtest/2026-10-01-runs-A-B.md`, TEST-REPORT §8 |
 | B13 | PAUSED low-pass + −10 dB; LEVELUP chime + −6 dB; PLAYING restores; LOST/WON fade + stinger | `audio_bus.gd` 126–148, constants 29–32 |
 | B14 | Esc at run 0:40, 3 s pause, timer 0:40 on both sides | main take log: pause at tick 2400, resume at tick 2401, 3 s (90 frames) apart |
 | B16 | old test: centre distance < radius + 4 (10 px for a moth); new: 14 px segment vs the visible box; pierce | `git show a51af69`; `session.gd` 273–284; `enemy.gd` 27–38; `tuning.gd` BEAM_HALF_LENGTH 7, hit_half |
 | B17 | before: bolt touches the moth's sprite box outside the old circle, no hit, flies on | build 40102ab take, frames 2006–2008; driver diagnostic `pass_through` (first 4015, last 4016, d_min 13.4) with the engine's canvas transform |
 | B17 | after: wing-tip hit outside the old circle; next frame the moth is a gem | main take frames 215–216; diagnostic `edge_hit` (first 433, d_min 19.0, i.e. outside 10 px at every sampled tick) |
-| B17 | two tests RED → GREEN; "子弹对的" | TEST-REPORT L1, §4 (session 2) |
+| B17 | two tests RED → GREEN; "Bullets work correctly" | TEST-REPORT L1, §4 (session 2) |
 | B18 | seeded shuffle; Sunflare first when beam 3 and moths 3 | `progression.gd` 76–77, 93–102 |
 | B19 | at run 0:58 the Sunflare card leads; banner, zoom-out 0.72, pose, brighter coat, layer | main take log (card offered ['sunflare', …] at tick 3512); `camera_fx.gd`; `audio_bus.gd` 150–155 |
 | B21 | movement line; push_out on line 61 before the clamp; enemies not blocked | `player.gd` 56–63; CONCEPT R5 |
@@ -65,3 +65,5 @@ Changing `"kill": {"cooldown_ms": 60, …}` to `0` in an isolated copy and runni
 ## Fixed outside the film
 
 TEST-REPORT §8, §11 and §14 quoted numbers from a build before the code-review fixes (independence at tick 3850, 88 kills, level 8). The committed `evidence/audio.json` at 8a6f988 and the film's fresh run agree (tick 3817, 80 kills, level 7); TEST-REPORT now quotes those, with a note on where the older numbers came from. The repository's SOURCES.md listed FLUX.1-schnell's assets without the five map props (ART-ENV-03 … 07); added.
+
+Student feedback quotations above are English translations of the recorded statements.

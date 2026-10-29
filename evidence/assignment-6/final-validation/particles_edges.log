@@ -1,0 +1,27 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+PASS blocked-input-held-no-displacement {"moved":0.0}
+PASS blocked-push-never-emits {"emitting_frames":0}
+PASS slide-along-blocker-emits {}
+PASS moving-before-jump-emits {}
+PASS jump-frame-no-emission {}
+PASS jump-trail-follows-feet {}
+PASS after-jump-real-movement-resumes {}
+PASS restart-history-at-new-origin {"player":"(3.0, 0.0)","previous":"(3.0, 0.0)"}
+PASS restart-player-near-origin {"player":"(3.0, 0.0)"}
+PASS lost-fixture-has-live-effects {}
+PASS real-contact-reaches-lost {}
+PASS lost-clears-hit-bursts {}
+PASS lost-stops-freezes-trail {}
+PASS restart-from-lost-clean {}
+PASS won-fixture-has-live-hit {}
+PASS clock-reaches-won {}
+PASS won-clears-hit-bursts {}
+PASS won-stops-freezes-trail {}
+particles_edges: 18 checks, 0 failures -> /private/tmp/lanternfall-a6-release-20261029/godot/../evidence/particles_edges.json
+WARNING: 30 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 7 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

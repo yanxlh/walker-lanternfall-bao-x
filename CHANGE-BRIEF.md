@@ -173,7 +173,7 @@ Configuration tests read every named setting for all three scenes. State checks 
 
 ### 29 October 2026 — approved visibility trial r1
 
-Human observation: “升级火花不明显 移动也不明显”. The student approved the following two independent revisions before editing:
+Human observation: “The level-up sparks and movement trail are not obvious”. The student approved the following two independent revisions before editing:
 
 - Upgrade celebration: change its draw layer from the world canvas below HUD layer 10 to a dedicated CanvasLayer 11 (`godot/effects/level_up_overlay.tscn`). Synchronize the overlay transform with the world canvas transform so the burst remains aligned with the courier as the camera moves. Its particle settings, lifetime and trigger are unchanged. Predict that it remains visible above the dark upgrade veil and cards instead of being covered.
 - Effect B: change only its colour/alpha ramp. At normalized t=0 alpha is 0.95 instead of 0.55; at t=0.5 alpha is 0.70 instead of 0.30; the t=1 alpha remains 0. All RGB values, timing, count, scale and motion remain unchanged. Predict stronger amber visibility from startup through steady movement, with the same stop/fade duration.
@@ -188,7 +188,7 @@ The student requested that upgrade sparks appear on the small character displaye
 
 ### 29 October 2026 — portrait placement kept
 
-The student accepted the upgrade portrait placement after viewing the updated game (“可以的”). Keep the celebration at the UI portrait torso, HUD-local (56,325), above the upgrade UI. No additional particle parameter changes are made. The movement-trail visibility trial still awaits its own explicit verdict.
+The student accepted the upgrade portrait placement after viewing the updated game (“That works”). Keep the celebration at the UI portrait torso, HUD-local (56,325), above the upgrade UI. No additional particle parameter changes are made. The movement-trail visibility trial still awaits its own explicit verdict.
 
 
 ### 29 October 2026 — movement trail accepted
@@ -198,7 +198,7 @@ The student explicitly confirmed that the revised movement trail is sufficiently
 
 ### 29 October 2026 — approved Effect A scale trial r1
 
-Observation: the student watched the weapon-hit sparks in the integrated game and reported no problem (“完成 没什么问题”). The `r0` fixture strip (`captures/defeat_sparks/r0/`) was then read against this brief. The widest point (about 1.6–1.8 courier heights) and the complete fade before 0.45 s match. The initial cluster is smaller than "about one character height": 0.35 courier height on the first visible frame and 0.65 by 0.07 s.
+Observation: the student watched the weapon-hit sparks in the integrated game and reported no problem (“Done; no problem”). The `r0` fixture strip (`captures/defeat_sparks/r0/`) was then read against this brief. The widest point (about 1.6–1.8 courier heights) and the complete fade before 0.45 s match. The initial cluster is smaller than "about one character height": 0.35 courier height on the first visible frame and 0.65 by 0.07 s.
 
 The student approved one change: `scale_amount_max` 1.2 → 1.8. Count, speed, spread, damping, gravity, colour ramp, scale curve, `scale_amount_min` (0.7) and lifetime are unchanged.
 
@@ -209,4 +209,6 @@ This is an approved trial, pending the r1 capture comparison and the student's r
 
 ### 29 October 2026 — Effect A scale r1 kept
 
-The student played the revised game and kept the change (“保留 更清晰了”). Effect A's current `scale_amount_max` is 1.8; `scale_amount_min` remains 0.7 and every other value in the initial settings table is unchanged. The scene, `godot/tests/test_defeat_sparks_config.gd` and this entry agree. Comparison: `captures/defeat_sparks/comparison-r0-r1/COMPARISON.md`.
+The student played the revised game and kept the change (“Keep it; it is clearer”). Effect A's current `scale_amount_max` is 1.8; `scale_amount_min` remains 0.7 and every other value in the initial settings table is unchanged. The scene, `godot/tests/test_defeat_sparks_config.gd` and this entry agree. Comparison: `captures/defeat_sparks/comparison-r0-r1/COMPARISON.md`.
+
+Quoted student feedback in this report is translated into English from the recorded conversation.

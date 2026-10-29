@@ -98,3 +98,11 @@ Run `scripts/play-particles.command` from Finder, or launch `godot --path godot`
 The old film linked above describes Assignment 2 and does not demonstrate this working revision. Playtest verdicts, tuning captures, windowed play checks, CPU/GPU measurement and the process-shader study are recorded in `TUNING.md` and the 29 October sections of `TEST-REPORT.md`. GPU time is unreadable under this renderer on the test Mac; see `evidence/assignment-6/cost/COST-REPORT.md`.
 
 Particle film (godot-gamedev + walker, source revision c3e1273): `youtube/claude-liam-walker-lanternfall-bao-x-particles-gamedev/`. The rendered file `claude-liam-walker-lanternfall-bao-x-particles-gamedev.mp4` (3840 × 2160, 8:08, SHA-256 `4d4d590039ff8a6dfd26571018120ecec9be324a7a8b1df16cb923020eeb6417`) is not in git. Film link: https://drive.google.com/file/d/1aPkXNgsLPQ3GEAFGbAmCPiJ9GEIpiywS/view (uploaded 2026-10-29; sharing verified as Anyone with the link — Viewer; opened without signing in on 2026-10-29, where Drive's player lists 8:08, the corrected master). Bao watched and listened to the whole final export (8:08) on 2026-10-29 and found no problem.
+
+## Assignment 6 release
+
+Use tag `a6` for this submission. The standalone project history is on branch `codex/assignment-6-submission`; the earlier master branch and a3 tag are preserved. SUBMISSION.md describes this assignment; SUBMISSION-assignment-2.md preserves the earlier submission. SOURCE-REVISION.md checks that the game source matches the film.
+
+Final test results: 292 assertions, zero failures. Final measured CPU/GPU off/on comparisons and budget decisions are in evidence/assignment-6/cost/FINAL-COMPARISON.md. A and B meet the measured proxy-renderer budgets; the optional upgrade celebration exceeds its GPU budget in the final rerun. The renderer and measurement conditions are stated alongside the numbers.
+
+All current submission reports are in English. Translated student feedback is labelled; historical raw source conversations and generation records retain their original language.

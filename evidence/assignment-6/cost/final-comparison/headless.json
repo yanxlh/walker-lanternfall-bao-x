@@ -1,0 +1,474 @@
+{
+  "conditions": {
+    "acap-off": {
+      "trials": [
+        {
+          "frame_ms": {
+            "mean": 0.0827866666666667,
+            "median": 0.064,
+            "n": 300,
+            "p95": 0.138,
+            "sd": 0.036331175822946
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0852800000000001,
+            "median": 0.065,
+            "n": 300,
+            "p95": 0.141,
+            "sd": 0.0361921885916031
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0849866666666666,
+            "median": 0.064,
+            "n": 300,
+            "p95": 0.14,
+            "sd": 0.038559078013004
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        }
+      ]
+    },
+    "acap-on": {
+      "trials": [
+        {
+          "frame_ms": {
+            "mean": 0.10554,
+            "median": 0.087,
+            "n": 300,
+            "p95": 0.22,
+            "sd": 0.0457632602271962
+          },
+          "frame_ms_at_cap": {
+            "mean": 0.0904521276595745,
+            "median": 0.086,
+            "n": 188,
+            "p95": 0.112,
+            "sd": 0.0241776589708313
+          },
+          "max_hit_bursts": 32,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.106293333333333,
+            "median": 0.088,
+            "n": 300,
+            "p95": 0.227,
+            "sd": 0.0451234718810979
+          },
+          "frame_ms_at_cap": {
+            "mean": 0.0904840425531915,
+            "median": 0.087,
+            "n": 188,
+            "p95": 0.1,
+            "sd": 0.0233827661899393
+          },
+          "max_hit_bursts": 32,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.10769,
+            "median": 0.089,
+            "n": 300,
+            "p95": 0.225,
+            "sd": 0.0453410033923904
+          },
+          "frame_ms_at_cap": {
+            "mean": 0.0925372340425531,
+            "median": 0.088,
+            "n": 188,
+            "p95": 0.116,
+            "sd": 0.023747191149602
+          },
+          "max_hit_bursts": 32,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        }
+      ]
+    },
+    "celebration-off": {
+      "trials": [
+        {
+          "frame_ms": {
+            "mean": 0.0458684210526316,
+            "median": 0.045,
+            "n": 38,
+            "p95": 0.049,
+            "sd": 0.00215821563724344
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0499736842105263,
+            "median": 0.049,
+            "n": 38,
+            "p95": 0.058,
+            "sd": 0.00650358255577216
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0484210526315789,
+            "median": 0.049,
+            "n": 38,
+            "p95": 0.053,
+            "sd": 0.00278637203766658
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0510263157894737,
+            "median": 0.051,
+            "n": 38,
+            "p95": 0.057,
+            "sd": 0.00284259913521547
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0488421052631579,
+            "median": 0.05,
+            "n": 38,
+            "p95": 0.052,
+            "sd": 0.00242204197733473
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0490263157894737,
+            "median": 0.049,
+            "n": 38,
+            "p95": 0.056,
+            "sd": 0.00314072501618839
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        }
+      ]
+    },
+    "celebration-on": {
+      "trials": [
+        {
+          "frame_ms": {
+            "mean": 0.0583157894736842,
+            "median": 0.059,
+            "n": 38,
+            "p95": 0.066,
+            "sd": 0.0038280985552981
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 4,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0536578947368421,
+            "median": 0.054,
+            "n": 38,
+            "p95": 0.057,
+            "sd": 0.00352041394824509
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 4,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0559473684210526,
+            "median": 0.056,
+            "n": 38,
+            "p95": 0.062,
+            "sd": 0.00278943342519057
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 4,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0549210526315789,
+            "median": 0.054,
+            "n": 38,
+            "p95": 0.07,
+            "sd": 0.00503169188110165
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 4,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.058,
+            "median": 0.059,
+            "n": 38,
+            "p95": 0.063,
+            "sd": 0.0028379665350483
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 4,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0546052631578947,
+            "median": 0.053,
+            "n": 38,
+            "p95": 0.059,
+            "sd": 0.00233121559386781
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 4,
+          "trail_frames": 0
+        }
+      ]
+    },
+    "empty-off": {
+      "trials": [
+        {
+          "frame_ms": {
+            "mean": 0.00422666666666667,
+            "median": 0.004,
+            "n": 300,
+            "p95": 0.005,
+            "sd": 0.000492711651435628
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.00438666666666666,
+            "median": 0.004,
+            "n": 300,
+            "p95": 0.005,
+            "sd": 0.000558146318868487
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.00421666666666667,
+            "median": 0.004,
+            "n": 300,
+            "p95": 0.005,
+            "sd": 0.000412661913765328
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        }
+      ]
+    },
+    "idle-off": {
+      "trials": [
+        {
+          "frame_ms": {
+            "mean": 0.0294533333333333,
+            "median": 0.028,
+            "n": 300,
+            "p95": 0.036,
+            "sd": 0.00468268948628586
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0304566666666666,
+            "median": 0.03,
+            "n": 300,
+            "p95": 0.036,
+            "sd": 0.00242232969668051
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0289933333333333,
+            "median": 0.028,
+            "n": 300,
+            "p95": 0.033,
+            "sd": 0.00235196258094443
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        }
+      ]
+    },
+    "idle-on": {
+      "trials": [
+        {
+          "frame_ms": {
+            "mean": 0.03069,
+            "median": 0.03,
+            "n": 300,
+            "p95": 0.036,
+            "sd": 0.00328886334066629
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0326133333333333,
+            "median": 0.033,
+            "n": 300,
+            "p95": 0.036,
+            "sd": 0.00406105027301502
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.03216,
+            "median": 0.032,
+            "n": 300,
+            "p95": 0.035,
+            "sd": 0.00207897582194393
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        }
+      ]
+    },
+    "move-off": {
+      "trials": [
+        {
+          "frame_ms": {
+            "mean": 0.0295299999999999,
+            "median": 0.028,
+            "n": 300,
+            "p95": 0.036,
+            "sd": 0.00283712252362263
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.03061,
+            "median": 0.031,
+            "n": 300,
+            "p95": 0.034,
+            "sd": 0.00236287478667937
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0295933333333333,
+            "median": 0.03,
+            "n": 300,
+            "p95": 0.033,
+            "sd": 0.00206935488846248
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 0
+        }
+      ]
+    },
+    "move-on": {
+      "trials": [
+        {
+          "frame_ms": {
+            "mean": 0.0329833333333333,
+            "median": 0.032,
+            "n": 300,
+            "p95": 0.04,
+            "sd": 0.00353052464038185
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 300
+        },
+        {
+          "frame_ms": {
+            "mean": 0.0325,
+            "median": 0.031,
+            "n": 300,
+            "p95": 0.037,
+            "sd": 0.00317968047026373
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 300
+        },
+        {
+          "frame_ms": {
+            "mean": 0.03333,
+            "median": 0.033,
+            "n": 300,
+            "p95": 0.037,
+            "sd": 0.00219022608444958
+          },
+          "max_hit_bursts": 0,
+          "max_level_bursts": 0,
+          "trail_frames": 300
+        }
+      ]
+    }
+  },
+  "meta": {
+    "adapter": "",
+    "adapter_vendor": "",
+    "cpu": "Apple M4",
+    "display": "headless",
+    "engine": "4.7.2-stable (official)",
+    "fixed_fps": 60,
+    "frames": 300,
+    "os": "macOS 26.6.2",
+    "project_renderer": "gl_compatibility",
+    "renderer": "gl_compatibility",
+    "rendering_driver": "opengl3",
+    "source_revision": "ab2a082f2689505f9b4c69e12de51310f764163c",
+    "trials": 3,
+    "utc": "2026-10-29T21:52:04",
+    "warmup": 30
+  }
+}

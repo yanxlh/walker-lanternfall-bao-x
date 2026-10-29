@@ -1208,7 +1208,7 @@ N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt f
 | Settings | `{"seed": 11, "width": 1536, "height": 1024, "steps": 4, "quantize": 4, "seconds": 382.6}` |
 | Storyboard panels | P1, P2, P3, P4, P5, P6, P7, P8, P9 |
 | Decision | **reject** by Bao Xing at 2026-09-29T20:53:50+00:00 |
-| Reason | Bao 2026-09-29: rendered as a shaded, 3D-looking illustration instead of 2D pixel art ("不用3d就是2d像素游戏"); FLUX also ignored the 3x4 grid and drew mostly standing poses. Best identity of the batch (brass lamp with spout, satchel, long coat) - kept as the look to carry into the pixel-art prompt. |
+| Reason | Bao 2026-09-29: rendered as a shaded, 3D-looking illustration instead of 2D pixel art ("Use 2D pixel art rather than 3D"); FLUX also ignored the 3x4 grid and drew mostly standing poses. Best identity of the batch (brass lamp with spout, satchel, long coat) - kept as the look to carry into the pixel-art prompt. |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/ART-PC-01/ART-PC-01-20260929T202956Z-s11.png) |
@@ -1236,7 +1236,7 @@ N/A — FLUX.1-schnell is guidance-distilled and mflux does not accept a negativ
 | Settings | `{"seed": 23, "width": 1536, "height": 1024, "steps": 4, "quantize": 4, "seconds": 442.1}` |
 | Storyboard panels | P1, P2, P3, P4, P5, P6, P7, P8, P9 |
 | Decision | **reject** by Bao Xing at 2026-09-29T20:53:50+00:00 |
-| Reason | Bao 2026-09-29: rendered as a shaded, 3D-looking illustration instead of 2D pixel art ("不用3d就是2d像素游戏"); FLUX also ignored the 3x4 grid and drew mostly standing poses. Also drew 20 figures, a diving-helmet head, one plain human head and one lamp-less silhouette. |
+| Reason | Bao 2026-09-29: rendered as a shaded, 3D-looking illustration instead of 2D pixel art ("Use 2D pixel art rather than 3D"); FLUX also ignored the 3x4 grid and drew mostly standing poses. Also drew 20 figures, a diving-helmet head, one plain human head and one lamp-less silhouette. |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/ART-PC-01/ART-PC-01-20260929T203619Z-s23.png) |
@@ -1264,7 +1264,7 @@ N/A — FLUX.1-schnell is guidance-distilled and mflux does not accept a negativ
 | Settings | `{"seed": 37, "width": 1536, "height": 1024, "steps": 4, "quantize": 4, "seconds": 374.0}` |
 | Storyboard panels | P1, P2, P3, P4, P5, P6, P7, P8, P9 |
 | Decision | **reject** by Bao Xing at 2026-09-29T20:53:50+00:00 |
-| Reason | Bao 2026-09-29: rendered as a shaded, 3D-looking illustration instead of 2D pixel art ("不用3d就是2d像素游戏"); FLUX also ignored the 3x4 grid and drew mostly standing poses. Also scattered layout with inconsistent figure sizes. |
+| Reason | Bao 2026-09-29: rendered as a shaded, 3D-looking illustration instead of 2D pixel art ("Use 2D pixel art rather than 3D"); FLUX also ignored the 3x4 grid and drew mostly standing poses. Also scattered layout with inconsistent figure sizes. |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/ART-PC-01/ART-PC-01-20260929T204341Z-s37.png) |
@@ -2014,7 +2014,7 @@ N/A — FLUX.1-schnell is guidance-distilled; mflux accepts no negative prompt f
 | Settings | `{"seed": 5, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 94.9}` |
 | Storyboard panels | P2, P3, P4, P5, P7, P8 |
 | Decision | **modify** by Bao Xing at 2026-09-30T01:48:34+00:00 |
-| Reason | Bao, after listening to all four loops three times: picked the first one; the rest were too chaotic ("第一个 剩下的太乱了 后面的杂音太多"). Measured: steadiest tempo (beat-interval CV 0.009), even loudness (RMS CV 0.17), no fade-out ending, warmest timbre (centroid 359 Hz, 0.8% energy above 6 kHz), smallest seam jump. |
+| Reason | Bao, after listening to all four loops three times: picked the first one; the rest were too chaotic ("The first one; the rest are too cluttered. Too much background noise"). Measured: steadiest tempo (beat-interval CV 0.009), even loudness (RMS CV 0.17), no fade-out ending, warmest timbre (centroid 359 Hz, 0.8% energy above 6 kHz), smallest seam jump. |
 | Manual edits | 8-bar loop cut on detected beats after a 1 s skip (95.7 BPM, 20.0 s); 0.25 s equal-power crossfade of the tail into the head; normalised to -3 dBFS peak; OGG Vorbis; loop flag set in Godot |
 | Project files | godot/assets/music/mus_01_night_market.ogg |
 | Thumbnail | ![](gen/thumbs/MUS-01/MUS-01-20260930T013739Z-s5.png) |
@@ -2046,7 +2046,7 @@ N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are 
 | Settings | `{"seed": 8, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 95.1}` |
 | Storyboard panels | P2, P3, P4, P5, P7, P8 |
 | Decision | **reject** by Bao Xing at 2026-09-30T01:48:34+00:00 |
-| Reason | Bao: too chaotic / too much noise ("太乱了，杂音太多"). Measured: uneven loudness (RMS CV 0.41) and a fade-out ending (last 1 s at 34% of the mean). |
+| Reason | Bao: too chaotic / too much noise ("Too cluttered and noisy"). Measured: uneven loudness (RMS CV 0.41) and a fade-out ending (last 1 s at 34% of the mean). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/MUS-01/MUS-01-20260930T013914Z-s8.png) |
@@ -2074,7 +2074,7 @@ N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are 
 | Settings | `{"seed": 13, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 95.3}` |
 | Storyboard panels | P2, P3, P4, P5, P7, P8 |
 | Decision | **reject** by Bao Xing at 2026-09-30T01:48:34+00:00 |
-| Reason | Bao: too chaotic / too much noise ("太乱了，杂音太多"). Measured: brightest candidate (centroid 859 Hz, 6.6% energy above 6 kHz - 8x s5) and a fade-out ending. |
+| Reason | Bao: too chaotic / too much noise ("Too cluttered and noisy"). Measured: brightest candidate (centroid 859 Hz, 6.6% energy above 6 kHz - 8x s5) and a fade-out ending. |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/MUS-01/MUS-01-20260930T014049Z-s13.png) |
@@ -2102,7 +2102,7 @@ N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are 
 | Settings | `{"seed": 21, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 95.0}` |
 | Storyboard panels | P2, P3, P4, P5, P7, P8 |
 | Decision | **reject** by Bao Xing at 2026-09-30T01:48:34+00:00 |
-| Reason | Bao: too chaotic / too much noise ("太乱了，杂音太多"). Measured: gets quieter towards the end (69% of the mean) and the beat tracker locked onto double time (191 BPM). |
+| Reason | Bao: too chaotic / too much noise ("Too cluttered and noisy"). Measured: gets quieter towards the end (69% of the mean) and the beat tracker locked onto double time (191 BPM). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/MUS-01/MUS-01-20260930T014225Z-s21.png) |
@@ -2244,7 +2244,7 @@ N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are 
 | Settings | `{"seed": 34, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 92.5}` |
 | Storyboard panels | P6 |
 | Decision | **modify** by Bao Xing at 2026-09-30T02:34:59+00:00 |
-| Reason | Bao, after listening to the three base+layer mixes (x3 loops): picked s34 because it has an ancient feel ("有种远古的感觉"). Measured: 97.5 BPM (stretch 0.99 to the MUS-01 loop), closest harmony to MUS-01 (chroma correlation 0.40), brighter than the base (centroid 769 Hz vs 337 Hz) with little hiss (2.6% above 6 kHz). |
+| Reason | Bao, after listening to the three base+layer mixes (x3 loops): picked s34 because it has an ancient feel ("It has an ancient feeling"). Measured: 97.5 BPM (stretch 0.99 to the MUS-01 loop), closest harmony to MUS-01 (chroma correlation 0.40), brighter than the base (centroid 769 Hz vs 337 Hz) with little hiss (2.6% above 6 kHz). |
 | Manual edits | 8 bars cut on detected beats after a 1 s skip, time-stretched by 0.9897 to exactly MUS-01's 882176 frames; 0.25 s equal-power tail-into-head crossfade; normalised to -3 dBFS peak; OGG Vorbis; plays silently in sync with MUS-01 and fades in over 2 s on evolution |
 | Project files | godot/assets/music/mus_02_sunflare_layer.ogg |
 | Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T015711Z-s34.png) |
@@ -2276,7 +2276,7 @@ N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are 
 | Settings | `{"seed": 55, "duration_s": 30, "max_new_tokens": 1500, "guidance_scale": 3.0, "sample_rate": 32000, "device": "mps", "dtype": "float16", "condition_on": null, "seconds": 93.3}` |
 | Storyboard panels | P6 |
 | Decision | **reject** by Bao Xing at 2026-09-30T02:34:59+00:00 |
-| Reason | Bao listened to the base+layer mix and chose s34 instead ("1 因为有种远古的感觉"). Measured: best tempo fit (stretch 1.004) but weakest harmonic match to MUS-01 (chroma correlation 0.27). |
+| Reason | Bao listened to the base+layer mix and chose s34 instead ("1 Because it has an ancient feeling"). Measured: best tempo fit (stretch 1.004) but weakest harmonic match to MUS-01 (chroma correlation 0.27). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/MUS-02/MUS-02-20260930T015844Z-s55.png) |
@@ -2362,7 +2362,7 @@ N/A — MusicGen has no negative prompt; exclusions (vocals, intro, ending) are 
 | Settings | `{"seed": 1, "duration_s": 0.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 268.6}` |
 | Storyboard panels | P3 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
-| Reason | Bright (centroid 7.2 kHz, 62% above 6 kHz). Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Bright (centroid 7.2 kHz, 62% above 6 kHz). Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-01/SFX-01-20260930T025240Z-s1.png) |
@@ -2390,7 +2390,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 2, "duration_s": 0.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 323.3}` |
 | Storyboard panels | P3 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
-| Reason | Harshest: 95% of its energy above 6 kHz (centroid 11.1 kHz). Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Harshest: 95% of its energy above 6 kHz (centroid 11.1 kHz). Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-01/SFX-01-20260930T025755Z-s2.png) |
@@ -2418,7 +2418,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 3, "duration_s": 0.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 355.4}` |
 | Storyboard panels | P3 |
 | Decision | **modify** by Bao Xing at 2026-09-30T16:50:04+00:00 |
-| Reason | Warmest pop (centroid 4.8 kHz, 38% of energy above 6 kHz) - the brief wants no harsh transients on the most frequent sound. Bao listened to all three candidates and chose this one: "3 不刺耳" (not harsh) ("是听后选择的"). |
+| Reason | Warmest pop (centroid 4.8 kHz, 38% of energy above 6 kHz) - the brief wants no harsh transients on the most frequent sound. Bao listened to all three candidates and chose this one: "3 Not harsh" (not harsh) ("I chose after listening"). |
 | Manual edits | leading/trailing silence trimmed (40 dB), capped at 0.35 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
 | Project files | godot/assets/sfx/sfx_01_kill.wav |
 | Thumbnail | ![](gen/thumbs/SFX-01/SFX-01-20260930T030318Z-s3.png) |
@@ -2452,7 +2452,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 1, "duration_s": 0.4, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 338.1}` |
 | Storyboard panels | P3 |
 | Decision | **modify** by Bao Xing at 2026-09-30T16:50:05+00:00 |
-| Reason | Cleanest bell (tonal, 32% above 6 kHz). Bao listened to all three candidates and chose this one: "1 干净" (clean) ("是听后选择的"). |
+| Reason | Cleanest bell (tonal, 32% above 6 kHz). Bao listened to all three candidates and chose this one: "1 Clean" (clean) ("I chose after listening"). |
 | Manual edits | leading/trailing silence trimmed (40 dB), capped at 0.3 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
 | Project files | godot/assets/sfx/sfx_02_pickup.wav |
 | Thumbnail | ![](gen/thumbs/SFX-02/SFX-02-20260930T030924Z-s1.png) |
@@ -2484,7 +2484,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 2, "duration_s": 0.4, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 341.8}` |
 | Storyboard panels | P3 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
-| Reason | Hiss: 96% of its energy above 6 kHz. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Hiss: 96% of its energy above 6 kHz. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-02/SFX-02-20260930T031502Z-s2.png) |
@@ -2512,7 +2512,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 3, "duration_s": 0.4, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 348.7}` |
 | Storyboard panels | P3 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
-| Reason | 70% above 6 kHz. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | 70% above 6 kHz. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-02/SFX-02-20260930T032044Z-s3.png) |
@@ -2542,7 +2542,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 1, "duration_s": 0.6, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 327.0}` |
 | Storyboard panels | P5 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
-| Reason | Bright (centroid 4.5 kHz) - not a dull hit. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Bright (centroid 4.5 kHz) - not a dull hit. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-03/SFX-03-20260930T032646Z-s1.png) |
@@ -2570,7 +2570,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 2, "duration_s": 0.6, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 320.0}` |
 | Storyboard panels | P5 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:05+00:00 |
-| Reason | Dull enough (695 Hz) but s3 is duller. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Dull enough (695 Hz) but s3 is duller. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-03/SFX-03-20260930T033213Z-s2.png) |
@@ -2598,7 +2598,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 3, "duration_s": 0.6, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 307.1}` |
 | Storyboard panels | P5 |
 | Decision | **modify** by Bao Xing at 2026-09-30T16:50:05+00:00 |
-| Reason | The dull, muffled thud the brief asks for harm (centroid 505 Hz, 1% above 6 kHz). Bao listened to all three candidates and chose this one: "3 听着像受伤" (sounds like being hurt) ("是听后选择的"). |
+| Reason | The dull, muffled thud the brief asks for harm (centroid 505 Hz, 1% above 6 kHz). Bao listened to all three candidates and chose this one: "3 Sounds like being hurt" (sounds like being hurt) ("I chose after listening"). |
 | Manual edits | leading/trailing silence trimmed (40 dB), capped at 0.5 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
 | Project files | godot/assets/sfx/sfx_03_hurt.wav |
 | Thumbnail | ![](gen/thumbs/SFX-03/SFX-03-20260930T033733Z-s3.png) |
@@ -2632,7 +2632,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 1, "duration_s": 1.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 315.0}` |
 | Storyboard panels | P4 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
-| Reason | Brightest of the three (centroid 3.5 kHz). Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Brightest of the three (centroid 3.5 kHz). Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-04/SFX-04-20260930T034251Z-s1.png) |
@@ -2660,7 +2660,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 2, "duration_s": 1.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 318.0}` |
 | Storyboard panels | P4 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
-| Reason | Warm (2.2 kHz) but s3 is warmer. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Warm (2.2 kHz) but s3 is warmer. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-04/SFX-04-20260930T034806Z-s2.png) |
@@ -2688,7 +2688,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 3, "duration_s": 1.5, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 313.2}` |
 | Storyboard panels | P4 |
 | Decision | **modify** by Bao Xing at 2026-09-30T16:50:05+00:00 |
-| Reason | Warmest chime (centroid 1.2 kHz, 4.5% above 6 kHz). Bao listened to all three candidates and chose this one for this reason ("是听后选择的"). |
+| Reason | Warmest chime (centroid 1.2 kHz, 4.5% above 6 kHz). Bao listened to all three candidates and chose this one for this reason ("I chose after listening"). |
 | Manual edits | leading/trailing silence trimmed (40 dB), capped at 1.2 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
 | Project files | godot/assets/sfx/sfx_04_levelup.wav |
 | Thumbnail | ![](gen/thumbs/SFX-04/SFX-04-20260930T035324Z-s3.png) |
@@ -2722,7 +2722,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 1, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 331.5}` |
 | Storyboard panels | P6 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
-| Reason | Very slow 0.3 s swell, mostly low rumble (centroid 82 Hz). Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Very slow 0.3 s swell, mostly low rumble (centroid 82 Hz). Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-05/SFX-05-20260930T035848Z-s1.png) |
@@ -2750,7 +2750,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 2, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 334.6}` |
 | Storyboard panels | P6 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
-| Reason | Slow 0.1 s attack, low. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Slow 0.1 s attack, low. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-05/SFX-05-20260930T040420Z-s2.png) |
@@ -2778,7 +2778,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 3, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 304.4}` |
 | Storyboard panels | P6 |
 | Decision | **modify** by Bao Xing at 2026-09-30T16:50:06+00:00 |
-| Reason | Quickest to arrive (19 ms attack) so the burst lands on the evolution moment. Bao listened to all three candidates and chose this one for this reason ("是听后选择的"). |
+| Reason | Quickest to arrive (19 ms attack) so the burst lands on the evolution moment. Bao listened to all three candidates and chose this one for this reason ("I chose after listening"). |
 | Manual edits | leading/trailing silence trimmed (40 dB), capped at 2.5 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
 | Project files | godot/assets/sfx/sfx_05_evolve.wav |
 | Thumbnail | ![](gen/thumbs/SFX-05/SFX-05-20260930T040954Z-s3.png) |
@@ -2812,7 +2812,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 1, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 313.5}` |
 | Storyboard panels | P7 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
-| Reason | 69% above 6 kHz. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | 69% above 6 kHz. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-06a/SFX-06a-20260930T041510Z-s1.png) |
@@ -2840,7 +2840,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 2, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 34530.9}` |
 | Storyboard panels | P7 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:06+00:00 |
-| Reason | 42% above 6 kHz vs 29% for s3. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | 42% above 6 kHz vs 29% for s3. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-06a/SFX-06a-20260930T042023Z-s2.png) |
@@ -2868,7 +2868,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 3, "duration_s": 3.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 6919.3}` |
 | Storyboard panels | P7 |
 | Decision | **modify** by Bao Xing at 2026-09-30T16:50:06+00:00 |
-| Reason | Least hiss (29% above 6 kHz) and a slow rise that reads as a flame going out. Bao listened to all three candidates and chose this one for this reason ("是听后选择的"). |
+| Reason | Least hiss (29% above 6 kHz) and a slow rise that reads as a flame going out. Bao listened to all three candidates and chose this one for this reason ("I chose after listening"). |
 | Manual edits | leading/trailing silence trimmed (40 dB), capped at 3.0 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
 | Project files | godot/assets/sfx/sfx_06a_lose.wav |
 | Thumbnail | ![](gen/thumbs/SFX-06a/SFX-06a-20260930T135554Z-s3.png) |
@@ -2902,7 +2902,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 1, "duration_s": 4.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 265.3}` |
 | Storyboard panels | P9 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:07+00:00 |
-| Reason | Takes 1.8 s to reach full level; 47% above 6 kHz. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | Takes 1.8 s to reach full level; 47% above 6 kHz. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-06b/SFX-06b-20260930T155126Z-s1.png) |
@@ -2930,7 +2930,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 2, "duration_s": 4.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 269.8}` |
 | Storyboard panels | P9 |
 | Decision | **modify** by Bao Xing at 2026-09-30T16:50:07+00:00 |
-| Reason | Cleanest and warmest (centroid 3.6 kHz, 4.5% above 6 kHz), full level at once. Bao listened to all three candidates and chose this one for this reason ("是听后选择的"). |
+| Reason | Cleanest and warmest (centroid 3.6 kHz, 4.5% above 6 kHz), full level at once. Bao listened to all three candidates and chose this one for this reason ("I chose after listening"). |
 | Manual edits | leading/trailing silence trimmed (40 dB), capped at 4.0 s, 4 ms fade-in, fade-out, mono 44.1 kHz, peak-normalised to -1 dBFS, 16-bit WAV (gen/sfx_process.py) |
 | Project files | godot/assets/sfx/sfx_06b_win.wav |
 | Thumbnail | ![](gen/thumbs/SFX-06b/SFX-06b-20260930T155552Z-s2.png) |
@@ -2962,7 +2962,7 @@ music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortio
 | Settings | `{"seed": 3, "duration_s": 4.0, "steps": 100, "cfg": 7.0, "sample_rate": 44100, "device": "mps", "scheduler": "CosineDPMSolverMultistepScheduler (model default); final-step noise below sigma_min returned as zeros (gen/sfx_sampler_fix.py)", "seconds": 295.1}` |
 | Storyboard panels | P9 |
 | Decision | **reject** by Bao Xing at 2026-09-30T16:50:07+00:00 |
-| Reason | 68% above 6 kHz. Not chosen: Bao listened to all three candidates ("是听后选择的"). |
+| Reason | 68% above 6 kHz. Not chosen: Bao listened to all three candidates ("I chose after listening"). |
 | Manual edits | — |
 | Project files | — |
 | Thumbnail | ![](gen/thumbs/SFX-06b/SFX-06b-20260930T160022Z-s3.png) |
@@ -2979,3 +2979,5 @@ a gentle warm triumphant flourish of glass bells and soft chimes, fog clearing, 
 music, melody, voice, speech, singing, crowd, reverb tail, noise hiss, distortion, clipping, low quality
 ```
 
+
+Quoted student feedback in this report is translated into English from the recorded conversation.

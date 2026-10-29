@@ -1,16 +1,26 @@
-```
-Assignment: Assignment 2 - Generate Art, Sound, and Music for Your Game
-Student: Bao Xing
-Project name: walker-lanternfall-bao-x (game title: Lanternfall)
-Game concept in one sentence: A lamp-headed courier is trapped in a fog-bound midnight market, and the light on his shoulders is his only weapon — keep moving, grow the light, and survive three minutes until the fog lifts.
-GitHub repository/folder URL: https://github.com/yanxlh/walker-lanternfall-bao-x
-Started from (walker-jumpman, my Assignment 1 project, or an empty project): an empty project (blank Godot 4.7.2). Only the protagonist concept, the Lamp-Head Courier, comes from my Assignment 1 (yanxlh/walker-jumpman-bao-x, which extended nikbearbrown/walker-jumpman); no files from either were copied.
-Submitted commit SHA: given in the Canvas submission comment (a file cannot contain the hash of the commit that contains it); the ZIP is `git archive` of that commit.
-Source revision shown in the film: 8a6f9881e0e2858e523d22bb09f1a423695f04e1 — `godot/` is identical at the submitted commit (`git diff 8a6f988 <submitted> -- godot/` is empty).
-Godot version and operating system: Godot 4.7.2.stable.official.ed1daf0bf (GL Compatibility) on macOS 26, Apple M4 Pro, 16 GB.
-Generative models used (name, version, where run, license): all run locally on my MacBook (Apple M4 Pro, 16 GB, macOS 26), no paid service or API key — FLUX.1-schnell, Hugging Face revision 741f7c3, via mflux 0.20.0 (4-bit), Apache-2.0: all 14 art assets · Stable Audio Open 1.0, revision f21265c, via diffusers 0.40.0, Stability AI Community License: 7 sound effects · MusicGen-medium, revision d3bd7b0, via transformers 5.17.0, weights CC-BY-NC-4.0 (non-commercial coursework): 2 music loops · MusicGen-melody, revision 68d653a, same runtime and licence: one MUS-02 batch, all rejected · for the film's narration only: Kokoro-82M v1.0 (ONNX files from kokoro-onnx release model-files-v1.0), via kokoro-onnx 0.4.7 in the course's Brutalist toolkit, run locally, Apache-2.0 (kokoro-onnx code MIT), stock voice am_onyx.
-Final film URL and filename: https://drive.google.com/file/d/1gTWvQ8B_j_6DBn81V0L9I-onbXgtg0nU/view?usp=sharing · claude-liam-walker-lanternfall-bao-x-gamedev.mp4
-Final film SHA-256: 585a89d4a1818588e659e20b69f835176d490790bf03f49efec30b5538ddc779
-Summary of my work: I chose the game (a survivors-like with two weapons, branching upgrades and one evolution), the theme, the scope and the local-only models, and committed the concept, storyboard, character sheet and change brief before any generation (tag design-v1). I picked every asset that shipped and listened to every sound-effect candidate before choosing (five MUS-02 layer candidates were rejected by an automated check I did not listen to; the log says so). I played the slice twice for the test report (sound on, then muted) and asked for the changes that came out of play: bullets that vanish on a hit, a fuller and then more broken-up map, blocking props, rising XP cost, tougher monsters over time and new cards. Claude (Claude Code, Claude Opus 5.5) drafted the design documents, the plan and every prompt from my choices, wrote the Godot code, tests and generation scripts, ran the models and measured the candidates, and wrote and built the film, which Kokoro narrates. Who did what: SOURCES.md, and day by day FRICTIONAL.md. Any logged generation can be re-run from its log entry (gen/reproduce.py; four re-runs on 2026-10-04 matched the originals exactly).
-Known limitations: one map, two weapons and one evolution, no saving; balance tuned only against my play and scripted bots; the fog-wraith has the lowest measured contrast against the ground (readable in my muted run); the r = 10 hurtbox also covers the lower lamp; gamepad bindings exist but are untested (the left stick can skip cards).
-```
+# Assignment 6 submission
+
+Assignment: Assignment 6 - Creating Particle Effects with Godot and Claude
+Student: Xinghe Bao (project credit: Bao Xing)
+Project name: walker-lanternfall-bao-x (Lanternfall)
+GitHub repository URL: https://github.com/yanxlh/walker-lanternfall-bao-x
+Git tag and submitted commit SHA: a6; the exact submitted SHA is recorded in the Canvas submission comment, outside this commit.
+Game-source revision shown in the film: c3e12737d9b38679efa61622cb62c793935aff59 in the course repository. The standalone project history uses rewritten subtree commit IDs; see SOURCE-REVISION.md for the tree-identity check.
+Godot version, renderer, and operating system: Godot 4.7.2.stable.official.ed1daf0bf; GL Compatibility; macOS 26.6.2.
+GPU used for the GPU price: Apple M4; renderer and driver are recorded per run in evidence/assignment-6/cost/final-comparison/.
+Effect A: weapon_hit(pos) on lethal and nonlethal weapon hits; CPUParticles2D; one independent burst per accepted hit, overlap cap 32 (512 particles), ignoring new events when full.
+Effect B: movement trail while the player is PLAYING, visible and actually moving; CPUParticles2D; sphere emission radius 3, unlike A's point emission. World-space particles remain behind the moving player. Pause and hidden behavior are tested.
+Budgets, and the price each is compared on: A CPU delta <= 1.0 ms/frame and GPU delta <= 0.75 ms/frame; B CPU delta <= 0.25 ms/frame and GPU delta <= 0.25 ms/frame. Compare headless frame CPU deltas and windowed measured GPU deltas separately. Results, spread and measurement conditions are in evidence/assignment-6/cost/FINAL-COMPARISON.md.
+Texture sources and licences: the particle spark cross is generated by scripts/generate_spark_texture.py, with no external particle asset or model. Earlier game art uses FLUX.1-schnell (Apache-2.0), sound uses Stable Audio Open 1.0 (Stability AI Community License), music uses MusicGen-medium (CC-BY-NC-4.0). Exact revisions, terms and attribution are in SOURCES.md and godot/assets/particles/ATTRIBUTION.md.
+Final film URL: https://drive.google.com/file/d/1aPkXNgsLPQ3GEAFGbAmCPiJ9GEIpiywS/view
+Final film filename: claude-liam-walker-lanternfall-bao-x-particles-gamedev.mp4
+Final film SHA-256: 4d4d590039ff8a6dfd26571018120ecec9be324a7a8b1df16cb923020eeb6417
+Summary of my work: I specified the effects, played the integrated game, reported visibility problems, approved the changes, requested the upgrade celebration on the UI character, and kept the final revisions. I watched and listened to the final film. Claude Code produced the implementation, fixtures, tests, comparisons and film. Codex performed the editor conversion, profiler capture, final test rerun and submission preparation. Detailed attribution is in CONTRIBUTIONS-assignment-6.md.
+Known limitations: one three-minute map; no save system; gamepad behavior remains unverified. The generated GPU study copy lacks the CPU effect's ramp textures and is not used by gameplay; this is documented in TEST-REPORT.md. GPU results must be read with their recorded renderer and measurement conditions.
+Changed games since Assignment 2: no. This is the same Lanternfall game, originally started from a blank project. Earlier Assignment 3 work remains preserved in the repository's a3 tag and master history.
+
+## Run and verify
+
+Open godot/project.godot in Godot 4.7.2 and run the main scene. Enter starts; WASD/arrows move; 1/2/3 choose upgrade cards; P pauses; R restarts. Import a fresh clone once with `Godot --headless --path godot --import --quit`. Run the seven wrapper commands in CLAUDE.md: logic 32, gameplay 65, audio 25 (realtime), A configuration 39, extra configuration 79, particle state 34 and particle edges 18: 292 assertions total.
+
+Source ZIP excludes .godot, credentials, large media and files over 25 MB. The film is hosted separately on Google Drive with link-viewer access.

@@ -14,8 +14,10 @@ One bounded change, a prediction written first, and a test that answers it. The 
 
 ## The request that produced this film
 
-Bao, 2026-10-01: "不用，直接开始做视频" (no — go straight to making the video), after the assignment brief named the film tool: "godot-gamedev skill + walker modifier", a 4K landscape film with Walker bookends and Verdict → Your Turn → regular outro, covering ten items (concept and pillars; one asset traced from design to prompt to raw output to edits to Godot; two or more character states; four SFX on real events; a game-sound-only segment; a source change and what the player sees or hears; tests, uncertainties and next steps; who did what; which model made each asset; the source revision shown).
+Bao, 2026-10-01: "No further changes; start making the video" (no — go straight to making the video), after the assignment brief named the film tool: "godot-gamedev skill + walker modifier", a 4K landscape film with Walker bookends and Verdict → Your Turn → regular outro, covering ten items (concept and pillars; one asset traced from design to prompt to raw output to edits to Godot; two or more character states; four SFX on real events; a game-sound-only segment; a source change and what the player sees or hears; tests, uncertainties and next steps; who did what; which model made each asset; the source revision shown).
 
 ## Prompts inside the film's evidence
 
 The ART-PC-01 prompts shown in B05 are quoted verbatim from `gen/log/ART-PC-01/*.json`; they were written for FLUX.1-schnell during the asset work, not for the film.
+
+Student feedback quotations above are English translations of the recorded statements.

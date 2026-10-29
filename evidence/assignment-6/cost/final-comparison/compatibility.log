@@ -1,0 +1,37 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 90.5 - Compatibility - Using Device: Apple - Apple M4
+
+empty-off trial 0 frame mean 8.3325 ms
+idle-off trial 0 frame mean 8.3266 ms
+idle-on trial 0 frame mean 8.3327 ms
+acap-off trial 0 frame mean 8.3395 ms
+acap-on trial 0 frame mean 8.3314 ms
+move-off trial 0 frame mean 8.3205 ms
+move-on trial 0 frame mean 8.3284 ms
+celebration-off trial 0 frame mean 8.3400 ms
+celebration-on trial 0 frame mean 8.1371 ms
+empty-off trial 1 frame mean 8.3308 ms
+idle-off trial 1 frame mean 8.3344 ms
+idle-on trial 1 frame mean 8.3329 ms
+acap-off trial 1 frame mean 8.3325 ms
+acap-on trial 1 frame mean 8.3316 ms
+move-off trial 1 frame mean 8.3321 ms
+move-on trial 1 frame mean 8.3333 ms
+celebration-off trial 1 frame mean 8.3322 ms
+celebration-on trial 1 frame mean 8.3474 ms
+empty-off trial 2 frame mean 8.3262 ms
+idle-off trial 2 frame mean 8.3245 ms
+idle-on trial 2 frame mean 8.3380 ms
+acap-off trial 2 frame mean 8.3373 ms
+acap-on trial 2 frame mean 8.3285 ms
+move-off trial 2 frame mean 8.3412 ms
+move-on trial 2 frame mean 8.3241 ms
+celebration-off trial 2 frame mean 8.3492 ms
+celebration-on trial 2 frame mean 8.2993 ms
+celebration-off trial 3 frame mean 8.3375 ms
+celebration-on trial 3 frame mean 8.3429 ms
+celebration-off trial 4 frame mean 8.2804 ms
+celebration-on trial 4 frame mean 8.3187 ms
+celebration-off trial 5 frame mean 8.2861 ms
+celebration-on trial 5 frame mean 8.3201 ms
+saved /tmp/lanternfall-a6-release-20261029/evidence/assignment-6/cost/final-comparison/compatibility.json

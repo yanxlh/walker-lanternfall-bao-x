@@ -1,0 +1,40 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+empty-off trial 0 frame mean 0.0042 ms
+idle-off trial 0 frame mean 0.0295 ms
+idle-on trial 0 frame mean 0.0307 ms
+acap-off trial 0 frame mean 0.0828 ms
+acap-on trial 0 frame mean 0.1055 ms
+move-off trial 0 frame mean 0.0295 ms
+move-on trial 0 frame mean 0.0330 ms
+celebration-off trial 0 frame mean 0.0459 ms
+celebration-on trial 0 frame mean 0.0583 ms
+empty-off trial 1 frame mean 0.0044 ms
+idle-off trial 1 frame mean 0.0305 ms
+idle-on trial 1 frame mean 0.0326 ms
+acap-off trial 1 frame mean 0.0853 ms
+acap-on trial 1 frame mean 0.1063 ms
+move-off trial 1 frame mean 0.0306 ms
+move-on trial 1 frame mean 0.0325 ms
+celebration-off trial 1 frame mean 0.0500 ms
+celebration-on trial 1 frame mean 0.0537 ms
+empty-off trial 2 frame mean 0.0042 ms
+idle-off trial 2 frame mean 0.0290 ms
+idle-on trial 2 frame mean 0.0322 ms
+acap-off trial 2 frame mean 0.0850 ms
+acap-on trial 2 frame mean 0.1077 ms
+move-off trial 2 frame mean 0.0296 ms
+move-on trial 2 frame mean 0.0333 ms
+celebration-off trial 2 frame mean 0.0484 ms
+celebration-on trial 2 frame mean 0.0559 ms
+celebration-off trial 3 frame mean 0.0510 ms
+celebration-on trial 3 frame mean 0.0549 ms
+celebration-off trial 4 frame mean 0.0488 ms
+celebration-on trial 4 frame mean 0.0580 ms
+celebration-off trial 5 frame mean 0.0490 ms
+celebration-on trial 5 frame mean 0.0546 ms
+saved /tmp/lanternfall-a6-release-20261029/evidence/assignment-6/cost/final-comparison/headless.json
+WARNING: 66 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 6 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
