@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://i88afs0tadse"]
+
+[ext_resource type="Texture2D" uid="uid://bbbod4mivgkcd" path="res://assets/particles/spark.png" id="1_hhr3s"]
+[ext_resource type="Shader" uid="uid://b6pvpoj8liah5" path="res://shaders/particles_generated.gdshader" id="2_xgwv8"]
+
+[sub_resource type="CanvasItemMaterial" id="Material_additive"]
+blend_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6b0w"]
+shader = ExtResource("2_xgwv8")
+shader_parameter/direction = Vector3(1, 0, 0)
+shader_parameter/spread = 180.0
+shader_parameter/flatness = 0.0
+shader_parameter/inherit_emitter_velocity_ratio = 0.0
+shader_parameter/initial_linear_velocity_min = 25.0
+shader_parameter/initial_linear_velocity_max = 55.0
+shader_parameter/directional_velocity_min = 1.0
+shader_parameter/directional_velocity_max = 1.0
+shader_parameter/angular_velocity_min = 0.0
+shader_parameter/angular_velocity_max = 0.0
+shader_parameter/orbit_velocity_min = 0.0
+shader_parameter/orbit_velocity_max = 0.0
+shader_parameter/radial_velocity_min = 0.0
+shader_parameter/radial_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/radial_accel_min = 0.0
+shader_parameter/radial_accel_max = 0.0
+shader_parameter/tangent_accel_min = 0.0
+shader_parameter/tangent_accel_max = 0.0
+shader_parameter/damping_min = 20.0
+shader_parameter/damping_max = 30.0
+shader_parameter/initial_angle_min = 0.0
+shader_parameter/initial_angle_max = 0.0
+shader_parameter/scale_min = 0.7
+shader_parameter/scale_max = 1.8
+shader_parameter/hue_variation_min = 0.0
+shader_parameter/hue_variation_max = 0.0
+shader_parameter/anim_speed_min = 0.0
+shader_parameter/anim_speed_max = 0.0
+shader_parameter/anim_offset_min = 0.0
+shader_parameter/anim_offset_max = 0.0
+shader_parameter/lifetime_randomness = 0.0
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/velocity_pivot = Vector3(0, 0, 0)
+shader_parameter/color_value = Color(1, 1, 1, 1)
+shader_parameter/gravity = Vector3(0, 12, 0)
+
+[node name="ShaderStudy" type="Node2D" unique_id=433705717]
+
+[node name="HitSparksGPU" type="GPUParticles2D" parent="." unique_id=796953881]
+texture_filter = 1
+material = SubResource("Material_additive")
+emitting = false
+amount = 16
+texture = ExtResource("1_hhr3s")
+lifetime = 0.45
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+draw_order = 0
+process_material = SubResource("ShaderMaterial_o6b0w")
