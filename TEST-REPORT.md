@@ -157,3 +157,166 @@ A fresh-context reviewer read the whole branch (Godot code, tests, pipeline, che
 - The courier is small on screen (~20 px tall); readable in both runs, but worth revisiting if the camera ever zooms out further.
 - No gamepad test is recorded.
 - Balance is tuned against my own play and scripted bots only.
+
+
+## Particle effects — 29 October 2026
+
+This section records the new automated runs separately from the earlier Assignment 2 report. The starting local course-repository snapshot was `9fa5d88`; design and wrapper were recorded at `8eb16a2`, and initial project context at `a46c055`. No local `a5` tag or earlier shader directory was found. This is not a claim that the missing assignment has been completed.
+
+Engine: Godot 4.7.2.stable.official.ed1daf0bf. Project renderer: GL Compatibility. Checks below ran headlessly with a dummy renderer and establish no visual quality or GPU cost.
+
+### Existing-suite baseline
+
+| Suite | Mode | Checks | Failures | Result |
+|---|---|---:|---:|---|
+| logic | 60 fps | 32 | 0 | `evidence/assignment-6/baseline/logic.json` |
+| gameplay | 60 fps | 65 | 0 | `evidence/assignment-6/baseline/gameplay.json` |
+| audio | realtime | 25 | 0 | `evidence/assignment-6/baseline/audio.json` |
+
+Earlier `evidence/logic.json`, `gameplay.json`, and `audio.json` were preserved byte-for-byte. Baseline logs are alongside the JSON files above. Existing gameplay tests report resource/ObjectDB cleanup warnings; they still reach the suite end with all 65 assertions passing. The environment also reports a macOS certificate-store warning; this is not a shader or script error.
+
+### Effect A configuration
+
+`./scripts/run-test.sh test_defeat_sparks_config.gd 60`: 39 checks, 0 failures. Result: `evidence/defeat_sparks_config.json`; output: `logs/test_defeat_sparks_config_60fps.log`. The test checks the real instantiated scene, all brief parameters, scale and colour resources, the generated texture, and additive draw material.
+
+| Mutation | Actual outcome | Evidence |
+|---|---|---|
+| Rename `initial_velocity_min` to `initial_velocity` | Exit 1; loaded minimum became 0 instead of 25 | `evidence/assignment-6/mutations/godot3-name.log` |
+| Change spread 180 to 90 without updating the brief | Exit 1; spread read-back failed | `evidence/assignment-6/mutations/wrong-value.log` |
+
+The scene was restored after each mutation. Its final configuration run passes again.
+
+Windowed check of the old-name mutation, repeated on 29 October 2026 against the kept r1 scene: Godot loaded the renamed property without a warning and used 0 for `initial_velocity_min`. The burst still appeared with the same colours and fade timing, but spread about 10–15% tighter, with a few sparks lingering near the centre (e.g. 45 × 43 → 40 × 42 px at 0.20 s). The configuration test failed only on that setting. The scene was restored byte-identical and the test passed again (39/0). Frames, sheet and log: `captures/defeat_sparks/mutation-godot3-name/`.
+
+### Preview smoke check
+
+A headless run of `res://previews/defeat_sparks_preview.tscn` at 30 fps with `--retrigger` completed 60 frames and printed trigger events at frames 10 and 13. This checks that the fixture loads and schedules both events. It does not prove visible particles, independent burst appearance, or correct gameplay integration.
+
+### Checks recorded later
+
+The dated sections below record, in order: gameplay integration and the real-input state test; the visibility trial and the portrait anchor; the trail comparison; Effect A's r1 revision; the windowed play checks and edge suite; CPU and GPU cost; and the generated process shader. The brief coverage table is in the play-check section. Still open: the film, the final regression at the submission tag, and fresh-clone verification.
+
+
+### Approved hit and upgrade integration — 29 October 2026
+
+The design revision was recorded before implementation at `ec024c5`. Effect A now responds to `Session.weapon_hit`, emitted for each living enemy passed to the existing `damage()` method. It includes lethal and nonlethal hits. The historical `defeat_sparks` scene filename is retained; the new listener does not subscribe to `enemy_killed`, avoiding a double burst on lethal hits. A separate celebration follows `leveled_up`; B is the movement trail.
+
+The session changes only add a signal publication and attach a presentation child. Damage arithmetic, collision queries, weapons, state transitions, input, and timing are unchanged.
+
+Configuration runs at 60 fps: A 39/39; trail and celebration 78/78. Real-input state suite at 60 fps: 31/31 (`evidence/particles_state.json`, `logs/test_particles_state_60fps.log`). The suite starts with Enter, moves with D, pauses with P, chooses a card with 1, and restarts with R through parsed keyboard events and the actual physics loop. Enemies and pickups are seeded as fixtures; it never calls the damage or particle trigger functions.
+
+Observed state evidence includes three beam hits within one particle lifetime, separate instances for lethal and nonlethal hits, positions matching the real hit signal, bursts surviving enemy removal, movement/idle/hidden/pause policies, celebration playback during LEVELUP, and restart cleanup. A stress fixture produced 40 hit events and 32 accepted instances (512 allocated particles). A real pickup awarded six levels, creating the specified maximum of four celebration instances.
+
+An initial state-test run failed four assertions because its first projectile had already been created before the fixture set the beam's piercing value. The fixture now seeds the world on `run_started`, before the first physics tick; gameplay was not changed to accommodate it. The failing output is retained at `evidence/assignment-6/integration/initial-state-test-failure.log`.
+
+The new state test reports resource/ObjectDB cleanup warnings at shutdown, as the earlier gameplay suite does. These remain a test-cleanup limitation, not a claimed clean shutdown. Logs must be reviewed alongside pass counts.
+
+These checks do not prove screen appearance, trail readability, or whether the upgrade overlay obscures the celebration. No new human verdict, frame comparison, performance measurement, or completed tuning revision is recorded.
+
+Post-integration regression: logic 32/32 at 60 fps, gameplay 65/65 at 60 fps, audio 25/25 in realtime. Results and complete logs are under `evidence/assignment-6/integration/`; earlier result files were restored after recording the new runs. Together with A configuration (39), extra configuration (78), and state checks (31), the current recorded suites pass 270 assertions. Cleanup warnings remain as described above.
+
+### Visibility trial r1 — 29 October 2026
+
+The student reported that level-up sparks and the movement trail were not obvious, then approved moving celebration particles above the upgrade HUD and increasing the trail's alpha ramp. The former now uses CanvasLayer 11 with the world camera transform; the latter uses alpha 0.95/0.70/0 at normalized t=0/0.5/1. No other particle settings were changed in this trial.
+
+Recorded post-change suites under `evidence/assignment-6/tuning/r1-tests/`: logic 32, gameplay 65, audio 25 (realtime), A configuration 39, extra configuration 79, state 33; all zero failures (273 assertions total). Added assertions verify exact overlay layer 11, ordering above HUD, and screen-space alignment with the courier. Earlier shutdown cleanup warnings persist.
+
+Headless checks establish configuration and state only. Before/after frame strips, post-change human judgment, and a kept/reverted decision are pending; this trial is not yet counted as a completed tuning evidence cycle.
+
+### Upgrade portrait anchor — 29 October 2026
+
+At the student's request, celebration particles now originate at the upgrade UI portrait's torso (HUD-local 56,325), rather than the gameplay courier at screen centre. The portrait's existing rectangle was factored into a shared constant without changing its layout. Overlay layer 11 now uses the HUD transform, independently of camera movement. Particle parameters are unchanged.
+
+Targeted verification: 34 state assertions and 65 existing gameplay assertions passed. The added camera-independence assertion confirms the burst's screen position stays with the UI when the game camera moves. Evidence is under `evidence/assignment-6/tuning/portrait-anchor/`. Shutdown cleanup warnings persist; visual judgment is pending.
+
+
+Human check update: the student accepted the upgraded celebration's placement on the UI portrait after running the updated game (“可以的”). This is a placement verdict only. Before/after fixture strips, a separate movement-trail verdict, and performance measurements are not yet recorded.
+
+
+### 29 October 2026 — movement trail accepted
+
+The student explicitly confirmed that the revised movement trail is sufficiently visible. Keep the colour/alpha ramp at alpha 0.95/0.70/0 for t=0/0.5/1, with other values unchanged. This is a running-game verdict. Before/after fixture strips still need to be captured and compared; no such image evidence is claimed by this entry.
+
+
+## 29 October 2026 — trail frame comparison recorded
+
+Capture: `captures/lantern_trail/comparison-20261029-135607/`; the student ran the windowed capture and confirmed completion. Original-setting and revised-setting strips each contain frames 10,12,20,39,40,45,51,60, at 30 fps with fixed seed 7280. The baseline was re-rendered from its preserved original resource after the revision; it is not a historical pre-edit gameplay recording.
+
+Comparison: r1 has stronger amber flecks at startup (10/12) and a clearer short trail during steady movement (20/39), with the same footprint. At stop (40) its residual sparks are brighter; by 45 both are almost gone, and at 51/60 neither leaves a trail. This supports the brightness prediction without supporting any claim of more particles or a longer lifetime. Differences are subtle at full frame and clearer in labelled magnified crops. Detailed frame reading and SHA-256 hashes are in `COMPARISON.md` and `manifest.json` alongside the captures.
+
+The student's separate running-game verdict was to keep the visibility revision. No further setting change was made from this comparison. This supplies the missing B fixture comparison; it does not complete A's required observation-driven revision, upgrade screenshot evidence, performance measurements, shader study or film.
+
+
+## 29 October 2026 — Effect A scale revision r1
+
+The student reported no problem with the hit sparks in the integrated game. The r0 fixture strip, read against the brief, showed an initial cluster of 0.35 courier height on its first frame, below "about one character height". The approved change was `scale_amount_max` 1.2 → 1.8. The configuration expectation was edited first and failed on that setting alone (`evidence/assignment-6/tuning/a-r1-tests/defeat_sparks_config-expected-failure.log`). After the scene edit, every suite passed: logic 32, gameplay 65, audio 25, A configuration 39, extra configuration 79, state 34 (274). The r1 capture matched the prediction for first-frame size, unchanged spread and fade timing. It did not match the predicted 3–4 px wider footprint: the footprint grew about 1 px while lit area grew 1.4–1.85×. Comparison: `captures/defeat_sparks/comparison-r0-r1/COMPARISON.md`. The student kept the change after playing (“保留 更清晰了”).
+
+## 29 October 2026 — windowed play checks and edge suite
+
+`godot/tests/capture_play_checks.gd` ran 12 scripted scenes in a real 1280 × 720 window and saved 56 shots with per-shot effect state. It covered the celebration, hits on plain floor and the brightest props, the trail on the floor and through a light pool, pushing into a stall, restart while moving, pause, the hidden toggle, the card screen, death and victory. Readings, measurements and the items still needing human play are in `captures/play-checks/20261029-142138/PLAY-CHECKS.md`.
+
+The new headless suite `./scripts/run-test.sh test_particles_edges.gd 60` passes 18/18 (`evidence/particles_edges.json`). It covers blocked input with zero displacement and zero emitting frames, sliding along the blocker, a one-frame position discontinuity, restart history, LOST and WON cleanup, and a clean restart from LOST. Its first run failed one fixture assertion: after sliding up, the courier was still against the stall, so moving right correctly produced no trail. The fixture was changed to walk away from the stall; presentation code was not changed.
+
+Mutation: removing `distance > 0.01 and distance <= teleport_limit` from the trail condition in `particle_presentation.gd` made `blocked-push-never-emits` (30 emitting frames) and `jump-frame-no-emission` fail. The file was then restored byte-identical (`evidence/assignment-6/mutations/edges-no-displacement-guard.log`).
+
+Regression after restore: edges 18, state 34, extra configuration 79, A configuration 39, logic 32, gameplay 65, audio 25 (realtime). All have zero failures, 292 assertions in total (`evidence/assignment-6/play-checks/`). Existing shutdown cleanup warnings persist.
+
+### Brief coverage
+
+| Brief rule | Evidence | Kind |
+|---|---|---|
+| A fires on every weapon hit, lethal and nonlethal, at the hit position | state: `real-beam-hits`, `nonlethal-hit-also-bursts`, `hit-event-position`, `one-instance-per-accepted-hit` | test |
+| A survives enemy removal; repeats are independent; cap 32 / 512 particles | state: `lethal-hit-survives-enemy-free`, `rapid-hits-overlap`, `hit-cap-*` | test |
+| A settings equal the brief (with the kept r1 value); no fixed seed in play | A configuration 39 checks; mutations `godot3-name`, `wrong-value` | test |
+| A timing: compact, then spread by 0.20 s, gone by 0.45 s | r0/r1 strips: last trace 0.40 s, none from 0.43 s | frames |
+| A size: about one height initially, at most two at widest | r1: 0.41 → 0.71 height in the first 0.07 s (below the initial target, recorded); widest ≤ 64 px of a 68 px limit | frames |
+| A pale-yellow centre, orange dissipation; readable on dark floor and bright props | first 2 frames white from additive overlap; play checks `hit-dark`, `hit-bright-cart`, `hit-bright-post` | frames; human pending |
+| A frozen outside PLAYING, cleared on terminal states and restart | state: `pause-freezes-hit`, `restart-clears-bursts`; edges: `lost-clears-hit-bursts`, `won-clears-hit-bursts`; play checks pause and card; student: pause/card/death/win/restart normal | test + frames + human |
+| B emits only while PLAYING, visible and actually moving | state: `idle-no-trail`, `real-movement-starts-trail`, `hidden-stops-emission-keeps-simulation`, `upgrade-stops-freezes-trail`; edges: `blocked-*`, `slide-along-blocker-emits` | test + frames |
+| B: no emission on teleport; restart leaves no line | edges: `jump-frame-no-emission`, `restart-history-at-new-origin`; play checks `restart-*`; mutation | test + frames |
+| B world-space trail; gone within 0.35 s of stopping | state: `trail-world-coordinates`, `idle-stops-trail`; play checks: none at 0.20 s; B fixture comparison | test + frames |
+| B dimmer and smaller than A; about 1–2 heights long | play checks: 2–4 px dim flecks vs 6–11 px sparks; visible length 26–35 px (0.8–1.0 height, low end) | frames |
+| B does not hide enemies, pickups or the courier | play checks: no overlap in fixtures; student after a normal run: “没有挡住都正常” | frames + human |
+| B sphere emission radius 3 and other settings | extra configuration checks | test |
+| Celebration: real level-up, UI portrait, above HUD, independent of camera | state: `real-pickup-causes-levelup`, `upgrade-*`; play checks `upgrade-*`; student verdict “可以的” | test + frames + human |
+| Celebration continues in LEVELUP, cap 4, cleared on restart/WON | state: `upgrade-celebration-continues-on-card-screen`, `level-cap-*`, `restart-clears-bursts`; edges: `won-clears-hit-bursts` | test |
+| Effects never write gameplay state | unchanged logic/gameplay/audio counts; presentation code reads only (`particle_presentation.gd`) | test + review |
+| CPU and GPU budgets | `evidence/assignment-6/cost/COST-REPORT.md`: headless CPU deltas A +0.025 ms (cycle) / +0.009 ms (32 live), B +0.004 ms, celebration +0.009 ms. GPU is unreadable on Compatibility (0 on every frame). On the Mobile/Vulkan proxy, GPU deltas are within ±0.1 ms noise. All are under budget. | measured; GPU via proxy renderer |
+
+## 29 October 2026 — CPU and GPU cost
+
+`godot/tests/cost_effects.gd` measured off/on pairs on identical fixtures (empty control, idle, A at its 32-burst cap, B continuous movement, celebration at its cap of 4), interleaved over 5 trials of 300 frames. Headless CPU deltas: A +0.025 ms per frame over a volley cycle, +0.009 ms with 32 live bursts, and about +0.10 ms at the p95 spawn spike; B +0.004 ms; celebration +0.009 ms. All are far under the predictions (0.8 / 0.15 / 0.25 ms) and budgets (1.0 / 0.25 / 0.4 ms).
+
+GPU time could not be read under the project's GL Compatibility renderer on this Mac: `viewport_get_measured_render_time_gpu` returned 0 on every frame, as did Movie Maker's GPU line, and the Mobile/Metal override behaved the same. The same scenes under the Mobile renderer with Vulkan/MoltenVK, a command-line override with project settings unchanged, gave readable GPU times. Every off/on median delta (A +0.01, B −0.05, celebration +0.09 ms) was within about ±0.1 ms of run-to-run noise. This is a proxy for, not a measurement of, the shipped renderer. FPS and CPU time are not reported as GPU time. Full method, tables and limits: `evidence/assignment-6/cost/COST-REPORT.md`.
+
+## 29 October 2026 — editor-generated particle process shader
+
+`godot/previews/shader_study/hit_sparks_gpu.tscn` was built from the kept hit sparks with `GPUParticles2D.convert_from_particles()` (`godot/tests/build_shader_study.gd`). The student reported converting its ParticleProcessMaterial to a ShaderMaterial in the Inspector and saving the shader as `godot/shaders/particles_generated.gdshader` (379 lines, SHA-256 `2e64ebae4b965173f775951abe52f1f8f6d0eac98713cbb72c486231b83723c4`). Line 1 is the editor converter's header: “Shader automatically converted from Godot Engine 4.7.2.stable's ParticleProcessMaterial.” Only the study scene references the shader. The hashes of every file under `godot/effects/` match those recorded in `evidence/assignment-6/cost/COST-REPORT.md`, so the game's effects are unchanged.
+
+The converted material's parameters match the CPU effect: direction (1,0,0), spread 180, initial linear velocity 25–55, gravity (0,12,0), damping 20–30, scale 0.7–1.8. It carries no `color_ramp` or `scale_curve` texture, and the study scene no longer contains the Gradient or Curve resources that `convert_from_particles()` had created. The code still samples both (lines 160–161). With them unassigned, the converted GPU copy would not reproduce the CPU effect's colour fade and shrink. This was not checked visually. The game does not use this scene.
+
+| Item | Lines | What the code does |
+|---|---|---|
+| `shader_type` | 3 (`render_mode disable_velocity` on 4) | Declares a particles (process) shader, not a canvas_item draw shader |
+| Uniforms from the material | 6–45 | Inspector values arrive as uniforms, e.g. `initial_linear_velocity_min/max` 10–11, `damping_min/max` 26–27, `scale_min/max` 30–31, `color_value` 42, `gravity` 43, `color_ramp` 44, `scale_curve` 45 |
+| Per-particle randomness | 75–99, 227, 282 | `hash(NUMBER + 1 + RANDOM_SEED)` seeds `rand_from_seed`, so each particle draws the same random values in `start()` and every `process()` call |
+| `start()` | 225–275 | Runs when a particle (re)spawns: initial colour, position and velocity |
+| Emission position | 165–172, 257–260 | Point emission: position 0, then `EMISSION_TRANSFORM` |
+| Initial velocity | 139, 193–201, 264, 271 | Random speed between min and max (139) times a direction within ±spread of `direction` (197–199), stored in `USERDATA1` (264), then rotated into world space (271) |
+| `process()` | 277–379 | Runs every frame per live particle: age, forces, motion, colour, scale |
+| Age and expiry | 293–299, 376–378 | `CUSTOM.y` advances by `DELTA / LIFETIME`; the particle deactivates past its lifetime |
+| Gravity | 43, 311, 324 | `force = gravity`, added to velocity as `force * DELTA` |
+| Damping | 131, 328–336 | Reduces speed by `damping * DELTA` and clamps at zero |
+| Position update | 340–345 | `TRANSFORM[3].xyz += final_velocity * DELTA` |
+| Colour | 42, 44, 155, 161, 248, 347, 352 | Base `color_value` multiplied by `color_ramp` sampled at normalized age (161); written to `COLOR` at spawn (248) and every frame (352) |
+| Scale | 30–31, 45, 149, 160, 359–372 | Random scale between min and max (149) times `scale_curve` at normalized age (160), applied to the transform basis (364–371) |
+
+Student explanation of the process stage and the draw stage (29 October 2026):
+
+> The process stage decides how a particle changes. It computes each particle's speed and direction at birth, and afterwards its position, gravity, damping, colour, transparency and size. For example, the hit sparks first spread outward, then slow down, shrink and fade out; all of that belongs to the process stage.
+>
+> The draw stage decides what the particle looks like. It uses the texture and the draw material to show the particles computed by the process stage on screen. For example, my sparks use a small cross texture and additive blending so they look like bright points; the colour, transparency and size given by the process stage appear when they are drawn.
+>
+> So even if the particle motion is computed correctly, the result can still be hard to see if the texture, blend mode or draw layer is wrong.
+
+In this project, the process side is the generated shader's `start()` and `process()` (lines 225–379), which write `TRANSFORM`, `VELOCITY` and `COLOR`. The draw side is the GPUParticles2D's `texture` (`spark.png`), its additive `CanvasItemMaterial` and its canvas layer. The level-up celebration's earlier visibility fix worked on the draw side. The particles had been on the world canvas below the upgrade HUD (layer 10); they were moved to an overlay on layer 11, and their process settings did not change.

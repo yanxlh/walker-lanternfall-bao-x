@@ -192,3 +192,43 @@ To see and hear the film myself before submitting it, and to make sure a reviewe
 
 - Submit this version: "我确定是这个了".
 
+---
+
+# Assignment 6 — particle effects
+
+## 2026-10-29 (Thu) — hit sparks, movement trail, level-up celebration
+
+*Drafted from the working session and the records linked below, then checked by me.*
+
+**From the logs**
+- Design recorded before implementation: Effect A fires on every weapon hit (changed from enemy death), Effect B is the movement trail, and a level-up celebration is an extra (`8eb16a2`, `a46c055`, `ec024c5`).
+- Implemented with CPUParticles2D and a read-only presentation node (`godot/effects/`). The only session changes are one new `weapon_hit` signal and attaching that node; damage, collision, input and timing are unchanged.
+- First look at the integrated game: “升级火花不明显 移动也不明显”. The celebration moved above the upgrade screen (CanvasLayer 11), and the trail's alpha ramp went from 0.55/0.30 to 0.95/0.70. I then asked for the celebration on the small character in the upgrade screen instead of mid-screen: “可以的”. I kept the brighter trail. A 16-frame before/after fixture comparison followed.
+- Hit sparks in the real game: “完成 没什么问题”. The r0 strip, read against the brief, showed a first frame of 0.35 courier height against "about one". One change, `scale_amount_max` 1.2 → 1.8, was approved (“同意”), captured as r1, compared and kept: “保留 更清晰了”.
+- A Godot 3 property name (`initial_velocity`) loaded with no warning. The burst still appeared, about 10–15% tighter, and only the read-back test failed.
+- Windowed play checks (56 shots in 12 scenes) and a new edge suite (18 checks: pushing into a stall, a position jump, death, victory). All suites now pass 292 checks. After a normal run: “没有挡住都正常”.
+- Cost: every CPU delta is under 0.03 ms per frame (A's spawn spike about 0.10 ms). GPU time reads 0 under Compatibility on this Mac; on a Mobile/Vulkan proxy, the deltas sit within ±0.1 ms of noise.
+- The study scene's process material was converted to a ShaderMaterial in the editor and saved as `godot/shaders/particles_generated.gdshader` (379 lines). Line numbers are mapped in TEST-REPORT.
+- Trace: implementation, captures and reports are uncommitted at the time of writing.
+
+**What I wanted**
+
+Effects that make a hit and the courier's movement easier to read in a crowded market without changing how the game plays. Each change needed a reason I could see, and the evidence for it.
+
+**What came back**
+
+- The celebration was drawn under the upgrade screen's dark veil, and the first trail was too faint.
+- The hit sparks looked fine in play, but the strip did not match the brief: the first frame was smaller than one character height, and white rather than pale yellow, because 16 additive sparks overlap. The size change predicted a footprint 3–4 px wider; it came out about 1 px wider, with more lit area instead.
+- An old property name fails silently: the effect looks almost right, and only the test notices.
+- Two fixtures failed first. The state test's first beam fired before the fixture set its piercing. In the edge suite the courier was still against the stall, so not moving was the correct result. Both fixtures were fixed; gameplay was not changed.
+- This Mac reports no GPU time for the game's renderer, so the GPU figures come from a different renderer and are labelled that way.
+- The editor's conversion left the colour ramp and scale curve textures off the new ShaderMaterial, although the code still samples them.
+
+**What I decided, and why**
+
+- Hits rather than kills trigger the sparks.
+- Celebration on the upgrade-screen character: “可以的”. Brighter trail: kept.
+- Bigger hit sparks: “保留 更清晰了”.
+- Trail and state behaviour after a normal run: “没有挡住都正常”.
+- Captures and tests are run from the terminal: “帮我运行 这类的操作”, “自动继续不用问我”.
+- My explanation of the two stages is in TEST-REPORT: the process stage decides how a particle changes, and the draw stage decides what it looks like on screen.

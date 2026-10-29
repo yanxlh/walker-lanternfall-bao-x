@@ -148,7 +148,7 @@ Existing tests must retain their assertions and baseline counts. Effects may rea
 
 ## Revisions
 
-No tuning revision has been performed yet.
+Revisions are listed below in the order they were made. The design above is the initial record.
 
 ### 29 October 2026 — approved event revision and gameplay integration
 
@@ -169,3 +169,44 @@ It should read as a wider gold celebration around the courier, spread rapidly fo
 The approved movement trail uses the settings specified above. Attach its emitter to the presentation root, tracking the courier's global position plus (0,7) logical pixels to place it at the feet. Previously emitted particles stay in world space. Compare actual displacement once per physics frame after Session has stepped. A discontinuity greater than twice the expected per-frame movement plus 4 pixels is treated as a teleport and resets the sample without emission. Stop spawning outside PLAYING; freeze its simulation in PAUSED and LEVELUP. While hidden, stop spawning but allow existing particles to expire whenever the game is PLAYING. Restart clears old particles and resets position history.
 
 Configuration tests read every named setting for all three scenes. State checks cover nonlethal/lethal hits, rapid hit overlap, upgrade celebrations, actual movement, idle, pause, hidden state, and restart. A human still judges whether the effects are visible, distinct, well-sized, and legible behind the card screen and against the real level.
+
+
+### 29 October 2026 — approved visibility trial r1
+
+Human observation: “升级火花不明显 移动也不明显”. The student approved the following two independent revisions before editing:
+
+- Upgrade celebration: change its draw layer from the world canvas below HUD layer 10 to a dedicated CanvasLayer 11 (`godot/effects/level_up_overlay.tscn`). Synchronize the overlay transform with the world canvas transform so the burst remains aligned with the courier as the camera moves. Its particle settings, lifetime and trigger are unchanged. Predict that it remains visible above the dark upgrade veil and cards instead of being covered.
+- Effect B: change only its colour/alpha ramp. At normalized t=0 alpha is 0.95 instead of 0.55; at t=0.5 alpha is 0.70 instead of 0.30; the t=1 alpha remains 0. All RGB values, timing, count, scale and motion remain unchanged. Predict stronger amber visibility from startup through steady movement, with the same stop/fade duration.
+
+This is an approved trial, pending the student's post-change verdict. Earlier source is preserved in `evidence/assignment-6/tuning/r0-source/`. It is source evidence, not a captured frame strip. Before/after windowed captures remain required before claiming a completed tuning cycle.
+
+
+## 29 October 2026 — approved upgrade portrait anchor
+
+The student requested that upgrade sparks appear on the small character displayed in the upgrade UI instead of at the middle of the screen. This supersedes the earlier world-camera alignment for the celebration only. The shared portrait rectangle is (8,256,96,96); mapping the sprite torso origin (16,23) from its 32-pixel frame gives HUD-local anchor (56,325). The celebration overlay uses the HUD transform, independently of the game camera. The HUD reads the same portrait rectangle as before; its layout and card controls are unchanged. Particle size, count, timing, colour and motion remain unchanged. Movement and hit particles are unchanged. The post-change visual verdict is pending.
+
+
+### 29 October 2026 — portrait placement kept
+
+The student accepted the upgrade portrait placement after viewing the updated game (“可以的”). Keep the celebration at the UI portrait torso, HUD-local (56,325), above the upgrade UI. No additional particle parameter changes are made. The movement-trail visibility trial still awaits its own explicit verdict.
+
+
+### 29 October 2026 — movement trail accepted
+
+The student explicitly confirmed that the revised movement trail is sufficiently visible. Keep the colour/alpha ramp at alpha 0.95/0.70/0 for t=0/0.5/1, with other values unchanged. This is a running-game verdict. Before/after fixture strips still need to be captured and compared; no such image evidence is claimed by this entry.
+
+
+### 29 October 2026 — approved Effect A scale trial r1
+
+Observation: the student watched the weapon-hit sparks in the integrated game and reported no problem (“完成 没什么问题”). The `r0` fixture strip (`captures/defeat_sparks/r0/`) was then read against this brief. The widest point (about 1.6–1.8 courier heights) and the complete fade before 0.45 s match. The initial cluster is smaller than "about one character height": 0.35 courier height on the first visible frame and 0.65 by 0.07 s.
+
+The student approved one change: `scale_amount_max` 1.2 → 1.8. Count, speed, spread, damping, gravity, colour ramp, scale curve, `scale_amount_min` (0.7) and lifetime are unchanged.
+
+Prediction: on the first visible frame the cluster grows from 11 × 12 to about 15 × 15 screen pixels (about 0.45 courier height), with more pure-white pixels. Early sparks are 3–4 pixels wider and the largest sparks are visibly bigger. At 0.20 s the spread stays about 45 pixels wide, with about 1.5 times as many lit pixels. The widest point is about 55–62 pixels, still under two courier heights (68 pixels). Fade timing is unchanged, with no sparks at strip frames 30 and 50. The change is not expected to make the first frame a full character height. A faster initial speed would breach the two-height limit, and sphere emission would remove A's contrast with B.
+
+This is an approved trial, pending the r1 capture comparison and the student's running-game verdict. Pre-change source is preserved in `evidence/assignment-6/tuning/a-r0-source/`.
+
+
+### 29 October 2026 — Effect A scale r1 kept
+
+The student played the revised game and kept the change (“保留 更清晰了”). Effect A's current `scale_amount_max` is 1.8; `scale_amount_min` remains 0.7 and every other value in the initial settings table is unchanged. The scene, `godot/tests/test_defeat_sparks_config.gd` and this entry agree. Comparison: `captures/defeat_sparks/comparison-r0-r1/COMPARISON.md`.

@@ -90,3 +90,10 @@ The walking pose was first made with FLUX quantized to 4-bit at load; the re-run
 - **Font:** Godot's built-in default font (bundled with the engine), used by the HUD.
 - **Storyboard, character blockout and palettes:** drawn by scripts in `design/` from simple shapes; no generated or external art.
 - **Code and documents:** written for this project with Claude Code as described above; Claude is not an asset generator here. The day-by-day record of who decided what is [FRICTIONAL.md](FRICTIONAL.md).
+
+## Assignment 6 particle effects (29 October 2026)
+
+- **Spark texture** `godot/assets/particles/spark.png` (3 × 3 px white cross, binary alpha; SHA-256 `89a5796b…0873130`): written byte by byte by `scripts/generate_spark_texture.py`. No model, image or external asset was used. All three effects use it (hit sparks, movement trail, level-up celebration); their colours come from the colour ramps in `godot/effects/*.tscn`. The original source textures are unchanged.
+- **Particle settings and controller:** `godot/effects/*.tscn` and `godot/effects/particle_presentation.gd`, written for this project; values and revisions are in `CHANGE-BRIEF.md` and `TUNING.md`.
+- **Generated process shader** `godot/shaders/particles_generated.gdshader`: produced by Godot 4.7.2's own "Convert to ShaderMaterial" from a ParticleProcessMaterial in the study scene `godot/previews/shader_study/`. It is engine-generated code kept for study and not used by the game. Its header line says so.
+- No generative model was used for the particle work.

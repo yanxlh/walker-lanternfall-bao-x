@@ -87,3 +87,12 @@ Python checks run with the generation environment: `gen/.venv-audio/bin/python g
 | Source revision shown | `8a6f9881e0e2858e523d22bb09f1a423695f04e1` (`godot/` is unchanged since) |
 
 Beat sheet, script, prompts, evidence ledger, capture method and checks: [`youtube/claude-liam-walker-lanternfall-bao-x-gamedev/`](youtube/claude-liam-walker-lanternfall-bao-x-gamedev/README.md). The video file itself is not in git. The link was opened without signing in on 2026-10-06; Google Drive lists the file at 322,567,779 bytes, the same size as the export.
+
+
+## Particle-effects working revision — 29 October 2026
+
+The current working game adds small sparks on weapon hits, a larger gold celebration on level-up, and a short trail when the courier actually moves. The historical `defeat_sparks.tscn` filename now serves hit feedback, including nonlethal hits. Damage, movement, progression and controls retain their original rules.
+
+Run `scripts/play-particles.command` from Finder, or launch `godot --path godot`. Enter starts, WASD/arrows move, 1/2/3 choose upgrade cards, P pauses, and R restarts. The independent fixtures are `godot/previews/defeat_sparks_preview.tscn` and `godot/previews/lantern_trail_preview.tscn`; they are not gameplay captures.
+
+The old film linked above describes Assignment 2 and does not demonstrate this working revision. Playtest verdicts, tuning captures, windowed play checks, CPU/GPU measurement and the process-shader study are recorded in `TUNING.md` and the 29 October sections of `TEST-REPORT.md`. GPU time is unreadable under this renderer on the test Mac; see `evidence/assignment-6/cost/COST-REPORT.md`. The new film is pending.
