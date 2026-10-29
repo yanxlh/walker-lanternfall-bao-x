@@ -41,4 +41,4 @@ Master: `exports/landscape/claude-liam-walker-lanternfall-bao-x-particles-gamede
 
 ## Not covered by this pass
 
-A human viewing and listening of the whole film (content, pacing, voice, every narration transition). Codex's sampled review does not replace that, so it is still Bao's to do.
+A human viewing and listening of the whole film (content, pacing, voice, every narration transition). Codex's sampled review does not replace that. Bao then watched and listened to the whole final export (8:08, SHA-256 4d4d5900…) and found no problem (2026-10-29).

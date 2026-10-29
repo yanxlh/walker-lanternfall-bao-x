@@ -371,7 +371,8 @@ To finish everything the assignment still needed: "做 把作业没完成的都�
 - Windowed play checks (56 shots in 12 scenes) and a new edge suite (18 checks: pushing into a stall, a position jump, death, victory). All suites now pass 292 checks. After a normal run: “没有挡住都正常”.
 - Cost: every CPU delta is under 0.03 ms per frame (A's spawn spike about 0.10 ms). GPU time reads 0 under Compatibility on this Mac; on a Mobile/Vulkan proxy, the deltas sit within ±0.1 ms of noise.
 - The study scene's process material was converted to a ShaderMaterial in the editor and saved as `godot/shaders/particles_generated.gdshader` (379 lines). Line numbers are mapped in TEST-REPORT.
-- Trace: implementation, captures and reports are uncommitted at the time of writing.
+- The particle film "Lanternfall, Sparked" (4K, 8:08) was built with the godot-gamedev + walker workflow from real captures of c3e1273. A sampled review by Codex found one wording error: a 3 px radius narrated as 3 px wide. It was fixed and re-exported. In the editor's Visual Profiler, with the game window minimized, every GPU entry read 0.0 ms. The film is on Google Drive with link sharing (README).
+- Trace: `3a5be66` effects · `8535049` tests and tools · `f85990b` captures, results and cost data · `c930886` shader study · `c3e1273` documents and diary · `4eedf34` film build · `b7b4e48` film wording fix · `4bec76e`, `0bb97f6` Visual Profiler record · `15aaf06` Codex credited · `5d518b2` contributions · `3c18a0d` film link.
 
 **What I wanted**
 
@@ -394,3 +395,4 @@ Effects that make a hit and the courier's movement easier to read in a crowded m
 - Trail and state behaviour after a normal run: “没有挡住都正常”.
 - Captures and tests are run from the terminal: “帮我运行 这类的操作”, “自动继续不用问我”.
 - My explanation of the two stages is in TEST-REPORT: the process stage decides how a particle changes, and the draw stage decides what it looks like on screen.
+- The film: I watched and listened to the whole final export and found no problem, then opened link sharing on Drive.
