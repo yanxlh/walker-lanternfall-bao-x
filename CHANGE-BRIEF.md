@@ -149,3 +149,23 @@ Existing tests must retain their assertions and baseline counts. Effects may rea
 ## Revisions
 
 No tuning revision has been performed yet.
+
+### 29 October 2026 — approved event revision and gameplay integration
+
+The confirmed gameplay design now triggers Effect A on every successful weapon hit, including nonlethal hits, rather than only on a kill. The original design above remains as the initial record. The particle values are unchanged; this is an event/design revision, not an observation-driven visual tuning revision. The existing resource and preview filenames `defeat_sparks` are retained to preserve the first fixture and configuration evidence; they now serve the weapon-hit effect.
+
+`Session.damage()` will publish a new read-only `weapon_hit(pos: Vector2)` signal after its existing dead-enemy guard. The listener spawns A at that enemy position. No damage amount, hit detection, cooldown, death order, or input behavior changes. Beam, Lamp-Moths, and Sunflare all use this same existing damage method. The overlap cap remains 32 and includes lethal and nonlethal hits together.
+
+The presentation controller is attached once to Session. It owns transient bursts independently of enemies, clears them on restart and terminal states, and freezes A outside PLAYING. Level-up celebrations use the separate policy below. Tests drive normal physics and real input; fixture setup may seed enemies or place gems but may not invoke the presentation trigger or the damage function directly.
+
+#### Extra effect — level-up celebration
+
+This additional one-shot effect marks each `Session.leveled_up(level)` event at the courier. It does not replace Effect B. It uses CPUParticles2D, 32 particles, one_shot=true, emitting=false at load, lifetime=0.7 s, explosiveness=1, preprocess=0, sphere emission with radius=12, direction=(0,-1), spread=180, initial velocity=35..65, gravity=(0,8), damping=15..25, scale_amount=0.8..1.5, and local_coords=false. Its scale curve is (0,1), (0.25,0.9), (1,0), with the same zero-tangent interpolation as A. Its colour ramp is 0:(1,1,0.8,1), 0.4:(1,0.75,0.2,0.8), 1:(1,0.4,0.05,0). Use the existing generated spark texture, nearest filtering, and an additive CanvasItemMaterial.
+
+It should read as a wider gold celebration around the courier, spread rapidly for the first 0.2 s, then shrink and disappear by 0.7 s. It continues during LEVELUP so the card overlay does not freeze it on its first frame, freezes during PAUSED, and clears on restart, MENU, WON, or LOST. Overlap is allowed up to four celebrations (128 particles), after which further events are ignored until a slot is free. The ordinary A budget remains separate. Predict celebration CPU delta below 0.25 ms/frame and GPU delta below 0.25 ms/frame; budget both at 0.4 ms/frame at four simultaneous bursts. These numbers are unmeasured predictions.
+
+#### Effect B integration details
+
+The approved movement trail uses the settings specified above. Attach its emitter to the presentation root, tracking the courier's global position plus (0,7) logical pixels to place it at the feet. Previously emitted particles stay in world space. Compare actual displacement once per physics frame after Session has stepped. A discontinuity greater than twice the expected per-frame movement plus 4 pixels is treated as a teleport and resets the sample without emission. Stop spawning outside PLAYING; freeze its simulation in PAUSED and LEVELUP. While hidden, stop spawning but allow existing particles to expire whenever the game is PLAYING. Restart clears old particles and resets position history.
+
+Configuration tests read every named setting for all three scenes. State checks cover nonlethal/lethal hits, rapid hit overlap, upgrade celebrations, actual movement, idle, pause, hidden state, and restart. A human still judges whether the effects are visible, distinct, well-sized, and legible behind the card screen and against the real level.
