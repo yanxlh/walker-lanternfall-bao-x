@@ -12,7 +12,7 @@ Every factual claim in the narration and on screen, with where it was checked. S
 | B17 | "presses escape" | the driver sends the `pause` action (bound to Esc and P) | "presses pause" |
 | B21 | "the motion is right; the look is lost" | the capture shows the GPU copy's sparks staying visible farther out; matching motion was not established | "the sparks still fly out; the colour fade and the shrink are gone" |
 | B09 table | "lit area: matched" | measured 1.4–1.85× against a predicted ≈ 1.5× | "more than predicted" |
-| B12 | "a sphere three pixels wide" (found in Bao's review of the first master, about 3:27) | `emission_sphere_radius = 3.0` is a radius; the sphere is 6 px across | "a sphere with a three-pixel radius"; the line-29 highlight reads "(radius, px)"; narration regenerated and the master re-exported |
+| B12 | "a sphere three pixels wide" (found in Codex's sampled review of the master delivered for review, SHA-256 4769b141…, relayed by Bao; about 3:27) | `emission_sphere_radius = 3.0` is a radius; the sphere is 6 px across | "a sphere with a three-pixel radius"; the line-29 highlight reads "(radius, px)"; narration regenerated and the master re-exported |
 | B05 | a 2× crop following the courier | the camera was clamped at the arena corner in that stretch, so the courier and most hits left the crop | full frame, with a labelled diagnostic ring at each logged hit position |
 
 ## Claims by beat
