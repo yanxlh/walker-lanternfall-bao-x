@@ -50,7 +50,7 @@ At cap, most of A's CPU cost falls on the frames where 32 bursts are instanced a
 
 | Renderer / driver | GPU time readable? | Result |
 |---|---|---|
-| GL Compatibility (project renderer), OpenGL 4.1 on Metal | No | 0.000 ms on every frame of every condition. Movie Maker captures also report "GPU render time: 0.00". The windowed render-CPU timing is noisy and repeats a stale 0.372 ms in several trials, so it is not used. |
+| GL Compatibility (project renderer), OpenGL 4.1 on Metal | No | 0.000 ms on every frame of every condition. Movie Maker captures also report "GPU render time: 0.00", and the editor's Visual Profiler shows 0.0 ms for every GPU entry (`visual-profiler-compatibility.png`). The windowed render-CPU timing is noisy and repeats a stale 0.372 ms in several trials, so it is not used. |
 | Mobile, Metal (command-line override) | No | 0.000 ms on every frame (1-trial probe, `probe_mobile_metal_1trial.json`). |
 | Mobile, Vulkan via MoltenVK (command-line override) | Yes | Values below. |
 
@@ -71,7 +71,7 @@ Every GPU delta lies within the run-to-run spread of about ±0.1 ms. B's negativ
 - The project renderer exposes no GPU timing on this Mac. The GPU figures come from a different renderer and driver (Mobile, Vulkan/MoltenVK) running the same scenes. They are a proxy for the shipped Compatibility renderer, not a measurement of it.
 - Neither FPS nor CPU time is presented as GPU time. Windowed frame times are vsync-limited (8.33 ms at 120 Hz, 16.67 ms at 60 Hz) and carry no cost information.
 - Headless CPU numbers exclude real draw submission.
-- The Visual Profiler has not been read in the editor. Under Compatibility it reads the same RenderingServer value, which is 0 here; an editor check would confirm this limitation.
+- Editor check: the student ran the project from the Godot 4.7.2 editor and recorded the Visual Profiler (`visual-profiler-compatibility.png`, frame 3743, "CPU: Apple M4 / GPU: Apple M4"). Every GPU entry reads 0.0 ms: Frame Begin, Prepare Render, Render Viewport, Render View, Cull 2D, each Render Canvas and its Cull/Render children. The CPU entries have values (Render Viewport 3.11 ms, Render Canvas 1.85 / 0.38 / 0.8 / 0.22 ms), and the frame graph sits at the 16.67 ms vsync line. This confirms in the editor that GPU time is not measurable under GL Compatibility on this Mac, so no off/on GPU comparison was possible there.
 
 ## Files
 

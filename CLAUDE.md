@@ -66,6 +66,6 @@ Do not publish, push, create submission tags, or overwrite earlier reports as pa
 
 - This local course-repository snapshot has no `a5` tag or previous shader directory; do not claim an A5 baseline exists.
 - The recorded game GitHub URL does not establish that this snapshot matches its latest revision.
-- GPU timing: `RenderingServer.viewport_get_measured_render_time_gpu` reads 0 under GL Compatibility (and Mobile/Metal) on this Mac; only a Mobile/Vulkan override exposes it (`evidence/assignment-6/cost/COST-REPORT.md`). The editor's Visual Profiler itself has not been opened.
+- GPU timing: `RenderingServer.viewport_get_measured_render_time_gpu` reads 0 under GL Compatibility (and Mobile/Metal) on this Mac; only a Mobile/Vulkan override exposes it (`evidence/assignment-6/cost/COST-REPORT.md`). The editor's Visual Profiler, run by the student, shows 0.0 ms for every GPU entry (`evidence/assignment-6/cost/visual-profiler-compatibility.png`).
 - Student verdicts recorded so far: portrait placement kept, trail visibility kept, A scale r1 kept (`TUNING.md`). Crowded-play judgments in `captures/play-checks/*/PLAY-CHECKS.md` are pending.
 - Baseline counts and configuration results are valid only when recorded from actual runs.
