@@ -1,133 +1,151 @@
-# Lanternfall — Change Brief
+# Lanternfall — Particle Effects Change Brief
 
-`walker-lanternfall-bao-x` · Bao Xing · **v1 written 2026-09-28, before any generation and before any gameplay code**
+## Project and scope
 
-Starter: blank Godot 4.7.2.stable.official.ed1daf0bf project (character concept from my A1, [walker-jumpman-bao-x](https://github.com/yanxlh/walker-jumpman-bao-x)).
+This change adds two visual effects to Lanternfall, my 2D survival game set in a midnight market. Effect A confirms an enemy kill. Effect B makes the courier's movement easier to follow. Neither effect changes damage, collision, movement, enemy spawning, progression, input, or state-machine timing.
 
-> **Record discipline.** Everything above the **Revisions** heading is frozen at tag `design-v1`. When a prediction turns out wrong, the correction goes into `TEST-REPORT.md` and under Revisions here, with a date. Nothing above that line is rewritten to make a prediction look right.
+The current source is this game directory. The working snapshot was copied into the course repository at commit `9fa5d88`; no local `a5` tag or prior shader files are present. The previous asset brief is preserved at `design/CHANGE-BRIEF-assignment-2.md`. `godot/game/session.gd` owns the `enemy_killed(pos: Vector2)` signal, player reference, and game state. `godot/game/game_state.gd` defines MENU, PLAYING, LEVELUP, PAUSED, WON, and LOST. `godot/project.godot` sets a 640 × 360 logical viewport, a 1280 × 720 window, and the GL Compatibility renderer. The existing README records Godot 4.7.2.stable.official.ed1daf0bf; the installed executable was confirmed as the same version on 29 October 2026.
 
-## 1. Asset list
+The proposed nodes are CPUParticles2D, retaining the existing renderer. Their property names were read from the installed 4.7.2 runtime before building. CPU particle scale uses `scale_amount_min`, `scale_amount_max`, and `scale_amount_curve`. A separate scratch GPU material will be converted for the required process-shader study; it will not replace the CPU effects or be used by gameplay.
 
-Every ID below must exist in `godot/assets/manifest.json` with its file present; `scripts/audit_repo.py --stage final` enforces it.
+## Alignment with the game design document
 
-| Asset ID | What | Game file | Size / length | Panels |
-|---|---|---|---|---|
-| ART-PC-01 | Courier, 12-pose sheet (order as in CHARACTER-SHEET) | `godot/assets/art/pc_sheet.png` | 384 × 32 (12 × 32²) | P1–P9 |
-| ART-EN-01 | Moth, 2 frames | `godot/assets/art/enemy_moth.png` | 48 × 24 | P2, P3, P6 |
-| ART-EN-02 | Fog-wraith, 2 frames | `godot/assets/art/enemy_wraith.png` | 80 × 40 | P5 |
-| ART-ENV-01 | Cobblestone ground tile, seamless | `godot/assets/art/env_ground_tile.png` | 64 × 64 | P2, P3, P8 |
-| ART-ENV-02 | Lantern market stall prop | `godot/assets/art/env_stall.png` | 64 × 48 | P1, P2 |
-| ART-FX-01 | Beam bolt | `godot/assets/art/fx_beam.png` | 16 × 8 | P3 |
-| ART-FX-02 | Orbiting lamp-moth | `godot/assets/art/fx_orbit_moth.png` | 12 × 12 | P4, P6 |
-| ART-FX-03 | Sunflare burst ring | `godot/assets/art/fx_sunflare.png` | 128 × 128 | P6 |
-| ART-PK-01 | Lamp-oil gem | `godot/assets/art/pickup_gem.png` | 12 × 12 | P3 |
-| SFX-01 | Enemy killed | `godot/assets/sfx/sfx_01_kill.wav` | ≤ 0.35 s | P3 |
-| SFX-02 | Gem collected | `godot/assets/sfx/sfx_02_pickup.wav` | ≤ 0.3 s | P3 |
-| SFX-03 | Player hurt | `godot/assets/sfx/sfx_03_hurt.wav` | ≤ 0.5 s | P5 |
-| SFX-04 | Level up | `godot/assets/sfx/sfx_04_levelup.wav` | ≤ 1.2 s | P4 |
-| SFX-05 | Sunflare evolution | `godot/assets/sfx/sfx_05_evolve.wav` | ≤ 2.5 s | P6 |
-| SFX-06a | Lose stinger | `godot/assets/sfx/sfx_06a_lose.wav` | ≤ 3 s | P7 |
-| SFX-06b | Win stinger | `godot/assets/sfx/sfx_06b_win.wav` | ≤ 4 s | P9 |
-| MUS-01 | Night-market loop | `godot/assets/music/mus_01_night_market.ogg` | 30–40 s, seamless | P2–P5, P7, P8 |
-| MUS-02 | Sunflare layer, same length and tempo | `godot/assets/music/mus_02_sunflare_layer.ogg` | = MUS-01 | P6 |
+The reference is the Assignment 4 Game Design Document, version 0.3, dated 17 October 2026. This change supports P-02, Position over firing, by clarifying movement without adding an attack input. It supports P-03, Readable light, by using warm sparks against the cool market and keeping kill feedback understandable without sound.
 
-Models: art — FLUX.1-schnell (mflux, local); SFX — Stable Audio Open 1.0 (local); music — MusicGen medium / melody (local). The four required event sounds are SFX-01 (core action), SFX-04 (success), SFX-03 (hurt) and SFX-06a/06b (completion); SFX-02 and SFX-05 are extra.
+Both effects retain the hard-edged pixel-art style and nearest-neighbor filtering described in Graphics and Styling. Avoid soft photographic textures or a large opaque glow. The courier and pickups must remain the brightest sustained objects; A may be briefly bright, while B stays subordinate to them. Check that A does not obscure the lamp-oil gem created by the same kill.
 
-## 2. Event → sound
+The post office, delivery contracts, persistent settlement improvements, additional couriers, and engineer turrets are planned features in the GDD. This assignment adds presentation to the existing three-minute prototype and does not claim to implement those systems.
 
-Sounds are triggered by **game signals**, never by input. Throttling uses the **simulation clock** (ticks → ms), so a paused game cannot queue sounds.
+## Effect A — Enemy-defeat sparks
 
-| Game event (signal) | Emitted when | Sound | Gate rule |
-|---|---|---|---|
-| `enemy_killed` | an enemy's HP reaches 0 | SFX-01 | cooldown 60 ms, ≤ 3 voices, pitch ± 5 % |
-| `gem_collected` | a gem reaches the courier | SFX-02 | 80 ms merge window, 1 voice |
-| `player_hurt` | damage is applied (not during invulnerability) | SFX-03 | once per hit; 800 ms cooldown as a second guard (= the i-frame window) |
-| `leveled_up` | each level gained | SFX-04 | once per level |
-| `evolved` | Sunflare card taken | SFX-05 | once per run |
-| state → LOST | HP reaches 0 | SFX-06a | once (state is terminal) |
-| state → WON | timer reaches 3:00 | SFX-06b | once (state is terminal) |
+### Job and trigger
 
-Pause, resume, card navigation and mute toggles have **no** sound.
+A small burst of warm sparks marks the exact position where an enemy dies. It helps distinguish a kill from an ordinary hit during crowded play. The existing `Session.enemy_killed(pos)` signal supplies the event and position. The presentation layer listens to this signal and does not call `damage()` or change enemy state.
 
-## 3. How repeated triggering is prevented
+### Visual intent
 
-1. **No sound is attached to a key.** Holding a direction moves the courier; it never emits a sound signal. Key presses use `is_action_pressed`, which ignores key-repeat echo.
-2. **Hurt is gated twice**: by the 0.8 s invulnerability (no second damage event can exist) and by the 800 ms gate.
-3. **High-frequency events are throttled**: kills can happen 20 at once (Sunflare); the gate plays at most one kill sound per 60 ms and never more than 3 overlapping. Pickups within 80 ms merge into one.
-4. **Once-per-run events** (evolution) are latched; the latch resets on restart.
-5. **Voice accounting is logical** (a fixed 300 ms per voice), so tests give the same answer on any machine or audio device.
-6. Verified by `godot/tests/test_audio.gd` (burst of 20 kills → 1 sound; 100 ticks of held input → 0 sounds; 20 rapid pause toggles → 0 sounds; per-event counts over a full run).
+- First 0.07 seconds: a compact, bright cluster establishes the event position.
+- From 0.07 to 0.20 seconds: sparks spread outward and slow down.
+- From 0.20 to 0.45 seconds: sparks shrink and fade completely.
+- Use a pale yellow centre and orange dissipation against the dark market floor. Check the effect against bright lantern props and puddles as well as the darkest floor.
+- The burst should span about one character height initially and no more than two character heights near its widest point. Judge it at the actual 1280 × 720 window size.
+- Speed and size vary between particles. Normal gameplay repeats must not use a fixed seed.
+- One spark emitter is sufficient initially. Additional layers require a documented design revision.
 
-## 4. Music behaviour
+### Initial settings
 
-| Situation | MUS-01 | MUS-02 | Bus |
-|---|---|---|---|
-| Menu | silent | silent | — |
-| Run start / restart | from sample 0, 0 dB | from sample 0, −80 dB | filter off, 0 dB |
-| Level-up cards | continues | continues | −6 dB |
-| Pause | continues | continues | low-pass 900 Hz, −10 dB |
-| Resume | continues | continues | filter off, 0 dB |
-| Sunflare evolution | continues | fades to 0 dB over 2 s | — |
-| Lose | fade to −80 dB over 0.5 s, stop | same | then SFX-06a |
-| Win | fade over 1.0 s, stop | same | then SFX-06b |
-| Restart during a fade | fade cancelled, restart from 0 at 0 dB | same | filter off |
+| Part | Setting | Initial value |
+|---|---|---|
+| Node | type | CPUParticles2D |
+| Emission | amount | 16 |
+| Emission | one_shot | true |
+| Emission | emitting at scene load | false |
+| Emission | explosiveness | 1.0 |
+| Emission | lifetime | 0.45 s |
+| Emission | shape | point |
+| Process | direction | (1, 0) |
+| Process | spread | 180 degrees |
+| Process | initial velocity min / max | 25 / 55 logical pixels per second |
+| Process | gravity | (0, 12) |
+| Process | damping min / max | 20 / 30 |
+| Process | scale_amount_min / scale_amount_max | 0.7 / 1.2 |
+| Process | scale curve, normalized time:value | 0:1, 0.2:0.85, 1:0 |
+| Process | colour ramp, normalized time:RGBA | 0:(1,0.95,0.65,1), 0.35:(1,0.6,0.2,0.85), 1:(0.65,0.2,0.05,0) |
+| Draw | texture | new code-generated 3 × 3 hard-edged pixel spark texture |
+| Draw | material | CanvasItemMaterial, additive blend |
+| Coordinates | local_coords | false |
+| Startup | preprocess | 0 |
 
-MUS-01 and MUS-02 have identical length, start together and loop together, so they stay in sync.
+Store these settings in `godot/effects/defeat_sparks.tscn`. Commit the texture-generation script and its output; do not modify existing source textures.
 
-## 5. Mute
+### Retrigger and lifecycle rules
 
-**M** mutes everything, **9** music only, **0** effects only; the HUD shows `MUSIC on/off  SFX on/off`. Muting changes AudioServer bus flags only; no game logic reads them. `test_audio.gd` proves a full run with every stream removed and the master bus muted ends in exactly the same state as a run with sound.
+Use overlap: every accepted event creates a separate burst at the signal's position. Each burst belongs to a persistent presentation root, not the enemy that is about to be freed. Parent motion must not drag previously emitted sparks.
 
-## 6. Predicted problems and how each will be verified
+Permit at most 32 live bursts, for a maximum of 512 allocated particles. When all slots are occupied, ignore additional events until a slot is free. This cap is part of the acceptance rule and must be tested explicitly. Two events 0.10 seconds apart must produce two separate live instances below the cap. No burst fires on scene load. Restart clears all old instances. Burst processing freezes outside PLAYING and resumes without replaying the event.
 
-1. **Kill SFX machine-guns in dense waves** (late game, and the Sunflare burst kills many at once).
-   *Verify:* `test_audio.gd` burst check (20 kills in one tick → 1 sound) and minimum-gap check over a full run; listening at ~2:30 in a real run.
-2. **Generated poses drift after downscaling** — lamp size changes, the character turns, the satchel swaps sides, a lamp becomes a face.
-   *Verify:* `gen/checks/palette_check.py` (palette, alpha, size), the 32-px silhouette strip of the generated sheet next to the blockout, sheet-vs-game screenshots for all 12 poses.
-3. **MusicGen output does not loop cleanly** (click, gap, or tempo drift at the wrap).
-   *Verify:* `gen/checks/loop_check.py` — wrap jump ≤ the 99th percentile sample step, first/last 50 ms RMS ≥ 25 % of the mean; plus five consecutive loops listened to by me.
-4. **The cool fog palette makes enemies unreadable against the ground**, especially muted.
-   *Verify:* luminance-difference check between each enemy sprite and the ground tile (moth ≥ 0.25); the muted playtest.
-5. **MUS-02 drifts against MUS-01** after evolution.
-   *Verify:* equal frame-count check in `loop_check.py`; listening 10 s and 25 s after evolving. *Fallback:* drop MUS-02 and brighten the mix instead, recorded as a Revision.
+### Preview and evidence
+
+Use a representative portion of the real market floor with the courier visible for scale. Trigger at frame 10; enable a second event at frame 13 for the retrigger fixture. Capture at 30 fps. Read frames 10, 12, 15, 20, 30, and 50. If first visible emission occurs one frame later, record the offset. Label these captures as fixtures.
+
+The configuration test reads every setting above from the instantiated scene and its resources. The state test drives kills through normal gameplay processing and input, rather than directly calling the presentation trigger. Check event position, no emission at load, two-event overlap, cap behavior, restart cleanup, and survival after the enemy is freed. Visibility and readability require my own check in the running game.
+
+## Effect B — Courier lantern trail
+
+### Job and condition
+
+A short trail of fading embers reinforces the courier's direction of travel without hiding nearby enemies. It is a trail, not a second burst. Read the player position and displacement from the existing session. Emit only while the game is PLAYING, the effect is visible, and the player has actually moved. Stop when any condition ends. Actual position displacement prevents emission while input pushes the player against a blocker.
+
+### Visual intent
+
+- First 0.10 seconds after movement begins: a few embers appear close to the courier's feet.
+- During steady movement: embers remain behind in world space, making a short broken trail rather than a continuous beam.
+- After stopping: stop spawning immediately; existing particles disappear within 0.35 seconds.
+- Keep the trail dimmer and smaller than Effect A. Its length should remain around one to two character heights at normal speed.
+- Fade from amber to dark orange while shrinking. Vary particle scale and speed slightly.
+- Use a spherical emission region with a 3-pixel radius, a process feature absent from A's point emission.
+
+### Initial settings
+
+| Part | Setting | Initial value |
+|---|---|---|
+| Node | type | CPUParticles2D |
+| Emission | amount | 24 |
+| Emission | one_shot | false |
+| Emission | emitting at scene load | false |
+| Emission | explosiveness | 0 |
+| Emission | lifetime | 0.35 s |
+| Emission | shape / sphere radius | sphere / 3 logical pixels |
+| Process | direction / spread | (0,-1) / 25 degrees |
+| Process | initial velocity min / max | 2 / 6 logical pixels per second |
+| Process | gravity | (0,-4) |
+| Process | damping min / max | 1 / 3 |
+| Process | scale_amount_min / scale_amount_max | 0.35 / 0.7 |
+| Process | scale curve, normalized time:value | 0:0.7, 0.2:1, 1:0 |
+| Process | colour ramp, normalized time:RGBA | 0:(1,0.7,0.25,0.55), 0.5:(0.8,0.35,0.08,0.3), 1:(0.3,0.1,0.02,0) |
+| Draw | texture | same code-generated spark texture |
+| Draw | material | CanvasItemMaterial, additive blend |
+| Coordinates | local_coords | false |
+| Startup | preprocess | 0 |
+
+Store these settings in `godot/effects/lantern_trail.tscn`. This effect is not a value-driven feedback loop; runtime code does not change `amount`.
+
+### Pause, hiding, and startup
+
+The first scene frame contains no trail because the player has not moved. Preprocessing is zero intentionally: a movement trail must not appear before movement. Freeze particle simulation during PAUSED and LEVELUP. While hidden, stop emission and allow existing particles to expire when simulation is active. On becoming visible, do not replay movement that happened while hidden. Reset the previous-position sample on restart or teleport so neither creates a streak.
+
+### Preview and evidence
+
+Use the same real background and camera scale. Begin movement at frame 10 and stop at frame 40. Inspect frames 10, 12, 20, 39, 40, 45, 51, and 60 at 30 fps. Separate fixtures cover pause/resume and hidden/visible transitions.
+
+Read back every configured value, including the sphere emission shape. Test movement start/stop, pushing against a blocker, paused and hidden behavior, and restart. Check visually that the trail stays in world space and does not cover the player or obscure enemies.
+
+## Predicted failures and checks
+
+1. An obsolete Godot property name leaves a default value. A configuration read-back test should detect the mismatch. Intentionally rename one A property to a Godot 3 name, run the test, inspect the running effect, record the outcome, and restore it.
+2. Scene values drift from this brief. Intentionally alter one A value without changing the brief; the configuration test must fail. Restore the original value afterward.
+3. A burst disappears with the killed enemy. A state test must confirm the burst remains alive after the enemy is freed.
+4. A second kill restarts the first burst. The rapid-repeat fixture and state test must show two independent instances below the cap.
+5. The trail emits while stationary or after a teleport. Test the actual-displacement condition and reset behavior.
+6. Yellow sparks disappear against bright props. Compare real captures on dark and bright market backgrounds and record my running-game verdict.
+
+## Performance predictions and budgets
+
+| Effect | Peak allocation | Predicted extra headless CPU time | Predicted extra GPU time | Budget |
+|---|---:|---:|---:|---|
+| A, 32 overlapping bursts | 512 particles | below 0.8 ms/frame | below 0.5 ms/frame | CPU delta ≤ 1.0 ms and GPU delta ≤ 0.75 ms |
+| B, continuous movement | 24 particles | below 0.15 ms/frame | below 0.15 ms/frame | CPU delta ≤ 0.25 ms and GPU delta ≤ 0.25 ms |
+
+These are predictions, not measurements. Compare CPU effects on both CPU and GPU time. Measure an empty-scene control, game with effects off, A at its cap, and B during continuous movement. Report means and spread, hardware, engine, renderer, and source revision. Use the Visual Profiler on a real GPU for off/on GPU comparisons. If this renderer or machine does not expose that measurement, record the limitation rather than relabeling CPU time or FPS as GPU time.
+
+A headless run draws no particles. A GPU-particle process therefore has a near-zero headless processing price by construction; that number cannot establish its on-screen cost. CPU particles still perform CPU processing headlessly. Vsync may make off/on FPS identical even when rendering cost differs.
+
+## Tuning and acceptance
+
+For each effect, preserve a first strip and record my first running-game observation. Make at least one observation-driven revision per effect. Before each edit, record the old and new value and predict the visible difference. Change one setting, recapture, compare, and keep or revert after actual play. If kept, append a dated revision here so the scene, test, and brief agree.
+
+Existing tests must retain their assertions and baseline counts. Effects may read gameplay state but never write it. Existing shaders, collision, movement, inputs, state timing, and source textures stay unchanged. Record results only after the corresponding check is performed.
 
 ## Revisions
 
-### R1 · 2026-09-29 · Beam targeting (see CONCEPT R1)
-
-Not one of the five predictions above — a design problem the greybox exposed before any asset existed: firing along the direction of travel made the survival move (running away) aim the Beam away from the threat. The Beam now targets the nearest enemy. No asset, event→sound mapping or music rule changes; storyboard P3 still reads correctly (the bolt goes toward the moth). Counted as the first *observe → change → re-verify* loop; evidence in `evidence/balance-probe-*.txt` and `test_gameplay.gd::beam-aims-nearest`.
-
-### R2 · 2026-09-29 · Pixel-art prompts; ART-PC-01 is 10 poses (see CONCEPT R2, CHARACTER-SHEET R2)
-
-- ART-PC-01 becomes **320 × 32 (10 × 32²)**; everything else in the asset table is unchanged.
-- Prediction 2 ("generated poses drift") showed up in a different form than predicted: FLUX kept the identity well but ignored the requested 3 × 4 grid and drew mostly standing poses. Response: frames are now cut per figure (`gen/figures.py`) and each pose is generated with its own prompt around one fixed character description, so a pose can be regenerated alone.
-
-### R3 · 2026-09-29 · Music: 20 s loops; how predictions 3 and 5 turned out
-
-- **Loop length (was 30–40 s):** MusicGen generates at most 30 s per run; after a 1 s skip and the crossfade margin, 8 bars at 95.7 BPM (= **20.0 s**) is the longest clean cut. MUS-01 and MUS-02 are both exactly 882176 frames. A 3-minute run hears the loop 9 times.
-- **Prediction 3 (loop seam):** all four MUS-01 candidates passed `loop_check.py`; I listened to each loop three times and picked s5 — the others were "too chaotic, too much noise". Final MUS-01: wrap jump 0.001 vs 99th-percentile step 0.009.
-- **Prediction 5 (layer drift) — happened, then fixed:** the planned musicgen-melody layer (conditioned on MUS-01, drum-less "bells + pad" prompt) came out near 106 BPM on 3 of 4 runs and as hiss on the fourth; none could be fitted to the 20 s loop within a ±10% stretch. A second batch from musicgen-medium (which held 96 BPM on every MUS-01 run) gave three in-tempo layers; I picked s34 by ear ("有种远古的感觉"). Stretch 0.9897, frame counts equal (`layer-length-match` PASS). The fallback (drop MUS-02) was not needed.
-
-### R4 · 2026-09-29 · Five new map props (see CONCEPT R4)
-
-| Asset ID | What | Game file | Size | Panels |
-|---|---|---|---|---|
-| ART-ENV-03 | Lantern post: pole with a hanging paper lantern | `godot/assets/art/env_lantern_post.png` | 24×48 | P1, P2, P3, P8 |
-| ART-ENV-04 | Stack of crates and a barrel | `godot/assets/art/env_crates.png` | 40×32 | P1, P2 |
-| ART-ENV-05 | Noodle cart with a blue awning (second stall type) | `godot/assets/art/env_noodle_cart.png` | 64×48 | P1, P2 |
-| ART-ENV-06 | Rain puddle reflecting lantern light (ground decal) | `godot/assets/art/env_puddle.png` | 32×16 | P2, P3, P8 |
-| ART-ENV-07 | Fallen leaves (ground decal) | `godot/assets/art/env_leaves.png` | 16×16 | P2, P3, P8 |
-
-Environment palette: `#8A5A3C` added (wood). No new sounds; the event→sound map and music rules are unchanged. The new props are decoration only, so prediction 4 (readability) is re-checked with the enemy-vs-ground contrast check after they are in.
-
-### R5 · 2026-09-30 · The five props as generated
-
-All five generated with FLUX.1-schnell and accepted by Bao from 3 candidates each (the puddle from a second batch after its prompt was rewritten — the first asked for "dark cobblestones" and FLUX painted them). Collision boxes are measured from the sprites (`SOLID_BOX` in `ground.gd`, checked by `solid-boxes-match-sprites`); the noodle cart is narrower than planned (24 × 41 px solid). Puddles and leaves are drawn at 55 % opacity so that ground decals stay darker than the courier and the pickups (CONCEPT value rule).
-
-### R6 · 2026-10-01 · Changes from the whole-branch code review
-
-- **SFX-04 (level up) now plays when the card screen opens**, not when XP crosses a threshold. One pickup worth two levels used to play two stacked chimes on the same tick and open the second card screen in silence; a level gained on the 3:00 tick chimed with no card at all. Now: one chime per card screen, none at the end of a run (`levelup-sfx-on-card-screen`, `no-levelup-chime-when-run-ends`).
-- **A restart silences the previous run's lose/win stinger** (`restart-silences-stingers`).
-- **Enemies always spawn off-screen.** Near a wall or in a corner the 400 px spawn ring used to put spawns inside the view (83 of 200 in the test), even on the courier; now the angle is re-rolled with the seeded rng and falls back to the widest strip of arena outside the view (`spawns-arrive-off-screen`).
-- **The double-click launcher imports the assets on first run.** A fresh clone or the submission ZIP has no Godot import cache, and ran with placeholder art and no sound; `generated-assets-load` now fails whenever that happens.
-- Correction to §2 above: with one voice and a 300 ms voice slot, pickups are effectively merged within **300 ms**, not 80 ms.
+No tuning revision has been performed yet.
