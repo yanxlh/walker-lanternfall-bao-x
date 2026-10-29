@@ -15,7 +15,7 @@ Master: `exports/landscape/claude-liam-walker-lanternfall-bao-x-particles-gamede
 
 - **B21, last ≈ 0.4 s (around 394.5 s):** the closing real-speed play of the 90-frame (3.00 s) study clip was given 3.4 s, so the video area went blank before the cut. It was shortened to 2.9 s. In the re-export the video area is filled at 394.0 and 394.3 s, and B22 starts at 395.0 s.
 
-## Bao's review of the second master, fixed
+## Sampled review of the second master (Codex, relayed by Bao), fixed
 
 - **B12, about 3:27:** the narration said "a sphere three pixels wide"; `emission_sphere_radius = 3.0` is a radius (6 px across). The line now reads "a sphere with a three-pixel radius" and the highlight label "(radius, px)". B12's narration was regenerated and re-rendered, and the master re-exported. A local Whisper transcription of the new master reads at 209.6 s: "It emits continuously from a sphere with a three-pixel radius". The B11–B13 span (203–229 s) was sampled again at 2 fps. Only B12 changed, so every later beat moved by +0.57 s.
 
@@ -41,4 +41,4 @@ Master: `exports/landscape/claude-liam-walker-lanternfall-bao-x-particles-gamede
 
 ## Not covered by this pass
 
-A human viewing and listening of the whole film (content, pacing, voice, every narration transition). That is Bao's review.
+A human viewing and listening of the whole film (content, pacing, voice, every narration transition). Codex's sampled review does not replace that, so it is still Bao's to do.
