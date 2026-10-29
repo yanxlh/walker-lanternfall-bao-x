@@ -9,6 +9,7 @@ const Art = preload("res://features/art.gd")
 
 const W := 640.0
 const H := 360.0
+const LEVELUP_PORTRAIT_RECT := Rect2(8, H - 104, 96, 96)
 const INK := Color("#14121C")
 const CREAM := Color("#FFF1C9")
 const GOLD := Color("#F2B84B")
@@ -83,6 +84,10 @@ func _muted(bus: String) -> bool:
 func _text(pos: Vector2, s: String, size := 12, color := CREAM, align := HORIZONTAL_ALIGNMENT_LEFT, width := -1.0) -> void:
 	view.draw_string(ThemeDB.fallback_font, pos, s, align, width, size, color)
 
+func levelup_particle_anchor() -> Vector2:
+	# Same torso origin used by the world sprite, mapped into the UI portrait.
+	return view.get_transform() * (LEVELUP_PORTRAIT_RECT.position + PlayerScript.SPRITE_ORIGIN * LEVELUP_PORTRAIT_RECT.size / 32.0)
+
 func _pose(p: String, rect: Rect2) -> void:
 	if portrait:
 		var i := PlayerScript.POSES.find(p)
@@ -127,7 +132,7 @@ func _draw_view() -> void:
 				_text(r.position + Vector2(8, 22), "[%d]" % (i + 1), 12, INK)
 				_text(r.position + Vector2(8, 60), session.prog.card_title(session.offered[i]), 13, INK, HORIZONTAL_ALIGNMENT_LEFT, r.size.x - 16)
 				_text(r.position + Vector2(8, 90), t[1], 10, INK, HORIZONTAL_ALIGNMENT_LEFT, r.size.x - 16)
-			_pose("levelup", Rect2(8, H - 104, 96, 96))
+			_pose("levelup", LEVELUP_PORTRAIT_RECT)
 		GameState.PAUSED:
 			view.draw_rect(Rect2(0, 0, W, H), Color(INK, 0.6))
 			_text(Vector2(0, 180), "PAUSED", 28, GOLD, HORIZONTAL_ALIGNMENT_CENTER, W)

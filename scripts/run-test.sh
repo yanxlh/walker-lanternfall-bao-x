@@ -23,7 +23,7 @@ fi
 mkdir -p logs
 log="logs/$(basename "$1" .gd)_${tag}.log"
 # Python's watchdog supplies timeout on macOS, where GNU timeout is not bundled.
-python3 - "${3:-120}" "$godot_bin" --headless "${fps_args[@]}" --path godot --script "res://tests/$1" <<'PY' 2>&1 | tee "$log"
+python3 - "${3:-120}" "$godot_bin" --headless "${fps_args[@]}" --path godot --log-file "$PWD/logs/engine_$(basename "$1" .gd)_${tag}.log" --script "res://tests/$1" <<'PY' 2>&1 | tee "$log"
 import subprocess, sys
 try:
     status = subprocess.run(sys.argv[2:], timeout=float(sys.argv[1])).returncode
