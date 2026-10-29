@@ -1,0 +1,43 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+PASS menu-no-bursts {}
+PASS menu-no-trail {}
+PASS real-start-input {}
+PASS idle-no-trail {}
+PASS real-beam-hits {"events":3}
+PASS rapid-hits-overlap {"live":3}
+PASS lethal-hit-survives-enemy-free {}
+PASS nonlethal-hit-also-bursts {}
+PASS hit-event-position {}
+PASS one-instance-per-accepted-hit {}
+PASS pause-freezes-hit {}
+PASS pause-stops-freezes-trail {}
+PASS real-movement-starts-trail {}
+PASS trail-follows-feet {}
+PASS trail-world-coordinates {}
+PASS hidden-stops-emission-keeps-simulation {}
+PASS visible-moving-resumes-trail {}
+PASS idle-stops-trail {}
+PASS real-pickup-causes-levelup {}
+PASS upgrade-burst-at-ui-portrait {}
+PASS upgrade-overlay-above-hud {}
+PASS upgrade-screen-position-matches-portrait {}
+PASS upgrade-position-independent-of-camera {}
+PASS upgrade-celebration-continues-on-card-screen {}
+PASS upgrade-stops-freezes-trail {}
+PASS real-card-input-resumes-game {}
+PASS restart-clears-bursts {}
+PASS restart-resets-counters {}
+PASS restart-no-phantom-trail {}
+PASS hit-cap-sees-all-events {"seen":40}
+PASS hit-cap-limits-instances {}
+PASS hit-cap-allocation {}
+PASS level-cap-sees-all-events {"seen":6}
+PASS level-cap-limits-instances {}
+particles_state: 34 checks, 0 failures -> /Users/yxlh/Documents/ChatGPT/csye 7280/course-repo-assignment2/fall-2026/xinghe-b/assignment-2/walker-lanternfall-bao-x/godot/../evidence/particles_state.json
+WARNING: 24 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 7 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

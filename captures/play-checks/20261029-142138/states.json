@@ -1,0 +1,6145 @@
+{
+  "shots": [
+    {
+      "camera_zoom": 1.0,
+      "file": "upgrade-f01.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "f01",
+      "level_bursts": 1,
+      "note": "frames after the gem drop; LEVELUP began",
+      "particles_visible": true,
+      "physics_frame": 16,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "upgrade",
+      "state": "levelup",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "upgrade-f06.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "f06",
+      "level_bursts": 1,
+      "note": "frames after the gem drop",
+      "particles_visible": true,
+      "physics_frame": 21,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "upgrade",
+      "state": "levelup",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "upgrade-f12.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "f12",
+      "level_bursts": 1,
+      "note": "frames after the gem drop",
+      "particles_visible": true,
+      "physics_frame": 27,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "upgrade",
+      "state": "levelup",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "upgrade-f24.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "f24",
+      "level_bursts": 1,
+      "note": "frames after the gem drop",
+      "particles_visible": true,
+      "physics_frame": 39,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "upgrade",
+      "state": "levelup",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "upgrade-f40.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "f40",
+      "level_bursts": 1,
+      "note": "frames after the gem drop",
+      "particles_visible": true,
+      "physics_frame": 55,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "upgrade",
+      "state": "levelup",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "upgrade-after-card.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "after-card",
+      "level_bursts": 0,
+      "note": "card 1 chosen",
+      "particles_visible": true,
+      "physics_frame": 57,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "upgrade",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-dark-hit+00.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+00",
+      "level_bursts": 0,
+      "note": "first frame after the first hit, plain floor",
+      "particles_visible": true,
+      "physics_frame": 66,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "hit-dark",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-dark-hit+03.png",
+      "hit_bursts": 2,
+      "hits_seen": 2,
+      "hits_spawned": 2,
+      "label": "hit+03",
+      "level_bursts": 0,
+      "note": "plain floor",
+      "particles_visible": true,
+      "physics_frame": 69,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "hit-dark",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-dark-hit+08.png",
+      "hit_bursts": 2,
+      "hits_seen": 2,
+      "hits_spawned": 2,
+      "label": "hit+08",
+      "level_bursts": 0,
+      "note": "plain floor",
+      "particles_visible": true,
+      "physics_frame": 74,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "hit-dark",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-dark-hit+16.png",
+      "hit_bursts": 2,
+      "hits_seen": 2,
+      "hits_spawned": 2,
+      "label": "hit+16",
+      "level_bursts": 0,
+      "note": "plain floor",
+      "particles_visible": true,
+      "physics_frame": 82,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "hit-dark",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-dark-hit+30.png",
+      "hit_bursts": 0,
+      "hits_seen": 2,
+      "hits_spawned": 2,
+      "label": "hit+30",
+      "level_bursts": 0,
+      "note": "plain floor",
+      "particles_visible": true,
+      "physics_frame": 96,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "hit-dark",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-cart-hit+00.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+00",
+      "level_bursts": 0,
+      "note": "first frame after the first hit, cart",
+      "particles_visible": true,
+      "physics_frame": 107,
+      "player": [
+        -213.57,
+        -80.5
+      ],
+      "scene": "hit-bright-cart",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-cart-hit+03.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+03",
+      "level_bursts": 0,
+      "note": "cart",
+      "particles_visible": true,
+      "physics_frame": 110,
+      "player": [
+        -213.57,
+        -80.5
+      ],
+      "scene": "hit-bright-cart",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-cart-hit+08.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+08",
+      "level_bursts": 0,
+      "note": "cart",
+      "particles_visible": true,
+      "physics_frame": 115,
+      "player": [
+        -213.57,
+        -80.5
+      ],
+      "scene": "hit-bright-cart",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-cart-hit+16.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+16",
+      "level_bursts": 0,
+      "note": "cart",
+      "particles_visible": true,
+      "physics_frame": 123,
+      "player": [
+        -213.57,
+        -80.5
+      ],
+      "scene": "hit-bright-cart",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-cart-hit+30.png",
+      "hit_bursts": 0,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+30",
+      "level_bursts": 0,
+      "note": "cart",
+      "particles_visible": true,
+      "physics_frame": 137,
+      "player": [
+        -213.57,
+        -80.5
+      ],
+      "scene": "hit-bright-cart",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-post-hit+00.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+00",
+      "level_bursts": 0,
+      "note": "first frame after the first hit, post",
+      "particles_visible": true,
+      "physics_frame": 148,
+      "player": [
+        25.86,
+        -220.02
+      ],
+      "scene": "hit-bright-post",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-post-hit+03.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+03",
+      "level_bursts": 0,
+      "note": "post",
+      "particles_visible": true,
+      "physics_frame": 151,
+      "player": [
+        25.86,
+        -220.02
+      ],
+      "scene": "hit-bright-post",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-post-hit+08.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+08",
+      "level_bursts": 0,
+      "note": "post",
+      "particles_visible": true,
+      "physics_frame": 156,
+      "player": [
+        25.86,
+        -220.02
+      ],
+      "scene": "hit-bright-post",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-post-hit+16.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+16",
+      "level_bursts": 0,
+      "note": "post",
+      "particles_visible": true,
+      "physics_frame": 164,
+      "player": [
+        25.86,
+        -220.02
+      ],
+      "scene": "hit-bright-post",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "hit-bright-post-hit+30.png",
+      "hit_bursts": 0,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hit+30",
+      "level_bursts": 0,
+      "note": "post",
+      "particles_visible": true,
+      "physics_frame": 178,
+      "player": [
+        25.86,
+        -220.02
+      ],
+      "scene": "hit-bright-post",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-dark-move10.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "move10",
+      "level_bursts": 0,
+      "note": "holding D",
+      "particles_visible": true,
+      "physics_frame": 193,
+      "player": [
+        15.0,
+        0.0
+      ],
+      "scene": "trail-dark",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-dark-move25.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "move25",
+      "level_bursts": 0,
+      "note": "holding D",
+      "particles_visible": true,
+      "physics_frame": 208,
+      "player": [
+        37.5,
+        0.0
+      ],
+      "scene": "trail-dark",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-dark-move45.png",
+      "hit_bursts": 1,
+      "hits_seen": 2,
+      "hits_spawned": 2,
+      "label": "move45",
+      "level_bursts": 0,
+      "note": "holding D",
+      "particles_visible": true,
+      "physics_frame": 228,
+      "player": [
+        67.5,
+        0.0
+      ],
+      "scene": "trail-dark",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-dark-move70.png",
+      "hit_bursts": 0,
+      "hits_seen": 2,
+      "hits_spawned": 2,
+      "label": "move70",
+      "level_bursts": 0,
+      "note": "holding D",
+      "particles_visible": true,
+      "physics_frame": 253,
+      "player": [
+        105.0,
+        0.0
+      ],
+      "scene": "trail-dark",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-dark-stop+01.png",
+      "hit_bursts": 0,
+      "hits_seen": 2,
+      "hits_spawned": 2,
+      "label": "stop+01",
+      "level_bursts": 0,
+      "note": "released D",
+      "particles_visible": true,
+      "physics_frame": 254,
+      "player": [
+        105.0,
+        0.0
+      ],
+      "scene": "trail-dark",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-dark-stop+06.png",
+      "hit_bursts": 0,
+      "hits_seen": 2,
+      "hits_spawned": 2,
+      "label": "stop+06",
+      "level_bursts": 0,
+      "note": "released D",
+      "particles_visible": true,
+      "physics_frame": 259,
+      "player": [
+        105.0,
+        0.0
+      ],
+      "scene": "trail-dark",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-dark-stop+12.png",
+      "hit_bursts": 1,
+      "hits_seen": 3,
+      "hits_spawned": 3,
+      "label": "stop+12",
+      "level_bursts": 0,
+      "note": "released D",
+      "particles_visible": true,
+      "physics_frame": 265,
+      "player": [
+        105.0,
+        0.0
+      ],
+      "scene": "trail-dark",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-dark-stop+22.png",
+      "hit_bursts": 1,
+      "hits_seen": 3,
+      "hits_spawned": 3,
+      "label": "stop+22",
+      "level_bursts": 0,
+      "note": "released D",
+      "particles_visible": true,
+      "physics_frame": 275,
+      "player": [
+        105.0,
+        0.0
+      ],
+      "scene": "trail-dark",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-bright-move30.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "move30",
+      "level_bursts": 0,
+      "note": "holding D through the light pool",
+      "particles_visible": true,
+      "physics_frame": 310,
+      "player": [
+        58.86,
+        -176.02
+      ],
+      "scene": "trail-bright",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-bright-move45.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "move45",
+      "level_bursts": 0,
+      "note": "holding D through the light pool",
+      "particles_visible": true,
+      "physics_frame": 325,
+      "player": [
+        81.36,
+        -176.02
+      ],
+      "scene": "trail-bright",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-bright-move60.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "move60",
+      "level_bursts": 0,
+      "note": "holding D through the light pool",
+      "particles_visible": true,
+      "physics_frame": 340,
+      "player": [
+        103.86,
+        -176.02
+      ],
+      "scene": "trail-bright",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-bright-move75.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "move75",
+      "level_bursts": 0,
+      "note": "holding D through the light pool",
+      "particles_visible": true,
+      "physics_frame": 355,
+      "player": [
+        126.36,
+        -176.02
+      ],
+      "scene": "trail-bright",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "trail-bright-stop+06.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "stop+06",
+      "level_bursts": 0,
+      "note": "released D",
+      "particles_visible": true,
+      "physics_frame": 361,
+      "player": [
+        126.36,
+        -176.02
+      ],
+      "scene": "trail-bright",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "blocked-idle.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "idle",
+      "level_bursts": 0,
+      "note": "touching the stall's left edge",
+      "particles_visible": true,
+      "physics_frame": 376,
+      "player": [
+        233.2,
+        126.34
+      ],
+      "scene": "blocked",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "blocked-push30.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "push30",
+      "level_bursts": 0,
+      "note": "holding D into the stall for 30 frames; moved 0.500 px",
+      "particles_visible": true,
+      "physics_frame": 406,
+      "player": [
+        233.7,
+        126.34
+      ],
+      "scene": "blocked",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "blocked-slide-up20.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "slide-up20",
+      "level_bursts": 0,
+      "note": "holding W along the stall edge: real movement",
+      "particles_visible": true,
+      "physics_frame": 426,
+      "player": [
+        233.7,
+        96.34
+      ],
+      "scene": "blocked",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "restart-before-r.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "before-r",
+      "level_bursts": 0,
+      "note": "holding D for 60 frames",
+      "particles_visible": true,
+      "physics_frame": 491,
+      "player": [
+        90.0,
+        0.0
+      ],
+      "scene": "restart",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "restart-r+01.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "r+01",
+      "level_bursts": 0,
+      "note": "restart pressed, D still held",
+      "particles_visible": true,
+      "physics_frame": 493,
+      "player": [
+        3.0,
+        0.0
+      ],
+      "scene": "restart",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "restart-r+04.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "r+04",
+      "level_bursts": 0,
+      "note": "D still held",
+      "particles_visible": true,
+      "physics_frame": 496,
+      "player": [
+        7.5,
+        0.0
+      ],
+      "scene": "restart",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "restart-r+14.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "r+14",
+      "level_bursts": 0,
+      "note": "D still held",
+      "particles_visible": true,
+      "physics_frame": 506,
+      "player": [
+        22.5,
+        0.0
+      ],
+      "scene": "restart",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "pause-live.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "live",
+      "level_bursts": 0,
+      "note": "moving with a live hit burst",
+      "particles_visible": true,
+      "physics_frame": 522,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "pause",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "pause-paused+01.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "paused+01",
+      "level_bursts": 0,
+      "note": "P pressed",
+      "particles_visible": true,
+      "physics_frame": 524,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "pause",
+      "state": "paused",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "pause-paused+31.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "paused+31",
+      "level_bursts": 0,
+      "note": "still paused; image should match paused+01",
+      "particles_visible": true,
+      "physics_frame": 554,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "pause",
+      "state": "paused",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "pause-resumed+06.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "resumed+06",
+      "level_bursts": 0,
+      "note": "P pressed again, D held",
+      "particles_visible": true,
+      "physics_frame": 562,
+      "player": [
+        28.5,
+        0.0
+      ],
+      "scene": "pause",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "pause-hidden+08.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "hidden+08",
+      "level_bursts": 0,
+      "note": "presentation hidden while moving",
+      "particles_visible": false,
+      "physics_frame": 570,
+      "player": [
+        40.5,
+        0.0
+      ],
+      "scene": "pause",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "pause-shown+08.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "shown+08",
+      "level_bursts": 0,
+      "note": "presentation shown again",
+      "particles_visible": true,
+      "physics_frame": 578,
+      "player": [
+        43.33,
+        0.0
+      ],
+      "scene": "pause",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "card-levelup+02.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "levelup+02",
+      "level_bursts": 1,
+      "note": "card screen over a live hit and trail",
+      "particles_visible": true,
+      "physics_frame": 595,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "card",
+      "state": "levelup",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "card-levelup+32.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "levelup+32",
+      "level_bursts": 1,
+      "note": "card screen held",
+      "particles_visible": true,
+      "physics_frame": 625,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "card",
+      "state": "levelup",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "card-chosen+04.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "chosen+04",
+      "level_bursts": 1,
+      "note": "card 2 chosen",
+      "particles_visible": true,
+      "physics_frame": 631,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "card",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "death-live.png",
+      "hit_bursts": 1,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "live",
+      "level_bursts": 0,
+      "note": "moving with a live hit burst",
+      "particles_visible": true,
+      "physics_frame": 646,
+      "player": [
+        15.0,
+        0.0
+      ],
+      "scene": "death",
+      "state": "playing",
+      "trail_emitting": true,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "death-lost+00.png",
+      "hit_bursts": 0,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "lost+00",
+      "level_bursts": 0,
+      "note": "first frame in LOST",
+      "particles_visible": true,
+      "physics_frame": 647,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "death",
+      "state": "lost",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "death-lost+30.png",
+      "hit_bursts": 0,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "lost+30",
+      "level_bursts": 0,
+      "note": "LOST screen held",
+      "particles_visible": true,
+      "physics_frame": 677,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "death",
+      "state": "lost",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "death-restart+04.png",
+      "hit_bursts": 0,
+      "hits_seen": 0,
+      "hits_spawned": 0,
+      "label": "restart+04",
+      "level_bursts": 0,
+      "note": "R pressed from LOST",
+      "particles_visible": true,
+      "physics_frame": 683,
+      "player": [
+        0.0,
+        0.0
+      ],
+      "scene": "death",
+      "state": "playing",
+      "trail_emitting": false,
+      "trail_speed_scale": 1.0
+    },
+    {
+      "camera_zoom": 1.0,
+      "file": "win-won+00.png",
+      "hit_bursts": 0,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "won+00",
+      "level_bursts": 0,
+      "note": "first frame in WON",
+      "particles_visible": true,
+      "physics_frame": 699,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "win",
+      "state": "won",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    },
+    {
+      "camera_zoom": 0.97,
+      "file": "win-won+30.png",
+      "hit_bursts": 0,
+      "hits_seen": 1,
+      "hits_spawned": 1,
+      "label": "won+30",
+      "level_bursts": 0,
+      "note": "WON screen held",
+      "particles_visible": true,
+      "physics_frame": 729,
+      "player": [
+        16.5,
+        0.0
+      ],
+      "scene": "win",
+      "state": "won",
+      "trail_emitting": false,
+      "trail_speed_scale": 0.0
+    }
+  ],
+  "trail_per_frame": [
+    [
+      "upgrade",
+      2,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      3,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      4,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      5,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      6,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      7,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      8,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      9,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      10,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      11,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      12,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      13,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      14,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      15,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      16,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      17,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      18,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      19,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      20,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      21,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      22,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      23,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      24,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      25,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      26,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      27,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      28,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      29,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      30,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      31,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      32,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      33,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      34,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      35,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      36,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      37,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      38,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      39,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      40,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      41,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      42,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      43,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      44,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      45,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      46,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      47,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      48,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      49,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      50,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      51,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      52,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      53,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      54,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      55,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      56,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "upgrade",
+      57,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      59,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      60,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      61,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      62,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      63,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      64,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      65,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      66,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      67,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      68,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      69,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      70,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      71,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      72,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      73,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      74,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      75,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      76,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      77,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      78,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      79,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      80,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      81,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      82,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      83,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      84,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      85,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      86,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      87,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      88,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      89,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      90,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      91,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      92,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      93,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      94,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      95,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-dark",
+      96,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-bright-cart",
+      98,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-bright-cart",
+      99,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-bright-cart",
+      100,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      101,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      102,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      103,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      104,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      105,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      106,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      107,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      108,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      109,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      110,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      111,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      112,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      113,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      114,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      115,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      116,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      117,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      118,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      119,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      120,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      121,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      122,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      123,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      124,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      125,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      126,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      127,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      128,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      129,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      130,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      131,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      132,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      133,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      134,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      135,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      136,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-cart",
+      137,
+      false,
+      -213.573608398438,
+      -80.5029602050781
+    ],
+    [
+      "hit-bright-post",
+      139,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-bright-post",
+      140,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "hit-bright-post",
+      141,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      142,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      143,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      144,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      145,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      146,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      147,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      148,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      149,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      150,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      151,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      152,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      153,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      154,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      155,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      156,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      157,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      158,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      159,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      160,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      161,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      162,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      163,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      164,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      165,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      166,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      167,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      168,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      169,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      170,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      171,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      172,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      173,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      174,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      175,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      176,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      177,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "hit-bright-post",
+      178,
+      false,
+      25.861572265625,
+      -220.021759033203
+    ],
+    [
+      "trail-dark",
+      180,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      181,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      182,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      183,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      184,
+      true,
+      1.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      185,
+      true,
+      3.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      186,
+      true,
+      4.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      187,
+      true,
+      6.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      188,
+      true,
+      7.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      189,
+      true,
+      9.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      190,
+      true,
+      10.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      191,
+      true,
+      12.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      192,
+      true,
+      13.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      193,
+      true,
+      15.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      194,
+      true,
+      16.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      195,
+      true,
+      18.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      196,
+      true,
+      19.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      197,
+      true,
+      21.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      198,
+      true,
+      22.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      199,
+      true,
+      24.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      200,
+      true,
+      25.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      201,
+      true,
+      27.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      202,
+      true,
+      28.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      203,
+      true,
+      30.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      204,
+      true,
+      31.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      205,
+      true,
+      33.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      206,
+      true,
+      34.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      207,
+      true,
+      36.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      208,
+      true,
+      37.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      209,
+      true,
+      39.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      210,
+      true,
+      40.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      211,
+      true,
+      42.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      212,
+      true,
+      43.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      213,
+      true,
+      45.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      214,
+      true,
+      46.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      215,
+      true,
+      48.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      216,
+      true,
+      49.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      217,
+      true,
+      51.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      218,
+      true,
+      52.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      219,
+      true,
+      54.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      220,
+      true,
+      55.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      221,
+      true,
+      57.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      222,
+      true,
+      58.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      223,
+      true,
+      60.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      224,
+      true,
+      61.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      225,
+      true,
+      63.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      226,
+      true,
+      64.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      227,
+      true,
+      66.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      228,
+      true,
+      67.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      229,
+      true,
+      69.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      230,
+      true,
+      70.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      231,
+      true,
+      72.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      232,
+      true,
+      73.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      233,
+      true,
+      75.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      234,
+      true,
+      76.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      235,
+      true,
+      78.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      236,
+      true,
+      79.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      237,
+      true,
+      81.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      238,
+      true,
+      82.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      239,
+      true,
+      84.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      240,
+      true,
+      85.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      241,
+      true,
+      87.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      242,
+      true,
+      88.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      243,
+      true,
+      90.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      244,
+      true,
+      91.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      245,
+      true,
+      93.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      246,
+      true,
+      94.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      247,
+      true,
+      96.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      248,
+      true,
+      97.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      249,
+      true,
+      99.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      250,
+      true,
+      100.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      251,
+      true,
+      102.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      252,
+      true,
+      103.5,
+      0.0
+    ],
+    [
+      "trail-dark",
+      253,
+      true,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      254,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      255,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      256,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      257,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      258,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      259,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      260,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      261,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      262,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      263,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      264,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      265,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      266,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      267,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      268,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      269,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      270,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      271,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      272,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      273,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      274,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-dark",
+      275,
+      false,
+      105.0,
+      0.0
+    ],
+    [
+      "trail-bright",
+      277,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "trail-bright",
+      278,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "trail-bright",
+      279,
+      false,
+      13.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      280,
+      false,
+      13.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      281,
+      true,
+      15.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      282,
+      true,
+      16.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      283,
+      true,
+      18.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      284,
+      true,
+      19.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      285,
+      true,
+      21.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      286,
+      true,
+      22.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      287,
+      true,
+      24.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      288,
+      true,
+      25.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      289,
+      true,
+      27.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      290,
+      true,
+      28.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      291,
+      true,
+      30.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      292,
+      true,
+      31.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      293,
+      true,
+      33.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      294,
+      true,
+      34.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      295,
+      true,
+      36.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      296,
+      true,
+      37.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      297,
+      true,
+      39.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      298,
+      true,
+      40.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      299,
+      true,
+      42.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      300,
+      true,
+      43.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      301,
+      true,
+      45.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      302,
+      true,
+      46.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      303,
+      true,
+      48.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      304,
+      true,
+      49.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      305,
+      true,
+      51.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      306,
+      true,
+      52.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      307,
+      true,
+      54.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      308,
+      true,
+      55.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      309,
+      true,
+      57.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      310,
+      true,
+      58.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      311,
+      true,
+      60.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      312,
+      true,
+      61.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      313,
+      true,
+      63.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      314,
+      true,
+      64.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      315,
+      true,
+      66.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      316,
+      true,
+      67.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      317,
+      true,
+      69.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      318,
+      true,
+      70.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      319,
+      true,
+      72.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      320,
+      true,
+      73.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      321,
+      true,
+      75.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      322,
+      true,
+      76.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      323,
+      true,
+      78.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      324,
+      true,
+      79.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      325,
+      true,
+      81.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      326,
+      true,
+      82.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      327,
+      true,
+      84.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      328,
+      true,
+      85.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      329,
+      true,
+      87.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      330,
+      true,
+      88.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      331,
+      true,
+      90.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      332,
+      true,
+      91.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      333,
+      true,
+      93.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      334,
+      true,
+      94.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      335,
+      true,
+      96.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      336,
+      true,
+      97.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      337,
+      true,
+      99.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      338,
+      true,
+      100.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      339,
+      true,
+      102.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      340,
+      true,
+      103.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      341,
+      true,
+      105.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      342,
+      true,
+      106.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      343,
+      true,
+      108.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      344,
+      true,
+      109.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      345,
+      true,
+      111.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      346,
+      true,
+      112.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      347,
+      true,
+      114.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      348,
+      true,
+      115.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      349,
+      true,
+      117.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      350,
+      true,
+      118.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      351,
+      true,
+      120.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      352,
+      true,
+      121.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      353,
+      true,
+      123.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      354,
+      true,
+      124.861572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      355,
+      true,
+      126.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      356,
+      false,
+      126.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      357,
+      false,
+      126.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      358,
+      false,
+      126.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      359,
+      false,
+      126.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      360,
+      false,
+      126.361572265625,
+      -176.021759033203
+    ],
+    [
+      "trail-bright",
+      361,
+      false,
+      126.361572265625,
+      -176.021759033203
+    ],
+    [
+      "blocked",
+      363,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "blocked",
+      364,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "blocked",
+      365,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      366,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      367,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      368,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      369,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      370,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      371,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      372,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      373,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      374,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      375,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      376,
+      false,
+      233.195526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      377,
+      true,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      378,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      379,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      380,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      381,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      382,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      383,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      384,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      385,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      386,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      387,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      388,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      389,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      390,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      391,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      392,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      393,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      394,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      395,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      396,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      397,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      398,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      399,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      400,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      401,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      402,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      403,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      404,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      405,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      406,
+      false,
+      233.695526123047,
+      126.337615966797
+    ],
+    [
+      "blocked",
+      407,
+      true,
+      233.695526123047,
+      124.837615966797
+    ],
+    [
+      "blocked",
+      408,
+      true,
+      233.695526123047,
+      123.337615966797
+    ],
+    [
+      "blocked",
+      409,
+      true,
+      233.695526123047,
+      121.837615966797
+    ],
+    [
+      "blocked",
+      410,
+      true,
+      233.695526123047,
+      120.337615966797
+    ],
+    [
+      "blocked",
+      411,
+      true,
+      233.695526123047,
+      118.837615966797
+    ],
+    [
+      "blocked",
+      412,
+      true,
+      233.695526123047,
+      117.337615966797
+    ],
+    [
+      "blocked",
+      413,
+      true,
+      233.695526123047,
+      115.837615966797
+    ],
+    [
+      "blocked",
+      414,
+      true,
+      233.695526123047,
+      114.337615966797
+    ],
+    [
+      "blocked",
+      415,
+      true,
+      233.695526123047,
+      112.837615966797
+    ],
+    [
+      "blocked",
+      416,
+      true,
+      233.695526123047,
+      111.337615966797
+    ],
+    [
+      "blocked",
+      417,
+      true,
+      233.695526123047,
+      109.837615966797
+    ],
+    [
+      "blocked",
+      418,
+      true,
+      233.695526123047,
+      108.337615966797
+    ],
+    [
+      "blocked",
+      419,
+      true,
+      233.695526123047,
+      106.837615966797
+    ],
+    [
+      "blocked",
+      420,
+      true,
+      233.695526123047,
+      105.337615966797
+    ],
+    [
+      "blocked",
+      421,
+      true,
+      233.695526123047,
+      103.837615966797
+    ],
+    [
+      "blocked",
+      422,
+      true,
+      233.695526123047,
+      102.337615966797
+    ],
+    [
+      "blocked",
+      423,
+      true,
+      233.695526123047,
+      100.837615966797
+    ],
+    [
+      "blocked",
+      424,
+      true,
+      233.695526123047,
+      99.3376159667969
+    ],
+    [
+      "blocked",
+      425,
+      true,
+      233.695526123047,
+      97.8376159667969
+    ],
+    [
+      "blocked",
+      426,
+      true,
+      233.695526123047,
+      96.3376159667969
+    ],
+    [
+      "restart",
+      428,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "restart",
+      429,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "restart",
+      430,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "restart",
+      431,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "restart",
+      432,
+      true,
+      1.5,
+      0.0
+    ],
+    [
+      "restart",
+      433,
+      true,
+      3.0,
+      0.0
+    ],
+    [
+      "restart",
+      434,
+      true,
+      4.5,
+      0.0
+    ],
+    [
+      "restart",
+      435,
+      true,
+      6.0,
+      0.0
+    ],
+    [
+      "restart",
+      436,
+      true,
+      7.5,
+      0.0
+    ],
+    [
+      "restart",
+      437,
+      true,
+      9.0,
+      0.0
+    ],
+    [
+      "restart",
+      438,
+      true,
+      10.5,
+      0.0
+    ],
+    [
+      "restart",
+      439,
+      true,
+      12.0,
+      0.0
+    ],
+    [
+      "restart",
+      440,
+      true,
+      13.5,
+      0.0
+    ],
+    [
+      "restart",
+      441,
+      true,
+      15.0,
+      0.0
+    ],
+    [
+      "restart",
+      442,
+      true,
+      16.5,
+      0.0
+    ],
+    [
+      "restart",
+      443,
+      true,
+      18.0,
+      0.0
+    ],
+    [
+      "restart",
+      444,
+      true,
+      19.5,
+      0.0
+    ],
+    [
+      "restart",
+      445,
+      true,
+      21.0,
+      0.0
+    ],
+    [
+      "restart",
+      446,
+      true,
+      22.5,
+      0.0
+    ],
+    [
+      "restart",
+      447,
+      true,
+      24.0,
+      0.0
+    ],
+    [
+      "restart",
+      448,
+      true,
+      25.5,
+      0.0
+    ],
+    [
+      "restart",
+      449,
+      true,
+      27.0,
+      0.0
+    ],
+    [
+      "restart",
+      450,
+      true,
+      28.5,
+      0.0
+    ],
+    [
+      "restart",
+      451,
+      true,
+      30.0,
+      0.0
+    ],
+    [
+      "restart",
+      452,
+      true,
+      31.5,
+      0.0
+    ],
+    [
+      "restart",
+      453,
+      true,
+      33.0,
+      0.0
+    ],
+    [
+      "restart",
+      454,
+      true,
+      34.5,
+      0.0
+    ],
+    [
+      "restart",
+      455,
+      true,
+      36.0,
+      0.0
+    ],
+    [
+      "restart",
+      456,
+      true,
+      37.5,
+      0.0
+    ],
+    [
+      "restart",
+      457,
+      true,
+      39.0,
+      0.0
+    ],
+    [
+      "restart",
+      458,
+      true,
+      40.5,
+      0.0
+    ],
+    [
+      "restart",
+      459,
+      true,
+      42.0,
+      0.0
+    ],
+    [
+      "restart",
+      460,
+      true,
+      43.5,
+      0.0
+    ],
+    [
+      "restart",
+      461,
+      true,
+      45.0,
+      0.0
+    ],
+    [
+      "restart",
+      462,
+      true,
+      46.5,
+      0.0
+    ],
+    [
+      "restart",
+      463,
+      true,
+      48.0,
+      0.0
+    ],
+    [
+      "restart",
+      464,
+      true,
+      49.5,
+      0.0
+    ],
+    [
+      "restart",
+      465,
+      true,
+      51.0,
+      0.0
+    ],
+    [
+      "restart",
+      466,
+      true,
+      52.5,
+      0.0
+    ],
+    [
+      "restart",
+      467,
+      true,
+      54.0,
+      0.0
+    ],
+    [
+      "restart",
+      468,
+      true,
+      55.5,
+      0.0
+    ],
+    [
+      "restart",
+      469,
+      true,
+      57.0,
+      0.0
+    ],
+    [
+      "restart",
+      470,
+      true,
+      58.5,
+      0.0
+    ],
+    [
+      "restart",
+      471,
+      true,
+      60.0,
+      0.0
+    ],
+    [
+      "restart",
+      472,
+      true,
+      61.5,
+      0.0
+    ],
+    [
+      "restart",
+      473,
+      true,
+      63.0,
+      0.0
+    ],
+    [
+      "restart",
+      474,
+      true,
+      64.5,
+      0.0
+    ],
+    [
+      "restart",
+      475,
+      true,
+      66.0,
+      0.0
+    ],
+    [
+      "restart",
+      476,
+      true,
+      67.5,
+      0.0
+    ],
+    [
+      "restart",
+      477,
+      true,
+      69.0,
+      0.0
+    ],
+    [
+      "restart",
+      478,
+      true,
+      70.5,
+      0.0
+    ],
+    [
+      "restart",
+      479,
+      true,
+      72.0,
+      0.0
+    ],
+    [
+      "restart",
+      480,
+      true,
+      73.5,
+      0.0
+    ],
+    [
+      "restart",
+      481,
+      true,
+      75.0,
+      0.0
+    ],
+    [
+      "restart",
+      482,
+      true,
+      76.5,
+      0.0
+    ],
+    [
+      "restart",
+      483,
+      true,
+      78.0,
+      0.0
+    ],
+    [
+      "restart",
+      484,
+      true,
+      79.5,
+      0.0
+    ],
+    [
+      "restart",
+      485,
+      true,
+      81.0,
+      0.0
+    ],
+    [
+      "restart",
+      486,
+      true,
+      82.5,
+      0.0
+    ],
+    [
+      "restart",
+      487,
+      true,
+      84.0,
+      0.0
+    ],
+    [
+      "restart",
+      488,
+      true,
+      85.5,
+      0.0
+    ],
+    [
+      "restart",
+      489,
+      true,
+      87.0,
+      0.0
+    ],
+    [
+      "restart",
+      490,
+      true,
+      88.5,
+      0.0
+    ],
+    [
+      "restart",
+      491,
+      true,
+      90.0,
+      0.0
+    ],
+    [
+      "restart",
+      492,
+      true,
+      1.5,
+      0.0
+    ],
+    [
+      "restart",
+      493,
+      true,
+      3.0,
+      0.0
+    ],
+    [
+      "restart",
+      494,
+      true,
+      4.5,
+      0.0
+    ],
+    [
+      "restart",
+      495,
+      true,
+      6.0,
+      0.0
+    ],
+    [
+      "restart",
+      496,
+      true,
+      7.5,
+      0.0
+    ],
+    [
+      "restart",
+      497,
+      true,
+      9.0,
+      0.0
+    ],
+    [
+      "restart",
+      498,
+      true,
+      10.5,
+      0.0
+    ],
+    [
+      "restart",
+      499,
+      true,
+      12.0,
+      0.0
+    ],
+    [
+      "restart",
+      500,
+      true,
+      13.5,
+      0.0
+    ],
+    [
+      "restart",
+      501,
+      true,
+      15.0,
+      0.0
+    ],
+    [
+      "restart",
+      502,
+      true,
+      16.5,
+      0.0
+    ],
+    [
+      "restart",
+      503,
+      true,
+      18.0,
+      0.0
+    ],
+    [
+      "restart",
+      504,
+      true,
+      19.5,
+      0.0
+    ],
+    [
+      "restart",
+      505,
+      true,
+      21.0,
+      0.0
+    ],
+    [
+      "restart",
+      506,
+      true,
+      22.5,
+      0.0
+    ],
+    [
+      "pause",
+      508,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "pause",
+      509,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "pause",
+      510,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "pause",
+      511,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "pause",
+      512,
+      true,
+      1.5,
+      0.0
+    ],
+    [
+      "pause",
+      513,
+      true,
+      3.0,
+      0.0
+    ],
+    [
+      "pause",
+      514,
+      true,
+      4.5,
+      0.0
+    ],
+    [
+      "pause",
+      515,
+      true,
+      6.0,
+      0.0
+    ],
+    [
+      "pause",
+      516,
+      true,
+      7.5,
+      0.0
+    ],
+    [
+      "pause",
+      517,
+      true,
+      9.0,
+      0.0
+    ],
+    [
+      "pause",
+      518,
+      true,
+      10.5,
+      0.0
+    ],
+    [
+      "pause",
+      519,
+      true,
+      12.0,
+      0.0
+    ],
+    [
+      "pause",
+      520,
+      true,
+      13.5,
+      0.0
+    ],
+    [
+      "pause",
+      521,
+      true,
+      15.0,
+      0.0
+    ],
+    [
+      "pause",
+      522,
+      true,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      523,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      524,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      525,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      526,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      527,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      528,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      529,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      530,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      531,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      532,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      533,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      534,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      535,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      536,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      537,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      538,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      539,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      540,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      541,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      542,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      543,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      544,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      545,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      546,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      547,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      548,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      549,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      550,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      551,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      552,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      553,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      554,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "pause",
+      555,
+      true,
+      18.0,
+      0.0
+    ],
+    [
+      "pause",
+      556,
+      true,
+      19.5,
+      0.0
+    ],
+    [
+      "pause",
+      557,
+      true,
+      21.0,
+      0.0
+    ],
+    [
+      "pause",
+      558,
+      true,
+      22.5,
+      0.0
+    ],
+    [
+      "pause",
+      559,
+      true,
+      24.0,
+      0.0
+    ],
+    [
+      "pause",
+      560,
+      true,
+      25.5,
+      0.0
+    ],
+    [
+      "pause",
+      561,
+      true,
+      27.0,
+      0.0
+    ],
+    [
+      "pause",
+      562,
+      true,
+      28.5,
+      0.0
+    ],
+    [
+      "pause",
+      563,
+      false,
+      30.0,
+      0.0
+    ],
+    [
+      "pause",
+      564,
+      false,
+      31.5,
+      0.0
+    ],
+    [
+      "pause",
+      565,
+      false,
+      33.0,
+      0.0
+    ],
+    [
+      "pause",
+      566,
+      false,
+      34.5,
+      0.0
+    ],
+    [
+      "pause",
+      567,
+      false,
+      36.0,
+      0.0
+    ],
+    [
+      "pause",
+      568,
+      false,
+      37.5,
+      0.0
+    ],
+    [
+      "pause",
+      569,
+      false,
+      39.0,
+      0.0
+    ],
+    [
+      "pause",
+      570,
+      false,
+      40.5,
+      0.0
+    ],
+    [
+      "pause",
+      571,
+      true,
+      42.0,
+      0.0
+    ],
+    [
+      "pause",
+      572,
+      true,
+      43.5,
+      0.0
+    ],
+    [
+      "pause",
+      573,
+      true,
+      45.0,
+      0.0
+    ],
+    [
+      "pause",
+      574,
+      true,
+      46.5,
+      0.0
+    ],
+    [
+      "pause",
+      575,
+      true,
+      45.3333320617676,
+      0.0
+    ],
+    [
+      "pause",
+      576,
+      true,
+      44.4166641235352,
+      0.0
+    ],
+    [
+      "pause",
+      577,
+      true,
+      43.7499961853027,
+      0.0
+    ],
+    [
+      "pause",
+      578,
+      true,
+      43.3333282470703,
+      0.0
+    ],
+    [
+      "card",
+      580,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "card",
+      581,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "card",
+      582,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "card",
+      583,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "card",
+      584,
+      true,
+      1.5,
+      0.0
+    ],
+    [
+      "card",
+      585,
+      true,
+      3.0,
+      0.0
+    ],
+    [
+      "card",
+      586,
+      true,
+      4.5,
+      0.0
+    ],
+    [
+      "card",
+      587,
+      true,
+      6.0,
+      0.0
+    ],
+    [
+      "card",
+      588,
+      true,
+      7.5,
+      0.0
+    ],
+    [
+      "card",
+      589,
+      true,
+      9.0,
+      0.0
+    ],
+    [
+      "card",
+      590,
+      true,
+      10.5,
+      0.0
+    ],
+    [
+      "card",
+      591,
+      true,
+      12.0,
+      0.0
+    ],
+    [
+      "card",
+      592,
+      true,
+      13.5,
+      0.0
+    ],
+    [
+      "card",
+      593,
+      true,
+      15.0,
+      0.0
+    ],
+    [
+      "card",
+      594,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      595,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      596,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      597,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      598,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      599,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      600,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      601,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      602,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      603,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      604,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      605,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      606,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      607,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      608,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      609,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      610,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      611,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      612,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      613,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      614,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      615,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      616,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      617,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      618,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      619,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      620,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      621,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      622,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      623,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      624,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      625,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      626,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      627,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      628,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      629,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      630,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "card",
+      631,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      633,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "death",
+      634,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "death",
+      635,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "death",
+      636,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "death",
+      637,
+      true,
+      1.5,
+      0.0
+    ],
+    [
+      "death",
+      638,
+      true,
+      3.0,
+      0.0
+    ],
+    [
+      "death",
+      639,
+      true,
+      4.5,
+      0.0
+    ],
+    [
+      "death",
+      640,
+      true,
+      6.0,
+      0.0
+    ],
+    [
+      "death",
+      641,
+      true,
+      7.5,
+      0.0
+    ],
+    [
+      "death",
+      642,
+      true,
+      9.0,
+      0.0
+    ],
+    [
+      "death",
+      643,
+      true,
+      10.5,
+      0.0
+    ],
+    [
+      "death",
+      644,
+      true,
+      12.0,
+      0.0
+    ],
+    [
+      "death",
+      645,
+      true,
+      13.5,
+      0.0
+    ],
+    [
+      "death",
+      646,
+      true,
+      15.0,
+      0.0
+    ],
+    [
+      "death",
+      647,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      648,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      649,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      650,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      651,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      652,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      653,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      654,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      655,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      656,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      657,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      658,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      659,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      660,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      661,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      662,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      663,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      664,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      665,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      666,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      667,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      668,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      669,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      670,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      671,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      672,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      673,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      674,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      675,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      676,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      677,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "death",
+      678,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "death",
+      679,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "death",
+      680,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "death",
+      681,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "death",
+      682,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "death",
+      683,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "win",
+      685,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "win",
+      686,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "win",
+      687,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "win",
+      688,
+      false,
+      0.0,
+      0.0
+    ],
+    [
+      "win",
+      689,
+      true,
+      1.5,
+      0.0
+    ],
+    [
+      "win",
+      690,
+      true,
+      3.0,
+      0.0
+    ],
+    [
+      "win",
+      691,
+      true,
+      4.5,
+      0.0
+    ],
+    [
+      "win",
+      692,
+      true,
+      6.0,
+      0.0
+    ],
+    [
+      "win",
+      693,
+      true,
+      7.5,
+      0.0
+    ],
+    [
+      "win",
+      694,
+      true,
+      9.0,
+      0.0
+    ],
+    [
+      "win",
+      695,
+      true,
+      10.5,
+      0.0
+    ],
+    [
+      "win",
+      696,
+      true,
+      12.0,
+      0.0
+    ],
+    [
+      "win",
+      697,
+      true,
+      13.5,
+      0.0
+    ],
+    [
+      "win",
+      698,
+      true,
+      15.0,
+      0.0
+    ],
+    [
+      "win",
+      699,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      700,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      701,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      702,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      703,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      704,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      705,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      706,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      707,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      708,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      709,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      710,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      711,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      712,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      713,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      714,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      715,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      716,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      717,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      718,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      719,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      720,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      721,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      722,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      723,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      724,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      725,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      726,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      727,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      728,
+      false,
+      16.5,
+      0.0
+    ],
+    [
+      "win",
+      729,
+      false,
+      16.5,
+      0.0
+    ]
+  ]
+}

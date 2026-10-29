@@ -1,0 +1,187 @@
+{
+  "checks": 34,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "menu-no-bursts",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "menu-no-trail",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "real-start-input",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "idle-no-trail",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "real-beam-hits",
+      "observed": {
+        "events": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "rapid-hits-overlap",
+      "observed": {
+        "live": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lethal-hit-survives-enemy-free",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "nonlethal-hit-also-bursts",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "hit-event-position",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "one-instance-per-accepted-hit",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "pause-freezes-hit",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "pause-stops-freezes-trail",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "real-movement-starts-trail",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "trail-follows-feet",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "trail-world-coordinates",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "hidden-stops-emission-keeps-simulation",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "visible-moving-resumes-trail",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "idle-stops-trail",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "real-pickup-causes-levelup",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "upgrade-burst-at-ui-portrait",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "upgrade-overlay-above-hud",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "upgrade-screen-position-matches-portrait",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "upgrade-position-independent-of-camera",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "upgrade-celebration-continues-on-card-screen",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "upgrade-stops-freezes-trail",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "real-card-input-resumes-game",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "restart-clears-bursts",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "restart-resets-counters",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "restart-no-phantom-trail",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "hit-cap-sees-all-events",
+      "observed": {
+        "seen": 40
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-cap-limits-instances",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "hit-cap-allocation",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level-cap-sees-all-events",
+      "observed": {
+        "seen": 6
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level-cap-limits-instances",
+      "observed": {},
+      "status": "PASS"
+    }
+  ],
+  "suite": "particles_state",
+  "utc": "2026-10-29T18:25:55"
+}

@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+PASS effect-scene-loads {}
+PASS cpu-2d-node {}
+PASS setting-amount {"actual":"16","expected":"16"}
+PASS setting-one_shot {"actual":"true","expected":"true"}
+PASS setting-emitting {"actual":"false","expected":"false"}
+PASS setting-explosiveness {"actual":"1.0","expected":"1.0"}
+PASS setting-lifetime {"actual":"0.45","expected":"0.45"}
+PASS setting-emission_shape {"actual":"0","expected":"0"}
+PASS setting-direction {"actual":"(1.0, 0.0)","expected":"(1.0, 0.0)"}
+PASS setting-spread {"actual":"180.0","expected":"180.0"}
+FAIL setting-initial_velocity_min {"actual":"0.0","expected":"25.0"}
+PASS setting-initial_velocity_max {"actual":"55.0","expected":"55.0"}
+PASS setting-gravity {"actual":"(0.0, 12.0)","expected":"(0.0, 12.0)"}
+PASS setting-damping_min {"actual":"20.0","expected":"20.0"}
+PASS setting-damping_max {"actual":"30.0","expected":"30.0"}
+PASS setting-scale_amount_min {"actual":"0.69999998807907","expected":"0.7"}
+PASS setting-scale_amount_max {"actual":"1.20000004768372","expected":"1.2"}
+PASS setting-local_coords {"actual":"false","expected":"false"}
+PASS setting-preprocess {"actual":"0.0","expected":"0.0"}
+PASS setting-use_fixed_seed {"actual":"false","expected":"false"}
+PASS texture-path {}
+PASS texture-size {}
+PASS texture-binary-alpha-cross {}
+PASS nearest-texture-filter {}
+PASS draw-material-type {}
+PASS additive-blend {}
+PASS scale-curve-present {}
+PASS scale-curve-count {}
+PASS scale-curve-point-0 {}
+PASS scale-curve-point-1 {}
+PASS scale-curve-point-2 {}
+PASS colour-ramp-present {}
+PASS colour-ramp-count {}
+PASS colour-ramp-offset-0 {}
+PASS colour-ramp-rgba-0 {}
+PASS colour-ramp-offset-1 {}
+PASS colour-ramp-rgba-1 {}
+PASS colour-ramp-offset-2 {}
+PASS colour-ramp-rgba-2 {}
+defeat_sparks_config: 39 checks, 1 failures -> /Users/yxlh/Documents/ChatGPT/csye 7280/course-repo-assignment2/fall-2026/xinghe-b/assignment-2/walker-lanternfall-bao-x/godot/../evidence/defeat_sparks_config.json

@@ -1,0 +1,258 @@
+{
+  "checks": 39,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "effect-scene-loads",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "cpu-2d-node",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "setting-amount",
+      "observed": {
+        "actual": "16",
+        "expected": "16"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-one_shot",
+      "observed": {
+        "actual": "true",
+        "expected": "true"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-emitting",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-explosiveness",
+      "observed": {
+        "actual": "1.0",
+        "expected": "1.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-lifetime",
+      "observed": {
+        "actual": "0.45",
+        "expected": "0.45"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-emission_shape",
+      "observed": {
+        "actual": "0",
+        "expected": "0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-direction",
+      "observed": {
+        "actual": "(1.0, 0.0)",
+        "expected": "(1.0, 0.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-spread",
+      "observed": {
+        "actual": "180.0",
+        "expected": "180.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-initial_velocity_min",
+      "observed": {
+        "actual": "25.0",
+        "expected": "25.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-initial_velocity_max",
+      "observed": {
+        "actual": "55.0",
+        "expected": "55.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-gravity",
+      "observed": {
+        "actual": "(0.0, 12.0)",
+        "expected": "(0.0, 12.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-damping_min",
+      "observed": {
+        "actual": "20.0",
+        "expected": "20.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-damping_max",
+      "observed": {
+        "actual": "30.0",
+        "expected": "30.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-scale_amount_min",
+      "observed": {
+        "actual": "0.69999998807907",
+        "expected": "0.7"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-scale_amount_max",
+      "observed": {
+        "actual": "1.20000004768372",
+        "expected": "1.2"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-local_coords",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-preprocess",
+      "observed": {
+        "actual": "0.0",
+        "expected": "0.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "setting-use_fixed_seed",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "texture-path",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "texture-size",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "texture-binary-alpha-cross",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "nearest-texture-filter",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "draw-material-type",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "additive-blend",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-curve-present",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-curve-count",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-curve-point-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-curve-point-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-curve-point-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "colour-ramp-present",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "colour-ramp-count",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "colour-ramp-offset-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "colour-ramp-rgba-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "colour-ramp-offset-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "colour-ramp-rgba-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "colour-ramp-offset-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "colour-ramp-rgba-2",
+      "observed": {},
+      "status": "PASS"
+    }
+  ],
+  "suite": "defeat_sparks_config",
+  "utc": "2026-10-29T17:48:07"
+}
