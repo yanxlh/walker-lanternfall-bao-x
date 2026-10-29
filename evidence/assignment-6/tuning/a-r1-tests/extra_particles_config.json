@@ -1,0 +1,518 @@
+{
+  "checks": 79,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "lantern_trail/cpu-2d",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/amount",
+      "observed": {
+        "actual": "24",
+        "expected": "24"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/one_shot",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/emitting",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/lifetime",
+      "observed": {
+        "actual": "0.35",
+        "expected": "0.35"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/explosiveness",
+      "observed": {
+        "actual": "0.0",
+        "expected": "0.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/preprocess",
+      "observed": {
+        "actual": "0.0",
+        "expected": "0.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/emission_shape",
+      "observed": {
+        "actual": "1",
+        "expected": "1"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/emission_sphere_radius",
+      "observed": {
+        "actual": "3.0",
+        "expected": "3.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/direction",
+      "observed": {
+        "actual": "(0.0, -1.0)",
+        "expected": "(0.0, -1.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/spread",
+      "observed": {
+        "actual": "25.0",
+        "expected": "25.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/initial_velocity_min",
+      "observed": {
+        "actual": "2.0",
+        "expected": "2.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/initial_velocity_max",
+      "observed": {
+        "actual": "6.0",
+        "expected": "6.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/gravity",
+      "observed": {
+        "actual": "(0.0, -4.0)",
+        "expected": "(0.0, -4.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/damping_min",
+      "observed": {
+        "actual": "1.0",
+        "expected": "1.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/damping_max",
+      "observed": {
+        "actual": "3.0",
+        "expected": "3.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/scale_amount_min",
+      "observed": {
+        "actual": "0.34999999403954",
+        "expected": "0.35"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/scale_amount_max",
+      "observed": {
+        "actual": "0.69999998807907",
+        "expected": "0.7"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/local_coords",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/use_fixed_seed",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/texture",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/nearest",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/additive-material",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/curve-present",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/curve-count",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/curve-point-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/curve-tangents-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/curve-point-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/curve-tangents-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/curve-point-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/curve-tangents-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/ramp-present",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/ramp-count",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/ramp-offset-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/ramp-colour-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/ramp-offset-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/ramp-colour-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/ramp-offset-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_trail/ramp-colour-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/cpu-2d",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/amount",
+      "observed": {
+        "actual": "32",
+        "expected": "32"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/one_shot",
+      "observed": {
+        "actual": "true",
+        "expected": "true"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/emitting",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/lifetime",
+      "observed": {
+        "actual": "0.7",
+        "expected": "0.7"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/explosiveness",
+      "observed": {
+        "actual": "1.0",
+        "expected": "1.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/preprocess",
+      "observed": {
+        "actual": "0.0",
+        "expected": "0.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/emission_shape",
+      "observed": {
+        "actual": "1",
+        "expected": "1"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/emission_sphere_radius",
+      "observed": {
+        "actual": "12.0",
+        "expected": "12.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/direction",
+      "observed": {
+        "actual": "(0.0, -1.0)",
+        "expected": "(0.0, -1.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/spread",
+      "observed": {
+        "actual": "180.0",
+        "expected": "180.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/initial_velocity_min",
+      "observed": {
+        "actual": "35.0",
+        "expected": "35.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/initial_velocity_max",
+      "observed": {
+        "actual": "65.0",
+        "expected": "65.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/gravity",
+      "observed": {
+        "actual": "(0.0, 8.0)",
+        "expected": "(0.0, 8.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/damping_min",
+      "observed": {
+        "actual": "15.0",
+        "expected": "15.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/damping_max",
+      "observed": {
+        "actual": "25.0",
+        "expected": "25.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/scale_amount_min",
+      "observed": {
+        "actual": "0.80000001192093",
+        "expected": "0.8"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/scale_amount_max",
+      "observed": {
+        "actual": "1.5",
+        "expected": "1.5"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/local_coords",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/use_fixed_seed",
+      "observed": {
+        "actual": "false",
+        "expected": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/texture",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/nearest",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/additive-material",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/curve-present",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/curve-count",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/curve-point-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/curve-tangents-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/curve-point-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/curve-tangents-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/curve-point-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/curve-tangents-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/ramp-present",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/ramp-count",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/ramp-offset-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/ramp-colour-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/ramp-offset-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/ramp-colour-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/ramp-offset-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level_up_sparks/ramp-colour-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "level-up-overlay-layer-11",
+      "observed": {},
+      "status": "PASS"
+    }
+  ],
+  "suite": "extra_particles_config",
+  "utc": "2026-10-29T18:10:52"
+}

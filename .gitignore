@@ -32,3 +32,10 @@ youtube/**/mp4/
 youtube/**/_qc/frames/
 youtube/**/*.mp4
 youtube/**/build-state.json
+
+# Keep selected fixture strips; omit full local movie frame sequences.
+captures/lantern_trail/comparison-*/r0/frame*.png
+captures/lantern_trail/comparison-*/r1/frame*.png
+captures/defeat_sparks/*/frame*.png
+captures/**/frame.wav
+logs/

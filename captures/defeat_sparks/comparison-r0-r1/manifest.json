@@ -1,0 +1,37 @@
+{
+  "fixture": "defeat_sparks_preview",
+  "fps": 30,
+  "fixed_seed": 7280,
+  "trigger_frame_label": 10,
+  "first_visible_file": 9,
+  "frames": [
+    9,
+    10,
+    12,
+    15,
+    20,
+    30,
+    50
+  ],
+  "r0_source": "evidence/assignment-6/tuning/a-r0-source/defeat_sparks.tscn (scale_amount_max 1.2)",
+  "r1_change": "scale_amount_max 1.2 -> 1.8; all other settings unchanged",
+  "capture_note": "r0 captured before the edit, r1 after; both run from the terminal with scripts/capture-defeat-sparks.command. Files 0-8 are pixel-identical between runs.",
+  "files": {
+    "comparison-contact-sheet.png": "95518bb0f4960059046ec52313d2c1d4051886505d3bef5b6b42e3d1b4ce84c3",
+    "comparison-detail.png": "256c11b56271326196e35f9a62bcb3157020a4977197895adba8f52874edad49",
+    "../r0/strip/frame00000009.png": "59541576ea7b7e8542c1a8ede5f90a1cd7e4ba8ffa96ff024111a58681bbd74e",
+    "../r0/strip/frame00000010.png": "11bb7adc31572cb9c823e85f2218c6883ff853ebd6daf63cc221439cbc4400ff",
+    "../r0/strip/frame00000012.png": "dc421da63e4e8ebad87db6815cd3c32af4bb9eae314057813cd3618b67eeccb1",
+    "../r0/strip/frame00000015.png": "a8107fb1a6828ba317a262e1a62b3f442a608605a2ef83df1fa6ec318a87a9c6",
+    "../r0/strip/frame00000020.png": "c8ac47098c0d7b7c56a1c5bc98d468a300b8977dbcc86a37e71b499faeacdec0",
+    "../r0/strip/frame00000030.png": "71d964a03e03d9f0560dccc7d502c2d428ffbe28a3b843898e07b59bf8176998",
+    "../r0/strip/frame00000050.png": "da08aaf903aa8d2f6af54ce000c6ca4840200c093b3c16d3561d2634d1cd5f49",
+    "../r1/strip/frame00000009.png": "f7cd089a9a3c0e8dc4087f0c07edc8631b53ebe12e4114879f868d1a9ac431ed",
+    "../r1/strip/frame00000010.png": "2cd26e5871241ff633d3a7782dada96954d29cbe918b5485650839b37c5ade7e",
+    "../r1/strip/frame00000012.png": "df93e605d13d6d1a6d68e8ac9983f9e66b40fe12dce8f45dbcdc08e51af2f237",
+    "../r1/strip/frame00000015.png": "34bca51c5b37c9386daff47705baa44eb264a55deb82d53b70b26a399fc73126",
+    "../r1/strip/frame00000020.png": "fe4f9b5302fefebd90e28b60ca9aec5265aa8cf83f2f14b67fc7bd1ddecbb966",
+    "../r1/strip/frame00000030.png": "71d964a03e03d9f0560dccc7d502c2d428ffbe28a3b843898e07b59bf8176998",
+    "../r1/strip/frame00000050.png": "da08aaf903aa8d2f6af54ce000c6ca4840200c093b3c16d3561d2634d1cd5f49"
+  }
+}

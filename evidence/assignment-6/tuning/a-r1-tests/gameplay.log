@@ -1,0 +1,72 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS generated-assets-load {"assets":23,"not_loaded":[]}
+PASS run-starts-playing {}
+PASS hurtbox-centred-on-torso {"coat_centres":{"cast":[15.8,23.6],"idle":[16.1,22.8],"levelup":[15.5,21.7],"sunflare":[15.5,22.8],"victory":[15.7,22.3],"walk_contact":[16.2,22.3],"walk_passing":[16.3,22.5]},"sprite_origin":[16.0,23.0]}
+PASS pose-table-matches-sheet {"poses":["turn_front","idle","walk_contact","walk_passing","cast","hurt","levelup","sunflare","defeat","victory"]}
+PASS move-speed {"x":90.0}
+PASS walk-pose {"pose":"walk_passing"}
+PASS diagonal-normalized {"dist":90.0000305175781}
+PASS facing-left {}
+PASS facing-deadzone {}
+PASS idle-pose {"pose":"cast"}
+PASS arena-clamp {"x":-944.0}
+PASS cast-pose-on-fire {"pose":"cast"}
+PASS beam-kills-moth {"gems":1,"kills":1}
+PASS gem-flies-and-collects {"xp":1}
+PASS enemy-hp-grows-with-time {"moth_0s":2.0,"moth_59s":2.0,"moth_60s":3.0,"wraith_120s":16.0}
+PASS damage-card-scales-weapons {"beam":4.0}
+PASS haste-card-shortens-beam-cooldown {"cooldown":25}
+PASS map-has-every-prop-kind {"counts":{"cart":4,"crates":15,"leaves":55,"post":29,"puddle":39,"stall":11}}
+PASS map-props-inside-arena-and-clear-of-plaza {}
+PASS map-is-broken-up {"stall_rows":9}
+PASS props-do-not-overlap {"overlapping_pairs":0}
+PASS map-has-solids {"solids":59}
+PASS props-block-the-courier {"box":"[P: (455.6938, -500.4509), S: (4.0, 40.0)]","courier":"(445.6938, -480.4509)"}
+PASS courier-slides-along-props {"moved_y":32.8445434570312}
+PASS decals-do-not-block {}
+PASS enemies-pass-through-props {"wraith":"(457.6878, -477.7868)"}
+PASS solid-boxes-match-sprites {"from_sprites":{"cart":"[P: (-12.0, -19.0), S: (24.0, 41.0)]","crates":"[P: (-17.0, -12.0), S: (34.0, 26.0)]","stall":"[P: (-19.0, -18.0), S: (39.0, 39.0)]"}}
+PASS decals-are-subtle {"alpha":0.55}
+PASS map-layout-deterministic {}
+PASS spawns-arrive-off-screen {"of":200,"outside_arena":0,"visible_spawns":0}
+PASS beam-stops-on-moth-wing {"moth_dead":true,"shots_left":0}
+PASS beam-stops-on-wraith-hood {"shots_left":0,"wraith_hp":6.0}
+PASS beam-misses-when-clear-of-sprite {"shots_left":1}
+PASS beam-aims-nearest {"far_dead":false,"nearest_dead":true}
+PASS levelup-opens {"offered":["pass_magnet","pass_haste","moth_new"]}
+PASS levelup-freezes-sim {}
+PASS choose-card {}
+PASS choose-card-rejected-when-playing {}
+PASS levelup-queue {"opens":3}
+PASS levelup-while-paused {}
+PASS levelup-after-unpause {}
+PASS hurt-iframes {"hurt_ticks":[1,49,97,145]}
+PASS hurt-knockback-and-hp {}
+PASS death-lost {}
+PASS lost-freezes-sim {}
+PASS won-at-3min {}
+PASS death-and-timer-same-tick {}
+PASS sunflare-offered {"offered":["sunflare","pass_hp","pass_magnet"]}
+PASS sunflare-evolves-once {}
+PASS sunflare-burst-kills {}
+PASS restart-resets {}
+PASS missing-art-same-run-and-draws {"with_art":{"hp":10,"kills":6,"level":1,"state":"playing","tick":600,"x":718.01,"y":257.38},"without_art":{"hp":10,"kills":6,"level":1,"state":"playing","tick":600,"x":718.01,"y":257.38}}
+PASS long-run-smoke {"cards":["pass_magnet","beam_pierce","pass_hp","beam_rate","pass_hp","pass_magnet","pass_speed"],"kills":101,"level":8,"seconds":67,"state":"lost"}
+PASS hud-shows-xp-need {"lines":["MUSIC on  SFX on  [M/9/0]","0:00","HP 10/10","Lv 1   XP 0/3","Kills 0","Beam 1/3  Moths 0/3"]}
+PASS hud-shows-timer-hp-level {"lines":["MUSIC on  SFX on  [M/9/0]","0:00","HP 10/10","Lv 1   XP 0/3","Kills 0","Beam 1/3  Moths 0/3"]}
+PASS hud-shows-cards {"lines":["MUSIC on  SFX on  [M/9/0]","0:00","HP 10/10","Lv 2   XP 0/5","Kills 0","Beam 1/3  Moths 0/3","[1] Magnet Satchel (1/5) — Collect oil from further away","[2] Quick Hands (1/5) — All weapons attack 12% faster","[3] Lamp-Moths — Two moths circle you and burn what they touch"]}
+PASS hud-shows-paused {}
+PASS hud-shows-lost-and-retry {}
+PASS hud-shows-mute-state {}
+PASS end-panel-hides-banner-and-ring {"lines":["MUSIC on  SFX on  [M/9/0]","0:00","HP 0/10","Lv 2   XP 0/5","Kills 0","Sunflare Lighthouse","The lamp went out — 0:00","R / Y to retry"]}
+PASS camera-sunflare-zoom-out {"after":1.0,"at_peak":0.720000028610229}
+PASS camera-hurt-tilt {"after":0.0,"tilt":-0.0700000002980232}
+PASS camera-menu-push-in {"after":0.820800006389618,"start":0.800000011920929}
+PASS camera-reset-on-start {}
+PASS fog-lifts-on-win {"lift":0.216,"zoom":0.961120009422302}
+gameplay: 65 checks, 0 failures -> /Users/yxlh/Documents/ChatGPT/csye 7280/course-repo-assignment2/fall-2026/xinghe-b/assignment-2/walker-lanternfall-bao-x/godot/../evidence/gameplay.json
+WARNING: 80 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 11 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

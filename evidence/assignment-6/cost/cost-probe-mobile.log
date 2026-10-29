@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward Mobile - Using Device #0: Apple - Apple M4 (Apple9)
+
+empty-off trial 0 frame mean 16.6670 ms
+idle-off trial 0 frame mean 16.6679 ms
+idle-on trial 0 frame mean 16.6662 ms
+acap-off trial 0 frame mean 16.6662 ms
+acap-on trial 0 frame mean 16.6730 ms
+move-off trial 0 frame mean 16.6653 ms
+move-on trial 0 frame mean 16.6667 ms
+celebration-off trial 0 frame mean 16.5782 ms
+celebration-on trial 0 frame mean 16.6267 ms
+celebration-off trial 1 frame mean 16.6896 ms
+celebration-on trial 1 frame mean 16.6750 ms
+saved /private/tmp/claude-501/-Users-yxlh--claude-spares-spare-rFgCgb/eeb951a3-4550-4aec-843f-79713b6503d7/scratchpad/probe_mobile.json

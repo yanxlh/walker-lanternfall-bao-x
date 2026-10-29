@@ -1,0 +1,36 @@
+{
+  "fixture": "lantern_trail_preview",
+  "fps": 30,
+  "fixed_seed": 7280,
+  "trigger_frame": 10,
+  "stop_frame": 40,
+  "frames": [
+    10,
+    12,
+    20,
+    39,
+    40,
+    45,
+    51,
+    60
+  ],
+  "baseline_note": "Preserved original settings re-rendered after revision; not historical gameplay footage.",
+  "files": {
+    "r0/strip/frame00000010.png": "cc0f8a8d0e89f7edf20194880a7789b50695ad6f6a9f087dc8374c0067b459dc",
+    "r0/strip/frame00000012.png": "970aba95792496d842f1d4f1c999857738a70ee25f89946ee3d8c175d5e787cd",
+    "r0/strip/frame00000020.png": "73f2d68578624c0b89b9698b6377a782de1a07152d77d94efe0e129372f342f3",
+    "r0/strip/frame00000039.png": "72500ac24f2ecf5495d533f874131e00624393b3ca4ae04c1a0cfbac00f528f8",
+    "r0/strip/frame00000040.png": "24137c30f817f721961f852ddf9cd221abf102cefa7d5e605623697d502c6e6a",
+    "r0/strip/frame00000045.png": "9e112717bde9b32271b5128d687521c55ad3e5679297211e69401a9a57e4920b",
+    "r0/strip/frame00000051.png": "6f0313c25ae7c811864b8529a195c790181cc38ab4f5cfccc588985d45f73bbc",
+    "r0/strip/frame00000060.png": "35772ba70e284ba96ee32cb62092e401f7c7b21f00f262dcba2e47f242f9a462",
+    "r1/strip/frame00000010.png": "8a2f8ef54d2dd29234e0433b36577e0f8ddbae4fe7825ffd69d4dcd19ea6b9c3",
+    "r1/strip/frame00000012.png": "1ba9fdceb4b61d5946fc8ddf9f6cd63914eaeb703096112ac6f8750b56292380",
+    "r1/strip/frame00000020.png": "ff5cefedad62d0309da71487c695b7176ff944c6b4026922ec7f635c11912cc9",
+    "r1/strip/frame00000039.png": "6cdb57cd35c796a96260470e91e2f48ed96bcc73c085b9ef044aa4862f825c2d",
+    "r1/strip/frame00000040.png": "3c3d79dbd44f95e1c393ad26ccbb8bd67a4dbb87b17ed1214f92d8036ba91c37",
+    "r1/strip/frame00000045.png": "e9edf437fe3a41d9716af01ec515c796568c444d78f2bdb2e0fb96b47ee09dc6",
+    "r1/strip/frame00000051.png": "baf2cd26d436c2fe6941441d6cf501b8948f2c2fdc677fc0ee494bc29ec786a0",
+    "r1/strip/frame00000060.png": "85b6dc935510b501ac6112bb17d1222215c8cb8042eaec078b0f54f0168f0f6a"
+  }
+}

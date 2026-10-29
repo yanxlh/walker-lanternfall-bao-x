@@ -1,0 +1,34 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+PASS once-levelup {"events":6,"plays":6}
+PASS once-hurt {"events":14,"plays":14}
+PASS once-evolve {}
+PASS kill-throttled {"kills":80,"min_gap":184,"plays":78}
+PASS pickup-merged {"events":68,"plays":50}
+PASS one-stinger {"state":"lost","stingers":1}
+PASS independence {"silent":{"enemies":43,"evolved":false,"hp":0,"kills":80,"level":7,"state":"lost","tick":3817,"x":-220.11,"y":202.53},"with_sound":{"enemies":43,"evolved":false,"hp":0,"kills":80,"level":7,"state":"lost","tick":3817,"x":-220.11,"y":202.53}}
+PASS evolve-sfx-once {"evolve":1}
+PASS levelup-sfx-on-card-screen {"card_screens_at":[1,2],"chimes_at":[1,2]}
+PASS no-levelup-chime-when-run-ends {"levelup":0,"state":"won"}
+PASS restart-silences-stingers {"after_restart":false,"stinger_was_playing":true}
+PASS burst-20-kills-one-sfx {"plays":1}
+PASS hold-input-no-sfx {}
+PASS rapid-pause-no-sfx {}
+PASS pause-lowpass-and-duck {}
+PASS resume-restores {}
+PASS levelup-duck {}
+PASS levelup-unduck {}
+PASS mute-flags {}
+PASS mute-no-state-change {}
+PASS lost-fades {}
+PASS lost-stops {}
+PASS restart-during-fade {}
+PASS restart-from-pause {}
+PASS music-loop-flag {}
+audio: 25 checks, 0 failures -> /Users/yxlh/Documents/ChatGPT/csye 7280/course-repo-assignment2/fall-2026/xinghe-b/assignment-2/walker-lanternfall-bao-x/godot/../evidence/audio.json
+WARNING: 12 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
