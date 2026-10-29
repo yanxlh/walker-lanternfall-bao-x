@@ -1,0 +1,1142 @@
+{
+ "schema_version": 1,
+ "teaching_contract": "code-then-result-v1",
+ "game": {
+  "project_dir": "godot",
+  "source_revision": "c3e12737d9b38679efa61622cb62c793935aff59",
+  "engine": "Godot 4.7.2.stable.official.ed1daf0bf"
+ },
+ "files": [
+  {
+   "path": "assets/art/enemy_moth.png",
+   "sha256": "0e70895d2e394bd19721d42b3b3b1af1af9c0d73d169fc5ed4bb78782fc7e87f",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/enemy_moth.png.import",
+   "sha256": "d1098f234fe9832318af8582dd0a652489d40e3a696a6ee6cd613ca9aecd01c3",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/enemy_wraith.png",
+   "sha256": "f8bb1d832e43439a7258bff994751fca00f0eacf1ddb40b7937d18f4cb249c06",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/enemy_wraith.png.import",
+   "sha256": "1b7cfa2563ce515c6a76ba3222c610c5c9b0af13c801a0d5583ed29b82c6f3ad",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_crates.png",
+   "sha256": "1849d6789c4200665a87479a95468650a60c1dffd391b6cde37c9d497f59dc8e",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_crates.png.import",
+   "sha256": "68f9b257f1909d96b752c0441bd4009e0e3b1f8318ac8a580074af10b2783e5e",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_ground_tile.png",
+   "sha256": "ba0a13596f2893c7301a05e327f89a1e578c3cec2076960960e3a03fe50b39c7",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_ground_tile.png.import",
+   "sha256": "287d1efa59b5c1d60feb1d10c48eace3a1ce17985864b178a916c13b09fba2a3",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_lantern_post.png",
+   "sha256": "f89e22e8740d2ff12001171ebe22a1413ee0227bffa7cda6a63b702017b12871",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_lantern_post.png.import",
+   "sha256": "299ea8d8ad733c80f82329948414ca7704d4d9fdb3bc2bd1972e023e09f81cbb",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_leaves.png",
+   "sha256": "8ee8eada82544d2fb5763aff4a4ecd2fb870f5262cb0d681d71ba412c753c071",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_leaves.png.import",
+   "sha256": "5591544da1ece031a821be01d019717efa1e76c25817b1d3371968eb096ce23d",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_noodle_cart.png",
+   "sha256": "fc157cb8d2a14282eb1fc4d9d88279bea6d9c3dc1f1314a80b4d1e0abeb3b8ed",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_noodle_cart.png.import",
+   "sha256": "18c930cb1f2e19f3e9ef5036f26512a4d9b327ff1c79e394244a59a9eaf6220b",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_puddle.png",
+   "sha256": "690605b38a6658e331dd1bd5f7d4e067d7cca4274ace07a3572b6e20ed3f495f",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_puddle.png.import",
+   "sha256": "13083adb8187e5fd68aaf278fa2390e22264145598707198cc18074819f9e8c7",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_stall.png",
+   "sha256": "b2988fc122f1fc9b09def50fc5a2a56ad6b5f208650aab2d8d78f5af38922059",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_stall.png.import",
+   "sha256": "bb8c49bf365d7a0187d7928677c501deb3ec93edd19ce96c0dcd0fbb63cbae51",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_beam.png",
+   "sha256": "f863aaeeccbd8b6da639215adc4b61e763b9c6d6a1c445a773b6dab00b01aa94",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_beam.png.import",
+   "sha256": "602399fedfc13488952e3830b648afb636c9f235c01f4b86689bcb44a81ec2c9",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_orbit_moth.png",
+   "sha256": "81435171cb70aa5021e7829d306c1533a024d8c0ca8af7f41d9195b7deedb473",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_orbit_moth.png.import",
+   "sha256": "4b00d647db33c69bc5591afb16e661390afc402f6f0e1ba2d02ddbe72a17869c",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_sunflare.png",
+   "sha256": "0a877120aeeae155afbb7b98cf3095c4b0d5efd452c66390ea168bac665b7178",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_sunflare.png.import",
+   "sha256": "800a8a1b2434e9ac7cb4ade75211a85d65343d0590a1e929296d5153a9b66dc3",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/manifest.json",
+   "sha256": "f6973c4ea51391d3193f260c6939684647ddfb05e749524a777cd571db019666",
+   "role": "asset data",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/palettes.json",
+   "sha256": "700ee5eb385b4654c4ac88999d91e4e36df26a388138b0a77fcce51df0059550",
+   "role": "asset data",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/pc_sheet.png",
+   "sha256": "7e13d91efeba2d60a43a6212b51aa5a7ad12054fa1073bec4803ad61d89913c9",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/pc_sheet.png.import",
+   "sha256": "f2dfab3f4f213efeb2d70302aa655f629782cf1798b96eb4434af3332972909d",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/pickup_gem.png",
+   "sha256": "6f47c3496c24dd36ecc77f9b93c5e142467c58a898b5ea61a418228095b309e6",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/pickup_gem.png.import",
+   "sha256": "90cb6de2ad15bd664f967a970086503a24547d140993b22896b614e2a5f9bf17",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/manifest.json",
+   "sha256": "14931c5e4359dd6c2d0e16d1e61e84b2682871575b39e4d439755c8f09f3c42a",
+   "role": "asset data",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/music/mus_01_night_market.ogg",
+   "sha256": "28800d90dc9917f08a6af2d1d2b5190249b3c45dcd0cf7f0d88deeaaa22c64ea",
+   "role": "music loop (OGG Vorbis)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/music/mus_01_night_market.ogg.import",
+   "sha256": "302b8e23c0db8d1c8206e5750da85e0f1b285dd7fea8f557958e2cd145f3f17c",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/music/mus_02_sunflare_layer.ogg",
+   "sha256": "efa99a4d2f09ff2b483abdfed6d086ad7191475f704bbee633ccf5b046c23c48",
+   "role": "music loop (OGG Vorbis)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/music/mus_02_sunflare_layer.ogg.import",
+   "sha256": "d343deebb8844bae69d57d53a7e28b6bac922fabdfad3f78189a3fb933657922",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/particles/ATTRIBUTION.md",
+   "sha256": "710adad8416ad773e4cc692881942b5dc4ed0c60738c8f52aee69debcdb30416",
+   "role": "documentation",
+   "component_ids": [
+    "hit-sparks"
+   ]
+  },
+  {
+   "path": "assets/particles/spark.png",
+   "sha256": "89a5796b6ed58447db2172e57e3cc56b007f561c26ffdbeb5dadc37490873130",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "hit-sparks"
+   ]
+  },
+  {
+   "path": "assets/particles/spark.png.import",
+   "sha256": "c5528060e05cf193319718db3fedb913c236e462be5f6ec3ef7b5fa83ed9aff8",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "hit-sparks"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_01_kill.wav",
+   "sha256": "600c391c58a119a92f66ed3b886de59e586f8ab63cc9bb5442379dc534c2d2a2",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_01_kill.wav.import",
+   "sha256": "6cf105fd8838a7c79c3a44f222b1eb7a528a49b837ea3b4a6ae78699e65d8c96",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_02_pickup.wav",
+   "sha256": "53294b3bf56234c5a8d99e31c305ffc02cd0db600c90ad40cb132bc87a925bef",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_02_pickup.wav.import",
+   "sha256": "e4a66925b36ee66d18d9192089898547c50ce7d37f11e63ddcf593d48ed67de9",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_03_hurt.wav",
+   "sha256": "cf6e402b3d0901810414c59d0a08c4046653125aec18c2e91dcd8ea03596a826",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_03_hurt.wav.import",
+   "sha256": "fcf8af4ad299a549f8ae61c3d6b192f42e3291832d540e81f06f1d4947d72432",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_04_levelup.wav",
+   "sha256": "0226301eecf5c43d701566e88684be32cd4f0727fbe6e400f844c19afec1f2ae",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_04_levelup.wav.import",
+   "sha256": "707716a0294d75c5537f768fc350d2d6753514b754b597a35e332ebe2e4398b5",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_05_evolve.wav",
+   "sha256": "c0e19cad762ee14b60a89de8b0ff1fb1d141ab30b30f907fb7d63c8921db6358",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_05_evolve.wav.import",
+   "sha256": "1b9d37481f6e25e28ca7857bc87a2f61229eede75a22cafbe85a92a8a445d6af",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_06a_lose.wav",
+   "sha256": "27b8c1b72b49f9b2839b1b8b8fcef67e553d677bf961d8bc98a23e410ddea4b8",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_06a_lose.wav.import",
+   "sha256": "28ef479325197f8aef2b9e2ed6fbdadb3ed6680c4c4db611e7edebf5db037b5e",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_06b_win.wav",
+   "sha256": "0dd441db62f55f953778393c21b5e49017e013a00c247fb0df63c2732d17ba99",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_06b_win.wav.import",
+   "sha256": "ac396fdfebfa870e88e3021d6bf52182e1815fb2436b53372d1aa8d5276de829",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "audio/audio_bus.gd",
+   "sha256": "7f4919595bb43d99ddd4799913ecf2bae4ef470fb5affc89fb0c5dd34323afa5",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "audio/sfx_gate.gd",
+   "sha256": "38010ecf6fd6db2e6b7c82fa6ea4b9679bbc48f070cceb7b0ffad609a6fb27a9",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "effects/defeat_sparks.tscn",
+   "sha256": "dc431c0d16f3618f99809931f836f62d10f9a2a1e0c650d4a5141709615db797",
+   "role": "scene",
+   "component_ids": [
+    "hit-sparks"
+   ]
+  },
+  {
+   "path": "effects/lantern_trail.tscn",
+   "sha256": "7085f05a074160ccc2918e6ddea8bec5c7b75652ac89a2cd225338ea5f20e075",
+   "role": "scene",
+   "component_ids": [
+    "trail"
+   ]
+  },
+  {
+   "path": "effects/level_up_overlay.tscn",
+   "sha256": "d3a82e798a874abbf144b44ad5ad7d15939932c961fd880d5ef7b9b715865a7e",
+   "role": "scene",
+   "component_ids": [
+    "celebration"
+   ]
+  },
+  {
+   "path": "effects/level_up_sparks.tscn",
+   "sha256": "c044281a962a1585500ff1319068957d53a4b0f70573286835b0b050d679a584",
+   "role": "scene",
+   "component_ids": [
+    "celebration"
+   ]
+  },
+  {
+   "path": "effects/particle_presentation.gd",
+   "sha256": "9234e70b1fadf3f1e3c9ee6a5cce7667b0e68b2a0fd69bcdf65fa8261238b475",
+   "role": "GDScript",
+   "component_ids": [
+    "presentation"
+   ]
+  },
+  {
+   "path": "features/art.gd",
+   "sha256": "7818f06411983ce13b0b6d20df85f30fc9985c90cc41379e3d94aa1f34b88984",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/enemies/enemy.gd",
+   "sha256": "810bd5d0122abc285f628b5f813af42962f40e4eff60ff8c83b12c5469789104",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/enemies/spawner.gd",
+   "sha256": "ae70d88e6600a4752c3e816eb363ec06c3bc0fcc62b9b7fd92edd48e7ceb7c77",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/pickups/gem.gd",
+   "sha256": "64dd2b4cd0b2cf5d3aab69fd5ed9b145e61ee5071e3a63c5646e9adebcd8aeed",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/player/player.gd",
+   "sha256": "d486d60d760ffbd43e29843c4f8b6bf2b74decdcc835c22dac844beb35f63339",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/progression/progression.gd",
+   "sha256": "2a0d49176fe72cde825fb833970eed483fc8b7870b4557902a5279accf789251",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/tuning.gd",
+   "sha256": "28517964d00d09b1bb393293430fd68bb8ab5d0424822b9f87e7b7b720982ffc",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/weapons/beam_shot.gd",
+   "sha256": "01ec610115099def644a60f59c246b4de6fc0a85641817c4104bc824e19b7d76",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/weapons/weapon_fx.gd",
+   "sha256": "394ff4df54a365947645627915bda8f3fd7a35779c1da4f76e5345f1e8886d47",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/world/camera_fx.gd",
+   "sha256": "f5f3600b2a3c51a8c8b3b9efe85d09fcac0f475e51c67d9789a608958c5535b7",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/world/ground.gd",
+   "sha256": "5813c003d94806aacaf1e70773ef56ba882612cc86868987da3cdbc1358db4f9",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "game/game_state.gd",
+   "sha256": "072727ee4e32fc844e7a4645ba538d9852dc9ade3a29770656374dbd8ff5d81d",
+   "role": "GDScript",
+   "component_ids": [
+    "presentation",
+    "game-context"
+   ]
+  },
+  {
+   "path": "game/main.tscn",
+   "sha256": "00927c2077a20dbf48cfa306374c3187ed60317b17bcbf6c3740dbbfb9f78cc1",
+   "role": "scene",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "game/session.gd",
+   "sha256": "c3d01e58fe5c182a53323563b31620498e035b453ff024fb3967bdcd4cbdeab5",
+   "role": "GDScript",
+   "component_ids": [
+    "presentation",
+    "game-context"
+   ]
+  },
+  {
+   "path": "previews/baseline/lantern_trail_r0.tscn",
+   "sha256": "dfab877d2d8c7bf6e6a5d4d366cf594642737782aa519e3076c2066f7f93e5f7",
+   "role": "scene",
+   "component_ids": [
+    "trail"
+   ]
+  },
+  {
+   "path": "previews/defeat_sparks_preview.gd",
+   "sha256": "ccdc5f4d40caa7b0c32a47abcbe25e7ff4b1e4ced670d007a1ab4d041f0fb17f",
+   "role": "GDScript",
+   "component_ids": [
+    "hit-sparks"
+   ]
+  },
+  {
+   "path": "previews/defeat_sparks_preview.tscn",
+   "sha256": "6f6a26936bdbac09a55de8c98ed05a65304cd9cd4c67fa0a9d1b598d5760ea9f",
+   "role": "scene",
+   "component_ids": [
+    "hit-sparks"
+   ]
+  },
+  {
+   "path": "previews/lantern_trail_preview.gd",
+   "sha256": "ce0628ef74cf067bdfaca1bafd52dda3ec2e3fb2357da9f7075aa07afd12478d",
+   "role": "GDScript",
+   "component_ids": [
+    "trail"
+   ]
+  },
+  {
+   "path": "previews/lantern_trail_preview.tscn",
+   "sha256": "fe792a4c7512aadf16e4f46c65f73aa81198a97945561d0d142814fe9a80ccce",
+   "role": "scene",
+   "component_ids": [
+    "trail"
+   ]
+  },
+  {
+   "path": "previews/shader_study/README.md",
+   "sha256": "33b213d26a86072a58ea9996249fffc4067044af7dbd1cae35f92fe59b3c9fb8",
+   "role": "documentation",
+   "component_ids": [
+    "shader-study"
+   ]
+  },
+  {
+   "path": "previews/shader_study/hit_sparks_gpu.tscn",
+   "sha256": "955a501f7575e85097c4528d6017a99a63fb838345d2ec0ebafe13fb19dfb029",
+   "role": "scene",
+   "component_ids": [
+    "shader-study"
+   ]
+  },
+  {
+   "path": "project.godot",
+   "sha256": "5d01ae07d7107498904a64a2ff7efead4502cfdd757bed3c7acf1ae79fc52051",
+   "role": "project settings",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "shaders/particles_generated.gdshader",
+   "sha256": "2e64ebae4b965173f775951abe52f1f8f6d0eac98713cbb72c486231b83723c4",
+   "role": "editor-generated particles shader",
+   "component_ids": [
+    "shader-study"
+   ]
+  },
+  {
+   "path": "tests/build_shader_study.gd",
+   "sha256": "91e87359e1e55e01f5096d78b734f03d2d3e0e7dd5b7b56241b7741f405e2c32",
+   "role": "GDScript",
+   "component_ids": [
+    "shader-study"
+   ]
+  },
+  {
+   "path": "tests/capture_play_checks.gd",
+   "sha256": "324c22511f6d9178ae0f640552a2565d2474c26869adce042459ea490c466b11",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/cost_effects.gd",
+   "sha256": "468fa8d43122bbfecaf83b951c0dd03b57e615768fc4d9187db44071e341b274",
+   "role": "GDScript",
+   "component_ids": [
+    "cost"
+   ]
+  },
+  {
+   "path": "tests/harness.gd",
+   "sha256": "1afad04f4d661c990b5a230bc09f516656700fefdc6d675cde16c1acdfc61280",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_audio.gd",
+   "sha256": "dd50bd153bee04a30822b0e26e99ea7dd1fa5dfed5799d3bc10ea691057271d0",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_defeat_sparks_config.gd",
+   "sha256": "d95884323b3333f99e64e319fcca57881c55c8aedb54bf979864a7ca0b3737ff",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_extra_particles_config.gd",
+   "sha256": "48891d60f0521f7f65dd9dce614d671f3693d4ca4105d3af87e9a28e73e1108f",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_gameplay.gd",
+   "sha256": "21cf43fd3510ce24b712f9ab99672ec4aed02b618b0cd0eb5870d19de390595e",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_logic.gd",
+   "sha256": "9085f59ae5f754cbcabd23e50fca26b1ed98061cc85b5ff32ee99f4043b14bce",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_particles_edges.gd",
+   "sha256": "8d51377ffe813420fa9a468dde162906f3bb34184ccfb3fdbe69f5aff1697371",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_particles_state.gd",
+   "sha256": "26ef644ddda679331d272478e4bf2ee1c761bd5a98f797e0d37a846fa0f1c319",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "ui/hud.gd",
+   "sha256": "a7020b6f0caf5261db2d04f517a03e70ecae64766393b1ac7aca7347a21ea68b",
+   "role": "GDScript",
+   "component_ids": [
+    "celebration",
+    "game-context"
+   ]
+  }
+ ],
+ "components": [
+  {
+   "id": "presentation",
+   "explanation": "The read-only particle controller: signals in (weapon_hit, leveled_up, run_started, state.changed), particles out. One burst per accepted hit (PLAYING only, cap 32), the trail decided each physics frame from actual displacement with a jump limit, the celebration on its own overlay at the card-screen portrait (cap 4), and one policy that freezes or clears effects by state. Session gains only the weapon_hit signal and attaches this node.",
+   "beat_ids": [
+    "B04",
+    "B05",
+    "B10",
+    "B11",
+    "B14",
+    "B15",
+    "B16",
+    "B17"
+   ],
+   "files": [
+    "effects/particle_presentation.gd",
+    "game/session.gd",
+    "game/game_state.gd"
+   ]
+  },
+  {
+   "id": "hit-sparks",
+   "explanation": "Effect A as data: a 16-spark one-shot CPUParticles2D burst from a point, spread 180, lifetime 0.45 s, the code-generated 3 x 3 spark texture, and the kept r1 change scale_amount_max 1.2 -> 1.8; with the fixture preview that produced the r0/r1 strips.",
+   "beat_ids": [
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B05"
+   ],
+   "files": [
+    "effects/defeat_sparks.tscn",
+    "assets/particles/spark.png",
+    "assets/particles/spark.png.import",
+    "assets/particles/ATTRIBUTION.md",
+    "previews/defeat_sparks_preview.gd",
+    "previews/defeat_sparks_preview.tscn"
+   ]
+  },
+  {
+   "id": "trail",
+   "explanation": "Effect B as data: 24 embers emitted continuously from a 3 px sphere, drifting up and fading in 0.35 s, with the kept alpha change 0.55/0.30 -> 0.95/0.70; the fixture preview and its preserved original resource.",
+   "beat_ids": [
+    "B12",
+    "B13",
+    "B10",
+    "B11"
+   ],
+   "files": [
+    "effects/lantern_trail.tscn",
+    "previews/lantern_trail_preview.gd",
+    "previews/lantern_trail_preview.tscn",
+    "previews/baseline/lantern_trail_r0.tscn"
+   ]
+  },
+  {
+   "id": "celebration",
+   "explanation": "The extra level-up celebration (32 particles, 0.7 s, sphere radius 12) on CanvasLayer 11 above the HUD, anchored to the card-screen portrait rectangle the HUD shares.",
+   "beat_ids": [
+    "B14",
+    "B15"
+   ],
+   "files": [
+    "effects/level_up_sparks.tscn",
+    "effects/level_up_overlay.tscn",
+    "ui/hud.gd"
+   ]
+  },
+  {
+   "id": "tests",
+   "explanation": "Configuration read-back for all three scenes, the real-input state suite, the edge suite (blocked input, position jump, LOST/WON cleanup), the harness, the original game's suites (counts unchanged), and the windowed play-check driver whose shots appear in B13 and B17.",
+   "beat_ids": [
+    "B18",
+    "B19",
+    "B17",
+    "B13"
+   ],
+   "files": [
+    "tests/harness.gd",
+    "tests/test_defeat_sparks_config.gd",
+    "tests/test_extra_particles_config.gd",
+    "tests/test_particles_state.gd",
+    "tests/test_particles_edges.gd",
+    "tests/test_logic.gd",
+    "tests/test_gameplay.gd",
+    "tests/test_audio.gd",
+    "tests/capture_play_checks.gd"
+   ]
+  },
+  {
+   "id": "shader-study",
+   "explanation": "The editor-generated particles shader (start(), process(), forces, display parameters) and the GPU study scene it came from, built by convert_from_particles(); the converted ShaderMaterial carries no colour ramp or scale curve. Not loaded by the game.",
+   "beat_ids": [
+    "B20",
+    "B21"
+   ],
+   "files": [
+    "shaders/particles_generated.gdshader",
+    "previews/shader_study/hit_sparks_gpu.tscn",
+    "previews/shader_study/README.md",
+    "tests/build_shader_study.gd"
+   ]
+  },
+  {
+   "id": "cost",
+   "explanation": "The cost script: identical fixtures with the presentation kept or freed, interleaved trials, headless CPU frame time and windowed viewport GPU time.",
+   "beat_ids": [
+    "B22",
+    "B23"
+   ],
+   "files": [
+    "tests/cost_effects.gd"
+   ]
+  },
+  {
+   "id": "game-context",
+   "explanation": "The Assignment 2 game the effects attach to: fixed-tick session and state machine, courier, weapons, enemies and spawner, gems, progression, the market and camera, HUD, audio bus, project settings, and the generated art, sound and music. Unchanged by this assignment except the weapon_hit signal and the presentation child; shown in play in every capture here and explained in the Assignment 2 film, not read line by line in this one.",
+   "beat_ids": [
+    "B05",
+    "B11",
+    "B15",
+    "B17"
+   ],
+   "files": [
+    "game/session.gd",
+    "game/game_state.gd",
+    "game/main.tscn",
+    "project.godot",
+    "ui/hud.gd",
+    "audio/audio_bus.gd",
+    "audio/sfx_gate.gd",
+    "features/art.gd",
+    "features/tuning.gd",
+    "features/enemies/enemy.gd",
+    "features/enemies/spawner.gd",
+    "features/pickups/gem.gd",
+    "features/player/player.gd",
+    "features/progression/progression.gd",
+    "features/weapons/beam_shot.gd",
+    "features/weapons/weapon_fx.gd",
+    "features/world/camera_fx.gd",
+    "features/world/ground.gd",
+    "assets/manifest.json",
+    "assets/art/manifest.json",
+    "assets/art/palettes.json",
+    "assets/art/enemy_moth.png",
+    "assets/art/enemy_moth.png.import",
+    "assets/art/enemy_wraith.png",
+    "assets/art/enemy_wraith.png.import",
+    "assets/art/env_crates.png",
+    "assets/art/env_crates.png.import",
+    "assets/art/env_ground_tile.png",
+    "assets/art/env_ground_tile.png.import",
+    "assets/art/env_lantern_post.png",
+    "assets/art/env_lantern_post.png.import",
+    "assets/art/env_leaves.png",
+    "assets/art/env_leaves.png.import",
+    "assets/art/env_noodle_cart.png",
+    "assets/art/env_noodle_cart.png.import",
+    "assets/art/env_puddle.png",
+    "assets/art/env_puddle.png.import",
+    "assets/art/env_stall.png",
+    "assets/art/env_stall.png.import",
+    "assets/art/fx_beam.png",
+    "assets/art/fx_beam.png.import",
+    "assets/art/fx_orbit_moth.png",
+    "assets/art/fx_orbit_moth.png.import",
+    "assets/art/fx_sunflare.png",
+    "assets/art/fx_sunflare.png.import",
+    "assets/art/pickup_gem.png",
+    "assets/art/pickup_gem.png.import",
+    "assets/art/pc_sheet.png",
+    "assets/art/pc_sheet.png.import",
+    "assets/sfx/sfx_01_kill.wav",
+    "assets/sfx/sfx_01_kill.wav.import",
+    "assets/sfx/sfx_02_pickup.wav",
+    "assets/sfx/sfx_02_pickup.wav.import",
+    "assets/sfx/sfx_03_hurt.wav",
+    "assets/sfx/sfx_03_hurt.wav.import",
+    "assets/sfx/sfx_04_levelup.wav",
+    "assets/sfx/sfx_04_levelup.wav.import",
+    "assets/sfx/sfx_05_evolve.wav",
+    "assets/sfx/sfx_05_evolve.wav.import",
+    "assets/sfx/sfx_06a_lose.wav",
+    "assets/sfx/sfx_06a_lose.wav.import",
+    "assets/sfx/sfx_06b_win.wav",
+    "assets/sfx/sfx_06b_win.wav.import",
+    "assets/music/mus_01_night_market.ogg",
+    "assets/music/mus_01_night_market.ogg.import",
+    "assets/music/mus_02_sunflare_layer.ogg",
+    "assets/music/mus_02_sunflare_layer.ogg.import"
+   ]
+  }
+ ],
+ "excerpts": [
+  {
+   "beat_id": "B04",
+   "path": "effects/particle_presentation.gd",
+   "start_line": 47,
+   "end_line": 57,
+   "text": "func _on_weapon_hit(at: Vector2) -> void:\n\thits_seen += 1\n\tif session.state.current != GS.PLAYING or hit_bursts.size() >= MAX_HIT_BURSTS:\n\t\treturn\n\tvar burst := HitScene.instantiate() as CPUParticles2D\n\tadd_child(burst)\n\tburst.global_position = session.to_global(at)\n\thit_bursts.append(burst)\n\tburst.finished.connect(_on_hit_finished.bind(burst))\n\tburst.restart()\n\thits_spawned += 1"
+  },
+  {
+   "beat_id": "B06",
+   "path": "effects/defeat_sparks.tscn",
+   "start_line": 23,
+   "end_line": 35,
+   "text": "lifetime = 0.45\none_shot = true\npreprocess = 0.0\nexplosiveness = 1.0\nlocal_coords = false\nemission_shape = 0\ndirection = Vector2(1, 0)\nspread = 180.0\ngravity = Vector2(0, 12)\ninitial_velocity_min = 25.0\ninitial_velocity_max = 55.0\ndamping_min = 20.0\ndamping_max = 30.0"
+  },
+  {
+   "beat_id": "B08",
+   "path": "effects/defeat_sparks.tscn",
+   "start_line": 36,
+   "end_line": 39,
+   "text": "scale_amount_min = 0.7\nscale_amount_max = 1.8\nscale_amount_curve = SubResource(\"Curve_scale\")\ncolor_ramp = SubResource(\"Gradient_color\")"
+  },
+  {
+   "beat_id": "B10",
+   "path": "effects/particle_presentation.gd",
+   "start_line": 121,
+   "end_line": 131,
+   "text": "func _physics_process(delta: float) -> void:\n\tif not is_instance_valid(session) or not is_instance_valid(trail):\n\t\treturn\n\t_apply_policy()\n\tvar current: Vector2 = session.player.global_position\n\tvar distance: float = current.distance_to(previous_position) if have_position else 0.0\n\tvar teleport_limit: float = session.player.speed * delta * 2.0 + 4.0\n\ttrail.global_position = current + Vector2(0, 7)\n\ttrail.emitting = session.state.current == GS.PLAYING and trail.is_visible_in_tree() and distance > 0.01 and distance <= teleport_limit\n\tprevious_position = current\n\thave_position = true"
+  },
+  {
+   "beat_id": "B12",
+   "path": "effects/lantern_trail.tscn",
+   "start_line": 17,
+   "end_line": 29,
+   "text": "z_index = 1\ntexture_filter = 1\nmaterial = SubResource(\"Material_additive\")\nemitting = false\namount = 24\ntexture = ExtResource(\"1_texture\")\nlifetime = 0.35\none_shot = false\npreprocess = 0.0\nexplosiveness = 0.0\nlocal_coords = false\nemission_shape = 1\nemission_sphere_radius = 3.0"
+  },
+  {
+   "beat_id": "B14",
+   "path": "effects/particle_presentation.gd",
+   "start_line": 59,
+   "end_line": 70,
+   "text": "func _on_leveled_up(_level: int) -> void:\n\tlevels_seen += 1\n\tif session.state.current != GS.PLAYING or level_bursts.size() >= MAX_LEVEL_BURSTS:\n\t\treturn\n\tvar burst := LevelScene.instantiate() as CPUParticles2D\n\t_sync_overlay()\n\tlevel_overlay.add_child(burst)\n\tburst.position = session.hud.levelup_particle_anchor()\n\tlevel_bursts.append(burst)\n\tburst.finished.connect(_on_level_finished.bind(burst))\n\tburst.restart()\n\tlevels_spawned += 1"
+  },
+  {
+   "beat_id": "B16",
+   "path": "effects/particle_presentation.gd",
+   "start_line": 110,
+   "end_line": 119,
+   "text": "\tlevel_overlay.visible = is_visible_in_tree()\n\tvar playing: bool = session.state.current == GS.PLAYING\n\tfor burst in hit_bursts:\n\t\tburst.speed_scale = 1.0 if playing else 0.0\n\tfor burst in level_bursts:\n\t\t# The upgrade screen intentionally allows its celebration to finish.\n\t\tburst.speed_scale = 1.0 if session.state.current in [GS.PLAYING, GS.LEVELUP] else 0.0\n\ttrail.speed_scale = 1.0 if playing else 0.0\n\tif not playing or not trail.is_visible_in_tree():\n\t\ttrail.emitting = false"
+  },
+  {
+   "beat_id": "B18",
+   "path": "tests/test_particles_edges.gd",
+   "start_line": 57,
+   "end_line": 69,
+   "text": "\t\tgame.player.position = Vector2(stall.x - 19.0 - Tuning.PLAYER_RADIUS, stall.y))\n\tawait frames(4)\n\tvar start: Vector2 = game.player.position\n\tkey(KEY_D)\n\tvar emitted := 0\n\tvar moved := 0.0\n\tfor i in 30:\n\t\tawait frames(1)\n\t\tmoved = maxf(moved, game.player.position.distance_to(start))\n\t\temitted += 1 if game.particles.trail.emitting else 0\n\tkey(KEY_D, false)\n\tcheck(\"blocked-input-held-no-displacement\", moved < 0.01, {\"moved\": moved})\n\tcheck(\"blocked-push-never-emits\", emitted == 0, {\"emitting_frames\": emitted})"
+  },
+  {
+   "beat_id": "B20",
+   "path": "shaders/particles_generated.gdshader",
+   "start_line": 340,
+   "end_line": 352,
+   "text": "\tvec3 final_velocity = controlled_displacement + USERDATA1.xyz;\n\n\tfinal_velocity.z = 0.0;\n\n\tVELOCITY = final_velocity;\n\tTRANSFORM[3].xyz += final_velocity * DELTA;\n\n\tprocess_display_param(params, lifetime_percent);\n\n\tfloat base_angle = dynamic_params.angle;\n\tbase_angle += CUSTOM.y * LIFETIME * dynamic_params.angular_velocity;\n\tCUSTOM.x = base_angle * degree_to_rad;\n\tCOLOR = params.color;"
+  },
+  {
+   "beat_id": "B22",
+   "path": "tests/cost_effects.gd",
+   "start_line": 58,
+   "end_line": 63,
+   "text": "\tgame = Session.new()\n\tgame.test_no_spawn = true\n\troot.add_child(game)\n\tif not effects:\n\t\tgame.particles.free()\n\tgame.run_started.connect(_fixture.bind(cond), CONNECT_ONE_SHOT)"
+  }
+ ],
+ "exclusions": [
+  {
+   "path": "tests/capture.gd",
+   "reason": "Assignment 2 development tool (storyboard and pose screenshots); not used or shown in this film."
+  },
+  {
+   "path": "tests/capture_map.gd",
+   "reason": "Assignment 2 development tool that renders design/map-overview.png; not shown in this film."
+  },
+  {
+   "path": "tests/probe_balance.gd",
+   "reason": "Assignment 2 development tool (scripted balance bots); not part of the playable game and not shown."
+  },
+  {
+   "path": "tests/rasterize_storyboard.gd",
+   "reason": "Assignment 2 development tool that rasterises the storyboard SVGs; not shown in this film."
+  }
+ ],
+ "code_result_pairs": [
+  {
+   "code_beat": "B04",
+   "result_beat": "B05",
+   "observation": "In the main take every beam hit puts a burst at the monster; the live-burst counter, read from the take's own per-frame log, rises when hits overlap and falls back as bursts finish.",
+   "media": {
+    "path": "media/B05.mp4",
+    "sha256": "f2b994c6ef0390af9bfbaa84ed52c3b74982ca77caad182803bb29a6b5b0ea96"
+   }
+  },
+  {
+   "code_beat": "B06",
+   "result_beat": "B07",
+   "observation": "In the r1 fixture strip the burst is a white cluster on its first visible frame, spreads into yellow-orange sparks by 0.20 s and leaves its last pixel at 0.40 s.",
+   "media": {
+    "path": "media/B07.mp4",
+    "sha256": "73296cb193f42e0149618be3731e133a4e34a5b23045a76c5bbc7719c07b463a"
+   }
+  },
+  {
+   "code_beat": "B08",
+   "result_beat": "B09",
+   "observation": "Side by side, r1's sparks are chunkier from 0.03 to 0.27 s while the footprint and the fade frame match r0; the measured numbers sit beside the prediction.",
+   "media": {
+    "path": "media/B09.mp4",
+    "sha256": "476a1b5090d53b54fb3429b45df3ce2139bffae43859057bd97b72b7ff0a0280"
+   }
+  },
+  {
+   "code_beat": "B10",
+   "result_beat": "B11",
+   "observation": "Pushing straight into the stall the courier does not move and no embers appear; sliding along its edge the trail runs behind his feet again.",
+   "media": {
+    "path": "media/B11.mp4",
+    "sha256": "f7f050bd97516bc9e910d790d74dbfc64c784d3273546a58741fbc81723f51f4"
+   }
+  },
+  {
+   "code_beat": "B12",
+   "result_beat": "B13",
+   "observation": "In the trail fixture, r1's embers are brighter at startup and during steady movement, with the same footprint, and both strips are clear by frame 51.",
+   "media": {
+    "path": "media/B13.mp4",
+    "sha256": "9126e9ad9c3eaf1887cb232b43a1282b47da5c358aea2bcc348ab64044c5b5cb"
+   }
+  },
+  {
+   "code_beat": "B14",
+   "result_beat": "B15",
+   "observation": "On the card screen the celebration bursts on the small courier in the lower-left portrait, above the dark veil, and finishes before the scripted pick.",
+   "media": {
+    "path": "media/B15.mp4",
+    "sha256": "33d27409df0225b21af9793256ffcf4c2d7bb3c4134dee6dc3e9248630bc2c92"
+   }
+  },
+  {
+   "code_beat": "B16",
+   "result_beat": "B17",
+   "observation": "Under the PAUSED line the trail's embers stay where they were (paused frames 1143 and 1180 of the main take are pixel-identical) and carry on after resume; the scripted play-check shots show LOST and WON with no particles left.",
+   "media": {
+    "path": "media/B17.mp4",
+    "sha256": "fea9f2940276bbb4bbf525b586e40e402cb824b1b68234100d73241718fe297e"
+   }
+  },
+  {
+   "code_beat": "B18",
+   "result_beat": "B19",
+   "observation": "Recorded output: seven suites, 292 checks, zero failures; with the displacement guard removed, exactly the two trail checks fail.",
+   "media": {
+    "path": "media/B19.mp4",
+    "sha256": "58388909288d0c1bb36e546b1d4417541764c872346e22a2f25c99dcbabe65d5"
+   }
+  },
+  {
+   "code_beat": "B20",
+   "result_beat": "B21",
+   "observation": "With the same seed and frames, the CPU burst shrinks and fades through yellow to orange, while the editor-converted GPU copy, lacking its ramp and curve textures, stays white and full-size until it vanishes; its sparks stay visible farther out.",
+   "media": {
+    "path": "media/B21.mp4",
+    "sha256": "9472a9995f8e342ec578900cefac7a494cc789c26221d566ec0cdb3bf23ff188"
+   }
+  },
+  {
+   "code_beat": "B22",
+   "result_beat": "B23",
+   "observation": "The measured CPU deltas are drawn against their budgets; under the project renderer the GPU reading is zero on every frame, and the Vulkan proxy's deltas stay inside its noise band.",
+   "media": {
+    "path": "media/B23.mp4",
+    "sha256": "37d637b9d09781e320fa8391d013a34e64c1c2e61cb64c01a730e439c78ecc37"
+   }
+  }
+ ]
+}
