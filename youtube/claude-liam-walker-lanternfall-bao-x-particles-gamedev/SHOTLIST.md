@@ -1,6 +1,6 @@
 # SHOTLIST
 
-`claude-liam-walker-lanternfall-bao-x-particles-gamedev` · 27 beats · 486.8 s (8.1 min) · source revision c3e1273
+`claude-liam-walker-lanternfall-bao-x-particles-gamedev` · 27 beats · 487.4 s (8.1 min) · source revision c3e1273
 
 Durations are measured narration (Kokoro am_onyx) or, for game-sound-only beats, the source clip itself. Frame numbers are 30 fps frames of the takes in `capture/` (see CAPTURE.md).
 
@@ -18,7 +18,7 @@ Durations are measured narration (Kokoro am_onyx) or, for game-sound-only beats,
 | B09 | RESULT | result | 19.58 | composed (tools/compose.py) · files: comparison-contact-sheet.png |
 | B10 | CODE | code | 20.18 | Remotion `GodotDevWorkbench` · `godot/effects/particle_presentation.gd` lines 121–131 |
 | B11 | RESULT | result | 16.30 | composed (tools/compose.py): `take-props-seed11.avi` frames 60–418; `take-props-seed11.avi` frames 231–360 |
-| B12 | CODE | code | 18.43 | Remotion `GodotDevWorkbench` · `godot/effects/lantern_trail.tscn` lines 17–29 |
+| B12 | CODE | code | 18.97 | Remotion `GodotDevWorkbench` · `godot/effects/lantern_trail.tscn` lines 17–29 |
 | B13 | RESULT | result | 19.31 | composed (tools/compose.py) |
 | B14 | CODE | code | 18.50 | Remotion `GodotDevWorkbench` · `godot/effects/particle_presentation.gd` lines 59–70 |
 | B15 | RESULT | result | 15.68 | composed (tools/compose.py): `take-main-seed11.avi` frames 271–406; `take-main-seed11.avi` frames 356–445 |

@@ -253,11 +253,11 @@ BEATS = [
                "Result of B10. Real 4K engine capture (props take, seed 11, scripted input through the real input map); emitting flag from the capture's track log.",
                evidence=True),
     code_beat("B12", "CODE", "effects/lantern_trail.tscn", 17, 29, "The trail's own features.",
-              ("The trail's scene shows what makes it a different effect. It emits continuously from a sphere three "
-               "pixels wide, emission shape one, where the burst used a point. Twenty-four embers drift slightly "
+              ("The trail's scene shows what makes it a different effect. It emits continuously from a sphere with a "
+               "three-pixel radius, emission shape one, where the burst used a point. Twenty-four embers drift slightly "
                "upward and fade from amber to dark orange in a third of a second. Its tuning change lives on line "
                "fourteen: the alpha at the start and the middle of each ember's life."),
-              [("sphere three", 29, "emission_sphere_radius = 3.0"),
+              [("three-pixel radius", 29, "emission_sphere_radius = 3.0 (radius, px)"),
                ("emission shape one", 28, "emission_shape = 1: sphere (A uses 0: point)"),
                ("Twenty-four embers", 21, "amount = 24 · continuous (one_shot = false)")],
               [("Line 14, the change", "alpha 0.95 / 0.70 / 0"),
