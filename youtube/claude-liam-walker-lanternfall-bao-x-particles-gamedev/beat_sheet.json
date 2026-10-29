@@ -1,0 +1,2076 @@
+{
+  "metadata": {
+    "title": "Lanternfall, Sparked",
+    "slug": "claude-liam-walker-lanternfall-bao-x-particles-gamedev",
+    "topic": "WALKER · GODOT PARTICLES",
+    "kind": "godot-gamedev",
+    "modifier": "walker",
+    "playlist": "CSYE 7270",
+    "brand": "claude-liam",
+    "audience": "CSYE 7270 classmates and instructors",
+    "register": "Teardown",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "ground": "#FAF9F5",
+    "aspect_ratio": "16:9",
+    "fit": "contain",
+    "captions": false,
+    "channel_title": "",
+    "channel": "@NikBearBrown",
+    "folderLabel": "@NikBearBrown",
+    "channel_title_note": "empty on purpose: B00's composer already shows @NikBearBrown (OUTRO-LOCK: one handle per beat)",
+    "greeting": "Bonjour, Liam",
+    "greeting_note": "hello lexicon: Bonjour (French); the Assignment 2 film used Merhaba. Liam never takes Wagwan (IN-FOR-BEAR LAW).",
+    "persona": "Liam (in for Bear)",
+    "presenter": "Liam (in for Bear)",
+    "in_for_bear": true,
+    "game": {
+      "repo": "https://github.com/yanxlh/walker-lanternfall-bao-x",
+      "project_dir": "godot",
+      "source_revision": "c3e12737d9b38679efa61622cb62c793935aff59",
+      "godot": "4.7.2.stable.official.ed1daf0bf"
+    },
+    "teaching_contract": "code-then-result-v1",
+    "note": "godot-gamedev + walker teardown of Bao Xing's CSYE 7270 particle-effects assignment. Every code panel is a verbatim excerpt of godot/ at c3e12737d9b38679efa61622cb62c793935aff59; every gameplay shot is a real Movie Maker capture of an isolated copy of that revision, driven through the real input map by the disclosed capture driver; fixture strips and play-check shots are labelled as such. No paid call, no upload.",
+    "links": {
+      "repo": "https://github.com/yanxlh/walker-lanternfall-bao-x"
+    },
+    "tags": [
+      "Godot 4",
+      "godot-gamedev",
+      "Walker",
+      "CPUParticles2D",
+      "particle shader",
+      "CSYE 7270",
+      "Teardown register",
+      "Kokoro"
+    ],
+    "build": {
+      "at": "2026-10-29T16:09:01",
+      "cut": "master",
+      "filled": 27,
+      "of": 27,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "ASK",
+      "role_note": "COLD OPEN LAW — Claude composer; reconstructed Walker prompt from Bao's CHANGE-BRIEF.md (not a recorded session). Liam introduces himself.",
+      "narration_text": "Bonjour — this is Liam, in for Bear. Bao Xing's particle assignment: add two effects to a Godot game that already works, tune each one from what you actually see, test it, read the shader Godot generates, and price it on the CPU and the GPU. The game is Lanternfall again. Here is the ask, rebuilt from Bao's change brief.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.02",
+            "event": "composer card on cream; greeting 'Bonjour, Liam'"
+          },
+          {
+            "at": "0.25",
+            "event": "the reconstructed Walker prompt types in"
+          },
+          {
+            "at": "0.62",
+            "event": "send arms; running line names the brief and the session file"
+          },
+          {
+            "at": "0.75",
+            "event": "three result lines: effects, checks and revision, verdicts"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Bonjour, Liam",
+            "topic": "WALKER · GODOT PARTICLES",
+            "segment": "Lanternfall",
+            "command": "Please use Walker to convert my game design document about particle effects for Lanternfall, warm sparks on every weapon hit and a short ember trail behind the courier, into Godot 4 CPUParticles2D scenes. Gameplay must not change. Test every setting, and show me real before-and-after frames for each tuning change.",
+            "runningText": "reading CHANGE-BRIEF.md · CLAUDE.md · godot/game/session.gd…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Hit sparks · movement trail · level-up celebration",
+              "292 automated checks · source revision c3e1273",
+              "Three tuning changes, each kept by Bao after playing"
+            ]
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-10-29T19:32:32.531360+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.28,
+      "audio_file": "mp3/beat-B00.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B00.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 17.3,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B00.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF",
+      "role_note": "EXECUTIVE-SUMMARY LAW — hesitant writer. The framing a viewer arrives with ('particles are decoration') is corrected to what the film shows ('particles are feedback').",
+      "narration_text": "The short version. These particles are feedback, not decoration. Each one answers a real event in the game: a hit, a step, a new level. And none of them is allowed to change a single rule. That contract is what the rest of this film checks.",
+      "estimated_duration_s": 16,
+      "lead_silence_s": 0.8,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on-correct",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "cream page; 'Particles are decoration' types"
+          },
+          {
+            "at": "0.3",
+            "event": "'decoration' struck in terracotta, 'feedback' typed in"
+          },
+          {
+            "at": "0.6",
+            "event": "'each one answers an event' and 'the rules stay untouched' type in"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "text": "Particles are decoration\neach one answers an event\nthe rules stay untouched",
+            "triggerWords": "decoration",
+            "replacementWords": "feedback",
+            "fontSize": 170,
+            "lineSpacing": 1.5,
+            "align": "center",
+            "seed": "5295",
+            "mistakeRate": 2,
+            "hesitateWithin": 0,
+            "hesitateBetween": 1,
+            "ink": "#3D3929",
+            "accent": "#D97757",
+            "bg": "#FAF9F5"
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-10-29T19:33:25.404067+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 12.84,
+      "audio_file": "mp3/beat-B01.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B01.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 12.866666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B01.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "ASSIGNMENT",
+      "role_note": "Assignment requirements, as Bao's CHANGE-BRIEF.md records them; the excerpt is the brief's tuning rule, verbatim.",
+      "narration_text": "What the assignment asks for. Two effects that use different particle features. One change to each, driven by something observed, with real frames before and after. Tests that read every setting back. And a look under the hood: the process shader Godot writes, plus the cost on the CPU and the GPU against a budget written down in advance.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "card-cues",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "CHANGE-BRIEF.md 'Tuning and acceptance' excerpt beside four requirement cards"
+          },
+          {
+            "at": "Two effects",
+            "event": "card 1 highlights"
+          },
+          {
+            "at": "One change to",
+            "event": "card 2 highlights"
+          },
+          {
+            "at": "Tests that read",
+            "event": "card 3 highlights"
+          },
+          {
+            "at": "process shader",
+            "event": "card 4 highlights"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "What the assignment asks",
+            "section": "CHANGE-BRIEF.md · Tuning and acceptance",
+            "excerpt": "For each effect, preserve a first strip and record my first running-game observation. Make at least one observation-driven revision per effect. Before each edit, record the old and new value and predict the visible difference. Change one setting, recapture, compare, and keep or revert after actual play.",
+            "source": "CHANGE-BRIEF.md, committed before implementation (8eb16a2) · revisions appended in order",
+            "status": "Effects may read gameplay state but never write it",
+            "visualLabel": "Requirements",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "1 · Two effects",
+                "text": "A: point burst on every weapon hit. B: sphere-emitted trail while moving."
+              },
+              {
+                "label": "2 · One observed change each",
+                "text": "Prediction, one setting, before/after frames, a verdict after play."
+              },
+              {
+                "label": "3 · Tests read settings back",
+                "text": "Every scene value checked; real input drives the state tests."
+              },
+              {
+                "label": "4 · Shader and cost",
+                "text": "Read the generated process shader; measure CPU and GPU against a budget."
+              }
+            ],
+            "cues": [
+              {
+                "at": 1.32,
+                "card": 0
+              },
+              {
+                "at": 3.94,
+                "card": 1
+              },
+              {
+                "at": 8.39,
+                "card": 2
+              },
+              {
+                "at": 11.9,
+                "card": 3
+              }
+            ],
+            "durationSeconds": 17.75
+          },
+          "rendered": {
+            "out": "media/B02.mp4",
+            "at": "2026-10-29T19:34:20.295245+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.75,
+      "audio_file": "mp3/beat-B02.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B02.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 17.766666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B02.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "REPORT",
+      "kind": "source_report",
+      "clock": "source",
+      "audio_policy": "preserve",
+      "role_note": "Game sound only, no narration: a stretch of the main take (seed 11) with all three effects.",
+      "narration_text": "",
+      "shot": {
+        "type": "SOURCE_REPORT",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "the run under way: beam hits spark, the trail follows the courier"
+          },
+          {
+            "at": "level-up",
+            "event": "a level-up: the celebration on the card-screen portrait, cards held 2 s"
+          },
+          {
+            "at": "card",
+            "event": "card taken, play resumes"
+          }
+        ],
+        "treatment": "none"
+      },
+      "actual_duration_s": 13.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 13.0,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B03.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): effects/particle_presentation.gd lines 47-57 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "Effect A starts with a signal. The session's damage function, which every weapon calls, now announces each hit and where it landed, before any health comes off. This listener answers it. Line forty-nine drops the hit unless the game is playing and fewer than thirty-two bursts are alive. Then a fresh burst is placed at the hit, in world space, and restarted.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on effects/particle_presentation.gd, lines 47-57"
+          },
+          {
+            "at": "Line forty-nine",
+            "event": "line 49 highlights — PLAYING only · at most 32 live bursts"
+          },
+          {
+            "at": "placed at the hit",
+            "event": "line 53 highlights — global_position = the hit, in world space"
+          },
+          {
+            "at": "restarted",
+            "event": "line 56 highlights — restart(): one-shot burst"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "One burst per hit.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://effects/particle_presentation.gd",
+            "source": "godot/effects/particle_presentation.gd · lines 47–57 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "func _on_weapon_hit(at: Vector2) -> void:\n\thits_seen += 1\n\tif session.state.current != GS.PLAYING or hit_bursts.size() >= MAX_HIT_BURSTS:\n\t\treturn\n\tvar burst := HitScene.instantiate() as CPUParticles2D\n\tadd_child(burst)\n\tburst.global_position = session.to_global(at)\n\thit_bursts.append(burst)\n\tburst.finished.connect(_on_hit_finished.bind(burst))\n\tburst.restart()\n\thits_spawned += 1",
+            "startLine": 47,
+            "codeFontSize": 25,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "session.gd line 227",
+                "value": "emits before hp changes"
+              },
+              {
+                "label": "Lethal and nonlethal",
+                "value": "both spark"
+              },
+              {
+                "label": "_on_hit_finished 72–74",
+                "value": "frees the burst"
+              }
+            ],
+            "output": [
+              "setup() connects weapon_hit · leveled_up · run_started · state.changed (lines 33–36)"
+            ],
+            "cues": [
+              {
+                "at": 9.09,
+                "line": 49,
+                "label": "PLAYING only · at most 32 live bursts"
+              },
+              {
+                "at": 15.24,
+                "line": 53,
+                "label": "global_position = the hit, in world space"
+              },
+              {
+                "at": 17.19,
+                "line": 56,
+                "label": "restart(): one-shot burst"
+              }
+            ],
+            "durationSeconds": 17.94
+          },
+          "rendered": {
+            "out": "media/B04.mp4",
+            "at": "2026-10-29T19:35:15.438109+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.94,
+      "audio_file": "mp3/beat-B04.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B04.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 17.966666666666665,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B04.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B04. Real 4K engine capture (main take, seed 11, scripted input); counter from the capture's own track log; cap from evidence/particles_state.json.",
+      "narration_text": "Here it is in the running game. Every time the beam connects, a small burst lands on the monster, and it keeps playing after the monster is gone. The counter is read from the take's own log: when hits come close together, bursts overlap instead of restarting each other. A stress test with forty hits in one volley confirms the cap: thirty-two bursts, never more.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "real 4K capture, main take: beam hits spark at the monster; crop follows the courier"
+          },
+          {
+            "at": "counter",
+            "event": "live-burst counter from the take's per-frame log"
+          },
+          {
+            "at": "stress test",
+            "event": "recorded state-test lines: 40 hits seen, 32 bursts, 512 particles"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B05.mp4"
+      },
+      "observation": "In the main take every beam hit puts a burst at the monster; the live-burst counter, read from the take's own per-frame log, rises when hits overlap and falls back as bursts finish.",
+      "actual_duration_s": 18.47,
+      "audio_file": "mp3/beat-B05.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B05.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 18.5,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B05.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): effects/defeat_sparks.tscn lines 23-35 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "The burst itself is data in a scene file, not code. Sixteen sparks, all released on the same frame, because explosiveness is one. They live forty-five hundredths of a second. They start from a single point and fly in any direction, with spread at one-eighty. Speed is twenty-five to fifty-five, damping slows them, and a little gravity pulls them down.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on effects/defeat_sparks.tscn, lines 23-35"
+          },
+          {
+            "at": "explosiveness is one",
+            "event": "line 26 highlights — explosiveness = 1.0: one frame"
+          },
+          {
+            "at": "forty-five hundredths",
+            "event": "line 23 highlights — lifetime = 0.45 s"
+          },
+          {
+            "at": "single",
+            "event": "line 28 highlights — emission_shape = 0: point"
+          },
+          {
+            "at": "spread at one-eighty",
+            "event": "line 30 highlights — spread = 180°"
+          },
+          {
+            "at": "damping",
+            "event": "line 34 highlights — damping 20–30"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The burst, as data.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://effects/defeat_sparks.tscn",
+            "source": "godot/effects/defeat_sparks.tscn · lines 23–35 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "lifetime = 0.45\none_shot = true\npreprocess = 0.0\nexplosiveness = 1.0\nlocal_coords = false\nemission_shape = 0\ndirection = Vector2(1, 0)\nspread = 180.0\ngravity = Vector2(0, 12)\ninitial_velocity_min = 25.0\ninitial_velocity_max = 55.0\ndamping_min = 20.0\ndamping_max = 30.0",
+            "startLine": 23,
+            "codeFontSize": 24,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Line 21",
+                "value": "amount = 16"
+              },
+              {
+                "label": "Brief, visual intent",
+                "value": "compact → spread → gone"
+              },
+              {
+                "label": "Size limit",
+                "value": "≤ 2 character heights"
+              }
+            ],
+            "output": [
+              "no fixed seed in play (config test) · file name kept from the first design; it now serves every hit"
+            ],
+            "cues": [
+              {
+                "at": 5.36,
+                "line": 26,
+                "label": "explosiveness = 1.0: one frame"
+              },
+              {
+                "at": 7.03,
+                "line": 23,
+                "label": "lifetime = 0.45 s"
+              },
+              {
+                "at": 9.78,
+                "line": 28,
+                "label": "emission_shape = 0: point"
+              },
+              {
+                "at": 12.07,
+                "line": 30,
+                "label": "spread = 180°"
+              },
+              {
+                "at": 15.09,
+                "line": 34,
+                "label": "damping 20–30"
+              }
+            ],
+            "durationSeconds": 18.3
+          },
+          "rendered": {
+            "out": "media/B06.mp4",
+            "at": "2026-10-29T19:49:56.247940+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 18.3,
+      "audio_file": "mp3/beat-B06.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B06.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 18.3,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B06.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B06. Real windowed fixture capture (captures/defeat_sparks/r1), 30 fps, seed 7280; measurements from COMPARISON.md.",
+      "narration_text": "What those numbers make, frame by frame, from a real fixture capture on the market floor. On its first visible frame the burst is a compact white cluster. By a fifth of a second it has spread into separate yellow-orange sparks. At its widest it reaches sixty-four pixels, under the two-character limit of sixty-eight, and the last pixel goes out at four tenths of a second.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "r1 fixture strip, files 9–21, magnified 3×; courier on the left for scale"
+          },
+          {
+            "at": "first",
+            "event": "file 9: 14 × 14 px cluster"
+          },
+          {
+            "at": "a fifth",
+            "event": "file 15: 45 × 43 px, separate sparks"
+          },
+          {
+            "at": "widest",
+            "event": "64 px of a 68 px limit"
+          },
+          {
+            "at": "last pixel",
+            "event": "file 21: last trace; file 22 empty"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B07.mp4"
+      },
+      "observation": "In the r1 fixture strip the burst is a white cluster on its first visible frame, spreads into yellow-orange sparks by 0.20 s and leaves its last pixel at 0.40 s.",
+      "actual_duration_s": 19.05,
+      "audio_file": "mp3/beat-B07.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B07.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.066666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B07.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): effects/defeat_sparks.tscn lines 36-39 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "Now the tuning. In the game, Bao saw no problem. The frame strip disagreed with the brief: on its first frame, the cluster was a third of a character high, not about one. So one value changed, on line thirty-seven: the largest spark scale, from one point two to one point eight. Nothing else moved.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on effects/defeat_sparks.tscn, lines 36-39"
+          },
+          {
+            "at": "the largest spark scale",
+            "event": "line 37 highlights — scale_amount_max 1.2 → 1.8"
+          },
+          {
+            "at": "Nothing else moved",
+            "event": "line 36 highlights — scale_amount_min 0.7, curve and ramp unchanged"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The one change.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://effects/defeat_sparks.tscn",
+            "source": "godot/effects/defeat_sparks.tscn · lines 36–39 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "scale_amount_min = 0.7\nscale_amount_max = 1.8\nscale_amount_curve = SubResource(\"Curve_scale\")\ncolor_ramp = SubResource(\"Gradient_color\")",
+            "startLine": 36,
+            "codeFontSize": 25,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Bao, in play",
+                "value": "“完成 没什么问题”"
+              },
+              {
+                "label": "r0, first frame",
+                "value": "11 × 12 px: 0.35 height"
+              },
+              {
+                "label": "Prediction",
+                "value": "≈ 15 × 15 px; +3–4 px wide"
+              }
+            ],
+            "output": [
+              "approved (“同意”) · config test edited and failing first, then the scene · CHANGE-BRIEF.md r1"
+            ],
+            "cues": [
+              {
+                "at": 11.34,
+                "line": 37,
+                "label": "scale_amount_max 1.2 → 1.8"
+              },
+              {
+                "at": 14.79,
+                "line": 36,
+                "label": "scale_amount_min 0.7, curve and ramp unchanged"
+              }
+            ],
+            "durationSeconds": 16.06
+          },
+          "rendered": {
+            "out": "media/B08.mp4",
+            "at": "2026-10-29T19:36:59.787802+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 16.06,
+      "audio_file": "mp3/beat-B08.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B08.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 16.066666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B08.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B08. Real fixture captures r0 and r1 (captures/defeat_sparks/), comparison and hashes from COMPARISON.md and manifest.json; verdict from TUNING.md.",
+      "narration_text": "Before on top, after below, same seed, same frames. The first frame grew from eleven to fourteen pixels, close to the predicted fifteen. The sparks got chunkier, with up to eighty-five percent more lit area. But the footprint widened by one pixel, not the predicted three or four, because positions set the spread. Fade timing didn't change. Bao played it and kept it: clearer.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "r0 (top) vs r1 (bottom) contact sheet, 3× crops"
+          },
+          {
+            "at": "predicted fifteen",
+            "event": "prediction vs measured table, row by row"
+          },
+          {
+            "at": "one pixel",
+            "event": "the miss marked: predicted +3–4 px, measured +1 px"
+          },
+          {
+            "at": "kept it",
+            "event": "Bao's verdict: 保留 更清晰了"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B09.mp4"
+      },
+      "observation": "Side by side, r1's sparks are chunkier from 0.03 to 0.27 s while the footprint and the fade frame match r0; the measured numbers sit beside the prediction.",
+      "actual_duration_s": 19.58,
+      "audio_file": "mp3/beat-B09.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B09.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.6,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B09.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): effects/particle_presentation.gd lines 121-131 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "Effect B, the trail, is decided once per physics frame. Line one twenty-six measures how far the courier actually moved since the last frame. Holding a key isn't enough. Line one twenty-seven sets a jump limit, twice a frame's walk plus four pixels, so a teleport or a restart never draws a streak. Line one twenty-nine emits only while playing, visible, and genuinely moving.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on effects/particle_presentation.gd, lines 121-131"
+          },
+          {
+            "at": "Line one twenty-six",
+            "event": "line 126 highlights — distance actually moved"
+          },
+          {
+            "at": "Line one twenty-seven",
+            "event": "line 127 highlights — jump limit = speed × Δt × 2 + 4 ≈ 7 px"
+          },
+          {
+            "at": "Line one twenty-nine",
+            "event": "line 129 highlights — PLAYING · visible · 0.01 < distance ≤ limit"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "A trail that needs real movement.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://effects/particle_presentation.gd",
+            "source": "godot/effects/particle_presentation.gd · lines 121–131 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "func _physics_process(delta: float) -> void:\n\tif not is_instance_valid(session) or not is_instance_valid(trail):\n\t\treturn\n\t_apply_policy()\n\tvar current: Vector2 = session.player.global_position\n\tvar distance: float = current.distance_to(previous_position) if have_position else 0.0\n\tvar teleport_limit: float = session.player.speed * delta * 2.0 + 4.0\n\ttrail.global_position = current + Vector2(0, 7)\n\ttrail.emitting = session.state.current == GS.PLAYING and trail.is_visible_in_tree() and distance > 0.01 and distance <= teleport_limit\n\tprevious_position = current\n\thave_position = true",
+            "startLine": 121,
+            "codeFontSize": 25,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Line 128",
+                "value": "trail at the feet: (0, 7)"
+              },
+              {
+                "label": "local_coords = false",
+                "value": "embers stay put"
+              },
+              {
+                "label": "Restart 88–97",
+                "value": "history reset"
+              }
+            ],
+            "output": [
+              "reads session.player and session.state; writes only the trail"
+            ],
+            "cues": [
+              {
+                "at": 2.76,
+                "line": 126,
+                "label": "distance actually moved"
+              },
+              {
+                "at": 8.87,
+                "line": 127,
+                "label": "jump limit = speed × Δt × 2 + 4 ≈ 7 px"
+              },
+              {
+                "at": 15.8,
+                "line": 129,
+                "label": "PLAYING · visible · 0.01 < distance ≤ limit"
+              }
+            ],
+            "durationSeconds": 20.18
+          },
+          "rendered": {
+            "out": "media/B10.mp4",
+            "at": "2026-10-29T19:38:01.819201+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 20.18,
+      "audio_file": "mp3/beat-B10.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B10.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 20.2,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B10.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B10. Real 4K engine capture (props take, seed 11, scripted input through the real input map); emitting flag from the capture's track log.",
+      "narration_text": "The proof is a wall. The script walks the courier up to a stall and holds right. The key is down, but he can't move, so no embers. Then it holds down and right: he slides along the edge, and the trail is back behind his feet. The line under the footage is the trail's emitting flag, read from the take's own per-frame log.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "real 4K capture, props take: walking to the nearest stall"
+          },
+          {
+            "at": "holds right",
+            "event": "pushing into the stall: no displacement, no embers"
+          },
+          {
+            "at": "slides",
+            "event": "down-right: sliding along the edge, trail back"
+          },
+          {
+            "at": "emitting flag",
+            "event": "per-frame strip: trail emitting yes / no, from the take's log"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B11.mp4"
+      },
+      "observation": "Pushing straight into the stall the courier does not move and no embers appear; sliding along its edge the trail runs behind his feet again.",
+      "actual_duration_s": 16.3,
+      "audio_file": "mp3/beat-B11.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B11.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 16.3,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B11.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): effects/lantern_trail.tscn lines 17-29 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "The trail's scene shows what makes it a different effect. It emits continuously from a sphere three pixels wide, emission shape one, where the burst used a point. Twenty-four embers drift slightly upward and fade from amber to dark orange in a third of a second. Its tuning change lives on line fourteen: the alpha at the start and the middle of each ember's life.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on effects/lantern_trail.tscn, lines 17-29"
+          },
+          {
+            "at": "sphere three",
+            "event": "line 29 highlights — emission_sphere_radius = 3.0"
+          },
+          {
+            "at": "emission shape one",
+            "event": "line 28 highlights — emission_shape = 1: sphere (A uses 0: point)"
+          },
+          {
+            "at": "Twenty-four embers",
+            "event": "line 21 highlights — amount = 24 · continuous (one_shot = false)"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The trail's own features.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://effects/lantern_trail.tscn",
+            "source": "godot/effects/lantern_trail.tscn · lines 17–29 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "z_index = 1\ntexture_filter = 1\nmaterial = SubResource(\"Material_additive\")\nemitting = false\namount = 24\ntexture = ExtResource(\"1_texture\")\nlifetime = 0.35\none_shot = false\npreprocess = 0.0\nexplosiveness = 0.0\nlocal_coords = false\nemission_shape = 1\nemission_sphere_radius = 3.0",
+            "startLine": 17,
+            "codeFontSize": 23,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Line 14, the change",
+                "value": "alpha 0.95 / 0.70 / 0"
+              },
+              {
+                "label": "Before (r0)",
+                "value": "alpha 0.55 / 0.30 / 0"
+              },
+              {
+                "label": "Bao's first look",
+                "value": "“移动也不明显”"
+              }
+            ],
+            "output": [
+              "lifetime 0.35 s (line 23) · spread 25° upward (lines 30–31) · brief: dimmer and smaller than A"
+            ],
+            "cues": [
+              {
+                "at": 4.15,
+                "line": 29,
+                "label": "emission_sphere_radius = 3.0"
+              },
+              {
+                "at": 5.47,
+                "line": 28,
+                "label": "emission_shape = 1: sphere (A uses 0: point)"
+              },
+              {
+                "at": 8.0,
+                "line": 21,
+                "label": "amount = 24 · continuous (one_shot = false)"
+              }
+            ],
+            "durationSeconds": 18.43
+          },
+          "rendered": {
+            "out": "media/B12.mp4",
+            "at": "2026-10-29T19:50:52.969042+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 18.43,
+      "audio_file": "mp3/beat-B12.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B12.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 18.433333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B12.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B12. Real fixture captures (captures/lantern_trail/comparison-20261029-135607), the original re-rendered from its preserved resource; play-check shot from captures/play-checks/20261029-142138.",
+      "narration_text": "Bao's first look at the integrated game: the trail wasn't obvious. Raising only those two alpha values gave brighter embers at startup and in steady movement, with the same footprint, and both versions clear by the same frame after stopping. Bao played it and kept it. In normal play, the trail stays two to four pixels per ember, still smaller and dimmer than a hit spark.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "trail fixture r0 (top) vs r1 (bottom), frames 10–60, crops"
+          },
+          {
+            "at": "same footprint",
+            "event": "frames 20 and 39 marked"
+          },
+          {
+            "at": "same frame",
+            "event": "frames 51 and 60: both clear"
+          },
+          {
+            "at": "smaller and dimmer",
+            "event": "play-check crop: trail flecks beside a hit spark"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B13.mp4"
+      },
+      "observation": "In the trail fixture, r1's embers are brighter at startup and during steady movement, with the same footprint, and both strips are clear by frame 51.",
+      "actual_duration_s": 19.31,
+      "audio_file": "mp3/beat-B13.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B13.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.333333333333332,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B13.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B14",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): effects/particle_presentation.gd lines 59-70 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "The extra effect: a gold celebration on every level-up. Its first version was drawn in the world, under the upgrade screen's dark veil, and Bao found it hard to see. Now it goes into its own overlay layer, eleven, above the HUD, and line sixty-six anchors it to the little courier portrait on the card screen. At most four can be alive at once.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on effects/particle_presentation.gd, lines 59-70"
+          },
+          {
+            "at": "level-up",
+            "event": "line 59 highlights — leveled_up(level) signal"
+          },
+          {
+            "at": "its own overlay layer",
+            "event": "line 65 highlights — level_overlay: CanvasLayer 11, above HUD layer 10"
+          },
+          {
+            "at": "line sixty-six",
+            "event": "line 66 highlights — position = the card-screen portrait"
+          },
+          {
+            "at": "At most four",
+            "event": "line 61 highlights — PLAYING only · ≤ 4 live celebrations"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The celebration, on the card screen.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://effects/particle_presentation.gd",
+            "source": "godot/effects/particle_presentation.gd · lines 59–70 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "func _on_leveled_up(_level: int) -> void:\n\tlevels_seen += 1\n\tif session.state.current != GS.PLAYING or level_bursts.size() >= MAX_LEVEL_BURSTS:\n\t\treturn\n\tvar burst := LevelScene.instantiate() as CPUParticles2D\n\t_sync_overlay()\n\tlevel_overlay.add_child(burst)\n\tburst.position = session.hud.levelup_particle_anchor()\n\tlevel_bursts.append(burst)\n\tburst.finished.connect(_on_level_finished.bind(burst))\n\tburst.restart()\n\tlevels_spawned += 1",
+            "startLine": 59,
+            "codeFontSize": 25,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Anchor",
+                "value": "HUD-local (56, 325)"
+              },
+              {
+                "label": "Bao's request",
+                "value": "on the small character"
+              },
+              {
+                "label": "Scene",
+                "value": "32 particles · 0.7 s"
+              }
+            ],
+            "output": [
+              "_apply_policy keeps it playing during LEVELUP (lines 114–116)"
+            ],
+            "cues": [
+              {
+                "at": 2.22,
+                "line": 59,
+                "label": "leveled_up(level) signal"
+              },
+              {
+                "at": 9.59,
+                "line": 65,
+                "label": "level_overlay: CanvasLayer 11, above HUD layer 10"
+              },
+              {
+                "at": 12.28,
+                "line": 66,
+                "label": "position = the card-screen portrait"
+              },
+              {
+                "at": 16.42,
+                "line": 61,
+                "label": "PLAYING only · ≤ 4 live celebrations"
+              }
+            ],
+            "durationSeconds": 18.5
+          },
+          "rendered": {
+            "out": "media/B14.mp4",
+            "at": "2026-10-29T19:39:55.147260+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 18.5,
+      "audio_file": "mp3/beat-B14.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B14.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 18.5,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B14.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B15",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B14. Real 4K engine capture (main take, seed 11); verdict from TUNING.md.",
+      "narration_text": "In the real take, the level-up arrives and the card screen opens. The burst lands on the small courier in the lower-left portrait, white first, then gold, and it's gone well before the scripted pick two seconds later. The cards stay readable. Bao looked at exactly this placement and said: that works.",
+      "estimated_duration_s": 18,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "real 4K capture, main take: level-up, card screen opens"
+          },
+          {
+            "at": "lower-left portrait",
+            "event": "crop of the portrait: white → gold → gone"
+          },
+          {
+            "at": "that works",
+            "event": "Bao's verdict: 可以的"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B15.mp4"
+      },
+      "observation": "On the card screen the celebration bursts on the small courier in the lower-left portrait, above the dark veil, and finishes before the scripted pick.",
+      "actual_duration_s": 15.68,
+      "audio_file": "mp3/beat-B15.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B15.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 15.7,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B15.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B16",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): effects/particle_presentation.gd lines 110-119 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "One policy runs every frame, and it only reads the game. When the game isn't playing, hit bursts and the trail get a speed scale of zero, so they freeze exactly where they are. The celebration keeps playing on the card screen, so it doesn't stall on its first frame. And outside play, the trail never spawns. On a loss or a win, everything is cleared.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on effects/particle_presentation.gd, lines 110-119"
+          },
+          {
+            "at": "speed scale of zero",
+            "event": "line 113 highlights — hit bursts: speed_scale 0 outside PLAYING"
+          },
+          {
+            "at": "keeps",
+            "event": "line 116 highlights — celebration: runs in PLAYING and LEVELUP"
+          },
+          {
+            "at": "never spawns",
+            "event": "line 118 highlights — trail.emitting = false outside play"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Freeze, don't fake.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://effects/particle_presentation.gd",
+            "source": "godot/effects/particle_presentation.gd · lines 110–119 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "\tlevel_overlay.visible = is_visible_in_tree()\n\tvar playing: bool = session.state.current == GS.PLAYING\n\tfor burst in hit_bursts:\n\t\tburst.speed_scale = 1.0 if playing else 0.0\n\tfor burst in level_bursts:\n\t\t# The upgrade screen intentionally allows its celebration to finish.\n\t\tburst.speed_scale = 1.0 if session.state.current in [GS.PLAYING, GS.LEVELUP] else 0.0\n\ttrail.speed_scale = 1.0 if playing else 0.0\n\tif not playing or not trail.is_visible_in_tree():\n\t\ttrail.emitting = false",
+            "startLine": 110,
+            "codeFontSize": 25,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "_apply_policy() 107",
+                "value": "runs every physics frame"
+              },
+              {
+                "label": "_on_state_changed 99–105",
+                "value": "WON · LOST · MENU: clear"
+              },
+              {
+                "label": "Line 117",
+                "value": "trail frozen with the game"
+              }
+            ],
+            "output": [
+              "no line in this file writes session state"
+            ],
+            "cues": [
+              {
+                "at": 5.78,
+                "line": 113,
+                "label": "hit bursts: speed_scale 0 outside PLAYING"
+              },
+              {
+                "at": 9.7,
+                "line": 116,
+                "label": "celebration: runs in PLAYING and LEVELUP"
+              },
+              {
+                "at": 14.95,
+                "line": 118,
+                "label": "trail.emitting = false outside play"
+              }
+            ],
+            "durationSeconds": 18.09
+          },
+          "rendered": {
+            "out": "media/B16.mp4",
+            "at": "2026-10-29T19:51:49.238382+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 18.09,
+      "audio_file": "mp3/beat-B16.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B16.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 18.1,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B16.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B17",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B16. Real 4K engine capture (main take) plus labelled scripted play-check shots (captures/play-checks/20261029-142138); verdict from PLAY-CHECKS.md.",
+      "narration_text": "At thirty seconds the script presses pause. Under the pause screen, the trail's embers hang exactly where they were: two frames a second apart match pixel for pixel. Then play resumes and they carry on. The scripted play checks cover the endings: on the first frame of a loss or a win, every particle is gone. And after a normal run of their own, Bao's note was that nothing got in the way.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "real 4K capture, main take: pause at run 0:30, held 2.5 s"
+          },
+          {
+            "at": "pixel for pixel",
+            "event": "two paused frames a second apart, side by side: 0 pixels differ"
+          },
+          {
+            "at": "play resumes",
+            "event": "resume: the trail carries on"
+          },
+          {
+            "at": "endings",
+            "event": "play-check shots: lost+00 and won+00, particles cleared (scripted, 1280 × 720)"
+          },
+          {
+            "at": "nothing got in the way",
+            "event": "Bao's verdict: 没有挡住都正常"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B17.mp4"
+      },
+      "observation": "Under the PAUSED line the trail's embers stay where they were (paused frames 1143 and 1180 of the main take are pixel-identical) and carry on after resume; the scripted play-check shots show LOST and WON with no particles left.",
+      "actual_duration_s": 19.73,
+      "audio_file": "mp3/beat-B17.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B17.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.733333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B17.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B18",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): tests/test_particles_edges.gd lines 57-69 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "Tests catch what a glance misses. This edge test puts the courier against a stall, holds the right key for thirty frames through the real input system, and counts two things: how far he moved, and how many frames the trail emitted. Both must be zero. A configuration test, separately, reads every value in every effect scene back from the engine.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on tests/test_particles_edges.gd, lines 57-69"
+          },
+          {
+            "at": "puts the courier against a stall",
+            "event": "line 57 highlights — fixture: courier touching the stall's left edge"
+          },
+          {
+            "at": "holds the right key",
+            "event": "line 60 highlights — real key event: D"
+          },
+          {
+            "at": "Both must be zero",
+            "event": "line 69 highlights — blocked-push-never-emits"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Testing what the eye can't.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://tests/test_particles_edges.gd",
+            "source": "godot/tests/test_particles_edges.gd · lines 57–69 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "\t\tgame.player.position = Vector2(stall.x - 19.0 - Tuning.PLAYER_RADIUS, stall.y))\n\tawait frames(4)\n\tvar start: Vector2 = game.player.position\n\tkey(KEY_D)\n\tvar emitted := 0\n\tvar moved := 0.0\n\tfor i in 30:\n\t\tawait frames(1)\n\t\tmoved = maxf(moved, game.player.position.distance_to(start))\n\t\temitted += 1 if game.particles.trail.emitting else 0\n\tkey(KEY_D, false)\n\tcheck(\"blocked-input-held-no-displacement\", moved < 0.01, {\"moved\": moved})\n\tcheck(\"blocked-push-never-emits\", emitted == 0, {\"emitting_frames\": emitted})",
+            "startLine": 57,
+            "codeFontSize": 23,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Particle suites",
+                "value": "39 + 79 + 34 + 18 checks"
+              },
+              {
+                "label": "Godot 3 name",
+                "value": "loads silently; test fails"
+              },
+              {
+                "label": "Limit",
+                "value": "can't judge the look"
+              }
+            ],
+            "output": [
+              "evidence/particles_edges.json"
+            ],
+            "cues": [
+              {
+                "at": 2.33,
+                "line": 57,
+                "label": "fixture: courier touching the stall's left edge"
+              },
+              {
+                "at": 4.12,
+                "line": 60,
+                "label": "real key event: D"
+              },
+              {
+                "at": 11.95,
+                "line": 69,
+                "label": "blocked-push-never-emits"
+              }
+            ],
+            "durationSeconds": 18.2
+          },
+          "rendered": {
+            "out": "media/B18.mp4",
+            "at": "2026-10-29T19:52:45.849065+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 18.2,
+      "audio_file": "mp3/beat-B18.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B18.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 18.2,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B18.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B19",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B18. Recorded tool output (evidence/assignment-6/final-precommit, evidence/assignment-6/mutations) and the windowed mutation capture (captures/defeat_sparks/mutation-godot3-name).",
+      "narration_text": "Recorded output from the committed build: seven suites, two hundred ninety-two checks, no failures, with the original game's tests unchanged. Then the experiment that shows the test is real: delete the movement guard, and exactly two trail checks fail. And an old Godot 3 property name loads without a warning; the burst just spreads a little tighter. Only the test noticed.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "recorded suite totals, final pre-commit run"
+          },
+          {
+            "at": "delete the movement guard",
+            "event": "mutation output: blocked-push-never-emits (30 frames), jump-frame-no-emission"
+          },
+          {
+            "at": "Godot 3 property name",
+            "event": "mutation frames: r1 vs initial_velocity, 45 × 43 → 40 × 42 px"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B19.mp4"
+      },
+      "observation": "Recorded output: seven suites, 292 checks, zero failures; with the displacement guard removed, exactly the two trail checks fail.",
+      "actual_duration_s": 19.22,
+      "audio_file": "mp3/beat-B19.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B19.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.233333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B19.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B20",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): shaders/particles_generated.gdshader lines 340-352 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "Under the hood. Godot turned a GPU copy of the burst into this generated process shader. Every frame, for every spark, it adds up the velocity, moves the spark, and then samples the colour ramp and the scale curve by the spark's age, on line three forty-seven. In Bao's words, this is the process stage: how a particle changes. Drawing it is a separate stage.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on shaders/particles_generated.gdshader, lines 340-352"
+          },
+          {
+            "at": "moves the spark",
+            "event": "line 345 highlights — TRANSFORM[3].xyz += final_velocity × DELTA"
+          },
+          {
+            "at": "line three forty-seven",
+            "event": "line 347 highlights — process_display_param: colour ramp + scale curve at age"
+          },
+          {
+            "at": "separate stage",
+            "event": "line 352 highlights — COLOR handed to the draw stage"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The shader Godot writes.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://shaders/particles_generated.gdshader",
+            "source": "godot/shaders/particles_generated.gdshader · lines 340–352 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "\tvec3 final_velocity = controlled_displacement + USERDATA1.xyz;\n\n\tfinal_velocity.z = 0.0;\n\n\tVELOCITY = final_velocity;\n\tTRANSFORM[3].xyz += final_velocity * DELTA;\n\n\tprocess_display_param(params, lifetime_percent);\n\n\tfloat base_angle = dynamic_params.angle;\n\tbase_angle += CUSTOM.y * LIFETIME * dynamic_params.angular_velocity;\n\tCUSTOM.x = base_angle * degree_to_rad;\n\tCOLOR = params.color;",
+            "startLine": 340,
+            "codeFontSize": 25,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "start() 225–275",
+                "value": "spawn: colour, velocity"
+              },
+              {
+                "label": "Lines 311–337",
+                "value": "gravity, then damping"
+              },
+              {
+                "label": "Draw stage",
+                "value": "spark.png · additive"
+              }
+            ],
+            "output": [
+              "converted in the Godot 4.7.2 editor · study scene only, the game never loads it"
+            ],
+            "cues": [
+              {
+                "at": 7.46,
+                "line": 345,
+                "label": "TRANSFORM[3].xyz += final_velocity × DELTA"
+              },
+              {
+                "at": 12.44,
+                "line": 347,
+                "label": "process_display_param: colour ramp + scale curve at age"
+              },
+              {
+                "at": 18.17,
+                "line": 352,
+                "label": "COLOR handed to the draw stage"
+              }
+            ],
+            "durationSeconds": 19.22
+          },
+          "rendered": {
+            "out": "media/B20.mp4",
+            "at": "2026-10-29T19:42:45.797684+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 19.22,
+      "audio_file": "mp3/beat-B20.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B20.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.233333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B20.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B21",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B20. Real 4K fixture capture of the isolated copy (capture/study_capture.gd): the game's scene and the study scene, same seed 7280.",
+      "narration_text": "And here's what that shader does with the material the editor produced, same seed, same frames. On the left, the game's CPU burst shrinks and fades through yellow to orange. On the right, the GPU copy stays white and full-size until it vanishes: the conversion left the ramp and curve textures off, so line three forty-seven has nothing to sample. The sparks still fly out; the colour fade and the shrink are gone.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "real 4K fixture capture: CPU burst (left) vs editor-converted GPU copy (right)"
+          },
+          {
+            "at": "shrinks and fades",
+            "event": "left: yellow → orange, shrinking"
+          },
+          {
+            "at": "stays white",
+            "event": "right: white, full-size"
+          },
+          {
+            "at": "nothing to sample",
+            "event": "callout: ShaderMaterial has no color_ramp / scale_curve"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B21.mp4"
+      },
+      "observation": "With the same seed and frames, the CPU burst shrinks and fades through yellow to orange, while the editor-converted GPU copy, lacking its ramp and curve textures, stays white and full-size until it vanishes; its sparks stay visible farther out.",
+      "actual_duration_s": 21.46,
+      "audio_file": "mp3/beat-B21.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B21.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 21.466666666666665,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B21.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B22",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): tests/cost_effects.gd lines 58-63 at c3e1273, read verbatim; the next beat shows the result.",
+      "narration_text": "Last, the price. The cost script builds the same game twice for every condition. Line sixty-one is the switch: with effects off, the whole presentation node is freed before the run starts, so gameplay, enemies and input stay identical. Then it times five interleaved trials of three hundred frames, idle, at the burst cap, moving, and on the card screen.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on tests/cost_effects.gd, lines 58-63"
+          },
+          {
+            "at": "same game twice",
+            "event": "line 58 highlights — a fresh Session for each condition"
+          },
+          {
+            "at": "Line sixty-one",
+            "event": "line 61 highlights — effects off: game.particles.free()"
+          },
+          {
+            "at": "identical",
+            "event": "line 63 highlights — same fixture via run_started"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists the related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Pricing it: on versus off.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://tests/cost_effects.gd",
+            "source": "godot/tests/cost_effects.gd · lines 58–63 · source revision c3e1273 · Godot editor reconstruction",
+            "code": "\tgame = Session.new()\n\tgame.test_no_spawn = true\n\troot.add_child(game)\n\tif not effects:\n\t\tgame.particles.free()\n\tgame.run_started.connect(_fixture.bind(cond), CONNECT_ONE_SHOT)",
+            "startLine": 58,
+            "codeFontSize": 25,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "CPU",
+                "value": "headless wall time"
+              },
+              {
+                "label": "GPU",
+                "value": "measured, windowed"
+              },
+              {
+                "label": "Budgets (ms)",
+                "value": "A 1.0 / 0.75 · B 0.25"
+              }
+            ],
+            "output": [
+              "evidence/assignment-6/cost/COST-REPORT.md"
+            ],
+            "cues": [
+              {
+                "at": 2.09,
+                "line": 58,
+                "label": "a fresh Session for each condition"
+              },
+              {
+                "at": 4.06,
+                "line": 61,
+                "label": "effects off: game.particles.free()"
+              },
+              {
+                "at": 11.71,
+                "line": 63,
+                "label": "same fixture via run_started"
+              }
+            ],
+            "durationSeconds": 18.82
+          },
+          "rendered": {
+            "out": "media/B22.mp4",
+            "at": "2026-10-29T19:43:42.539861+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 18.82,
+      "audio_file": "mp3/beat-B22.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B22.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 18.833333333333332,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B22.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B23",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B22. Recorded measurements (evidence/assignment-6/cost/*.json) drawn as bars; nothing estimated.",
+      "narration_text": "The measured price. On the CPU, thirty-two live bursts add about nine thousandths of a millisecond a frame, a tenth at the spawn spike, and the trail four thousandths, all far under budget. The GPU number is the honest part: under the game's renderer, this Mac reports zero on every frame. A Vulkan proxy can measure it, and the difference stays inside the noise.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "CPU deltas as bars against their budgets (headless, 5 trials)"
+          },
+          {
+            "at": "spawn spike",
+            "event": "A spawn p95 ≈ +0.10 ms"
+          },
+          {
+            "at": "zero on every frame",
+            "event": "GPU under GL Compatibility: 0.000 ms, every frame"
+          },
+          {
+            "at": "Vulkan proxy",
+            "event": "Mobile/Vulkan proxy deltas within ±0.1 ms, labelled proxy"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B23.mp4"
+      },
+      "observation": "The measured CPU deltas are drawn against their budgets; under the project renderer the GPU reading is zero on every frame, and the Vulkan proxy's deltas stay inside its noise band.",
+      "actual_duration_s": 19.16,
+      "audio_file": "mp3/beat-B23.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B23.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.166666666666668,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B23.mp4",
+        "filled_by": "media",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B24",
+      "act": "VERDICT",
+      "role_note": "ClaudeVerdictArtifact — implemented work, limitations, human judgment; shows the source revision.",
+      "narration_text": "The verdict. Implemented: three effects that answer real events and never write game state, with two hundred ninety-two checks behind them. Each tuning change has a prediction, real frames and a verdict, including the part of the prediction that missed. The limits are written down: no readable GPU time on this renderer, and a first frame still under one character high. The keep-or-revert calls were Bao's.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "artifact-reveal",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "artifact card 'Verdict', heading with the source revision"
+          },
+          {
+            "at": "0.2",
+            "event": "implemented line"
+          },
+          {
+            "at": "0.45",
+            "event": "tuning-evidence line"
+          },
+          {
+            "at": "0.65",
+            "event": "limits line"
+          },
+          {
+            "at": "0.85",
+            "event": "human-judgment line"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Verdict",
+            "artifactHeading": "Lanternfall particles · source revision c3e1273",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Implemented: hit sparks, trail, celebration; game state never written; 292 checks.",
+              "Each tuning change: prediction, real before/after frames, a verdict, misses kept.",
+              "Limits: no GPU time on this renderer; first frame still under one height.",
+              "Human judgment: every keep-or-revert call was Bao's, after playing."
+            ]
+          },
+          "rendered": {
+            "out": "media/B24.mp4",
+            "at": "2026-10-29T19:45:07.386306+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 20.07,
+      "audio_file": "mp3/beat-B24.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B24.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 20.1,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B24.mp4",
+        "filled_by": "remotion:ClaudeVerdictArtifact",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B25",
+      "act": "HANDOFF",
+      "role_note": "HANDOFF LAW — Your Turn: one bounded change plus a prediction and a capture. Liam reads the prompt and signs off.",
+      "narration_text": "Your turn. Paste this: Please use Walker to read the trail scene in my Lanternfall project. Change only the emission sphere radius from three to eight. Before running anything, predict how the trail's width and brightness change at fixture frames twenty and thirty-nine, and which configuration check fails. Then capture both strips, compare, and put three back. Write the prediction first; the miss is the lesson. Liam, in for Bear.",
+      "estimated_duration_s": 32,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.02",
+            "event": "composer card; greeting 'Your turn.'"
+          },
+          {
+            "at": "0.1",
+            "event": "the paste-ready prompt types in"
+          },
+          {
+            "at": "0.7",
+            "event": "three output lines: prediction first, capture, revert"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "WALKER · GODOT PARTICLES",
+            "segment": "Lanternfall",
+            "command": "Please use Walker to read godot/effects/lantern_trail.tscn in my Lanternfall project. Change only emission_sphere_radius from 3.0 to 8.0. Before running anything, predict how the trail's width and brightness change at fixture frames 20 and 39, and which configuration check fails. Then capture both strips, compare them with your prediction, and put 3.0 back.",
+            "runningText": "reading godot/effects/lantern_trail.tscn · tests/test_extra_particles_config.gd…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Prediction written before the capture.",
+              "Two strips captured: compare with your numbers.",
+              "Then put 3.0 back."
+            ],
+            "animateTyping": true
+          },
+          "rendered": {
+            "out": "media/B25.mp4",
+            "at": "2026-10-29T19:46:21.941271+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 20.5,
+      "audio_file": "mp3/beat-B25.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B25.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 20.5,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B25.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-10-29T16:09:01"
+      }
+    },
+    {
+      "beat_id": "B26",
+      "act": "OUTRO",
+      "role_note": "OUTRO LAW — ClaudeTitleOutro: exact title, @NikBearBrown, slug-seeded mascot, stock jingle only, no narration.",
+      "narration_text": "",
+      "estimated_duration_s": 13.68,
+      "actual_duration_s": 13.68,
+      "audio_file": "mp3/beat-B26.wav",
+      "audio_note": "stock @NikBearBrown jingle logos/bear-brown/bear-brown-4.mp3, picked by the slug seed the outro uses (char-sum 5295 mod 6 pool files), never cut: padded with 1.0 s of silence; no narration (Liam signs off in B25)",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "mascot-title",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title 'Lanternfall, Sparked'"
+          },
+          {
+            "at": "0.25",
+            "event": "@NikBearBrown"
+          },
+          {
+            "at": "0.45",
+            "event": "slug-seeded mascot"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Lanternfall, Sparked",
+            "slug": "claude-liam-walker-lanternfall-bao-x-particles-gamedev",
+            "durationSeconds": 13.68
+          },
+          "rendered": {
+            "out": "media/B26.mp4",
+            "at": "2026-10-29T19:47:03.375393+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 13.7,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B26.mp4",
+        "filled_by": "remotion:ClaudeTitleOutro",
+        "at": "2026-10-29T16:09:01"
+      }
+    }
+  ]
+}
