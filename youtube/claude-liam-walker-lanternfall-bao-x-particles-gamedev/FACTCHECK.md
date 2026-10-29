@@ -12,6 +12,7 @@ Every factual claim in the narration and on screen, with where it was checked. S
 | B17 | "presses escape" | the driver sends the `pause` action (bound to Esc and P) | "presses pause" |
 | B21 | "the motion is right; the look is lost" | the capture shows the GPU copy's sparks staying visible farther out; matching motion was not established | "the sparks still fly out; the colour fade and the shrink are gone" |
 | B09 table | "lit area: matched" | measured 1.4–1.85× against a predicted ≈ 1.5× | "more than predicted" |
+| B12 | "a sphere three pixels wide" (found in Bao's review of the first master, about 3:27) | `emission_sphere_radius = 3.0` is a radius; the sphere is 6 px across | "a sphere with a three-pixel radius"; the line-29 highlight reads "(radius, px)"; narration regenerated and the master re-exported |
 | B05 | a 2× crop following the courier | the camera was clamped at the arena corner in that stretch, so the courier and most hits left the crop | full frame, with a labelled diagnostic ring at each logged hit position |
 
 ## Claims by beat
@@ -31,7 +32,7 @@ Every factual claim in the narration and on screen, with where it was checked. S
 | B09 | 11 → 14 px, predicted 15; up to 85% more lit area; footprint +1 px (predicted 3–4); fade unchanged; kept | COMPARISON.md; CHANGE-BRIEF.md trial r1 prediction; TUNING.md verdict |
 | B10 | distance moved; limit = speed × Δt × 2 + 4 ≈ 7 px; emit when PLAYING, visible, moving | `particle_presentation.gd` 126, 127, 129; `Tuning.PLAYER_SPEED` 90 |
 | B11 | pushing into the stall: no movement, no embers; sliding: embers | `take-props-seed11-log.jsonl` track: after contact 0 emitting frames; slide 58/58 |
-| B12 | sphere radius 3, shape 1, 24 embers, ~1/3 s, alpha on line 14 | `effects/lantern_trail.tscn` lines 12–29 (lifetime 0.35 on line 23) |
+| B12 | sphere radius 3 px, shape 1, 24 embers, ~1/3 s, alpha on line 14 | `effects/lantern_trail.tscn` lines 17–29 (lifetime 0.35 on line 23; alpha on line 14, named in the notes panel) |
 | B13 | first look “升级火花不明显 移动也不明显”; brighter, same footprint, clear by the same frame; kept; 2–4 px vs 6–11 px | TUNING.md; `captures/lantern_trail/comparison-*/COMPARISON.md`; PLAY-CHECKS.md |
 | B14 | overlay layer 11 above HUD 10; portrait anchor; at most 4 | `level_up_overlay.tscn` (layer 11); `particle_presentation.gd` 61, 65, 66; `MAX_LEVEL_BURSTS` line 10 |
 | B15 | burst on the portrait, gone before the 2 s pick; “可以的” | main take frames after level 2 (pf 316, pick pf 377); TUNING.md |

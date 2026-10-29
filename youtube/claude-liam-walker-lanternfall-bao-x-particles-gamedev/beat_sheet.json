@@ -49,7 +49,7 @@
       "Kokoro"
     ],
     "build": {
-      "at": "2026-10-29T16:09:01",
+      "at": "2026-10-29T17:07:13",
       "cut": "master",
       "filled": 27,
       "of": 27,
@@ -112,18 +112,18 @@
       },
       "actual_duration_s": 17.28,
       "audio_file": "mp3/beat-B00.wav",
+      "render_duration_s": 17.3,
       "audio_levelled": {
         "from": "mp3/beat-B00.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 17.3,
       "build": {
         "status": "VIDEO",
         "src": "media/B00.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -177,18 +177,18 @@
       },
       "actual_duration_s": 12.84,
       "audio_file": "mp3/beat-B01.wav",
+      "render_duration_s": 12.866666666666667,
       "audio_levelled": {
         "from": "mp3/beat-B01.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 12.866666666666667,
       "build": {
         "status": "VIDEO",
         "src": "media/B01.mp4",
         "filled_by": "remotion:BrutalistHesitantWriter",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -280,18 +280,18 @@
       },
       "actual_duration_s": 17.75,
       "audio_file": "mp3/beat-B02.wav",
+      "render_duration_s": 17.766666666666666,
       "audio_levelled": {
         "from": "mp3/beat-B02.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 17.766666666666666,
       "build": {
         "status": "VIDEO",
         "src": "media/B02.mp4",
         "filled_by": "remotion:GodotDesignBoard",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -324,14 +324,14 @@
         "treatment": "none"
       },
       "actual_duration_s": 13.0,
+      "render_duration_s": 13.0,
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 13.0,
       "build": {
         "status": "VIDEO",
         "src": "media/B03.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -424,18 +424,18 @@
       },
       "actual_duration_s": 17.94,
       "audio_file": "mp3/beat-B04.wav",
+      "render_duration_s": 17.966666666666665,
       "audio_levelled": {
         "from": "mp3/beat-B04.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 17.966666666666665,
       "build": {
         "status": "VIDEO",
         "src": "media/B04.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -470,18 +470,18 @@
       "observation": "In the main take every beam hit puts a burst at the monster; the live-burst counter, read from the take's own per-frame log, rises when hits overlap and falls back as bursts finish.",
       "actual_duration_s": 18.47,
       "audio_file": "mp3/beat-B05.wav",
+      "render_duration_s": 18.5,
       "audio_levelled": {
         "from": "mp3/beat-B05.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 18.5,
       "build": {
         "status": "VIDEO",
         "src": "media/B05.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -592,18 +592,18 @@
       },
       "actual_duration_s": 18.3,
       "audio_file": "mp3/beat-B06.wav",
+      "render_duration_s": 18.3,
       "audio_levelled": {
         "from": "mp3/beat-B06.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 18.3,
       "build": {
         "status": "VIDEO",
         "src": "media/B06.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -646,18 +646,18 @@
       "observation": "In the r1 fixture strip the burst is a white cluster on its first visible frame, spreads into yellow-orange sparks by 0.20 s and leaves its last pixel at 0.40 s.",
       "actual_duration_s": 19.05,
       "audio_file": "mp3/beat-B07.wav",
+      "render_duration_s": 19.066666666666666,
       "audio_levelled": {
         "from": "mp3/beat-B07.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 19.066666666666666,
       "build": {
         "status": "VIDEO",
         "src": "media/B07.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -741,18 +741,18 @@
       },
       "actual_duration_s": 16.06,
       "audio_file": "mp3/beat-B08.wav",
+      "render_duration_s": 16.066666666666666,
       "audio_levelled": {
         "from": "mp3/beat-B08.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 16.066666666666666,
       "build": {
         "status": "VIDEO",
         "src": "media/B08.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -791,18 +791,18 @@
       "observation": "Side by side, r1's sparks are chunkier from 0.03 to 0.27 s while the footprint and the fade frame match r0; the measured numbers sit beside the prediction.",
       "actual_duration_s": 19.58,
       "audio_file": "mp3/beat-B09.wav",
+      "render_duration_s": 19.6,
       "audio_levelled": {
         "from": "mp3/beat-B09.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 19.6,
       "build": {
         "status": "VIDEO",
         "src": "media/B09.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -895,18 +895,18 @@
       },
       "actual_duration_s": 20.18,
       "audio_file": "mp3/beat-B10.wav",
+      "render_duration_s": 20.2,
       "audio_levelled": {
         "from": "mp3/beat-B10.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 20.2,
       "build": {
         "status": "VIDEO",
         "src": "media/B10.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -945,18 +945,18 @@
       "observation": "Pushing straight into the stall the courier does not move and no embers appear; sliding along its edge the trail runs behind his feet again.",
       "actual_duration_s": 16.3,
       "audio_file": "mp3/beat-B11.wav",
+      "render_duration_s": 16.3,
       "audio_levelled": {
         "from": "mp3/beat-B11.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 16.3,
       "build": {
         "status": "VIDEO",
         "src": "media/B11.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -964,7 +964,7 @@
       "act": "CODE",
       "kind": "code",
       "role_note": "Code beat (code-then-result-v1): effects/lantern_trail.tscn lines 17-29 at c3e1273, read verbatim; the next beat shows the result.",
-      "narration_text": "The trail's scene shows what makes it a different effect. It emits continuously from a sphere three pixels wide, emission shape one, where the burst used a point. Twenty-four embers drift slightly upward and fade from amber to dark orange in a third of a second. Its tuning change lives on line fourteen: the alpha at the start and the middle of each ember's life.",
+      "narration_text": "The trail's scene shows what makes it a different effect. It emits continuously from a sphere with a three-pixel radius, emission shape one, where the burst used a point. Twenty-four embers drift slightly upward and fade from amber to dark orange in a third of a second. Its tuning change lives on line fourteen: the alpha at the start and the middle of each ember's life.",
       "estimated_duration_s": 24,
       "shot": {
         "type": "GRAPHIC",
@@ -977,8 +977,8 @@
             "event": "Godot editor reconstruction opens on effects/lantern_trail.tscn, lines 17-29"
           },
           {
-            "at": "sphere three",
-            "event": "line 29 highlights — emission_sphere_radius = 3.0"
+            "at": "three-pixel radius",
+            "event": "line 29 highlights — emission_sphere_radius = 3.0 (radius, px)"
           },
           {
             "at": "emission shape one",
@@ -1024,43 +1024,43 @@
             ],
             "cues": [
               {
-                "at": 4.15,
+                "at": 4.9,
                 "line": 29,
-                "label": "emission_sphere_radius = 3.0"
+                "label": "emission_sphere_radius = 3.0 (radius, px)"
               },
               {
-                "at": 5.47,
+                "at": 5.92,
                 "line": 28,
                 "label": "emission_shape = 1: sphere (A uses 0: point)"
               },
               {
-                "at": 8.0,
+                "at": 8.47,
                 "line": 21,
                 "label": "amount = 24 · continuous (one_shot = false)"
               }
             ],
-            "durationSeconds": 18.43
+            "durationSeconds": 18.97
           },
           "rendered": {
             "out": "media/B12.mp4",
-            "at": "2026-10-29T19:50:52.969042+00:00"
+            "at": "2026-10-29T21:02:11.324551+00:00"
           }
         }
       },
-      "actual_duration_s": 18.43,
+      "actual_duration_s": 18.97,
       "audio_file": "mp3/beat-B12.wav",
+      "voice": "am_onyx",
+      "engine": "kokoro",
       "audio_levelled": {
         "from": "mp3/beat-B12.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
-      "voice": "am_onyx",
-      "engine": "kokoro",
-      "render_duration_s": 18.433333333333334,
+      "render_duration_s": 19.0,
       "build": {
         "status": "VIDEO",
         "src": "media/B12.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1099,18 +1099,18 @@
       "observation": "In the trail fixture, r1's embers are brighter at startup and during steady movement, with the same footprint, and both strips are clear by frame 51.",
       "actual_duration_s": 19.31,
       "audio_file": "mp3/beat-B13.wav",
+      "render_duration_s": 19.333333333333332,
       "audio_levelled": {
         "from": "mp3/beat-B13.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 19.333333333333332,
       "build": {
         "status": "VIDEO",
         "src": "media/B13.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1212,18 +1212,18 @@
       },
       "actual_duration_s": 18.5,
       "audio_file": "mp3/beat-B14.wav",
+      "render_duration_s": 18.5,
       "audio_levelled": {
         "from": "mp3/beat-B14.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 18.5,
       "build": {
         "status": "VIDEO",
         "src": "media/B14.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1258,18 +1258,18 @@
       "observation": "On the card screen the celebration bursts on the small courier in the lower-left portrait, above the dark veil, and finishes before the scripted pick.",
       "actual_duration_s": 15.68,
       "audio_file": "mp3/beat-B15.wav",
+      "render_duration_s": 15.7,
       "audio_levelled": {
         "from": "mp3/beat-B15.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 15.7,
       "build": {
         "status": "VIDEO",
         "src": "media/B15.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1362,18 +1362,18 @@
       },
       "actual_duration_s": 18.09,
       "audio_file": "mp3/beat-B16.wav",
+      "render_duration_s": 18.1,
       "audio_levelled": {
         "from": "mp3/beat-B16.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 18.1,
       "build": {
         "status": "VIDEO",
         "src": "media/B16.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1416,18 +1416,18 @@
       "observation": "Under the PAUSED line the trail's embers stay where they were (paused frames 1143 and 1180 of the main take are pixel-identical) and carry on after resume; the scripted play-check shots show LOST and WON with no particles left.",
       "actual_duration_s": 19.73,
       "audio_file": "mp3/beat-B17.wav",
+      "render_duration_s": 19.733333333333334,
       "audio_levelled": {
         "from": "mp3/beat-B17.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 19.733333333333334,
       "build": {
         "status": "VIDEO",
         "src": "media/B17.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1520,18 +1520,18 @@
       },
       "actual_duration_s": 18.2,
       "audio_file": "mp3/beat-B18.wav",
+      "render_duration_s": 18.2,
       "audio_levelled": {
         "from": "mp3/beat-B18.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 18.2,
       "build": {
         "status": "VIDEO",
         "src": "media/B18.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1566,18 +1566,18 @@
       "observation": "Recorded output: seven suites, 292 checks, zero failures; with the displacement guard removed, exactly the two trail checks fail.",
       "actual_duration_s": 19.22,
       "audio_file": "mp3/beat-B19.wav",
+      "render_duration_s": 19.233333333333334,
       "audio_levelled": {
         "from": "mp3/beat-B19.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 19.233333333333334,
       "build": {
         "status": "VIDEO",
         "src": "media/B19.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1670,18 +1670,18 @@
       },
       "actual_duration_s": 19.22,
       "audio_file": "mp3/beat-B20.wav",
+      "render_duration_s": 19.233333333333334,
       "audio_levelled": {
         "from": "mp3/beat-B20.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 19.233333333333334,
       "build": {
         "status": "VIDEO",
         "src": "media/B20.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1720,18 +1720,18 @@
       "observation": "With the same seed and frames, the CPU burst shrinks and fades through yellow to orange, while the editor-converted GPU copy, lacking its ramp and curve textures, stays white and full-size until it vanishes; its sparks stay visible farther out.",
       "actual_duration_s": 21.46,
       "audio_file": "mp3/beat-B21.wav",
+      "render_duration_s": 21.466666666666665,
       "audio_levelled": {
         "from": "mp3/beat-B21.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 21.466666666666665,
       "build": {
         "status": "VIDEO",
         "src": "media/B21.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1824,18 +1824,18 @@
       },
       "actual_duration_s": 18.82,
       "audio_file": "mp3/beat-B22.wav",
+      "render_duration_s": 18.833333333333332,
       "audio_levelled": {
         "from": "mp3/beat-B22.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 18.833333333333332,
       "build": {
         "status": "VIDEO",
         "src": "media/B22.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1874,18 +1874,18 @@
       "observation": "The measured CPU deltas are drawn against their budgets; under the project renderer the GPU reading is zero on every frame, and the Vulkan proxy's deltas stay inside its noise band.",
       "actual_duration_s": 19.16,
       "audio_file": "mp3/beat-B23.wav",
+      "render_duration_s": 19.166666666666668,
       "audio_levelled": {
         "from": "mp3/beat-B23.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 19.166666666666668,
       "build": {
         "status": "VIDEO",
         "src": "media/B23.mp4",
         "filled_by": "media",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -1942,18 +1942,18 @@
       },
       "actual_duration_s": 20.07,
       "audio_file": "mp3/beat-B24.wav",
+      "render_duration_s": 20.1,
       "audio_levelled": {
         "from": "mp3/beat-B24.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 20.1,
       "build": {
         "status": "VIDEO",
         "src": "media/B24.mp4",
         "filled_by": "remotion:ClaudeVerdictArtifact",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -2007,18 +2007,18 @@
       },
       "actual_duration_s": 20.5,
       "audio_file": "mp3/beat-B25.wav",
+      "render_duration_s": 20.5,
       "audio_levelled": {
         "from": "mp3/beat-B25.mp3",
         "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 20.5,
       "build": {
         "status": "VIDEO",
         "src": "media/B25.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     },
     {
@@ -2062,14 +2062,14 @@
           }
         }
       },
+      "render_duration_s": 13.7,
       "voice": "am_onyx",
       "engine": "kokoro",
-      "render_duration_s": 13.7,
       "build": {
         "status": "VIDEO",
         "src": "media/B26.mp4",
         "filled_by": "remotion:ClaudeTitleOutro",
-        "at": "2026-10-29T16:09:01"
+        "at": "2026-10-29T17:07:13"
       }
     }
   ]

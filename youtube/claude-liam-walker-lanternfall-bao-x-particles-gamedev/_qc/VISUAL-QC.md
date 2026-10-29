@@ -2,7 +2,7 @@
 
 `REPORT.md` and `contact_sheet.png` in this folder are the toolkit's own Gate V output. This file records the manual frame-level pass.
 
-Master: `exports/landscape/claude-liam-walker-lanternfall-bao-x-particles-gamedev.mp4` · 3840 × 2160, 30 fps, H.264 + AAC 48 kHz stereo · 487.17 s · 138,573,715 bytes · SHA-256 `4769b141c3ca3876923dfcb31e326c4901afc073a544e571b2b1a177c6d90eb1` (matches `.verified.json`, status `ready`).
+Master: `exports/landscape/claude-liam-walker-lanternfall-bao-x-particles-gamedev.mp4` · 3840 × 2160, 30 fps, H.264 + AAC 48 kHz stereo · 487.73 s · 138,586,012 bytes · SHA-256 `4d4d590039ff8a6dfd26571018120ecec9be324a7a8b1df16cb923020eeb6417` (matches `.verified.json`, status `ready`).
 
 ## Procedure
 
@@ -14,6 +14,10 @@ Master: `exports/landscape/claude-liam-walker-lanternfall-bao-x-particles-gamede
 ## Defect found in the first export, fixed
 
 - **B21, last ≈ 0.4 s (around 394.5 s):** the closing real-speed play of the 90-frame (3.00 s) study clip was given 3.4 s, so the video area went blank before the cut. It was shortened to 2.9 s. In the re-export the video area is filled at 394.0 and 394.3 s, and B22 starts at 395.0 s.
+
+## Bao's review of the second master, fixed
+
+- **B12, about 3:27:** the narration said "a sphere three pixels wide"; `emission_sphere_radius = 3.0` is a radius (6 px across). The line now reads "a sphere with a three-pixel radius" and the highlight label "(radius, px)". B12's narration was regenerated and re-rendered, and the master re-exported. A local Whisper transcription of the new master reads at 209.6 s: "It emits continuously from a sphere with a three-pixel radius". The B11–B13 span (203–229 s) was sampled again at 2 fps. Only B12 changed, so every later beat moved by +0.57 s.
 
 ## 9-point rubric
 
