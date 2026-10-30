@@ -1,0 +1,273 @@
+{
+  "captures": [
+    {
+      "camera_rotation": 0.0,
+      "canvas_rotation": 0.0,
+      "file": "hurt-amount-0.0.png",
+      "hurt_amount_read_back": 0.0,
+      "hurt_amount_set": 0.0,
+      "iframes": 27,
+      "image_size": [
+        1280,
+        720
+      ],
+      "modulate": [
+        1.0,
+        0.449999988079071,
+        0.449999988079071,
+        1.0
+      ],
+      "player_canvas_origin": [
+        320.0,
+        180.0
+      ],
+      "player_position": [
+        -15.5833358764648,
+        0.0
+      ],
+      "pose": "idle",
+      "samples": {
+        "coat": {
+          "pixel": [
+            641,
+            363
+          ],
+          "rgb": [
+            46,
+            26,
+            40
+          ],
+          "stored": [
+            46,
+            58,
+            89
+          ],
+          "texel": [
+            16,
+            24
+          ]
+        },
+        "lamp": {
+          "pixel": [
+            649,
+            347
+          ],
+          "rgb": [
+            242,
+            83,
+            33
+          ],
+          "stored": [
+            242,
+            184,
+            75
+          ],
+          "texel": [
+            20,
+            16
+          ]
+        }
+      },
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "visible_rect": [
+        640.0,
+        360.0
+      ]
+    },
+    {
+      "camera_rotation": 0.0,
+      "canvas_rotation": 0.0,
+      "file": "hurt-amount-0.5.png",
+      "hurt_amount_read_back": 0.5,
+      "hurt_amount_set": 0.5,
+      "iframes": 27,
+      "image_size": [
+        1280,
+        720
+      ],
+      "modulate": [
+        1.0,
+        0.449999988079071,
+        0.449999988079071,
+        1.0
+      ],
+      "player_canvas_origin": [
+        320.0,
+        180.0
+      ],
+      "player_position": [
+        -15.5833358764648,
+        0.0
+      ],
+      "pose": "idle",
+      "samples": {
+        "coat": {
+          "pixel": [
+            641,
+            363
+          ],
+          "rgb": [
+            151,
+            141,
+            20
+          ],
+          "stored": [
+            46,
+            58,
+            89
+          ],
+          "texel": [
+            16,
+            24
+          ]
+        },
+        "lamp": {
+          "pixel": [
+            649,
+            347
+          ],
+          "rgb": [
+            249,
+            169,
+            17
+          ],
+          "stored": [
+            242,
+            184,
+            75
+          ],
+          "texel": [
+            20,
+            16
+          ]
+        }
+      },
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "visible_rect": [
+        640.0,
+        360.0
+      ]
+    },
+    {
+      "camera_rotation": 0.0,
+      "canvas_rotation": 0.0,
+      "file": "hurt-amount-1.0.png",
+      "hurt_amount_read_back": 1.0,
+      "hurt_amount_set": 1.0,
+      "iframes": 27,
+      "image_size": [
+        1280,
+        720
+      ],
+      "modulate": [
+        1.0,
+        0.449999988079071,
+        0.449999988079071,
+        1.0
+      ],
+      "player_canvas_origin": [
+        320.0,
+        180.0
+      ],
+      "player_position": [
+        -15.5833358764648,
+        0.0
+      ],
+      "pose": "idle",
+      "samples": {
+        "coat": {
+          "pixel": [
+            641,
+            363
+          ],
+          "rgb": [
+            255,
+            255,
+            0
+          ],
+          "stored": [
+            46,
+            58,
+            89
+          ],
+          "texel": [
+            16,
+            24
+          ]
+        },
+        "lamp": {
+          "pixel": [
+            649,
+            347
+          ],
+          "rgb": [
+            255,
+            255,
+            0
+          ],
+          "stored": [
+            242,
+            184,
+            75
+          ],
+          "texel": [
+            20,
+            16
+          ]
+        }
+      },
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "visible_rect": [
+        640.0,
+        360.0
+      ]
+    }
+  ],
+  "meta": {
+    "adapter": "Apple M4",
+    "driver": "opengl3",
+    "engine": "4.7.2-stable (official)",
+    "fixtures": "test_no_spawn = true; one wraith spawned 40 px right of the courier with hp 1000 so the beam cannot kill it; after its real hit it is freed and the simulation frozen with test_mode = true while capturing",
+    "input": "scripted-input",
+    "phase": "red",
+    "renderer": "gl_compatibility",
+    "revision": "a8c804b",
+    "utc": "2026-10-30T16:53:00",
+    "zero_matches_product": false,
+    "zero_sampled_vs_stored_times_red": {
+      "coat": {
+        "product": [
+          46,
+          26,
+          40
+        ],
+        "sampled": [
+          46,
+          26,
+          40
+        ]
+      },
+      "lamp": {
+        "product": [
+          242,
+          83,
+          34
+        ],
+        "sampled": [
+          242,
+          83,
+          33
+        ]
+      }
+    }
+  }
+}
