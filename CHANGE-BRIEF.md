@@ -168,3 +168,9 @@ Run the existing gameplay, audio and A3 checks unchanged after implementation. D
 6. **Which resource holds the uniform default, which holds its current value, and what happens when objects share a material?** The Shader resource's uniform declaration stores the default. ShaderMaterial stores current overrides set in the Inspector or by `set_shader_parameter()`; an unset parameter falls back to the Shader default. Two objects sharing a ShaderMaterial share those overrides, so changing one affects both. Separate materials can share the Shader while keeping independent values.
 
 7. **Does hint_range clamp a value set by code?** Prediction: no. It supplies Inspector editing metadata, not runtime validation. Setting `hurt_amount` to 2 from code can make `mix` extrapolate beyond the target. The driver explicitly clamps its computed value. During Use It, set 2 in an isolated fixture, read it back and inspect the rendered result, then restore the production value; this has not yet been measured.
+
+## Revisions
+
+### 2026-10-30 — where the two materials go
+
+Project facts line 17 and the material plan disagreed: one replaced the Floor and StandIn overrides in `lantern_gate_room.tscn`, the other used an independent A5 scene. Decision (Bao): a new scene `godot/a5/material_room.tscn` inherits `godot/a3/lantern_gate_room.tscn` and overrides only the `material_override` of Floor/Mesh and StandIn/Mesh with the two ShaderMaterials. The A3 room file, its lights and camera, and the A3 tests stay unchanged; the inherited scene reuses those lights and that camera.
