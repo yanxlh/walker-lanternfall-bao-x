@@ -80,6 +80,10 @@ both quads are unshaded (`hint_experiment.gdshader:2`).
    that `ambient_light_color` is only effective when the sky contribution is below 1.0, so the bluish ambient
    at `:12-13` probably does not light the cobblestones as written. This line has been in the A3 file since
    `e3c214f` (13 October). It is out of scope here, and I have not measured its rendered effect.
+   *Measured 30 October (`captures/a5-materials/20261030-131416-ambient/`): with the source as loaded (Sky, no
+   sky) and with Color the floor and stand-in means are identical; Disabled, or energy 0, darkens both; energy 2
+   brightens both. So under Compatibility the Sky source without a sky still applies `ambient_light_color` and
+   energy, and this finding's "probably does not light" is wrong. Kept unchanged, as Bao decided.*
 2. **The floor's UVs stretch the stones and do not repeat them.** The BoxMesh top face uses u 1/3–2/3 and
    v 0.5–1 (measured from `get_mesh_arrays()`). So one texture repeat covers 24 m in x and 16 m in z at
    `uv_scale` 1, or 12 m × 8 m at the floor's `uv_scale` 2. The stones are stretched 1.5:1 along x, and the

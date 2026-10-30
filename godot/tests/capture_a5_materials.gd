@@ -162,9 +162,22 @@ func _run_room() -> void:
 		"ambient":
 			var env: Environment = (scene.get_node("WorldEnvironment") as WorldEnvironment).environment
 			var loaded := env.ambient_light_source
-			await _room_capture("ambient-source-%d-as-loaded.png" % loaded, {"ambient_light_source": loaded, "sky": env.sky != null})
+			var energy := env.ambient_light_energy
+			await _room_capture("ambient-source-%d-as-loaded.png" % loaded, {"ambient_light_source": loaded, "sky": env.sky != null, "ambient_light_energy": energy})
 			env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-			await _room_capture("ambient-source-%d-color.png" % Environment.AMBIENT_SOURCE_COLOR, {"ambient_light_source": env.ambient_light_source})
+			await _room_capture("ambient-source-%d-color.png" % Environment.AMBIENT_SOURCE_COLOR, {"ambient_light_source": env.ambient_light_source, "ambient_light_energy": energy})
+			# Positive controls: does an in-memory change to the environment reach the renderer at all?
+			env.ambient_light_source = Environment.AMBIENT_SOURCE_DISABLED
+			await _room_capture("ambient-source-%d-disabled.png" % Environment.AMBIENT_SOURCE_DISABLED, {"ambient_light_source": env.ambient_light_source, "ambient_light_energy": energy})
+			env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
+			env.ambient_light_energy = 0.0
+			await _room_capture("ambient-source-%d-color-energy-0.0.png" % Environment.AMBIENT_SOURCE_COLOR, {"ambient_light_source": env.ambient_light_source, "ambient_light_energy": 0.0})
+			# Colour/energy changes alone, with the source as loaded.
+			env.ambient_light_source = loaded
+			for e in [0.0, 2.0]:
+				env.ambient_light_energy = e
+				await _room_capture("ambient-source-%d-as-loaded-energy-%.1f.png" % [loaded, e], {"ambient_light_source": loaded, "ambient_light_energy": e})
+			env.ambient_light_energy = energy
 			env.ambient_light_source = loaded
 
 func _room_capture(file: String, setting: Dictionary) -> Image:
