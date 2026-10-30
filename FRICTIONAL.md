@@ -423,3 +423,30 @@ A tint that tells the player the courier is protected after a hit and shows how 
 - Named pixels: “idle 帧”, the pose seen in normal play, with white modulation and no forced pose.
 - Tree pause: “保持当前值”, the same as the PAUSED state.
 - Normal map: “保留法线 + 数值检查”.
+
+## 2026-10-30 (Fri) — context, the shader from code, and the materials
+
+- CLAUDE.md: the first `claude -p` run stopped after one turn on an expired CLI login and wrote nothing; after `claude auth login` the scoped run wrote the draft in 28 turns. Review: every reference pointed where it said; the draft called the A6 editor-generated shader hand-written; a probe measured the headless facts (defaults read null, a missing semicolon empties the uniform list, 2 physics ticks per frame at 30 fps and 0 or 1 at 144).
+- `hurt_tint.gdshader` committed by me (`e0b47b4`). The driver and test came from a plan session with read-only tools, then an implementation session after I approved all three steps and accepted that the F3 collision arc is tinted too (“批准三步全部”, “接受，记为限制”).
+- Inspect and revise: at 144 fps the test's one-frame tolerance was the largest delta in the window (0.00806 s), wider than 1/144, and its time-scale row reported 0.926 s. I approved tightening it (“收紧并修正”). Rerun: 0.7958 / 0.8000 / 0.7992 s against 1/30, 1/60 and 1/144; under `time_scale` 0.5 the tint follows unscaled time.
+- Three mutations, each made by me in the terminal and restored with git: semicolon (4 of 28 fail, `SHADER ERROR`), rename (3 of 28 fail, the 25 behavioural checks still pass), `source_color` (1 of 127 fails). All exit 1.
+- Textures: I approved the download (“可以下载”). The import enums were checked against Godot's source, and two extra keys were set so the editor cannot switch them in 3D. Curl calibration: GL 0.2236, DX 1.7764.
+- Shaders: `cobblestone_surface.gdshader` and `hint_experiment.gdshader`. Asked who wrote them: “我自己手写的”.
+- Materials and scenes from a committed builder. The audit found the floor's BoxMesh stretches the stones and the A3 ambient source is Sky with no sky. My choices: “A5 场景里换成 PlaneMesh” and “不改，实测后记录”. The ambient captures showed the Sky source without a sky lights the room like Color, so the audit's guess was wrong.
+- Trace: `8d5b348` CLAUDE.md draft · `8cd444a` review · `e0b47b4` hurt tint · `872aac6` driver and test · `c0de4bd` tolerance fix · `d284c05`, `d01df00` mutations · `dc5c53a` textures · `a7f1336` curl check · `a8c804b`, `5a7903a` shaders · `10a94ef` materials · `52ee2db` audit · `a3eaf2f` audit review · `d7d03b8` fresh cache · `a66c625`, `92f4186` PlaneMesh floor · `481c703` ambient · `81e4235` TEST-REPORT.
+
+**What I wanted**
+
+The two shaders written by me, every visual rule checked by a test or by my eyes, and every agent change reviewed before I relied on it.
+
+**What came back**
+
+- The agents' own reports were confident in three places where the numbers were wrong or unmeasured: the 144 fps tolerance, the VRAM figure and the ambient guess.
+- A renamed uniform passes every behavioural check; only the uniform-list check catches it. A lost `source_color` is caught only by reading the source.
+- Under Compatibility the hint experiment shows 64/128/192 on both quads.
+
+**What I decided, and why**
+
+- Approve the driver plan as written and accept the tinted debug arc rather than edit `player.gd`.
+- Tighten the test rather than accept a tolerance wider than one frame.
+- Fix the stretched floor in the A5 scene only, and leave the A3 room as it was.
