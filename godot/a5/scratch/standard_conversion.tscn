@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dec5umctmhoab"]
+
+[ext_resource type="Shader" uid="uid://b1g3qy6inlg7s" path="res://shaders/standard_generated.gdshader" id="1_m4h2c"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kwk5k"]
+load_path = "res://.godot/imported/cobblestone_floor_08_diff_1k.png-a03af5b67f7fde57199776cc349ee1d0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ewemc"]
+load_path = "res://.godot/imported/cobblestone_floor_08_nor_gl_1k.png-9091964462e673f5ccb9b68fdde5eea3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pc8h0"]
+load_path = "res://.godot/imported/cobblestone_floor_08_rough_1k.png-d326e2671575a58183f8bc63e2c3640d.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u5jfr"]
+render_priority = 0
+shader = ExtResource("1_m4h2c")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("CompressedTexture2D_kwk5k")
+shader_parameter/albedo_texture_size = Vector2i(1024, 1024)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = SubResource("CompressedTexture2D_pc8h0")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = SubResource("CompressedTexture2D_ewemc")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_surface"]
+
+[node name="StandardConversion" type="Node3D" unique_id=260409896]
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=1180440154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01674211, 0.083958864, -0.043118715)
+material_override = SubResource("ShaderMaterial_u5jfr")
+mesh = SubResource("PlaneMesh_surface")
