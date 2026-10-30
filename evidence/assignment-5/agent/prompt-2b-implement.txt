@@ -1,0 +1,23 @@
+Read CLAUDE.md first. Earlier you proposed a plan for this change; it is
+saved in evidence/assignment-5/agent/session-2a-plan-result.md, and the
+original prompt is evidence/assignment-5/agent/prompt-2-plan.txt.
+
+I approve all three steps as written in that plan:
+1. godot/effects/hurt_tint_presentation.gd and the four setup lines in
+   Session._ready() after the particles;
+2. the new test godot/tests/test_hurt_tint.gd with the assertions in
+   the plan's table;
+3. running every test.
+I accept that the F3 debug collision arc is tinted too; it will be
+recorded as a known limitation, so do not work around it.
+
+Every rule of the original prompt still holds: do not edit any .gdshader
+file or anything in godot/shaders/; do not edit the existing tests or
+their expectations; do not edit player.gd, and change session.gd only by
+those setup lines; drive the state through the real game loop and real
+input, never by calling the update function directly; sample from a
+node with a high process_priority. Run test_audio.gd realtime, the other
+nine existing suites at 60, and test_hurt_tint.gd at 30, 60 and 144, all
+with ./scripts/run-test.sh. Show the real output, including any SHADER
+ERROR lines, and show the diff. Say exactly what the test proves and
+what it cannot prove in a headless run. Do not commit.

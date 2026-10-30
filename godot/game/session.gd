@@ -15,6 +15,7 @@ const CameraFx = preload("res://features/world/camera_fx.gd")
 const AudioBusScript = preload("res://audio/audio_bus.gd")
 const Hud = preload("res://ui/hud.gd")
 const ParticlePresentation = preload("res://effects/particle_presentation.gd")
+const HurtTintPresentation = preload("res://effects/hurt_tint_presentation.gd")
 
 signal run_started
 signal enemy_killed(pos: Vector2)
@@ -87,6 +88,9 @@ func _ready() -> void:
 	particles.name = "ParticlePresentation"
 	add_child(particles)
 	particles.setup(self)
+	var hurt_tint = HurtTintPresentation.new()
+	add_child(hurt_tint)
+	hurt_tint.setup(self)
 
 func start_run(seed_value: int = -1) -> void:
 	if seed_value < 0:
