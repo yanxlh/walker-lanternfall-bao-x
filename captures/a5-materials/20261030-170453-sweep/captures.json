@@ -1,0 +1,313 @@
+{
+  "captures": [
+    {
+      "file": "sweep-uv_scale-0.25.png",
+      "floor_mean_rgb": [
+        91.22,
+        85.0,
+        112.25
+      ],
+      "setting": {
+        "is_material_value": false,
+        "uv_scale": "0.25"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-uv_scale-2.00.png",
+      "floor_mean_rgb": [
+        100.5,
+        91.25,
+        115.7
+      ],
+      "setting": {
+        "is_material_value": true,
+        "uv_scale": "2.0"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-uv_scale-4.00.png",
+      "floor_mean_rgb": [
+        93.08,
+        85.82,
+        110.25
+      ],
+      "setting": {
+        "is_material_value": false,
+        "uv_scale": "4.0"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-roughness_min-0.00.png",
+      "floor_mean_rgb": [
+        106.67,
+        90.91,
+        113.48
+      ],
+      "setting": {
+        "is_material_value": false,
+        "roughness_min": "0.0"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-roughness_min-0.55.png",
+      "floor_mean_rgb": [
+        100.5,
+        91.25,
+        115.7
+      ],
+      "setting": {
+        "is_material_value": true,
+        "roughness_min": "0.55"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-roughness_min-1.00.png",
+      "floor_mean_rgb": [
+        99.32,
+        91.32,
+        116.12
+      ],
+      "setting": {
+        "is_material_value": false,
+        "roughness_min": "1.0"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-roughness_max-0.00.png",
+      "floor_mean_rgb": [
+        114.23,
+        91.35,
+        111.79
+      ],
+      "setting": {
+        "is_material_value": false,
+        "roughness_max": "0.0"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-roughness_max-0.95.png",
+      "floor_mean_rgb": [
+        100.5,
+        91.25,
+        115.7
+      ],
+      "setting": {
+        "is_material_value": true,
+        "roughness_max": "0.95"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-roughness_max-1.00.png",
+      "floor_mean_rgb": [
+        100.28,
+        91.3,
+        115.85
+      ],
+      "setting": {
+        "is_material_value": false,
+        "roughness_max": "1.0"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-normal_strength-0.00.png",
+      "floor_mean_rgb": [
+        101.26,
+        92.19,
+        116.86
+      ],
+      "setting": {
+        "is_material_value": false,
+        "normal_strength": "0.0"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-normal_strength-1.00.png",
+      "floor_mean_rgb": [
+        100.5,
+        91.25,
+        115.7
+      ],
+      "setting": {
+        "is_material_value": true,
+        "normal_strength": "1.0"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-normal_strength-2.00.png",
+      "floor_mean_rgb": [
+        98.91,
+        89.48,
+        113.57
+      ],
+      "setting": {
+        "is_material_value": false,
+        "normal_strength": "2.0"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-tint-1.00_0.92_0.80.png",
+      "floor_mean_rgb": [
+        100.5,
+        91.25,
+        115.7
+      ],
+      "setting": {
+        "is_material_value": true,
+        "tint": "(1.0, 0.92, 0.8, 1.0)"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-tint-1.00_1.00_1.00.png",
+      "floor_mean_rgb": [
+        100.5,
+        99.11,
+        142.51
+      ],
+      "setting": {
+        "is_material_value": false,
+        "tint": "(1.0, 1.0, 1.0, 1.0)"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "sweep-tint-0.00_0.00_0.00.png",
+      "floor_mean_rgb": [
+        22.77,
+        15.81,
+        28.86
+      ],
+      "setting": {
+        "is_material_value": false,
+        "tint": "(0.0, 0.0, 0.0, 1.0)"
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    }
+  ],
+  "meta": {
+    "adapter": "Apple M4",
+    "driver": "opengl3",
+    "engine": "4.7.2-stable (official)",
+    "input": "scripted (no human input; parameters set in memory, never saved)",
+    "label": "",
+    "mode": "sweep",
+    "pose": {
+      "camera_position": [
+        -0.600000023841858,
+        1.89999997615814,
+        5.19999980926514
+      ],
+      "floor_rect_px": [
+        682,
+        496,
+        56,
+        56
+      ],
+      "floor_rect_world_centre": [
+        -1.39999997615814,
+        0.0,
+        2.90000009536743
+      ],
+      "fov": 75.0,
+      "look_at": [
+        -2.79999995231628,
+        0.349999994039536,
+        1.29999995231628
+      ],
+      "standin_rect_px": [
+        563,
+        316,
+        16,
+        32
+      ],
+      "standin_rect_world_centre": [
+        -3.5,
+        0.600000023841858,
+        1.5
+      ]
+    },
+    "renderer": "gl_compatibility",
+    "revision": "4246f94",
+    "utc": "2026-10-30T21:04:55",
+    "visible_rect": [
+      640.0,
+      360.0
+    ],
+    "window": [
+      1280,
+      720
+    ]
+  }
+}

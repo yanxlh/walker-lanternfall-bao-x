@@ -1,0 +1,92 @@
+{
+  "captures": [
+    {
+      "file": "one-material-baseline.png",
+      "floor_mean_rgb": [
+        100.5,
+        91.25,
+        115.7
+      ],
+      "setting": {
+        "floor uv_scale": 2.0
+      },
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    },
+    {
+      "file": "one-material-floor-uv_scale-4.0.png",
+      "floor_max_channel_diff_vs_baseline": 72,
+      "floor_mean_rgb": [
+        93.08,
+        85.82,
+        110.25
+      ],
+      "setting": {
+        "floor uv_scale": 4.0
+      },
+      "standin_max_channel_diff_vs_baseline": 0,
+      "standin_mean_rgb": [
+        31.42,
+        40.97,
+        74.83
+      ]
+    }
+  ],
+  "meta": {
+    "adapter": "Apple M4",
+    "driver": "opengl3",
+    "engine": "4.7.2-stable (official)",
+    "input": "scripted (no human input; parameters set in memory, never saved)",
+    "label": "",
+    "mode": "one-material",
+    "pose": {
+      "camera_position": [
+        -0.600000023841858,
+        1.89999997615814,
+        5.19999980926514
+      ],
+      "floor_rect_px": [
+        682,
+        496,
+        56,
+        56
+      ],
+      "floor_rect_world_centre": [
+        -1.39999997615814,
+        0.0,
+        2.90000009536743
+      ],
+      "fov": 75.0,
+      "look_at": [
+        -2.79999995231628,
+        0.349999994039536,
+        1.29999995231628
+      ],
+      "standin_rect_px": [
+        563,
+        316,
+        16,
+        32
+      ],
+      "standin_rect_world_centre": [
+        -3.5,
+        0.600000023841858,
+        1.5
+      ]
+    },
+    "renderer": "gl_compatibility",
+    "revision": "4246f94",
+    "utc": "2026-10-30T21:04:56",
+    "visible_rect": [
+      640.0,
+      360.0
+    ],
+    "window": [
+      1280,
+      720
+    ]
+  }
+}
