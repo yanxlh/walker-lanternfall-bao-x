@@ -16,8 +16,9 @@ const ROOM := "res://a5/material_room.tscn"
 const A3_ROOM := "res://a3/lantern_gate_room.tscn"
 const HINT_SCENE := "res://a5/hint_experiment/hint_experiment.tscn"
 ## Set from the calibration pair (evidence/assignment-5/textures/curl-calibration.log): the right convention
-## gave 0.2236, the wrong one 1.7764, and the script's own scale puts "no surface" at 1.
-const CURL_THRESHOLD := 1.0
+## gave 0.2236, the wrong one 1.7764, and the script's own scale puts "no surface" at 1. 0.5 sits about halfway
+## between the measured good value and "no surface", so a map with no surface behind it (~1) fails too.
+const CURL_THRESHOLD := 0.5
 
 ## Declarations as written in the source: type, hints (spaces removed), default, group_uniforms group.
 const SURFACE_UNIFORMS := {

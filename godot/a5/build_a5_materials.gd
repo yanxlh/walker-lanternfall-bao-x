@@ -1,6 +1,7 @@
 extends SceneTree
 ## Builds the A5 material resources and scenes from CHANGE-BRIEF.md (3D material plan, hint experiment, 10/30 revision).
-## Saves through ResourceSaver so Godot writes every UID. Fails, writing nothing, if a shader or a uniform is missing.
+## Saves through ResourceSaver; no UID is typed by hand. Godot wrote none for these files, so they reference each other
+## by path. Fails, writing nothing, if a shader or a uniform is missing.
 ## Run: Godot --headless --path godot --script res://a5/build_a5_materials.gd
 
 const SURFACE := "res://shaders/cobblestone_surface.gdshader"

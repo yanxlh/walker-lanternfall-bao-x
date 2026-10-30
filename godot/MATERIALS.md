@@ -41,8 +41,8 @@ Import keys come from each texture's `.import` `[params]`. The format column is 
 On every one of these imports: `process/normal_map_invert_y=false`, `detect_3d/compress_to=0` and `roughness/mode=1`.
 All of these values match the brief's import table (`CHANGE-BRIEF.md:115-122`) and its sampler hints.
 
-Normal-map convention: `normal_map_check.gd` `curl_ratio` on the source PNGs. The pass threshold is 1.0, set from
-this GL/DX pair:
+Normal-map convention: `normal_map_check.gd` `curl_ratio` on the source PNGs. The pass threshold is 0.5, set from
+this GL/DX pair: about halfway between the right convention's 0.2236 and the no-surface value 1 (see Review):
 
 | Map | `directx = false` | `directx = true` | Reads as |
 |---|---:|---:|---|
@@ -103,10 +103,9 @@ both quads are unshaded (`hint_experiment.gdshader:2`).
    mipmaps, but no material binds it. The calibration script (`calibrate_normal_map_check.gd:9`) and this test
    both decode the source PNG with `Image.load_from_file`. The import follows the brief's table
    (`CHANGE-BRIEF.md:120`), but its imported copy serves no purpose and would ship in an export.
-7. **Lossless import keeps the textures uncompressed in VRAM.** By my estimate (not measured), RGB8 1024² with
-   mipmaps is about 4.2 MB each for `diff` and `nor_gl`, and L8 is about 1.4 MB for `rough`: about 9.8 MB for
-   the three bound maps. The driver may pad RGB8 to RGBA8. This is the brief's choice (`CHANGE-BRIEF.md:115-120`), so it is a
-   cost note rather than a defect.
+7. **Lossless import keeps the textures uncompressed in VRAM.** `get_image()` reports RGB8 for `diff` and
+   `nor_gl` and L8 for `rough`, uncompressed with mipmaps. What the GPU allocates was not measured. This is the
+   brief's choice (`CHANGE-BRIEF.md:115-120`), so it is a cost note rather than a defect.
 8. **The brief's download sizes are in MiB but labelled MB.** The actual files total 6,831,262 bytes, which is
    6.83 MB or 6.51 MiB (`ATTRIBUTION.md:14-17`). The brief says "about 6.5 MB", with 2.0 MB for each normal map
    (`CHANGE-BRIEF.md:113`); each is 2.13 MB.
@@ -149,3 +148,17 @@ A headless run draws nothing. So the test cannot show any of these:
 `curl_ratio` checks the source PNG's slope field, not the imported texture as the shader samples it. Hint strings
 and defaults are read from the source text, because `get_shader_uniform_list()` reports samplers only as
 `Texture2D` resource hints and does not report defaults.
+
+## Review (30 October 2026)
+
+Reviewed in the main Claude Code session after the agent's audit was committed unedited (`52ee2db`), for Bao:
+- Integer enums looked up: `compress/mode` and `compress/normal_map` against Godot 4.7.2-stable
+  `resource_importer_texture.cpp` (Lossless 0; Detect 0, Enable 1, Disabled 2); `ambient_light_source` from the
+  test's own print (`BG=0 DISABLED=1 COLOR=2 SKY=3`); tonemap, background and reflection checks compare against the
+  engine constants. Formats are the ones `get_image().get_format()` returned (RGB8 = 4, L8 = 0).
+- Removed: the unmeasured VRAM estimate in finding 7.
+- Changed: the curl threshold from 1.0 to 0.5. At 1.0 a map with no surface behind it (ratio near 1) could pass.
+- Corrected in `build_a5_materials.gd:3`: the comment claimed Godot writes every UID (finding 4).
+- Findings 5, 8 and 11 are recorded as a dated revision in `CHANGE-BRIEF.md`. Findings 1 (ambient source Sky) and 2
+  (floor UV stretch) change the look and are Bao's decisions; nothing was changed for them in this review.
+

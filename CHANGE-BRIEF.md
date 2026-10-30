@@ -174,3 +174,10 @@ Run the existing gameplay, audio and A3 checks unchanged after implementation. D
 ### 2026-10-30 — where the two materials go
 
 Project facts line 17 and the material plan disagreed: one replaced the Floor and StandIn overrides in `lantern_gate_room.tscn`, the other used an independent A5 scene. Decision (Bao): a new scene `godot/a5/material_room.tscn` inherits `godot/a3/lantern_gate_room.tscn` and overrides only the `material_override` of Floor/Mesh and StandIn/Mesh with the two ShaderMaterials. The A3 room file, its lights and camera, and the A3 tests stay unchanged; the inherited scene reuses those lights and that camera.
+
+### 2026-10-30 — what the material audit corrected in this brief
+
+- Import route: the import keys in the material plan were set by `tools/a5/set_texture_imports.py` on the `.import` files Godot generated, then reimported, not in the editor's Import dock. The values are the planned ones, plus `detect_3d/compress_to=0` and `roughness/mode=1` so a real editor has nothing to switch. They are checked in the Import dock during the Step 4 editor session, and `git status` afterwards records any rewrite.
+- Evidence split (the † table): the hint experiment is captured in its own unshaded scene, `godot/a5/hint_experiment/hint_experiment.tscn`, which has no lights. Only the interface sweep and the two-material comparison use the fixed A3 lights.
+- Download sizes in the material plan were rounded from KiB. The exact sizes are 1,951,481 (diff), 2,126,688 (nor_gl), 2,126,021 (nor_dx) and 627,072 (rough) bytes, 6.83 MB in all (`godot/assets/textures/cobblestone_floor_08/ATTRIBUTION.md`).
+
