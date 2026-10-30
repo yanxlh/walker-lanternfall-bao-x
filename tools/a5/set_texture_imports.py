@@ -14,17 +14,19 @@ Usage: python3 -I tools/a5/set_texture_imports.py   (from the repository root), 
 """
 from pathlib import Path
 
-TEX = Path("godot/assets/textures/cobblestone_floor_08")
+TEX = "godot/assets/textures/cobblestone_floor_08/"
 COMMON = {"compress/mode": "0", "mipmaps/generate": "true", "detect_3d/compress_to": "0", "roughness/mode": "1"}
 PER_FILE = {
-    "cobblestone_floor_08_diff_1k.png": {"compress/normal_map": "2"},
-    "cobblestone_floor_08_nor_gl_1k.png": {"compress/normal_map": "1"},
-    "cobblestone_floor_08_nor_dx_1k.png": {"compress/normal_map": "1"},
-    "cobblestone_floor_08_rough_1k.png": {"compress/normal_map": "2"},
+    TEX + "cobblestone_floor_08_diff_1k.png": {"compress/normal_map": "2"},
+    TEX + "cobblestone_floor_08_nor_gl_1k.png": {"compress/normal_map": "1"},
+    TEX + "cobblestone_floor_08_nor_dx_1k.png": {"compress/normal_map": "1"},
+    TEX + "cobblestone_floor_08_rough_1k.png": {"compress/normal_map": "2"},
+    # The hint experiment's 3 x 1 PNG: lossless and without mipmaps, so each texel reaches the sampler as written.
+    "godot/a5/hint_experiment/hint_greys_3x1.png": {"compress/normal_map": "2", "mipmaps/generate": "false"},
 }
 
 for name, extra in PER_FILE.items():
-    path = TEX / (name + ".import")
+    path = Path(name + ".import")
     wanted = {**COMMON, **extra}
     lines = path.read_text().splitlines()
     start = lines.index("[params]")
