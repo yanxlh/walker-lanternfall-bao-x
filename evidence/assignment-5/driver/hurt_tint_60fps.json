@@ -1,0 +1,302 @@
+{
+  "checks": 28,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "shader-parses",
+      "observed": {
+        "uniforms": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "uniform-names-types",
+      "observed": {
+        "uniforms": [
+          [
+            "hurt_amount",
+            3,
+            1,
+            "0.0,1.0,0.0010000000475"
+          ],
+          [
+            "hurt_color",
+            20,
+            0,
+            ""
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "no-sampler-uniforms",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "defaults-from-source",
+      "observed": {
+        "amount_default": true,
+        "color_default": true,
+        "mix_line": true,
+        "mode": true,
+        "type": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "no-time-no-resample",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "driver-uses-declared-names",
+      "observed": {
+        "written": [
+          "hurt_amount"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "player-has-own-tint-material",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "sampler-runs-last",
+      "observed": {
+        "driver": 200,
+        "highest_other": 200,
+        "sampler": 100000
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "menu-zero",
+      "observed": {
+        "amount": 0.0,
+        "rows": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "real-start-input",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "hit-starts-window",
+      "observed": {
+        "first_amount": 1.0,
+        "first_row_tick": 1,
+        "hit_tick": 1,
+        "period": 0.0166666666666667
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "curve-follows-ticks",
+      "observed": {
+        "mismatches": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "zero-after-48-ticks",
+      "observed": {
+        "allowed": 0.0166666666666667,
+        "frames": 48,
+        "game_seconds": 0.800000000000001,
+        "ticks_after_hit": 48,
+        "zero_tick": 49
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "ignored-hit-no-retrigger",
+      "observed": {
+        "accepted_hits": 1,
+        "contact_rows_in_window": 20,
+        "hp": 8
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "paused-holds",
+      "observed": {
+        "before": {
+          "amount": 0.625,
+          "iframes": 30,
+          "tick": 19
+        },
+        "rows": 30
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "paused-resumes",
+      "observed": {
+        "iframes_now": 22,
+        "mismatches": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "restart-writes-zero",
+      "observed": {
+        "at_run_started": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "before": 0.479166666666667,
+        "first_frame": {
+          "amount": 0.0,
+          "tick": 1
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-holds",
+      "observed": {
+        "before": {
+          "amount": 0.604166666666667,
+          "iframes": 29,
+          "tick": 87
+        },
+        "rows": 30
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-resumes",
+      "observed": {
+        "iframes_now": 21,
+        "mismatches": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "next-hit-after-end-new-window",
+      "observed": {
+        "gap_ticks": 48,
+        "next_hit": 116,
+        "previous_hit": 68
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "tree-pause-holds",
+      "observed": {
+        "driver_stopped": true,
+        "held_amount": 0.645833333333333,
+        "iframes": 30,
+        "lag_ticks": 1,
+        "rows": 30,
+        "tick": 134
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "tree-pause-resumes",
+      "observed": {
+        "iframes_now": 24,
+        "mismatches": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "time-scale-window-ticks",
+      "observed": {
+        "frames": 48,
+        "real_seconds": 0.001821,
+        "scaled_game_seconds": 0.40000000000002,
+        "ticks": 48,
+        "unscaled_frame_seconds": 0.8
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lethal-lost-zero",
+      "observed": {
+        "amount": 0.0,
+        "iframes": 48,
+        "lost_rows": 11,
+        "state": "lost"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "won-zero",
+      "observed": {
+        "amount": 0.0,
+        "iframes": 39,
+        "state": "won",
+        "won_rows": 10
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "accepted-hits-spaced-48",
+      "observed": {
+        "hits": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            68
+          ],
+          [
+            3,
+            116
+          ],
+          [
+            3,
+            164
+          ],
+          [
+            3,
+            212
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            10791
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "distinct-materials",
+      "observed": {
+        "m1": -9223371994039318938,
+        "m2": -9223371976742009058
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "materials-independent",
+      "observed": {
+        "m1": 0.0,
+        "m2": 0.75
+      },
+      "status": "PASS"
+    }
+  ],
+  "suite": "hurt_tint",
+  "utc": "2026-10-30T16:41:12"
+}
