@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+engine 4.7.2-stable (official)
+rendering driver 'opengl3', method 'gl_compatibility', adapter ''
+physics_ticks_per_second 60, max_fps 0
+uniform hurt_amount type 3 hint 1 hint_string '0.0,1.0,0.0010000000475'
+uniform hurt_color type 20 hint 0 hint_string ''
+RenderingServer default hurt_amount = <null>
+RenderingServer default hurt_color = <null>
+fresh material get_shader_parameter(hurt_amount) = <null>
+undeclared hurt_amout set 0.5, read back = 0.5
+after 288 process frames: 288 physics frames; ticks-per-frame histogram { 1: 288 }
+frame_post_draw emitted 0 times
