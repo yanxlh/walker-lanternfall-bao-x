@@ -165,10 +165,13 @@ func run() -> void:
 	var end_a := sampler.rows.size()
 	var first := first_row_at_tick(mark, h_a)
 	var r0: Dictionary = sampler.rows[first]
-	# The frame period is read from the window's own frames; early menu frames can report a different delta.
-	period = 0.0
+	# The pinned frame period is the median delta of the window's own frames (1/N under --fixed-fps N).
+	# A few frames report a longer delta, so the maximum would loosen the one-frame tolerance.
+	var deltas: Array = []
 	for i in range(first, end_a):
-		period = maxf(period, sampler.rows[i].delta)
+		deltas.append(sampler.rows[i].delta)
+	deltas.sort()
+	period = deltas[deltas.size() / 2]
 	var peak_want := float(expected_iframes(r0.tick, h_a)) / 48.0
 	check("hit-starts-window", hits.size() == 1 and is_equal_approx(r0.amount, peak_want) and (period > 1.0 / 45.0 or r0.amount == 1.0),
 		{"hit_tick": h_a, "first_row_tick": r0.tick, "first_amount": r0.amount, "period": period})
@@ -273,7 +276,8 @@ func run() -> void:
 	check("tree-pause-resumes", game.player.iframes < before.iframes and mism.is_empty(), {"iframes_now": game.player.iframes, "mismatches": mism.slice(0, 5)})
 
 	# Engine.time_scale = 0.5: one full window measured from accepted hit to the next accepted hit.
-	Engine.time_scale = 0.5
+	const TIME_SCALE := 0.5
+	Engine.time_scale = TIME_SCALE
 	mark = sampler.rows.size()
 	n_hits = hits.size()
 	await wait_until(func(): return hits.size() > n_hits, 2000)
@@ -289,7 +293,7 @@ func run() -> void:
 		var a: Dictionary = sampler.rows[re]
 		var b: Dictionary = sampler.rows[rf]
 		ts = {"ticks": h_f - h_e, "frames": b.frame - a.frame, "scaled_game_seconds": b.t - a.t,
-			"unscaled_frame_seconds": (b.frame - a.frame) * period, "real_seconds": (b.us - a.us) / 1e6}
+			"unscaled_seconds": (b.t - a.t) / TIME_SCALE, "real_seconds": (b.us - a.us) / 1e6}
 	check("time-scale-window-ticks", re >= 0 and rf >= 0 and h_f - h_e == 48 and curve_mismatches(re, rf, h_e, h_f).is_empty(), ts)
 
 	# Run D: a real lethal contact leaves iframes == 48 in LOST; the tint is forced to zero.
