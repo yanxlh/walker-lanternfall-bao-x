@@ -396,3 +396,30 @@ Effects that make a hit and the courier's movement easier to read in a crowded m
 - Captures and tests are run from the terminal: “帮我运行 这类的操作”, “自动继续不用问我”.
 - My explanation of the two stages is in TEST-REPORT: the process stage decides how a particle changes, and the draw stage decides what it looks like on screen.
 - The film: I watched and listened to the whole final export and found no problem, then opened link sharing on Drive.
+
+# Assignment 5 — shaders, materials, and the Godot shading language
+
+## 2026-10-30 (Fri) — choosing the state and the specification
+
+- Baseline before any A5 work: all ten existing suites through `scripts/run-test.sh` on `70c77e9`, 332 checks, 0 failures, no `SHADER ERROR` or `SCRIPT ERROR` line (`evidence/assignment-5/baseline/`). The A6 brief moved to `design/CHANGE-BRIEF-assignment-6.md`.
+- State for the shader from code: “玩家受伤无敌帧”, the courier's 48-tick invulnerability after an accepted hit.
+- The brief was written in a second working copy, `~/Documents/ChatGPT/csye 7280/assignment-5`, and moved into this repository. In that copy Codex wrote a first `hurt_tint.gdshader` on 29 October at my request, and its notes record that file as AI-authored. Asked who wrote the brief and its calculations: “我后续自己手写了一遍 黄色那个就是我写的”. The yellow version was saved there on 30 October at 11:46, before the brief was committed here.
+- Choices for the gaps found in the brief: the `idle` frame's lamp texel (20,16) and coat texel (16,24) as the named pixels; the tint holds while the tree is paused; the normal map stays, checked with the numeric `curl_ratio` and calibrated on `nor_gl`/`nor_dx`.
+- Claude Code re-pointed the brief's line references to this repository and added the tolerance, time-scale and evidence-split rows from the design; those parts are marked † in the brief.
+- Trace: `116ad07` baseline · `1043436` A6 brief archived · `bd5eb37` A5 brief.
+
+**What I wanted**
+
+A tint that tells the player the courier is protected after a hit and shows how much of that protection is left, without changing the existing red blink or any game rule.
+
+**What came back**
+
+- The brief's line references pointed at the other working copy, which branches from `a3` and lacks the A6 lines in `session.gd`.
+- In play the courier is drawn from `pc_sheet.png`, not the fallback shapes the first draft used for pixel positions. The sheet uses the same four colours.
+- Measured against the assignment, the brief lacked the one-frame tolerance, the time-scale rule, the tree-pause rule and a per-rule evidence split, and it described the curl check as a lighting comparison rather than the numeric test.
+
+**What I decided, and why**
+
+- Named pixels: “idle 帧”, the pose seen in normal play, with white modulation and no forced pose.
+- Tree pause: “保持当前值”, the same as the PAUSED state.
+- Normal map: “保留法线 + 数值检查”.
