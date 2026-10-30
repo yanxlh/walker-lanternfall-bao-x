@@ -267,14 +267,20 @@ func _check_material_room() -> void:
 		standin_mesh.material_override != null and standin_mesh.material_override.resource_path == STANDIN,
 		{"path": standin_mesh.material_override.resource_path if standin_mesh.material_override else null})
 	check("material_room: the two meshes hold distinct materials", floor_mesh.material_override != standin_mesh.material_override, {})
-	check("material_room: floor mesh is BoxMesh 8 x 0.2 x 8, stand-in is CapsuleMesh r 0.25 h 1.2",
-		floor_mesh.mesh is BoxMesh and floor_mesh.mesh.size.is_equal_approx(Vector3(8, 0.2, 8))
+	# CHANGE-BRIEF.md revision 10/30 (Bao): the A5 scene swaps the floor's BoxMesh for an 8 x 8 PlaneMesh at the
+	# box's top, y = 0, so the stones are not stretched. The A3 room keeps its BoxMesh (checked below).
+	check("material_room: floor mesh is PlaneMesh 8 x 8 at y = 0, stand-in is CapsuleMesh r 0.25 h 1.2",
+		floor_mesh.mesh is PlaneMesh and floor_mesh.mesh.size.is_equal_approx(Vector2(8, 8)) and is_zero_approx(floor_mesh.position.y)
 		and standin_mesh.mesh is CapsuleMesh and is_equal_approx(standin_mesh.mesh.radius, 0.25) and is_equal_approx(standin_mesh.mesh.height, 1.2),
-		{"floor": floor_mesh.mesh.get_class(), "standin": standin_mesh.mesh.get_class()})
+		{"floor": floor_mesh.mesh.get_class(), "floor_y": floor_mesh.position.y, "standin": standin_mesh.mesh.get_class()})
 	# The A3 room keeps its own StandardMaterial3D overrides (the A5 scene only overrides them).
 	var a3: Node = (load(A3_ROOM) as PackedScene).instantiate()
 	check("lantern_gate_room (A3): Floor and StandIn still use StandardMaterial3D",
 		a3.get_node("Floor/Mesh").material_override is StandardMaterial3D and a3.get_node("StandIn/Mesh").material_override is StandardMaterial3D, {})
+	# The audit's finding stays pinned on the A3 room, whose BoxMesh is unchanged.
+	var a3_box := _face_uv_span(a3.get_node("Floor/Mesh").mesh, Vector3.UP)
+	check("finding (A3 room): BoxMesh top face spans 1/3 x 1/2 of UV space, so stones would stretch 1.5:1 (x vs z)",
+		a3.get_node("Floor/Mesh").mesh is BoxMesh and is_equal_approx(a3_box.du, 1.0 / 3.0) and is_equal_approx(a3_box.dv, 0.5), a3_box)
 	a3.free()
 
 	var env: Environment = (room.get_node("WorldEnvironment") as WorldEnvironment).environment
@@ -318,9 +324,10 @@ func _check_material_room() -> void:
 		check("material_room light %s: colour %s, energy %s, range %s, shadows off" % [p, e[1], e[2], e[3]], ok, row)
 
 	# Floor UVs: PrimitiveMesh arrays build without a renderer.
-	var box := _face_uv_span(floor_mesh.mesh, Vector3.UP)
-	check("finding: BoxMesh top face spans 1/3 x 1/2 of UV space, so stones stretch 1.5:1 (x vs z)",
-		is_equal_approx(box.du, 1.0 / 3.0) and is_equal_approx(box.dv, 0.5), box)
+	var plane := _face_uv_span(floor_mesh.mesh, Vector3.UP)
+	check("material_room: floor PlaneMesh spans the full UV square, one repeat per 8 m in x and z at uv_scale 1",
+		is_equal_approx(plane.du, 1.0) and is_equal_approx(plane.dv, 1.0) and is_equal_approx(plane.metres_per_texture_x, 8.0)
+		and is_equal_approx(plane.metres_per_texture_z, 8.0), plane)
 	for m in [floor_mesh, standin_mesh]:
 		var arrays: Array = m.mesh.get_mesh_arrays()
 		var tangents = arrays[Mesh.ARRAY_TANGENT]
