@@ -3,13 +3,13 @@
 # Project context
 
 ## Engine and renderer
-- Godot 4.7 (`godot/project.godot:8`); the exact build is 4.7.2.stable.official.ed1daf0bf (`README.md:17`).
-- Renderer: `gl_compatibility` for desktop and mobile (`godot/project.godot:26-27`).
-  The 2D canvas uses nearest filtering (`godot/project.godot:28`). `rendering/viewport/hdr_2d`
+- Godot 4.7 (`godot/project.godot:15`); the exact build is 4.7.2.stable.official.ed1daf0bf (`README.md:17`).
+- Renderer: `gl_compatibility` for desktop and mobile (`godot/project.godot:34-35`).
+  The 2D canvas uses nearest filtering (`godot/project.godot:33`). `rendering/viewport/hdr_2d`
   is not set (absent from `godot/project.godot`).
 
 ## Main scene
-- `res://game/main.tscn` (`godot/project.godot:7`): one `Node2D` named Main with
+- `res://game/main.tscn` (`godot/project.godot:14`): one `Node2D` named Main with
   `res://game/session.gd` attached (`godot/game/main.tscn:3-6`).
 - The session builds everything in code, with no child scenes: ground, actors, player,
   weapon fx, camera, audio, HUD and particles (`godot/game/session.gd:59-89`).

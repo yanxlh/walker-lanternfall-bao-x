@@ -186,3 +186,7 @@ Project facts line 17 and the material plan disagreed: one replaced the Floor an
 - Floor (Bao's decision): the material audit measured that the A3 floor's BoxMesh top face uses 1/3 x 1/2 of UV space, so at `uv_scale` 2 the stones were stretched 1.5:1 and the 8 m floor showed less than one tile, not the repeated paving planned above. In `godot/a5/material_room.tscn` the Floor/Mesh `mesh` is overridden with an 8 x 8 PlaneMesh at y = 0, the box's top. At `uv_scale` 2 the floor now shows 2 x 2 repeats of square stones. The A3 room keeps its BoxMesh, and the shader and both materials are unchanged.
 - Ambient (Bao's decision): the A3 room's `ambient_light_source = 3` (Sky) with no sky resource stays unchanged, so the cobblestones are judged under the same lights as A3. A capture with the ambient source switched between Sky and Color in memory records what the setting actually does.
 
+
+### 2026-10-30 — project.godot line numbers
+
+The editor re-saved `godot/project.godot` on 30 October (a header comment, one key moved, no value changed). The renderer lines are now 34–35 and the canvas filter line 33, so the Project facts references `:26–27` and `:28` above point to the file as it was before that save.
