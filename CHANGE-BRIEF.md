@@ -190,3 +190,7 @@ Project facts line 17 and the material plan disagreed: one replaced the Floor an
 ### 2026-10-30 — project.godot line numbers
 
 The editor re-saved `godot/project.godot` on 30 October (a header comment, one key moved, no value changed). The renderer lines are now 34–35 and the canvas filter line 33, so the Project facts references `:26–27` and `:28` above point to the file as it was before that save.
+
+### 2026-10-30 — `cobblestone_surface.gdshader` line 22 (Bao)
+
+Bao changed line 22 of the textured shader by hand from `NORMAL_MAP_DEPTH = normal_strength;` to `NORMAL_MAP_DEPTH = normal_strength * mix(0.5, 1.0, abs(normalize(NORMAL).z));`. The material plan's `NORMAL_MAP_DEPTH = normal_strength` now reads: the normal-map depth is `normal_strength` scaled between 0.5 and 1.0 by `abs(normalize(NORMAL).z)`, so the shader also reads the built-in `NORMAL`. Uniforms, hints, defaults, samplers and both materials are unchanged. The sweep, pair and one-material captures are repeated at the revision that contains this line; captures made before it keep their own revisions.
