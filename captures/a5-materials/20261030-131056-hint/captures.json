@@ -1,0 +1,129 @@
+{
+  "captures": [
+    {
+      "environment": {
+        "adjustment": false,
+        "fog": false,
+        "glow": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": 0
+      },
+      "file": "hint-experiment.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "quads": {
+        "QuadWithSourceColor": {
+          "bands": [
+            {
+              "band": "left",
+              "pixel": [
+                200,
+                360
+              ],
+              "px_to_band_edge": 80,
+              "rgb": [
+                64,
+                64,
+                64
+              ]
+            },
+            {
+              "band": "middle",
+              "pixel": [
+                360,
+                360
+              ],
+              "px_to_band_edge": 80,
+              "rgb": [
+                128,
+                128,
+                128
+              ]
+            },
+            {
+              "band": "right",
+              "pixel": [
+                520,
+                360
+              ],
+              "px_to_band_edge": 80,
+              "rgb": [
+                192,
+                192,
+                192
+              ]
+            }
+          ],
+          "material": "res://a5/hint_experiment/hint_with_source_color.tres",
+          "use_color": true
+        },
+        "QuadWithoutHint": {
+          "bands": [
+            {
+              "band": "left",
+              "pixel": [
+                760,
+                360
+              ],
+              "px_to_band_edge": 80,
+              "rgb": [
+                64,
+                64,
+                64
+              ]
+            },
+            {
+              "band": "middle",
+              "pixel": [
+                920,
+                360
+              ],
+              "px_to_band_edge": 80,
+              "rgb": [
+                128,
+                128,
+                128
+              ]
+            },
+            {
+              "band": "right",
+              "pixel": [
+                1080,
+                360
+              ],
+              "px_to_band_edge": 80,
+              "rgb": [
+                192,
+                192,
+                192
+              ]
+            }
+          ],
+          "material": "res://a5/hint_experiment/hint_without_source_color.tres",
+          "use_color": false
+        }
+      }
+    }
+  ],
+  "meta": {
+    "adapter": "Apple M4",
+    "driver": "opengl3",
+    "engine": "4.7.2-stable (official)",
+    "input": "scripted (no human input; parameters set in memory, never saved)",
+    "label": "",
+    "mode": "hint",
+    "renderer": "gl_compatibility",
+    "revision": "d01df00",
+    "utc": "2026-10-30T17:10:57",
+    "visible_rect": [
+      640.0,
+      360.0
+    ],
+    "window": [
+      1280,
+      720
+    ]
+  }
+}
