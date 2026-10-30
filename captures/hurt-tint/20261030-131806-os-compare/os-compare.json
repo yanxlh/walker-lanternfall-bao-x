@@ -1,0 +1,173 @@
+{
+  "ratio_os_px_per_godot_px": 1.0,
+  "samples": {
+    "coat": {
+      "texel": [
+        16,
+        24
+      ],
+      "engine_block": [
+        [
+          151,
+          157,
+          44
+        ],
+        [
+          151,
+          157,
+          44
+        ],
+        [
+          151,
+          157,
+          44
+        ],
+        [
+          151,
+          157,
+          44
+        ]
+      ],
+      "os_block": [
+        [
+          152,
+          157,
+          65
+        ],
+        [
+          152,
+          157,
+          65
+        ],
+        [
+          152,
+          157,
+          65
+        ],
+        [
+          152,
+          157,
+          65
+        ]
+      ],
+      "engine": [
+        151,
+        157,
+        44
+      ],
+      "os": [
+        152,
+        157,
+        65
+      ],
+      "diff": [
+        1,
+        0,
+        21
+      ]
+    },
+    "lamp": {
+      "texel": [
+        20,
+        16
+      ],
+      "engine_block": [
+        [
+          249,
+          220,
+          37
+        ],
+        [
+          249,
+          220,
+          37
+        ],
+        [
+          249,
+          220,
+          37
+        ],
+        [
+          249,
+          220,
+          37
+        ]
+      ],
+      "os_block": [
+        [
+          244,
+          221,
+          82
+        ],
+        [
+          244,
+          221,
+          82
+        ],
+        [
+          244,
+          221,
+          82
+        ],
+        [
+          244,
+          221,
+          82
+        ]
+      ],
+      "engine": [
+        249,
+        220,
+        37
+      ],
+      "os": [
+        244,
+        221,
+        82
+      ],
+      "diff": [
+        -5,
+        1,
+        45
+      ]
+    }
+  },
+  "engine_png": "hold-hurt-amount-0.5.png",
+  "engine_png_profile": "sRGB IEC61966-2.1 (sips)",
+  "os_png": "os-screenshot.png",
+  "os_png_profile": "Display P3 (sips)",
+  "os_png_size": [
+    1280,
+    720
+  ],
+  "os_png_dpi": 144,
+  "window_content_rect_points": [
+    40,
+    65,
+    640,
+    360
+  ],
+  "window_position_px": [
+    80,
+    130
+  ],
+  "window_size_px": [
+    1280,
+    720
+  ],
+  "screen_scale": 2.0,
+  "whole_frame_mean_abs_diff_rgb": [
+    0.87,
+    0.11,
+    1.74
+  ],
+  "whole_frame_max_abs_diff_rgb": [
+    26,
+    27,
+    45
+  ],
+  "commands": [
+    "gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --path godot --fixed-fps 60 --script res://tests/capture_hurt_tint.gd -- --auto --hold 8 --rev 5636e5a --out \"/Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/captures/hurt-tint/20261030-131806-os-compare\"",
+    "screencapture -x -o -R40,65,640,360 \"/Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/captures/hurt-tint/20261030-131806-os-compare/os-screenshot.png\""
+  ]
+}

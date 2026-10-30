@@ -1,0 +1,14 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 90.5 - Compatibility - Using Device: Apple - Apple M4
+
+ready: courier idle, simulation frozen; press F9 in the window to capture (scripted F9 follows)
+captured hurt-amount-0.0.png read back 0.0
+captured hurt-amount-0.5.png read back 0.5
+captured hurt-amount-1.0.png read back 1.0
+captured hurt-amount-2.0.png read back 2.0
+wrote /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/captures/hurt-tint/20261030-131806-os-compare self-check PASS
+HOLD READY {"hold_seconds":8.0,"image_size":[1280,720],"record":{"camera_rotation":0.0,"canvas_rotation":0.0,"file":"hold-hurt-amount-0.5.png","hurt_amount_read_back":0.5,"hurt_amount_set":0.5,"iframes":0,"image_size":[1280,720],"modulate":[1.0,1.0,1.0,1.0],"player_canvas_origin":[320.0,180.0],"player_position":[0.0,0.0],"pose":"idle","samples":{"coat":{"pixel":[641,363],"rgb":[151,157,44],"stored":[46,58,89],"texel":[16,24]},"lamp":{"pixel":[649,347],"rgb":[249,220,37],"stored":[242,184,75],"texel":[20,16]}},"scale":[2.0,2.0],"visible_rect":[640.0,360.0]},"screen":0,"screen_max_scale":2.0,"screen_position_px":[0,0],"screen_scale":2.0,"screen_size_px":[2940,1912],"window_position_px":[80,130],"window_position_with_decorations_px":[80,66],"window_size_px":[1280,720]}
+WARNING: 8 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

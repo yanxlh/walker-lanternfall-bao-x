@@ -8,6 +8,9 @@ extends SceneTree
 ## one seeded wraith (disclosed fixture) hits the courier through real contact and take_hit(); the real simulation
 ## runs until the courier is idle in a red phase, the wraith is freed and the simulation frozen, then 0.0, 0.5 and 1.0
 ## are captured. Writes PNGs, captures.json and CAPTURES.md to --out (default captures/hurt-tint/<stamp>[-red]).
+## `--hold <seconds>` (white phase): after the captures, keeps the driver stopped at hurt_amount 0.5, moves the window to
+## (80, 80), captures that frame in-engine again and writes hold.json with the window rect and screen scale, then holds
+## the frame for the given seconds so an OS screenshot of the same frame can be taken from outside.
 ## The game never loads this script.
 const GS = preload("res://game/game_state.gd")
 const DriverScript = preload("res://effects/hurt_tint_presentation.gd")
@@ -29,6 +32,7 @@ var red := false
 var fixture_note := "test_no_spawn = true; simulation frozen with test_mode = true while capturing"
 var busy := false
 var done := false
+var hold := 0.0
 
 ## Receives F9 from the real window (or from parsed input under --auto).
 class KeyCatcher extends Node:
@@ -44,6 +48,9 @@ func _initialize() -> void:
 	var at := args.find("--rev")
 	if at >= 0 and at + 1 < args.size():
 		revision = args[at + 1]
+	at = args.find("--hold")
+	if at >= 0 and at + 1 < args.size():
+		hold = float(args[at + 1])
 	at = args.find("--out")
 	var stamp := Time.get_datetime_string_from_system().replace(":", "").replace("-", "").replace("T", "-") + ("-red" if red else "")
 	out_dir = args[at + 1] if at >= 0 and at + 1 < args.size() else ProjectSettings.globalize_path("res://../captures/hurt-tint/" + stamp)
@@ -134,9 +141,41 @@ func _on_capture() -> void:
 		records.append(_record(v, read_back, file, img))
 		print("captured ", file, " read back ", read_back)
 	_write(records)
+	if hold > 0.0 and not red:
+		await _hold_frame(mat)
 	done = true
 	busy = false
 	quit()
+
+## Holds one frame at hurt_amount 0.5 at a known window position for an OS screenshot of the same frame.
+func _hold_frame(mat: ShaderMaterial) -> void:
+	driver.set_process(false)
+	mat.set_shader_parameter("hurt_amount", 0.5)
+	DisplayServer.window_set_position(Vector2i(80, 80))
+	DisplayServer.window_move_to_foreground()
+	await frames(10)
+	await RenderingServer.frame_post_draw
+	var img := root.get_texture().get_image()
+	var file := "hold-hurt-amount-0.5.png"
+	img.save_png(out_dir.path_join(file))
+	var rec := _record(0.5, mat.get_shader_parameter("hurt_amount"), file, img)
+	var screen := DisplayServer.window_get_current_screen()
+	var pos := DisplayServer.window_get_position()
+	var size := DisplayServer.window_get_size()
+	var info := {
+		"window_position_px": [pos.x, pos.y], "window_size_px": [size.x, size.y],
+		"window_position_with_decorations_px": [DisplayServer.window_get_position_with_decorations().x, DisplayServer.window_get_position_with_decorations().y],
+		"screen": screen, "screen_scale": DisplayServer.screen_get_scale(screen), "screen_max_scale": DisplayServer.screen_get_max_scale(),
+		"screen_position_px": [DisplayServer.screen_get_position(screen).x, DisplayServer.screen_get_position(screen).y],
+		"screen_size_px": [DisplayServer.screen_get_size(screen).x, DisplayServer.screen_get_size(screen).y],
+		"image_size": [img.get_width(), img.get_height()], "hold_seconds": hold, "record": rec,
+	}
+	var f := FileAccess.open(out_dir.path_join("hold.json"), FileAccess.WRITE)
+	f.store_string(JSON.stringify(info, "  "))
+	f.close()
+	print("HOLD READY ", JSON.stringify(info))
+	await create_timer(hold).timeout
+	driver.set_process(true)
 
 ## Maps a frame texel's centre to a pixel of the captured image and samples it.
 func _record(v: float, read_back, file: String, img: Image) -> Dictionary:

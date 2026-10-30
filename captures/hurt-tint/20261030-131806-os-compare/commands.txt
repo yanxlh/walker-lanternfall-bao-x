@@ -1,0 +1,2 @@
+gtimeout 120 /Applications/Godot.app/Contents/MacOS/Godot --path godot --fixed-fps 60 --script res://tests/capture_hurt_tint.gd -- --auto --hold 8 --rev 5636e5a --out "/Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/captures/hurt-tint/20261030-131806-os-compare"
+screencapture -x -o -R40,65,640,360 "/Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/captures/hurt-tint/20261030-131806-os-compare/os-screenshot.png"

@@ -1,0 +1,325 @@
+{
+  "captures": [
+    {
+      "camera_rotation": 0.0,
+      "canvas_rotation": 0.0,
+      "file": "hurt-amount-0.0.png",
+      "hurt_amount_read_back": 0.0,
+      "hurt_amount_set": 0.0,
+      "iframes": 0,
+      "image_size": [
+        1280,
+        720
+      ],
+      "modulate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "player_canvas_origin": [
+        320.0,
+        180.0
+      ],
+      "player_position": [
+        0.0,
+        0.0
+      ],
+      "pose": "idle",
+      "samples": {
+        "coat": {
+          "pixel": [
+            641,
+            363
+          ],
+          "rgb": [
+            46,
+            58,
+            89
+          ],
+          "stored": [
+            46,
+            58,
+            89
+          ],
+          "texel": [
+            16,
+            24
+          ]
+        },
+        "lamp": {
+          "pixel": [
+            649,
+            347
+          ],
+          "rgb": [
+            242,
+            184,
+            75
+          ],
+          "stored": [
+            242,
+            184,
+            75
+          ],
+          "texel": [
+            20,
+            16
+          ]
+        }
+      },
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "visible_rect": [
+        640.0,
+        360.0
+      ]
+    },
+    {
+      "camera_rotation": 0.0,
+      "canvas_rotation": 0.0,
+      "file": "hurt-amount-0.5.png",
+      "hurt_amount_read_back": 0.5,
+      "hurt_amount_set": 0.5,
+      "iframes": 0,
+      "image_size": [
+        1280,
+        720
+      ],
+      "modulate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "player_canvas_origin": [
+        320.0,
+        180.0
+      ],
+      "player_position": [
+        0.0,
+        0.0
+      ],
+      "pose": "idle",
+      "samples": {
+        "coat": {
+          "pixel": [
+            641,
+            363
+          ],
+          "rgb": [
+            151,
+            157,
+            44
+          ],
+          "stored": [
+            46,
+            58,
+            89
+          ],
+          "texel": [
+            16,
+            24
+          ]
+        },
+        "lamp": {
+          "pixel": [
+            649,
+            347
+          ],
+          "rgb": [
+            249,
+            220,
+            37
+          ],
+          "stored": [
+            242,
+            184,
+            75
+          ],
+          "texel": [
+            20,
+            16
+          ]
+        }
+      },
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "visible_rect": [
+        640.0,
+        360.0
+      ]
+    },
+    {
+      "camera_rotation": 0.0,
+      "canvas_rotation": 0.0,
+      "file": "hurt-amount-1.0.png",
+      "hurt_amount_read_back": 1.0,
+      "hurt_amount_set": 1.0,
+      "iframes": 0,
+      "image_size": [
+        1280,
+        720
+      ],
+      "modulate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "player_canvas_origin": [
+        320.0,
+        180.0
+      ],
+      "player_position": [
+        0.0,
+        0.0
+      ],
+      "pose": "idle",
+      "samples": {
+        "coat": {
+          "pixel": [
+            641,
+            363
+          ],
+          "rgb": [
+            255,
+            255,
+            0
+          ],
+          "stored": [
+            46,
+            58,
+            89
+          ],
+          "texel": [
+            16,
+            24
+          ]
+        },
+        "lamp": {
+          "pixel": [
+            649,
+            347
+          ],
+          "rgb": [
+            255,
+            255,
+            0
+          ],
+          "stored": [
+            242,
+            184,
+            75
+          ],
+          "texel": [
+            20,
+            16
+          ]
+        }
+      },
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "visible_rect": [
+        640.0,
+        360.0
+      ]
+    },
+    {
+      "camera_rotation": 0.0,
+      "canvas_rotation": 0.0,
+      "file": "hurt-amount-2.0.png",
+      "hurt_amount_read_back": 2.0,
+      "hurt_amount_set": 2.0,
+      "iframes": 0,
+      "image_size": [
+        1280,
+        720
+      ],
+      "modulate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "player_canvas_origin": [
+        320.0,
+        180.0
+      ],
+      "player_position": [
+        0.0,
+        0.0
+      ],
+      "pose": "idle",
+      "samples": {
+        "coat": {
+          "pixel": [
+            641,
+            363
+          ],
+          "rgb": [
+            255,
+            255,
+            0
+          ],
+          "stored": [
+            46,
+            58,
+            89
+          ],
+          "texel": [
+            16,
+            24
+          ]
+        },
+        "lamp": {
+          "pixel": [
+            649,
+            347
+          ],
+          "rgb": [
+            255,
+            255,
+            0
+          ],
+          "stored": [
+            242,
+            184,
+            75
+          ],
+          "texel": [
+            20,
+            16
+          ]
+        }
+      },
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "visible_rect": [
+        640.0,
+        360.0
+      ]
+    }
+  ],
+  "meta": {
+    "adapter": "Apple M4",
+    "driver": "opengl3",
+    "engine": "4.7.2-stable (official)",
+    "fixtures": "test_no_spawn = true; simulation frozen with test_mode = true while capturing",
+    "input": "scripted-input",
+    "phase": "white",
+    "renderer": "gl_compatibility",
+    "revision": "5636e5a",
+    "self_check_0_equals_stored": true,
+    "utc": "2026-10-30T17:18:07",
+    "os_compare": "os-compare.json"
+  }
+}

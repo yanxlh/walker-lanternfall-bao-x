@@ -612,7 +612,7 @@ In-engine captures, not OS screenshots: `godot/tests/capture_hurt_tint.gd`, driv
 
 - `hurt_amount = 2.0` set from code read back as 2.0, so `hint_range` did not clamp the stored value; both texels rendered (255, 255, 0), the same as 1.0.
 - Bao's comparison, the explanation of the half-step and the one-step differences, and the 2.0 result against the prediction: pending (Bao).
-- In-engine capture against an OS screenshot, and which one is trusted: pending.
+- In-engine capture against an OS screenshot of the same held frame (`captures/hurt-tint/20261030-131806-os-compare/`, `tools/a5/os_compare.sh`, `hurt_amount` 0.5, white phase): lamp in-engine (249, 220, 37), OS (244, 221, 82); coat in-engine (151, 157, 44), OS (152, 157, 65). `sips` reports the OS screenshot as Display P3 and the in-engine PNG as sRGB; scale 2.0, one OS pixel per Godot pixel. Which one is trusted, and why: pending (Bao).
 
 ### In play (HUMAN CHECK)
 
