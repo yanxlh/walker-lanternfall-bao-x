@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+diff: CompressedTexture2D 1024x1024 format 4 (RGB8) mipmaps true compressed false
+nor_gl: CompressedTexture2D 1024x1024 format 4 (RGB8) mipmaps true compressed false
+nor_dx: CompressedTexture2D 1024x1024 format 4 (RGB8) mipmaps true compressed false
+rough: CompressedTexture2D 1024x1024 format 0 (L8) mipmaps true compressed false
