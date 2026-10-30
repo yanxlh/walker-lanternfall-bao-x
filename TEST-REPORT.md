@@ -644,15 +644,18 @@ The brief's Compatibility prediction was 64/128/192 with either sampler; its For
 
 These are capture observations, not an additional player signoff or proof that a headless test establishes appearance. StandIn stays visually consistent across the Floor-only material sweep.
 
+Re-captured after Bao's line-22 change (`0b91838`) at `4246f94`: `captures/a5-materials/20261030-170453-sweep/`. Floor mean RGB at `normal_strength` 0 / 1 / 2: (101.26, 92.19, 116.86) / (100.50, 91.25, 115.70) / (98.91, 89.48, 113.57), against (101.26, 92.19, 116.86) / (99.76, 90.44, 114.73) / (96.90, 87.26, 110.90) before the change. Bao's look at the new `normal_strength` row: pending.
+
 ### One shader, two materials (HUMAN CHECK)
 
 - Material edit (`20261030-131126-one-material`): Floor `uv_scale` 2 → 4 in memory changed the floor rectangle (largest channel difference 73) and left the stand-in at difference 0. Capture review: the floor stones become visibly smaller/more repeated, while the StandIn remains unchanged.
+- Repeated at `4246f94` after line 22 (`20261030-170456-one-material`, pair `20261030-170452-pair`): the same edit changed the floor (largest channel difference 72) and left the stand-in at difference 0.
 - Shader edit (Bao, 30 October, 16:37). Prediction recorded first (`evidence/assignment-5/bao-shader-edit/PREDICTION.md`, `e5c0272`): multiplying the end of the ALBEDO line by 0.5 darkens the diffuse colour of both Floor and StandIn because they share the shader; stone size and normal detail stay the same; highlights need not darken in proportion; other props are unaffected. Bao edited `cobblestone_surface.gdshader:19` by hand, ran `capture_a5_materials.gd -- --compare-shader bao-edit`, and restored the file with git (`captures/a5-materials/20261030-163723-compare-shader-bao-edit/`, `99bb6f6`). Floor mean (99.76, 90.44, 114.73) → (52.83, 46.55, 63.29); stand-in (31.63, 40.98, 74.74) → (12.36, 16.99, 35.66); every pixel in both rectangles changed. Bao's observation: “地面和 StandIn 的漫反射颜色都会变暗，石块纹理和凹凸细节保持不变” (the floor's and the StandIn's diffuse colour both darken; the stone texture and relief stay the same).
 - An earlier run by an agent session (Codex) multiplied ALBEDO by `vec3(0, 1, 0)` and turned both objects green (`captures/a5-materials/20261030-single-line-study/`). It edited and restored `godot/shaders/cobblestone_surface.gdshader` byte for byte (SHA-256 match), which breaks the rule that no agent edits `godot/shaders/`; the committed shader is unchanged.
 
 ### Material wiring
 
-`test_materials.gd` (agent audit `52ee2db`, review `a3eaf2f`, expectation update `92f4186`): 126 / 0 after a fresh import from an empty `godot/.godot` (`d7d03b8`, no tracked file rewritten); 127 / 0 after the PlaneMesh floor; the `source_color` mutation exits 1. After restoring the one-line shader experiment, `scripts/run-test.sh test_materials.gd 60 120` again passed 127 checks, 0 failures, with no SHADER ERROR or SCRIPT ERROR; log: `evidence/assignment-5/20261030-capture-review/materials-restored-60.log`.
+`test_materials.gd` (agent audit `52ee2db`, review `a3eaf2f`, expectation update `92f4186`): 126 / 0 after a fresh import from an empty `godot/.godot` (`d7d03b8`, no tracked file rewritten); 127 / 0 after the PlaneMesh floor; the `source_color` mutation exits 1. After restoring the one-line shader experiment, `scripts/run-test.sh test_materials.gd 60 120` again passed 127 checks, 0 failures, with no SHADER ERROR or SCRIPT ERROR; log: `evidence/assignment-5/20261030-capture-review/materials-restored-60.log`. After Bao's line-22 change, at `4246f94`: import with no `SHADER ERROR`, `test_materials.gd` 127 / 0, `test_hurt_tint.gd` 28 / 0 at 30, 60 and 144 fps (`evidence/assignment-5/after-line22/`).
 
 ### Texture data
 
