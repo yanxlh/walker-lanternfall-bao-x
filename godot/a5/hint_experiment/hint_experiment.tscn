@@ -1,0 +1,44 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://a5/hint_experiment/hint_with_source_color.tres" id="1_cahuf"]
+[ext_resource type="Material" path="res://a5/hint_experiment/hint_without_source_color.tres" id="2_lvc1m"]
+
+[sub_resource type="Environment" id="Environment_1hodt"]
+background_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_ifux0"]
+size = Vector2(3, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7wpot"]
+size = Vector2(3, 1)
+
+[node name="HintExperiment" type="Node3D" unique_id=471337859]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=975802689]
+environment = SubResource("Environment_1hodt")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1372932932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+current = true
+size = 4.5
+
+[node name="QuadWithSourceColor" type="MeshInstance3D" parent="." unique_id=1502989786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, 0)
+material_override = ExtResource("1_cahuf")
+mesh = SubResource("QuadMesh_ifux0")
+
+[node name="QuadWithSourceColorLabel" type="Label3D" parent="." unique_id=1542093059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.9, 0)
+text = "source_color"
+font_size = 48
+
+[node name="QuadWithoutHint" type="MeshInstance3D" parent="." unique_id=364927590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 0)
+material_override = ExtResource("2_lvc1m")
+mesh = SubResource("QuadMesh_7wpot")
+
+[node name="QuadWithoutHintLabel" type="Label3D" parent="." unique_id=43929083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0.9, 0)
+text = "no hint"
+font_size = 48
