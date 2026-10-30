@@ -1,0 +1,114 @@
+{
+  "checks": 21,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "generated-shader-reference",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "color-ramp-texture-assigned",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-curve-texture-assigned",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gradient-point-count",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gradient-offset-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gradient-color-0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gradient-offset-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gradient-color-1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gradient-offset-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "gradient-color-2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "curve-point-count",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-sample-0.0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-sample-0.1",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-sample-0.2",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-sample-0.5",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-sample-0.8",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "scale-sample-1.0",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "world-coordinates-match",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "amount-match",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "lifetime-match",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "study-never-used-in-game",
+      "observed": {},
+      "status": "PASS"
+    }
+  ],
+  "suite": "shader_study_config",
+  "utc": "2026-10-30T00:53:54"
+}

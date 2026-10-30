@@ -106,3 +106,8 @@ Use tag `a6` for this submission. The standalone project history is on branch `c
 Final test results: 292 assertions, zero failures. Final measured CPU/GPU off/on comparisons and budget decisions are in evidence/assignment-6/cost/FINAL-COMPARISON.md. A and B meet the measured proxy-renderer budgets; the optional upgrade celebration exceeds its GPU budget in the final rerun. The renderer and measurement conditions are stated alongside the numbers.
 
 All current submission reports are in English. Translated student feedback is labelled; historical raw source conversations and generation records retain their original language.
+
+
+## Revision 2 supplement
+
+See `REVISION-2.md` for the supplemental a6-r2 source and evidence. The missing study texture bindings noted in the original report are fixed. Actual nonzero editor Visual Profiler off/on recordings are included. The original a6 tag and historical reports remain available. All eight suites pass: 313 assertions, zero failures.

@@ -24,3 +24,8 @@ Changed games since Assignment 2: no. This is the same Lanternfall game, origina
 Open godot/project.godot in Godot 4.7.2 and run the main scene. Enter starts; WASD/arrows move; 1/2/3 choose upgrade cards; P pauses; R restarts. Import a fresh clone once with `Godot --headless --path godot --import --quit`. Run the seven wrapper commands in CLAUDE.md: logic 32, gameplay 65, audio 25 (realtime), A configuration 39, extra configuration 79, particle state 34 and particle edges 18: 292 assertions total.
 
 Source ZIP excludes .godot, credentials, large media and files over 25 MB. The film is hosted separately on Google Drive with link-viewer access.
+
+
+## Revision 2 supplement
+
+See `REVISION-2.md` for the supplemental a6-r2 source and evidence. The missing study texture bindings noted in the original report are fixed. Actual nonzero editor Visual Profiler off/on recordings are included. The original a6 tag and historical reports remain available. All eight suites pass: 313 assertions, zero failures.

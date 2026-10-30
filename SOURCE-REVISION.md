@@ -12,3 +12,8 @@ Imported Godot tree: `57f2d8e7e6402c49d03fcb11c215cdc888b01af2`.
 The trees are identical. Final preparation changes reports, verification outputs and submission metadata only; it does not change game source, shaders or project settings. The final commit is identified in the Canvas comment.
 
 Earlier standalone Assignment 3 work remains on the existing master branch and a3 tag. The a6 submission branch imports the particle prototype that was filmed; it does not replace that earlier history.
+
+
+## Revision 2 source scope
+
+The complete Godot tree identity described above applies to a6. In a6-r2, the independent GPU study and new test/preview fixtures change the Godot tree; game code, production effects, shaders, assets and project settings still match a6 byte for byte. The film remains an accurate demonstration of gameplay, but does not demonstrate the newly repaired independent study.

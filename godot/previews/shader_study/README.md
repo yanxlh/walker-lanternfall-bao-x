@@ -10,3 +10,7 @@
 4. Save the scene. Only this study scene changes; do not convert any scene under `res://effects/`.
 
 The saved shader is the editor-generated study artifact referred to in `CLAUDE.md`. It is not hand-written and gameplay does not use it.
+
+## Revision 2 state
+
+The editor conversion is already complete. Do not repeat the ParticleProcessMaterial conversion steps above on the saved ShaderMaterial. The generated shader remains unchanged; color_ramp and scale_curve now bind explicit textures. Run comparison_preview.tscn for the isolated CPU/GPU lifecycle comparison. See evidence/assignment-6/shader-study-fixed/README.md for captures and the 21-check regression test.

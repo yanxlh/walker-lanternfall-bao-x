@@ -1,0 +1,26 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+PASS generated-shader-reference {}
+PASS color-ramp-texture-assigned {}
+PASS scale-curve-texture-assigned {}
+PASS gradient-point-count {}
+PASS gradient-offset-0 {}
+PASS gradient-color-0 {}
+PASS gradient-offset-1 {}
+PASS gradient-color-1 {}
+PASS gradient-offset-2 {}
+PASS gradient-color-2 {}
+PASS curve-point-count {}
+PASS scale-sample-0.0 {}
+PASS scale-sample-0.1 {}
+PASS scale-sample-0.2 {}
+PASS scale-sample-0.5 {}
+PASS scale-sample-0.8 {}
+PASS scale-sample-1.0 {}
+PASS world-coordinates-match {}
+PASS amount-match {}
+PASS lifetime-match {}
+PASS study-never-used-in-game {}
+shader_study_config: 21 checks, 0 failures -> /private/tmp/lanternfall-a6-release-20261029/godot/../evidence/shader_study_config.json

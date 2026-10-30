@@ -328,3 +328,8 @@ Quoted student feedback in this report is translated into English from the recor
 A clean imported checkout passed all seven suites: logic 32, gameplay 65, audio 25 (realtime), hit configuration 39, extra configuration 79, state 34 and edges 18: 292 assertions, zero failures. No SCRIPT ERROR or SHADER ERROR appeared. Raw logs and exact exit codes are in evidence/assignment-6/final-validation/. Existing resource-in-use shutdown diagnostics are retained.
 
 The final off/on comparison is in evidence/assignment-6/cost/FINAL-COMPARISON.md. Headless CPU increments were A +0.0222 ms, B +0.0030 ms and celebration +0.0070 ms. Mobile/Vulkan GPU increments were A +0.5392 ms, B +0.1077 ms and celebration +0.9103 ms. A and B are within the declared budgets in this test; the extra celebration exceeds its 0.4 ms GPU budget and has broad trial variation. Compatibility returned all-zero GPU timings, which are not counted as zero cost. No source settings were changed. The final Godot tree matches the film source (SOURCE-REVISION.md).
+
+
+## Assignment 6 revision 2: study textures and editor GPU capture
+
+The earlier missing-ramp finding is resolved in this revision. Both shader texture uniforms are bound, with 21 new configuration checks and a windowed CPU/GPU lifecycle comparison. See `evidence/assignment-6/shader-study-fixed/README.md`. Editor Visual Profiler evidence and its precise scope are in `evidence/assignment-6/cost/visual-profiler-r2/README.md`. Earlier measurements above are retained as historical evidence.
