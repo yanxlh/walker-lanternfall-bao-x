@@ -547,3 +547,131 @@ Conflict resolution:
 `godot/` here equals the film's revision `c3e1273` except for A3's additions (`godot/a3/`, `tests/test_a3_assets.gd`, `test_lantern_gate.gd`, `test_a3_camera.gd`, `capture_a3_orbit.gd`, `capture_lantern_gate.gd`) and two A3 edits. One edit is the F4 `a3_room` action in `session.gd`, after line 360 (`weapon_hit.emit` stays on line 227). The other is the 3D physics layer names in `project.godot`. None of these touches the particle code or the gameplay the film shows.
 
 Regression on the merged tree (`evidence/assignment-6/port-a3/`): logic 32, gameplay 65, audio 25 (realtime), A configuration 39, trail/upgrade configuration 79, state 34, edges 18, A3 assets 17, Lantern Gate 14, A3 camera 9. That is 332 checks, 0 failures, with no script or shader errors. `scripts/audit_repo.py --stage final`: 0 problems.
+
+## Assignment 5 — shaders, materials, and the Godot shading language (30 October 2026)
+
+Godot 4.7.2.stable.official.ed1daf0bf, renderer GL Compatibility (driver `opengl3`, adapter Apple M4), macOS 26. Every headless run goes through `scripts/run-test.sh`. Source revision for the final numbers: filled in at the `a5` tag. Rows marked HUMAN CHECK are Bao's to judge; the measured values beside them come from in-engine captures.
+
+### Baseline, before and after
+
+| Suite | Mode | Before A5 (`70c77e9`, `evidence/assignment-5/baseline/`) | After the driver (`0d7cb66`, `regression-after-driver/`) |
+|---|---|---:|---:|
+| logic | 60 | 32 / 0 | 32 / 0 |
+| gameplay | 60 | 65 / 0 | 65 / 0 |
+| audio | realtime | 25 / 0 | 25 / 0 |
+| defeat_sparks_config | 60 | 39 / 0 | 39 / 0 |
+| extra_particles_config | 60 | 79 / 0 | 79 / 0 |
+| particles_state | 60 | 34 / 0 | 34 / 0 |
+| particles_edges | 60 | 18 / 0 | 18 / 0 |
+| a3-assets | 60 | 17 / 0 | 17 / 0 |
+| a3-lantern-gate | 60 | 14 / 0 | 14 / 0 |
+| a3-camera | 60 | 9 / 0 | 9 / 0 |
+| **total** | | **332 / 0** | **332 / 0** |
+
+(checks / failures). No log contains `SHADER ERROR` or `SCRIPT ERROR`.
+
+### Shaders parse
+
+- `hurt_tint.gdshader` (Bao, `e0b47b4`): `test_hurt_tint.gd` asserts the uniform list (`hurt_amount` type 3, range hint 0–1; `hurt_color` type 20) and reads the defaults from the source. `cobblestone_surface.gdshader` (`a8c804b`) and `hint_experiment.gdshader` (`5a7903a`): `test_materials.gd` asserts each uniform list and every hint from the source. Every import after each shader: exit 0, no `SHADER ERROR`.
+- Mutations, each made by Bao in the terminal and restored with `git checkout` (`evidence/assignment-5/mutations/`, `d284c05`, `d01df00`):
+
+| Mutation | Test | Exit | Failing checks |
+|---|---|---:|---|
+| semicolon removed from the colour line | `test_hurt_tint.gd 60` | 1 | 4 of 28; `SHADER ERROR: Expected a ';'`, empty uniform list |
+| `hurt_amount` renamed in the shader only | `test_hurt_tint.gd 60` | 1 | 3 of 28 (uniform list, defaults, driver names); the 25 behavioural checks still pass |
+| `source_color` removed from `color_tex` | `test_materials.gd 60` | 1 | 1 of 127 (the source-text hint check); the shader still parses |
+
+### Driver: sampled every frame through a real hit
+
+`test_hurt_tint.gd` (agent `872aac6`, review fix `c0de4bd`): real Enter/W/P/R/1 keys and real wraith contact; a sampler at `process_priority` 100000 records the uniform every frame. Run `evidence/assignment-5/driver-r2/`:
+
+| fps | checks | first value after the hit | first zero | game time hit to zero | allowed (one frame) | contact frames ignored in the window |
+|---:|---:|---:|---|---:|---:|---:|
+| 30 | 28 / 0 | 0.979 (47/48: two ticks per frame) | tick 50 | 0.7958 s | 0.0333 s | 11 |
+| 60 | 28 / 0 | 1.0 | tick 49 | 0.8000 s | 0.0167 s | 20 |
+| 144 | 28 / 0 | 1.0 | tick 49 | 0.7992 s | 0.0069 s | 48 |
+
+- Retrigger: hits during protection are ignored (one accepted hit per window; the next lands exactly 48 ticks later and starts a new window).
+- PAUSED and LEVELUP hold the value, the counter and the blink; resume continues the curve. A tree pause holds the value the driver last wrote (lag 1 tick at 60/144, 2 at 30).
+- LOST after a real lethal contact shows 0 with `iframes == 48`; WON mid-window shows 0; MENU shows exactly 0.0; restart writes 0 inside `run_started`.
+- Under `Engine.time_scale = 0.5` the 48 ticks took 0.4 s of scaled and 0.80 / 0.80 / 0.799 s of unscaled time: in Godot 4.7 the tint, like the i-frames, follows unscaled frame time.
+- Two sessions get distinct materials sharing one Shader; writing one leaves the other unchanged.
+
+### Controlled values (HUMAN CHECK)
+
+In-engine captures, not OS screenshots: `godot/tests/capture_hurt_tint.gd`, driver stopped, `frame_post_draw`, idle frame texels (20,16) lamp and (16,24) coat, scripted F9. Predicted values are the brief's hand table (`CHANGE-BRIEF.md`, Hand calculations).
+
+| Phase | `hurt_amount` | Lamp predicted | Lamp measured | Coat predicted | Coat measured |
+|---|---:|---|---|---|---|
+| white (`20261030-125036`) | 0 | 242, 184, 75 | 242, 184, 75 | 46, 58, 89 | 46, 58, 89 |
+| white | 0.5 | 248.5, 219.5, 37.5 | 249, 220, 37 | 150.5, 156.5, 44.5 | 151, 157, 44 |
+| white | 1 | 255, 255, 0 | 255, 255, 0 | 255, 255, 0 | 255, 255, 0 |
+| red (`20261030-125259-red`, iframes 27) | 0 | 242, 82.8, 33.75 | 242, 83, 33 | 46, 26.1, 40.05 | 46, 26, 40 |
+| red | 0.5 | 248.5, 168.9, 16.875 | 249, 169, 17 | 150.5, 140.55, 20.025 | 151, 141, 20 |
+| red | 1 | 255, 255, 0 | 255, 255, 0 | 255, 255, 0 | 255, 255, 0 |
+
+- `hurt_amount = 2.0` set from code read back as 2.0, so `hint_range` did not clamp the stored value; both texels rendered (255, 255, 0), the same as 1.0.
+- Bao's comparison, the explanation of the half-step and the one-step differences, and the 2.0 result against the prediction: pending (Bao).
+- In-engine capture against an OS screenshot, and which one is trusted: pending.
+
+### In play (HUMAN CHECK)
+
+Pending (Bao): the state triggered by normal play several times; boundaries hold.
+
+### Hint experiment (HUMAN CHECK)
+
+`captures/a5-materials/20261030-131056-hint/`, band centres sampled 80 px from the edges, Compatibility, Linear tonemap, exposure 1.
+
+| Quad | 64 band | 128 band | 192 band |
+|---|---:|---:|---:|
+| with `source_color` | 64 | 128 | 192 |
+| without the hint | 64 | 128 | 192 |
+
+The brief's Compatibility prediction was 64/128/192 with either sampler; its Forward+/Mobile prediction was 64/128/192 with the hint and 137/188/225 without. Bao's comparison and explanation: pending (Bao).
+
+### Interface sweep (HUMAN CHECK)
+
+`captures/a5-materials/20261030-131124-sweep/`: each non-texture uniform of the Floor material at minimum, material value and maximum (tint at the material value, white and black), set in memory. Only the floor rectangle's mean moved; the stand-in stayed (31.63, 40.98, 74.74). What changed on screen, and any setting that breaks the look: pending (Bao).
+
+### One shader, two materials (HUMAN CHECK)
+
+- Material edit (`20261030-131126-one-material`): Floor `uv_scale` 2 → 4 in memory changed the floor rectangle (largest channel difference 73) and left the stand-in at difference 0. Bao's look: pending.
+- Shader edit: pending. Bao edits one line of `cobblestone_surface.gdshader`, runs `capture_a5_materials.gd -- --compare-shader edited`, and restores the file with git; the baseline is `20261030-131249-compare-shader-baseline`.
+
+### Material wiring
+
+`test_materials.gd` (agent audit `52ee2db`, review `a3eaf2f`, expectation update `92f4186`): 126 / 0 after a fresh import from an empty `godot/.godot` (`d7d03b8`, no tracked file rewritten); 127 / 0 after the PlaneMesh floor; the `source_color` mutation exits 1.
+
+### Texture data
+
+`curl_ratio` on the source PNGs, stride 4, threshold 0.5 (`a7f1336`, `a3eaf2f`):
+
+| Map | `directx = false` | `directx = true` | Bound |
+|---|---:|---:|---|
+| `cobblestone_floor_08_nor_gl_1k.png` | 0.2236 | 1.7764 | both cobblestone materials |
+| `cobblestone_floor_08_nor_dx_1k.png` (calibration) | 1.7764 | 0.2236 | none |
+
+The GL file reads low in the GL convention, so the sign was not flipped.
+
+### Ambient source in the A5 room
+
+`captures/a5-materials/20261030-131416-ambient/`: as loaded (Sky, no sky) and Color give identical means; Disabled and energy 0 darken both; energy 2 brightens both. Under Compatibility the Sky source without a sky still applies the ambient colour and energy.
+
+### Import settings
+
+Set by `tools/a5/set_texture_imports.py` on the `.import` files Godot generated (`dc5c53a`, `2df4c4b`); a fresh import rewrote none of them. Editor session: pending. `git status` after Bao's Step 4 editor session records any rewrite; the open editor has already re-saved `godot/project.godot` (a standard header comment and one key moved, no value changed).
+
+### What the agent got wrong (Assignment 5)
+
+| Mistake | Caught by |
+|---|---|
+| The CLAUDE.md draft called the editor-generated `particles_generated.gdshader` hand-written | Checking ownership against the A6 records (`8cd444a`) |
+| The driver test's one-frame tolerance was the largest delta in the window (0.00806 s at 144, wider than 1/144), and its time-scale row multiplied frames by that maximum (0.926 s) | Reading the 144 fps JSON (`c0de4bd`) |
+| The audit's VRAM figure was an unmeasured estimate, and its curl threshold of 1.0 would pass a map with no surface behind it | Review (`a3eaf2f`) |
+| The audit judged that the Sky ambient source "probably does not light" the room | Positive-control captures (`481c703`) |
+| The main session's first material room packed a full copy of the A3 room instead of inheriting it, and the build script claimed Godot wrote UIDs | Reading the saved file before committing; the audit (`10a94ef`, `a3eaf2f`) |
+| The main session's evidence-split row put the hint experiment under the A3 lights | The audit (brief revision 10/30) |
+
+### What a headless run cannot show
+
+Any colour, brightness or readability on screen; whether the stones read as raised; the look of the sweep; what the GPU allocates. Every visual row above ends in a human check.
