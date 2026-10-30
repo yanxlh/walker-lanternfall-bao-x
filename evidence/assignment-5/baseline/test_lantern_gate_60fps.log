@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS suffix-created-two-static-bodies {"bodies":2,"shapes":2}
+PASS prop-layer-and-mask {"layers":[4,4],"masks":[0,0]}
+PASS size-axis-and-origin {"position":"(-0.6, 0.0, -0.4)","size":"(1.2, 2.85, 0.8)"}
+PASS unit-mesh-scale {"mesh_count":6}
+PASS six-visible-primitives {"budget":6,"visible_primitives":6}
+PASS triangle-budget {"budget":160,"triangles":88}
+PASS material-names {"materials":["AgedBrass","DarkWood","EmberGlass"]}
+PASS collider-fit {"cross_arm_collision":false,"sizes":["(0.8, 0.32, 0.8)","(0.42, 2.55, 0.42)"]}
+PASS static-blocker-stops-stand-in {"x_after_120_ticks":-0.650122344493866}
+PASS placed-on-floor {"hit":"Floor","y":0.0000000223517417907715}
+PASS mutation-unapplied-scale-caught {}
+PASS mutation-unapplied-scale-restored {}
+PASS mutation-wrong-layer-caught {}
+PASS mutation-wrong-layer-restored {}
+a3-lantern-gate: 14 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/a3-lantern-gate.json

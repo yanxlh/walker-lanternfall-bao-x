@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS lantern-gate-size-upright-origin {"expected":"(1.2, 2.85, 0.8)","position":"(-0.6, 0.0, -0.4)","size":"(1.2, 2.85, 0.8)"}
+PASS lantern-gate-unit-scale {"mesh_count":6}
+PASS lantern-gate-shape-and-triangle-budget {"primitive_budget":6,"primitives":6,"triangle_budget":160,"triangles":88}
+PASS lantern-gate-materials {"materials":["AgedBrass","DarkWood","EmberGlass"]}
+PASS supply-stack-size-upright-origin {"expected":"(1.2, 1.1, 0.8)","position":"(-0.6, 0.0, -0.4)","size":"(1.2, 1.1, 0.8)"}
+PASS supply-stack-unit-scale {"mesh_count":3}
+PASS supply-stack-shape-and-triangle-budget {"primitive_budget":3,"primitives":3,"triangle_budget":180,"triangles":68}
+PASS supply-stack-materials {"materials":["CrateBrass","MarketTimber"]}
+PASS lamp-oil-shrine-size-upright-origin {"expected":"(0.8, 1.45, 0.8)","position":"(-0.4, 0.0, -0.4)","size":"(0.8, 1.45, 0.8)"}
+PASS lamp-oil-shrine-unit-scale {"mesh_count":3}
+PASS lamp-oil-shrine-shape-and-triangle-budget {"primitive_budget":3,"primitives":3,"triangle_budget":120,"triangles":60}
+PASS lamp-oil-shrine-materials {"materials":["OilGlow","ShrineBrass","ShrineStone"]}
+PASS room-has-floor-light-camera {}
+PASS three-assets-on-floor-and-separated {"boxes":["[P: (-2.6, 0.0, -0.4), S: (1.2, 2.85, 0.8)]","[P: (-0.6, 0.0, -0.4), S: (1.2, 1.1, 0.8)]","[P: (1.6, 0.0, -0.4), S: (0.8, 1.45, 0.8)]"]}
+PASS three-assets-import-and-appear {"sizes":{"Lamp-oil Shrine":"(0.8, 1.45, 0.8)","Lantern Gate":"(1.2, 2.85, 0.8)","Supply Stack":"(1.2, 1.1, 0.8)"}}
+PASS mutation-unapplied-scale-caught {}
+PASS mutation-unapplied-scale-restored {}
+a3-assets: 17 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/a3-assets.json

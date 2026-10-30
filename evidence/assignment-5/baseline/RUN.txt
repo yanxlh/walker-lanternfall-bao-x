@@ -1,0 +1,11 @@
+revision 70c77e9, 2026-10-30 11:58:45 EDT
+test_logic.gd 60 exit=0 :: logic: 32 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/logic.json
+test_gameplay.gd 60 exit=0 :: gameplay: 65 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/gameplay.json
+test_audio.gd realtime exit=0 :: audio: 25 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/audio.json
+test_defeat_sparks_config.gd 60 exit=0 :: defeat_sparks_config: 39 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/defeat_sparks_config.json
+test_extra_particles_config.gd 60 exit=0 :: extra_particles_config: 79 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/extra_particles_config.json
+test_particles_state.gd 60 exit=0 :: particles_state: 34 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/particles_state.json
+test_particles_edges.gd 60 exit=0 :: particles_edges: 18 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/particles_edges.json
+test_a3_assets.gd 60 exit=0 :: a3-assets: 17 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/a3-assets.json
+test_lantern_gate.gd 60 exit=0 :: a3-lantern-gate: 14 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/a3-lantern-gate.json
+test_a3_camera.gd 60 exit=0 :: a3-camera: 9 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-bao-x/godot/../evidence/a3-camera.json
