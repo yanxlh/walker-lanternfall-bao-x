@@ -1,0 +1,72 @@
+{
+  "captures": [
+    {
+      "file": "compare-shader-edited.png",
+      "floor_mean_rgb": [
+        22.37,
+        90.44,
+        28.71
+      ],
+      "setting": {},
+      "standin_mean_rgb": [
+        0.78,
+        40.98,
+        2.74
+      ]
+    }
+  ],
+  "meta": {
+    "adapter": "Apple M4",
+    "driver": "opengl3",
+    "engine": "4.7.2-stable (official)",
+    "input": "scripted (no human input; parameters set in memory, never saved)",
+    "label": "edited",
+    "mode": "compare-shader",
+    "pose": {
+      "camera_position": [
+        -0.600000023841858,
+        1.89999997615814,
+        5.19999980926514
+      ],
+      "floor_rect_px": [
+        682,
+        496,
+        56,
+        56
+      ],
+      "floor_rect_world_centre": [
+        -1.39999997615814,
+        0.0,
+        2.90000009536743
+      ],
+      "fov": 75.0,
+      "look_at": [
+        -2.79999995231628,
+        0.349999994039536,
+        1.29999995231628
+      ],
+      "standin_rect_px": [
+        563,
+        316,
+        16,
+        32
+      ],
+      "standin_rect_world_centre": [
+        -3.5,
+        0.600000023841858,
+        1.5
+      ]
+    },
+    "renderer": "gl_compatibility",
+    "revision": "8fbb228",
+    "utc": "2026-10-30T19:28:25",
+    "visible_rect": [
+      640.0,
+      360.0
+    ],
+    "window": [
+      1280,
+      720
+    ]
+  }
+}

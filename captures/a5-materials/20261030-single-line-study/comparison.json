@@ -1,0 +1,25 @@
+{
+  "floor": {
+    "rect": [
+      682,
+      496,
+      56,
+      56
+    ],
+    "changed_pixels": 3136,
+    "total_pixels": 3136,
+    "max_channel_delta": 122
+  },
+  "standin": {
+    "rect": [
+      563,
+      316,
+      16,
+      32
+    ],
+    "changed_pixels": 512,
+    "total_pixels": 512,
+    "max_channel_delta": 126
+  },
+  "new_baseline_equals_original_baseline": true
+}

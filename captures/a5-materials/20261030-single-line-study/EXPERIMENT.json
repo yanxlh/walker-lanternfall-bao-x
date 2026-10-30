@@ -1,0 +1,8 @@
+{
+  "revision": "8fbb228",
+  "prediction_recorded_utc": "2026-10-30T19:28:22.604514+00:00",
+  "prediction": "Multiply ALBEDO by vec3(0,1,0): Floor and StandIn lose red and blue diffuse components; other props unchanged. Specular highlights may retain other channels.",
+  "original_sha256": "4a11e52f49e2dbcb697a8a5a3e3b1077a1f717b58533d3da8ef23e4af99035fc",
+  "restored_sha256": "4a11e52f49e2dbcb697a8a5a3e3b1077a1f717b58533d3da8ef23e4af99035fc",
+  "restored": true
+}

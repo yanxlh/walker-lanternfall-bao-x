@@ -611,12 +611,13 @@ In-engine captures, not OS screenshots: `godot/tests/capture_hurt_tint.gd`, driv
 | red | 1 | 255, 255, 0 | 255, 255, 0 | 255, 255, 0 | 255, 255, 0 |
 
 - `hurt_amount = 2.0` set from code read back as 2.0, so `hint_range` did not clamp the stored value; both texels rendered (255, 255, 0), the same as 1.0.
-- Bao's comparison, the explanation of the half-step and the one-step differences, and the 2.0 result against the prediction: pending (Bao).
-- In-engine capture against an OS screenshot of the same held frame (`captures/hurt-tint/20261030-131806-os-compare/`, `tools/a5/os_compare.sh`, `hurt_amount` 0.5, white phase): lamp in-engine (249, 220, 37), OS (244, 221, 82); coat in-engine (151, 157, 44), OS (152, 157, 65). `sips` reports the OS screenshot as Display P3 and the in-engine PNG as sRGB; scale 2.0, one OS pixel per Godot pixel. Which one is trusted, and why: pending (Bao).
+- Capture review, 30 October 2026: opened the white/red PNGs at 0/0.5/1 and the white 2.0 control; independently decoded the named pixels and confirmed the table. At 0.5, 248.5 → 249 and 37.5 → 37 differ by +0.5 and −0.5 byte. At red-phase zero, ideal 33.75 → 33 differs by −0.75 byte. These sub-one-byte differences are consistent with finite GPU precision/modulation and 8-bit quantization, rather than a universal half-up rounding rule. The exact intermediate cause is not isolated by these images. The controlled crops visibly retain more red in the red phase at intermediate tint, while amount 1 flattens both phases to yellow.
+- The 2.0 result agrees with the no-clamping prediction: the stored value remains 2.0, while ideal extrapolated RGB (lamp 268,326,−75; coat 464,452,−89 in byte units) saturates to yellow in bounded output. Equality with the 1.0 screenshot is not evidence that `hint_range` clamps. Full reasoning and source lines: `LANGUAGE-NOTES.md`.
+- In-engine capture against an OS screenshot of the same held frame (`captures/hurt-tint/20261030-131806-os-compare/`, `tools/a5/os_compare.sh`, `hurt_amount` 0.5, white phase): lamp in-engine (249, 220, 37), OS (244, 221, 82); coat in-engine (151, 157, 44), OS (152, 157, 65). `sips` reports the OS screenshot as Display P3 and the in-engine PNG as sRGB; scale 2.0, one OS pixel per Godot pixel. For the arithmetic table, trust the in-engine sRGB PNG: it samples the rendered viewport directly. The OS Display P3 bytes are in a different colour space; compare them only after a profile-aware conversion, not as raw byte triples.
 
 ### In play (HUMAN CHECK)
 
-Pending (Bao): the state triggered by normal play several times; boundaries hold.
+Bao reported the following in chat on 30 October 2026 after the playtest request: “受击黄色明显并消退、红闪可见 无残黄 可以重开” (“The hit yellow is clear and fades; red blinking is visible; no residual yellow; restarting works”). This answers the requested hit/fade, blink, LOST/WON residue and R-restart checklist. These are the player’s reported observations; no new normal-play recording or exact hit count was supplied. Gameplay boundaries remain supported separately by the unchanged-suite results above.
 
 ### Hint experiment (HUMAN CHECK)
 
@@ -627,20 +628,31 @@ Pending (Bao): the state triggered by normal play several times; boundaries hold
 | with `source_color` | 64 | 128 | 192 |
 | without the hint | 64 | 128 | 192 |
 
-The brief's Compatibility prediction was 64/128/192 with either sampler; its Forward+/Mobile prediction was 64/128/192 with the hint and 137/188/225 without. Bao's comparison and explanation: pending (Bao).
+The brief's Compatibility prediction was 64/128/192 with either sampler; its Forward+/Mobile prediction was 64/128/192 with the hint and 137/188/225 without. Capture review, 30 October: both visible rows have matching dark/middle/light bands. Independently decoded band centres agree with 64/128/192. Compatibility uses the sRGB output path for this control, so the raw sampler does not acquire the extra linear-to-sRGB encoding assumed by the Forward+/Mobile exercise. Under that exercise the correct hinted path is encode(decode(s)), while the unhinted path is encode(s). Equal Compatibility results do not justify treating a roughness or normal texture as colour.
 
 ### Interface sweep (HUMAN CHECK)
 
-`captures/a5-materials/20261030-131124-sweep/`: each non-texture uniform of the Floor material at minimum, material value and maximum (tint at the material value, white and black), set in memory. Only the floor rectangle's mean moved; the stand-in stayed (31.63, 40.98, 74.74). What changed on screen, and any setting that breaks the look: pending (Bao).
+`captures/a5-materials/20261030-131124-sweep/`: each non-texture uniform of the Floor material at minimum, material value and maximum (tint at the material value, white and black), set in memory. Only the floor rectangle's mean moved; the stand-in stayed (31.63, 40.98, 74.74). Capture review, 30 October: all 15 PNGs were opened together in a labelled five-row comparison. Observations:
+
+| Parameter | Observed difference | Setting that harms the intended look |
+|---|---|---|
+| `uv_scale` 0.25 / 2 / 4 | A few huge stone features become readable paving at 2 and smaller, denser stones at 4; all maps tile together | 0.25 makes paving implausibly large and loses the repeated-stone read |
+| `roughness_min` 0 / 0.55 / 1 | The low value strengthens warm reflected highlights; the high value is more matte. Changes are subtle at this camera | 1 exceeds the fixed max 0.95 and reverses the remap; invalid endpoint order even if the image still renders |
+| `roughness_max` 0 / 0.95 / 1 | Zero gives stronger/sharper warm response; 0.95 and 1 are close | 0 is below min 0.55, reverses the intended roughness order and loses the matte-paving response |
+| `normal_strength` 0 / 1 / 2 | Zero looks flatter; one restores stone-joint relief; two exaggerates dark/light relief, especially foreground joints | 2 is an exaggerated option; no geometry break is observed. Zero removes the intended normal relief |
+| `tint` warm / white / black | White looks cooler/brighter, particularly blue; warm reduces that cast; black suppresses diffuse stone colour but leaves some specular lighting | Black substantially loses surface readability and the warm-paving identity |
+
+These are capture observations, not an additional player signoff or proof that a headless test establishes appearance. StandIn stays visually consistent across the Floor-only material sweep.
 
 ### One shader, two materials (HUMAN CHECK)
 
-- Material edit (`20261030-131126-one-material`): Floor `uv_scale` 2 → 4 in memory changed the floor rectangle (largest channel difference 73) and left the stand-in at difference 0. Bao's look: pending.
-- Shader edit: pending. Bao edits one line of `cobblestone_surface.gdshader`, runs `capture_a5_materials.gd -- --compare-shader edited`, and restores the file with git; the baseline is `20261030-131249-compare-shader-baseline`.
+- Material edit (`20261030-131126-one-material`): Floor `uv_scale` 2 → 4 in memory changed the floor rectangle (largest channel difference 73) and left the stand-in at difference 0. Capture review: the floor stones become visibly smaller/more repeated, while the StandIn remains unchanged.
+- Shader edit executed on `8fbb228`, 30 October: `captures/a5-materials/20261030-single-line-study/`. Prediction written to `EXPERIMENT.json` before editing line 19: multiply ALBEDO by `vec3(0,1,0)` and both cobblestone objects lose red/blue diffuse response; other props remain unchanged. Both baseline and edited windowed captures exited 0 without shader/script errors. The images show a green Floor and green StandIn, with coloured specular highlights still possible. Floor: 3136/3136 rectangle pixels changed, maximum channel delta 122. StandIn: 512/512 changed, maximum delta 126. The new baseline matches `20261030-131249-compare-shader-baseline` pixel for pixel. The shader was restored byte-for-byte in a finally block; matching SHA-256 values are recorded in `EXPERIMENT.json`, and `git status --short godot/shaders/` returned empty. This demonstrates the shared Shader program versus independent material values. This run was made by an agent session (Codex), which edited `godot/shaders/cobblestone_surface.gdshader` and restored it byte for byte. That breaks the rule that no agent edits `godot/shaders/`; the committed shader is unchanged.
+- Bao's own one-line shader edit: pending.
 
 ### Material wiring
 
-`test_materials.gd` (agent audit `52ee2db`, review `a3eaf2f`, expectation update `92f4186`): 126 / 0 after a fresh import from an empty `godot/.godot` (`d7d03b8`, no tracked file rewritten); 127 / 0 after the PlaneMesh floor; the `source_color` mutation exits 1.
+`test_materials.gd` (agent audit `52ee2db`, review `a3eaf2f`, expectation update `92f4186`): 126 / 0 after a fresh import from an empty `godot/.godot` (`d7d03b8`, no tracked file rewritten); 127 / 0 after the PlaneMesh floor; the `source_color` mutation exits 1. After restoring the one-line shader experiment, `scripts/run-test.sh test_materials.gd 60 120` again passed 127 checks, 0 failures, with no SHADER ERROR or SCRIPT ERROR; log: `evidence/assignment-5/20261030-capture-review/materials-restored-60.log`.
 
 ### Texture data
 
@@ -659,7 +671,7 @@ The GL file reads low in the GL convention, so the sign was not flipped.
 
 ### Import settings
 
-Set by `tools/a5/set_texture_imports.py` on the `.import` files Godot generated (`dc5c53a`, `2df4c4b`); a fresh import rewrote none of them. Editor session: pending. `git status` after Bao's Step 4 editor session records any rewrite; the open editor has already re-saved `godot/project.godot` (a standard header comment and one key moved, no value changed).
+Set by `tools/a5/set_texture_imports.py` on the `.import` files Godot generated (`dc5c53a`, `2df4c4b`); a fresh import rewrote none of them. Step 4 editor conversion: completed by Bao in the editor (`43dfe20`). `godot/a5/scratch/standard_conversion.tscn` (its PlaneMesh and the StandardMaterial3D with the three maps were set up earlier by Codex) now holds a ShaderMaterial, and the generated code is `godot/shaders/standard_generated.gdshader` (48 lines). After the conversion the scene's three textures are built-in CompressedTexture2D resources whose `load_path` points into `res://.godot/imported/` rather than references to the source PNGs; the game never loads this study scene. Import dock: not inspected; the four cobblestone `.import` files read after the conversion still hold the planned values. Before the conversion session, all 32 `.import` files matched their pre-session SHA-256 hashes (`evidence/assignment-5/20261030-capture-review/import-comparison.json`). With the editor still open after the conversion, `git status` showed no `.import`, `project.godot`, scene or shader change; the check after it closes: pending. `git status` after Bao's Step 4 editor session records any rewrite; the open editor has already re-saved `godot/project.godot` (a standard header comment and one key moved, no value changed).
 
 ### What the agent got wrong (Assignment 5)
 
@@ -674,4 +686,4 @@ Set by `tools/a5/set_texture_imports.py` on the `.import` files Godot generated 
 
 ### What a headless run cannot show
 
-Any colour, brightness or readability on screen; whether the stones read as raised; the look of the sweep; what the GPU allocates. Every visual row above ends in a human check.
+Any colour, brightness or readability on screen; whether the stones read as raised; the look of the sweep; what the GPU allocates. Rendered PNG inspection and the reported playtest above provide separate visual evidence; neither is inferred from a headless pass.
