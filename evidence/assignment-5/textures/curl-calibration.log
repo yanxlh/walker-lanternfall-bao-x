@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+nor_gl 1024x1024: curl_ratio directx=false 0.2236, directx=true 1.7764
+nor_dx 1024x1024: curl_ratio directx=false 1.7764, directx=true 0.2236
