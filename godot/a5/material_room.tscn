@@ -4,10 +4,15 @@
 [ext_resource type="Material" path="res://a5/materials/cobblestone_warm_floor.tres" id="2_floor"]
 [ext_resource type="Material" path="res://a5/materials/cobblestone_cool_standin.tres" id="3_standin"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_floor"]
+size = Vector2(8, 8)
+
 [node name="LanternGateRoom" instance=ExtResource("1_room")]
 
 [node name="Mesh" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("2_floor")
+mesh = SubResource("PlaneMesh_floor")
 
 [node name="Mesh" parent="StandIn"]
 material_override = ExtResource("3_standin")

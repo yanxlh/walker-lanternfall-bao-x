@@ -181,3 +181,8 @@ Project facts line 17 and the material plan disagreed: one replaced the Floor an
 - Evidence split (the † table): the hint experiment is captured in its own unshaded scene, `godot/a5/hint_experiment/hint_experiment.tscn`, which has no lights. Only the interface sweep and the two-material comparison use the fixed A3 lights.
 - Download sizes in the material plan were rounded from KiB. The exact sizes are 1,951,481 (diff), 2,126,688 (nor_gl), 2,126,021 (nor_dx) and 627,072 (rough) bytes, 6.83 MB in all (`godot/assets/textures/cobblestone_floor_08/ATTRIBUTION.md`).
 
+### 2026-10-30 — the floor mesh in the A5 scene, and the ambient source
+
+- Floor (Bao's decision): the material audit measured that the A3 floor's BoxMesh top face uses 1/3 x 1/2 of UV space, so at `uv_scale` 2 the stones were stretched 1.5:1 and the 8 m floor showed less than one tile, not the repeated paving planned above. In `godot/a5/material_room.tscn` the Floor/Mesh `mesh` is overridden with an 8 x 8 PlaneMesh at y = 0, the box's top. At `uv_scale` 2 the floor now shows 2 x 2 repeats of square stones. The A3 room keeps its BoxMesh, and the shader and both materials are unchanged.
+- Ambient (Bao's decision): the A3 room's `ambient_light_source = 3` (Sky) with no sky resource stays unchanged, so the cobblestones are judged under the same lights as A3. A capture with the ambient source switched between Sky and Color in memory records what the setting actually does.
+

@@ -73,7 +73,9 @@ func _save(res: Resource, path: String) -> void:
 	var err := ResourceSaver.save(res, path)
 	print("saved %s: %s" % [path, error_string(err)])
 
-## An inherited scene: the A3 room unchanged, with only the two material_override properties replaced.
+## An inherited scene: the A3 room unchanged, with the two material_override properties replaced and, from the
+## 10/30 revision, the floor's BoxMesh swapped for an 8 x 8 PlaneMesh at the box's top (y = 0): the box's top face
+## uses only 1/3 x 1/2 of UV space, which stretched the stones 1.5:1 and showed less than one tile.
 ## Packing an instance made with GEN_EDIT_STATE_MAIN_INHERITED from a script saved a full copy of the room, so the
 ## inherited scene is written as text (paths only, no UIDs) and then loaded and re-saved so Godot normalizes it.
 func _build_material_room(_saved: Dictionary) -> void:
@@ -84,8 +86,10 @@ func _build_material_room(_saved: Dictionary) -> void:
 		"[ext_resource type=\"PackedScene\" path=\"%s\" id=\"1_room\"]" % ROOM,
 		"[ext_resource type=\"Material\" path=\"res://a5/materials/cobblestone_warm_floor.tres\" id=\"2_floor\"]",
 		"[ext_resource type=\"Material\" path=\"res://a5/materials/cobblestone_cool_standin.tres\" id=\"3_standin\"]", "",
+		"[sub_resource type=\"PlaneMesh\" id=\"PlaneMesh_floor\"]", "size = Vector2(8, 8)", "",
 		"[node name=\"LanternGateRoom\" instance=ExtResource(\"1_room\")]", "",
-		"[node name=\"Mesh\" parent=\"Floor\"]", "material_override = ExtResource(\"2_floor\")", "",
+		"[node name=\"Mesh\" parent=\"Floor\"]", "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)",
+		"material_override = ExtResource(\"2_floor\")", "mesh = SubResource(\"PlaneMesh_floor\")", "",
 		"[node name=\"Mesh\" parent=\"StandIn\"]", "material_override = ExtResource(\"3_standin\")", ""]))
 	f.close()
 	var packed: PackedScene = ResourceLoader.load(path, "", ResourceLoader.CACHE_MODE_IGNORE)

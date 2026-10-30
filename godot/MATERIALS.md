@@ -85,7 +85,8 @@ both quads are unshaded (`hint_experiment.gdshader:2`).
    `uv_scale` 1, or 12 m × 8 m at the floor's `uv_scale` 2. The stones are stretched 1.5:1 along x, and the
    8 m floor shows only 2/3 × 1 of one tile. The brief's "warm, repeated, matte paving" (`CHANGE-BRIEF.md:134`)
    does not hold on this mesh. `uv = UV * uv_scale` (`cobblestone_surface.gdshader:18`) assumes UVs that span
-   the face.
+   the face. *Resolved 30 October (Bao): the A5 scene overrides the floor mesh with an 8 x 8 PlaneMesh at
+   y = 0; the A3 room keeps its BoxMesh (`CHANGE-BRIEF.md` revision).*
 3. **The roughness range rule is not enforced.** `CHANGE-BRIEF.md:132` asks for
    `0 ≤ roughness_min ≤ roughness_max ≤ 1` "in configuration/driver validation".
    `build_a5_materials.gd:13-22,36-44` writes the values without checking them, and no runtime driver exists.
