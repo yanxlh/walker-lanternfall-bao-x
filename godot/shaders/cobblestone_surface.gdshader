@@ -19,6 +19,6 @@ void fragment() {
 	ALBEDO = texture(color_tex, uv).rgb * tint.rgb;
 	ROUGHNESS = mix(roughness_min, roughness_max, texture(roughness_tex, uv).r);
 	NORMAL_MAP = texture(normal_tex, uv).rgb;
-	NORMAL_MAP_DEPTH = normal_strength;
+	NORMAL_MAP_DEPTH = normal_strength * mix(0.5, 1.0, abs(normalize(NORMAL).z));
 	METALLIC = 0.0;
 }
