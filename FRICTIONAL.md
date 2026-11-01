@@ -462,7 +462,7 @@ The two shaders written by me, every visual rule checked by a test or by my eyes
 
 **What I wanted**
 
-The language notes in my own words, every line reference pointing at a real line, and a third built-in that my own shader actually reads.
+The language notes in my own words, with every line reference pointing at a real line.
 
 **What came back**
 
