@@ -402,8 +402,8 @@ Effects that make a hit and the courier's movement easier to read in a crowded m
 ## 2026-10-30 (Fri) — choosing the state and the specification
 
 - Baseline before any A5 work: all ten existing suites through `scripts/run-test.sh` on `70c77e9`, 332 checks, 0 failures, no `SHADER ERROR` or `SCRIPT ERROR` line (`evidence/assignment-5/baseline/`). The A6 brief moved to `design/CHANGE-BRIEF-assignment-6.md`.
-- State for the shader from code: “玩家受伤无敌帧”, the courier's 48-tick invulnerability after an accepted hit.
-- The brief was written in a second working copy, `~/Documents/ChatGPT/csye 7280/assignment-5`, and moved into this repository. In that copy Codex wrote a first `hurt_tint.gdshader` on 29 October at my request, and its notes record that file as AI-authored. Asked who wrote the brief and its calculations: “我后续自己手写了一遍 黄色那个就是我写的”. The yellow version was saved there on 30 October at 11:46, before the brief was committed here.
+- State for the shader from code: “the player's hurt invulnerability frames”, the courier's 48-tick invulnerability after an accepted hit.
+- The brief was written in a second working copy, `~/Documents/ChatGPT/csye 7280/assignment-5`, and moved into this repository. In that copy Codex wrote a first `hurt_tint.gdshader` on 29 October at my request, and its notes record that file as AI-authored. Asked who wrote the brief and its calculations: “I then wrote it again by hand myself; the yellow one is the one I wrote”. The yellow version was saved there on 30 October at 11:46, before the brief was committed here.
 - Choices for the gaps found in the brief: the `idle` frame's lamp texel (20,16) and coat texel (16,24) as the named pixels; the tint holds while the tree is paused; the normal map stays, checked with the numeric `curl_ratio` and calibrated on `nor_gl`/`nor_dx`.
 - Claude Code re-pointed the brief's line references to this repository and added the tolerance, time-scale and evidence-split rows from the design; those parts are marked † in the brief.
 - Trace: `116ad07` baseline · `1043436` A6 brief archived · `bd5eb37` A5 brief.
@@ -420,19 +420,19 @@ A tint that tells the player the courier is protected after a hit and shows how 
 
 **What I decided, and why**
 
-- Named pixels: “idle 帧”, the pose seen in normal play, with white modulation and no forced pose.
-- Tree pause: “保持当前值”, the same as the PAUSED state.
-- Normal map: “保留法线 + 数值检查”.
+- Named pixels: “the idle frame”, the pose seen in normal play, with white modulation and no forced pose.
+- Tree pause: “hold the current value”, the same as the PAUSED state.
+- Normal map: “keep the normal map, with the numeric check”.
 
 ## 2026-10-30 (Fri) — context, the shader from code, and the materials
 
 - CLAUDE.md: the first `claude -p` run stopped after one turn on an expired CLI login and wrote nothing; after `claude auth login` the scoped run wrote the draft in 28 turns. Review: every reference pointed where it said; the draft called the A6 editor-generated shader hand-written; a probe measured the headless facts (defaults read null, a missing semicolon empties the uniform list, 2 physics ticks per frame at 30 fps and 0 or 1 at 144).
-- `hurt_tint.gdshader` committed by me (`e0b47b4`). The driver and test came from a plan session with read-only tools, then an implementation session after I approved all three steps and accepted that the F3 collision arc is tinted too (“批准三步全部”, “接受，记为限制”).
-- Inspect and revise: at 144 fps the test's one-frame tolerance was the largest delta in the window (0.00806 s), wider than 1/144, and its time-scale row reported 0.926 s. I approved tightening it (“收紧并修正”). Rerun: 0.7958 / 0.8000 / 0.7992 s against 1/30, 1/60 and 1/144; under `time_scale` 0.5 the tint follows unscaled time.
+- `hurt_tint.gdshader` committed by me (`e0b47b4`). The driver and test came from a plan session with read-only tools, then an implementation session after I approved all three steps and accepted that the F3 collision arc is tinted too (“approve all three steps”, “accept it and record it as a limitation”).
+- Inspect and revise: at 144 fps the test's one-frame tolerance was the largest delta in the window (0.00806 s), wider than 1/144, and its time-scale row reported 0.926 s. I approved tightening it (“tighten and fix”). Rerun: 0.7958 / 0.8000 / 0.7992 s against 1/30, 1/60 and 1/144; under `time_scale` 0.5 the tint follows unscaled time.
 - Three mutations, each made by me in the terminal and restored with git: semicolon (4 of 28 fail, `SHADER ERROR`), rename (3 of 28 fail, the 25 behavioural checks still pass), `source_color` (1 of 127 fails). All exit 1.
-- Textures: I approved the download (“可以下载”). The import enums were checked against Godot's source, and two extra keys were set so the editor cannot switch them in 3D. Curl calibration: GL 0.2236, DX 1.7764.
-- Shaders: `cobblestone_surface.gdshader` and `hint_experiment.gdshader`. Asked who wrote them: “我自己手写的”.
-- Materials and scenes from a committed builder. The audit found the floor's BoxMesh stretches the stones and the A3 ambient source is Sky with no sky. My choices: “A5 场景里换成 PlaneMesh” and “不改，实测后记录”. The ambient captures showed the Sky source without a sky lights the room like Color, so the audit's guess was wrong.
+- Textures: I approved the download (“OK to download”). The import enums were checked against Godot's source, and two extra keys were set so the editor cannot switch them in 3D. Curl calibration: GL 0.2236, DX 1.7764.
+- Shaders: `cobblestone_surface.gdshader` and `hint_experiment.gdshader`. Asked who wrote them: “I wrote them by hand myself”.
+- Materials and scenes from a committed builder. The audit found the floor's BoxMesh stretches the stones and the A3 ambient source is Sky with no sky. My choices: “use a PlaneMesh in the A5 scene” and “leave it unchanged, measure it and record it”. The ambient captures showed the Sky source without a sky lights the room like Color, so the audit's guess was wrong.
 - Trace: `8d5b348` CLAUDE.md draft · `8cd444a` review · `e0b47b4` hurt tint · `872aac6` driver and test · `c0de4bd` tolerance fix · `d284c05`, `d01df00` mutations · `dc5c53a` textures · `a7f1336` curl check · `a8c804b`, `5a7903a` shaders · `10a94ef` materials · `52ee2db` audit · `a3eaf2f` audit review · `d7d03b8` fresh cache · `a66c625`, `92f4186` PlaneMesh floor · `481c703` ambient · `81e4235` TEST-REPORT.
 
 **What I wanted**
