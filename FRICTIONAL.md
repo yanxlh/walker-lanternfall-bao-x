@@ -474,3 +474,12 @@ The language notes in my own words, with every line reference pointing at a real
 
 - Keep line 22 and redo the checks, captures and film source at the new revision, so the film, GitHub and Canvas show the same code.
 - All reports in English.
+
+## 2026-11-01 (Sun) — the film, and the checks before the tag
+
+- The film “Lanternfall, Shaded” was built with the godot-gamedev + walker workflow from source revision `4246f94` (`7aeb20f`): 10:57, 3840 × 2160, SHA-256 `c6f001c1…0a1b7`. Its first export called my `normal_strength` look pending and showed two of my quotes in Chinese; both were corrected before the final export.
+- I watched and listened to the whole final export, then put it on Google Drive with link sharing; the link opens without signing in.
+- The mutation JSON first saved as `semicolon_60fps.json` held the rename run, because the second run overwrote the first; it is now `rename_60fps.json`, and the semicolon result is its log (`a3b2b93`).
+- A fresh clone of `8d92511`: import from an empty cache with no errors, 332 earlier checks, `test_hurt_tint` 28/28 at 30, 60 and 144 fps, `test_materials` 127/127. The repository audit found 0 problems.
+- Trace: `7aeb20f` film package · `8d92511` film link · `a3b2b93` mutation JSON.
+
