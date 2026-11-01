@@ -1,0 +1,1509 @@
+{
+ "schema_version": 1,
+ "teaching_contract": "code-then-result-v1",
+ "game": {
+  "project_dir": "godot",
+  "source_revision": "4246f94bd3db51c0644ecc3bef9b3a8c8427911b",
+  "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
+  "read_from": "git show <revision>:godot/<path> (not the working tree)"
+ },
+ "files": [
+  {
+   "path": "MATERIALS.md",
+   "sha256": "dddfee1f679c2bc3f8c8e8c68ecb482b9968a299fe089a17d4f2b052dc22cd74",
+   "role": "documentation",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "a3/lantern_gate.gd",
+   "sha256": "8d779a7757a65edab0041067a0dfe1997f194bfd18823a0985061058a44a4225",
+   "role": "GDScript",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a3/lantern_gate.glb",
+   "sha256": "2ac507f81125292dbb6974b8c06467123a08cc0a8a412f39e996f5a1fda9eea0",
+   "role": "3D model (glTF binary)",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a3/lantern_gate.glb.import",
+   "sha256": "74e52995175853db26d1ba028628f31a2f1729c5461dda4c613f6792790fed27",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a3/lantern_gate.tscn",
+   "sha256": "e14387a8ab412d54351a0cf6eb0bc611901e815687c00c35302da3ac8b8f897a",
+   "role": "scene",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a3/lantern_gate_room.gd",
+   "sha256": "af151ac2658e1662a5960fb01d7ba9515dd918aca8432c6cbebafd05c6a7dedb",
+   "role": "GDScript",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a3/lantern_gate_room.tscn",
+   "sha256": "33738b0cf1d49dfcf4c2030cfe184131d75f94185140817fdea35ec53102db1f",
+   "role": "scene",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a3/oil_shrine.glb",
+   "sha256": "e5fb2c654449c3ced067f427bc9f66229b0b675de6a2110f73ea103405df3f07",
+   "role": "3D model (glTF binary)",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a3/oil_shrine.glb.import",
+   "sha256": "0ed769ae940d7d8308bf78a8796afbc490919823666d701c94b4933091f06d31",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a3/supply_stack.glb",
+   "sha256": "399ac22307999c86524e7f8cb74a7936c606dd2d890168b48e7f160de67fa904",
+   "role": "3D model (glTF binary)",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a3/supply_stack.glb.import",
+   "sha256": "d57e043f1ec3d3df12394120f4cf19248b9b84e166cffe52f3fa3f96d22d91ea",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a5/build_a5_materials.gd",
+   "sha256": "93bfe814e1717e0234300c7d9f9bd4948c3540cab804fb8078cdfbea9df3634a",
+   "role": "GDScript",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "a5/hint_experiment/hint_experiment.tscn",
+   "sha256": "b8d0dd77d53a9c348474987eecb5dd90743fea2513dc2445a6ec4ca214d592e9",
+   "role": "scene",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "a5/hint_experiment/hint_greys_3x1.png",
+   "sha256": "deb9df2a9689dd2297f2d37a3fa2759104f49dbb2eb3e33c00e1fa6292060ca6",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "a5/hint_experiment/hint_greys_3x1.png.import",
+   "sha256": "d9d8b4c904cb079fda6c3dc5c8d0748b02fa43f33a2e0ff98b3c33392548dfc9",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "a5/hint_experiment/hint_with_source_color.tres",
+   "sha256": "f5ee9410dd9853497eb1d2bd8c5e85e15fb9756c3f91175667858791be2196e0",
+   "role": "resource (ShaderMaterial)",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "a5/hint_experiment/hint_without_source_color.tres",
+   "sha256": "01079cafb8d1e5651319d9c3f30878334d48369605847f8696041f47744da916",
+   "role": "resource (ShaderMaterial)",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "a5/hint_experiment/make_hint_png.gd",
+   "sha256": "f158b8167ad2ae17346412d6515a40cecbafb0d772c2b2ba146d208e4ab73613",
+   "role": "GDScript",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "a5/material_room.tscn",
+   "sha256": "525477de616695c59a0aabeb8037122000737ead7bb84f7d8e5c59842a5f47a2",
+   "role": "scene",
+   "component_ids": [
+    "material-room"
+   ]
+  },
+  {
+   "path": "a5/materials/cobblestone_cool_standin.tres",
+   "sha256": "420070c6bc389adbf2144d5dc59734f203aa1653aeb9fceccfe4e72bbb15da84",
+   "role": "resource (ShaderMaterial)",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "a5/materials/cobblestone_warm_floor.tres",
+   "sha256": "bc8f65d4bce9219cad0a140100973b8c5241374f2721da39923b8012dffa5f0f",
+   "role": "resource (ShaderMaterial)",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "a5/scratch/standard_conversion.tscn",
+   "sha256": "0fcf9a38211237c6d06378cf0832037928d06d4bc45f672648351d33525e4746",
+   "role": "scene",
+   "component_ids": [
+    "generated-shader"
+   ]
+  },
+  {
+   "path": "assets/art/enemy_moth.png",
+   "sha256": "0e70895d2e394bd19721d42b3b3b1af1af9c0d73d169fc5ed4bb78782fc7e87f",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/enemy_moth.png.import",
+   "sha256": "d1098f234fe9832318af8582dd0a652489d40e3a696a6ee6cd613ca9aecd01c3",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/enemy_wraith.png",
+   "sha256": "f8bb1d832e43439a7258bff994751fca00f0eacf1ddb40b7937d18f4cb249c06",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/enemy_wraith.png.import",
+   "sha256": "1b7cfa2563ce515c6a76ba3222c610c5c9b0af13c801a0d5583ed29b82c6f3ad",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_crates.png",
+   "sha256": "1849d6789c4200665a87479a95468650a60c1dffd391b6cde37c9d497f59dc8e",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_crates.png.import",
+   "sha256": "68f9b257f1909d96b752c0441bd4009e0e3b1f8318ac8a580074af10b2783e5e",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_ground_tile.png",
+   "sha256": "ba0a13596f2893c7301a05e327f89a1e578c3cec2076960960e3a03fe50b39c7",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_ground_tile.png.import",
+   "sha256": "287d1efa59b5c1d60feb1d10c48eace3a1ce17985864b178a916c13b09fba2a3",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_lantern_post.png",
+   "sha256": "f89e22e8740d2ff12001171ebe22a1413ee0227bffa7cda6a63b702017b12871",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_lantern_post.png.import",
+   "sha256": "299ea8d8ad733c80f82329948414ca7704d4d9fdb3bc2bd1972e023e09f81cbb",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_leaves.png",
+   "sha256": "8ee8eada82544d2fb5763aff4a4ecd2fb870f5262cb0d681d71ba412c753c071",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_leaves.png.import",
+   "sha256": "5591544da1ece031a821be01d019717efa1e76c25817b1d3371968eb096ce23d",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_noodle_cart.png",
+   "sha256": "fc157cb8d2a14282eb1fc4d9d88279bea6d9c3dc1f1314a80b4d1e0abeb3b8ed",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_noodle_cart.png.import",
+   "sha256": "18c930cb1f2e19f3e9ef5036f26512a4d9b327ff1c79e394244a59a9eaf6220b",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_puddle.png",
+   "sha256": "690605b38a6658e331dd1bd5f7d4e067d7cca4274ace07a3572b6e20ed3f495f",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_puddle.png.import",
+   "sha256": "13083adb8187e5fd68aaf278fa2390e22264145598707198cc18074819f9e8c7",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_stall.png",
+   "sha256": "b2988fc122f1fc9b09def50fc5a2a56ad6b5f208650aab2d8d78f5af38922059",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/env_stall.png.import",
+   "sha256": "bb8c49bf365d7a0187d7928677c501deb3ec93edd19ce96c0dcd0fbb63cbae51",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_beam.png",
+   "sha256": "f863aaeeccbd8b6da639215adc4b61e763b9c6d6a1c445a773b6dab00b01aa94",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_beam.png.import",
+   "sha256": "602399fedfc13488952e3830b648afb636c9f235c01f4b86689bcb44a81ec2c9",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_orbit_moth.png",
+   "sha256": "81435171cb70aa5021e7829d306c1533a024d8c0ca8af7f41d9195b7deedb473",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_orbit_moth.png.import",
+   "sha256": "4b00d647db33c69bc5591afb16e661390afc402f6f0e1ba2d02ddbe72a17869c",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_sunflare.png",
+   "sha256": "0a877120aeeae155afbb7b98cf3095c4b0d5efd452c66390ea168bac665b7178",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/fx_sunflare.png.import",
+   "sha256": "800a8a1b2434e9ac7cb4ade75211a85d65343d0590a1e929296d5153a9b66dc3",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/manifest.json",
+   "sha256": "f6973c4ea51391d3193f260c6939684647ddfb05e749524a777cd571db019666",
+   "role": "asset data",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/palettes.json",
+   "sha256": "700ee5eb385b4654c4ac88999d91e4e36df26a388138b0a77fcce51df0059550",
+   "role": "asset data",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/pc_sheet.png",
+   "sha256": "7e13d91efeba2d60a43a6212b51aa5a7ad12054fa1073bec4803ad61d89913c9",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/pc_sheet.png.import",
+   "sha256": "f2dfab3f4f213efeb2d70302aa655f629782cf1798b96eb4434af3332972909d",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/pickup_gem.png",
+   "sha256": "6f47c3496c24dd36ecc77f9b93c5e142467c58a898b5ea61a418228095b309e6",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/art/pickup_gem.png.import",
+   "sha256": "90cb6de2ad15bd664f967a970086503a24547d140993b22896b614e2a5f9bf17",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/manifest.json",
+   "sha256": "14931c5e4359dd6c2d0e16d1e61e84b2682871575b39e4d439755c8f09f3c42a",
+   "role": "asset data",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/music/mus_01_night_market.ogg",
+   "sha256": "28800d90dc9917f08a6af2d1d2b5190249b3c45dcd0cf7f0d88deeaaa22c64ea",
+   "role": "music loop (OGG Vorbis)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/music/mus_01_night_market.ogg.import",
+   "sha256": "302b8e23c0db8d1c8206e5750da85e0f1b285dd7fea8f557958e2cd145f3f17c",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/music/mus_02_sunflare_layer.ogg",
+   "sha256": "efa99a4d2f09ff2b483abdfed6d086ad7191475f704bbee633ccf5b046c23c48",
+   "role": "music loop (OGG Vorbis)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/music/mus_02_sunflare_layer.ogg.import",
+   "sha256": "d343deebb8844bae69d57d53a7e28b6bac922fabdfad3f78189a3fb933657922",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/particles/ATTRIBUTION.md",
+   "sha256": "710adad8416ad773e4cc692881942b5dc4ed0c60738c8f52aee69debcdb30416",
+   "role": "documentation",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/particles/spark.png",
+   "sha256": "89a5796b6ed58447db2172e57e3cc56b007f561c26ffdbeb5dadc37490873130",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/particles/spark.png.import",
+   "sha256": "c5528060e05cf193319718db3fedb913c236e462be5f6ec3ef7b5fa83ed9aff8",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_01_kill.wav",
+   "sha256": "600c391c58a119a92f66ed3b886de59e586f8ab63cc9bb5442379dc534c2d2a2",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_01_kill.wav.import",
+   "sha256": "6cf105fd8838a7c79c3a44f222b1eb7a528a49b837ea3b4a6ae78699e65d8c96",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_02_pickup.wav",
+   "sha256": "53294b3bf56234c5a8d99e31c305ffc02cd0db600c90ad40cb132bc87a925bef",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_02_pickup.wav.import",
+   "sha256": "e4a66925b36ee66d18d9192089898547c50ce7d37f11e63ddcf593d48ed67de9",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_03_hurt.wav",
+   "sha256": "cf6e402b3d0901810414c59d0a08c4046653125aec18c2e91dcd8ea03596a826",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_03_hurt.wav.import",
+   "sha256": "fcf8af4ad299a549f8ae61c3d6b192f42e3291832d540e81f06f1d4947d72432",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_04_levelup.wav",
+   "sha256": "0226301eecf5c43d701566e88684be32cd4f0727fbe6e400f844c19afec1f2ae",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_04_levelup.wav.import",
+   "sha256": "707716a0294d75c5537f768fc350d2d6753514b754b597a35e332ebe2e4398b5",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_05_evolve.wav",
+   "sha256": "c0e19cad762ee14b60a89de8b0ff1fb1d141ab30b30f907fb7d63c8921db6358",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_05_evolve.wav.import",
+   "sha256": "1b9d37481f6e25e28ca7857bc87a2f61229eede75a22cafbe85a92a8a445d6af",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_06a_lose.wav",
+   "sha256": "27b8c1b72b49f9b2839b1b8b8fcef67e553d677bf961d8bc98a23e410ddea4b8",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_06a_lose.wav.import",
+   "sha256": "28ef479325197f8aef2b9e2ed6fbdadb3ed6680c4c4db611e7edebf5db037b5e",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_06b_win.wav",
+   "sha256": "0dd441db62f55f953778393c21b5e49017e013a00c247fb0df63c2732d17ba99",
+   "role": "sound effect (WAV)",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/sfx/sfx_06b_win.wav.import",
+   "sha256": "ac396fdfebfa870e88e3021d6bf52182e1815fb2436b53372d1aa8d5276de829",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "assets/textures/cobblestone_floor_08/ATTRIBUTION.md",
+   "sha256": "f00cb587ec9c02e2e776c9fb1234f516faf6bcb4243a53460ddc4b83b73625aa",
+   "role": "documentation",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "assets/textures/cobblestone_floor_08/cobblestone_floor_08_diff_1k.png",
+   "sha256": "b59d5660021f7adfc303b2924f5351aa80c5c36fc73fe378a204f7f739602b0a",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "assets/textures/cobblestone_floor_08/cobblestone_floor_08_diff_1k.png.import",
+   "sha256": "7e9f12de1e434d9af4082479b52d8a8722e28372362eb5a3f0689b105bd0ea70",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_dx_1k.png",
+   "sha256": "2879bd7d6d2d93c6a8ecefdab3c4582b988265898d7801b1a6bd526ac600ec86",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_dx_1k.png.import",
+   "sha256": "bfa31bb3c2c7f45c80f2f4e10844c8628033bf40e0e3f7f5e3001522fbdb80ce",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png",
+   "sha256": "0a6d3f1205c76ce64b01d04f22b570d239fd82b24df3be29791451f741ee4abb",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png.import",
+   "sha256": "f01b8bc53fb36927698324d04efd76ae93e7ef69cc8c77d3dfaaddc46cdea554",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "assets/textures/cobblestone_floor_08/cobblestone_floor_08_rough_1k.png",
+   "sha256": "c44f6bc7b7280c36fe51c7c892d8413b09b61ae929df2169642e6c227429c93e",
+   "role": "texture (PNG)",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "assets/textures/cobblestone_floor_08/cobblestone_floor_08_rough_1k.png.import",
+   "sha256": "bbde40d3a89d5ce808b2b214627d35e87ded487ea8ff01dbdd89dac1175a7af1",
+   "role": "import settings sidecar",
+   "component_ids": [
+    "materials"
+   ]
+  },
+  {
+   "path": "audio/audio_bus.gd",
+   "sha256": "7f4919595bb43d99ddd4799913ecf2bae4ef470fb5affc89fb0c5dd34323afa5",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "audio/sfx_gate.gd",
+   "sha256": "38010ecf6fd6db2e6b7c82fa6ea4b9679bbc48f070cceb7b0ffad609a6fb27a9",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "effects/defeat_sparks.tscn",
+   "sha256": "dc431c0d16f3618f99809931f836f62d10f9a2a1e0c650d4a5141709615db797",
+   "role": "scene",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "effects/hurt_tint_presentation.gd",
+   "sha256": "2d27e7fab08b20b96427dec82b168517fcbcf0926295e57ec90c69e69f7e32d7",
+   "role": "GDScript",
+   "component_ids": [
+    "hurt-tint"
+   ]
+  },
+  {
+   "path": "effects/lantern_trail.tscn",
+   "sha256": "7085f05a074160ccc2918e6ddea8bec5c7b75652ac89a2cd225338ea5f20e075",
+   "role": "scene",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "effects/level_up_overlay.tscn",
+   "sha256": "d3a82e798a874abbf144b44ad5ad7d15939932c961fd880d5ef7b9b715865a7e",
+   "role": "scene",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "effects/level_up_sparks.tscn",
+   "sha256": "c044281a962a1585500ff1319068957d53a4b0f70573286835b0b050d679a584",
+   "role": "scene",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "effects/particle_presentation.gd",
+   "sha256": "9234e70b1fadf3f1e3c9ee6a5cce7667b0e68b2a0fd69bcdf65fa8261238b475",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/art.gd",
+   "sha256": "7818f06411983ce13b0b6d20df85f30fc9985c90cc41379e3d94aa1f34b88984",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/enemies/enemy.gd",
+   "sha256": "810bd5d0122abc285f628b5f813af42962f40e4eff60ff8c83b12c5469789104",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/enemies/spawner.gd",
+   "sha256": "ae70d88e6600a4752c3e816eb363ec06c3bc0fcc62b9b7fd92edd48e7ceb7c77",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/pickups/gem.gd",
+   "sha256": "64dd2b4cd0b2cf5d3aab69fd5ed9b145e61ee5071e3a63c5646e9adebcd8aeed",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/player/player.gd",
+   "sha256": "d486d60d760ffbd43e29843c4f8b6bf2b74decdcc835c22dac844beb35f63339",
+   "role": "GDScript",
+   "component_ids": [
+    "hurt-tint",
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/progression/progression.gd",
+   "sha256": "2a0d49176fe72cde825fb833970eed483fc8b7870b4557902a5279accf789251",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/tuning.gd",
+   "sha256": "28517964d00d09b1bb393293430fd68bb8ab5d0424822b9f87e7b7b720982ffc",
+   "role": "GDScript",
+   "component_ids": [
+    "hurt-tint",
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/weapons/beam_shot.gd",
+   "sha256": "01ec610115099def644a60f59c246b4de6fc0a85641817c4104bc824e19b7d76",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/weapons/weapon_fx.gd",
+   "sha256": "394ff4df54a365947645627915bda8f3fd7a35779c1da4f76e5345f1e8886d47",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/world/camera_fx.gd",
+   "sha256": "f5f3600b2a3c51a8c8b3b9efe85d09fcac0f475e51c67d9789a608958c5535b7",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "features/world/ground.gd",
+   "sha256": "5813c003d94806aacaf1e70773ef56ba882612cc86868987da3cdbc1358db4f9",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "game/game_state.gd",
+   "sha256": "072727ee4e32fc844e7a4645ba538d9852dc9ade3a29770656374dbd8ff5d81d",
+   "role": "GDScript",
+   "component_ids": [
+    "hurt-tint",
+    "game-context"
+   ]
+  },
+  {
+   "path": "game/main.tscn",
+   "sha256": "00927c2077a20dbf48cfa306374c3187ed60317b17bcbf6c3740dbbfb9f78cc1",
+   "role": "scene",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "game/session.gd",
+   "sha256": "72f7664a26231d5eaa484964f7696ca3328c067575a0380077b3e6a9ae1a7e93",
+   "role": "GDScript",
+   "component_ids": [
+    "hurt-tint",
+    "game-context"
+   ]
+  },
+  {
+   "path": "project.godot",
+   "sha256": "d777ec7b10caab6b2e3d30107d6e53ad11b0e0468ea5ad469aa836888c8b7b43",
+   "role": "project settings",
+   "component_ids": [
+    "game-context"
+   ]
+  },
+  {
+   "path": "shaders/cobblestone_surface.gdshader",
+   "sha256": "eefe085dd5888ae618e9aac648a93657c708b5de34315316c9bba82cc181d32d",
+   "role": "shader",
+   "component_ids": [
+    "cobblestone-shader"
+   ]
+  },
+  {
+   "path": "shaders/hint_experiment.gdshader",
+   "sha256": "c00c5ff55ef4a43f08a3da23c7c2c93464a964925555e4e72e2cd60328368041",
+   "role": "shader",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "shaders/hurt_tint.gdshader",
+   "sha256": "d3718a8042a2f39ddffbb3a53fe03881112e31a10a23e5c4974def5e2956c414",
+   "role": "shader",
+   "component_ids": [
+    "hurt-tint"
+   ]
+  },
+  {
+   "path": "shaders/standard_generated.gdshader",
+   "sha256": "ca1c191c44fb614ae64a258fce3efbc13b77fdc82f480e98ac4582e30805650d",
+   "role": "shader",
+   "component_ids": [
+    "generated-shader"
+   ]
+  },
+  {
+   "path": "tests/calibrate_normal_map_check.gd",
+   "sha256": "44c3704abdfa6519d9412ac197925b1bfd44b5de8b7b12ab31a995a4f47b5004",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/capture_a5_materials.gd",
+   "sha256": "64c41b215e2f17844d8338ae6c28eb34d9af582105292532d821ceb5060ea71d",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/capture_hurt_tint.gd",
+   "sha256": "337062e52ba3d5ee4c30e3a9bbbbee49ab65e7cca34212f4ab5c49b8e0cc7164",
+   "role": "GDScript",
+   "component_ids": [
+    "hurt-tint"
+   ]
+  },
+  {
+   "path": "tests/harness.gd",
+   "sha256": "1afad04f4d661c990b5a230bc09f516656700fefdc6d675cde16c1acdfc61280",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/normal_map_check.gd",
+   "sha256": "60bf1a1d3ceae277a523da9cfcb6593fd0221cc8330f919d674863a8fd04e80f",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/probe_headless_facts.gd",
+   "sha256": "5a9c584ce2e664bc1a2389e3e7304ad02ccc3608fd577d67a16a5868dee88349",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_a3_assets.gd",
+   "sha256": "c8f8f13e19bab0352dc3f3ed9c09a19f85258780b354e6ef6118dbac27d879ea",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_a3_camera.gd",
+   "sha256": "ab7b34f94de7d81182924bb72ba2b90c0020ca2342c1864b4620410fbf835a0e",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_audio.gd",
+   "sha256": "dd50bd153bee04a30822b0e26e99ea7dd1fa5dfed5799d3bc10ea691057271d0",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_defeat_sparks_config.gd",
+   "sha256": "d95884323b3333f99e64e319fcca57881c55c8aedb54bf979864a7ca0b3737ff",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_extra_particles_config.gd",
+   "sha256": "48891d60f0521f7f65dd9dce614d671f3693d4ca4105d3af87e9a28e73e1108f",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_gameplay.gd",
+   "sha256": "21cf43fd3510ce24b712f9ab99672ec4aed02b618b0cd0eb5870d19de390595e",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_hurt_tint.gd",
+   "sha256": "38f7d6af9e8a6e81e354e9183c288b67a8ff9cd0b7764b476ecd5212906bc2e3",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_lantern_gate.gd",
+   "sha256": "cbc2a1380ef2d8f3fc170895e9528ffd53bb853d9d425e91fbd410a7c08ef357",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_logic.gd",
+   "sha256": "9085f59ae5f754cbcabd23e50fca26b1ed98061cc85b5ff32ee99f4043b14bce",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_materials.gd",
+   "sha256": "bc30628cb0730067215308f7f5967990276381e7e6a7ea1bc24568a03bd4f26c",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_particles_edges.gd",
+   "sha256": "8d51377ffe813420fa9a468dde162906f3bb34184ccfb3fdbe69f5aff1697371",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_particles_state.gd",
+   "sha256": "26ef644ddda679331d272478e4bf2ee1c761bd5a98f797e0d37a846fa0f1c319",
+   "role": "GDScript",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "ui/hud.gd",
+   "sha256": "a7020b6f0caf5261db2d04f517a03e70ecae64766393b1ac7aca7347a21ea68b",
+   "role": "GDScript",
+   "component_ids": [
+    "game-context"
+   ]
+  }
+ ],
+ "components": [
+  {
+   "id": "hurt-tint",
+   "explanation": "The 2D shader from code: Bao's nine-line canvas_item shader mixes the incoming COLOR toward hurt_color by hurt_amount; the read-only driver, added by the session, gives the courier his own ShaderMaterial and writes clamp(iframes / 48) every frame in PLAYING, PAUSED and LEVELUP and 0 otherwise. The counter is player.iframes, set to IFRAME_TICKS (48) on an accepted hit and decremented once per simulation tick.",
+   "beat_ids": [
+    "B05",
+    "B06",
+    "B07",
+    "B08"
+   ],
+   "files": [
+    "shaders/hurt_tint.gdshader",
+    "effects/hurt_tint_presentation.gd",
+    "game/session.gd",
+    "features/player/player.gd",
+    "features/tuning.gd",
+    "game/game_state.gd",
+    "tests/capture_hurt_tint.gd"
+   ]
+  },
+  {
+   "id": "material-room",
+   "explanation": "The 3D object: a5/material_room.tscn instances the A3 room and overrides only Floor/Mesh (an 8 x 8 m PlaneMesh) and the two material_override slots; lights, camera, orbit controls and the three A3 props come from the inherited room.",
+   "beat_ids": [
+    "B09",
+    "B10",
+    "B12"
+   ],
+   "files": [
+    "a5/material_room.tscn",
+    "a3/lantern_gate_room.tscn",
+    "a3/lantern_gate_room.gd",
+    "a3/lantern_gate.tscn",
+    "a3/lantern_gate.gd",
+    "a3/lantern_gate.glb",
+    "a3/lantern_gate.glb.import",
+    "a3/oil_shrine.glb",
+    "a3/oil_shrine.glb.import",
+    "a3/supply_stack.glb",
+    "a3/supply_stack.glb.import"
+   ]
+  },
+  {
+   "id": "materials",
+   "explanation": "Two ShaderMaterials of one shader: the warm floor (tint 1/0.92/0.80, uv_scale 2, roughness 0.55-0.95, normal 1) and the cool stand-in (0.72/0.85/1, uv 1, 0.2-0.55, normal 0.5), both bound to the same three Poly Haven maps; the script that built them and the material audit.",
+   "beat_ids": [
+    "B11",
+    "B12",
+    "B10",
+    "B16"
+   ],
+   "files": [
+    "a5/materials/cobblestone_warm_floor.tres",
+    "a5/materials/cobblestone_cool_standin.tres",
+    "a5/build_a5_materials.gd",
+    "MATERIALS.md",
+    "assets/textures/cobblestone_floor_08/ATTRIBUTION.md",
+    "assets/textures/cobblestone_floor_08/cobblestone_floor_08_diff_1k.png",
+    "assets/textures/cobblestone_floor_08/cobblestone_floor_08_diff_1k.png.import",
+    "assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png",
+    "assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png.import",
+    "assets/textures/cobblestone_floor_08/cobblestone_floor_08_rough_1k.png",
+    "assets/textures/cobblestone_floor_08/cobblestone_floor_08_rough_1k.png.import",
+    "assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_dx_1k.png",
+    "assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_dx_1k.png.import"
+   ]
+  },
+  {
+   "id": "cobblestone-shader",
+   "explanation": "Bao's spatial shader: three samplers whose hints say colour (source_color), directions (hint_normal) or raw numbers (roughness), five grouped uniforms with hint_range sliders, and a fragment() that writes ALBEDO, ROUGHNESS, NORMAL_MAP and NORMAL_MAP_DEPTH, the last scaled by abs(NORMAL.z) since Bao's line-22 edit (0b91838).",
+   "beat_ids": [
+    "B13",
+    "B14",
+    "B15",
+    "B16",
+    "B17",
+    "B18",
+    "B22"
+   ],
+   "files": [
+    "shaders/cobblestone_surface.gdshader"
+   ]
+  },
+  {
+   "id": "hint-experiment",
+   "explanation": "Bao's source_color experiment: one 3 x 1 grey PNG (64/128/192) written by code, two nearest samplers with and without the hint, two materials and an unshaded, unlit scene.",
+   "beat_ids": [
+    "B19",
+    "B20"
+   ],
+   "files": [
+    "shaders/hint_experiment.gdshader",
+    "a5/hint_experiment/hint_experiment.tscn",
+    "a5/hint_experiment/hint_greys_3x1.png",
+    "a5/hint_experiment/hint_greys_3x1.png.import",
+    "a5/hint_experiment/hint_with_source_color.tres",
+    "a5/hint_experiment/hint_without_source_color.tres",
+    "a5/hint_experiment/make_hint_png.gd"
+   ]
+  },
+  {
+   "id": "generated-shader",
+   "explanation": "The editor-generated spatial shader from a converted StandardMaterial3D with the same three maps, and the scratch scene holding that ShaderMaterial; study only, never loaded by the game.",
+   "beat_ids": [
+    "B21",
+    "B22"
+   ],
+   "files": [
+    "shaders/standard_generated.gdshader",
+    "a5/scratch/standard_conversion.tscn"
+   ]
+  },
+  {
+   "id": "tests",
+   "explanation": "test_hurt_tint.gd (real keys and real contact through the game loop, sampled every frame at 30/60/144 fps), test_materials.gd (wiring, hints, imports, materials), the curl_ratio normal-map check and its calibration, the headless-facts probe, the material capture tool, the shared harness, and the ten earlier suites re-run unchanged.",
+   "beat_ids": [
+    "B24",
+    "B25",
+    "B16",
+    "B18"
+   ],
+   "files": [
+    "tests/test_hurt_tint.gd",
+    "tests/test_materials.gd",
+    "tests/harness.gd",
+    "tests/normal_map_check.gd",
+    "tests/calibrate_normal_map_check.gd",
+    "tests/probe_headless_facts.gd",
+    "tests/capture_a5_materials.gd",
+    "tests/test_logic.gd",
+    "tests/test_gameplay.gd",
+    "tests/test_audio.gd",
+    "tests/test_defeat_sparks_config.gd",
+    "tests/test_extra_particles_config.gd",
+    "tests/test_particles_state.gd",
+    "tests/test_particles_edges.gd",
+    "tests/test_a3_assets.gd",
+    "tests/test_lantern_gate.gd",
+    "tests/test_a3_camera.gd"
+   ]
+  },
+  {
+   "id": "game-context",
+   "explanation": "The game the tint lives in: the fixed-tick session and state machine, courier, weapons, enemies and spawner, gems, progression, market ground and camera, HUD, audio, project settings, the Assignment 6 particle effects, and the generated art, sound and music. Unchanged by this assignment except the three session lines that add the tint driver; seen in play in the hurt take, explained in the earlier films.",
+   "beat_ids": [
+    "B08",
+    "B25"
+   ],
+   "files": [
+    "game/session.gd",
+    "game/game_state.gd",
+    "game/main.tscn",
+    "project.godot",
+    "ui/hud.gd",
+    "audio/audio_bus.gd",
+    "audio/sfx_gate.gd",
+    "features/art.gd",
+    "features/tuning.gd",
+    "features/enemies/enemy.gd",
+    "features/enemies/spawner.gd",
+    "features/pickups/gem.gd",
+    "features/player/player.gd",
+    "features/progression/progression.gd",
+    "features/weapons/beam_shot.gd",
+    "features/weapons/weapon_fx.gd",
+    "features/world/camera_fx.gd",
+    "features/world/ground.gd",
+    "effects/particle_presentation.gd",
+    "effects/defeat_sparks.tscn",
+    "effects/lantern_trail.tscn",
+    "effects/level_up_sparks.tscn",
+    "effects/level_up_overlay.tscn",
+    "assets/particles/spark.png",
+    "assets/particles/spark.png.import",
+    "assets/particles/ATTRIBUTION.md",
+    "assets/manifest.json",
+    "assets/art/manifest.json",
+    "assets/art/palettes.json",
+    "assets/art/enemy_moth.png",
+    "assets/art/enemy_moth.png.import",
+    "assets/art/enemy_wraith.png",
+    "assets/art/enemy_wraith.png.import",
+    "assets/art/env_crates.png",
+    "assets/art/env_crates.png.import",
+    "assets/art/env_ground_tile.png",
+    "assets/art/env_ground_tile.png.import",
+    "assets/art/env_lantern_post.png",
+    "assets/art/env_lantern_post.png.import",
+    "assets/art/env_leaves.png",
+    "assets/art/env_leaves.png.import",
+    "assets/art/env_noodle_cart.png",
+    "assets/art/env_noodle_cart.png.import",
+    "assets/art/env_puddle.png",
+    "assets/art/env_puddle.png.import",
+    "assets/art/env_stall.png",
+    "assets/art/env_stall.png.import",
+    "assets/art/fx_beam.png",
+    "assets/art/fx_beam.png.import",
+    "assets/art/fx_orbit_moth.png",
+    "assets/art/fx_orbit_moth.png.import",
+    "assets/art/fx_sunflare.png",
+    "assets/art/fx_sunflare.png.import",
+    "assets/art/pickup_gem.png",
+    "assets/art/pickup_gem.png.import",
+    "assets/art/pc_sheet.png",
+    "assets/art/pc_sheet.png.import",
+    "assets/sfx/sfx_01_kill.wav",
+    "assets/sfx/sfx_01_kill.wav.import",
+    "assets/sfx/sfx_02_pickup.wav",
+    "assets/sfx/sfx_02_pickup.wav.import",
+    "assets/sfx/sfx_03_hurt.wav",
+    "assets/sfx/sfx_03_hurt.wav.import",
+    "assets/sfx/sfx_04_levelup.wav",
+    "assets/sfx/sfx_04_levelup.wav.import",
+    "assets/sfx/sfx_05_evolve.wav",
+    "assets/sfx/sfx_05_evolve.wav.import",
+    "assets/sfx/sfx_06a_lose.wav",
+    "assets/sfx/sfx_06a_lose.wav.import",
+    "assets/sfx/sfx_06b_win.wav",
+    "assets/sfx/sfx_06b_win.wav.import",
+    "assets/music/mus_01_night_market.ogg",
+    "assets/music/mus_01_night_market.ogg.import",
+    "assets/music/mus_02_sunflare_layer.ogg",
+    "assets/music/mus_02_sunflare_layer.ogg.import"
+   ]
+  }
+ ],
+ "excerpts": [
+  {
+   "beat_id": "B05",
+   "path": "shaders/hurt_tint.gdshader",
+   "start_line": 1,
+   "end_line": 9,
+   "text": "shader_type canvas_item;\nrender_mode unshaded;\n\nuniform float hurt_amount : hint_range(0.0, 1.0) = 0.0;\nuniform vec4 hurt_color : source_color = vec4(1.0, 1.0, 0.0, 1.0);\n\nvoid fragment() {\n\tCOLOR.rgb = mix(COLOR.rgb, hurt_color.rgb, hurt_amount);\n}"
+  },
+  {
+   "beat_id": "B07",
+   "path": "effects/hurt_tint_presentation.gd",
+   "start_line": 18,
+   "end_line": 30,
+   "text": "\tgame.state.changed.connect(func(_from: int, _to: int): refresh())\n\trefresh()\n\nfunc _process(_delta: float) -> void:\n\trefresh()\n\nfunc amount() -> float:\n\tif session.state.current in [GS.PLAYING, GS.PAUSED, GS.LEVELUP]:\n\t\treturn clampf(float(session.player.iframes) / Tuning.IFRAME_TICKS, 0.0, 1.0)\n\treturn 0.0\n\nfunc refresh() -> void:\n\tmaterial.set_shader_parameter(\"hurt_amount\", amount())"
+  },
+  {
+   "beat_id": "B09",
+   "path": "a5/material_room.tscn",
+   "start_line": 7,
+   "end_line": 18,
+   "text": "[sub_resource type=\"PlaneMesh\" id=\"PlaneMesh_floor\"]\nsize = Vector2(8, 8)\n\n[node name=\"LanternGateRoom\" instance=ExtResource(\"1_room\")]\n\n[node name=\"Mesh\" parent=\"Floor\"]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)\nmaterial_override = ExtResource(\"2_floor\")\nmesh = SubResource(\"PlaneMesh_floor\")\n\n[node name=\"Mesh\" parent=\"StandIn\"]\nmaterial_override = ExtResource(\"3_standin\")"
+  },
+  {
+   "beat_id": "B11",
+   "path": "a5/materials/cobblestone_warm_floor.tres",
+   "start_line": 8,
+   "end_line": 18,
+   "text": "[resource]\nrender_priority = 0\nshader = ExtResource(\"1_1ervd\")\nshader_parameter/color_tex = ExtResource(\"2_60gv5\")\nshader_parameter/normal_tex = ExtResource(\"3_ovpgk\")\nshader_parameter/roughness_tex = ExtResource(\"4_obb43\")\nshader_parameter/tint = Color(1, 0.92, 0.8, 1)\nshader_parameter/uv_scale = 2.0\nshader_parameter/roughness_min = 0.55\nshader_parameter/roughness_max = 0.95\nshader_parameter/normal_strength = 1.0"
+  },
+  {
+   "beat_id": "B13",
+   "path": "shaders/cobblestone_surface.gdshader",
+   "start_line": 17,
+   "end_line": 24,
+   "text": "void fragment() {\n\tvec2 uv = UV * uv_scale;\n\tALBEDO = texture(color_tex, uv).rgb * tint.rgb;\n\tROUGHNESS = mix(roughness_min, roughness_max, texture(roughness_tex, uv).r);\n\tNORMAL_MAP = texture(normal_tex, uv).rgb;\n\tNORMAL_MAP_DEPTH = normal_strength * mix(0.5, 1.0, abs(normalize(NORMAL).z));\n\tMETALLIC = 0.0;\n}"
+  },
+  {
+   "beat_id": "B15",
+   "path": "shaders/cobblestone_surface.gdshader",
+   "start_line": 1,
+   "end_line": 5,
+   "text": "shader_type spatial;\n\nuniform sampler2D color_tex : source_color, filter_linear_mipmap, repeat_enable;\nuniform sampler2D normal_tex : hint_normal, filter_linear_mipmap, repeat_enable;\nuniform sampler2D roughness_tex : filter_linear_mipmap, repeat_enable;"
+  },
+  {
+   "beat_id": "B17",
+   "path": "shaders/cobblestone_surface.gdshader",
+   "start_line": 7,
+   "end_line": 15,
+   "text": "group_uniforms Surface;\nuniform vec4 tint : source_color = vec4(1.0, 1.0, 1.0, 1.0);\nuniform float uv_scale : hint_range(0.25, 4.0) = 1.0;\n\ngroup_uniforms Response;\nuniform float roughness_min : hint_range(0.0, 1.0) = 0.2;\nuniform float roughness_max : hint_range(0.0, 1.0) = 0.8;\nuniform float normal_strength : hint_range(0.0, 2.0) = 1.0;\ngroup_uniforms;"
+  },
+  {
+   "beat_id": "B19",
+   "path": "shaders/hint_experiment.gdshader",
+   "start_line": 5,
+   "end_line": 14,
+   "text": "uniform sampler2D color_sample : source_color, filter_nearest;\nuniform sampler2D raw_sample : filter_nearest;\nuniform bool use_color = true;\n\nvoid fragment() {\n\tif (use_color) {\n\t\tALBEDO = texture(color_sample, UV).rgb;\n\t} else {\n\t\tALBEDO = texture(raw_sample, UV).rgb;\n\t}"
+  },
+  {
+   "beat_id": "B21",
+   "path": "shaders/standard_generated.gdshader",
+   "start_line": 1,
+   "end_line": 7,
+   "text": "// NOTE: Shader automatically converted from Godot Engine 4.7.2.stable's StandardMaterial3D.\n\nshader_type spatial;\nrender_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;\n\nuniform vec4 albedo : source_color;\nuniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;"
+  },
+  {
+   "beat_id": "B24",
+   "path": "tests/test_hurt_tint.gd",
+   "start_line": 155,
+   "end_line": 166,
+   "text": "\tfixture = func(): wraith(Vector2(20, 0))\n\tvar mark := sampler.rows.size()\n\tawait tap(KEY_ENTER)\n\tcheck(\"real-start-input\", game.state.current == GS.PLAYING and not game.test_mode)\n\tawait wait_until(func(): return hits.size() >= 1, 120)\n\tvar h_a: int = hits[0].tick\n\tawait wait_until(func(): return game.player.iframes <= 24, 240)\n\tkey(KEY_W)\n\tawait wait_until(func(): return game.tick_count >= h_a + 70, 600)\n\tkey(KEY_W, false)\n\tvar end_a := sampler.rows.size()\n\tvar first := first_row_at_tick(mark, h_a)"
+  }
+ ],
+ "exclusions": [
+  {
+   "path": "tests/capture.gd",
+   "reason": "Assignment 2 development tool (storyboard and pose screenshots); not used or shown in this film."
+  },
+  {
+   "path": "tests/capture_map.gd",
+   "reason": "Assignment 2 development tool that renders design/map-overview.png; not shown in this film."
+  },
+  {
+   "path": "tests/probe_balance.gd",
+   "reason": "Assignment 2 development tool (scripted balance bots); not part of the playable game and not shown."
+  },
+  {
+   "path": "tests/rasterize_storyboard.gd",
+   "reason": "Assignment 2 development tool that rasterises the storyboard SVGs; not shown in this film."
+  },
+  {
+   "path": "tests/capture_a3_orbit.gd",
+   "reason": "Assignment 3 capture tool for the orbit camera; not used or shown in this film."
+  },
+  {
+   "path": "tests/capture_lantern_gate.gd",
+   "reason": "Assignment 3 capture tool for the gate room; not used or shown in this film."
+  },
+  {
+   "path": "tests/capture_play_checks.gd",
+   "reason": "Assignment 6 windowed play-check driver; explained in the particle film, not shown here."
+  },
+  {
+   "path": "tests/cost_effects.gd",
+   "reason": "Assignment 6 CPU/GPU cost script for the particle effects; explained in the particle film, not shown here."
+  },
+  {
+   "path": "tests/build_shader_study.gd",
+   "reason": "Assignment 6 tool that built the GPU particle study scene; not shown here."
+  },
+  {
+   "path": "shaders/particles_generated.gdshader",
+   "reason": "Assignment 6 editor-generated particle process shader, study only; explained in the particle film. This film's generated-shader study is standard_generated.gdshader."
+  },
+  {
+   "path": "previews/defeat_sparks_preview.gd",
+   "reason": "Assignment 6 fixture preview for hit sparks (not gameplay); explained in the particle film."
+  },
+  {
+   "path": "previews/defeat_sparks_preview.tscn",
+   "reason": "Assignment 6 fixture preview scene for hit sparks; explained in the particle film."
+  },
+  {
+   "path": "previews/lantern_trail_preview.gd",
+   "reason": "Assignment 6 fixture preview for the trail; explained in the particle film."
+  },
+  {
+   "path": "previews/lantern_trail_preview.tscn",
+   "reason": "Assignment 6 fixture preview scene for the trail; explained in the particle film."
+  },
+  {
+   "path": "previews/baseline/lantern_trail_r0.tscn",
+   "reason": "Assignment 6 preserved trail baseline resource for its comparison; not shown here."
+  },
+  {
+   "path": "previews/shader_study/README.md",
+   "reason": "Assignment 6 shader-study notes; not shown here."
+  },
+  {
+   "path": "previews/shader_study/hit_sparks_gpu.tscn",
+   "reason": "Assignment 6 GPU particle study scene; not loaded by the game, not shown here."
+  }
+ ],
+ "code_result_pairs": [
+  {
+   "code_beat": "B05",
+   "result_beat": "B06",
+   "observation": "At hurt_amount 0 the lamp and coat texels read their stored colours; at 0.5 each channel lands within one byte of the hand table (lamp 249, 220, 37 against 248.5, 219.5, 37.5); the red phase keeps more red at 0.5; at 1 both phases are (255, 255, 0); 2.0 set from code reads back as 2.0 and renders the same yellow as 1.0.",
+   "media": {
+    "path": "media/B06.mp4",
+    "sha256": "4554860be81b885768c1e8994223dfa8643e2c08f8979d6075176bb133065150"
+   }
+  },
+  {
+   "code_beat": "B07",
+   "result_beat": "B08",
+   "observation": "In the real game loop the courier turns yellow on the frame after each accepted hit, holds at 23/48 for the 45 paused frames, resumes, and reaches 0 after 48 ticks; a monster touching him during the third window (frames 1661-1666) changes neither hp nor the falling curve.",
+   "media": {
+    "path": "media/B08.mp4",
+    "sha256": "b9715fe5fac0c3c0493f2198fc720e2d7583b46d87c03bcfbef743023f7c6392"
+   }
+  },
+  {
+   "code_beat": "B09",
+   "result_beat": "B10",
+   "observation": "The floor shows repeated warm paving of square stones and the stand-in capsule the same stones, larger and cooler, under the A3 room's lights from the fixed capture pose.",
+   "media": {
+    "path": "media/B10.mp4",
+    "sha256": "0c954352c4dd52ed7a9d15b4f4c19f73f07d5f3456ac8128b79105a1666a6f3f"
+   }
+  },
+  {
+   "code_beat": "B11",
+   "result_beat": "B12",
+   "observation": "Changing only the floor material's uv_scale from 2 to 4 makes the floor's stones smaller and changes its rectangle by up to 72 levels; the stand-in rectangle changes by 0.",
+   "media": {
+    "path": "media/B12.mp4",
+    "sha256": "3d05f95374fc327181775b0409a1c13ac1fe20526b16db4360d1b6202eda5823"
+   }
+  },
+  {
+   "code_beat": "B13",
+   "result_beat": "B14",
+   "observation": "After Bao's one-line ALBEDO * 0.5 edit every pixel of both the floor and the stand-in rectangles changed and both darkened, as his prediction said; the agent-run green study is shown separately and labelled.",
+   "media": {
+    "path": "media/B14.mp4",
+    "sha256": "cd5f27896a0486a6584d98c45964b0347f88d812e9e302d8fa535ed67d44a5d4"
+   }
+  },
+  {
+   "code_beat": "B15",
+   "result_beat": "B16",
+   "observation": "The colour, normal and roughness files look like three different kinds of image; the normal map's curl ratio is 0.2236 in the OpenGL convention and 1.7764 in DirectX (the DX calibration map mirrors it); normal_strength 0 against 1 on the floor changes the shading of the stone joints.",
+   "media": {
+    "path": "media/B16.mp4",
+    "sha256": "3393248bb9df94d3697663b8207f03ec6dd275ff5ff49695fbebdf04f6c7494d"
+   }
+  },
+  {
+   "code_beat": "B17",
+   "result_beat": "B18",
+   "observation": "Each of the five uniforms changes the floor rectangle at its low and high value, while the stand-in rectangle stays at (31.42, 40.97, 74.83) through all fifteen captures; Bao's recorded look at the normal_strength row is quoted beside its three captures.",
+   "media": {
+    "path": "media/B18.mp4",
+    "sha256": "906a101bd268c70dddb58686a131bf0fc2628544450d35fec39a0d80cfc21d5f"
+   }
+  },
+  {
+   "code_beat": "B19",
+   "result_beat": "B20",
+   "observation": "Both quads show the grey bands at 64, 128 and 192, the Compatibility prediction; the Forward+/Mobile prediction (137, 188, 225 without the hint) is shown as a prediction only.",
+   "media": {
+    "path": "media/B20.mp4",
+    "sha256": "d0c82b18d82635afa533aec2c248c71c2f20703bd98154744fe253366461deba"
+   }
+  },
+  {
+   "code_beat": "B21",
+   "result_beat": "B22",
+   "observation": "The verbatim line pairs sit side by side; in the fixture, the editor-generated material and Bao's shader with neutral values draw the same stones, with 87-93 % of pixels within 2 levels face-on and a larger difference (mean about 2.4-2.8 levels) with the camera tilted 50 degrees.",
+   "media": {
+    "path": "media/B22.mp4",
+    "sha256": "35bf19f7c1e5a265f31a44ed5160e345b506021dbb7c6df0ff40a85718d2eb44"
+   }
+  },
+  {
+   "code_beat": "B24",
+   "result_beat": "B25",
+   "observation": "Recorded output: 28/28 at 30, 60 and 144 fps, 127/127 material checks and the ten earlier suites at 332/0 on a fresh copy of the film revision; the three mutation logs fail 4, 3 and 1 checks.",
+   "media": {
+    "path": "media/B25.mp4",
+    "sha256": "74348929456d42663634b72be064cc06288163139045cf76211310d6bb886be3"
+   }
+  }
+ ]
+}

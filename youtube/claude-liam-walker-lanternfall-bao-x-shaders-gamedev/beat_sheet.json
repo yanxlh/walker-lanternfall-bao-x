@@ -1,0 +1,2447 @@
+{
+  "metadata": {
+    "title": "Lanternfall, Shaded",
+    "slug": "claude-liam-walker-lanternfall-bao-x-shaders-gamedev",
+    "topic": "WALKER · GODOT SHADERS",
+    "kind": "godot-gamedev",
+    "modifier": "walker",
+    "playlist": "CSYE 7270",
+    "brand": "claude-liam",
+    "audience": "CSYE 7270 classmates and instructors",
+    "register": "Teardown",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "ground": "#FAF9F5",
+    "aspect_ratio": "16:9",
+    "fit": "contain",
+    "captions": false,
+    "channel_title": "",
+    "channel": "@NikBearBrown",
+    "folderLabel": "@NikBearBrown",
+    "channel_title_note": "empty on purpose: B00's composer already shows @NikBearBrown (OUTRO-LOCK: one handle per beat)",
+    "greeting": "Ciao, Liam",
+    "greeting_note": "hello lexicon: Ciao (Italian); earlier Lanternfall films used Merhaba (A2), Hej (A3), Bonjour (A6). Liam never takes Wagwan (IN-FOR-BEAR LAW).",
+    "persona": "Liam (in for Bear)",
+    "presenter": "Liam (in for Bear)",
+    "in_for_bear": true,
+    "game": {
+      "repo": "https://github.com/yanxlh/walker-lanternfall-bao-x",
+      "project_dir": "godot",
+      "source_revision": "4246f94bd3db51c0644ecc3bef9b3a8c8427911b",
+      "godot": "4.7.2.stable.official.ed1daf0bf"
+    },
+    "teaching_contract": "code-then-result-v1",
+    "note": "godot-gamedev + walker teardown of Bao Xing's CSYE 7270 shader assignment. Every code panel is a verbatim excerpt of godot/ at 4246f94bd3db51c0644ecc3bef9b3a8c8427911b (read with git show, never the working tree); the gameplay shot is a real Movie Maker capture of an isolated copy of that revision, driven through the real input map by the disclosed capture driver; controlled-value captures, material captures and the film's shader-pair fixture are labelled as such. No paid call, no upload.",
+    "links": {
+      "repo": "https://github.com/yanxlh/walker-lanternfall-bao-x"
+    },
+    "tags": [
+      "Godot 4",
+      "godot-gamedev",
+      "Walker",
+      "Godot shading language",
+      "canvas_item shader",
+      "spatial shader",
+      "ShaderMaterial",
+      "CSYE 7270",
+      "Teardown register",
+      "Kokoro"
+    ],
+    "build": {
+      "at": "2026-11-01T14:29:19",
+      "cut": "master",
+      "filled": 31,
+      "of": 31,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "ASK",
+      "role_note": "COLD OPEN LAW — Claude composer; reconstructed Walker prompt from Bao's CHANGE-BRIEF.md (not a recorded session). Liam introduces himself.",
+      "narration_text": "Ciao, this is Liam, in for Bear. Bao Xing's shader assignment for Lanternfall: write a shader from code that shows a game state, give a 3D object a textured shader, and answer four questions about shaders, materials, textures and Godot's shading language, each one pointing at a line of Bao's own code. Here's the ask, rebuilt from Bao's change brief.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.02",
+            "event": "composer card on cream; greeting 'Ciao, Liam'"
+          },
+          {
+            "at": "0.25",
+            "event": "the reconstructed Walker prompt types in"
+          },
+          {
+            "at": "0.62",
+            "event": "send arms; running line names the brief and the shader files"
+          },
+          {
+            "at": "0.75",
+            "event": "three result lines: the tint, the material, checks and revision"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Ciao, Liam",
+            "topic": "WALKER · GODOT SHADERS",
+            "segment": "Lanternfall",
+            "command": "Please use Walker to convert my game design document about Lanternfall, a lamp-headed courier surviving three minutes in a fog-bound night market, into two Godot 4 shaders: a yellow tint that shows his 48-tick protection after a hit, and a textured cobblestone material for the 3D room. Gameplay must not change. Predict every colour by hand first, then measure it in the engine.",
+            "runningText": "reading CHANGE-BRIEF.md · CLAUDE.md · godot/features/player/player.gd…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Hurt tint: one canvas_item colour line, driven by player.iframes",
+              "Cobblestone: one spatial shader, two materials, Floor and StandIn",
+              "28 + 127 new checks · 332 earlier unchanged · source revision 4246f94"
+            ]
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-11-01T03:35:29.923687+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 19.16,
+      "audio_file": "mp3/beat-B00.wav",
+      "render_duration_s": 19.166666666666668,
+      "audio_levelled": {
+        "from": "mp3/beat-B00.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B00.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF",
+      "role_note": "EXECUTIVE-SUMMARY LAW — hesitant writer. The framing a viewer arrives with ('shaders are magic') is corrected to what the film shows ('shaders are arithmetic').",
+      "narration_text": "The short version. Shaders aren't magic, they're arithmetic. Here, one line of code, one number from the game and one texture hint decide what you see. Each was predicted by hand, then measured in the engine.",
+      "estimated_duration_s": 14,
+      "lead_silence_s": 0.8,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on-correct",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "cream page; 'Shaders are magic' types"
+          },
+          {
+            "at": "0.3",
+            "event": "'magic' struck in terracotta, 'arithmetic' typed in"
+          },
+          {
+            "at": "0.6",
+            "event": "'a line, a number, a hint' and 'predicted, then measured' type in"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "text": "Shaders are magic\na line, a number, a hint\npredicted, then measured",
+            "triggerWords": "magic",
+            "replacementWords": "arithmetic",
+            "fontSize": 164,
+            "lineSpacing": 1.6,
+            "align": "center",
+            "seed": "5074",
+            "mistakeRate": 2,
+            "hesitateWithin": 0,
+            "hesitateBetween": 1,
+            "ink": "#3D3929",
+            "accent": "#D97757",
+            "bg": "#FAF9F5"
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-11-01T19:08:05.066964+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 11.52,
+      "audio_file": "mp3/beat-B01.wav",
+      "render_duration_s": 11.533333333333333,
+      "audio_levelled": {
+        "from": "mp3/beat-B01.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B01.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "ASSIGNMENT",
+      "role_note": "Assignment requirements as Bao's brief and README answer them; the excerpt is the brief's state-and-purpose line, verbatim.",
+      "narration_text": "What the assignment asks for, and how Bao answered it. A shader from code that communicates a state: here, the courier turns yellow after an accepted hit and fades back as his forty-eight ticks of protection run out. A textured shader on a 3D object: the floor and the stand-in of the Assignment 3 room. Four questions, each answered at a line of code. And tests, with an honest list of what they can't show.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "card-cues",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "CHANGE-BRIEF.md · State and purpose excerpt beside 4 cards"
+          },
+          {
+            "at": "A shader from code",
+            "event": "card 1 highlights"
+          },
+          {
+            "at": "A textured shader",
+            "event": "card 2 highlights"
+          },
+          {
+            "at": "Four questions",
+            "event": "card 3 highlights"
+          },
+          {
+            "at": "And tests",
+            "event": "card 4 highlights"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "What the assignment asks",
+            "section": "CHANGE-BRIEF.md · State and purpose",
+            "excerpt": "The courier turns yellow after an accepted hit, then gradually returns to its incoming colour as protection expires. This communicates temporary invulnerability and gives the player a visible warning that the next collision will soon cause damage again. It confirms an actual damage event rather than merely proximity to an enemy. The existing red blink continues to signal the hit; the yellow tint shows the remaining protection.",
+            "source": "CHANGE-BRIEF.md line 21, verbatim, at 4246f94 · the assignment's four parts, as the brief and README answer them",
+            "status": "Presentation only: the driver reads state and iframes, never writes them",
+            "visualLabel": "The assignment, and where this game answers it",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "1 · A shader from code",
+                "text": "hurt_tint.gdshader on the courier: yellow after an accepted hit, fading over his 48 ticks of protection"
+              },
+              {
+                "label": "2 · A textured shader in 3D",
+                "text": "cobblestone_surface.gdshader on Floor and StandIn in a5/material_room.tscn, which inherits the A3 room"
+              },
+              {
+                "label": "3 · Four questions",
+                "text": "What a shader does · material vs shader · why a texture is information · what Godot's shading language is"
+              },
+              {
+                "label": "4 · Tests, and their limits",
+                "text": "Real game loop at 30, 60, 144 fps; mutations; what no headless run can show"
+              }
+            ],
+            "cues": [
+              {
+                "at": 2.53,
+                "card": 0
+              },
+              {
+                "at": 10.7,
+                "card": 1
+              },
+              {
+                "at": 15.09,
+                "card": 2
+              },
+              {
+                "at": 17.56,
+                "card": 3
+              }
+            ],
+            "durationSeconds": 20.59
+          },
+          "rendered": {
+            "out": "media/B02.mp4",
+            "at": "2026-10-31T22:19:22.487001+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 20.59,
+      "audio_file": "mp3/beat-B02.wav",
+      "render_duration_s": 20.6,
+      "audio_levelled": {
+        "from": "mp3/beat-B02.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B02.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "LISTEN",
+      "kind": "source_report",
+      "clock": "source",
+      "audio_policy": "preserve",
+      "role_note": "Game sound only, no narration: frames 1240-1419 of the hurt take (seed 5), real speed.",
+      "narration_text": "",
+      "shot": {
+        "type": "SOURCE_REPORT",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "the run under way at 0:37: the courier walks toward the nearest monster"
+          },
+          {
+            "at": "level-up",
+            "event": "a level-up card screen, held 2 s by the script, then a card is picked"
+          },
+          {
+            "at": "hit",
+            "event": "a moth reaches him: the hurt sound, the courier yellow, the yellow fading"
+          }
+        ],
+        "treatment": "none"
+      },
+      "actual_duration_s": 6.0,
+      "render_duration_s": 6.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B03.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "PREDICT",
+      "role_note": "The brief's exact colour line and equation, verbatim; the cards restate the brief's Hand calculations table and short answer 7.",
+      "narration_text": "Before any code ran, Bao's brief fixed the colour line and worked out the answers by hand. The line mixes the incoming colour toward yellow by hurt amount: at zero the drawing passes through, at one it's yellow. Halfway, the lamp head should land at two forty-eight point five, two nineteen point five, thirty-seven point five, and the coat at one fifty point five, one fifty-six point five, forty-four point five. In the red blink the same mix keeps more red. And two point oh, set from code, should not be clamped.",
+      "estimated_duration_s": 26,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "card-cues",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "CHANGE-BRIEF.md · 2D shader design excerpt beside 4 cards"
+          },
+          {
+            "at": "the lamp head",
+            "event": "card 1 highlights"
+          },
+          {
+            "at": "the coat",
+            "event": "card 2 highlights"
+          },
+          {
+            "at": "red blink",
+            "event": "card 3 highlights"
+          },
+          {
+            "at": "two point oh",
+            "event": "card 4 highlights"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "Predicted by hand, before the code",
+            "section": "CHANGE-BRIEF.md · 2D shader design",
+            "excerpt": "Exact colour line inside `fragment()`:\n\nCOLOR.rgb = mix(COLOR.rgb, hurt_color.rgb, hurt_amount);\n\nThe equation is `out_rgb = (1 − a) × incoming_rgb + a × target_rgb`. Leave `COLOR.a` unchanged; `hurt_color.a` does not control opacity. At zero the original drawing passes through, at one the opaque sprite is yellow, and intermediate values retain some original colour. Transparent sprite pixels retain zero alpha.",
+            "source": "CHANGE-BRIEF.md lines 34–40 (code fence omitted) and the Hand calculations table, at 4246f94",
+            "status": "The hand table the engine has to hit (RGB, 0–255)",
+            "visualLabel": "Bao's hand calculations, idle frame, no lights",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "Lamp head, stored (242, 184, 75)",
+                "text": "a = 0.5 → (248.5, 219.5, 37.5) · a = 1 → (255, 255, 0)"
+              },
+              {
+                "label": "Coat, stored (46, 58, 89)",
+                "text": "a = 0.5 → (150.5, 156.5, 44.5) · a = 1 → (255, 255, 0)"
+              },
+              {
+                "label": "Red blink phase (×1, 0.45, 0.45 first)",
+                "text": "lamp at 0.5 → (248.5, 168.9, 16.875); at 1 both phases (255, 255, 0)"
+              },
+              {
+                "label": "hint_range and 2.0",
+                "text": "brief answer 7: not clamped from code; 2.0 extrapolates past yellow"
+              }
+            ],
+            "cues": [
+              {
+                "at": 10.99,
+                "card": 0
+              },
+              {
+                "at": 16.63,
+                "card": 1
+              },
+              {
+                "at": 21.21,
+                "card": 2
+              },
+              {
+                "at": 23.4,
+                "card": 3
+              }
+            ],
+            "durationSeconds": 26.24
+          },
+          "rendered": {
+            "out": "media/B04.mp4",
+            "at": "2026-11-01T03:37:08.155654+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 26.24,
+      "audio_file": "mp3/beat-B04.wav",
+      "render_duration_s": 26.266666666666666,
+      "audio_levelled": {
+        "from": "mp3/beat-B04.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B04.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/shaders/hurt_tint.gdshader lines 1-9 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "Here's Bao's hand-written shader, all nine lines. Line one makes it a canvas item shader, for 2D sprites. Line four declares hurt amount, the one number the game sends in; its hint range only shapes the Inspector slider. Then fragment, on line seven, runs for every pixel the courier covers, and line eight is the whole effect: the incoming colour, mixed toward yellow. That's what a shader does: a small function, run for every pixel.",
+      "estimated_duration_s": 26,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on shaders/hurt_tint.gdshader, lines 1-9"
+          },
+          {
+            "at": "Line one",
+            "event": "line 1 highlights — shader_type canvas_item: the 2D pipeline"
+          },
+          {
+            "at": "Line four",
+            "event": "line 4 highlights — hurt_amount: the game's one number in"
+          },
+          {
+            "at": "on line seven",
+            "event": "line 7 highlights — fragment(): runs per rasterized fragment"
+          },
+          {
+            "at": "line eight",
+            "event": "line 8 highlights — mix(incoming COLOR, yellow, hurt_amount)"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Nine lines, one colour line.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://shaders/hurt_tint.gdshader",
+            "source": "godot/shaders/hurt_tint.gdshader · lines 1–9 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "shader_type canvas_item;\nrender_mode unshaded;\n\nuniform float hurt_amount : hint_range(0.0, 1.0) = 0.0;\nuniform vec4 hurt_color : source_color = vec4(1.0, 1.0, 0.0, 1.0);\n\nvoid fragment() {\n\tCOLOR.rgb = mix(COLOR.rgb, hurt_color.rgb, hurt_amount);\n}",
+            "startLine": 1,
+            "codeFontSize": 28,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "LANGUAGE-NOTES Q2 · Bao",
+                "value": "fragment() processes rasterized fragments"
+              },
+              {
+                "label": "Line 5",
+                "value": "hurt_color : source_color = yellow"
+              },
+              {
+                "label": "Incoming COLOR",
+                "value": "texture × modulate, so the red blink survives"
+              }
+            ],
+            "output": [
+              "render_mode unshaded (line 2) · no TIME and no texture() call: every change comes from hurt_amount"
+            ],
+            "cues": [
+              {
+                "at": 2.29,
+                "line": 1,
+                "label": "shader_type canvas_item: the 2D pipeline"
+              },
+              {
+                "at": 5.14,
+                "line": 4,
+                "label": "hurt_amount: the game's one number in"
+              },
+              {
+                "at": 11.75,
+                "line": 7,
+                "label": "fragment(): runs per rasterized fragment"
+              },
+              {
+                "at": 14.8,
+                "line": 8,
+                "label": "mix(incoming COLOR, yellow, hurt_amount)"
+              }
+            ],
+            "durationSeconds": 22.12
+          },
+          "rendered": {
+            "out": "media/B05.mp4",
+            "at": "2026-10-31T19:52:11.890630+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 22.12,
+      "audio_file": "mp3/beat-B05.wav",
+      "render_duration_s": 22.133333333333333,
+      "audio_levelled": {
+        "from": "mp3/beat-B05.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B05.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B05. In-engine captures captures/hurt-tint/20261030-125036 and 20261030-125259-red (scripted debug key, simulation frozen: a fixture, not play); predictions from CHANGE-BRIEF.md.",
+      "narration_text": "Now the engine's answer, from in-engine captures with the simulation frozen and the value set by a debug key. At zero, the lamp and the coat match their stored colours exactly. At one half, the lamp reads two forty-nine, two twenty, thirty-seven: inside one byte of the hand table. In the red phase the same line keeps more red, and at one both phases are the same yellow. And two point oh, set from code, reads back as two point oh. The hint didn't clamp it; the output just saturates.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "white phase: courier crops at hurt_amount 0 / 0.5 / 1, sampled texels ringed"
+          },
+          {
+            "at": "At one half",
+            "event": "predicted vs measured table, lamp and coat"
+          },
+          {
+            "at": "red phase",
+            "event": "red-phase crops at 0 / 0.5 / 1 (iframes 27)"
+          },
+          {
+            "at": "two point oh",
+            "event": "the 2.0 capture: read back 2.0, both texels (255, 255, 0)"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B06.mp4"
+      },
+      "observation": "At hurt_amount 0 the lamp and coat texels read their stored colours; at 0.5 each channel lands within one byte of the hand table (lamp 249, 220, 37 against 248.5, 219.5, 37.5); the red phase keeps more red at 0.5; at 1 both phases are (255, 255, 0); 2.0 set from code reads back as 2.0 and renders the same yellow as 1.0.",
+      "actual_duration_s": 25.49,
+      "audio_file": "mp3/beat-B06.wav",
+      "render_duration_s": 25.5,
+      "audio_levelled": {
+        "from": "mp3/beat-B06.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B06.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/effects/hurt_tint_presentation.gd lines 18-30 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "The driver connects the game to that uniform. Every frame, line twenty-two calls refresh. Line twenty-six turns the courier's remaining invulnerability ticks into a fraction: forty-eight ticks is one, zero is zero, clamped. Outside playing, paused or the level-up screen, it's forced to zero, so a lethal hit can't leave him yellow. And line thirty sets the shader parameter. The driver only reads the game; it never writes it.",
+      "estimated_duration_s": 26,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on effects/hurt_tint_presentation.gd, lines 18-30"
+          },
+          {
+            "at": "line twenty-two",
+            "event": "line 22 highlights — _process: refresh every frame"
+          },
+          {
+            "at": "twenty-six",
+            "event": "line 26 highlights — iframes / 48, clamped to 0..1"
+          },
+          {
+            "at": "forced to zero",
+            "event": "line 27 highlights — MENU, WON, LOST: 0.0"
+          },
+          {
+            "at": "line thirty",
+            "event": "line 30 highlights — set_shader_parameter(\"hurt_amount\", …)"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The game's number, every frame.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://effects/hurt_tint_presentation.gd",
+            "source": "godot/effects/hurt_tint_presentation.gd · lines 18–30 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "\tgame.state.changed.connect(func(_from: int, _to: int): refresh())\n\trefresh()\n\nfunc _process(_delta: float) -> void:\n\trefresh()\n\nfunc amount() -> float:\n\tif session.state.current in [GS.PLAYING, GS.PAUSED, GS.LEVELUP]:\n\t\treturn clampf(float(session.player.iframes) / Tuning.IFRAME_TICKS, 0.0, 1.0)\n\treturn 0.0\n\nfunc refresh() -> void:\n\tmaterial.set_shader_parameter(\"hurt_amount\", amount())",
+            "startLine": 18,
+            "codeFontSize": 23,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Lines 15–17",
+                "value": "one material per courier, Shader shared"
+              },
+              {
+                "label": "player.gd line 98",
+                "value": "accepted hit: iframes = 48"
+              },
+              {
+                "label": "Line 18",
+                "value": "state change: refresh before next draw"
+              }
+            ],
+            "output": [
+              "session.gd 91–93 adds the driver · process_priority 200 (line 13) · nothing here writes game state"
+            ],
+            "cues": [
+              {
+                "at": 2.78,
+                "line": 22,
+                "label": "_process: refresh every frame"
+              },
+              {
+                "at": 4.62,
+                "line": 26,
+                "label": "iframes / 48, clamped to 0..1"
+              },
+              {
+                "at": 13.96,
+                "line": 27,
+                "label": "MENU, WON, LOST: 0.0"
+              },
+              {
+                "at": 17.04,
+                "line": 30,
+                "label": "set_shader_parameter(\"hurt_amount\", …)"
+              }
+            ],
+            "durationSeconds": 21.91
+          },
+          "rendered": {
+            "out": "media/B07.mp4",
+            "at": "2026-11-01T02:47:21.493071+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 21.91,
+      "audio_file": "mp3/beat-B07.wav",
+      "render_duration_s": 21.933333333333334,
+      "audio_levelled": {
+        "from": "mp3/beat-B07.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B07.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B07. Real 4K engine capture of the isolated copy (capture/take-hurt-seed5.avi, scripted input through the real input map); readout and curve from the take's own per-frame log.",
+      "narration_text": "Now the running game, with scripted input through the real input map. A monster connects, and the courier is yellow at once. The script presses pause, and the tint holds at twenty-three forty-eighths, because the counter stops with the simulation. Resume, and it drains. On the next hit a monster keeps touching him while he's protected, and nothing restarts. Frame by frame: one to zero in forty-eight ticks, eight tenths of a second, with the red blink still showing through.",
+      "estimated_duration_s": 28,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "real 4K capture, hurt take (seed 5): hit 2 at run 0:41.9, the courier yellow"
+          },
+          {
+            "at": "presses pause",
+            "event": "PAUSED: hurt_amount held at 0.4792 for 45 frames, readout from the take's log"
+          },
+          {
+            "at": "next hit",
+            "event": "hit 3: a monster keeps touching him (frames 1661–1666), hp stays 7"
+          },
+          {
+            "at": "Frame by frame",
+            "event": "held frames of hit 3, labelled, from 1.0 to 0.0"
+          },
+          {
+            "at": "red blink",
+            "event": "readout: blink on/off beside the tint"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B08.mp4"
+      },
+      "observation": "In the real game loop the courier turns yellow on the frame after each accepted hit, holds at 23/48 for the 45 paused frames, resumes, and reaches 0 after 48 ticks; a monster touching him during the third window (frames 1661-1666) changes neither hp nor the falling curve.",
+      "actual_duration_s": 22.17,
+      "audio_file": "mp3/beat-B08.wav",
+      "render_duration_s": 22.2,
+      "audio_levelled": {
+        "from": "mp3/beat-B08.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B08.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/a5/material_room.tscn lines 7-18 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "The textured shader goes on a 3D object. Bao's Assignment 5 room doesn't copy the Assignment 3 room: line ten instances it, and only a few things change. The floor's mesh becomes an eight by eight metre plane, line fourteen gives the floor the warm cobblestone material, and line eighteen gives the stand-in the cool one. The A3 room file itself stays untouched.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on a5/material_room.tscn, lines 7-18"
+          },
+          {
+            "at": "line ten",
+            "event": "line 10 highlights — instance of res://a3/lantern_gate_room.tscn"
+          },
+          {
+            "at": "eight by eight",
+            "event": "line 8 highlights — PlaneMesh 8 × 8 m for the floor"
+          },
+          {
+            "at": "line fourteen",
+            "event": "line 14 highlights — Floor/Mesh ← cobblestone_warm_floor.tres"
+          },
+          {
+            "at": "line eighteen",
+            "event": "line 18 highlights — StandIn/Mesh ← cobblestone_cool_standin.tres"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The 3D object: inherit, then override.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://a5/material_room.tscn",
+            "source": "godot/a5/material_room.tscn · lines 7–18 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "[sub_resource type=\"PlaneMesh\" id=\"PlaneMesh_floor\"]\nsize = Vector2(8, 8)\n\n[node name=\"LanternGateRoom\" instance=ExtResource(\"1_room\")]\n\n[node name=\"Mesh\" parent=\"Floor\"]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)\nmaterial_override = ExtResource(\"2_floor\")\nmesh = SubResource(\"PlaneMesh_floor\")\n\n[node name=\"Mesh\" parent=\"StandIn\"]\nmaterial_override = ExtResource(\"3_standin\")",
+            "startLine": 7,
+            "codeFontSize": 26,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Line 3",
+                "value": "res://a3/lantern_gate_room.tscn"
+              },
+              {
+                "label": "Why a plane (Bao)",
+                "value": "A3 BoxMesh top used 1/3 × 1/2 of UV"
+              },
+              {
+                "label": "Lights and camera",
+                "value": "inherited from the A3 room"
+              }
+            ],
+            "output": [
+              "test_materials.gd checks both overrides and the PlaneMesh floor"
+            ],
+            "cues": [
+              {
+                "at": 5.31,
+                "line": 10,
+                "label": "instance of res://a3/lantern_gate_room.tscn"
+              },
+              {
+                "at": 9.77,
+                "line": 8,
+                "label": "PlaneMesh 8 × 8 m for the floor"
+              },
+              {
+                "at": 11.31,
+                "line": 14,
+                "label": "Floor/Mesh ← cobblestone_warm_floor.tres"
+              },
+              {
+                "at": 14.89,
+                "line": 18,
+                "label": "StandIn/Mesh ← cobblestone_cool_standin.tres"
+              }
+            ],
+            "durationSeconds": 19.93
+          },
+          "rendered": {
+            "out": "media/B09.mp4",
+            "at": "2026-11-01T03:38:21.433483+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 19.93,
+      "audio_file": "mp3/beat-B09.wav",
+      "render_duration_s": 19.933333333333334,
+      "audio_levelled": {
+        "from": "mp3/beat-B09.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B09.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B09. Real engine capture at 4246f94 (capture_a5_materials.gd --pair, scripted, 1280 × 720).",
+      "narration_text": "Here's that room in the engine, at the film's revision. The floor is repeated warm paving, two by two tiles of square stones. The stand-in wears the same stones, larger and cooler, catching the lantern's light. Both are lit by the A3 room's own lights, from a fixed camera pose, so every later capture can be compared pixel for pixel.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "real engine capture: the material room from the fixed pose (captures/a5-materials/20261030-170452-pair)"
+          },
+          {
+            "at": "The floor",
+            "event": "floor rectangle marked: cobblestone_warm_floor.tres"
+          },
+          {
+            "at": "The stand-in",
+            "event": "stand-in rectangle marked: cobblestone_cool_standin.tres"
+          },
+          {
+            "at": "fixed camera pose",
+            "event": "enlarged crops of both rectangles"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B10.mp4"
+      },
+      "observation": "The floor shows repeated warm paving of square stones and the stand-in capsule the same stones, larger and cooler, under the A3 room's lights from the fixed capture pose.",
+      "actual_duration_s": 18.15,
+      "audio_file": "mp3/beat-B10.wav",
+      "render_duration_s": 18.166666666666668,
+      "audio_levelled": {
+        "from": "mp3/beat-B10.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B10.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/a5/materials/cobblestone_warm_floor.tres lines 8-18 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "So what's a material? This file. Line ten points at the shader. Lines eleven to thirteen hand it the three maps. And lines fourteen to eighteen are just values: a warm tint, the map repeated twice, a matte roughness range. The stand-in's file points at the same shader with different values: cooler, larger, shinier. The shader is the code; each material is a set of numbers for it.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on a5/materials/cobblestone_warm_floor.tres, lines 8-18"
+          },
+          {
+            "at": "Line ten",
+            "event": "line 10 highlights — shader = cobblestone_surface.gdshader"
+          },
+          {
+            "at": "eleven to thirteen",
+            "event": "line 11 highlights — the three maps: colour, normal, roughness"
+          },
+          {
+            "at": "repeated twice",
+            "event": "line 15 highlights — uv_scale = 2.0"
+          },
+          {
+            "at": "matte",
+            "event": "line 16 highlights — roughness 0.55–0.95"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "A material is a set of values.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://a5/materials/cobblestone_warm_floor.tres",
+            "source": "godot/a5/materials/cobblestone_warm_floor.tres · lines 8–18 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "[resource]\nrender_priority = 0\nshader = ExtResource(\"1_1ervd\")\nshader_parameter/color_tex = ExtResource(\"2_60gv5\")\nshader_parameter/normal_tex = ExtResource(\"3_ovpgk\")\nshader_parameter/roughness_tex = ExtResource(\"4_obb43\")\nshader_parameter/tint = Color(1, 0.92, 0.8, 1)\nshader_parameter/uv_scale = 2.0\nshader_parameter/roughness_min = 0.55\nshader_parameter/roughness_max = 0.95\nshader_parameter/normal_strength = 1.0",
+            "startLine": 8,
+            "codeFontSize": 27,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Stand-in .tres 14–18",
+                "value": "cooler tint · uv 1 · rough 0.2–0.55"
+              },
+              {
+                "label": "Brief answer 6 · Bao",
+                "value": "share the Shader, keep own values"
+              },
+              {
+                "label": "test_materials.gd",
+                "value": "one Shader instance, two materials"
+              }
+            ],
+            "output": [
+              "values are stored in the material; defaults live in the shader's uniform lines"
+            ],
+            "cues": [
+              {
+                "at": 1.44,
+                "line": 10,
+                "label": "shader = cobblestone_surface.gdshader"
+              },
+              {
+                "at": 3.33,
+                "line": 11,
+                "label": "the three maps: colour, normal, roughness"
+              },
+              {
+                "at": 9.07,
+                "line": 15,
+                "label": "uv_scale = 2.0"
+              },
+              {
+                "at": 9.99,
+                "line": 16,
+                "label": "roughness 0.55–0.95"
+              }
+            ],
+            "durationSeconds": 19.56
+          },
+          "rendered": {
+            "out": "media/B11.mp4",
+            "at": "2026-11-01T13:28:08.149093+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 19.56,
+      "audio_file": "mp3/beat-B11.wav",
+      "render_duration_s": 19.566666666666666,
+      "audio_levelled": {
+        "from": "mp3/beat-B11.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B11.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B11. Real engine captures at 4246f94 (capture_a5_materials.gd --one-material, value set in memory, never saved).",
+      "narration_text": "The proof that values live in the material. The capture tool changes only the floor's u v scale, from two to four, in memory. The floor's stones get smaller and denser, and its pixels change by up to seventy-two levels. The stand-in, wearing the same shader, doesn't change by a single level. Shared code, separate numbers.",
+      "estimated_duration_s": 18,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "real engine captures: baseline (uv_scale 2) beside floor uv_scale 4 (captures/a5-materials/20261030-170456-one-material)"
+          },
+          {
+            "at": "smaller and denser",
+            "event": "floor crops, before and after"
+          },
+          {
+            "at": "single level",
+            "event": "measured: floor max difference 72, stand-in 0"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B12.mp4"
+      },
+      "observation": "Changing only the floor material's uv_scale from 2 to 4 makes the floor's stones smaller and changes its rectangle by up to 72 levels; the stand-in rectangle changes by 0.",
+      "actual_duration_s": 17.24,
+      "audio_file": "mp3/beat-B12.wav",
+      "render_duration_s": 17.266666666666666,
+      "audio_levelled": {
+        "from": "mp3/beat-B12.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B12.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/shaders/cobblestone_surface.gdshader lines 17-24 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "Now the shader side, Bao's fragment function. Line eighteen scales the u v coordinates. Line nineteen samples the colour map and multiplies by the tint: that's the albedo. Line twenty-one hands the normal map to the engine. And line twenty-two is Bao's latest edit: the relief's depth is scaled by how squarely the surface faces the camera, half strength edge-on, full strength face-on.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on shaders/cobblestone_surface.gdshader, lines 17-24"
+          },
+          {
+            "at": "Line eighteen",
+            "event": "line 18 highlights — uv = UV × uv_scale"
+          },
+          {
+            "at": "Line nineteen",
+            "event": "line 19 highlights — ALBEDO = colour sample × tint"
+          },
+          {
+            "at": "Line twenty-one",
+            "event": "line 21 highlights — NORMAL_MAP = the normal sample"
+          },
+          {
+            "at": "line twenty-two",
+            "event": "line 22 highlights — depth × mix(0.5, 1.0, |NORMAL.z|)  (0b91838)"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The shader side: fragment().",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://shaders/cobblestone_surface.gdshader",
+            "source": "godot/shaders/cobblestone_surface.gdshader · lines 17–24 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "void fragment() {\n\tvec2 uv = UV * uv_scale;\n\tALBEDO = texture(color_tex, uv).rgb * tint.rgb;\n\tROUGHNESS = mix(roughness_min, roughness_max, texture(roughness_tex, uv).r);\n\tNORMAL_MAP = texture(normal_tex, uv).rgb;\n\tNORMAL_MAP_DEPTH = normal_strength * mix(0.5, 1.0, abs(normalize(NORMAL).z));\n\tMETALLIC = 0.0;\n}",
+            "startLine": 17,
+            "codeFontSize": 23,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Line 22 before 0b91838",
+                "value": "NORMAL_MAP_DEPTH = normal_strength;"
+              },
+              {
+                "label": "LANGUAGE-NOTES Q3 · Bao",
+                "value": "reads UV (:18), COLOR, NORMAL (:22)"
+              },
+              {
+                "label": "Line 20",
+                "value": "roughness remapped min → max"
+              }
+            ],
+            "output": [
+              "METALLIC = 0.0 (line 23) · opaque, lit by the room's lights"
+            ],
+            "cues": [
+              {
+                "at": 2.17,
+                "line": 18,
+                "label": "uv = UV × uv_scale"
+              },
+              {
+                "at": 4.38,
+                "line": 19,
+                "label": "ALBEDO = colour sample × tint"
+              },
+              {
+                "at": 8.81,
+                "line": 21,
+                "label": "NORMAL_MAP = the normal sample"
+              },
+              {
+                "at": 11.76,
+                "line": 22,
+                "label": "depth × mix(0.5, 1.0, |NORMAL.z|)  (0b91838)"
+              }
+            ],
+            "durationSeconds": 20.33
+          },
+          "rendered": {
+            "out": "media/B13.mp4",
+            "at": "2026-11-01T08:18:37.595623+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 20.33,
+      "audio_file": "mp3/beat-B13.wav",
+      "render_duration_s": 20.333333333333332,
+      "audio_levelled": {
+        "from": "mp3/beat-B13.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B13.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B14",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B13. Real engine captures captures/a5-materials/20261030-131249-compare-shader-baseline and 20261030-163723-compare-shader-bao-edit; the agent run 20261030-single-line-study is labelled as an agent run.",
+      "narration_text": "Change the shader instead, and both objects move. Bao wrote his prediction first: multiply the end of the albedo line by one half, and the floor and the stand-in both darken, because they share this shader, while stone size and relief stay the same. He edited line nineteen by hand, captured, and restored it. Every pixel in both rectangles changed, and his observation matched the prediction. An earlier Codex run made a similar edit, turning both green, and broke the rule that agents never touch Bao's shaders.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Bao's prediction, recorded before the edit (PREDICTION.md, his words)"
+          },
+          {
+            "at": "edited line nineteen",
+            "event": "real engine captures: baseline beside Bao's ALBEDO × 0.5 edit (captured at e5c0272, before line 22 changed)"
+          },
+          {
+            "at": "Every pixel",
+            "event": "measured means: floor and stand-in both fall; every pixel changed"
+          },
+          {
+            "at": "observation",
+            "event": "Bao's observation, verbatim"
+          },
+          {
+            "at": "Codex run",
+            "event": "agent run, labelled: ALBEDO × (0, 1, 0), both green, shader restored byte for byte"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B14.mp4"
+      },
+      "observation": "After Bao's one-line ALBEDO * 0.5 edit every pixel of both the floor and the stand-in rectangles changed and both darkened, as his prediction said; the agent-run green study is shown separately and labelled.",
+      "actual_duration_s": 26.6,
+      "audio_file": "mp3/beat-B14.wav",
+      "render_duration_s": 26.6,
+      "audio_levelled": {
+        "from": "mp3/beat-B14.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B14.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B15",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/shaders/cobblestone_surface.gdshader lines 1-5 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "Why is a texture information? Because the same kind of file can hold three kinds of data, and only the hint tells the engine which. Line three marks the colour map source color: these bytes are colour. Line four marks the normal map hint normal: these are directions. Line five, roughness, has no colour hint at all: raw numbers. And line one, shader type spatial, puts all of it in the 3D pipeline.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on shaders/cobblestone_surface.gdshader, lines 1-5"
+          },
+          {
+            "at": "Line three",
+            "event": "line 3 highlights — color_tex : source_color — colour data"
+          },
+          {
+            "at": "Line four",
+            "event": "line 4 highlights — normal_tex : hint_normal — directions"
+          },
+          {
+            "at": "Line five",
+            "event": "line 5 highlights — roughness_tex: no colour hint — raw numbers"
+          },
+          {
+            "at": "line one",
+            "event": "line 1 highlights — shader_type spatial: the 3D pipeline"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Why a texture is information.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://shaders/cobblestone_surface.gdshader",
+            "source": "godot/shaders/cobblestone_surface.gdshader · lines 1–5 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "shader_type spatial;\n\nuniform sampler2D color_tex : source_color, filter_linear_mipmap, repeat_enable;\nuniform sampler2D normal_tex : hint_normal, filter_linear_mipmap, repeat_enable;\nuniform sampler2D roughness_tex : filter_linear_mipmap, repeat_enable;",
+            "startLine": 1,
+            "codeFontSize": 23,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "LANGUAGE-NOTES Q4 · Bao",
+                "value": "identifies colour / normal data"
+              },
+              {
+                "label": "Import: normal-map mode",
+                "value": "diff off · nor_gl on · rough off"
+              },
+              {
+                "label": "filter_*, repeat_enable",
+                "value": "change how samples are taken"
+              }
+            ],
+            "output": [
+              "all three maps: Poly Haven Cobblestone Floor 08, 1K PNG, lossless import"
+            ],
+            "cues": [
+              {
+                "at": 6.5,
+                "line": 3,
+                "label": "color_tex : source_color — colour data"
+              },
+              {
+                "at": 10.07,
+                "line": 4,
+                "label": "normal_tex : hint_normal — directions"
+              },
+              {
+                "at": 13.45,
+                "line": 5,
+                "label": "roughness_tex: no colour hint — raw numbers"
+              },
+              {
+                "at": 16.82,
+                "line": 1,
+                "label": "shader_type spatial: the 3D pipeline"
+              }
+            ],
+            "durationSeconds": 20.39
+          },
+          "rendered": {
+            "out": "media/B15.mp4",
+            "at": "2026-11-01T13:28:07.059381+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 20.39,
+      "audio_file": "mp3/beat-B15.wav",
+      "render_duration_s": 20.4,
+      "audio_levelled": {
+        "from": "mp3/beat-B15.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B15.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B16",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B15. The texture files themselves (godot/assets/textures/cobblestone_floor_08/), recorded curl output (evidence/assignment-5/textures/curl-calibration.log), and real engine sweep captures at 4246f94.",
+      "narration_text": "Here are the three files: colour, a purple-blue map of directions, and grey numbers. A map of directions can be checked like data. This normal map's curl ratio is zero point two two in the OpenGL convention and one point seven eight read as DirectX, and the DirectX calibration file is its mirror image, so it's a real surface in the right convention. And on the floor, normal strength zero against one changes how the stone joints are shaded.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "the three source PNGs, each labelled with its line and hint"
+          },
+          {
+            "at": "curl ratio",
+            "event": "recorded output: curl_ratio for nor_gl and nor_dx, both conventions"
+          },
+          {
+            "at": "normal strength zero",
+            "event": "real engine crops: floor at normal_strength 0 and 1 (20261030-170453-sweep)"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B16.mp4"
+      },
+      "observation": "The colour, normal and roughness files look like three different kinds of image; the normal map's curl ratio is 0.2236 in the OpenGL convention and 1.7764 in DirectX (the DX calibration map mirrors it); normal_strength 0 against 1 on the floor changes the shading of the stone joints.",
+      "actual_duration_s": 23.15,
+      "audio_file": "mp3/beat-B16.wav",
+      "render_duration_s": 23.166666666666668,
+      "audio_levelled": {
+        "from": "mp3/beat-B16.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B16.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B17",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/shaders/cobblestone_surface.gdshader lines 7-15 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "The rest of the top is the material's interface. Group uniforms, on lines seven and eleven, sort the settings into Surface and Response panels in the Inspector. Each hint range sets a slider's limits, not a rule: line nine lets u v scale run from a quarter to four. These five numbers are everything a material can change.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on shaders/cobblestone_surface.gdshader, lines 7-15"
+          },
+          {
+            "at": "lines seven",
+            "event": "line 7 highlights — group_uniforms Surface"
+          },
+          {
+            "at": "and eleven",
+            "event": "line 11 highlights — group_uniforms Response"
+          },
+          {
+            "at": "line nine",
+            "event": "line 9 highlights — uv_scale : hint_range(0.25, 4.0) = 1.0"
+          },
+          {
+            "at": "five numbers",
+            "event": "line 14 highlights — tint · uv_scale · roughness min / max · normal_strength"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The material's interface.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://shaders/cobblestone_surface.gdshader",
+            "source": "godot/shaders/cobblestone_surface.gdshader · lines 7–15 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "group_uniforms Surface;\nuniform vec4 tint : source_color = vec4(1.0, 1.0, 1.0, 1.0);\nuniform float uv_scale : hint_range(0.25, 4.0) = 1.0;\n\ngroup_uniforms Response;\nuniform float roughness_min : hint_range(0.0, 1.0) = 0.2;\nuniform float roughness_max : hint_range(0.0, 1.0) = 0.8;\nuniform float normal_strength : hint_range(0.0, 2.0) = 1.0;\ngroup_uniforms;",
+            "startLine": 7,
+            "codeFontSize": 27,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Shader defaults",
+                "value": "tint white · uv 1 · rough 0.2–0.8 · normal 1"
+              },
+              {
+                "label": "LANGUAGE-NOTES Q8 · Bao",
+                "value": "uniform hints integrated with the Inspector"
+              },
+              {
+                "label": "Line 15",
+                "value": "group_uniforms; closes the groups"
+              }
+            ],
+            "output": [
+              "the brief asks configuration to enforce roughness_min ≤ roughness_max; the shader does not"
+            ],
+            "cues": [
+              {
+                "at": 3.42,
+                "line": 7,
+                "label": "group_uniforms Surface"
+              },
+              {
+                "at": 4.07,
+                "line": 11,
+                "label": "group_uniforms Response"
+              },
+              {
+                "at": 11.24,
+                "line": 9,
+                "label": "uv_scale : hint_range(0.25, 4.0) = 1.0"
+              },
+              {
+                "at": 14.42,
+                "line": 14,
+                "label": "tint · uv_scale · roughness min / max · normal_strength"
+              }
+            ],
+            "durationSeconds": 17.37
+          },
+          "rendered": {
+            "out": "media/B17.mp4",
+            "at": "2026-11-01T03:34:54.475344+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.37,
+      "audio_file": "mp3/beat-B17.wav",
+      "render_duration_s": 17.4,
+      "audio_levelled": {
+        "from": "mp3/beat-B17.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B17.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B18",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B17. Real engine captures at 4246f94 (capture_a5_materials.gd --sweep); measured means from its CAPTURES.md.",
+      "narration_text": "The sweep moves each of those five numbers, one at a time, on the floor only: low, the material's own value, then high. U v scale changes the stones' size, the roughness ends move the warm highlight, normal strength sets the relief, and a black tint takes the stone colour away. Through all fifteen captures the stand-in never moves. Bao's look at the new normal strength row: at zero, the surface is flatter and the normal relief is off; at one, the stone edges and joints look more three-dimensional; at two, stronger light and dark relief, deeper joints, an exaggerated bump.",
+      "estimated_duration_s": 26,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "fifteen real engine captures in a 5 × 3 grid (captures/a5-materials/20261030-170453-sweep, values in memory)"
+          },
+          {
+            "at": "U v scale",
+            "event": "uv_scale row highlighted: 0.25 / 2 / 4"
+          },
+          {
+            "at": "roughness ends",
+            "event": "roughness rows highlighted"
+          },
+          {
+            "at": "black tint",
+            "event": "tint row highlighted: black"
+          },
+          {
+            "at": "never moves",
+            "event": "stand-in mean (31.42, 40.97, 74.83) in every capture"
+          },
+          {
+            "at": "Bao's look",
+            "event": "normal_strength row again, with Bao's look quoted from TEST-REPORT.md"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B18.mp4"
+      },
+      "observation": "Each of the five uniforms changes the floor rectangle at its low and high value, while the stand-in rectangle stays at (31.42, 40.97, 74.83) through all fifteen captures; Bao's recorded look at the normal_strength row is quoted beside its three captures.",
+      "actual_duration_s": 30.76,
+      "audio_file": "mp3/beat-B18.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B18.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 30.766666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B18.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B19",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/shaders/hint_experiment.gdshader lines 5-14 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "The cleanest test of a hint is Bao's own experiment. One three-pixel grey image, bound to two samplers: line five with source color, line six without. Line seven picks which one a quad uses, and line eleven or thirteen writes the sample straight to albedo, unshaded. Same bytes in, so any difference out is the hint.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on shaders/hint_experiment.gdshader, lines 5-14"
+          },
+          {
+            "at": "line five",
+            "event": "line 5 highlights — color_sample : source_color"
+          },
+          {
+            "at": "line six",
+            "event": "line 6 highlights — raw_sample: no hint"
+          },
+          {
+            "at": "Line seven",
+            "event": "line 7 highlights — use_color picks the sampler"
+          },
+          {
+            "at": "line eleven",
+            "event": "line 11 highlights — ALBEDO = the chosen sample"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "A hint, isolated.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://shaders/hint_experiment.gdshader",
+            "source": "godot/shaders/hint_experiment.gdshader · lines 5–14 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "uniform sampler2D color_sample : source_color, filter_nearest;\nuniform sampler2D raw_sample : filter_nearest;\nuniform bool use_color = true;\n\nvoid fragment() {\n\tif (use_color) {\n\t\tALBEDO = texture(color_sample, UV).rgb;\n\t} else {\n\t\tALBEDO = texture(raw_sample, UV).rgb;\n\t}",
+            "startLine": 5,
+            "codeFontSize": 28,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "The image",
+                "value": "hint_greys_3x1.png: 64 · 128 · 192"
+              },
+              {
+                "label": "Two materials",
+                "value": "with / without source_color .tres"
+              },
+              {
+                "label": "The scene",
+                "value": "unshaded, no lights, Linear tonemap"
+              }
+            ],
+            "output": [
+              "render_mode unshaded (line 2) · both samplers filter_nearest"
+            ],
+            "cues": [
+              {
+                "at": 5.54,
+                "line": 5,
+                "label": "color_sample : source_color"
+              },
+              {
+                "at": 7.15,
+                "line": 6,
+                "label": "raw_sample: no hint"
+              },
+              {
+                "at": 8.15,
+                "line": 7,
+                "label": "use_color picks the sampler"
+              },
+              {
+                "at": 10.6,
+                "line": 11,
+                "label": "ALBEDO = the chosen sample"
+              }
+            ],
+            "durationSeconds": 17.58
+          },
+          "rendered": {
+            "out": "media/B19.mp4",
+            "at": "2026-11-01T03:37:39.007525+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.58,
+      "audio_file": "mp3/beat-B19.wav",
+      "render_duration_s": 17.6,
+      "audio_levelled": {
+        "from": "mp3/beat-B19.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B19.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B20",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B19. Real engine capture at d01df00 (the hint shader and scene unchanged since); predictions from CHANGE-BRIEF.md.",
+      "narration_text": "The prediction depended on the renderer. In Forward plus or Mobile, the unhinted quad should come out lighter, about one thirty-seven, one eighty-eight, two twenty-five. Under this project's Compatibility renderer, both should read sixty-four, one twenty-eight, one ninety-two. Measured: sixty-four, one twenty-eight, one ninety-two, on both quads. That matches the Compatibility prediction. The Forward plus difference is still a prediction; it wasn't measured here.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "the brief's prediction table: Compatibility vs Forward+/Mobile"
+          },
+          {
+            "at": "Measured",
+            "event": "real engine capture of the hint scene (captures/a5-materials/20261030-131056-hint), band centres sampled"
+          },
+          {
+            "at": "still a prediction",
+            "event": "Forward+ column marked: predicted, not measured"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B20.mp4"
+      },
+      "observation": "Both quads show the grey bands at 64, 128 and 192, the Compatibility prediction; the Forward+/Mobile prediction (137, 188, 225 without the hint) is shown as a prediction only.",
+      "actual_duration_s": 22.63,
+      "audio_file": "mp3/beat-B20.wav",
+      "render_duration_s": 22.633333333333333,
+      "audio_levelled": {
+        "from": "mp3/beat-B20.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B20.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B21",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/shaders/standard_generated.gdshader lines 1-7 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "For comparison, Godot can write a shader itself. Bao converted a standard material holding the same three maps, and the editor produced this. Line one says it's automatic. Line three is the same spatial shader type as Bao's line one, and line seven marks the albedo sampler source color, exactly like Bao's line three.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on shaders/standard_generated.gdshader, lines 1-7"
+          },
+          {
+            "at": "Line one",
+            "event": "line 1 highlights — automatically converted from StandardMaterial3D"
+          },
+          {
+            "at": "Line three",
+            "event": "line 3 highlights — shader_type spatial — Bao's :1"
+          },
+          {
+            "at": "line seven",
+            "event": "line 7 highlights — texture_albedo : source_color — Bao's :3"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The shader Godot writes.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://shaders/standard_generated.gdshader",
+            "source": "godot/shaders/standard_generated.gdshader · lines 1–7 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "// NOTE: Shader automatically converted from Godot Engine 4.7.2.stable's StandardMaterial3D.\n\nshader_type spatial;\nrender_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;\n\nuniform vec4 albedo : source_color;\nuniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;",
+            "startLine": 1,
+            "codeFontSize": 23,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Line 19 ↔ Bao :4",
+                "value": "hint_roughness_normal, no source_color"
+              },
+              {
+                "label": "Line 35 ↔ Bao :19",
+                "value": "ALBEDO = albedo × texture sample"
+              },
+              {
+                "label": "LANGUAGE-NOTES Q6 · Bao",
+                "value": "line 19 … remains normal data"
+              }
+            ],
+            "output": [
+              "converted in the Godot 4.7.2 editor (43dfe20) · study only: the game never loads it"
+            ],
+            "cues": [
+              {
+                "at": 7.73,
+                "line": 1,
+                "label": "automatically converted from StandardMaterial3D"
+              },
+              {
+                "at": 9.41,
+                "line": 3,
+                "label": "shader_type spatial — Bao's :1"
+              },
+              {
+                "at": 13.12,
+                "line": 7,
+                "label": "texture_albedo : source_color — Bao's :3"
+              }
+            ],
+            "durationSeconds": 17.86
+          },
+          "rendered": {
+            "out": "media/B21.mp4",
+            "at": "2026-11-01T15:29:09.273832+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.86,
+      "audio_file": "mp3/beat-B21.wav",
+      "render_duration_s": 17.866666666666667,
+      "audio_levelled": {
+        "from": "mp3/beat-B21.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B21.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B22",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B21. Verbatim lines from godot/ at 4246f94; agent-made film fixture capture/shader_pair_fixture.gd rendered on an isolated copy (not gameplay, values set in memory); measurements by tools/pair_diff.py.",
+      "narration_text": "Lined up: generated line seven against Bao's line three, nineteen against four, thirty-five against nineteen. Different names, same jobs. To see whether they draw the same, this film rendered both on the same plane under one light, as a labelled fixture. Face-on, about nine pixels in ten agree within two levels of two fifty-five. Tilt the camera fifty degrees and they drift apart, by nearly three levels on average, which is consistent with Bao's line twenty-two weakening his relief at a slant.",
+      "estimated_duration_s": 28,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "verbatim line pairs, generated vs Bao's, from the hashed files"
+          },
+          {
+            "at": "labelled fixture",
+            "event": "film fixture renders: editor-generated material vs Bao's shader, neutral values"
+          },
+          {
+            "at": "Face-on",
+            "event": "difference map ×8, face-on: 87–93 % of pixels within 2 levels"
+          },
+          {
+            "at": "Tilt the camera",
+            "event": "difference map ×8, tilted 50°: mean 2.4–2.8 levels"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B22.mp4"
+      },
+      "observation": "The verbatim line pairs sit side by side; in the fixture, the editor-generated material and Bao's shader with neutral values draw the same stones, with 87-93 % of pixels within 2 levels face-on and a larger difference (mean about 2.4-2.8 levels) with the camera tilted 50 degrees.",
+      "actual_duration_s": 26.39,
+      "audio_file": "mp3/beat-B22.wav",
+      "render_duration_s": 26.4,
+      "audio_levelled": {
+        "from": "mp3/beat-B22.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B22.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B23",
+      "act": "ANSWERS",
+      "role_note": "Recap of the four questions; the excerpt is Bao's answer 8 in LANGUAGE-NOTES.md, verbatim.",
+      "narration_text": "So, the four questions, each at a line. What a shader does: hurt tint line eight, a function run for every fragment. How a material differs from a shader: one shader, two material files of values. Why a texture is information: lines three to five say colour, directions, or raw numbers. And what Godot's shading language adds: shader types, hints wired to the Inspector, and outputs like albedo and normal map that plug straight into Godot's lighting.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "card-cues",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "LANGUAGE-NOTES.md · Bao's answer 8 excerpt beside 4 cards"
+          },
+          {
+            "at": "What a shader does",
+            "event": "card 1 highlights"
+          },
+          {
+            "at": "How a material differs",
+            "event": "card 2 highlights"
+          },
+          {
+            "at": "Why a texture",
+            "event": "card 3 highlights"
+          },
+          {
+            "at": "And what Godot's",
+            "event": "card 4 highlights"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "Four questions, four lines",
+            "section": "LANGUAGE-NOTES.md · Bao's answer 8",
+            "excerpt": "Godot-specific facilities: Engine-connected outputs such as ALBEDO and NORMAL_MAP (cobblestone_surface:19, 21), plus uniform hints integrated with the Inspector (hurt_tint:4–5, cobblestone_surface:7–14).",
+            "source": "LANGUAGE-NOTES.md (written by Bao), at 4246f94 · card lines point at his code",
+            "status": "Each answer points at a line of Bao's code",
+            "visualLabel": "The assignment's four questions",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "What a shader does",
+                "text": "hurt_tint:7–8 — a function run for every fragment: COLOR in, COLOR out"
+              },
+              {
+                "label": "Material vs shader",
+                "text": "warm_floor.tres vs cool_standin.tres — one Shader, two sets of values"
+              },
+              {
+                "label": "A texture is information",
+                "text": "cobblestone_surface:3–5 — source_color · hint_normal · raw roughness"
+              },
+              {
+                "label": "The shading language",
+                "text": "shader_type (:1), hints, group_uniforms, ALBEDO and NORMAL_MAP outputs"
+              }
+            ],
+            "cues": [
+              {
+                "at": 1.74,
+                "card": 0
+              },
+              {
+                "at": 5.58,
+                "card": 1
+              },
+              {
+                "at": 9.56,
+                "card": 2
+              },
+              {
+                "at": 14.04,
+                "card": 3
+              }
+            ],
+            "durationSeconds": 22.46
+          },
+          "rendered": {
+            "out": "media/B23.mp4",
+            "at": "2026-11-01T03:37:38.033286+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 22.46,
+      "audio_file": "mp3/beat-B23.wav",
+      "render_duration_s": 22.466666666666665,
+      "audio_levelled": {
+        "from": "mp3/beat-B23.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B23.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B24",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/tests/test_hurt_tint.gd lines 155-166 at 4246f94, read verbatim; the next beat shows the result.",
+      "narration_text": "The tests drive the real game. This run places one wraith twenty pixels away, presses a real Enter key to start, waits for a real contact to land, then holds W to walk away. A sampler that runs after everything else records the uniform every frame. The test never calls the driver or sets the value itself.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on tests/test_hurt_tint.gd, lines 155-166"
+          },
+          {
+            "at": "one wraith",
+            "event": "line 155 highlights — fixture: a wraith 20 px to the right"
+          },
+          {
+            "at": "real Enter key",
+            "event": "line 157 highlights — parsed key event: Enter starts the run"
+          },
+          {
+            "at": "real contact",
+            "event": "line 159 highlights — wait for an accepted hit"
+          },
+          {
+            "at": "holds W",
+            "event": "line 162 highlights — parsed key event: W walks away"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Testing through the real game.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://tests/test_hurt_tint.gd",
+            "source": "godot/tests/test_hurt_tint.gd · lines 155–166 · source revision 4246f94 · Godot editor reconstruction",
+            "code": "\tfixture = func(): wraith(Vector2(20, 0))\n\tvar mark := sampler.rows.size()\n\tawait tap(KEY_ENTER)\n\tcheck(\"real-start-input\", game.state.current == GS.PLAYING and not game.test_mode)\n\tawait wait_until(func(): return hits.size() >= 1, 120)\n\tvar h_a: int = hits[0].tick\n\tawait wait_until(func(): return game.player.iframes <= 24, 240)\n\tkey(KEY_W)\n\tawait wait_until(func(): return game.tick_count >= h_a + 70, 600)\n\tkey(KEY_W, false)\n\tvar end_a := sampler.rows.size()\n\tvar first := first_row_at_tick(mark, h_a)",
+            "startLine": 155,
+            "codeFontSize": 23,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Sampler, lines 13–38",
+                "value": "priority 100000: a row per rendered frame"
+              },
+              {
+                "label": "Line 187",
+                "value": "zero-after-48-ticks, within one frame"
+              },
+              {
+                "label": "Header, lines 2–5",
+                "value": "fixtures only place enemies, hp, a gem"
+              }
+            ],
+            "output": [
+              "./scripts/run-test.sh test_hurt_tint.gd 30 | 60 | 144"
+            ],
+            "cues": [
+              {
+                "at": 2.51,
+                "line": 155,
+                "label": "fixture: a wraith 20 px to the right"
+              },
+              {
+                "at": 4.92,
+                "line": 157,
+                "label": "parsed key event: Enter starts the run"
+              },
+              {
+                "at": 7.09,
+                "line": 159,
+                "label": "wait for an accepted hit"
+              },
+              {
+                "at": 8.68,
+                "line": 162,
+                "label": "parsed key event: W walks away"
+              }
+            ],
+            "durationSeconds": 17.98
+          },
+          "rendered": {
+            "out": "media/B24.mp4",
+            "at": "2026-11-01T03:46:07.829491+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.98,
+      "audio_file": "mp3/beat-B24.wav",
+      "render_duration_s": 18.0,
+      "audio_levelled": {
+        "from": "mp3/beat-B24.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B24.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B25",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B24. Recorded tool output: capture/test-run-film-build-raw.txt (this film, isolated copy at 4246f94) and evidence/assignment-5/mutations/*.log.",
+      "narration_text": "Recorded output, re-run for this film on a clean copy of the film's revision. Twenty-eight of twenty-eight at thirty, sixty and a hundred forty-four frames per second: the tint reaches zero forty-eight ticks after the hit, eight tenths of a second of game time, within one frame. One twenty-seven of one twenty-seven material checks, and the three hundred thirty-two earlier checks unchanged. Then Bao's three mutations: a missing semicolon fails four checks, a renamed uniform fails three, a dropped source color fails one. What no headless run can show is the colour on screen; that's why the captures exist.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "recorded: test_hurt_tint at 30 / 60 / 144 fps, first value, zero tick, game time, allowed"
+          },
+          {
+            "at": "One twenty-seven",
+            "event": "recorded: test_materials 127/0 and the ten earlier suites, 332/0"
+          },
+          {
+            "at": "three mutations",
+            "event": "recorded mutation logs: semicolon 4/28, rename 3/28, source_color 1/127"
+          },
+          {
+            "at": "no headless run",
+            "event": "what a headless run cannot show"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B25.mp4"
+      },
+      "observation": "Recorded output: 28/28 at 30, 60 and 144 fps, 127/127 material checks and the ten earlier suites at 332/0 on a fresh copy of the film revision; the three mutation logs fail 4, 3 and 1 checks.",
+      "actual_duration_s": 32.06,
+      "audio_file": "mp3/beat-B25.wav",
+      "render_duration_s": 32.06666666666667,
+      "audio_levelled": {
+        "from": "mp3/beat-B25.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B25.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B26",
+      "act": "LIMITS",
+      "kind": "evidence",
+      "role_note": "Agent mistakes from TEST-REPORT.md, verbatim rows shortened; open items from TEST-REPORT.md and README.md Known limitations.",
+      "narration_text": "What the agent got wrong, as Bao's test report lists it: a draft calling the generated particle shader hand-written; a one-frame tolerance that was really the window's largest frame gap; an unmeasured memory figure and a curl threshold too loose; an ambient guess the captures disproved; and a first room that copied the A3 scene instead of inheriting it. Still uncertain: the Forward plus hint difference is predicted, not measured, and the small face-on difference in the film's own fixture isn't explained. The next step: run the hint experiment on a Forward plus copy.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "TEST-REPORT.md 'What the agent got wrong (Assignment 5)', six rows, plus the Codex shader edit"
+          },
+          {
+            "at": "Still uncertain",
+            "event": "open items from TEST-REPORT.md and README.md"
+          },
+          {
+            "at": "next step",
+            "event": "one next step"
+          }
+        ],
+        "treatment": "none"
+      },
+      "actual_duration_s": 30.19,
+      "audio_file": "mp3/beat-B26.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B26.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 30.2,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B26.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B27",
+      "act": "ROLES",
+      "kind": "evidence",
+      "role_note": "Roles from SOURCES.md (Assignment 5 section); texture licence from godot/assets/textures/cobblestone_floor_08/ATTRIBUTION.md.",
+      "narration_text": "Who did what. Bao hand-wrote the three shaders and the line twenty-two edit; an earlier Codex draft of the tint lived in another copy. He wrote the brief, the predictions and the language notes, ran the mutations, made the editor conversion and the scene decisions. Claude Code wrote the driver and its tests, the material audit, the builder and the capture tools, after Bao approved each plan. The texture is Poly Haven's Cobblestone Floor zero eight, by Rob Tuytel, released CC zero. The code you saw is revision four two four six f nine four.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "SOURCES.md, Assignment 5: Bao's work and decisions"
+          },
+          {
+            "at": "Claude Code",
+            "event": "SOURCES.md: what Claude Code wrote, prompts in evidence/assignment-5/agent/"
+          },
+          {
+            "at": "Poly Haven",
+            "event": "texture credit: Cobblestone Floor 08, Rob Tuytel, CC0"
+          },
+          {
+            "at": "revision",
+            "event": "source revision 4246f94"
+          }
+        ],
+        "treatment": "none"
+      },
+      "actual_duration_s": 28.78,
+      "audio_file": "mp3/beat-B27.wav",
+      "render_duration_s": 28.8,
+      "audio_levelled": {
+        "from": "mp3/beat-B27.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B27.mp4",
+        "filled_by": "media",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B28",
+      "act": "VERDICT",
+      "role_note": "ClaudeVerdictArtifact — implemented work, limitations, human judgment; shows the source revision.",
+      "narration_text": "The verdict. Implemented: a nine-line tint that shows the courier's protection, and a textured shader with two materials, with no gameplay rule changed and every number predicted before it was measured. The limits are written down: Compatibility can't show what source color changes elsewhere, and a headless test can't see colour. The human judgments, the playtest and the looks, are Bao's own, quoted where he gave them.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "artifact-reveal",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "artifact card 'Verdict', heading with the source revision"
+          },
+          {
+            "at": "0.2",
+            "event": "implemented line"
+          },
+          {
+            "at": "0.45",
+            "event": "prediction line"
+          },
+          {
+            "at": "0.65",
+            "event": "limits line"
+          },
+          {
+            "at": "0.85",
+            "event": "human-judgment line"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Verdict",
+            "artifactHeading": "Lanternfall shaders · source revision 4246f94",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Implemented: hurt tint from iframes; cobblestone shader, two materials; gameplay unchanged.",
+              "Predicted first, then measured: hand table, hint table, Bao's one-line edit.",
+              "Limits: no Forward+ hint measurement; a headless run cannot see colour.",
+              "Human judgment: Bao's playtest and looks, quoted as he gave them."
+            ]
+          },
+          "rendered": {
+            "out": "media/B28.mp4",
+            "at": "2026-11-01T05:39:53.525406+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 20.5,
+      "audio_file": "mp3/beat-B28.wav",
+      "render_duration_s": 20.5,
+      "audio_levelled": {
+        "from": "mp3/beat-B28.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B28.mp4",
+        "filled_by": "remotion:ClaudeVerdictArtifact",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B29",
+      "act": "HANDOFF",
+      "role_note": "HANDOFF LAW — Your Turn: one bounded material change plus a prediction and a capture. Liam reads the prompt, discusses it and signs off.",
+      "narration_text": "Your turn. Paste this: Please use Walker to read the cool stand-in material in my Lanternfall project. Change only u v scale from one to three. Before running anything, predict which rectangle of the pair capture changes, how the stand-in's stones change, and which material check fails. Then capture the pair, compare it with your prediction, and put one back. It tests whether you really believe a material is just numbers. Write the prediction first. Liam, in for Bear.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.02",
+            "event": "composer card; greeting 'Your turn.'"
+          },
+          {
+            "at": "0.1",
+            "event": "the paste-ready prompt types in"
+          },
+          {
+            "at": "0.7",
+            "event": "three output lines: prediction first, capture, revert"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "WALKER · GODOT SHADERS",
+            "segment": "Lanternfall",
+            "command": "Please use Walker to read godot/a5/materials/cobblestone_cool_standin.tres in my Lanternfall project. Change only uv_scale from 1.0 to 3.0. Before running anything, predict which rectangle of the pair capture changes, how the stand-in's stones change, and which check in test_materials.gd fails. Then capture the pair, compare it with your prediction, and put 1.0 back.",
+            "runningText": "paste this into Claude…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Prediction written before the capture.",
+              "Pair captured: compare with your prediction.",
+              "Then put 1.0 back."
+            ],
+            "animateTyping": true
+          },
+          "rendered": {
+            "out": "media/B29.mp4",
+            "at": "2026-10-31T22:35:59.124221+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 21.95,
+      "audio_file": "mp3/beat-B29.wav",
+      "render_duration_s": 21.966666666666665,
+      "audio_levelled": {
+        "from": "mp3/beat-B29.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B29.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-11-01T14:29:19"
+      }
+    },
+    {
+      "beat_id": "B30",
+      "act": "OUTRO",
+      "role_note": "OUTRO LAW — ClaudeTitleOutro: exact title, @NikBearBrown, slug-seeded mascot, stock jingle only, no narration.",
+      "narration_text": "",
+      "estimated_duration_s": 9.44,
+      "actual_duration_s": 9.44,
+      "audio_file": "mp3/beat-B30.wav",
+      "audio_note": "stock @NikBearBrown jingle logos/bear-brown/bear-brown-5.mp3, picked by the slug seed the outro uses (char-sum 5074 mod 6 pool files = 4), never cut: padded with 1.0 s of silence; no narration (Liam signs off in B29)",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "mascot-title",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title 'Lanternfall, Shaded'"
+          },
+          {
+            "at": "0.25",
+            "event": "@NikBearBrown"
+          },
+          {
+            "at": "0.45",
+            "event": "slug-seeded mascot"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Lanternfall, Shaded",
+            "slug": "claude-liam-walker-lanternfall-bao-x-shaders-gamedev",
+            "durationSeconds": 9.44
+          },
+          "rendered": {
+            "out": "media/B30.mp4",
+            "at": "2026-11-01T06:49:23.843210+00:00"
+          }
+        }
+      },
+      "render_duration_s": 9.466666666666667,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B30.mp4",
+        "filled_by": "remotion:ClaudeTitleOutro",
+        "at": "2026-11-01T14:29:19"
+      }
+    }
+  ]
+}

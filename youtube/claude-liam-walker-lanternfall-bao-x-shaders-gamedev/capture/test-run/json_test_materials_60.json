@@ -1,0 +1,1156 @@
+{
+  "checks": 127,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "cobblestone_surface.gdshader: source readable",
+      "observed": {
+        "bytes": 926
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: declared uniforms (source)",
+      "observed": {
+        "declared": [
+          "color_tex",
+          "normal_strength",
+          "normal_tex",
+          "roughness_max",
+          "roughness_min",
+          "roughness_tex",
+          "tint",
+          "uv_scale"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: sampler2D color_tex : source_color, filter_linear_mipmap, repeat_enable =  [group ] (source)",
+      "observed": {
+        "default": "",
+        "group": "",
+        "hints": [
+          "source_color",
+          "filter_linear_mipmap",
+          "repeat_enable"
+        ],
+        "line": 3,
+        "type": "sampler2D"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: sampler2D normal_tex : hint_normal, filter_linear_mipmap, repeat_enable =  [group ] (source)",
+      "observed": {
+        "default": "",
+        "group": "",
+        "hints": [
+          "hint_normal",
+          "filter_linear_mipmap",
+          "repeat_enable"
+        ],
+        "line": 4,
+        "type": "sampler2D"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: sampler2D roughness_tex : filter_linear_mipmap, repeat_enable =  [group ] (source)",
+      "observed": {
+        "default": "",
+        "group": "",
+        "hints": [
+          "filter_linear_mipmap",
+          "repeat_enable"
+        ],
+        "line": 5,
+        "type": "sampler2D"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: vec4 tint : source_color = vec4(1.0,1.0,1.0,1.0) [group Surface] (source)",
+      "observed": {
+        "default": "vec4(1.0,1.0,1.0,1.0)",
+        "group": "Surface",
+        "hints": [
+          "source_color"
+        ],
+        "line": 8,
+        "type": "vec4"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: float uv_scale : hint_range(0.25,4.0) = 1.0 [group Surface] (source)",
+      "observed": {
+        "default": "1.0",
+        "group": "Surface",
+        "hints": [
+          "hint_range(0.25,4.0)"
+        ],
+        "line": 9,
+        "type": "float"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: float roughness_min : hint_range(0.0,1.0) = 0.2 [group Response] (source)",
+      "observed": {
+        "default": "0.2",
+        "group": "Response",
+        "hints": [
+          "hint_range(0.0,1.0)"
+        ],
+        "line": 12,
+        "type": "float"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: float roughness_max : hint_range(0.0,1.0) = 0.8 [group Response] (source)",
+      "observed": {
+        "default": "0.8",
+        "group": "Response",
+        "hints": [
+          "hint_range(0.0,1.0)"
+        ],
+        "line": 13,
+        "type": "float"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: float normal_strength : hint_range(0.0,2.0) = 1.0 [group Response] (source)",
+      "observed": {
+        "default": "1.0",
+        "group": "Response",
+        "hints": [
+          "hint_range(0.0,2.0)"
+        ],
+        "line": 14,
+        "type": "float"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: get_shader_uniform_list names match the source",
+      "observed": {
+        "names": [
+          "color_tex",
+          "normal_strength",
+          "normal_tex",
+          "roughness_max",
+          "roughness_min",
+          "roughness_tex",
+          "tint",
+          "uv_scale"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: color_tex in uniform list",
+      "observed": {
+        "hint": 17,
+        "hint_string": "Texture2D",
+        "type": 24
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: normal_tex in uniform list",
+      "observed": {
+        "hint": 17,
+        "hint_string": "Texture2D",
+        "type": 24
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: roughness_tex in uniform list",
+      "observed": {
+        "hint": 17,
+        "hint_string": "Texture2D",
+        "type": 24
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: tint in uniform list",
+      "observed": {
+        "hint": 0,
+        "hint_string": "",
+        "type": 20
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: uv_scale in uniform list",
+      "observed": {
+        "hint": 1,
+        "hint_string": "0.25,4.0,0.0010000000475",
+        "type": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: roughness_min in uniform list",
+      "observed": {
+        "hint": 1,
+        "hint_string": "0.0,1.0,0.0010000000475",
+        "type": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: roughness_max in uniform list",
+      "observed": {
+        "hint": 1,
+        "hint_string": "0.0,1.0,0.0010000000475",
+        "type": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: normal_strength in uniform list",
+      "observed": {
+        "hint": 1,
+        "hint_string": "0.0,2.0,0.0010000000475",
+        "type": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_surface.gdshader: uniform groups (get_shader_uniform_list(true)) match group_uniforms",
+      "observed": {
+        "api": {
+          "color_tex": "",
+          "normal_strength": "Response",
+          "normal_tex": "",
+          "roughness_max": "Response",
+          "roughness_min": "Response",
+          "roughness_tex": "",
+          "tint": "Surface",
+          "uv_scale": "Surface"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: source readable",
+      "observed": {
+        "bytes": 382
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: declared uniforms (source)",
+      "observed": {
+        "declared": [
+          "color_sample",
+          "raw_sample",
+          "use_color"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: sampler2D color_sample : source_color, filter_nearest =  [group ] (source)",
+      "observed": {
+        "default": "",
+        "group": "",
+        "hints": [
+          "source_color",
+          "filter_nearest"
+        ],
+        "line": 5,
+        "type": "sampler2D"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: sampler2D raw_sample : filter_nearest =  [group ] (source)",
+      "observed": {
+        "default": "",
+        "group": "",
+        "hints": [
+          "filter_nearest"
+        ],
+        "line": 6,
+        "type": "sampler2D"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: bool use_color :  = true [group ] (source)",
+      "observed": {
+        "default": "true",
+        "group": "",
+        "hints": [],
+        "line": 7,
+        "type": "bool"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: get_shader_uniform_list names match the source",
+      "observed": {
+        "names": [
+          "color_sample",
+          "raw_sample",
+          "use_color"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: color_sample in uniform list",
+      "observed": {
+        "hint": 17,
+        "hint_string": "Texture2D",
+        "type": 24
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: raw_sample in uniform list",
+      "observed": {
+        "hint": 17,
+        "hint_string": "Texture2D",
+        "type": 24
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: use_color in uniform list",
+      "observed": {
+        "hint": 0,
+        "hint_string": "",
+        "type": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment.gdshader: uniform groups (get_shader_uniform_list(true)) match group_uniforms",
+      "observed": {
+        "api": {
+          "color_sample": "",
+          "raw_sample": "",
+          "use_color": ""
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: is a ShaderMaterial",
+      "observed": {
+        "class": "ShaderMaterial"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: shader is res://shaders/cobblestone_surface.gdshader",
+      "observed": {
+        "shader": "res://shaders/cobblestone_surface.gdshader"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: sets exactly the declared uniforms",
+      "observed": {
+        "written": [
+          "color_tex",
+          "normal_strength",
+          "normal_tex",
+          "roughness_max",
+          "roughness_min",
+          "roughness_tex",
+          "tint",
+          "uv_scale"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: color_tex = res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_diff_1k.png",
+      "observed": {
+        "value": "res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_diff_1k.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: normal_tex = res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png",
+      "observed": {
+        "value": "res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: roughness_tex = res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_rough_1k.png",
+      "observed": {
+        "value": "res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_rough_1k.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: tint = (1.0, 0.92, 0.8, 1.0)",
+      "observed": {
+        "value": "(1.0, 0.92, 0.8, 1.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: uv_scale = 2.0",
+      "observed": {
+        "value": "2.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: roughness_min = 0.55",
+      "observed": {
+        "value": "0.55"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: roughness_max = 0.95",
+      "observed": {
+        "value": "0.95"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: normal_strength = 1.0",
+      "observed": {
+        "value": "1.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_warm_floor.tres: 0 <= roughness_min <= roughness_max <= 1 (brief's validation rule)",
+      "observed": {
+        "max": 0.95,
+        "min": 0.55
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: is a ShaderMaterial",
+      "observed": {
+        "class": "ShaderMaterial"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: shader is res://shaders/cobblestone_surface.gdshader",
+      "observed": {
+        "shader": "res://shaders/cobblestone_surface.gdshader"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: sets exactly the declared uniforms",
+      "observed": {
+        "written": [
+          "color_tex",
+          "normal_strength",
+          "normal_tex",
+          "roughness_max",
+          "roughness_min",
+          "roughness_tex",
+          "tint",
+          "uv_scale"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: color_tex = res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_diff_1k.png",
+      "observed": {
+        "value": "res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_diff_1k.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: normal_tex = res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png",
+      "observed": {
+        "value": "res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: roughness_tex = res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_rough_1k.png",
+      "observed": {
+        "value": "res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_rough_1k.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: tint = (0.72, 0.85, 1.0, 1.0)",
+      "observed": {
+        "value": "(0.72, 0.85, 1.0, 1.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: uv_scale = 1.0",
+      "observed": {
+        "value": "1.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: roughness_min = 0.2",
+      "observed": {
+        "value": "0.2"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: roughness_max = 0.55",
+      "observed": {
+        "value": "0.55"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: normal_strength = 0.5",
+      "observed": {
+        "value": "0.5"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_cool_standin.tres: 0 <= roughness_min <= roughness_max <= 1 (brief's validation rule)",
+      "observed": {
+        "max": 0.55,
+        "min": 0.2
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_with_source_color.tres: is a ShaderMaterial",
+      "observed": {
+        "class": "ShaderMaterial"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_with_source_color.tres: shader is res://shaders/hint_experiment.gdshader",
+      "observed": {
+        "shader": "res://shaders/hint_experiment.gdshader"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_with_source_color.tres: sets exactly the declared uniforms",
+      "observed": {
+        "written": [
+          "color_sample",
+          "raw_sample",
+          "use_color"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_with_source_color.tres: color_sample = res://a5/hint_experiment/hint_greys_3x1.png",
+      "observed": {
+        "value": "res://a5/hint_experiment/hint_greys_3x1.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_with_source_color.tres: raw_sample = res://a5/hint_experiment/hint_greys_3x1.png",
+      "observed": {
+        "value": "res://a5/hint_experiment/hint_greys_3x1.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_with_source_color.tres: use_color = true",
+      "observed": {
+        "value": "true"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_without_source_color.tres: is a ShaderMaterial",
+      "observed": {
+        "class": "ShaderMaterial"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_without_source_color.tres: shader is res://shaders/hint_experiment.gdshader",
+      "observed": {
+        "shader": "res://shaders/hint_experiment.gdshader"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_without_source_color.tres: sets exactly the declared uniforms",
+      "observed": {
+        "written": [
+          "color_sample",
+          "raw_sample",
+          "use_color"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_without_source_color.tres: color_sample = res://a5/hint_experiment/hint_greys_3x1.png",
+      "observed": {
+        "value": "res://a5/hint_experiment/hint_greys_3x1.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_without_source_color.tres: raw_sample = res://a5/hint_experiment/hint_greys_3x1.png",
+      "observed": {
+        "value": "res://a5/hint_experiment/hint_greys_3x1.png"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_without_source_color.tres: use_color = false",
+      "observed": {
+        "value": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "both surface materials reference the same shader path",
+      "observed": {
+        "floor": "res://shaders/cobblestone_surface.gdshader",
+        "standin": "res://shaders/cobblestone_surface.gdshader"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "both surface materials share one Shader resource instance",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "the two surface materials are distinct resources",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "changing floor uv_scale in memory leaves the stand-in at 1.0",
+      "observed": {
+        "standin": 1.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_diff_1k.png.import: readable with ConfigFile",
+      "observed": {
+        "error": "OK"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_diff_1k.png.import: compress/mode=0 compress/normal_map=2 mipmaps/generate=true",
+      "observed": {
+        "compress/mode": 0,
+        "compress/normal_map": 2,
+        "mipmaps/generate": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_diff_1k.png.import: texture importer, no Y flip, no 3D auto-compress, no roughness baking",
+      "observed": {
+        "detect_3d/compress_to": 0,
+        "importer": "texture",
+        "process/normal_map_invert_y": false,
+        "roughness/mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_diff_1k.png: imported image format 4, mipmaps true, uncompressed",
+      "observed": {
+        "class": "CompressedTexture2D",
+        "compressed": false,
+        "format": 4,
+        "mipmaps": true,
+        "size": "1024x1024"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_gl_1k.png.import: readable with ConfigFile",
+      "observed": {
+        "error": "OK"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_gl_1k.png.import: compress/mode=0 compress/normal_map=1 mipmaps/generate=true",
+      "observed": {
+        "compress/mode": 0,
+        "compress/normal_map": 1,
+        "mipmaps/generate": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_gl_1k.png.import: texture importer, no Y flip, no 3D auto-compress, no roughness baking",
+      "observed": {
+        "detect_3d/compress_to": 0,
+        "importer": "texture",
+        "process/normal_map_invert_y": false,
+        "roughness/mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_gl_1k.png: imported image format 4, mipmaps true, uncompressed",
+      "observed": {
+        "class": "CompressedTexture2D",
+        "compressed": false,
+        "format": 4,
+        "mipmaps": true,
+        "size": "1024x1024"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_rough_1k.png.import: readable with ConfigFile",
+      "observed": {
+        "error": "OK"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_rough_1k.png.import: compress/mode=0 compress/normal_map=2 mipmaps/generate=true",
+      "observed": {
+        "compress/mode": 0,
+        "compress/normal_map": 2,
+        "mipmaps/generate": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_rough_1k.png.import: texture importer, no Y flip, no 3D auto-compress, no roughness baking",
+      "observed": {
+        "detect_3d/compress_to": 0,
+        "importer": "texture",
+        "process/normal_map_invert_y": false,
+        "roughness/mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_rough_1k.png: imported image format 0, mipmaps true, uncompressed",
+      "observed": {
+        "class": "CompressedTexture2D",
+        "compressed": false,
+        "format": 0,
+        "mipmaps": true,
+        "size": "1024x1024"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_dx_1k.png.import: readable with ConfigFile",
+      "observed": {
+        "error": "OK"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_dx_1k.png.import: compress/mode=0 compress/normal_map=1 mipmaps/generate=true",
+      "observed": {
+        "compress/mode": 0,
+        "compress/normal_map": 1,
+        "mipmaps/generate": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_dx_1k.png.import: texture importer, no Y flip, no 3D auto-compress, no roughness baking",
+      "observed": {
+        "detect_3d/compress_to": 0,
+        "importer": "texture",
+        "process/normal_map_invert_y": false,
+        "roughness/mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_dx_1k.png: imported image format 4, mipmaps true, uncompressed",
+      "observed": {
+        "class": "CompressedTexture2D",
+        "compressed": false,
+        "format": 4,
+        "mipmaps": true,
+        "size": "1024x1024"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_greys_3x1.png.import: readable with ConfigFile",
+      "observed": {
+        "error": "OK"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_greys_3x1.png.import: compress/mode=0 compress/normal_map=2 mipmaps/generate=false",
+      "observed": {
+        "compress/mode": 0,
+        "compress/normal_map": 2,
+        "mipmaps/generate": false
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_greys_3x1.png.import: texture importer, no Y flip, no 3D auto-compress, no roughness baking",
+      "observed": {
+        "detect_3d/compress_to": 0,
+        "importer": "texture",
+        "process/normal_map_invert_y": false,
+        "roughness/mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_greys_3x1.png: imported image format 4, mipmaps false, uncompressed",
+      "observed": {
+        "class": "CompressedTexture2D",
+        "compressed": false,
+        "format": 4,
+        "mipmaps": false,
+        "size": "3x1"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room: Floor/Mesh material_override is cobblestone_warm_floor.tres",
+      "observed": {
+        "path": "res://a5/materials/cobblestone_warm_floor.tres"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room: StandIn/Mesh material_override is cobblestone_cool_standin.tres",
+      "observed": {
+        "path": "res://a5/materials/cobblestone_cool_standin.tres"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room: the two meshes hold distinct materials",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "material_room: floor mesh is PlaneMesh 8 x 8 at y = 0, stand-in is CapsuleMesh r 0.25 h 1.2",
+      "observed": {
+        "floor": "PlaneMesh",
+        "floor_y": 0.0,
+        "standin": "CapsuleMesh"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "lantern_gate_room (A3): Floor and StandIn still use StandardMaterial3D",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "finding (A3 room): BoxMesh top face spans 1/3 x 1/2 of UV space, so stones would stretch 1.5:1 (x vs z)",
+      "observed": {
+        "du": 0.333333343267441,
+        "dv": 0.5,
+        "metres_per_texture_x": 23.9999992847443,
+        "metres_per_texture_z": 16.0,
+        "metres_x": 8.0,
+        "metres_z": 8.0,
+        "normals_seen": [
+          "(0.0, 0.0, 1.0)",
+          "(0.0, 0.0, -1.0)",
+          "(1.0, 0.0, 0.0)",
+          "(-1.0, 0.0, 0.0)",
+          "(0.0, 1.0, 0.0)",
+          "(0.0, -1.0, 0.0)"
+        ],
+        "u": [
+          0.333333343267441,
+          0.666666686534882
+        ],
+        "v": [
+          0.5,
+          1.0
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: background_mode = 1",
+      "observed": {
+        "value": "1"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: background_color = (0.035, 0.045, 0.09, 1.0)",
+      "observed": {
+        "value": "(0.035, 0.045, 0.09, 1.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: ambient_light_source = 3",
+      "observed": {
+        "value": "3"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: sky = <null>",
+      "observed": {
+        "value": "<Object#null>"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: ambient_light_sky_contribution = 1.0",
+      "observed": {
+        "value": "1.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: ambient_light_color = (0.18, 0.22, 0.38, 1.0)",
+      "observed": {
+        "value": "(0.18, 0.22, 0.38, 1.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: ambient_light_energy = 0.8",
+      "observed": {
+        "value": "0.80000001192093"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: reflected_light_source = 0",
+      "observed": {
+        "value": "0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: tonemap_mode = 0",
+      "observed": {
+        "value": "0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: tonemap_exposure = 1.0",
+      "observed": {
+        "value": "1.0"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: glow_enabled = false",
+      "observed": {
+        "value": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: fog_enabled = false",
+      "observed": {
+        "value": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: volumetric_fog_enabled = false",
+      "observed": {
+        "value": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room environment: adjustment_enabled = false",
+      "observed": {
+        "value": "false"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room: no CameraAttributes on WorldEnvironment or Camera3D",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "material_room: exactly three lights (Moon, LanternLight, OilShrine/ShrineLight)",
+      "observed": {
+        "lights": [
+          "Moon",
+          "LanternLight",
+          "OilShrine/ShrineLight"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room light Moon: colour (0.55, 0.65, 1.0, 1.0), energy 1.2, range 0.0, shadows off",
+      "observed": {
+        "color": "(0.55, 0.65, 1.0, 1.0)",
+        "energy": 1.20000004768372,
+        "shadow": false
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room light LanternLight: colour (1.0, 0.34, 0.08, 1.0), energy 5.0, range 4.0, shadows off",
+      "observed": {
+        "color": "(1.0, 0.34, 0.08, 1.0)",
+        "energy": 5.0,
+        "range": 4.0,
+        "shadow": false
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room light OilShrine/ShrineLight: colour (1.0, 0.25, 0.04, 1.0), energy 3.0, range 2.5, shadows off",
+      "observed": {
+        "color": "(1.0, 0.25, 0.04, 1.0)",
+        "energy": 3.0,
+        "range": 2.5,
+        "shadow": false
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "material_room: floor PlaneMesh spans the full UV square, one repeat per 8 m in x and z at uv_scale 1",
+      "observed": {
+        "du": 1.0,
+        "dv": 1.0,
+        "metres_per_texture_x": 8.0,
+        "metres_per_texture_z": 8.0,
+        "metres_x": 8.0,
+        "metres_z": 8.0,
+        "normals_seen": [
+          "(0.0, 1.0, 0.0)"
+        ],
+        "u": [
+          0.0,
+          1.0
+        ],
+        "v": [
+          0.0,
+          1.0
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "Floor mesh has tangents for NORMAL_MAP",
+      "observed": {
+        "tangent_floats": 16
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "StandIn mesh has tangents for NORMAL_MAP",
+      "observed": {
+        "tangent_floats": 7800
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment: QuadWithSourceColor uses hint_with_source_color.tres",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment: QuadWithoutHint uses hint_without_source_color.tres",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment environment: black background, Linear tonemap, exposure 1, no glow/fog/adjustments",
+      "observed": {
+        "adjustment": false,
+        "ambient_color": "(0.0, 0.0, 0.0, 1.0)",
+        "ambient_energy": 1.0,
+        "ambient_source": 0,
+        "background_color": "(0.0, 0.0, 0.0, 1.0)",
+        "background_mode": 1,
+        "exposure": 1.0,
+        "fog": false,
+        "glow": false,
+        "reflected_source": 0,
+        "tonemap_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hint_experiment: orthographic camera, size 4.5, no CameraAttributes, no lights",
+      "observed": {
+        "projection": 1,
+        "size": 4.5
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_gl_1k.png: source PNG decodes",
+      "observed": {
+        "size": "1024x1024"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "nor_gl reads as the GL convention (directx=false < 0.5 < directx=true)",
+      "observed": {
+        "directx_false": 0.223593440874743,
+        "directx_true": 1.77640655912523
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cobblestone_floor_08_nor_dx_1k.png: source PNG decodes",
+      "observed": {
+        "size": "1024x1024"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "nor_dx control reads as DirectX (directx=true < 0.5 < directx=false)",
+      "observed": {
+        "directx_false": 1.77640656075152,
+        "directx_true": 0.223593439248471
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "every material binds nor_gl, never nor_dx, to normal_tex",
+      "observed": {
+        "bound": [
+          "res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png",
+          "res://assets/textures/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.png"
+        ]
+      },
+      "status": "PASS"
+    }
+  ],
+  "suite": "test_materials",
+  "utc": "2026-10-31T01:06:51"
+}

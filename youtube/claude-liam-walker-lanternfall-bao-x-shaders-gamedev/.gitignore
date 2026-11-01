@@ -1,0 +1,3 @@
+# Per-beat QC frames and master cut samples stay local (about 60 MB); the QC report and sheets are tracked.
+_qc/beats/
+_qc/master-cuts/

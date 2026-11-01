@@ -1,0 +1,16 @@
+revision 4246f94bd3db51c0644ecc3bef9b3a8c8427911b · isolated copy: git archive of godot/ · 2026-10-30 21:06:49 EDT · 4.7.2.stable.official.ed1daf0bf
+test_hurt_tint.gd 30 exit=0 :: hurt_tint: 28 checks, 0 failures
+test_hurt_tint.gd 60 exit=0 :: hurt_tint: 28 checks, 0 failures
+test_hurt_tint.gd 144 exit=0 :: hurt_tint: 28 checks, 0 failures
+test_materials.gd 60 exit=0 :: test_materials: 127 checks, 0 failures
+test_logic.gd 60 exit=0 :: logic: 32 checks, 0 failures
+test_gameplay.gd 60 exit=0 :: gameplay: 65 checks, 0 failures
+test_audio.gd realtime exit=0 :: audio: 25 checks, 0 failures
+test_defeat_sparks_config.gd 60 exit=0 :: defeat_sparks_config: 39 checks, 0 failures
+test_extra_particles_config.gd 60 exit=0 :: extra_particles_config: 79 checks, 0 failures
+test_particles_state.gd 60 exit=0 :: particles_state: 34 checks, 0 failures
+test_particles_edges.gd 60 exit=0 :: particles_edges: 18 checks, 0 failures
+test_a3_assets.gd 60 exit=0 :: a3-assets: 17 checks, 0 failures
+test_lantern_gate.gd 60 exit=0 :: a3-lantern-gate: 14 checks, 0 failures
+test_a3_camera.gd 60 exit=0 :: a3-camera: 9 checks, 0 failures
+done

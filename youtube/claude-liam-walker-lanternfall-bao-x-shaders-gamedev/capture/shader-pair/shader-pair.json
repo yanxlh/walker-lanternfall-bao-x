@@ -1,0 +1,70 @@
+{
+  "adapter": "Apple M4",
+  "ambient": [
+    0.25,
+    0.25,
+    0.25
+  ],
+  "bao_material": {
+    "normal_strength": 1.0,
+    "roughness_max": 1.0,
+    "roughness_min": 0.0,
+    "shader": "res://shaders/cobblestone_surface.gdshader",
+    "tint": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "uv_scale": 1.0
+  },
+  "engine": "4.7.2-stable (official)",
+  "generated_material": "res://a5/scratch/standard_conversion.tscn :: Surface",
+  "light": {
+    "energy": 1.4,
+    "rotation_degrees": [
+      -35.0,
+      -90.0,
+      0.0
+    ]
+  },
+  "mode": "pair",
+  "note": "film fixture, agent-made; parameters set in memory, nothing saved",
+  "poses": {
+    "straight": {
+      "abs_normal_z": 1.0,
+      "file": "shader-pair-straight.png",
+      "left_center_px": [
+        3410.3,
+        3795.5
+      ],
+      "pitch_deg": 0.0,
+      "right_center_px": [
+        10095.7,
+        3795.5
+      ],
+      "size": [
+        2940,
+        1653
+      ]
+    },
+    "tilted": {
+      "abs_normal_z": 0.642787609686539,
+      "file": "shader-pair-tilted.png",
+      "left_center_px": [
+        3410.3,
+        3795.5
+      ],
+      "pitch_deg": 50.0,
+      "right_center_px": [
+        10095.7,
+        3795.5
+      ],
+      "size": [
+        2940,
+        1653
+      ]
+    }
+  },
+  "renderer": "gl_compatibility"
+}
