@@ -450,3 +450,27 @@ The two shaders written by me, every visual rule checked by a test or by my eyes
 - Approve the driver plan as written and accept the tinted debug arc rather than edit `player.gd`.
 - Tighten the test rather than accept a tolerance wider than one frame.
 - Fix the stretched floor in the A5 scene only, and leave the A3 room as it was.
+
+## 2026-10-30 (Fri) evening — the language notes, the editor conversion and line 22
+
+- Codex left uncommitted work in this repository: a LANGUAGE-NOTES draft, observation text in TEST-REPORT, and a one-line shader experiment in which it edited and restored `cobblestone_surface.gdshader`. The draft was not used. I wrote the eight answers myself, and I wrote the capture observations after looking at the images. The agent's shader edit is recorded in TEST-REPORT as a break of the no-agent-edits rule.
+- Step 4: in the editor I converted the StandardMaterial3D in `godot/a5/scratch/standard_conversion.tscn` (the scene and material were set up earlier by Codex) to a ShaderMaterial and saved `godot/shaders/standard_generated.gdshader` (`43dfe20`). Closing the editor rewrote no `.import` file.
+- My own one-line edit: prediction first (`e5c0272`), then `ALBEDO` × 0.5 on line 19, a capture, and a restore (`99bb6f6`). What I saw: “The diffuse colour of the floor and the StandIn both darken; the stone texture and the relief detail stay the same.”
+- Line 22: I changed `NORMAL_MAP_DEPTH` to `normal_strength * mix(0.5, 1.0, abs(normalize(NORMAL).z))`, so the shader also reads `NORMAL` (`0b91838`). Then a brief revision, the tests again (127 / 0, and 28 / 0 at 30, 60 and 144), and new sweep, pair and one-material captures (`eea7798`). My look at `normal_strength` 0 / 1 / 2: “0: the surface is flatter, the texture is still there, and the normal relief is off. 1: the stone edges and joints look more three-dimensional; a moderate effect. 2: stronger light and dark relief, deeper joints, an exaggerated bump.”
+- LANGUAGE-NOTES: my answers, the generated-shader table, and the Q3, Q4 and Q6 additions (`17c84f4`, `4246f94`).
+- Trace: `43dfe20` conversion · `e5c0272`, `99bb6f6`, `f28eb3f` my shader edit · `0b91838` line 22 · `7d38e92` brief revision · `eea7798` recaptures · `f9f0fd8` sweep look · `8490cfe` reports in English.
+
+**What I wanted**
+
+The language notes in my own words, every line reference pointing at a real line, and a third built-in that my own shader actually reads.
+
+**What came back**
+
+- The editor conversion turned the scratch scene's textures into built-in textures that load from the import cache.
+- The generated shader marks its normal sampler `hint_roughness_normal`, not `hint_normal`.
+- After line 22 the floor is slightly brighter at `normal_strength` 1 and 2 than before; at 0 it is identical.
+
+**What I decided, and why**
+
+- Keep line 22 and redo the checks, captures and film source at the new revision, so the film, GitHub and Canvas show the same code.
+- All reports in English.
