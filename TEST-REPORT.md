@@ -573,7 +573,7 @@ Godot 4.7.2.stable.official.ed1daf0bf, renderer GL Compatibility (driver `opengl
 ### Shaders parse
 
 - `hurt_tint.gdshader` (Bao, `e0b47b4`): `test_hurt_tint.gd` asserts the uniform list (`hurt_amount` type 3, range hint 0–1; `hurt_color` type 20) and reads the defaults from the source. `cobblestone_surface.gdshader` (`a8c804b`) and `hint_experiment.gdshader` (`5a7903a`): `test_materials.gd` asserts each uniform list and every hint from the source. Every import after each shader: exit 0, no `SHADER ERROR`.
-- Mutations, each made by Bao in the terminal and restored with `git checkout` (`evidence/assignment-5/mutations/`, `d284c05`, `d01df00`):
+- Mutations, each made by Bao in the terminal and restored with `git checkout` (`evidence/assignment-5/mutations/`, `d284c05`, `d01df00`). The two hurt-tint runs were back to back, and the rename run overwrote the semicolon run's JSON before it was copied; the file first saved as `semicolon_60fps.json` holds the rename run (3 failures) and is now `rename_60fps.json`. The semicolon run's result is its log, `semicolon_60fps.log` (`SHADER ERROR`, 4 failures).
 
 | Mutation | Test | Exit | Failing checks |
 |---|---|---:|---|
