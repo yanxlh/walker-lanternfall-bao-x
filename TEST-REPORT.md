@@ -644,7 +644,7 @@ The brief's Compatibility prediction was 64/128/192 with either sampler; its For
 
 These are capture observations, not an additional player signoff or proof that a headless test establishes appearance. StandIn stays visually consistent across the Floor-only material sweep.
 
-Re-captured after Bao's line-22 change (`0b91838`) at `4246f94`: `captures/a5-materials/20261030-170453-sweep/`. Floor mean RGB at `normal_strength` 0 / 1 / 2: (101.26, 92.19, 116.86) / (100.50, 91.25, 115.70) / (98.91, 89.48, 113.57), against (101.26, 92.19, 116.86) / (99.76, 90.44, 114.73) / (96.90, 87.26, 110.90) before the change. Bao's look at the new `normal_strength` row: pending.
+Re-captured after Bao's line-22 change (`0b91838`) at `4246f94`: `captures/a5-materials/20261030-170453-sweep/`. Floor mean RGB at `normal_strength` 0 / 1 / 2: (101.26, 92.19, 116.86) / (100.50, 91.25, 115.70) / (98.91, 89.48, 113.57), against (101.26, 92.19, 116.86) / (99.76, 90.44, 114.73) / (96.90, 87.26, 110.90) before the change. Bao's look at the new `normal_strength` row: “0：表面较平，纹理仍在，法线凹凸效果关闭。1：石块边缘和缝隙更立体，效果适中。2：明暗起伏更强，缝隙更深，凹凸感更夸张” (0: the surface is flatter, the texture is still there, the normal relief is off; 1: stone edges and joints are more three-dimensional, a moderate effect; 2: stronger light and dark relief, deeper joints, an exaggerated bump).
 
 ### One shader, two materials (HUMAN CHECK)
 
