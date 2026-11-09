@@ -120,3 +120,20 @@ Running-game keep/revert verdict: pending.
 After playing the game with `scale_amount_max` 1.8, the student replied “Keep it; it is clearer” (keep it; clearer). Verdict: keep r1. This running-game verdict is separate from the fixture comparison above, which measured a modest increase in lit spark area without a larger footprint or longer fade. No further A setting change is made. This completes A's observation-driven revision cycle: r0 strip, reading, prediction, approval, one-value edit, r1 strip, comparison and running-game verdict.
 
 Quoted student feedback in this report is translated into English from the recorded conversation.
+
+
+## Commit trace (added 9 November 2026)
+
+Every revision above was committed in the same group of commits at 14:59 on 29 October, after the work. Git therefore does not separate the steps. GitHub IDs, with the course-repository IDs from SOURCE-REVISION.md in brackets:
+
+| Revision | Scene, added already in its kept form | Pre-change source, strips and comparison | Records |
+|---|---|---|---|
+| B r1, trail alpha ramp 0.55/0.30/0 → 0.95/0.70/0 (kept) | `902a9f8` [`3a5be66`] | `8af1cf2` [`f85990b`]: `evidence/assignment-6/tuning/r0-source/`, `captures/lantern_trail/comparison-20261029-135607/` | `299668a` [`c3e1273`] |
+| Celebration on overlay layer 11, then the UI portrait (kept) | `902a9f8` [`3a5be66`] | `8af1cf2` [`f85990b`]: `captures/play-checks/20261029-142138/upgrade-*` | `299668a` [`c3e1273`] |
+| A r1, `scale_amount_max` 1.2 → 1.8 (kept) | `902a9f8` [`3a5be66`] | `8af1cf2` [`f85990b`]: `evidence/assignment-6/tuning/a-r0-source/`, `captures/defeat_sparks/r0/`, `r1/`, `comparison-r0-r1/` | `299668a` [`c3e1273`] |
+
+Not met in this record (see TEST-REPORT.md, "Assignment 6 revision 3"):
+- A's revision was not driven by something the student observed in the running game; it followed the student's "Done; no problem" and Claude's reading of r0.
+- A's first verdict does not describe the effect in visual terms.
+- B's before strip was re-rendered from the preserved r0 resource after the change, not captured before it.
+- No point of agreement or disagreement between Claude's strip readings and the student's verdicts is recorded.

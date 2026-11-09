@@ -22,6 +22,8 @@
 - Trail/upgrade configuration: `./scripts/run-test.sh test_extra_particles_config.gd 60`.
 - Real-input state suite: `./scripts/run-test.sh test_particles_state.gd 60`.
 - Edge-case suite (blocker, discontinuity, LOST/WON): `./scripts/run-test.sh test_particles_edges.gd 60`.
+- Shader-study configuration: `./scripts/run-test.sh test_shader_study_config.gd 60` (`godot/tests/test_shader_study_config.gd`).
+- Headless price: `./scripts/run-test.sh cost_effects.gd 60 300` (`godot/tests/cost_effects.gd`).
 - A fixture capture: `bash scripts/capture-defeat-sparks.command rN` (windowed; refuses an existing revision folder).
 - Windowed play checks: `/Applications/Godot.app/Contents/MacOS/Godot --path godot --fixed-fps 60 --script res://tests/capture_play_checks.gd -- --out captures/play-checks/<stamp>`.
 - Test definitions: corresponding scripts under `godot/tests/`; wrapper: `scripts/run-test.sh`.
@@ -55,17 +57,17 @@ Do not publish, push, create submission tags, or overwrite earlier reports as pa
 
 # Headless facts
 
-- Headless checks use a dummy renderer and provide no particle images or GPU timing.
-- A GPU particle effect's headless CPU number cannot measure its GPU process cost.
-- Real fixture captures require a windowed (not headless) run; the student allowed starting them from the terminal. Visual verdicts still come from the student.
+- A headless run uses a dummy renderer: it draws no particles and runs no GPU particle process. Node state (emitting, one_shot, amount_ratio, visibility, instance counts) is observable; the look is not.
+- A GPU effect's headless CPU price is near zero by construction. Both game effects here are CPU nodes, so their headless price is real CPU work.
+- Frame strips come from a windowed Movie Maker run, never a headless one; the student allowed starting them from the terminal. Visual verdicts still come from the student.
 - The A fixture loads and requests two bursts at frames 10 and 13; this does not verify its appearance.
 - Baseline results: logic 32, gameplay 65, audio 25, all zero failures (`evidence/assignment-6/baseline/`).
 - A configuration test: `./scripts/run-test.sh test_defeat_sparks_config.gd 60`, 39 checks (`godot/tests/test_defeat_sparks_config.gd`, `evidence/defeat_sparks_config.json`).
 
 # Unconfirmed
 
-- This local course-repository snapshot has no `a5` tag or previous shader directory; do not claim an A5 baseline exists.
+- This lineage was exported from the course repository before the shader assignment. Tag `a5` (GitHub master) is a separate lineage; `godot/shaders/` here holds only the generated study shader (`SUBMISSION.md`, "Assignment numbering and history").
 - The recorded game GitHub URL does not establish that this snapshot matches its latest revision.
-- GPU timing: `RenderingServer.viewport_get_measured_render_time_gpu` reads 0 under GL Compatibility (and Mobile/Metal) on this Mac; only a Mobile/Vulkan override exposes it (`evidence/assignment-6/cost/COST-REPORT.md`). The editor's Visual Profiler showed 0.0 ms for every GPU entry and an empty GPU graph (game window minimized; `evidence/assignment-6/cost/VISUAL-PROFILER-COMPATIBILITY.md`). Zeros mean no usable timing, not zero cost.
-- Student verdicts recorded so far: portrait placement kept, trail visibility kept, A scale r1 kept (`TUNING.md`). Crowded-play judgments in `captures/play-checks/*/PLAY-CHECKS.md` are pending.
+- GPU timing: `RenderingServer.viewport_get_measured_render_time_gpu` reads 0 under GL Compatibility (and Mobile/Metal) on this Mac; only a Mobile/Vulkan override exposes it (`evidence/assignment-6/cost/COST-REPORT.md`). The editor's Visual Profiler showed 0.0 ms for every GPU entry under Compatibility (`evidence/assignment-6/cost/VISUAL-PROFILER-COMPATIBILITY.md`) and nonzero GPU times under Mobile/Vulkan (`evidence/assignment-6/cost/visual-profiler-r2/README.md`). Zeros mean no usable timing, not zero cost.
+- Student verdicts recorded so far: portrait placement kept, trail visibility kept, A scale r1 kept (`TUNING.md`), "Nothing is obscured" after a normal run (`captures/play-checks/20261029-142138/PLAY-CHECKS.md`). Human checks still open are listed in `TEST-REPORT.md`, "Assignment 6 revision 3".
 - Baseline counts and configuration results are valid only when recorded from actual runs.

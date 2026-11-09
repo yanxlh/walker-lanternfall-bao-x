@@ -19,3 +19,7 @@ Human judgments and AI checks are distinct. Claude's frame readings and automate
 No other people contributed.
 
 Quoted student feedback in this report is translated into English from the recorded conversation.
+
+## Revision 3 (9 November 2026)
+
+Claude Code audited the a6-r2 source ZIP against the Assignment 6 brief. It re-ran the eight suites, both mutations and the headless cost script, and rechecked the shader line references. It then corrected stale or inconsistent statements in SUBMISSION.md, README.md, CLAUDE.md and TEST-REPORT.md, added the commit-ID map, and listed the requirements that are not met. It changed no game, effect, shader, asset, test or project-setting file. No new student verdict, observation or shader explanation was produced in this revision.

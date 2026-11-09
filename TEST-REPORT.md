@@ -333,3 +333,78 @@ The final off/on comparison is in evidence/assignment-6/cost/FINAL-COMPARISON.md
 ## Assignment 6 revision 2: study textures and editor GPU capture
 
 The earlier missing-ramp finding is resolved in this revision. Both shader texture uniforms are bound, with 21 new configuration checks and a windowed CPU/GPU lifecycle comparison. See `evidence/assignment-6/shader-study-fixed/README.md`. Editor Visual Profiler evidence and its precise scope are in `evidence/assignment-6/cost/visual-profiler-r2/README.md`. Earlier measurements above are retained as historical evidence.
+
+
+## Assignment 6 revision 3 — audit of the submitted revision, 9 November 2026
+
+Claude Code checked a6-r2 against the Assignment 6 brief. Only documents changed in this revision: `git diff --stat a6-r2 -- godot/ scripts/` is empty. The sections above are kept as they were; where a number below differs from one above, this section is the current record.
+
+### Suites re-run
+
+The submitted source ZIP (SHA-256 `3647667320f9724ae8fa65d24e516adb78a0c6f3b0e4931fe7a717d0fe465a93`) is identical to `git archive 09070e2`. A fresh copy of it, and then this branch, were imported once and run through the wrapper. Both runs gave the same counts:
+
+| Command | Mode | Checks | Failures | Exit |
+|---|---|---:|---:|---:|
+| `./scripts/run-test.sh test_logic.gd 60` | 60 fps | 32 | 0 | 0 |
+| `./scripts/run-test.sh test_gameplay.gd 60` | 60 fps | 65 | 0 | 0 |
+| `./scripts/run-test.sh test_audio.gd realtime` | realtime | 25 | 0 | 0 |
+| `./scripts/run-test.sh test_defeat_sparks_config.gd 60` | 60 fps | 39 | 0 | 0 |
+| `./scripts/run-test.sh test_extra_particles_config.gd 60` | 60 fps | 79 | 0 | 0 |
+| `./scripts/run-test.sh test_particles_state.gd 60` | 60 fps | 34 | 0 | 0 |
+| `./scripts/run-test.sh test_particles_edges.gd 60` | 60 fps | 18 | 0 | 0 |
+| `./scripts/run-test.sh test_shader_study_config.gd 60` | 60 fps | 21 | 0 | 0 |
+
+Total 313 assertions, zero failures. No log contains SCRIPT ERROR or SHADER ERROR. The gameplay, audio, state and edge logs still end with the engine's "resources still in use at exit" diagnostics. Logs, result JSON and exit codes: `evidence/assignment-6/revision-3-validation/`.
+
+### Mutations re-run
+
+On the fresh copy, `initial_velocity_min = 25.0` renamed to `initial_velocity = 25.0` made the A configuration test exit 1 (`FAIL setting-initial_velocity_min {"actual":"0.0","expected":"25.0"}`). `spread = 180.0` changed to `90.0` made it exit 1 (`FAIL setting-spread {"actual":"90.0","expected":"180.0"}`). The scene was restored byte-identical after each.
+
+### Headless CPU price re-run
+
+`./scripts/run-test.sh cost_effects.gd 60 300` exited 0 (5 trials × 300 frames; `revision-3-validation/cost_effects_headless.json`):
+
+| Case | Off mean (ms) | On mean (ms) | Delta (ms) | CPU budget (ms) |
+|---|---:|---:|---:|---:|
+| Empty scene (control) | 0.0185 | — | — | — |
+| Idle game | 0.0987 | 0.1029 | +0.0042 | — |
+| A at 32 live bursts | 0.2135 | 0.2514 | +0.0379 | 1.0 |
+| B continuous movement | 0.0737 | 0.0789 | +0.0052 | 0.25 |
+| Celebration at 4 bursts | 0.1778 | 0.2047 | +0.0269 | 0.4 |
+
+The absolute frame times are two to three times those of 29 October, and the trial ranges are wider (A off 0.18–0.28 ms). Other applications were running during this re-run. The control differs from every game case, so the script is measuring the scenes, not itself. Every delta stays under its budget. A reached 32 bursts; B emitted on all 300 frames of each trial.
+
+### Current prices against the budgets
+
+The brief-coverage row "CPU and GPU budgets" (29 October) and the film's price beat were written before `cost/FINAL-COMPARISON.md` and the a6-r2 Visual Profiler captures. They report Mobile/Vulkan deltas "within ±0.1 ms"; the later measurements do not. Current figures:
+
+| Effect | Headless CPU delta | CPU budget | GPU delta, viewport timer (3 trials) | Visual Profiler, Render Viewports GPU, selected frames | GPU budget | Against budget |
+|---|---:|---:|---:|---|---:|---|
+| A | +0.022 ms | 1.0 | +0.539 ms | off 0.58 ms; on 0.68 ms at frame 1200, 8.32 ms at frame 1599 | 0.75 | CPU and timer GPU within; profiler spike unexplained |
+| B | +0.003 ms | 0.25 | +0.108 ms | off 0.50 ms; on 0.68 ms (+0.18 ms) | 0.25 | within |
+| Celebration (extra) | +0.007 ms | 0.4 | +0.910 ms | not captured | 0.4 | GPU over budget |
+
+All GPU figures come from a command-line Mobile/Vulkan (MoltenVK) override on the Apple M4. Under the shipped GL Compatibility renderer every GPU reading on this Mac is 0.000 ms, which is not counted as zero cost. No FPS comparison was made, and the game has no vsync debug key.
+
+### Edge of screen
+
+Both in-game effects are CPUParticles2D. In Godot 4.7.2, `ClassDB.class_get_property_list("CPUParticles2D")` has no `visibility_rect`; GPUParticles2D has one. The only GPU particle node is the study scene, which gameplay never loads. No in-game effect has a visibility rectangle that could cull it. No human edge-of-screen check is recorded.
+
+### Requirements not met, or without a recorded human check
+
+| Requirement (Assignment 6 brief) | State in the record |
+|---|---|
+| At least one revision per effect driven by something observed in the running game | B: yes ("not obvious" → alpha ramp). A: no. The student reported "Done; no problem"; A's only revision (`scale_amount_max` 1.2 → 1.8) came from Claude's reading of the r0 strip. |
+| First verdict in visual terms, before Claude reads a strip | A's first verdicts were "visible" and "Done; no problem", with no visual description. |
+| Each effect over the darkest and lightest level art (human check) | Scripted play-check readings only. PLAY-CHECKS.md: the student made no comment on bright-prop visibility. |
+| Effect B on the first frames after scene load (human check) | Covered by the brief and the state tests; no human check recorded. |
+| Size verdict for both effects at the project's window size (human check) | Frame measurements only; the student's verdicts do not mention size or window size. |
+| "Claude against you": a disagreement, or a statement that there was none | Not recorded. |
+| The student writes CHANGE-BRIEF.md and the predictions | CONTRIBUTIONS-assignment-6.md: Claude Code wrote the brief drafts; the student approved them. |
+| The student writes the process-shader line references | The line table was drafted by Claude (line numbers re-checked on 9 November and correct). The process/draw explanation is the student's. |
+| CLAUDE.md: unedited agent draft and the student's review committed separately | One commit (`093cac0`). |
+| Commits in the order the work happened | Build, both tuning cycles, captures and shader study are in five commits made together at 14:59 (SOURCE-REVISION.md). |
+| Agent prompts and session transcripts in the repository | Only the film prompts are committed (`youtube/…particles-gamedev/PROMPTS.md`). |
+| Film: three parts named, each with a line; why a GPU effect's headless price is near zero; two shader lines beside the brief settings they implement; agent mistakes caught; overruled readings; one next step; texture sources | Not narrated in SCRIPT.md. The film's price beat shows the earlier GPU summary. |
+
+Requirements met and re-checked on 9 November: both configuration tests and both mutations; both state tests with modes stated, including two hits inside one lifetime and the 32-burst cap; the generated shader's line references; the headless price with an empty-scene control; the budget comparison; the texture provenance record.

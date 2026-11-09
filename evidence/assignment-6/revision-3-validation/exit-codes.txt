@@ -1,0 +1,10 @@
+import exit=0
+./scripts/run-test.sh test_logic.gd 60 exit=0
+./scripts/run-test.sh test_gameplay.gd 60 exit=0
+./scripts/run-test.sh test_audio.gd realtime exit=0
+./scripts/run-test.sh test_defeat_sparks_config.gd 60 exit=0
+./scripts/run-test.sh test_extra_particles_config.gd 60 exit=0
+./scripts/run-test.sh test_particles_state.gd 60 exit=0
+./scripts/run-test.sh test_particles_edges.gd 60 exit=0
+./scripts/run-test.sh test_shader_study_config.gd 60 exit=0
+./scripts/run-test.sh cost_effects.gd 60 300 exit=0

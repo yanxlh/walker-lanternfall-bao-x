@@ -1,6 +1,31 @@
 # walker-lanternfall-bao-x — Lanternfall
 
-**CSYE 7270 · Assignment 2 — Generate Art, Sound, and Music for Your Game · Bao Xing**
+**CSYE 7270 · Assignment 6 — Creating Particle Effects with Godot and Claude · Bao Xing**
+
+## Assignment 6 at a glance
+
+- **Project:** Lanternfall, the 2D night-market survival game started for Assignment 2 from a blank Godot project (the Assignment 2 description follows below).
+- **Engine and renderer:** Godot 4.7.2.stable.official.ed1daf0bf, GL Compatibility; tested on macOS 26.6.2, Apple M4.
+- **What this assignment added:**
+  - Effect A: weapon-hit sparks. A CPUParticles2D one-shot burst on `Session.weapon_hit(pos)`, overlapping, at most 32 at once (`godot/effects/defeat_sparks.tscn`).
+  - Effect B: the courier's movement trail. CPUParticles2D with sphere emission, only while playing, visible and actually moving (`godot/effects/lantern_trail.tscn`).
+  - An extra level-up celebration on the upgrade screen's portrait.
+  - The read-only controller `godot/effects/particle_presentation.gd`, preview fixtures in `godot/previews/`, the generated process shader `godot/shaders/particles_generated.gdshader` (study only), and tests in `godot/tests/`.
+- **Run:** import once with `godot --headless --path godot --import --quit`, then `godot --path godot`, or double-click `scripts/play-particles.command` on macOS.
+- **Controls:** Enter/Space start · WASD/arrows move · 1/2/3 pick a card · Esc/P pause · R restart · M/9/0 mute · F3 hurtbox. There is no vsync debug key; no FPS comparison was made, and GPU time is the only on-screen price.
+- **Tests:** the eight wrapper commands in `CLAUDE.md` pass 313 assertions with zero failures (re-run 9 November 2026, `evidence/assignment-6/revision-3-validation/`).
+- **Read:** `CHANGE-BRIEF.md` → `TUNING.md` → `TEST-REPORT.md` (particle sections from "Particle effects — 29 October 2026"; the current record is "Assignment 6 revision 3") → `FRICTIONAL.md` → `SUBMISSION.md` → `CONTRIBUTIONS-assignment-6.md`.
+- **Film:** "Lanternfall, Sparked", `claude-liam-walker-lanternfall-bao-x-particles-gamedev.mp4`, 3840 × 2160, 8:08, SHA-256 `4d4d590039ff8a6dfd26571018120ecec9be324a7a8b1df16cb923020eeb6417`: https://drive.google.com/file/d/1aPkXNgsLPQ3GEAFGbAmCPiJ9GEIpiywS/view. Source revision `c3e1273` in the course repository (`299668a` here).
+- **Known limitations of the particle work:**
+  - GPU time is unreadable under the shipped renderer on this Mac, so GPU prices come from a Mobile/Vulkan override.
+  - The extra celebration exceeds its GPU budget.
+  - The film predates the a6-r2 evidence.
+  - The requirements that are not met are listed in `TEST-REPORT.md`, "Assignment 6 revision 3".
+- **History:** this lineage was exported from the course repository and predates the shader assignment (tag a5 on master). See `SUBMISSION.md`, "Assignment numbering and history", and the commit-ID map in `SOURCE-REVISION.md`.
+
+---
+
+## Assignment 2 — the asset slice (original README)
 
 A lamp-headed courier is trapped in a fog-bound midnight market, and the light on his shoulders is his only weapon. Keep moving, grow the light, and survive three minutes until the fog lifts.
 

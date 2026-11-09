@@ -242,3 +242,35 @@ Quoted student feedback in this report is translated into English from the recor
 Codex re-ran the seven regression suites and the headless, Compatibility and Mobile/Vulkan off/on cost cases. All 292 assertions passed. The extra celebration exceeded its GPU budget in this rerun; A and B did not. The readings are kept without changing thresholds or source settings. Reports were translated into English at the student's request. The original conversation remains the source of the translated feedback, not an invented new playtest.
 
 The project was exported from the course repository with subtree history so unrelated course files would not be published. Earlier standalone a3 work remains preserved. The Godot tree was compared with the filmed revision and matched exactly. The student requested direct submission after verification.
+
+## Revision 2 — 29 October 2026, evening
+
+*Retrospective, drafted by Claude on 9 November from REVISION-2.md and commit `09070e2`.*
+
+- Codex rebound the study copy's colour-ramp and scale-curve textures, added 21 shader-study checks, and rendered an isolated CPU/GPU comparison.
+- Codex captured editor Visual Profiler recordings under a Mobile/Vulkan override, with effects off and on. A: 0.58 ms off; 0.68 ms on at frame 1200, with a selected-frame spike of 8.32 ms. B: 0.50 → 0.68 ms.
+- Eight suites passed 313 assertions. Tagged a6-r2. No new verdict of mine was recorded.
+
+## 9 November 2026 — audit before resubmitting
+
+*Drafted by Claude from the audit; to be checked by me.*
+
+**From the logs**
+- The source ZIP matched `git archive 09070e2` exactly. A fresh import and this branch both passed eight suites, 313 assertions. Both A mutations still exit 1. The headless cost re-run kept every delta under budget, with higher absolute times than on 29 October.
+- Stale or conflicting statements fixed in SUBMISSION, README, CLAUDE.md and TEST-REPORT: 292 vs 313 assertions, the ramp-texture limitation already fixed, and "GPU within ±0.1 ms" vs the later +0.54 / +0.11 / +0.91 ms.
+- The course-repository commit IDs cited in my reports do not exist on GitHub; SOURCE-REVISION.md now maps them.
+- Still open, listed in TEST-REPORT ("Assignment 6 revision 3"):
+  - A's revision came from Claude's strip reading, not from something I saw in the game.
+  - My own checks of contrast, scene load and size are not recorded.
+  - No Claude-versus-me statement is recorded.
+  - The brief and the shader line table were drafted by AI.
+  - The prompts and transcripts are missing.
+  - The film lacks several required statements.
+
+**What I wanted**
+
+To know whether the submission meets every Assignment 6 requirement and what is missing: "Does my assignment meet the requirements? Can it get full marks? If not, tell me where the gaps are and fix them."
+
+**What I decided, and why**
+
+Pending.
