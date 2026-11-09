@@ -189,4 +189,4 @@ Claude's comparison of r2 with its prediction:
 - Missed: the colour. Files 12–17 read pale yellow to near-white (file 15 RGB 255,238,163), not yellow-orange. Additive overlap and the floor lift it beyond the single-spark ramp value. Orange appears only from about 0.30 s.
 - To check in play: whether the burst is now too close in colour to the courier's lamp head or the yellow lamp-oil gems.
 
-My verdict (running game, window size): pending.
+My verdict (running game; launched from the terminal with the project's 1280 × 720 window, no resize reported): kept. Student: the sparks are more eye-catching than before (“Yes”), and they are not confused with the courier's lamp head or the yellow lamp-oil pickups (“They don't get mixed up”). Agreement with Claude's comparison: the student confirmed the effect Claude measured (brighter, longer, same size) and raised no disagreement.

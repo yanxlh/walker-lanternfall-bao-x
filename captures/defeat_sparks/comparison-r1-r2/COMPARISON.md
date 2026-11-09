@@ -55,4 +55,4 @@ Questions for the running-game verdict:
 - `comparison-contact-sheet.png`: 3× crops of files 9, 12, 15, 17, 18, 20; r1 top, r2 bottom; courier on the left for scale.
 - `manifest.json`: SHA-256 of every frame used and of the sheet.
 
-Running-game verdict: pending.
+Running-game verdict (9 November 2026): kept. The student found the sparks more eye-catching than before and not confused with the courier's lamp head or the yellow lamp-oil pickups. This verdict is separate from the fixture measurements above.
