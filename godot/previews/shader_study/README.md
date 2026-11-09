@@ -14,3 +14,5 @@ The saved shader is the editor-generated study artifact referred to in `CLAUDE.m
 ## Revision 2 state
 
 The editor conversion is already complete. Do not repeat the ParticleProcessMaterial conversion steps above on the saved ShaderMaterial. The generated shader remains unchanged; color_ramp and scale_curve now bind explicit textures. Run comparison_preview.tscn for the isolated CPU/GPU lifecycle comparison. See evidence/assignment-6/shader-study-fixed/README.md for captures and the 21-check regression test.
+
+9 November 2026: after Effect A's colour-ramp revision r2, the study copy's `Gradient_study_color` was set to the same ramp (middle stop 0.6:(1,0.75,0.3,1.0)) so that `test_shader_study_config.gd` still describes a copy of the game's effect. The generated shader file is unchanged; the ramp reaches it as the `color_ramp` texture uniform. The study frames in `evidence/assignment-6/shader-study-fixed/` were rendered with the r1 ramp.

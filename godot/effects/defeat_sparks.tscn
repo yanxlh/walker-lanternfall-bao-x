@@ -10,8 +10,8 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.2, 0.85), 0.0, 0.0, 0, 0, Vect
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_color"]
-offsets = PackedFloat32Array(0, 0.35, 1)
-colors = PackedColorArray(1, 0.95, 0.65, 1, 1, 0.6, 0.2, 0.85, 0.65, 0.2, 0.05, 0)
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(1, 0.95, 0.65, 1, 1, 0.75, 0.3, 1, 0.65, 0.2, 0.05, 0)
 
 [node name="DefeatSparks" type="CPUParticles2D"]
 z_index = 3
