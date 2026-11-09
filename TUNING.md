@@ -139,7 +139,7 @@ Not met in this record (see TEST-REPORT.md, "Assignment 6 revision 3"):
 - No point of agreement or disagreement between Claude's strip readings and the student's verdicts is recorded.
 
 
-## 9 November 2026 — Effect A, revision r2 (proposed; awaiting approval)
+## 9 November 2026 — Effect A, revision r2
 
 What I saw (running game; window size not yet stated): “The hit sparks are not eye-catching enough.”
 
@@ -178,4 +178,4 @@ Claude's prediction for r2 (same fixture, seed 7280, files 9–50):
 - The last trace stays at file 21, or at most file 22 (≤ 0.43 s). Files 30 and 50 stay empty. The footprint and widest point do not change, because positions are unaffected.
 - In play: the hit should read as a bright yellow burst for about twice as long, about 0.07–0.27 s instead of 0.07–0.20 s, at the same size. It ends orange and disappears at the same time as before.
 
-Approval: pending. Not yet done: edit, configuration-test update, r2 strip, comparison, running-game verdict.
+Change: `color_ramp` middle stop 0.35:(1,0.6,0.2,0.85) → 0.6:(1,0.75,0.3,1.0), approved by the student (“Approve”). Pre-change source: `evidence/assignment-6/tuning/a-r1-source/`.
