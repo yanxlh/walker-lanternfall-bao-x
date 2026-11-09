@@ -179,3 +179,14 @@ Claude's prediction for r2 (same fixture, seed 7280, files 9–50):
 - In play: the hit should read as a bright yellow burst for about twice as long, about 0.07–0.27 s instead of 0.07–0.20 s, at the same size. It ends orange and disappears at the same time as before.
 
 Change: `color_ramp` middle stop 0.35:(1,0.6,0.2,0.85) → 0.6:(1,0.75,0.3,1.0), approved by the student (“Approve”). Pre-change source: `evidence/assignment-6/tuning/a-r1-source/`.
+
+Configuration test: the expectation was changed first and failed only on the middle stop, `colour-ramp-offset-1` and `colour-ramp-rgba-1` (`evidence/assignment-6/tuning/a-r2-tests/defeat_sparks_config-expected-failure.log`). After the scene edit it passed (39/0). `test_shader_study_config.gd` then failed on `gradient-offset-1` and `gradient-color-1`, because the GPU study copy still carried the r1 ramp (`shader_study_config-before-mirror.log`). The study copy's gradient was set to the same ramp; `godot/shaders/` is unchanged. All eight suites then passed 313 assertions, zero failures (`a-r2-tests/`).
+
+Strips: `captures/defeat_sparks/r1/strip/` and `captures/defeat_sparks/r2/strip/`; comparison in `captures/defeat_sparks/comparison-r1-r2/`. These are fixture captures.
+
+Claude's comparison of r2 with its prediction:
+- Matches: files 9–10 unchanged. File 12 luma 215 → 246. File 15 luma 151 → 236, with 189 of 189 lit pixels bright (21 in r1). File 17 (0.27 s) 83 bright pixels against 2. File 18 luma 83 → 177. Last trace still file 21; 30 and 50 empty. Every extent identical.
+- Missed: the colour. Files 12–17 read pale yellow to near-white (file 15 RGB 255,238,163), not yellow-orange. Additive overlap and the floor lift it beyond the single-spark ramp value. Orange appears only from about 0.30 s.
+- To check in play: whether the burst is now too close in colour to the courier's lamp head or the yellow lamp-oil gems.
+
+My verdict (running game, window size): pending.

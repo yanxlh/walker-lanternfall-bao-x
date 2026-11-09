@@ -1,0 +1,37 @@
+{
+  "fixture": "res://previews/defeat_sparks_preview.tscn, seed 7280, 30 fps, 1280x720, Godot 4.7.2 Compatibility, Apple M4",
+  "crop_box": [
+    586,
+    290,
+    722,
+    426
+  ],
+  "scale": 3,
+  "sheet": "comparison-contact-sheet.png",
+  "sheet_sha256": "8ad090f0fae96ce2d751e36a9901ca5502a6775da2b8a2a8ff873a1d39467bc3",
+  "r1_full_sequence_source": "local course-repository working copy (captures/defeat_sparks/r1/, not in git); its committed strip frames 9,10,12,15,20,30,50 match captures/defeat_sparks/r1/strip/ byte for byte",
+  "frames_sha256": {
+    "r1/frame00000009.png": "f7cd089a9a3c0e8dc4087f0c07edc8631b53ebe12e4114879f868d1a9ac431ed",
+    "r1/frame00000012.png": "df93e605d13d6d1a6d68e8ac9983f9e66b40fe12dce8f45dbcdc08e51af2f237",
+    "r1/frame00000015.png": "34bca51c5b37c9386daff47705baa44eb264a55deb82d53b70b26a399fc73126",
+    "r1/frame00000017.png": "4a52b3958ddae6264d03d545a60333d4b6128445da29a2579ecbc1fa42140e3f",
+    "r1/frame00000018.png": "b0e5280a0e01dcdc4ea3cd3096737a05cca814c908e01ec42e43d899f87a8a49",
+    "r1/frame00000020.png": "fe4f9b5302fefebd90e28b60ca9aec5265aa8cf83f2f14b67fc7bd1ddecbb966",
+    "r2/frame00000009.png": "f7cd089a9a3c0e8dc4087f0c07edc8631b53ebe12e4114879f868d1a9ac431ed",
+    "r2/frame00000012.png": "a26c01a30d420248e7a030ef9261d49b0422b9fc5f757a1cbf4556c2edc9f6d0",
+    "r2/frame00000015.png": "7d7d8a7c6841a3b9c9b0da70f5936cc8704da6846f32dd661e916c05c3afeeda",
+    "r2/frame00000017.png": "1f9e4d9eb769c875e575b5ba311b4dc0bea5c3ec6a66e3cc871d203ca0fa5dd1",
+    "r2/frame00000018.png": "c4a00c93627a45b0075700d49be6bf27a766ada3bc0943294e2519011b0a0f2e",
+    "r2/frame00000020.png": "9398c3173c014545327f1f0eeb4a952aa83950c4449b4002533f8da2d84cb8b4",
+    "r2/strip/frame00000009.png": "f7cd089a9a3c0e8dc4087f0c07edc8631b53ebe12e4114879f868d1a9ac431ed",
+    "r2/strip/frame00000010.png": "69c103f8b3d67692e1d3cba90b6cc025584342215de4f9fad619f3c581bf1667",
+    "r2/strip/frame00000012.png": "a26c01a30d420248e7a030ef9261d49b0422b9fc5f757a1cbf4556c2edc9f6d0",
+    "r2/strip/frame00000015.png": "7d7d8a7c6841a3b9c9b0da70f5936cc8704da6846f32dd661e916c05c3afeeda",
+    "r2/strip/frame00000018.png": "c4a00c93627a45b0075700d49be6bf27a766ada3bc0943294e2519011b0a0f2e",
+    "r2/strip/frame00000020.png": "9398c3173c014545327f1f0eeb4a952aa83950c4449b4002533f8da2d84cb8b4",
+    "r2/strip/frame00000021.png": "54bef701acdd316fef46c9bc0df5ab5fb472238baee9552d652a928c1b86dcb5",
+    "r2/strip/frame00000022.png": "d99e0ee6460c4580b4af2b6dd64ae736c864172f8862df216b8c5bdc342cb2b9",
+    "r2/strip/frame00000030.png": "71d964a03e03d9f0560dccc7d502c2d428ffbe28a3b843898e07b59bf8176998",
+    "r2/strip/frame00000050.png": "da08aaf903aa8d2f6af54ce000c6ca4840200c093b3c16d3561d2634d1cd5f49"
+  }
+}
