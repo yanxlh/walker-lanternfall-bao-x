@@ -49,8 +49,8 @@ func run() -> void:
 	var gradient := burst.color_ramp
 	check("colour-ramp-present", gradient != null)
 	if gradient:
-		var offsets := [0.0, 0.35, 1.0]
-		var colours := [Color(1, 0.95, 0.65, 1), Color(1, 0.6, 0.2, 0.85), Color(0.65, 0.2, 0.05, 0)]
+		var offsets := [0.0, 0.6, 1.0]
+		var colours := [Color(1, 0.95, 0.65, 1), Color(1, 0.75, 0.3, 1.0), Color(0.65, 0.2, 0.05, 0)]
 		check("colour-ramp-count", gradient.get_point_count() == 3)
 		for i in mini(gradient.get_point_count(), 3):
 			check("colour-ramp-offset-%d" % i, is_equal_approx(gradient.get_offset(i), offsets[i]))
