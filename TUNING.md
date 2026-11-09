@@ -137,3 +137,45 @@ Not met in this record (see TEST-REPORT.md, "Assignment 6 revision 3"):
 - A's first verdict does not describe the effect in visual terms.
 - B's before strip was re-rendered from the preserved r0 resource after the change, not captured before it.
 - No point of agreement or disagreement between Claude's strip readings and the student's verdicts is recorded.
+
+
+## 9 November 2026 — Effect A, revision r2 (proposed; awaiting approval)
+
+What I saw (running game; window size not yet stated): “The hit sparks are not eye-catching enough.”
+
+Claude's reading of r1 (fixture capture, `captures/defeat_sparks/r1/strip/`). Measured in the burst region against file 30, which has no sparks, with the courier and text excluded. "Bright" means pixel luma above 150; the floor under the burst is luma 26–35.
+
+| File | Time after first visible | Lit px | Extent | Mean colour (RGB) | Mean luma | Bright px |
+|---:|---:|---:|---|---|---:|---:|
+| 9 | 0.00 s | 121 | 14 × 14 | (255, 255, 246) | 254 | 121 |
+| 10 | 0.03 s | 196 | 18 × 18 | (255, 252, 229) | 251 | 196 |
+| 12 | 0.10 s | 244 | 30 × 29 | (252, 210, 152) | 215 | 244 |
+| 15 | 0.20 s | 189 | 45 × 43 | (208, 140, 91) | 151 | 21 |
+| 20 | 0.37 s | 6 | 38 × 57 | (70, 46, 53) | 51 | 0 |
+| 30, 50 | — | 0 | — | — | — | — |
+
+Against the intent:
+- Files 9–10 are pure white, not pale yellow, because 16 additive sparks overlap. In play the white core coincides with the enemy's own pale hit flash (play checks `hit-dark-hit+00/+03`), so these frames do little to mark the hit.
+- File 12 is the only frame that is both large and bright.
+- By file 15 the burst has its full spread, but only 21 of 189 lit pixels are bright. The sparks have turned mid-orange at about 0.73 alpha.
+- From 0.30 s they are dark specks barely above the floor.
+- The "shrink and fade" phase therefore starts at about 0.20 s, but the sparks stop being readable at about the same moment. In a 1280 × 720 frame, the readable part is a 30–45 px cluster for roughly 0.07–0.20 s.
+- Size and fade timing meet the brief: widest ≤ 64 px of the 68 px limit; last trace at 0.40 s.
+
+Proposed change (one setting): `color_ramp`, middle stop moved from offset 0.35, RGBA (1, 0.6, 0.2, 0.85) to offset 0.6, RGBA (1, 0.75, 0.3, 1.0). The start stop (0: 1, 0.95, 0.65, 1) and the end stop (1: 0.65, 0.2, 0.05, 0) are unchanged. Nothing else changes: count, speed, spread, damping, gravity, scale range, scale curve, lifetime and texture.
+
+Alternatives not proposed:
+- A larger `scale_amount_max` was already tried in r1. It added lit area but not footprint or duration.
+- A larger `amount` would change the 512-particle peak and its budget.
+- A longer `lifetime` would break "gone by 0.45 s".
+
+Claude's prediction for r2 (same fixture, seed 7280, files 9–50):
+- Files 9–10: unchanged. Still about 14 × 14 and 18 × 18, still white from additive overlap.
+- File 12 (0.10 s): same 30 × 29 extent and about 244 lit px, paler and brighter. Mean luma about 215 → 235–250, colour closer to pale yellow-white.
+- File 15 (0.20 s): same 45 × 43 extent and about 190 lit px. Light yellow-orange instead of mid-orange: mean luma about 151 → 210–240, bright pixels 21 → 120 or more. This is the main visible difference.
+- File 18 (0.30 s, not in the six-frame strip, read from the full sequence): orange specks clearly above the floor, mean luma about 80 → 150–180. Lit pixels similar (about 47–70), because the scale curve has shrunk most sparks to 1–3 px.
+- File 20 (0.37 s): still nearly gone. At most a few more dim pixels (6 → about 6–15), because size is near zero by then.
+- The last trace stays at file 21, or at most file 22 (≤ 0.43 s). Files 30 and 50 stay empty. The footprint and widest point do not change, because positions are unaffected.
+- In play: the hit should read as a bright yellow burst for about twice as long, about 0.07–0.27 s instead of 0.07–0.20 s, at the same size. It ends orange and disappears at the same time as before.
+
+Approval: pending. Not yet done: edit, configuration-test update, r2 strip, comparison, running-game verdict.
