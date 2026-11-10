@@ -190,3 +190,33 @@ Claude's comparison of r2 with its prediction:
 - To check in play: whether the burst is now too close in colour to the courier's lamp head or the yellow lamp-oil gems.
 
 My verdict (running game; launched from the terminal with the project's 1280 × 720 window, no resize reported): kept. Student: the sparks are more eye-catching than before (“Yes”), and they are not confused with the courier's lamp head or the yellow lamp-oil pickups (“They don't get mixed up”). Agreement with Claude's comparison: the student confirmed the effect Claude measured (brighter, longer, same size) and raised no disagreement.
+
+
+## 9 November 2026 — my visual check and r2 decision
+
+When hits arrive rapidly, I can still recognize the repeated spark bursts. They overlap without becoming a solid bright patch that hides enemies or pickups. The brighter r2 sparks make successive hits easier to notice.
+
+When I stop moving, B stops producing new embers. The few embers already behind the courier fade away quickly rather than leaving a persistent line. When I pause, the remaining sparks and trail stay frozen instead of continuing to move or fade. After I resume, they continue normally, and the trail follows movement again without an extra burst or a long streak.
+
+I checked the effects in the running game. B has no trail before I start moving. A and B remain readable on both dark floor and bright parts of the market. Their sizes feel appropriate relative to the courier, and they do not obscure the courier, enemies, or pickups. The upgrade sparks fit around the small portrait without obstructing the cards.
+
+I am keeping r2 because the sparks are more noticeable and make attack feedback clearer. When a monster is killed, the burst also helps me notice the kill. The same effect appears on nonlethal hits, so I read it as hit feedback rather than proof of a kill on its own.
+
+
+### Scope of the r2 acceptance evidence
+
+The recorded project launch window is 1280 × 720.
+
+Hidden-state behavior was checked through the scripted windowed capture, not by a manual in-game toggle: the game has no hide/show control. See `captures/play-checks/20261029-142138/pause-hidden+08.png`, `shown+08.png`, and `PLAY-CHECKS.md`. State tests supplement those screenshots.
+
+The GPU prices listed above are historical measurements of A before the r2 color-ramp change (r1). Neither the viewport GPU timer nor the Visual Profiler was remeasured for A r2. I reran the headless cost check on r2 and found it within the CPU budget; that does not establish r2 GPU cost. Only the color ramp changed, so I expect similar GPU work, but this is a prediction rather than a new GPU measurement. The directory name `cost/visual-profiler-r2/` refers to the earlier submission revision, not this Effect A r2 color trial.
+
+
+### Current-source verification update
+
+Nine suites pass 327 assertions; both A mutations fail as expected. Raw current-source CPU/GPU timer outputs are now preserved in [current r2 evidence](evidence/assignment-6/current-r2-validation/README.md). Current GPU timer noise prevents a fresh budget verdict; this does not replace an editor Visual Profiler capture. Earlier statements about missing raw logs describe the earlier screenshot-only run.
+
+
+### Current editor GPU screenshots
+
+Current A r2 and B off/on Visual Profiler screenshots are available in [current r2 Visual Profiler captures](evidence/assignment-6/cost/visual-profiler-a-r2-current/README.md). The initial A selected-frame delta is +0.69 ms, but a later matched-layout pair gives +4.59 ms; B's selected-frame delta is -1.40 ms. These variable readings do not establish a typical GPU cost or a new budget pass. They supersede the earlier statement that no current r2 editor captures exist; historical prices and their revision labels remain unchanged.

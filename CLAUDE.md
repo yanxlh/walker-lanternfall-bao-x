@@ -23,6 +23,7 @@
 - Real-input state suite: `./scripts/run-test.sh test_particles_state.gd 60`.
 - Edge-case suite (blocker, discontinuity, LOST/WON): `./scripts/run-test.sh test_particles_edges.gd 60`.
 - Shader-study configuration: `./scripts/run-test.sh test_shader_study_config.gd 60` (`godot/tests/test_shader_study_config.gd`).
+- Whole-tree pause/resume: `./scripts/run-test.sh test_particles_tree_pause.gd 60` (`godot/tests/test_particles_tree_pause.gd`).
 - Headless price: `./scripts/run-test.sh cost_effects.gd 60 300` (`godot/tests/cost_effects.gd`).
 - A fixture capture: `bash scripts/capture-defeat-sparks.command rN` (windowed; refuses an existing revision folder).
 - Windowed play checks: `/Applications/Godot.app/Contents/MacOS/Godot --path godot --fixed-fps 60 --script res://tests/capture_play_checks.gd -- --out captures/play-checks/<stamp>`.

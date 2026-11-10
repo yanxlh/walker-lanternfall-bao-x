@@ -1,0 +1,64 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+empty-off trial 0 frame mean 0.0045 ms
+idle-off trial 0 frame mean 0.0299 ms
+idle-on trial 0 frame mean 0.0321 ms
+acap-off trial 0 frame mean 0.0834 ms
+acap-on trial 0 frame mean 0.1067 ms
+move-off trial 0 frame mean 0.0294 ms
+move-on trial 0 frame mean 0.0328 ms
+celebration-off trial 0 frame mean 0.0467 ms
+celebration-on trial 0 frame mean 0.0532 ms
+empty-off trial 1 frame mean 0.0044 ms
+idle-off trial 1 frame mean 0.0292 ms
+idle-on trial 1 frame mean 0.0313 ms
+acap-off trial 1 frame mean 0.0836 ms
+acap-on trial 1 frame mean 0.1336 ms
+move-off trial 1 frame mean 0.0373 ms
+move-on trial 1 frame mean 0.0510 ms
+celebration-off trial 1 frame mean 0.0773 ms
+celebration-on trial 1 frame mean 0.0679 ms
+empty-off trial 2 frame mean 0.0053 ms
+idle-off trial 2 frame mean 0.0383 ms
+idle-on trial 2 frame mean 0.0356 ms
+acap-off trial 2 frame mean 0.0878 ms
+acap-on trial 2 frame mean 0.1117 ms
+move-off trial 2 frame mean 0.0304 ms
+move-on trial 2 frame mean 0.0340 ms
+celebration-off trial 2 frame mean 0.0463 ms
+celebration-on trial 2 frame mean 0.0553 ms
+empty-off trial 3 frame mean 0.0045 ms
+idle-off trial 3 frame mean 0.0313 ms
+idle-on trial 3 frame mean 0.0333 ms
+acap-off trial 3 frame mean 0.0868 ms
+acap-on trial 3 frame mean 0.1104 ms
+move-off trial 3 frame mean 0.0293 ms
+move-on trial 3 frame mean 0.0328 ms
+celebration-off trial 3 frame mean 0.0452 ms
+celebration-on trial 3 frame mean 0.0592 ms
+empty-off trial 4 frame mean 0.0045 ms
+idle-off trial 4 frame mean 0.0309 ms
+idle-on trial 4 frame mean 0.0314 ms
+acap-off trial 4 frame mean 0.0860 ms
+acap-on trial 4 frame mean 0.4536 ms
+move-off trial 4 frame mean 0.0998 ms
+move-on trial 4 frame mean 0.0398 ms
+celebration-off trial 4 frame mean 0.0482 ms
+celebration-on trial 4 frame mean 0.0650 ms
+celebration-off trial 5 frame mean 0.0518 ms
+celebration-on trial 5 frame mean 0.0645 ms
+celebration-off trial 6 frame mean 0.0545 ms
+celebration-on trial 6 frame mean 0.0626 ms
+celebration-off trial 7 frame mean 0.0676 ms
+celebration-on trial 7 frame mean 0.0609 ms
+celebration-off trial 8 frame mean 0.0476 ms
+celebration-on trial 8 frame mean 0.0586 ms
+celebration-off trial 9 frame mean 0.0500 ms
+celebration-on trial 9 frame mean 0.0781 ms
+saved /private/tmp/lanternfall-final-check-POHz2T/godot/../evidence/assignment-6/cost/cost_effects.json
+WARNING: 82 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 6 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

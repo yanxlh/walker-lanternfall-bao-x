@@ -274,3 +274,25 @@ To know whether the submission meets every Assignment 6 requirement and what is 
 **What I decided, and why**
 
 Pending.
+
+
+## 8 November 2026 — supplementary observations and r2 decision
+
+*Retrospective notes.*
+
+**What I wanted and what I saw**
+
+I wanted hit feedback to be easier to notice. I found the hit sparks insufficiently noticeable and approved the r2 color-ramp trial. I kept r2 because it is more noticeable and makes hit feedback clearer; when a monster dies, the burst also helps me notice the kill. A still triggers on nonlethal hits, so the burst alone is not proof of a kill. My running-game checks found suitable sizes, readable effects on dark and bright market backgrounds, and no obstruction of the courier, enemies, pickups, or upgrade cards. Rapid hits remain readable; stopping ends new trail emission and the residue fades; pause freezes the effects and resume behaves normally. See the current supplement in CHANGE-BRIEF.md and the final visual check in TUNING.md. The recorded project window is 1280 × 720.
+
+**What I checked, changed, and kept separate**
+
+Only A's middle color-ramp stop changed for r2: .35:(1,.6,.2,.85) to .6:(1,.75,.3,1). Its count, texture, motion and lifetime were retained. I approved and kept the visual change; the implementation, frame measurements and automated tests were assisted work documented in the existing contribution record. The first two bright frames remain similar, while the middle frames stay brighter and paler; the footprint and final disappearance frame stay unchanged in the fixture comparison. Hidden-state behavior was checked by scripted screenshots and state tests, because the game has no hide/show control. I do not count that as a manually operated hidden-state check.
+
+**Trace and unresolved items**
+
+The r2 sequence is traceable to f55159e (approval), 7439dda (expected configuration failure), 389c369 (implementation and study-copy mirror), 39f8943 (fixture comparison), and c6e6343 (keep decision). The before/after images are in captures/defeat_sparks/comparison-r1-r2/. The reported r2 CPU result is within budget, but the supplied screenshots do not include raw benchmark logs. A r2 GPU timing has not been repeated; historical r1 GPU readings do not establish r2 GPU cost. The film shows the earlier effect revision. These remain explicit limitations rather than completed checks. The November 9 coverage tests are recorded separately in evidence/assignment-6/brief-coverage-20261109/.
+
+
+## Verification follow-up
+
+The current source was rerun through the required wrapper: nine suites, 327 assertions, zero failures, and two expected mutation failures. The serial CPU measurement and windowed GPU timer results are preserved with their exact source-file hashes in evidence/assignment-6/current-r2-validation/. The GPU off/on measurements were too variable for an incremental-cost conclusion, so they are not marked as a budget pass. The supplied newer GPU screenshot and the earlier over-budget celebration result remain separate evidence. New editor Visual Profiler captures and a film reflecting the current effect are still unresolved; changing the wording would not supply those checks.

@@ -1,5 +1,11 @@
 # walker-lanternfall-bao-x — Lanternfall
 
+## Current corrected version
+
+A now uses the kept r2 hit-spark color ramp. The original brief and dated changes are retained, with the current supplemental explanation at the end. Current checks: **nine wrapper suites, 327 assertions, zero failures**, plus two expected A mutation failures. New checks include draw-order read-back and whole-tree pause/resume. See [review guide](CORRECTION-REVIEW.md), [current test and cost evidence](evidence/assignment-6/current-r2-validation/README.md), and [submission details](SUBMISSION.md).
+
+The revised film shows A's kept r2 ramp, repaired shader study and 327 checks; its godot/ source tree matches the current working tree. Current CPU and viewport GPU timer raw logs are archived; noisy GPU differences do not establish new budget compliance. Current r2 editor Visual Profiler off/on screenshots are now archived in evidence/assignment-6/cost/visual-profiler-a-r2-current/ alongside the historical captures; their variable readings do not establish typical budget compliance. Corrected delivery is directly to the TA through Teams under the recorded permission, with the exact pushed commit and matching source archive supplied together.
+
 **CSYE 7270 · Assignment 6 — Creating Particle Effects with Godot and Claude · Bao Xing**
 
 ## Assignment 6 at a glance
@@ -13,13 +19,13 @@
   - The read-only controller `godot/effects/particle_presentation.gd`, preview fixtures in `godot/previews/`, the generated process shader `godot/shaders/particles_generated.gdshader` (study only), and tests in `godot/tests/`.
 - **Run:** import once with `godot --headless --path godot --import --quit`, then `godot --path godot`, or double-click `scripts/play-particles.command` on macOS.
 - **Controls:** Enter/Space start · WASD/arrows move · 1/2/3 pick a card · Esc/P pause · R restart · M/9/0 mute · F3 hurtbox. There is no vsync debug key; no FPS comparison was made, and GPU time is the only on-screen price.
-- **Tests:** the eight wrapper commands in `CLAUDE.md` pass 313 assertions with zero failures (re-run 9 November 2026, `evidence/assignment-6/revision-3-validation/`).
+- **Tests:** the nine wrapper suites in `CLAUDE.md` pass 327 assertions with zero failures (`evidence/assignment-6/current-r2-validation/`).
 - **Read:** `CHANGE-BRIEF.md` → `TUNING.md` → `TEST-REPORT.md` (particle sections from "Particle effects — 29 October 2026"; the current record is "Assignment 6 revision 3") → `FRICTIONAL.md` → `SUBMISSION.md` → `CONTRIBUTIONS-assignment-6.md`.
-- **Film:** "Lanternfall, Sparked", `claude-liam-walker-lanternfall-bao-x-particles-gamedev.mp4`, 3840 × 2160, 8:08, SHA-256 `4d4d590039ff8a6dfd26571018120ecec9be324a7a8b1df16cb923020eeb6417`: https://drive.google.com/file/d/1aPkXNgsLPQ3GEAFGbAmCPiJ9GEIpiywS/view. Source revision `c3e1273` in the course repository (`299668a` here).
+- **Film:** [Lanternfall, Sparked Again](https://drive.google.com/file/d/1AMPOgsAAzkMnPbl0OFWOPsQ2y_F3aN5h/view?usp=drivesdk), `claude-liam-walker-lanternfall-bao-x-particles-gamedev-r3.mp4`, 3840 × 2160, 10:52.1, SHA-256 `1a06751d82b91360f93ca3bcf6e4702d447388fd56cabddb77f3ba84ff1e3ded`. Source: `godot/` tree `14e6b2ced0edbfc6d5db4686824af4903b9a5d7b`; see [film source](youtube/claude-liam-walker-lanternfall-bao-x-particles-gamedev-r3/FILM-SOURCE.md). Link-viewer access verified. Review: [method and limits](youtube/claude-liam-walker-lanternfall-bao-x-particles-gamedev-r3/_qc/codex-review/REVIEW.md); full-stream technical checks and sampled visual review completed, Bao confirmed full viewing and listening.
 - **Known limitations of the particle work:**
   - GPU time is unreadable under the shipped renderer on this Mac, so GPU prices come from a Mobile/Vulkan override.
   - The extra celebration exceeds its GPU budget.
-  - The film predates the a6-r2 evidence.
+  - Bao confirmed full viewing and listening of the revised film.
   - The requirements that are not met are listed in `TEST-REPORT.md`, "Assignment 6 revision 3".
 - **History:** this lineage was exported from the course repository and predates the shader assignment (tag a5 on master). See `SUBMISSION.md`, "Assignment numbering and history", and the commit-ID map in `SOURCE-REVISION.md`.
 

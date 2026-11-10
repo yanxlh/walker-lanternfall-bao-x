@@ -34,7 +34,7 @@ func inspect_effect(path: String, expected: Dictionary, points: Array, offsets: 
 func run() -> void:
 	suite = "extra_particles_config"
 	inspect_effect("res://effects/lantern_trail.tscn", {
-		"amount": 24, "one_shot": false, "emitting": false,
+		"z_index": 1, "amount": 24, "one_shot": false, "emitting": false,
 		"lifetime": 0.35, "explosiveness": 0.0, "preprocess": 0.0,
 		"emission_shape": 1, "emission_sphere_radius": 3.0,
 		"direction": Vector2(0, -1), "spread": 25.0,
@@ -45,7 +45,7 @@ func run() -> void:
 	}, [Vector2(0, 0.7), Vector2(0.2, 1), Vector2(1, 0)],
 	[0.0, 0.5, 1.0], [Color(1, 0.7, 0.25, 0.95), Color(0.8, 0.35, 0.08, 0.7), Color(0.3, 0.1, 0.02, 0)])
 	inspect_effect("res://effects/level_up_sparks.tscn", {
-		"amount": 32, "one_shot": true, "emitting": false,
+		"z_index": 3, "amount": 32, "one_shot": true, "emitting": false,
 		"lifetime": 0.7, "explosiveness": 1.0, "preprocess": 0.0,
 		"emission_shape": 1, "emission_sphere_radius": 12.0,
 		"direction": Vector2(0, -1), "spread": 180.0,

@@ -1,5 +1,7 @@
 # Source revision identity
 
+Current correction: historical tree-equality statements below describe the earlier film/release. A r2 changes are identified in “Current corrected source scope” at the end; exact current copied-source hashes are in evidence/assignment-6/current-r2-validation/source-sha256.json.
+
 Film game source in the course repository: `c3e12737d9b38679efa61622cb62c793935aff59`.
 
 Course project prefix: `fall-2026/xinghe-b/assignment-2/walker-lanternfall-bao-x/`.
@@ -46,3 +48,8 @@ TEST-REPORT, TUNING and FRICTIONAL cite commit IDs from the course repository, w
 Commits made after the export (`f592d33` tag a6, `09070e2` tag a6-r2, and the revision 3 commits) exist only on GitHub.
 
 The five 14:59 commits hold the build, the tests, both tuning cycles, the play checks, the cost data and the shader study. They were committed together after the work, so the git history does not show each tuning step as its own commit. The order of the steps is in the dated entries of `TUNING.md` and `CHANGE-BRIEF.md`.
+
+
+## Current corrected source scope
+
+The historical tree equality above applies to the earlier filmed release. The later A r2 trial changes the production hit-spark ramp and the GPU-study copy ramp (389c369); its captured comparison and keep decision are 39f8943 and c6e6343. Current documentation and test additions are further corrections. The film remains an earlier-version demonstration, not an exact recording of the current r2 source. The corrected delivery goes directly to the TA via Teams; its exact final commit and ZIP checksum must be recorded when packaged.

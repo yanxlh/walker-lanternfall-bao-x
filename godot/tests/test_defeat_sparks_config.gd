@@ -12,7 +12,7 @@ func run() -> void:
 	check("cpu-2d-node", node is CPUParticles2D)
 	var burst := node as CPUParticles2D
 	var expected := {
-		"amount": 16, "one_shot": true, "emitting": false,
+		"z_index": 3, "amount": 16, "one_shot": true, "emitting": false,
 		"explosiveness": 1.0, "lifetime": 0.45, "emission_shape": 0,
 		"direction": Vector2(1, 0), "spread": 180.0,
 		"initial_velocity_min": 25.0, "initial_velocity_max": 55.0,

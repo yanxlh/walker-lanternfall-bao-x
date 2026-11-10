@@ -1,0 +1,11 @@
+{
+  "test_logic.gd": 0,
+  "test_gameplay.gd": 0,
+  "test_audio.gd": 0,
+  "test_defeat_sparks_config.gd": 0,
+  "test_extra_particles_config.gd": 0,
+  "test_particles_state.gd": 0,
+  "test_particles_edges.gd": 0,
+  "test_shader_study_config.gd": 0,
+  "test_particles_tree_pause.gd": 0
+}

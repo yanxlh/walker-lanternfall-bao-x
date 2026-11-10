@@ -8,7 +8,7 @@ I watched the weapon-hit sparks in play and reported no problem (“Done; no pro
 
 ## AI assistance
 
-Claude Code wrote the brief drafts, effect scenes, presentation code, preview fixtures and tests. It ran the fixture captures, scripted play checks, cost measurements and film captures from the terminal, measured frames and wrote the comparisons. It drafted TUNING, TEST-REPORT, SOURCES, CLAUDE.md and the FRICTIONAL entry for my review, made the local commits (I push), and built the film: script, Kokoro narration, composition and checks. The film uses synthetic narration.
+Claude Code wrote the effect scenes, presentation code, preview fixtures and tests. It ran the fixture captures, scripted play checks, cost measurements and film captures from the terminal, measured frames and wrote the comparisons. It drafted TUNING, TEST-REPORT, SOURCES, CLAUDE.md and the FRICTIONAL entry for my review, made the local commits (I push), and built the film: script, Kokoro narration, composition and checks. The film uses synthetic narration.
 
 Codex helped inspect the project and assignment requirements, operated the Godot editor to convert the independent GPU particle material into a generated process shader, reviewed film samples and technical metadata, and captured a Compatibility Visual Profiler screenshot. Codex organized this contribution statement from the available records.
 
@@ -23,3 +23,12 @@ Quoted student feedback in this report is translated into English from the recor
 ## Revision 3 (9 November 2026)
 
 Claude Code audited the a6-r2 source ZIP against the Assignment 6 brief. It re-ran the eight suites, both mutations and the headless cost script, and rechecked the shader line references. It then corrected stale or inconsistent statements in SUBMISSION.md, README.md, CLAUDE.md and TEST-REPORT.md, added the commit-ID map, and listed the requirements that are not met. It changed no game, effect, shader, asset, test or project-setting file. No new student verdict, observation or shader explanation was produced in this revision.
+
+
+## Current correction scope
+
+The student supplied the current running-game observations and kept A r2. Automated assistance added draw-order read-back and whole-tree pause tests, ran the nine suites through the required wrapper and both A mutations, archived current-source CPU/GPU timer output, restored the historical brief with its dated changes, and organized the current documentation. These runs do not replace the student-authored predictions or process-shader explanation required by the assignment. Current evidence: evidence/assignment-6/current-r2-validation/.
+
+## Revised film review
+
+I watched and listened to the complete revised film (10:52.1) and confirmed this during final submission preparation. Codex uploaded the unchanged master to Google Drive, verified link-reader access, updated the submission identifiers and checked that the film's godot/ tree matches the submitted source.

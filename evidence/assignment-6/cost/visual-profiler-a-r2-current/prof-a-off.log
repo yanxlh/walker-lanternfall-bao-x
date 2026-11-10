@@ -1,0 +1,8 @@
+ERROR: Remote Debugger: Unable to connect. Status: 3.
+   at: _try_connect (core/debugger/remote_debugger_peer.cpp:190)
+ERROR: Condition "_try_connect(stream)" is true. Returning: nullptr
+   at: create_tcp (core/debugger/remote_debugger_peer.cpp:248)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.2.334 - Forward Mobile - Using Device #0: Apple - Apple M4
+
+VISUAL PROFILER FIXTURE acap OFF renderer=mobile driver=vulkan

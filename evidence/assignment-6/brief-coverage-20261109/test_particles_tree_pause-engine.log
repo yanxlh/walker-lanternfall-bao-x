@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+PASS playing-before-tree-pause {}
+PASS moving-trail-before-tree-pause {}
+PASS tree-pause-blocks-player-processing {}
+PASS tree-pause-blocks-presentation-processing {}
+PASS tree-pause-blocks-trail-processing {}
+PASS tree-pause-freezes-player-position {}
+PASS tree-pause-retains-emission-state {}
+PASS tree-pause-does-not-change-game-state {}
+PASS tree-resume-restores-movement {}
+PASS tree-resume-restores-trail-processing {}
+PASS idle-after-tree-resume-stops-emission {}
+particles_tree_pause: 11 checks, 0 failures -> /private/tmp/lanternfall-coverage-4kO9zM/godot/../evidence/particles_tree_pause.json

@@ -1,0 +1,64 @@
+{
+  "checks": 11,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "playing-before-tree-pause",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "moving-trail-before-tree-pause",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "tree-pause-blocks-player-processing",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "tree-pause-blocks-presentation-processing",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "tree-pause-blocks-trail-processing",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "tree-pause-freezes-player-position",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "tree-pause-retains-emission-state",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "tree-pause-does-not-change-game-state",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "tree-resume-restores-movement",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "tree-resume-restores-trail-processing",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "idle-after-tree-resume-stops-emission",
+      "observed": {},
+      "status": "PASS"
+    }
+  ],
+  "suite": "particles_tree_pause",
+  "utc": "2026-11-09T21:56:45"
+}

@@ -1,5 +1,9 @@
 # TEST-REPORT
 
+## Current correction status
+
+Current wrapper run: **327 assertions, zero failures across nine suites**; two deliberate A mutations fail as expected. Current r2 raw CPU/GPU timer outputs, copied-source hashes and limits are in [current r2 validation](evidence/assignment-6/current-r2-validation/README.md). Human observations and r2 acceptance appear under “My running-game check and r2 decision.” The process explanation is under “The process shader.” Older dated sections retain their original measurements and completion status; they are not the current checklist. Remaining gaps are listed in [CORRECTION-REVIEW.md](CORRECTION-REVIEW.md).
+
 `walker-lanternfall-bao-x` · Bao Xing · CSYE 7270 Assignment 2
 
 > **Status: 2026-10-02.** Source revision **`8a6f988`** (the revision the film shows; `godot/` is unchanged after it) for every automated check, capture and comparison below; engine **Godot 4.7.2.stable.official.ed1daf0bf**. My two full playtests (sound on, then muted) are in §4, with the build each was played on. The fresh clone from GitHub is done (§2). Nothing here is claimed before it was observed.
@@ -289,6 +293,18 @@ Regression after restore: edges 18, state 34, extra configuration 79, A configur
 
 GPU time could not be read under the project's GL Compatibility renderer on this Mac: `viewport_get_measured_render_time_gpu` returned 0 on every frame, as did Movie Maker's GPU line, and the Mobile/Metal override behaved the same. In the editor's Visual Profiler, recorded for about 17 s with the game window minimized, every GPU entry read 0.0 ms at frame 3743 and the GPU graph was empty, while the CPU entries had values (Render Viewports 3.11 ms). Those are selected-frame readings, and they show that no usable GPU timings were provided, not that GPU cost is zero (`evidence/assignment-6/cost/VISUAL-PROFILER-COMPATIBILITY.md`). The same scenes under the Mobile renderer with Vulkan/MoltenVK, a command-line override with project settings unchanged, gave readable GPU times. Every off/on median delta (A +0.01, B −0.05, celebration +0.09 ms) was within about ±0.1 ms of run-to-run noise. This is a proxy for, not a measurement of, the shipped renderer. FPS and CPU time are not reported as GPU time. Full method, tables and limits: `evidence/assignment-6/cost/COST-REPORT.md`.
 
+## The process shader
+
+The game's A/B effects use CPU nodes without a custom process shader. `godot/shaders/particles_generated.gdshader` is a separate GPU study copy, not code used by the gameplay effects. The connections between processing and visual goals are:
+
+- Line 3, `shader_type particles`, declares a shader that updates particle state, not a canvas_item shader that draws the spark texture.
+- Lines 225–275, `start()`, initialize position, random velocity, and other birth parameters. Random velocity at line 139 corresponds to A's 25–55 range; random scale at line 149 corresponds to 0.7–1.8.
+- Lines 277–379, `process()`, update particles each frame. Gravity at lines 311/324 and damping at lines 328–336 implement the intent to spread first and slow down afterward.
+- Line 160 samples the scale curve; line 161 samples the color ramp. They implement shrinking and the pale-yellow-to-orange fade. Line 352 writes COLOR, and lines 364–371 apply scale to the transform. Both textures must actually be bound; sampling code alone does not establish the correct appearance. The missing bindings in the earlier study were fixed in r2.
+- Lines 293–299 and 376–378 handle age and deactivation, corresponding to the 0.45-second end. The `spark.png` texture and additive CanvasItemMaterial belong to drawing; the process shader cannot compensate for HUD obstruction or a missing texture.
+
+Line explanations and repair evidence are in `TEST-REPORT.md` and `evidence/assignment-6/shader-study-fixed/README.md`.
+
 ## 29 October 2026 — editor-generated particle process shader
 
 `godot/previews/shader_study/hit_sparks_gpu.tscn` was built from the kept hit sparks with `GPUParticles2D.convert_from_particles()` (`godot/tests/build_shader_study.gd`). Codex, operating the Godot 4.7.2 editor for the student, converted its ParticleProcessMaterial to a ShaderMaterial in the Inspector and saved the shader as `godot/shaders/particles_generated.gdshader` (379 lines, SHA-256 `2e64ebae4b965173f775951abe52f1f8f6d0eac98713cbb72c486231b83723c4`); the student relayed the result (`CONTRIBUTIONS-assignment-6.md`). Line 1 is the editor converter's header: “Shader automatically converted from Godot Engine 4.7.2.stable's ParticleProcessMaterial.” Only the study scene references the shader. The hashes of every file under `godot/effects/` match those recorded in `evidence/assignment-6/cost/COST-REPORT.md`, so the game's effects are unchanged.
@@ -390,17 +406,17 @@ All GPU figures come from a command-line Mobile/Vulkan (MoltenVK) override on th
 
 Both in-game effects are CPUParticles2D. In Godot 4.7.2, `ClassDB.class_get_property_list("CPUParticles2D")` has no `visibility_rect`; GPUParticles2D has one. The only GPU particle node is the study scene, which gameplay never loads. No in-game effect has a visibility rectangle that could cull it. No human edge-of-screen check is recorded.
 
-### Requirements not met, or without a recorded human check
+### Audit snapshot before the later r2 corrections
 
 | Requirement (Assignment 6 brief) | State in the record |
 |---|---|
-| At least one revision per effect driven by something observed in the running game | B: yes ("not obvious" → alpha ramp). A: no. The student reported "Done; no problem"; A's only revision (`scale_amount_max` 1.2 → 1.8) came from Claude's reading of the r0 strip. |
+| At least one revision per effect driven by something observed in the running game | B: "not obvious" led to its alpha change. Later A r2: "not eye-catching enough" led to the approved color-ramp change and keep decision; see TUNING.md and commits f55159e through c6e6343. The earlier A scale trial had a different basis. |
 | First verdict in visual terms, before Claude reads a strip | A's first verdicts were "visible" and "Done; no problem", with no visual description. |
-| Each effect over the darkest and lightest level art (human check) | Scripted play-check readings only. PLAY-CHECKS.md: the student made no comment on bright-prop visibility. |
-| Effect B on the first frames after scene load (human check) | Covered by the brief and the state tests; no human check recorded. |
-| Size verdict for both effects at the project's window size (human check) | Frame measurements only; the student's verdicts do not mention size or window size. |
-| "Claude against you": a disagreement, or a statement that there was none | Not recorded. |
-| The student writes CHANGE-BRIEF.md and the predictions | CONTRIBUTIONS-assignment-6.md: Claude Code wrote the brief drafts; the student approved them. |
+| Each effect over the darkest and lightest level art (human check) | Confirmed in my November 9 running-game check: both effects are readable on dark floor and bright market backgrounds. |
+| Effect B on the first frames after scene load (human check) | Confirmed in my November 9 running-game check: no trail before movement. |
+| Size verdict for both effects at the project's window size (human check) | My November 9 running-game check found the sizes appropriate and no obstruction; this is a qualitative judgment, not a new pixel measurement. |
+| "Claude against you": a disagreement, or a statement that there was none | The later r2 keep entry in TUNING.md records agreement with the brighter, longer-readable burst and no disagreement; the earlier audit had no such record. |
+| Student authorship of the brief and predictions | This is an authorship requirement, not a test result. Current rewriting cannot establish the authorship of historical drafts. |
 | The student writes the process-shader line references | The line table was drafted by Claude (line numbers re-checked on 9 November and correct). The process/draw explanation is the student's. |
 | CLAUDE.md: unedited agent draft and the student's review committed separately | One commit (`093cac0`). |
 | Commits in the order the work happened | Build, both tuning cycles, captures and shader study are in five commits made together at 14:59 (SOURCE-REVISION.md). |
@@ -408,3 +424,92 @@ Both in-game effects are CPUParticles2D. In Godot 4.7.2, `ClassDB.class_get_prop
 | Film: three parts named, each with a line; why a GPU effect's headless price is near zero; two shader lines beside the brief settings they implement; agent mistakes caught; overruled readings; one next step; texture sources | Not narrated in SCRIPT.md. The film's price beat shows the earlier GPU summary. |
 
 Requirements met and re-checked on 9 November: both configuration tests and both mutations; both state tests with modes stated, including two hits inside one lifetime and the 32-burst cap; the generated shader's line references; the headless price with an empty-scene control; the budget comparison; the texture provenance record.
+
+
+## 9 November 2026 — brief coverage follow-up
+
+The configuration expectations now read back A z_index=3, B z_index=1, and the extra celebration z_index=3. The independent `test_particles_tree_pause.gd` checks whole-tree pause and resume separately from the existing P/Esc game-state pause. Targeted rerun: A configuration 40, extra configuration 81, particle state 34, whole-tree pause 11; 166 assertions, zero failures. All four exit codes were 0 with no SCRIPT ERROR or SHADER ERROR. Logs, result JSON and method: [brief coverage evidence](evidence/assignment-6/brief-coverage-20261109/README.md). Earlier eight-suite totals remain historical, rather than being relabelled as a new full run.
+
+Vsync prediction: off/on FPS should both read the display refresh rate when both workloads finish within the refresh interval (for example 60/60 on a 60 Hz display), falling below it when deadlines are missed. This explains why capped FPS can conceal particle cost; it is not an FPS measurement.
+
+### My running-game check and r2 decision
+
+When hits arrive rapidly, I can still recognize the repeated spark bursts. They overlap without becoming a solid bright patch that hides enemies or pickups. The brighter r2 sparks make successive hits easier to notice.
+
+When I stop moving, B stops producing new embers. The few embers already behind the courier fade away quickly rather than leaving a persistent line. When I pause, the remaining sparks and trail stay frozen instead of continuing to move or fade. After I resume, they continue normally, and the trail follows movement again without an extra burst or a long streak.
+
+The recorded project launch window is 1280 × 720.
+
+I checked the effects in the running game. B has no trail before I start moving. A and B remain readable on both dark floor and bright parts of the market. Their sizes feel appropriate relative to the courier, and they do not obscure the courier, enemies, or pickups. The upgrade sparks fit around the small portrait without obstructing the cards.
+
+I am keeping r2 because the sparks are more noticeable and make attack feedback clearer. When a monster is killed, the burst also helps me notice the kill. The same effect appears on nonlethal hits, so I read it as hit feedback rather than proof of a kill on its own.
+
+
+### Evidence scope: hidden state and r2 cost
+
+Hidden-state behavior was checked through the scripted windowed capture, not by a manual in-game toggle: the game has no hide/show control. See `captures/play-checks/20261029-142138/pause-hidden+08.png`, `shown+08.png`, and `PLAY-CHECKS.md`. State tests supplement those screenshots.
+
+The GPU prices listed above are historical measurements of A before the r2 color-ramp change (r1). Neither the viewport GPU timer nor the Visual Profiler was remeasured for A r2. I reran the headless cost check on r2 and found it within the CPU budget; that does not establish r2 GPU cost. Only the color ramp changed, so I expect similar GPU work, but this is a prediction rather than a new GPU measurement. The directory name `cost/visual-profiler-r2/` refers to the earlier submission revision, not this Effect A r2 color trial.
+
+
+### A color-ramp r2: reported headless CPU rerun — 9 November 2026
+
+The following figures are transcribed from the two supplied screenshots. Units are ms/frame; parentheses show the range of trial means.
+
+| Condition | Off mean (trial range) | On mean (trial range) | Delta | CPU budget |
+|---|---:|---:|---:|---:|
+| Empty-scene control | 0.0089 (0.0086–0.0093) | — | — | — |
+| Idle game | 0.0581 (0.0578–0.0584) | 0.0620 (0.0618–0.0622) | +0.0039 | — |
+| A r2, 32 live bursts | 0.1641 (0.1631–0.1649) | 0.2112 (0.2099–0.2157) | +0.0471 | 1.0 |
+| B, continuous movement | 0.0582 (0.0580–0.0586) | 0.0650 (0.0646–0.0658) | +0.0068 | 0.25 |
+| Celebration, 4 live bursts | 0.0901 (0.0851–0.0912) | 0.1065 (0.1035–0.1095) | +0.0164 | 0.4 |
+
+All three effect CPU deltas are below budget. The supplied report states that A reached its 32-burst cap, B emitted through each 300-frame trial, and the celebration reached its four-burst cap. A's on-trial means span 0.0058 ms (approximately 0.006 ms) across five trials. The empty-scene control is below every game condition.
+
+For comparison, A's earlier CPU deltas were +0.0222 ms in the October 29 r1 comparison and +0.0379 ms in the November 9 r1 rerun; the r2 result is +0.0471 ms. These separate runs do not isolate the color-ramp change from machine load or other timing variation, so their difference is not established as the cost of r2.
+
+Evidence scope: the screenshots are saved in `evidence/assignment-6/cost/a-color-r2-reported-20261109/`. They report that the raw run remained in a temporary copy; raw logs, per-trial JSON, exact invocation, and source hash were not supplied with these images. This is a reported result with screenshot evidence, not a newly reproduced benchmark or a claim that its raw logs are archived. A r2 GPU timing has not been rerun. All existing A GPU figures remain r1 measurements; the expectation of similar GPU cost after a color-only change remains a prediction.
+
+
+## Current r2 validation and cost evidence
+
+Nine suites were run using `bash scripts/run-test.sh <suite> <mode>` on an imported copy of the current source. Modes: audio `realtime`; every other suite `60`. Counts: logic 32, gameplay 65, audio 25, A configuration 40, extra configuration 81, particle state 34, edges 18, shader-study configuration 21, whole-tree pause 11. Total: **327 assertions, zero failures**. Both deliberate A mutations exited **1**, and the scene was restored byte-for-byte before the final passing A configuration run. Original assertions were retained.
+
+The current original brief and dated revisions are retained. Initial particle brief/wrapper commit: `04ef18a`; event-design update: `6d88e4b`; later A r2 approval/test/change/comparison/decision: `f55159e`, `7439dda`, `389c369`, `39f8943`, `c6e6343`. The current supplemental explanation is separate from those original records.
+
+### Reproduced CPU cost
+
+Command: `bash scripts/run-test.sh cost_effects.gd 60 300`. The retained serial run took place after the windowed GPU workload had exited; concurrent exploratory output is not used here. Godot 4.7.2, Apple M4, macOS 26.6.2, headless, five interleaved trials of 300 frames after 30 warm-up frames (celebration: ten short trials of 38 frames). The empty-scene control is 0.004647 ms/frame. All times below are ms/frame.
+
+| Condition | CPU off mean (trial range) | CPU on mean (trial range) | Delta | Budget |
+|---|---:|---:|---:|---:|
+| Idle game | 0.031918 (0.029203–0.038263) | 0.032721 (0.031303–0.035563) | +0.000803 | — |
+| A r2, cap 32 | 0.085517 (0.083377–0.087763) | 0.183205 (0.106723–0.453600) | +0.097687 | 1.0 |
+| B, continuous movement | 0.045263 (0.029323–0.099813) | 0.038083 (0.032807–0.051003) | -0.007179 | 0.25 |
+| Celebration, cap 4 | 0.053516 (0.045211–0.077263) | 0.062542 (0.053158–0.078132) | +0.009026 | 0.4 |
+
+A's positive delta is below its 1.0 ms CPU budget; celebration is below 0.4 ms. B's negative delta does not mean particles save CPU time: off/on trial ranges overlap substantially, so its incremental cost is not resolved by this run. Earlier reported r2 screenshots show +0.0068 ms, below 0.25 ms. Keep both results rather than selecting a favorable one. The current original logs and per-trial JSON are archived here, closing the previous absence of raw logs for a reproduced current-source run; they do not retroactively supply the raw logs of the earlier screenshot run.
+
+### Reproduced windowed GPU timer
+
+Command: `Godot --path <copied-godot> --rendering-method mobile --rendering-driver vulkan --fixed-fps 60 --script res://tests/cost_effects.gd -- --out <gpu-r2.json> --rev c6e6343-plus-coverage-tests --trials 5`. Renderer overrides do not edit project settings. GPU values below come from RenderingServer viewport timestamps on the Apple M4, not CPU durations or FPS.
+
+| Condition | GPU off mean (trial range) | GPU on mean (trial range) | Delta | Budget |
+|---|---:|---:|---:|---:|
+| A r2 | 0.833148 (0.403693–1.082033) | 0.776605 (0.642473–1.047647) | -0.056543 | 0.75 |
+| B | 0.878415 (0.246000–3.095000) | 0.685109 (0.249000–2.043000) | -0.193306 | 0.25 |
+| Celebration | 0.596518 (0.373474–1.169711) | 0.606526 (0.449632–0.823316) | +0.010008 | 0.4 |
+
+Negative A/B deltas and broad trial spread make this run inconclusive for incremental GPU cost. Do not count it as evidence that A/B are free or that their r2 GPU budgets have been reverified. The extra celebration's small delta here does not erase the earlier +0.910 ms over-budget result. These current measurements are viewport-timer results, **not new editor Visual Profiler captures**. Existing editor captures remain historical. The newer screenshot supplied by the student reports r2 A GPU deltas +0.17 to +0.39 ms within 0.75 ms, but its raw data and exact command have not been supplied. The screenshot is supplementary evidence, not a replacement for those missing records.
+
+### Reproduction and identity
+
+Raw stdout, engine logs, nine suite JSON files, mutation exit codes, `cpu-r2.json`, and `gpu-r2.json` are archived with this file. `source-sha256.json` identifies the exact copied Godot files; it is more precise than the benchmark's descriptive revision label. The headless wrapper leaves `source_revision=unknown` in the cost JSON, so that value is not silently replaced. Original automatic UTC timestamps are retained. Exit codes for the nine suites are in `exit-codes.json`; all are zero. CPU wrapper and GPU process also exited zero. Existing resource-at-exit warnings remain; no warning-free claim is made. These tests and measurements do not add new human observations.
+
+
+Full files: [current r2 evidence](evidence/assignment-6/current-r2-validation/README.md).
+
+
+## Current r2 editor Visual Profiler capture
+
+Current A and B off/on editor screenshots, original runtime logs and reading method are now archived in [current r2 Visual Profiler captures](evidence/assignment-6/cost/visual-profiler-a-r2-current/README.md). A selected-frame differences were +0.69 ms in the initial layout and +4.59 ms in the final matched layout; B was -1.40 ms in the final layout. The latter measurements show substantial variation and do not establish typical incremental cost. This closes the missing-current-screenshot item, not the budget uncertainty. Two empty captures are retained as rejected evidence. No celebration Visual Profiler rerun or vsync-off FPS comparison is claimed.
