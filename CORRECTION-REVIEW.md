@@ -13,7 +13,7 @@ Start with the 8 November supplement at the end of CHANGE-BRIEF.md for current d
 
 ## Still unresolved
 
-1. Current r2 editor Visual Profiler off/on captures are now saved in evidence/assignment-6/cost/visual-profiler-a-r2-current/. Their variable readings, including an A high frame and a negative B delta, leave typical GPU cost and budget compliance unresolved.
+1. Current r2 editor Visual Profiler off/on captures are now saved in evidence/assignment-6/cost/visual-profiler-a-r2-current/. GPU measurements are complete. Effect A's selected-frame increments were +0.69 ms and +4.59 ms against a 0.75 ms budget: one comparison was within budget and the other exceeded it, so A did not consistently meet the budget in these samples. B's measured increment was -1.40 ms against a 0.25 ms budget; that sample did not exceed the budget, but the negative difference is not evidence that particles improve performance. These are selected-frame measurements under the Mobile/Vulkan proxy, not a multi-frame estimate for the shipped GL Compatibility renderer.
 2. The revised film is rendered, uploaded with link-reader access, and identified by SHA-256 in SUBMISSION.md. Its 32-beat checklist and student viewing/listening confirmation are recorded in the film directory.
 3. The assignment requires the student to write the brief, predictions, verdicts and process-shader explanation. Assistance and rewriting cannot establish that authorship or the original pre-build chronology; historical records must remain accurate.
 4. Original agent prompts/transcripts were not provided. A reconstructed prompt must not be represented as the original session.

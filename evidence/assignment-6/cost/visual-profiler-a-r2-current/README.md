@@ -23,7 +23,7 @@ Use the top-level **Render Viewports** row, not a sum of nested rows. Values are
 | a-off-visible.png | 715 | 0.30 | 0.62 | final matched window setup |
 | a-on-visible.png | 782 | 0.61 | 5.21 | final matched window setup |
 
-A's initial selected-frame difference is +0.69 ms, below its 0.75 ms GPU budget. Its later selected-frame difference is +4.59 ms, above budget. B's final selected-frame difference is -1.40 ms, which does not establish a speed benefit or a reliable incremental cost. The graphs visibly vary. Neither selecting the low A reading nor selecting the high reading alone establishes typical cost; the high reading must remain visible in the record. Current GPU budget compliance remains unresolved by this measurement session. The earlier viewport-timer run was also noisy; its raw results remain in `../../current-r2-validation/`.
+A's initial selected-frame difference is +0.69 ms, below its 0.75 ms GPU budget. Its later selected-frame difference is +4.59 ms, above budget. B's final selected-frame difference is -1.40 ms, which does not establish a speed benefit or a reliable incremental cost. The graphs visibly vary. Neither selecting the low A reading nor selecting the high reading alone establishes typical cost; the high reading must remain visible in the record. The sampled budget conclusion is explicit: A did not consistently meet its 0.75 ms budget (one pass, one exceedance). B did not exceed its 0.25 ms budget in the recorded negative-difference sample, with no performance benefit inferred. The earlier viewport-timer run was also noisy; its raw results remain in `../../current-r2-validation/`.
 
 ## Capture procedure and duration
 

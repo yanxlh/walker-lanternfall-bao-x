@@ -33,3 +33,7 @@ The rendered film (`exports/landscape/…mp4`) and every intermediate video stay
 [Watch the revised film](https://drive.google.com/file/d/1AMPOgsAAzkMnPbl0OFWOPsQ2y_F3aN5h/view?usp=drivesdk) — anyone with the link can view (verified). Size: 149,420,723 bytes. SHA-256: `1a06751d82b91360f93ca3bcf6e4702d447388fd56cabddb77f3ba84ff1e3ded`.
 
 See [_qc/codex-review/REVIEW.md](_qc/codex-review/REVIEW.md) for the additional visual and full-stream technical checks, their limits, and the corrected B26 script entry.
+
+## Budget interpretation update
+
+The unchanged master uses the phrase "unsettled GPU budget." The submission now gives an explicit measured-sample verdict: A measured +0.69 ms (within 0.75 ms) and +4.59 ms (over 0.75 ms), so it did not consistently meet budget in these samples. The source measurements, film bytes and SHA-256 are unchanged. These selected frames do not establish a multi-frame cost for the shipped renderer.
