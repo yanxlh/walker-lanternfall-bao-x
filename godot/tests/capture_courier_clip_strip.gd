@@ -1,6 +1,6 @@
 extends SceneTree
 ## Assignment 7 clip strips: the saved courier_visual.tscn alone, 8x, on a flat grey ground, one image per clip frame
-## (walk: 16 ticks, dash: 28 ticks plus the rest pose at 28). Windowed only (a headless run draws nothing):
+## (walk: 16 ticks; dash: every tick of the clip plus the rest pose at its end). Windowed only (a headless run draws nothing):
 ##   Godot --path godot --resolution 1280x720 --script res://tests/capture_courier_clip_strip.gd -- --out <dir>
 ## Each frame is seeked in manual mode, then captured after frame_post_draw. Writes walk-NN.png, dash-NN.png and
 ## strip-walk.png / strip-dash.png (labelled by the Python strip step, not here). The game never loads this script.
@@ -27,7 +27,8 @@ func _main() -> void:
 	visual.scale = Vector2(ZOOM, ZOOM) / 2.0
 	root.add_child(visual)
 	var player: AnimationPlayer = visual.get_node("AnimationPlayer")
-	for clip in [["walk", 16], ["dash", 29]]:
+	var dash_frames := roundi(player.get_animation("dash").length * FPS) + 1
+	for clip in [["walk", 16], ["dash", dash_frames]]:
 		player.play(clip[0])
 		for f in clip[1]:
 			player.seek(f / FPS, true)
