@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # scripts/run-test.sh <test-file.gd> <fps|realtime> [timeout-seconds]
+# Exit 1 on a failing suite, a hang (124), SHADER ERROR / SCRIPT ERROR, or a resource-load failure in the log.
 set -o pipefail
 cd "$(dirname "$0")/.." || exit 1
 if [ "$#" -lt 2 ] || [[ ! "$1" =~ ^[a-zA-Z0-9_]+\.gd$ ]]; then
@@ -34,4 +35,6 @@ sys.exit(status)
 PY
 status=$?
 if grep -qE 'SHADER ERROR|SCRIPT ERROR' "$log"; then status=1; fi
+# Resource-load failures print ERROR lines but let the run exit 0 (a scene with a missing ext_resource still loads).
+if grep -qE 'Cannot open file|Failed loading resource|Failed to load resource|Resource file not found|referenced non-existent resource' "$log"; then status=1; fi
 exit "$status"

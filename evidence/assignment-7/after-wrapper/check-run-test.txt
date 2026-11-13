@@ -1,0 +1,1 @@
+fixture_resource_load_error.gd -> exit 1 (want 1); test_courier_states.gd -> exit 0 (want 0)

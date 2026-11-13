@@ -28,7 +28,9 @@
 
 ## Tests, all through `scripts/run-test.sh`
 `./scripts/run-test.sh <test-file.gd> <fps|realtime> [timeout-seconds]`: the file sits in `godot/tests/`; a number
-adds `--fixed-fps N`; timeout 120 s; log in `logs/<test>_<tag>.log`; exit 1 on `SHADER ERROR`/`SCRIPT ERROR`.
+adds `--fixed-fps N`; timeout 120 s; log in `logs/<test>_<tag>.log`; exit 1 on `SHADER ERROR`/`SCRIPT ERROR` and on
+resource-load failures (`Cannot open file`, `Failed loading resource`, `Resource file not found`, `referenced non-existent
+resource`), which otherwise exit 0. `scripts/check-run-test.sh` checks the wrapper itself.
 It does not import, so after any new asset or scene run
 `/Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import`.
 Baseline (A7, `9ccf078`, after an import from an empty cache): `evidence/assignment-7/baseline/RUN.txt`.
@@ -41,6 +43,19 @@ Parsed events are delivered on the next process frame, so await `process_frame` 
 
 # Current change
 @CHANGE-BRIEF.md
+
+# Sessions and git
+- Git: read-only commands (`status`, `diff`, `log`, `show`) at any time. Commit only on the assignment branch, one
+  completed step per commit. Never push, tag, reset, rebase, force or rewrite history; Bao pushes.
+- After every agent session: a headless `claude -p --output-format stream-json` run ends with one `result` event; read
+  it and stop if `is_error` is true or `subtype` is not `success`. A desktop session has no `result` event, so run
+  `python3 -I scripts/session_check_a7.py <session.jsonl> <base> <out.json>` (tool errors, Stop-hook errors, files
+  changed, any out-of-scope path) and read `git diff --stat <base>..HEAD` and `git status --short` before going on.
+- Resuming an interrupted session: first `git status --short` and `git log --oneline -10`. Uncommitted changes are
+  unreviewed: read `git diff`, then keep them or restore named files (never `git checkout .` or `git reset --hard`).
+  Find the last finished step in TEST-REPORT ("Order of work") and re-run that step's suites through
+  `scripts/run-test.sh` before the next step. Do not redo a step that has a commit, and do not re-run a builder or a
+  capture that overwrites committed evidence without saying so first.
 
 # Ownership
 Bao chose the dash and its rules. Bao plays the build and gives every keep or change verdict, confirms or

@@ -715,6 +715,8 @@ Both clips sit in one AnimationPlayer with `callback_mode_process = ANIMATION_CA
 | Dash tests first | `9a2c230` | structure and edge suites, failing on `77d193e` |
 | The dash | `6b5edab` | tuning, card, input, phases, interrupts; all suites pass |
 | Mutations | `09f2add` | eight mutations in `git worktree`s; Godot 3 names probe |
+| Records, fresh clone | `5783447`, `159a006` | README, TEST-REPORT, SUBMISSION, CONTRIBUTIONS; all 20 runs from a fresh clone |
+| Wrapper and session rules | the commit after `159a006` | `run-test.sh` fails on resource-load errors, with a self-check; resume and git rules in CLAUDE.md; the four objectives; the session check |
 
 ### Results
 
@@ -761,6 +763,23 @@ Registration (measured from the PNG): the walk cells share the foot line y = 31;
 | Each clip frame alone, 8x on grey | `captures/assignment-7/clip-strips/strip-walk.png`, `strip-dash.png` |
 
 Claude's reading of the strips (a claim, not a human check): the walk alternates cells 2 and 3 every 8 ticks with no visible jump between them. In the dash, startup shows a small dip and backward lean. Active shows the body lifted a pixel and leaning about 20° forward with the lamp trailing. Recovery settles back with a slight overshoot to the rest pose, which is cell 2. At the strongest lean the coat separates from the legs. In play the courier is small and dark on a dark ground, so the lean is subtle at 1280 x 720.
+
+### The four objectives, in this project
+
+| Objective | Where it is here | What shows it |
+|---|---|---|
+| **Tracks of keys.** A clip is tracks, each a node path and a property, holding keys at times. | `courier_clips.tres`: `Body:frame` (discrete, nearest) in every sprite clip; `Rig:position`, `Rig/Hips:rotation`, `Rig/Hips/Chest/Neck:rotation` (continuous) in `dash`; `Body:visible` / `Rig:visible` in every clip | `every-track-resolves` and the key checks in the read-back; the renamed-path and key-past-the-last-cell mutations fail it; the probe shows what a continuous frame track does |
+| **One authority.** Exactly one thing decides what the courier shows. | `player.gd` alone plays and seeks the AnimationPlayer, once per tick and on every override; every clip keys both visibility tracks, so no clip leaves the previous one's state behind | `one-authority-in-source` and `one-animation-driver` (structure test); `clip-and-cell-follow-the-state`; the level-up and death edges, where an override takes over mid-dash and hands back |
+| **Two clocks.** The simulation ticks at 60 Hz; frames render at whatever rate the window runs. | AnimationPlayer in manual mode, seeked from integer tick counters; the dash press arrives on the process side and is consumed on the next physics tick; no gameplay fact is keyed in a clip | `real-loop-phase-ticks` gives the same 6 / 10 / 12 ticks and 55 px at 30, 60 and 144 fps; the level-up edges freeze the dash with the run; `press-is-a-request-until-the-tick` |
+| **Feel designed in frames.** Timing is written as frames per phase before it is keyed. | The phase table in CHANGE-BRIEF (startup 6, active 10, recovery 12 ticks; cooldown 60), keyed at 0, 6, 16 and 28 with ease-in through startup and ease-out through recovery; interrupts defined per phase | `clip-boundaries-match-tuning`; the hit edges on both sides of every phase boundary; the one-frame-late key and one-tick-longer mutations. Whether the timing *feels* right is the HUMAN CHECK below |
+
+### After the agent session
+
+`python3 -I scripts/session_check_a7.py <session.jsonl> 9ccf078 evidence/assignment-7/session-check/session-check.json`, run on this session's transcript with `HEAD` at `159a006`, read-only git:
+
+- The transcript has no final `result` event. The session ran in the Claude desktop app, whose transcripts do not write one; only a headless `claude -p --output-format stream-json` run does. The check therefore reads the transcript directly: 164 recorded tool calls, 3 tool errors (a browser call made before the pane was open, and two shell commands that exited 1, both retried), and 0 Stop-hook errors.
+- `9ccf078..159a006` changes 176 files. In `godot/` outside `godot/tests/`, only the eight files the brief names change: the player folder, `progression.gd`, `tuning.gd` and `session.gd`. No out-of-scope path changes: shaders, effects, A3/A5 scenes, audio, assets, UI, enemies, weapons, pickups, world, `game_state.gd` and `project.godot` are all untouched.
+- The wrapper gap from the assignment's list is closed: `scripts/run-test.sh` now also fails on resource-load errors. `scripts/check-run-test.sh` shows that the old wrapper exits 0 on `fixture_resource_load_error.gd` and the new one exits 1, while a passing suite still exits 0.
 
 ### HUMAN CHECKS — Bao, not yet done
 

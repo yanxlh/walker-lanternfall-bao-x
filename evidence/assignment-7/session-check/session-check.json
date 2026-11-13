@@ -1,0 +1,118 @@
+{
+  "head": "159a006",
+  "base": "9ccf078",
+  "transcript": {
+    "result_events": [],
+    "has_result_event": false,
+    "tool_calls": 168,
+    "tool_calls_by_name": {
+      "Bash": 109,
+      "Write": 15,
+      "mcp__ccd_turn__update_plan": 10,
+      "Read": 10,
+      "mcp__Claude_Browser__javascript_tool": 6,
+      "Edit": 4,
+      "mcp__Claude_Browser__navigate": 3,
+      "mcp__ccd_turn__wrap_up": 3,
+      "mcp__Claude_Browser__find": 2,
+      "mcp__Claude_Browser__computer": 2,
+      "Skill": 2,
+      "mcp__Claude_Browser__get_page_text": 1,
+      "AskUserQuestion": 1
+    },
+    "tool_errors": 3,
+    "tool_error_lines": [
+      {
+        "tool": "mcp__Claude_Browser__javascript_tool",
+        "first_line": "No preview is open. Use `preview_start` or `navigate` with {\"url\": \"https://\u2026\"} to open a browser tab at a URL, or `preview_start` with {\"name\": \"\u2026\"} to start a"
+      },
+      {
+        "tool": "Bash",
+        "first_line": "Exit code 1"
+      },
+      {
+        "tool": "Bash",
+        "first_line": "Exit code 1"
+      }
+    ],
+    "stop_hook_errors": 0
+  },
+  "git": {
+    "commits": 10,
+    "files_changed": 176,
+    "changed_by_area": {
+      ".gitignore": 1,
+      "CHANGE-BRIEF.md": 1,
+      "CLAUDE.md": 1,
+      "CONTRIBUTIONS-assignment-7.md": 1,
+      "FRICTIONAL.md": 1,
+      "README.md": 1,
+      "SOURCES.md": 1,
+      "SUBMISSION-assignment-7.md": 1,
+      "TEST-REPORT.md": 1,
+      "captures": 59,
+      "evidence": 81,
+      "godot/features/player": 5,
+      "godot/features/progression": 1,
+      "godot/features/tuning.gd": 1,
+      "godot/game/session.gd": 1,
+      "godot/tests/capture_courier.gd": 1,
+      "godot/tests/capture_courier.gd.uid": 1,
+      "godot/tests/capture_courier_clip_strip.gd": 1,
+      "godot/tests/capture_courier_clip_strip.gd.uid": 1,
+      "godot/tests/play_dash.gd": 1,
+      "godot/tests/play_dash.gd.uid": 1,
+      "godot/tests/probe_godot3_names.gd": 1,
+      "godot/tests/probe_godot3_names.gd.uid": 1,
+      "godot/tests/test_courier_clips.gd": 1,
+      "godot/tests/test_courier_clips.gd.uid": 1,
+      "godot/tests/test_courier_pin.gd": 1,
+      "godot/tests/test_courier_pin.gd.uid": 1,
+      "godot/tests/test_courier_states.gd": 1,
+      "godot/tests/test_courier_states.gd.uid": 1,
+      "godot/tests/test_dash_edges.gd": 1,
+      "godot/tests/test_dash_edges.gd.uid": 1,
+      "scripts": 3
+    },
+    "godot_files_changed": [
+      "godot/features/player/build_courier_visual.gd",
+      "godot/features/player/build_courier_visual.gd.uid",
+      "godot/features/player/courier_clips.tres",
+      "godot/features/player/courier_visual.tscn",
+      "godot/features/player/player.gd",
+      "godot/features/progression/progression.gd",
+      "godot/features/tuning.gd",
+      "godot/game/session.gd"
+    ],
+    "out_of_scope_changed": [],
+    "uncommitted": [
+      " M CLAUDE.md",
+      " M TEST-REPORT.md",
+      " M evidence/a3-assets.json",
+      " M evidence/a3-camera.json",
+      " M evidence/a3-lantern-gate.json",
+      " M evidence/audio.json",
+      " M evidence/courier_clips.json",
+      " M evidence/courier_pin.json",
+      " M evidence/courier_states.json",
+      " M evidence/dash_edges_144fps.json",
+      " M evidence/dash_edges_30fps.json",
+      " M evidence/dash_edges_60fps.json",
+      " M evidence/defeat_sparks_config.json",
+      " M evidence/extra_particles_config.json",
+      " M evidence/gameplay.json",
+      " M evidence/hurt_tint.json",
+      " M evidence/logic.json",
+      " M evidence/particles_edges.json",
+      " M evidence/particles_state.json",
+      " M evidence/test_materials.json",
+      " M scripts/run-test.sh",
+      "?? evidence/assignment-7/after-wrapper/",
+      "?? evidence/assignment-7/session-check/",
+      "?? godot/tests/fixture_resource_load_error.gd",
+      "?? godot/tests/fixture_resource_load_error.gd.uid",
+      "?? scripts/check-run-test.sh",
+      "?? scripts/session_check_a7.py"
+    ]
+  }
+}
