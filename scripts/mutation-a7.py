@@ -15,7 +15,7 @@ GODOT = "/Applications/Godot.app/Contents/MacOS/Godot"
 LIB = "godot/features/player/courier_clips.tres"
 TUNING = "godot/features/tuning.gd"
 
-# (id, file, old text, new text, suites that must fail)
+# (id, file, old text, new text, suites that must fail). Key times follow dash phase table r1 (boundaries 0/4/14/20).
 MUTATIONS = [
     ("walk-frame-track-continuous", LIB,
      '"times": PackedFloat32Array(0, 0.13333334),\n"transitions": PackedFloat32Array(1, 1),\n"update": 1,',
@@ -34,8 +34,8 @@ MUTATIONS = [
      '"update": 1,\n"values": [2, 3]', '"update": 1,\n"values": [2, 10]',
      ["test_courier_clips.gd 60"]),
     ("dash-phase-key-one-frame-late", LIB,
-     '"times": PackedFloat32Array(0, 0.06666667, 0.1, 0.26666668, 0.33333334, 0.46666667),\n"transitions": PackedFloat32Array(2, 2, 1, 0.5, 0.5, 0.5),\n"update": 0,\n"values": [0.0,',
-     '"times": PackedFloat32Array(0, 0.06666667, 0.11666667, 0.26666668, 0.33333334, 0.46666667),\n"transitions": PackedFloat32Array(2, 2, 1, 0.5, 0.5, 0.5),\n"update": 0,\n"values": [0.0,',
+     '"times": PackedFloat32Array(0, 0.05, 0.06666667, 0.23333333, 0.26666668, 0.33333334),\n"transitions": PackedFloat32Array(2, 2, 1, 0.5, 0.5, 0.5),\n"update": 0,\n"values": [0.0,',
+     '"times": PackedFloat32Array(0, 0.05, 0.083333336, 0.23333333, 0.26666668, 0.33333334),\n"transitions": PackedFloat32Array(2, 2, 1, 0.5, 0.5, 0.5),\n"update": 0,\n"values": [0.0,',
      ["test_courier_clips.gd 60", "test_courier_states.gd 60"]),
     ("dash-active-one-tick-longer", TUNING,
      "const DASH_ACTIVE_TICKS := 10", "const DASH_ACTIVE_TICKS := 11",
