@@ -489,4 +489,7 @@ The language notes in my own words, with every line reference pointing at a real
 - The committing action is a dash. My rules: "Add a dash. The dash is not invincible, but there is a time gap between every two dashes, and the dash has to be obtained through an in-game level-up card."
 - Trace: `72237fd` brief · `164d336` pin · `7decc27` clips · `77d193e` wiring · `9a2c230` tests first · `6b5edab` the dash · `09f2add` mutations.
 
-**Still to do:** play it, at normal speed and at 0.25, and decide whether the phase table stays.
+- Dash timing changed from 6 / 10 / 12 to 4 / 10 / 6 frames: startup and recovery are shorter, distance and cooldown are unchanged (the proposal came from a Codex review). I kept it: "Keep 4/10/6."
+- Trace: `25603f8` brief r1 · `39bbf18` change · `b72ffdd` captures · `eef8ce8` re-pin.
+
+**Still to do:** say how the walk, the dash and the cooldown read in play.

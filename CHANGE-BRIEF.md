@@ -62,7 +62,7 @@ The cells the courier shows today must not change. The pin decides what "today" 
 
 Every clip keys `Body:visible` and `Rig:visible` at 0, so whichever clip plays owns the whole visual. The sprite clips show `Body` and hide `Rig`; `dash` does the opposite.
 
-### Phase table (frames at 60 per second; revision r1, 13 November 2026, requested by Bao; see Revisions)
+### Phase table (frames at 60 per second; revision r1, 13 November 2026, requested and kept by Bao; see Revisions)
 
 | Phase | Frames | Ticks | Gameplay | Pose |
 |---|---|---|---|---|
@@ -162,3 +162,6 @@ Bao asked for startup 6 → 4 ticks and recovery 12 → 6 ticks. Active stays at
 | Whole dash | 28, 0.467 | 20, 0.333 |
 
 The keys move with the phases. The boundaries go from 0 / 6 / 16 / 28 to 0 / 4 / 14 / 20, and each inner key keeps its place within its phase: startup frame 4 → 3; active frame 12 → 10; recovery frames 20 and 24 → 16 and 18. Every value and transition is unchanged. The clip and its read-back expectations change together. The behaviour pins (`test_dash_edges.gd`, `test_courier_states.gd`) are re-pinned in their own commit, with the r0 values kept in this table and in git. The r0 captures stay where they are; the r1 captures go in new folders.
+
+### 2026-11-13 — r1 kept (Bao)
+Bao's verdict on r1: "Keep 4/10/6." The behaviour pins were re-pinned in their own commit (`eef8ce8`), and the mutation run was repeated on r1. No reference dash has been measured; the r0 values stay in the table above.

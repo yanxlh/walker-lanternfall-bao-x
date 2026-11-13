@@ -242,7 +242,7 @@ Engine and renderer as above: Godot 4.7.2, GL Compatibility. Built on this repos
 
 - **Two clips on one AnimationPlayer**, both driven by the courier's state machine in `godot/features/player/player.gd`:
   - `walk`, a looping **sprite** cycle: a Sprite2D slicing `pc_sheet.png` (10 x 1 cells of 32 px) with a discrete frame track, cells 2 and 3, 8 ticks each.
-  - `dash`, a one-shot **cutout rig**: head, arm, coat and legs cut as region rectangles of cell 2, under Hips, Chest and Neck pivots, keyed on position and rotation at every phase boundary (startup 6, active 10, recovery 12 ticks).
+  - `dash`, a one-shot **cutout rig**: head, arm, coat and legs cut as region rectangles of cell 2, under Hips, Chest and Neck pivots, keyed on position and rotation at every phase boundary (startup 4, active 10, recovery 6 ticks; revision r1, changed from 6 / 10 / 12 and kept by Bao).
 - `godot/features/player/build_courier_visual.gd` builds both from the brief and saves `courier_visual.tscn` and `courier_clips.tres` with ResourceSaver; the game loads the saved files.
 - **The dash**, as Bao specified it: unlocked by a new level-up card, Courier's Dash; Shift / Space / B; 55 px at 330 px/s; not invincible; a 60-tick gap after every dash.
 - The courier used to draw itself in `_draw()`; it now shows the same cells through the Sprite2D. The pin and a Movie Maker replay show the switch changed nothing on screen.
@@ -271,6 +271,6 @@ Movie Maker replays: `godot/tests/capture_courier.gd` (`--scenario pin|walk|dash
 **Known limitations**
 
 - The rig is cut from one 32 px cell, so at the strongest lean (active frames) a gap opens between the coat and the legs in the clip strip.
-- The phase table is Claude's draft. Bao has not yet measured a reference dash or played the build.
+- The phase table is r1 (4 / 10 / 6), asked for and kept by Bao; no reference dash was measured. The walk, dash-readability, cooldown and seam checks are still Bao's to report.
 - Adding the card changes which cards a seeded run is offered; no existing test pinned the offers.
 - No dash sound and no cooldown display on the HUD.

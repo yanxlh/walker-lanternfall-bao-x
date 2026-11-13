@@ -2,9 +2,9 @@
 
 ## Student
 
-I chose the committing action and set its rules on 13 November 2026: "Add a dash. The dash is not invincible, but there is a time gap between every two dashes, and the dash has to be obtained through an in-game level-up card." Earlier the same day I asked Claude Code to read the assignment page and then to complete the assignment.
+I chose the committing action and set its rules on 13 November 2026: "Add a dash. The dash is not invincible, but there is a time gap between every two dashes, and the dash has to be obtained through an in-game level-up card." Earlier the same day I asked Claude Code to read the assignment page and then to complete the assignment. Later I asked for the dash timing to change from 6 / 10 / 12 to 4 / 10 / 6 frames, and I kept it: "Keep 4/10/6."
 
-Not yet done, and mine to do: play the build at normal speed and at `--time-scale 0.25`; measure a reference dash and keep or change the phase table; judge the walk cycle and the dash; watch and listen to the whole film; push; tag; submit on Canvas.
+Not yet done, and mine to do: report how the walk cycle, the dash, the cooldown and the coat–legs seam read in play at normal speed and at `--time-scale 0.25`; watch and listen to the whole film; push; submit on Canvas.
 
 ## AI assistance
 
@@ -14,6 +14,8 @@ Claude Code (one session, 13 November 2026) read the Canvas page and the lecture
 - wrote the structure and edge tests, the mutation script, the Godot 3 names probe, the capture and strip tools and the playtest launcher;
 - ran every test, capture and mutation from the terminal, and read the strips;
 - wrote README, TEST-REPORT, SUBMISSION and this file, and made the local commits on branch `assignment-7` (I push).
+
+Codex reviewed the frame strips and wrote the 4 / 10 / 6 proposal that I asked for. Codex wrote its review files into the worktree, and they were moved to the Trash at my request; nothing else of Codex's is in the branch.
 
 The three prompts in the assignment were not pasted one by one; the work was done from the brief in one session. The tuning prompt, filled in for this project, is in TEST-REPORT for the tuning cycle after play.
 
