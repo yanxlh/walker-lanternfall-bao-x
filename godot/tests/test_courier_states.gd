@@ -18,6 +18,12 @@ const FPS := 60.0
 
 var game
 
+## Runs a callable in every physics step, before (priority -100) or after (priority 100) the session.
+class StepHook extends Node:
+	var on_step: Callable
+	func _physics_process(_d: float) -> void:
+		on_step.call()
+
 func fresh() -> void:
 	if is_instance_valid(game):
 		game.free()
@@ -116,7 +122,90 @@ func run() -> void:
 	run_ticks.call(10, Vector2.RIGHT)
 	check("clip-and-cell-follow-the-state", mismatches.is_empty() and states_seen.has("walk") and states_seen.has("cast") and states_seen.has("hurt") and states_seen.has("idle"),
 		{"mismatches": mismatches.slice(0, 5), "states_seen": states_seen.keys()})
+	await _real_input_run()
 	completed = true
+
+## The same tick-by-tick check through the real game loop and real input: the real main scene with test_mode off,
+## movement and the dash key parsed with Input.parse_input_event and flushed before the session's step, a card
+## picked with a parsed "1". Disclosed fixtures: no spawns; seed 1; the dash unlocked at the start; one wraith placed
+## on the courier for one step; XP added for one level-up.
+func _real_input_run() -> void:
+	if is_instance_valid(game):
+		game.free()
+	game = load("res://game/main.tscn").instantiate()
+	game.test_no_spawn = true
+	root.add_child(game)
+	game.start_run(1)
+	game.prog.apply("dash")
+	game.player.dash_unlocked = true
+	var p = game.player
+	var anim: AnimationPlayer = p.get_node("CourierVisual/AnimationPlayer")
+	var body: Sprite2D = p.get_node("CourierVisual/Body")
+	var step := [0]
+	var wraith := [null]
+	var mismatches := []
+	var seen := {}
+	var send := func(action: String, pressed: bool) -> void:
+		var ev := InputEventAction.new()
+		ev.action = action
+		ev.pressed = pressed
+		ev.strength = 1.0 if pressed else 0.0
+		Input.parse_input_event(ev)
+	var tap := func(code: Key) -> void:
+		for pressed in [true, false]:
+			var ev := InputEventKey.new()
+			ev.physical_keycode = code
+			ev.keycode = code
+			ev.pressed = pressed
+			Input.parse_input_event(ev)
+	var driver := StepHook.new()
+	driver.process_physics_priority = -100
+	driver.on_step = func() -> void:
+		match step[0]:
+			0:
+				send.call("move_right", true)
+			30:
+				tap.call(KEY_SHIFT)
+			80:
+				wraith[0] = game.spawn_enemy("wraith", p.position)
+				wraith[0].hp = 9999
+			81:
+				game.enemies.erase(wraith[0])
+				wraith[0].free()
+			100:
+				send.call("move_right", false)
+			120:
+				game.prog.add_xp(game.prog.xp_needed())
+			125:
+				tap.call(KEY_1)
+			126:
+				send.call("move_right", true)
+		Input.flush_buffered_events()
+	var recorder := StepHook.new()
+	recorder.process_physics_priority = 100
+	recorder.on_step = func() -> void:
+		step[0] += 1
+		var state: String = p.call("current_state")
+		seen[state] = true
+		var want_clip: String = "walk" if p.pose.begins_with("walk_") else p.pose
+		if anim.current_animation != want_clip:
+			mismatches.append({"tick": game.tick_count, "state": state, "pose": p.pose, "clip": anim.current_animation})
+		if p.pose != "dash" and body.frame != p.POSES.find(p.pose):
+			mismatches.append({"tick": game.tick_count, "pose": p.pose, "frame": body.frame})
+		if p.pose == "dash" and (body.is_visible_in_tree() or not p.get_node("CourierVisual/Rig").is_visible_in_tree()):
+			mismatches.append({"tick": game.tick_count, "pose": "dash", "body_visible": body.is_visible_in_tree()})
+	root.add_child(driver)
+	root.add_child(recorder)
+	var guard := 0
+	while step[0] < 160 and guard < 2000:
+		await physics_frame
+		guard += 1
+	driver.queue_free()
+	recorder.queue_free()
+	send.call("move_right", false)
+	Input.flush_buffered_events()
+	check("real-input-clip-and-cell-follow-the-state", mismatches.is_empty() and seen.has("walk") and seen.has("dash") and seen.has("hurt")
+		and seen.has("cast") and seen.has("idle") and seen.has("override"), {"mismatches": mismatches.slice(0, 5), "states_seen": seen.keys(), "steps": step[0]})
 
 func _scripts(dir: String) -> Array:
 	var out := []
