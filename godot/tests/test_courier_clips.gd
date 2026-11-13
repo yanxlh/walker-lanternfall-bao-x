@@ -62,7 +62,8 @@ static func track_problems(player: AnimationPlayer) -> Array[String]:
 						problems.append("%s track %d: %s has no property %s" % [clip_name, t, node.name, sub])
 	return problems
 
-## Key times are stored as 32-bit floats: a key is "at frame f" when it is within 1e-6 s of f / 60.
+## Key times are stored as 32-bit floats: a key is "at frame f" when it is within 1e-6 s of f / 60. That is far
+## tighter than the assignment's half-frame tolerance (0.5 / 60 s), and still above the float32 error (about 7e-9 s).
 func at_frame(time: float, f: int) -> bool:
 	return absf(time - f / FPS) < 1e-6
 
@@ -126,6 +127,8 @@ func run() -> void:
 		check(clip_name + "-frames-inside-sheet", inside, {"cells": cells, "keys": got})
 		check(clip_name + "-discrete", t >= 0 and clip.value_track_get_update_mode(t) == Animation.UPDATE_DISCRETE, {"update_mode": clip.value_track_get_update_mode(t)})
 		check(clip_name + "-length-and-loop", at_frame(clip.length, spec["length"]) and clip.loop_mode == spec["loop"], {"length_frames": clip.length * FPS, "loop_mode": clip.loop_mode})
+		# step is one frame period at the brief's 60 per second (the default is 1/30), so editor snapping agrees.
+		check(clip_name + "-step", is_equal_approx(clip.step, 1.0 / FPS), {"step": clip.step})
 		_check_visibility(clip_name, clip, true)
 
 	# The walk seam, frame-track rule: no duplicate across the wrap; last key to length equals the key interval.
@@ -151,6 +154,7 @@ func run() -> void:
 	# The dash: length, loop, keys at every phase boundary, values, spacing per phase.
 	var dash := player.get_animation("dash")
 	check("dash-length-and-loop", at_frame(dash.length, 20) and dash.loop_mode == Animation.LOOP_NONE, {"length_frames": dash.length * FPS, "loop_mode": dash.loop_mode})
+	check("dash-step", is_equal_approx(dash.step, 1.0 / FPS), {"step": dash.step})
 	_check_visibility("dash", dash, false)
 	for path in DASH_KEYS:
 		var t := dash.find_track(NodePath(path), Animation.TYPE_VALUE)

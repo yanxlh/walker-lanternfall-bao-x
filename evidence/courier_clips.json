@@ -1,5 +1,5 @@
 {
-  "checks": 73,
+  "checks": 83,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -13,7 +13,7 @@
     {
       "id": "library-is-the-committed-tres",
       "observed": {
-        "path": "res://features/player/courier_clips.tres"
+        "path": "res://animations/courier_clips.tres"
       },
       "status": "PASS"
     },
@@ -128,6 +128,13 @@
       "status": "PASS"
     },
     {
+      "id": "turn_front-step",
+      "observed": {
+        "step": 0.0166666675359011
+      },
+      "status": "PASS"
+    },
+    {
       "id": "turn_front-owns-visibility",
       "observed": {
         "body_track": 0,
@@ -178,6 +185,13 @@
       "observed": {
         "length_frames": 1.0,
         "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "idle-step",
+      "observed": {
+        "step": 0.0166666675359011
       },
       "status": "PASS"
     },
@@ -248,6 +262,13 @@
       "status": "PASS"
     },
     {
+      "id": "walk-step",
+      "observed": {
+        "step": 0.0166666675359011
+      },
+      "status": "PASS"
+    },
+    {
       "id": "walk-owns-visibility",
       "observed": {
         "body_track": 0,
@@ -298,6 +319,13 @@
       "observed": {
         "length_frames": 1.0,
         "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cast-step",
+      "observed": {
+        "step": 0.0166666675359011
       },
       "status": "PASS"
     },
@@ -356,6 +384,13 @@
       "status": "PASS"
     },
     {
+      "id": "hurt-step",
+      "observed": {
+        "step": 0.0166666675359011
+      },
+      "status": "PASS"
+    },
+    {
       "id": "hurt-owns-visibility",
       "observed": {
         "body_track": 0,
@@ -406,6 +441,13 @@
       "observed": {
         "length_frames": 1.0,
         "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-step",
+      "observed": {
+        "step": 0.0166666675359011
       },
       "status": "PASS"
     },
@@ -464,6 +506,13 @@
       "status": "PASS"
     },
     {
+      "id": "sunflare-step",
+      "observed": {
+        "step": 0.0166666675359011
+      },
+      "status": "PASS"
+    },
+    {
       "id": "sunflare-owns-visibility",
       "observed": {
         "body_track": 0,
@@ -518,6 +567,13 @@
       "status": "PASS"
     },
     {
+      "id": "defeat-step",
+      "observed": {
+        "step": 0.0166666675359011
+      },
+      "status": "PASS"
+    },
+    {
       "id": "defeat-owns-visibility",
       "observed": {
         "body_track": 0,
@@ -568,6 +624,13 @@
       "observed": {
         "length_frames": 1.0,
         "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "victory-step",
+      "observed": {
+        "step": 0.0166666675359011
       },
       "status": "PASS"
     },
@@ -634,6 +697,13 @@
       "observed": {
         "length_frames": 20.0,
         "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-step",
+      "observed": {
+        "step": 0.0166666675359011
       },
       "status": "PASS"
     },
@@ -904,5 +974,5 @@
     }
   ],
   "suite": "courier_clips",
-  "utc": "2026-11-13T18:14:29"
+  "utc": "2026-11-13T18:24:41"
 }
