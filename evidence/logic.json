@@ -90,9 +90,9 @@
       "id": "prog-offer-three-unique",
       "observed": {
         "offer": [
+          "pass_damage",
           "pass_hp",
-          "pass_speed",
-          "pass_damage"
+          "pass_speed"
         ]
       },
       "status": "PASS"
@@ -108,7 +108,8 @@
           "pass_haste",
           "pass_speed",
           "pass_magnet",
-          "pass_hp"
+          "pass_hp",
+          "dash"
         ]
       },
       "status": "PASS"
@@ -135,8 +136,8 @@
       "observed": {
         "offer": [
           "sunflare",
-          "pass_damage",
-          "pass_hp"
+          "pass_magnet",
+          "pass_speed"
         ]
       },
       "status": "PASS"
@@ -149,7 +150,8 @@
           "pass_haste",
           "pass_speed",
           "pass_magnet",
-          "pass_hp"
+          "pass_hp",
+          "dash"
         ]
       },
       "status": "PASS"
@@ -157,7 +159,7 @@
     {
       "id": "prog-exhausted-pool-pads-heal",
       "observed": {
-        "applied": 22
+        "applied": 23
       },
       "status": "PASS"
     },
@@ -172,7 +174,8 @@
           "pass_haste",
           "pass_speed",
           "pass_magnet",
-          "pass_hp"
+          "pass_hp",
+          "dash"
         ]
       },
       "status": "PASS"
@@ -288,5 +291,5 @@
     }
   ],
   "suite": "logic",
-  "utc": "2026-11-13T17:15:40"
+  "utc": "2026-11-13T17:22:03"
 }

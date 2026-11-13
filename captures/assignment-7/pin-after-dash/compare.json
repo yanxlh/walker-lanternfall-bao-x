@@ -1,0 +1,447 @@
+{
+  "before": "captures/assignment-7/pin-before",
+  "after": "captures/assignment-7/pin-after-dash",
+  "frames_before": 216,
+  "frames_after": 216,
+  "whole_frame_diffs": [
+    {
+      "frame": 186,
+      "bbox": [
+        96,
+        281,
+        1188,
+        365
+      ]
+    },
+    {
+      "frame": 187,
+      "bbox": [
+        96,
+        281,
+        1188,
+        365
+      ]
+    },
+    {
+      "frame": 188,
+      "bbox": [
+        96,
+        281,
+        1188,
+        365
+      ]
+    },
+    {
+      "frame": 189,
+      "bbox": [
+        96,
+        281,
+        1188,
+        365
+      ]
+    },
+    {
+      "frame": 190,
+      "bbox": [
+        96,
+        281,
+        1188,
+        365
+      ]
+    },
+    {
+      "frame": 191,
+      "bbox": [
+        96,
+        281,
+        1188,
+        365
+      ]
+    },
+    {
+      "frame": 192,
+      "bbox": [
+        96,
+        281,
+        1188,
+        365
+      ]
+    },
+    {
+      "frame": 193,
+      "bbox": [
+        96,
+        281,
+        1188,
+        365
+      ]
+    },
+    {
+      "frame": 194,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 195,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 196,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 197,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 198,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 199,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 200,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 201,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 202,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 203,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 204,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 205,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 206,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 207,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 208,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 209,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 210,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 211,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 212,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 213,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 214,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    },
+    {
+      "frame": 215,
+      "bbox": [
+        54,
+        16,
+        222,
+        60
+      ]
+    }
+  ],
+  "crop_diffs": [
+    {
+      "frame": 186,
+      "pixels": 878
+    },
+    {
+      "frame": 187,
+      "pixels": 878
+    },
+    {
+      "frame": 188,
+      "pixels": 878
+    },
+    {
+      "frame": 189,
+      "pixels": 878
+    },
+    {
+      "frame": 190,
+      "pixels": 878
+    },
+    {
+      "frame": 191,
+      "pixels": 878
+    },
+    {
+      "frame": 192,
+      "pixels": 878
+    },
+    {
+      "frame": 193,
+      "pixels": 878
+    }
+  ],
+  "log_diffs": [
+    {
+      "frame": 194,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 195,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 196,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 197,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 198,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 199,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 200,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 201,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 202,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 203,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 204,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 205,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 206,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 207,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 208,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 209,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 210,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 211,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 212,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 213,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 214,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    },
+    {
+      "frame": 215,
+      "key": "hp",
+      "before": "8",
+      "after": "12"
+    }
+  ],
+  "identical": false
+}

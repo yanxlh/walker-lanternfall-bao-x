@@ -659,11 +659,11 @@
           "CourierVisual/Rig/Hips/Chest/Arm",
           "CourierVisual/Rig/Hips/Chest/Neck/Head"
         ],
-        "material": "():<ShaderMaterial#-9223371951693625761>"
+        "material": "():<ShaderMaterial#-9223371951492299166>"
       },
       "status": "PASS"
     }
   ],
   "suite": "courier_pin",
-  "utc": "2026-11-13T17:15:53"
+  "utc": "2026-11-13T17:22:07"
 }

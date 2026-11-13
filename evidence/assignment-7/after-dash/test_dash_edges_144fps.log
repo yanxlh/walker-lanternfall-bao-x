@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS locked-press-dropped {"phases":["","",""]}
+PASS card-offered-while-locked {"eligible":["beam_rate","beam_pierce","moth_new","pass_damage","pass_haste","pass_speed","pass_magnet","pass_hp","dash"]}
+PASS card-has-text {}
+PASS card-unlocks {"eligible":["beam_rate","beam_pierce","moth_new","pass_damage","pass_haste","pass_speed","pass_magnet","pass_hp"],"state":"playing"}
+PASS press-is-a-request-until-the-tick {"phase":""}
+PASS phase-lengths {"counts":{"":1,"active":10,"recovery":12,"startup":6}}
+PASS startup-holds-still {"x":[0.0,0.0,0.0,0.0,0.0,0.0]}
+PASS active-moves-5.5-per-tick {"x":[0.0,5.5,11.0,16.5,22.0,27.5,33.0,38.5,44.0,49.5,55.0]}
+PASS active-distance-55 {"x_after_active":55.0}
+PASS recovery-holds-still {"x":[55.0,55.0,55.0,55.0,55.0,55.0,55.0,55.0,55.0,55.0,55.0,55.0]}
+PASS walks-again-after {"x":56.5}
+PASS rig-shown-during-dash {"first":[-1,true,"dash"],"last":[-1,true,"dash"]}
+PASS sprite-back-after-dash {"after":[2,false,"walk_contact"]}
+PASS cooldown-starts-when-dash-ends {"cooldown":60}
+PASS press-on-last-cooldown-tick-dropped {"cooldown":0,"phase":[""]}
+PASS press-after-cooldown-starts {"phase":["startup"]}
+PASS press-during-dash-dropped {"after_press":{"":65,"active":7,"recovery":12,"startup":0}}
+PASS no-input-dashes-along-facing {"dx":-55.0,"facing":-1}
+PASS diagonal-normalised {"d":55.0000038146973}
+PASS hit-last-startup-tick-cancels-no-cooldown {"after":["",""],"changes_in_hit_tick":["startup>"],"cooldown":0,"hp":8,"iframes":46,"phase_after_hit_tick":""}
+PASS hurt-pose-after-startup-cancel {"pose":"hurt"}
+PASS dash-again-after-startup-cancel {}
+PASS hit-first-active-tick-continues {"after":["active","active"],"changes_in_hit_tick":["startup>active"],"cooldown":0,"hp":8,"iframes":46,"phase_after_hit_tick":"active"}
+PASS not-invincible-during-active {"hp":8,"was":10}
+PASS hit-last-active-tick-continues {"after":["recovery","recovery"],"changes_in_hit_tick":[],"cooldown":0,"hp":8,"iframes":46,"phase_after_hit_tick":"active"}
+PASS dash-pose-kept-after-active-hit {"pose":"dash"}
+PASS hit-first-recovery-tick-cancels-with-cooldown {"after":["",""],"changes_in_hit_tick":["active>recovery","recovery>"],"cooldown":58,"hp":8,"iframes":46,"phase_after_hit_tick":""}
+PASS levelup-freezes-dash-at-frame-2 {"dash_ticks":1,"levelup_view":[6,false],"resumed_view":[-1,true]}
+PASS levelup-keeps-phase-lengths-at-frame-2 {"counts":{"":0,"active":10,"recovery":12,"startup":6}}
+PASS levelup-freezes-dash-at-frame-9 {"dash_ticks":8,"levelup_view":[6,false],"resumed_view":[-1,true]}
+PASS levelup-keeps-phase-lengths-at-frame-9 {"counts":{"":0,"active":10,"recovery":12,"startup":6}}
+PASS levelup-freezes-dash-at-frame-20 {"dash_ticks":19,"levelup_view":[6,false],"resumed_view":[-1,true]}
+PASS levelup-keeps-phase-lengths-at-frame-20 {"counts":{"":0,"active":10,"recovery":12,"startup":6}}
+PASS death-during-dash-shows-defeat {"cell":8,"state":"lost"}
+PASS restart-clears-dash {"cell":1,"phase":""}
+PASS arena-clamp-holds {"edge":944.0,"x":944.0}
+PASS blocker-holds {"box_left":455.69384765625,"x":445.69384765625}
+PASS beam-fires-during-dash {"cast_ticks":6,"pose":"dash","shots":[1,2]}
+PASS action-press-does-not-reach-unhandled-input {"phases":["",""]}
+PASS only-legal-transitions {"illegal":[],"seen":[">startup","startup>active","active>recovery","recovery>","startup>"]}
+PASS real-loop-phase-ticks-at-144fps {"active_distance":55.0,"counts":{"":32,"active":10,"recovery":12,"startup":6},"missing_ticks":0,"physics_frames_awaited":60,"physics_ticks_per_second":60,"ticks_logged":60}
+dash_edges_144fps: 41 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-a7/godot/../evidence/dash_edges_144fps.json

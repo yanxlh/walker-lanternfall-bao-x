@@ -346,6 +346,8 @@ func choose_card(index: int) -> bool:
 			player.hp += Tuning.HP_PER_LEVEL
 		"sunflare":
 			_evolve()
+		"dash":
+			player.dash_unlocked = true
 	offered = []
 	state.go(GameState.PLAYING)
 	return true
@@ -376,6 +378,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_tree().change_scene_to_file("res://a3/lantern_gate_room.tscn")
 	elif event.is_action_pressed("start") and state.current == GameState.MENU:
 		start_run()
+	elif event.is_action_pressed("dash") and state.current == GameState.PLAYING:
+		player.request_dash()
 	elif event.is_action_pressed("restart") and state.current != GameState.MENU:
 		start_run()
 	elif event.is_action_pressed("pause"):
@@ -408,7 +412,7 @@ func _ensure_inputs() -> void:
 		"start": [KEY_ENTER, KEY_SPACE], "restart": [KEY_R], "pause": [KEY_ESCAPE, KEY_P],
 		"mute_all": [KEY_M], "mute_music": [KEY_9], "mute_sfx": [KEY_0],
 		"card_1": [KEY_1], "card_2": [KEY_2], "card_3": [KEY_3], "debug_collision": [KEY_F3],
-		"a3_room": [KEY_F4],
+		"a3_room": [KEY_F4], "dash": [KEY_SHIFT, KEY_SPACE],
 	}
 	for action in keys:
 		if InputMap.has_action(action):
@@ -424,7 +428,7 @@ func _ensure_inputs() -> void:
 		m.axis = axes[action][0]
 		m.axis_value = axes[action][1]
 		InputMap.action_add_event(action, m)
-	var buttons := {"start": JOY_BUTTON_A, "pause": JOY_BUTTON_START, "restart": JOY_BUTTON_Y}
+	var buttons := {"start": JOY_BUTTON_A, "pause": JOY_BUTTON_START, "restart": JOY_BUTTON_Y, "dash": JOY_BUTTON_B}
 	for action in buttons:
 		var b := InputEventJoypadButton.new()
 		b.button_index = buttons[action]

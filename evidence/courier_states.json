@@ -1,0 +1,112 @@
+{
+  "checks": 9,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "priority-order",
+      "observed": {
+        "STATES": [
+          "override",
+          "dash",
+          "hurt",
+          "cast",
+          "walk",
+          "idle"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "every-state-has-its-clip",
+      "observed": {
+        "missing": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-transition-table",
+      "observed": {
+        "DASH_TRANSITIONS": {
+          "": [
+            "startup"
+          ],
+          "active": [
+            "recovery"
+          ],
+          "recovery": [
+            ""
+          ],
+          "startup": [
+            "active",
+            ""
+          ]
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "tuning-phase-table",
+      "observed": {
+        "speed": 330.0,
+        "tuning": {
+          "DASH_ACTIVE_TICKS": 10,
+          "DASH_COOLDOWN_TICKS": 60,
+          "DASH_RECOVERY_TICKS": 12,
+          "DASH_STARTUP_TICKS": 6
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "clip-boundaries-match-tuning",
+      "observed": {
+        "boundary_ticks": [
+          0,
+          6,
+          16,
+          28
+        ],
+        "length_ticks": 28.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "runtime-callback-mode-manual",
+      "observed": {
+        "mode": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "one-animation-driver",
+      "observed": {
+        "others": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "one-authority-in-source",
+      "observed": {
+        "offenders": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "clip-and-cell-follow-the-state",
+      "observed": {
+        "mismatches": [],
+        "states_seen": [
+          "cast",
+          "walk",
+          "hurt",
+          "idle",
+          "override"
+        ]
+      },
+      "status": "PASS"
+    }
+  ],
+  "suite": "courier_states",
+  "utc": "2026-11-13T17:22:34"
+}

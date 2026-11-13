@@ -16,6 +16,12 @@ const HURT_POSE_TICKS := 12
 const KNOCKBACK := 160.0
 const KNOCKBACK_DECAY := 900.0
 const FACING_DEADZONE := 0.1
+## The dash (Bao, 2026-11-13: not invincible, a gap between dashes, unlocked by a level-up card). Phases in ticks.
+const DASH_STARTUP_TICKS := 6
+const DASH_ACTIVE_TICKS := 10
+const DASH_RECOVERY_TICKS := 12
+const DASH_SPEED := 330.0
+const DASH_COOLDOWN_TICKS := 60
 
 const PICKUP_RADIUS := 28.0
 const PICKUP_RADIUS_PER_LEVEL := 20.0

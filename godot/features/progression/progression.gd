@@ -20,6 +20,7 @@ const CARD_TEXT := {
 	"pass_hp": ["Thick Glass", "+4 max HP, healed now"],
 	"heal": ["Trim the Wick", "Restore 3 HP"],
 	"sunflare": ["SUNFLARE LIGHTHOUSE", "Beam and moths fuse into a pulsing burst of light"],
+	"dash": ["Courier's Dash", "Shift / Space: a short dash. Not invincible; a pause between dashes"],
 }
 
 var xp := 0
@@ -33,6 +34,7 @@ var moth_count := 0
 var moth_radius: float = Tuning.MOTH_BASE_RADIUS
 var passive := {"damage": 0, "haste": 0, "speed": 0, "magnet": 0, "hp": 0}
 var evolved_sunflare := false
+var dash_unlocked := false
 
 ## Every level needs more than the one before: the table, then each step one bigger than the last (46, 53, 61, ...).
 func xp_needed() -> int:
@@ -88,6 +90,8 @@ func eligible_cards() -> Array[String]:
 	for k in ["damage", "haste", "speed", "magnet", "hp"]:
 		if int(passive[k]) < int(PASSIVE_MAX[k]):
 			out.append("pass_" + k)
+	if not dash_unlocked:
+		out.append("dash")
 	return out
 
 func offer_cards(rng: RandomNumberGenerator) -> Array[String]:
@@ -130,5 +134,7 @@ func apply(card: String) -> void:
 			passive[k] = int(passive[k]) + 1
 		"sunflare":
 			evolved_sunflare = true
+		"dash":
+			dash_unlocked = true
 		"heal":
 			pass
