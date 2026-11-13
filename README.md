@@ -256,17 +256,18 @@ Engine and renderer as above: Godot 4.7.2, GL Compatibility. Built on this repos
 
 ```bash
 ./scripts/run-test.sh test_courier_pin.gd 60      # pin of what the courier showed before the change
+./scripts/run-test.sh test_courier_pin_input.gd 60   # the same through real input and the real loop; also at 30 and 144
 ./scripts/run-test.sh test_courier_clips.gd 60    # read-back of every clip against the brief
 ./scripts/run-test.sh test_courier_states.gd 60   # state machine structure
 ./scripts/run-test.sh test_dash_edges.gd 30       # dash rules at every phase boundary; also at 60 and 144
 python3 -I scripts/mutation-a7.py evidence/assignment-7/mutations/mutations.json
 ```
 
-Movie Maker replays: `godot/tests/capture_courier.gd` (`--scenario pin|walk|dash`, command in its header), clip strips: `godot/tests/capture_courier_clip_strip.gd`, strips and pixel comparison: `scripts/courier_frames.py`.
+Frame strips (Bao runs them): `scripts/capture-strip.command watch dash`, `scripts/capture-strip.command dash r2`, `scripts/capture-strip.command walk r1` (preview `godot/previews/courier_preview.tscn`, 30 fps). Movie Maker replays: `godot/tests/capture_courier.gd` (`--scenario pin|walk|dash`, command in its header), clip strips: `godot/tests/capture_courier_clip_strip.gd`, strips and pixel comparison: `scripts/courier_frames.py`.
 
 **Read**
 
-[CHANGE-BRIEF.md](CHANGE-BRIEF.md) (the A7 contract and its revisions), [CLAUDE.md](CLAUDE.md), [TEST-REPORT.md](TEST-REPORT.md), [CONTRIBUTIONS-assignment-7.md](CONTRIBUTIONS-assignment-7.md), [SUBMISSION-assignment-7.md](SUBMISSION-assignment-7.md).
+[CHANGE-BRIEF.md](CHANGE-BRIEF.md) (the A7 contract and its revisions), [CLAUDE.md](CLAUDE.md), [TUNING.md](TUNING.md) (A7 section), [TEST-REPORT.md](TEST-REPORT.md), [godot/assets/art/ATTRIBUTION.md](godot/assets/art/ATTRIBUTION.md), [CONTRIBUTIONS-assignment-7.md](CONTRIBUTIONS-assignment-7.md), [SUBMISSION-assignment-7.md](SUBMISSION-assignment-7.md).
 
 **Known limitations**
 

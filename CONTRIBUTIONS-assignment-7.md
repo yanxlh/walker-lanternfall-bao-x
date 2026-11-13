@@ -4,7 +4,7 @@
 
 I chose the committing action and set its rules on 13 November 2026: "Add a dash. The dash is not invincible, but there is a time gap between every two dashes, and the dash has to be obtained through an in-game level-up card." Earlier the same day I asked Claude Code to read the assignment page and then to complete the assignment. Later I asked for the dash timing to change from 6 / 10 / 12 to 4 / 10 / 6 frames, and I kept it: "Keep 4/10/6."
 
-Not yet done, and mine to do: report how the walk cycle, the dash, the cooldown and the coat–legs seam read in play at normal speed and at `--time-scale 0.25`; watch and listen to the whole film; push; submit on Canvas.
+Not yet done, and mine to do (the assignment: I write the brief, the phase table, the cycle spec, every prediction and verdict, approve every change and run every capture): rewrite CHANGE-BRIEF.md in my own words with the predictions and the seven answers (`docs/a7-facts-for-the-brief.md` lists the facts); review CLAUDE.md and commit my corrections separately; record the 30 fps strips; one revision driven by what I see in play, with a prediction, two strips and my verdict in TUNING.md; the human checks in TEST-REPORT; watch and listen to the whole film; push; submit on Canvas.
 
 ## AI assistance
 
