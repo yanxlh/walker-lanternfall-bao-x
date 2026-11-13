@@ -43,13 +43,13 @@ const PIVOTS := {
 }
 
 ## Dash phase table (ticks at 60 per second) and keys: [tick, value].
-const DASH_STARTUP := 6
+const DASH_STARTUP := 4
 const DASH_ACTIVE := 10
-const DASH_RECOVERY := 12
+const DASH_RECOVERY := 6
 const DASH_TRACKS := {
-	"Rig:position": [[0, Vector2(0, 0)], [4, Vector2(0, 1)], [6, Vector2(0, -1)], [16, Vector2(0, 0)], [20, Vector2(0, 1)], [28, Vector2(0, 0)]],
-	"Rig/Hips:rotation": [[0, 0.0], [4, -0.15], [6, 0.35], [16, 0.30], [20, -0.08], [28, 0.0]],
-	"Rig/Hips/Chest/Neck:rotation": [[0, 0.0], [4, 0.10], [6, -0.30], [12, -0.20], [16, -0.25], [20, 0.15], [24, -0.05], [28, 0.0]],
+	"Rig:position": [[0, Vector2(0, 0)], [3, Vector2(0, 1)], [4, Vector2(0, -1)], [14, Vector2(0, 0)], [16, Vector2(0, 1)], [20, Vector2(0, 0)]],
+	"Rig/Hips:rotation": [[0, 0.0], [3, -0.15], [4, 0.35], [14, 0.30], [16, -0.08], [20, 0.0]],
+	"Rig/Hips/Chest/Neck:rotation": [[0, 0.0], [3, 0.10], [4, -0.30], [10, -0.20], [14, -0.25], [16, 0.15], [18, -0.05], [20, 0.0]],
 }
 ## Spacing per phase: ease in through startup, linear through active, ease out through recovery.
 const STARTUP_TRANSITION := 2.0

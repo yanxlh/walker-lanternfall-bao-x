@@ -21,12 +21,12 @@ const SPRITE_CLIPS := {
 	"defeat": {"frames": [[8, 0]], "length": 1, "loop": Animation.LOOP_NONE},
 	"victory": {"frames": [[9, 0]], "length": 1, "loop": Animation.LOOP_NONE},
 }
-const PHASES := {"startup": [0, 6], "active": [6, 16], "recovery": [16, 28]}
+const PHASES := {"startup": [0, 4], "active": [4, 14], "recovery": [14, 20]}
 const TRANSITIONS := {"startup": 2.0, "active": 1.0, "recovery": 0.5}
 const DASH_KEYS := {
-	"Rig:position": [[0, Vector2(0, 0)], [4, Vector2(0, 1)], [6, Vector2(0, -1)], [16, Vector2(0, 0)], [20, Vector2(0, 1)], [28, Vector2(0, 0)]],
-	"Rig/Hips:rotation": [[0, 0.0], [4, -0.15], [6, 0.35], [16, 0.30], [20, -0.08], [28, 0.0]],
-	"Rig/Hips/Chest/Neck:rotation": [[0, 0.0], [4, 0.10], [6, -0.30], [12, -0.20], [16, -0.25], [20, 0.15], [24, -0.05], [28, 0.0]],
+	"Rig:position": [[0, Vector2(0, 0)], [3, Vector2(0, 1)], [4, Vector2(0, -1)], [14, Vector2(0, 0)], [16, Vector2(0, 1)], [20, Vector2(0, 0)]],
+	"Rig/Hips:rotation": [[0, 0.0], [3, -0.15], [4, 0.35], [14, 0.30], [16, -0.08], [20, 0.0]],
+	"Rig/Hips/Chest/Neck:rotation": [[0, 0.0], [3, 0.10], [4, -0.30], [10, -0.20], [14, -0.25], [16, 0.15], [18, -0.05], [20, 0.0]],
 }
 const RIG_CELL := 2
 const PART_REGIONS := {"Head": Rect2(17, 8, 8, 12), "Arm": Rect2(12, 13, 5, 7), "Coat": Rect2(11, 20, 14, 8), "Legs": Rect2(11, 28, 14, 4)}
@@ -150,7 +150,7 @@ func run() -> void:
 
 	# The dash: length, loop, keys at every phase boundary, values, spacing per phase.
 	var dash := player.get_animation("dash")
-	check("dash-length-and-loop", at_frame(dash.length, 28) and dash.loop_mode == Animation.LOOP_NONE, {"length_frames": dash.length * FPS, "loop_mode": dash.loop_mode})
+	check("dash-length-and-loop", at_frame(dash.length, 20) and dash.loop_mode == Animation.LOOP_NONE, {"length_frames": dash.length * FPS, "loop_mode": dash.loop_mode})
 	_check_visibility("dash", dash, false)
 	for path in DASH_KEYS:
 		var t := dash.find_track(NodePath(path), Animation.TYPE_VALUE)
@@ -166,10 +166,10 @@ func run() -> void:
 				times_ok = times_ok and at_frame(dash.track_get_key_time(t, k), brief_key[0])
 				transitions_ok = transitions_ok and is_equal_approx(dash.track_get_key_transition(t, k), TRANSITIONS[phase_of(frames[k])])
 		var boundaries := true
-		for f in [0, 6, 16, 28]:
+		for f in [0, 4, 14, 20]:
 			boundaries = boundaries and f in frames
 		check("dash-keys " + path, values_ok and times_ok, {"frames": frames})
-		check("dash-phase-boundaries " + path, boundaries, {"frames": frames, "boundaries": [0, 6, 16, 28]})
+		check("dash-phase-boundaries " + path, boundaries, {"frames": frames, "boundaries": [0, 4, 14, 20]})
 		check("dash-spacing " + path, transitions_ok and dash.value_track_get_update_mode(t) == Animation.UPDATE_CONTINUOUS, {"transitions": Array(range(dash.track_get_key_count(t)).map(func(k): return dash.track_get_key_transition(t, k)))})
 
 	# The rig against the sheet: regions, no overlap, every opaque pixel of the cell covered once.
@@ -217,7 +217,7 @@ func run() -> void:
 	var rig: Node2D = visual.get_node("Rig")
 	var sampled := {}
 	var sample_ok := true
-	for f in [0, 6, 16, 28]:
+	for f in [0, 4, 14, 20]:
 		player.seek(f / FPS, true)
 		sampled[f] = [snappedf(hips.rotation, 0.0001), snappedf(neck.rotation, 0.0001), rig.position.y, rig.visible, body.visible]
 		var hk = DASH_KEYS["Rig/Hips:rotation"].filter(func(k): return k[0] == f)[0][1]
