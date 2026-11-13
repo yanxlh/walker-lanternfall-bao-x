@@ -1,196 +1,144 @@
-# Lanternfall — Shader and Material Change Brief
+# Lanternfall — Animation Change Brief (Assignment 7)
 
-Date: 30 October 2026. This brief defines the intended behaviour and numerical predictions. Rendered checks and the Use It experiment remain to be performed; predictions below are not measured results.
+Date: 13 November 2026. This brief is the contract for the Assignment 7 change. It replaces the Assignment 5 brief, which stays in git history (`9ccf078:CHANGE-BRIEF.md`).
 
-Provenance: Bao's brief, moved on 30 October 2026 from the working copy `~/Documents/ChatGPT/csye 7280/assignment-5`. Claude Code re-pointed the project-fact line references to this repository and wrote the parts marked † from Bao's decisions in chat (idle-frame pixels, hold under a tree pause, the numeric curl check) and from the design below (tolerance, time scale, evidence split). In that working copy Codex wrote a first `hurt_tint.gdshader` at Bao's request on 29 October; Bao reports writing the yellow version by hand afterwards (saved 30 October 11:46, before this brief was committed). See FRICTIONAL.md.
+Provenance: Bao chose the committing action and its rules in chat on 13 November 2026 (quoted under "Design decisions"). Claude Code drafted the rest of this brief from those decisions and from the project files, including the phase table, which is a draft for Bao to confirm or change after playing. Sections marked HUMAN are Bao's to perform or judge.
+
+Engine: Godot 4.7.2.stable.official.ed1daf0bf, renderer `gl_compatibility` (`godot/project.godot`). Use Godot 4 names only: `Animation.loop_mode` (not `loop`), `AnimationMixer.speed_scale` (not `playback_speed`), `AnimatedSprite2D.sprite_frames` and `play()` (not `frames` and `playing`). If unsure that a property exists in 4.7, say so instead of guessing.
+
+## Design decisions (Bao, 13 November 2026)
+
+> "Add a dash. The dash is not invincible, but there is a time gap between every two dashes, and the dash has to be obtained through an in-game level-up card."
+
+- The committing action is a dash.
+- Hits during a dash are accepted as usual: damage, i-frames and knockback all apply.
+- After every dash there is a cooldown before the next dash can start.
+- The dash is locked at the start of every run and unlocked by a new level-up card.
 
 ## Project facts
 
-Paths below are relative to this project folder.
+- The courier has no scene. `godot/game/session.gd` creates it with `PlayerScript.new()` and calls `player.step()` once per simulation tick from `tick()`, which runs only in PLAYING, from `_physics_process` at 60 ticks per second (`godot/features/tuning.gd` `TICK_HZ`).
+- Today the courier draws itself in `_draw()` with `draw_texture_rect_region` from the 32 px cells of `res://assets/art/pc_sheet.png`, choosing the cell from `pose` (`godot/features/player/player.gd`, `POSES`, `choose_pose()`). There is no AnimationPlayer anywhere in the game.
+- The hurt tint (Assignment 5) assigns a `ShaderMaterial` to `player.material` (`godot/effects/hurt_tint_presentation.gd`). Anything that draws the courier must use that material.
+- Without the sheet (`Art.disabled`), the courier draws a placeholder from `pose`; `test_gameplay.gd` checks that a missing asset changes only the look.
 
-- `godot/project.godot:26–27` selects `gl_compatibility` for desktop and mobile. The 2D canvas uses nearest filtering (`:28`). † `rendering/viewport/hdr_2d` is not set, so 2D blending is not done in linear space.
-- `godot/features/tuning.gd:4,14` defines 60 simulation ticks per second and 48 invulnerability ticks: 48 / 60 = 0.8 seconds of active simulation.
-- `godot/features/player/player.gd:94–104` rejects hits while `iframes > 0`, then assigns 48 on an accepted hit, including a lethal hit.
-- `godot/features/player/player.gd:44` clears `iframes` on reset. `:68–69` decrements it in `step()`; `:74–75` applies the existing red/white blink, alternating every four ticks. The empowered branch can apply a separate warm modulation.
-- `godot/game/session.gd:111–115,121–129` runs player steps only in PLAYING. PAUSED, LEVELUP, WON and LOST freeze the counter. This is a simulation gate; the game does not pause the whole SceneTree or change `Engine.time_scale`.
-- `godot/features/player/player.gd:118–124` defines the fallback palette: lamp head `#F2B84B`, coat `#2E3A59`, brown `#8A5A3C`, outline `#14121C`. The controlled calculations use the first two opaque colours with no 2D lighting. † In play the player draws `godot/assets/art/pc_sheet.png` (`player.gd:106–110`); the fallback runs only without that texture. The sheet's `idle` and `hurt` frames use the same four opaque colours (measured from the PNG).
-- `godot/a3/lantern_gate_room.tscn:63–66,112–114` assigns the Floor and StandIn mesh materials. Those two overrides may be replaced. The three GLB props, their material names, geometry and collisions remain unchanged because the A3 checks depend on them.
+## Clip 1 — `walk` (looping sprite cycle, player state machine)
 
-## State and purpose
-
-The courier turns yellow after an accepted hit, then gradually returns to its incoming colour as protection expires. This communicates temporary invulnerability and gives the player a visible warning that the next collision will soon cause damage again. It confirms an actual damage event rather than merely proximity to an enemy. The existing red blink continues to signal the hit; the yellow tint shows the remaining protection.
-
-This is presentation only. The driver reads game state and `iframes`; it never writes health, damage, collision, movement, progression, audio or simulation timing. Do not edit `player.gd`.
-
-## 2D shader design
-
-File: `godot/shaders/hurt_tint.gdshader`. Use `shader_type canvas_item;` and `render_mode unshaded;`. The yellow target matches the shader currently saved in the repository.
-
-| Uniform | Type | Hint | Default | Purpose |
-|---|---|---|---|---|
-| `hurt_amount` | float | `hint_range(0.0, 1.0)` | `0.0` | Remaining protection fraction, set by the presentation driver |
-| `hurt_color` | vec4 | `source_color` | `vec4(1.0, 1.0, 0.0, 1.0)` | Yellow target, editable in the material Inspector |
-
-Exact colour line inside `fragment()`:
-
-```glsl
-COLOR.rgb = mix(COLOR.rgb, hurt_color.rgb, hurt_amount);
-```
-
-The equation is `out_rgb = (1 − a) × incoming_rgb + a × target_rgb`. Leave `COLOR.a` unchanged; `hurt_color.a` does not control opacity. At zero the original drawing passes through, at one the opaque sprite is yellow, and intermediate values retain some original colour. Transparent sprite pixels retain zero alpha.
-
-Incoming fragment `COLOR` includes the texture sample, primitive colour, `modulate` and `self_modulate`. Mixing this value preserves the influence of the existing blink, progressively reducing its visible difference as `hurt_amount` increases. At one, red and white phases have identical yellow RGB. Multiplying by `texture(TEXTURE, UV)` again would apply the texture twice. Replacing the input with a fresh texture sample would lose modulation and primitive colour. See the [CanvasItem shader reference](https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/canvas_item_shader.html).
-
-## Driver and lifecycle rules
-
-- In PLAYING, PAUSED and LEVELUP, set `hurt_amount = clamp(float(player.iframes) / 48.0, 0.0, 1.0)`. Read after the session's simulation work so the rendered value reflects the latest counter. On a state change, refresh the value before the next draw.
-- There is no independent fade timer or shader `TIME` animation. The decreasing counter itself supplies the fade. An accepted hit begins at one; zero remaining ticks means zero tint. The active window is 48 ticks, subject to the sample position within a tick/frame.
-- Hits during protection are ignored by `take_hit()`. They neither restart nor extend the effect. Once protection ends, the next accepted hit starts a new 48-tick window. There is no separate tail during which retrigger policy could differ.
-- PAUSED and LEVELUP hold the current value and blink phase because the simulation counter and player step are frozen. Resume continues from that counter. The driver can keep processing while simulation is stopped.
-- In MENU, WON and LOST, force `hurt_amount = 0.0`. In particular, a lethal hit may leave `iframes = 48` forever in LOST; the terminal-state override prevents permanent yellow protection feedback. The unchanged base modulation may still be visible in a terminal pose.
-- On restart, write `0.0` immediately and then resume normal sampling after `player.reset()`. Do not wait for a decrement to clear a stale material parameter.
-- Each player receives a distinct ShaderMaterial; the Shader resource may be shared. Do not alter the existing `modulate` blink to compensate for the tint.
-- † Duration: an accepted hit takes `hurt_amount` from 1 to 0 over 48 simulation ticks, 0.8 s of game time, within one frame period of the sampling rate (1/30, 1/60 or 1/144 s), and the same game time at 30, 60 and 144 fps.
-- † Time scale: the duration is defined in simulation ticks, the game's own clock, and no presentation timer adds to it. The game never changes `Engine.time_scale`; the driver test sets 0.5 and records ticks, scaled game time and real time, so the report states which one the 0.8 s follows in Godot 4.7.
-- † Tree pause (Bao's choice, 30 October): while `get_tree().paused` is true the driver pauses with the tree and `hurt_amount` holds its last value, as in the PAUSED state. The game never pauses the tree; the driver test does it to check the rule.
-
-## † Evidence split
-
-| Rule | Evidence | How |
-|---|---|---|
-| Uniform names and types; no sampler uniforms | Headless | `get_shader_uniform_list()`; defaults read from the shader source text |
-| Shader parses | Headless | Non-empty uniform list and no `SHADER ERROR` line; the semicolon mutation exits 1 |
-| 1 on an accepted hit, 0 after 48 ticks, 0.8 s within one frame period at 30/60/144 fps | Headless | Real enemy contact through the game loop; the uniform sampled every frame by a high-`process_priority` node |
-| Ignored hits neither restart nor extend | Headless | A second contact during protection leaves the sampled curve unchanged |
-| PAUSED and LEVELUP hold, resume continues | Headless | Enter each state mid-window through real input; compare before, during and after |
-| MENU, WON and LOST force 0, including a lethal hit | Headless | Real lethal contact; assert LOST, `iframes == 48` and `hurt_amount == 0` |
-| Restart writes 0 | Headless | The restart action mid-window; the first sampled frame reads 0 |
-| Time scale and tree pause | Headless | `Engine.time_scale = 0.5` run with ticks, game and real time recorded; `get_tree().paused` mid-window holds the value |
-| Each player has its own material | Headless | The player's material is a distinct resource from any other |
-| Colours at 0, 0.5 and 1 match the hand table; 2.0 from code | Human (Bao) | In-engine captures from a debug key; named pixels sampled beside the table; the stored 2.0 read back |
-| The tint reads in play; boundaries hold | Human (Bao) | Own playtest with several hits |
-| Material wiring, sampler hints, import settings | Headless | `test_materials.gd` after a fresh import; the `source_color` mutation exits 1 |
-| Normal map is a real surface in the GL convention | Headless | `curl_ratio` under both conventions, calibrated on the GL/DX pair |
-| Hint experiment, interface sweep, one shader with two materials | Human (Bao) | Captures under the fixed A3 lights; sampled values beside the predictions |
-
-## Hand calculations
-
-Use an unempowered courier, normal non-HDR Compatibility canvas, nearest filtering, no lights and no extra canvas tint. Values below are RGB in 0–255 display units before integer rounding; divide by 255 for shader values. Both selected pixels have alpha one, so `display = output × 1 + background × 0 = output`. No background-contrast claim is made.
-
-Lamp input: `(242,184,75) / 255`. Coat input: `(46,58,89) / 255`. Target: `(255,255,0) / 255`. For example, the lamp at 0.5 is `0.5 × (242,184,75) + 0.5 × (255,255,0) = (248.5,219.5,37.5)`.
-
-| Pixel | `hurt_amount` | White modulation: incoming → output | Red modulation: incoming → output |
-|---|---:|---|---|
-| Lamp head | 0 | `(242,184,75)` → `(242,184,75)` | `(242,82.8,33.75)` → `(242,82.8,33.75)` |
-| Lamp head | 0.5 | `(242,184,75)` → `(248.5,219.5,37.5)` | `(242,82.8,33.75)` → `(248.5,168.9,16.875)` |
-| Lamp head | 1 | `(242,184,75)` → `(255,255,0)` | `(242,82.8,33.75)` → `(255,255,0)` |
-| Coat | 0 | `(46,58,89)` → `(46,58,89)` | `(46,26.1,40.05)` → `(46,26.1,40.05)` |
-| Coat | 0.5 | `(46,58,89)` → `(150.5,156.5,44.5)` | `(46,26.1,40.05)` → `(150.5,140.55,20.025)` |
-| Coat | 1 | `(46,58,89)` → `(255,255,0)` | `(46,26.1,40.05)` → `(255,255,0)` |
-
-The red input multiplies RGB by `(1,0.45,0.45)` before the mix. Zero with red modulation is an isolated shader fixture, not the normal zero-counter gameplay state. † Named pixels (Bao's choice, 30 October): controlled captures use the sheet's `idle` frame (sheet x 32–63), facing right, on the market background: the lamp head at frame texel (20,16), stored `#F2B84B`, and the coat at frame texel (16,24), stored `#2E3A59`. All eight neighbours of each texel share its colour, so a one-texel misplacement still samples the same stored colour. Capture both blink phases separately.
-
-## Source-colour hint experiment
-
-Use a lossless 3 × 1 PNG with opaque grey bands 64, 128 and 192. Bind the same image to two nearest-filtered samplers, one with `source_color` and one without. Use an unshaded spatial shader on two quads, writing the selected sample to `ALBEDO`. Use Linear tonemapping, exposure one, no fog, glow or adjustments. Capture band centres, away from edges.
-
-For the linear-rendering comparison let `s = byte / 255`, `decode(s) = ((s + 0.055) / 1.055)^2.4` for these inputs, and `encode(L) = 1.055 × L^(1/2.4) − 0.055`. The full encode function uses `12.92 × L` when `L ≤ 0.0031308`. Correct colour sampling gives `255 × encode(decode(s))`; unhinted raw data incorrectly used as linear colour gives `255 × encode(s)`.
-
-| Stored grey | Normalized `s` | Decoded linear value | With hint, linear renderer | Without hint, linear renderer |
-|---:|---:|---:|---:|---:|
-| 64 | 0.250980 | 0.051269 | 64 | 137.21 ≈ 137 |
-| 128 | 0.501961 | 0.215861 | 128 | 187.84 ≈ 188 |
-| 192 | 0.752941 | 0.527115 | 192 | 225.00 ≈ 225 |
-
-These encode predictions describe Forward+/Mobile's linear colour path. The current project uses Compatibility, whose spatial output is sRGB; do not apply another encode to its already sRGB output. The expected Compatibility control is 64/128/192 with either sampler hint under these conditions. Record the actual renderer and observed pixels during Use It. A lack of difference there does not establish that roughness or normal data should carry `source_color`. Godot documents that the hint is optional in Compatibility but required for colour textures in Forward+/Mobile; see [shading language: source colour](https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html#using-source-color).
-
-## 3D material plan
-
-Use one new `godot/shaders/cobblestone_surface.gdshader` with `shader_type spatial;` and two separate ShaderMaterials assigned to Floor/Mesh and StandIn/Mesh in an independent A5 presentation scene. Reuse the A3 room lights and camera. Do not rename or edit materials inside the three GLB props, modify collisions, or weaken A3 tests.
-
-Texture: [Cobblestone Floor 08](https://polyhaven.com/a/cobblestone_floor_08), by Rob Tuytel, Poly Haven. The asset page names the author and links CC0. The [Poly Haven asset license](https://polyhaven.com/license) was opened and checked on 30 October 2026: assets are CC0, permitting use, modification and redistribution, including commercial use; attribution is appreciated but not required. Keep this credit and both links with the downloaded maps. This license check covers the texture assets, not unrelated website content.
-
-Use the 1K PNG diffuse (about 1.9 MB), OpenGL normal (2.0 MB), and roughness (0.6 MB) maps for rendering, about 4.5 MB of source downloads. Retain the DirectX normal (2.0 MB) only as a calibration fixture, bringing the four-map download total to about 6.5 MB. These are compressed download sizes, not GPU-memory estimates. No displacement or AO map is needed.
-
-| Map | Sampler hint / role | `compress/mode` | `compress/normal_map` | `mipmaps/generate` |
-|---|---|---:|---:|---|
-| diff | `source_color`, base colour | 0 (Lossless) | 2 (Disabled) | true |
-| nor_gl | `hint_normal`, tangent-space normals; no `source_color` | 0 (Lossless) | 1 (Enabled) | true |
-| rough | raw scalar data; no `source_color` | 0 (Lossless) | 2 (Disabled) | true |
-| nor_dx | `hint_normal`, calibration only; no `source_color` | 0 (Lossless) | 1 (Enabled) | true |
-
-Create imports through Godot's editor and set these keys explicitly; do not hand-write `.import` files. Use repeat and linear mipmap filtering on the production samplers. The tiny hint PNG uses Lossless, normal mode Disabled, mipmaps false and nearest sampling. Inspect imported values after reimport.
-
-| Group | Uniform | Type / hint | Default | Role |
-|---|---|---|---|---|
-| Surface | `tint` | vec4 / `source_color` | `(1,1,1,1)` | Multiply diffuse RGB |
-| Surface | `uv_scale` | float / `hint_range(0.25,4.0)` | 1.0 | Tile all three maps together |
-| Response | `roughness_min` | float / `hint_range(0.0,1.0)` | 0.2 | Lower end of roughness remap |
-| Response | `roughness_max` | float / `hint_range(0.0,1.0)` | 0.8 | Upper end of roughness remap |
-| Response | `normal_strength` | float / `hint_range(0.0,2.0)` | 1.0 | Normal-map depth |
-
-Declare groups with `group_uniforms Surface;` and `group_uniforms Response;`. Sample at `uv = UV × uv_scale`. Set `ALBEDO = texture(color_tex, uv).rgb × tint.rgb`, `ROUGHNESS = mix(roughness_min, roughness_max, texture(roughness_tex, uv).r)`, `NORMAL_MAP = texture(normal_tex, uv).rgb`, and `NORMAL_MAP_DEPTH = normal_strength`. Keep metallic zero and opaque rendering. Enforce `0 ≤ roughness_min ≤ roughness_max ≤ 1` in configuration/driver validation.
-
-Material A, Floor: tint `(1.0,0.92,0.80,1)`, UV scale 2, roughness 0.55–0.95, normal strength 1.0: warm, repeated, matte paving. Material B, StandIn: tint `(0.72,0.85,1.0,1)`, UV scale 1, roughness 0.20–0.55, normal strength 0.5: cooler, larger stones with a stronger specular response and gentler relief. Both materials share the Shader and textures but keep independent parameter values.
-
-At default roughness endpoints, samples 0/0.5/1 produce 0.2/0.5/0.8. Setting both endpoints to zero gives zero everywhere; setting both to one gives one everywhere. UV scale 0.25/1/4 gives quarter/default/fourfold repetition. Normal strength 0/1/2 predicts flat/default/exaggerated relief. These require visual confirmation under fixed lighting.
-
-† Normal-map check (Bao's decision, 30 October): commit the assignment's `godot/tests/normal_map_check.gd` before the material audit and calibrate it on this material's `nor_gl`/`nor_dx` pair. The GL file should come out low with `directx = false` and near 2 with `directx = true`; the pass threshold is set from that pair. If the results come out reversed, the sign convention is flipped and TEST-REPORT.md says so. The grazing-light look stays as an extra human check: hold camera, UVs, light and strength fixed while moving a grazing light across recognisable stones; the GL map should read as raised stones and the DX control should reverse the relevant slopes.
-
-## Predicted failures and checks
-
-| Failure | Check that should expose it |
+| Item | Value |
 |---|---|
-| Tint stays yellow forever after a lethal hit | Cause a real lethal collision; assert LOST and `hurt_amount == 0` even with `iframes == 48` |
-| LEVELUP or PAUSED consumes the protection fade | Enter each state mid-window, wait, compare counter and uniform before/after; both must hold and resume together |
-| Restart displays a stale tint | Restart during protection; inspect the first rendered frame and assert zero uniform |
-| Fresh texture sampling bypasses the blink, or double sampling darkens the sprite | Compare controlled lamp/coat pixels in both modulation phases with the calculation table |
-| Shared ShaderMaterial couples objects | Change one material parameter; verify the other remains unchanged and resource identities differ |
-| Misspelled uniform silently fails | Audit declared names/types with `get_shader_uniform_list`; intentionally rename a parameter in a disposable copy and require the contract check to fail |
-| Wrong normal convention turns stones into dents | † `curl_ratio` under both conventions, calibrated on the GL/DX pair; grazing-light look as a human check |
-| Roughness is decoded as colour or import defaults drift | Audit sampler hints and imported keys; compare roughness samples 0/0.5/1 against the remap and perform a fixed-light sweep |
-| Shader fails to compile | Remove a semicolon in a disposable copy; require an error and failed check, then restore it |
+| Route | Sprite2D with an AnimationPlayer frame track |
+| Node | `Body` (Sprite2D) in `res://features/player/courier_visual.tscn` |
+| Sheet | `res://assets/art/pc_sheet.png`, 320 x 32 px |
+| Cell size, grid | 32 x 32 px, 10 columns x 1 row (`hframes = 10`, `vframes = 1`), no padding, no margin |
+| Frame order | 0 turn_front, 1 idle, 2 walk_contact, 3 walk_passing, 4 cast, 5 hurt, 6 levelup, 7 sunflare, 8 defeat, 9 victory (the order of `POSES` in `player.gd`) |
+| Registration | `centered = false`, `offset = (-16, -23)`: cell pixel (16, 23) sits on the courier's origin, the centre of the r = 10 hurtbox (`SPRITE_ORIGIN`) |
+| Frames | 2 (walk_contact), 3 (walk_passing) |
+| Frame rate | each frame held 8 ticks at 60 ticks per second (7.5 frames per second) |
+| Keys | frame 2 at 0 / 60 s, frame 3 at 8 / 60 s |
+| Length | 16 / 60 s |
+| Loop | `Animation.LOOP_LINEAR` |
+| Update mode | `Animation.UPDATE_DISCRETE` |
+| Seam rule | frame track: no duplicate frame across the wrap (last key 3, first key 2), and the gap from the last key to the length (8 / 60 s) equals the key interval (8 / 60 s) |
 
-Run the existing gameplay, audio and A3 checks unchanged after implementation. Drive timing checks through real session processing at 30, 60 and 144 rendering fps, including accepted and ignored hits; do not substitute direct driver calls for gameplay integration. Headless checks can verify wiring and state but cannot establish visible colour, readability or material relief.
+The other sprite states get one-key clips on the same frame track, `LOOP_NONE`, length 1 / 60 s: `idle` 1, `cast` 4, `hurt` 5, `levelup` 6, `sunflare` 7, `defeat` 8, `victory` 9.
 
-## Seven short answers
+Source and licence: the sheet is the project's own generated art from Assignment 2 (ART-PC-01; `ASSET-LOG.md`, `gen/mappings/ART-PC-01.json`, `SOURCES.md`). It is already committed and follows Assignment 2's rules; no found sheet is used. The file is not edited for this change; the rig below uses region rectangles of it, not a derivative file.
 
-1. **Which renderer does project.godot name, and what does it rule out?** It names `gl_compatibility`. Decals and compute shaders require Forward+ or Mobile, so they are unavailable here. VoxelGI, SDFGI and SSIL are also unavailable in Compatibility (and Mobile). This plan uses canvas and spatial shaders, textures and the existing lights. See Godot's [renderer feature comparison](https://docs.godotengine.org/en/stable/tutorials/rendering/renderers.html).
+Registration check (measured from the PNG, 13 November 2026): the two walk cells have the same foot line (y = 31), coat centroids (16.2, 22.3) and (16.3, 22.5), lamp centroids (20.0, 14.8) and (20.2, 14.7). The drift is under one pixel, so no offset track is needed. The frame strip must confirm this.
 
-2. **What colour arrives in your fragment function before you change it, and what would the tempting alternative give you?** In this canvas shader, incoming `COLOR` is the sampled sprite multiplied by primitive colour, modulation and self-modulation. For a red-phase lamp it is `(242,82.8,33.75)/255`, alpha one. A fresh `texture(TEXTURE, UV)` gives the original texture texel, bypassing those multipliers; multiplying that sample by incoming `COLOR` would texture it twice.
+The cells the courier shows today must not change. The pin decides what "today" is, tick by tick, including when the first walk frame appears and how long it holds.
 
-3. **For canvas_item, what would texture(TEXTURE, UV) give you instead of COLOR?** Only the texture sample, including its own alpha. It would discard the existing red blink and any primitive/self-modulation, including their alpha factors. This is why the mix reads incoming `COLOR`.
+## Clip 2 — `dash` (committing rig action, player state machine)
 
-4. **For spatial, what does ALBEDO hold if you never write it, and what does COLOR hold?** `ALBEDO` defaults to white `(1,1,1)`; the spatial shader does not automatically sample an albedo texture. `COLOR` holds interpolated mesh vertex colour, normally white when no vertex colours are supplied. It is not the canvas sprite colour or an automatically populated base texture. The material shader explicitly writes ALBEDO. See the [spatial shader reference](https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/spatial_shader.html).
+| Item | Value |
+|---|---|
+| Route | Cutout rig, baked from code: `res://features/player/build_courier_visual.gd` runs headless, builds the rig and every clip, and saves the scene and the clip library with `ResourceSaver.save()`. Both files are committed; the game and the tests load the saved files, never the builder. |
+| Rig | `Rig` (Node2D) > `Hips` (Node2D pivot) > `Coat`, `Legs` sprites and `Chest` (Node2D pivot) > `Arm` sprite and `Neck` (Node2D pivot) > `Head` sprite |
+| Parts | region rectangles of pc_sheet cell 2 (walk_contact), cell-local: Head x 17–24, y 8–19; Arm x 12–16, y 13–19; Coat x 11–24, y 20–27; Legs x 11–24, y 28–31. The rectangles do not overlap and cover every opaque pixel of the cell. |
+| Pivots (cell-local) | Hips (16, 27), Chest (16, 20), Neck (18, 19) |
+| Keyed properties | `Rig:position`, `Rig/Hips:rotation`, `Rig/Hips/Chest/Neck:rotation`, and `Body:visible` / `Rig:visible` (discrete) |
+| Length | 28 / 60 s |
+| Loop | `Animation.LOOP_NONE` |
 
-5. **How long would a frame-counting version last at 30, 60 and 144 fps?** Counting 48 rendered frames gives `48/30 = 1.6 s`, `48/60 = 0.8 s`, and `48/144 = 0.3333 s`. The intended counter instead lasts 0.8 seconds of active 60 Hz simulation, with wall-clock time extended by PAUSED/LEVELUP. Terminal states clear the visual early.
+Every clip keys `Body:visible` and `Rig:visible` at 0, so whichever clip plays owns the whole visual. The sprite clips show `Body` and hide `Rig`; `dash` does the opposite.
 
-6. **Which resource holds the uniform default, which holds its current value, and what happens when objects share a material?** The Shader resource's uniform declaration stores the default. ShaderMaterial stores current overrides set in the Inspector or by `set_shader_parameter()`; an unset parameter falls back to the Shader default. Two objects sharing a ShaderMaterial share those overrides, so changing one affects both. Separate materials can share the Shader while keeping independent values.
+### Phase table (frames at 60 per second; Claude's draft, HUMAN: Bao confirms or changes it after playing)
 
-7. **Does hint_range clamp a value set by code?** Prediction: no. It supplies Inspector editing metadata, not runtime validation. Setting `hurt_amount` to 2 from code can make `mix` extrapolate beyond the target. The driver explicitly clamps its computed value. During Use It, set 2 in an isolated fixture, read it back and inspect the rendered result, then restore the production value; this has not yet been measured.
+| Phase | Frames | Ticks | Gameplay | Pose |
+|---|---|---|---|---|
+| Startup | 0–5 | 6 | the courier stops; input ignored; dash direction already locked | crouch and lean back (anticipation) |
+| Active | 6–15 | 10 | moves at `DASH_SPEED` 330 px/s in the locked direction: 5.5 px per tick, 55 px in all | lean hard into the dash, lamp trailing |
+| Recovery | 16–27 | 12 | the courier stops; input ignored | settle upright with one overshoot |
+| Cooldown | after recovery | 60 | a new dash cannot start | normal states |
 
-## Revisions
+Reference: none measured yet. HUMAN: Bao picks a reference dash (a game clip or a Mixamo animation), measures its startup, active and recovery frames, and changes this table if they disagree. The keys follow the table, not the other way round.
 
-### 2026-10-30 — where the two materials go
+### Keys (frame : value; transition)
 
-Project facts line 17 and the material plan disagreed: one replaced the Floor and StandIn overrides in `lantern_gate_room.tscn`, the other used an independent A5 scene. Decision (Bao): a new scene `godot/a5/material_room.tscn` inherits `godot/a3/lantern_gate_room.tscn` and overrides only the `material_override` of Floor/Mesh and StandIn/Mesh with the two ShaderMaterials. The A3 room file, its lights and camera, and the A3 tests stay unchanged; the inherited scene reuses those lights and that camera.
+| Track | Keys |
+|---|---|
+| `Rig:position` | 0 : (0, 0); 4 : (0, 1); 6 : (0, -1); 16 : (0, 0); 20 : (0, 1); 28 : (0, 0) |
+| `Rig/Hips:rotation` | 0 : 0.0; 4 : -0.15; 6 : 0.35; 16 : 0.30; 20 : -0.08; 28 : 0.0 |
+| `Rig/Hips/Chest/Neck:rotation` | 0 : 0.0; 4 : 0.10; 6 : -0.30; 12 : -0.20; 16 : -0.25; 20 : 0.15; 24 : -0.05; 28 : 0.0 |
 
-### 2026-10-30 — what the material audit corrected in this brief
+There is a key at every phase boundary (0, 6, 16, 28) on every continuous track. Spacing: keys inside startup use transition 2.0 (ease in, accelerating into the active frames); keys inside recovery use 0.5 (ease out, settling); active keys use 1.0. Rotation is in radians; positive leans forward for a right-facing courier. The whole visual is mirrored with the courier's facing.
 
-- Import route: the import keys in the material plan were set by `tools/a5/set_texture_imports.py` on the `.import` files Godot generated, then reimported, not in the editor's Import dock. The values are the planned ones, plus `detect_3d/compress_to=0` and `roughness/mode=1` so a real editor has nothing to switch. They are checked in the Import dock during the Step 4 editor session, and `git status` afterwards records any rewrite.
-- Evidence split (the † table): the hint experiment is captured in its own unshaded scene, `godot/a5/hint_experiment/hint_experiment.tscn`, which has no lights. Only the interface sweep and the two-material comparison use the fixed A3 lights.
-- Download sizes in the material plan were rounded from KiB. The exact sizes are 1,951,481 (diff), 2,126,688 (nor_gl), 2,126,021 (nor_dx) and 627,072 (rough) bytes, 6.83 MB in all (`godot/assets/textures/cobblestone_floor_08/ATTRIBUTION.md`).
+## The dash rules
 
-### 2026-10-30 — the floor mesh in the A5 scene, and the ambient source
+Tuning (`godot/features/tuning.gd`): `DASH_STARTUP_TICKS = 6`, `DASH_ACTIVE_TICKS = 10`, `DASH_RECOVERY_TICKS = 12`, `DASH_SPEED = 330.0`, `DASH_COOLDOWN_TICKS = 60`.
 
-- Floor (Bao's decision): the material audit measured that the A3 floor's BoxMesh top face uses 1/3 x 1/2 of UV space, so at `uv_scale` 2 the stones were stretched 1.5:1 and the 8 m floor showed less than one tile, not the repeated paving planned above. In `godot/a5/material_room.tscn` the Floor/Mesh `mesh` is overridden with an 8 x 8 PlaneMesh at y = 0, the box's top. At `uv_scale` 2 the floor now shows 2 x 2 repeats of square stones. The A3 room keeps its BoxMesh, and the shader and both materials are unchanged.
-- Ambient (Bao's decision): the A3 room's `ambient_light_source = 3` (Sky) with no sky resource stays unchanged, so the cobblestones are judged under the same lights as A3. A capture with the ambient source switched between Sky and Color in memory records what the setting actually does.
+- Input: a new action `dash` on Shift and Space (keyboard) and B (joypad). `session._unhandled_input` turns a press into a request only in PLAYING; `player.step()` consumes it on the next tick. A press while locked, during a dash or during the cooldown is dropped, not queued. Space still starts a run from the menu.
+- Direction: the movement input at the tick the dash starts, normalised; with no input, the facing direction. Facing follows the dash direction's x the same way it follows movement. Both stay locked until the dash ends.
+- Unlock: a new card `dash`, "Courier's Dash", offered while the dash is locked. Choosing it unlocks the dash for the rest of the run; `start_run()` locks it again.
+- Not invincible: `take_hit()` is unchanged. Knockback still adds to movement in every phase.
+- Interrupts:
 
+| Phase | Accepted hit | Level-up, pause | Death | Restart |
+|---|---|---|---|---|
+| Startup | cancels the dash; no cooldown starts | the dash freezes with the simulation and resumes on the same tick | `defeat` | dash, cooldown and unlock cleared |
+| Active | the dash continues; damage, i-frames and knockback apply | same | `defeat` | same |
+| Recovery | cancels the rest of the recovery; the cooldown starts | same | `defeat` | same |
 
-### 2026-10-30 — project.godot line numbers
+- Cooldown: starts on the tick the dash ends, whether recovery completes or a hit cancels it, and lasts 60 ticks. A press on the last cooldown tick is dropped; a press on the next tick starts a dash.
+- Walls: the arena clamp and the market blocker apply during the dash exactly as during walking.
+- Weapons keep firing during a dash. The dash pose has priority over the cast pose.
 
-The editor re-saved `godot/project.godot` on 30 October (a header comment, one key moved, no value changed). The renderer lines are now 34–35 and the canvas filter line 33, so the Project facts references `:26–27` and `:28` above point to the file as it was before that save.
+## State machine and authority
 
-### 2026-10-30 — `cobblestone_surface.gdshader` line 22 (Bao)
+One authority: `player.gd` is the only code that calls `play()` or `seek()` on the courier's AnimationPlayer. Nothing else keys or sets `Body.frame`.
 
-Bao changed line 22 of the textured shader by hand from `NORMAL_MAP_DEPTH = normal_strength;` to `NORMAL_MAP_DEPTH = normal_strength * mix(0.5, 1.0, abs(normalize(NORMAL).z));`. The material plan's `NORMAL_MAP_DEPTH = normal_strength` now reads: the normal-map depth is `normal_strength` scaled between 0.5 and 1.0 by `abs(normalize(NORMAL).z)`, so the shader also reads the built-in `NORMAL`. Uniforms, hints, defaults, samplers and both materials are unchanged. The sweep, pair and one-material captures are repeated at the revision that contains this line; captures made before it keep their own revisions.
+Visual priority, highest first: override (`levelup`, `sunflare`, `defeat`, `victory`, set by the session through `set_override()`) > dash (startup, active, recovery) > `hurt` > `cast` > `walk` > `idle`. Hits cancel startup and recovery, so `hurt` shows after those; during active the dash pose stays and the existing blink and tint show the hit.
+
+| State | Clip | Clip time |
+|---|---|---|
+| idle, cast, hurt and the overrides | the one-key clip of the same name | 0 |
+| walk | `walk` | walk ticks mod 16, divided by 60 |
+| dash (any phase) | `dash` | dash ticks since the press, divided by 60 |
+
+## Two clocks
+
+- The courier's AnimationPlayer uses `callback_mode_process = ANIMATION_CALLBACK_MODE_PROCESS_MANUAL`. It never advances on the idle or physics clock by itself. `player.step()` (one physics tick) and `set_override()` select the clip and `seek()` it to the time in the table above, computed from integer tick counters. A paused, level-up, won or lost simulation therefore freezes the animation.
+- There is no AnimatedSprite2D, no AnimationTree and no method track.
+- No gameplay fact is keyed in a clip. Gameplay reads dash phases from the tick counters and `Tuning`; the read-back test pins the clip's boundary keys to the same tick times.
+- Input arrives on the process side (`_unhandled_input`) and is consumed on the next physics tick.
+
+## Checks
+
+| Check | How |
+|---|---|
+| Pin (before any change) | `test_courier_pin.gd` at 60: the cell shown, the mirroring and the tint path, tick by tick, for walking, stopping, cast, hurt, level-up, evolve, defeat, victory, restart and the missing-art placeholder. It passes on the unchanged code and must pass unchanged after the refactor. |
+| Pixel pin | `capture_courier_pin.gd` (windowed): the same scripted ticks captured before and after the refactor; the crops must match pixel for pixel. |
+| Read-back | `test_courier_clips.gd` at 60: every track resolves to a real node and property; key times match this brief; loop modes; discrete frame tracks with every key below `hframes * vframes`; the seam rule; a key at every phase boundary; transitions; `callback_mode_process`; the region rectangles. |
+| State machine structure | `test_courier_states.gd` at 60: the state table against the clips and the code. |
+| Edges | `test_dash_edges.gd` at 30, 60 and 144: the rules above at every phase boundary, through `Input.parse_input_event`. |
+| Mutations | in a `git worktree`: a frame track set to continuous, a track path renamed, the walk loop mode changed, a phase key moved one frame; each must fail the read-back. |
+| Frame strips | Movie Maker at 60 fps with `--debug-collisions`, one PNG per tick and one log line per tick, for the walk cycle and the dash. |
+| HUMAN | Bao plays at normal speed and with `--time-scale 0.25` and says, in visual terms, whether the walk cycle and the dash read, whether the cooldown gap is felt, and whether any registration drift shows. Keep or change the phase table. |
+
+Existing tests and their expectations are not changed to make the new code pass. If the dash card changes a seeded card sequence that an existing test pins, that test is re-pinned in its own commit, after play, with the old and new values recorded.
+
+## Out of scope
+
+- Enemies, weapons, pickups, progression numbers other than adding the card, movement speed, health, i-frames, knockback, the tick rate and the run state machine in `game_state.gd`.
+- Every file in `godot/shaders/` (never edited by an agent), the particle effects and their scenes, audio (no dash sound), the A3 and A5 3D scenes.
+- `pc_sheet.png` and every other generated asset. No `.import` file written by hand; no invented UID.

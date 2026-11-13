@@ -539,7 +539,7 @@
     {
       "id": "camera-menu-push-in",
       "observed": {
-        "after": 0.821064651012421,
+        "after": 0.820800006389618,
         "start": 0.800000011920929
       },
       "status": "PASS"
@@ -552,12 +552,12 @@
     {
       "id": "fog-lifts-on-win",
       "observed": {
-        "lift": 0.218246169382964,
-        "zoom": 0.960715711116791
+        "lift": 0.216,
+        "zoom": 0.961120009422302
       },
       "status": "PASS"
     }
   ],
   "suite": "gameplay",
-  "utc": "2026-10-14T16:53:46"
+  "utc": "2026-11-13T17:03:53"
 }
