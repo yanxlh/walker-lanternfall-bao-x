@@ -1,0 +1,10 @@
+{
+  "before": "captures/assignment-7/pin-before",
+  "after": "captures/assignment-7/pin-after",
+  "frames_before": 216,
+  "frames_after": 216,
+  "whole_frame_diffs": [],
+  "crop_diffs": [],
+  "log_diffs": [],
+  "identical": true
+}

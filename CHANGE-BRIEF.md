@@ -40,7 +40,7 @@ Engine: Godot 4.7.2.stable.official.ed1daf0bf, renderer `gl_compatibility` (`god
 | Update mode | `Animation.UPDATE_DISCRETE` |
 | Seam rule | frame track: no duplicate frame across the wrap (last key 3, first key 2), and the gap from the last key to the length (8 / 60 s) equals the key interval (8 / 60 s) |
 
-The other sprite states get one-key clips on the same frame track, `LOOP_NONE`, length 1 / 60 s: `idle` 1, `cast` 4, `hurt` 5, `levelup` 6, `sunflare` 7, `defeat` 8, `victory` 9.
+The other sprite states get one-key clips on the same frame track, `LOOP_NONE`, length 1 / 60 s: `turn_front` 0, `idle` 1, `cast` 4, `hurt` 5, `levelup` 6, `sunflare` 7, `defeat` 8, `victory` 9.
 
 Source and licence: the sheet is the project's own generated art from Assignment 2 (ART-PC-01; `ASSET-LOG.md`, `gen/mappings/ART-PC-01.json`, `SOURCES.md`). It is already committed and follows Assignment 2's rules; no found sheet is used. The file is not edited for this change; the rig below uses region rectangles of it, not a derivative file.
 
@@ -147,3 +147,6 @@ Existing tests and their expectations are not changed to make the new code pass.
 
 ### 2026-11-13 — the legs hang from the rig root
 The first version put `Legs` under `Hips`, so leaning the hips would also have swung the feet. `Legs` now hangs from `Rig`, so the lean pivots above planted feet. Regions, pivots and keys are unchanged.
+
+### 2026-11-13 — a clip for every cell
+`turn_front` (cell 0) gets a one-key clip too. The game never selects it, but `set_override()` accepts any name in `POSES` (the storyboard capture `godot/tests/capture.gd` shows all ten), and a missing clip would leave the previous cell on screen.

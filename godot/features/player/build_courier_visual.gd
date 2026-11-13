@@ -17,6 +17,7 @@ const RIG_CELL := 2
 
 ## Sprite clips on Body:frame. keys: [frame, tick]; length in ticks.
 const SPRITE_CLIPS := {
+	"turn_front": {"keys": [[0, 0]], "length": 1, "loop": false},
 	"idle": {"keys": [[1, 0]], "length": 1, "loop": false},
 	"walk": {"keys": [[2, 0], [3, 8]], "length": 16, "loop": true},
 	"cast": {"keys": [[4, 0]], "length": 1, "loop": false},

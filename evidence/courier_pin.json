@@ -652,12 +652,18 @@
     {
       "id": "tint-reaches-every-courier-drawer",
       "observed": {
-        "child_drawers": [],
-        "material": "():<ShaderMaterial#-9223371951962061241>"
+        "child_drawers": [
+          "CourierVisual/Body",
+          "CourierVisual/Rig/Legs",
+          "CourierVisual/Rig/Hips/Coat",
+          "CourierVisual/Rig/Hips/Chest/Arm",
+          "CourierVisual/Rig/Hips/Chest/Neck/Head"
+        ],
+        "material": "():<ShaderMaterial#-9223371951693625761>"
       },
       "status": "PASS"
     }
   ],
   "suite": "courier_pin",
-  "utc": "2026-11-13T17:10:55"
+  "utc": "2026-11-13T17:15:53"
 }

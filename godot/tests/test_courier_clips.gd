@@ -11,6 +11,7 @@ const FPS := 60.0
 const ORIGIN := Vector2(16, 23)
 
 const SPRITE_CLIPS := {
+	"turn_front": {"frames": [[0, 0]], "length": 1, "loop": Animation.LOOP_NONE},
 	"idle": {"frames": [[1, 0]], "length": 1, "loop": Animation.LOOP_NONE},
 	"walk": {"frames": [[2, 0], [3, 8]], "length": 16, "loop": Animation.LOOP_LINEAR},
 	"cast": {"frames": [[4, 0]], "length": 1, "loop": Animation.LOOP_NONE},

@@ -74,7 +74,7 @@ def compare(args: list) -> int:
             result["whole_frame_diffs"].append({"frame": n, "bbox": box})
         ca, cb = crop(a, ra[n], n), crop(b, rb[n], n)
         diff = ImageChops.difference(ca, cb)
-        changed = sum(1 for p in diff.getdata() if p != (0, 0, 0))
+        changed = diff.convert("L").point(lambda v: 255 if v else 0).histogram()[255]
         if changed:
             result["crop_diffs"].append({"frame": n, "pixels": changed})
     result["identical"] = (len(ra) == len(rb) and not result["whole_frame_diffs"] and not result["crop_diffs"]

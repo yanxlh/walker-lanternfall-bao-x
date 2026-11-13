@@ -1,5 +1,5 @@
 {
-  "checks": 68,
+  "checks": 73,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -35,6 +35,7 @@
           "idle",
           "levelup",
           "sunflare",
+          "turn_front",
           "victory",
           "walk"
         ]
@@ -77,6 +78,60 @@
           -16.0,
           -23.0
         ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "turn_front-frame-keys",
+      "observed": {
+        "brief": [
+          [
+            0,
+            0
+          ]
+        ],
+        "keys": [
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "turn_front-frames-inside-sheet",
+      "observed": {
+        "cells": 10,
+        "keys": [
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "turn_front-discrete",
+      "observed": {
+        "update_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "turn_front-length-and-loop",
+      "observed": {
+        "length_frames": 1.0,
+        "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "turn_front-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
       },
       "status": "PASS"
     },
@@ -849,5 +904,5 @@
     }
   ],
   "suite": "courier_clips",
-  "utc": "2026-11-13T17:13:28"
+  "utc": "2026-11-13T17:15:53"
 }
