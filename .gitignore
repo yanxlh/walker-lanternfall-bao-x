@@ -39,3 +39,6 @@ captures/lantern_trail/comparison-*/r1/frame*.png
 captures/defeat_sparks/*/frame*.png
 captures/**/frame.wav
 logs/
+
+# Assignment 7: full Movie Maker sequences stay local; strips, logs and comparisons are committed
+captures/assignment-7/**/movie/

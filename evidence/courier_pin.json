@@ -1,0 +1,663 @@
+{
+  "checks": 23,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "start-cell-flip-pose",
+      "observed": {
+        "expected": [
+          1,
+          1,
+          "idle"
+        ],
+        "observed": [
+          1,
+          1,
+          "idle"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-right-cells",
+      "observed": {
+        "expected": [
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "observed": [
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-right-flips",
+      "observed": {
+        "expected": [
+          [
+            1,
+            40
+          ]
+        ],
+        "observed": [
+          [
+            1,
+            40
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-right-poses",
+      "observed": {
+        "expected": [
+          [
+            "walk_contact",
+            1
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "walk_passing",
+            7
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            8
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            1
+          ]
+        ],
+        "observed": [
+          [
+            "walk_contact",
+            1
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "walk_passing",
+            7
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            8
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            1
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "stop-cells",
+      "observed": {
+        "expected": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "observed": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-left-cells",
+      "observed": {
+        "expected": [
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "observed": [
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            5
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-left-flips",
+      "observed": {
+        "expected": [
+          [
+            -1,
+            20
+          ]
+        ],
+        "observed": [
+          [
+            -1,
+            20
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "deadzone-cells",
+      "observed": {
+        "expected": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "observed": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "deadzone-flips",
+      "observed": {
+        "expected": [
+          [
+            -1,
+            12
+          ]
+        ],
+        "observed": [
+          [
+            -1,
+            12
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hurt-iframes-at-hit",
+      "observed": {
+        "expected": [
+          48,
+          8
+        ],
+        "observed": [
+          48,
+          8
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hurt-cells",
+      "observed": {
+        "expected": [
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            1,
+            17
+          ]
+        ],
+        "observed": [
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            1,
+            17
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-after-hurt-cells",
+      "observed": {
+        "expected": [
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "observed": [
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-state",
+      "observed": {
+        "expected": [
+          true
+        ],
+        "observed": [
+          true
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-cells",
+      "observed": {
+        "expected": [
+          [
+            6,
+            6
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "observed": [
+          [
+            6,
+            6
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "evolve-cells",
+      "observed": {
+        "expected": [
+          [
+            7,
+            60
+          ],
+          [
+            1,
+            11
+          ]
+        ],
+        "observed": [
+          [
+            7,
+            60
+          ],
+          [
+            1,
+            11
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "defeat-cells",
+      "observed": {
+        "expected": [
+          [
+            8,
+            3
+          ]
+        ],
+        "observed": [
+          [
+            8,
+            3
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "defeat-state",
+      "observed": {
+        "expected": [
+          true
+        ],
+        "observed": [
+          true
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "victory-cells",
+      "observed": {
+        "expected": [
+          [
+            9,
+            3
+          ]
+        ],
+        "observed": [
+          [
+            9,
+            3
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "restart-cell-flip",
+      "observed": {
+        "expected": [
+          1,
+          1
+        ],
+        "observed": [
+          1,
+          1
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "restart-cells",
+      "observed": {
+        "expected": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "observed": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "no-art-cells",
+      "observed": {
+        "expected": [
+          [
+            -1,
+            30
+          ]
+        ],
+        "observed": [
+          [
+            -1,
+            30
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "no-art-same-poses",
+      "observed": {
+        "with": [
+          [
+            "walk_contact",
+            1
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "walk_passing",
+            7
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            7
+          ]
+        ],
+        "without": [
+          [
+            "walk_contact",
+            1
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "walk_passing",
+            7
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            7
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "tint-reaches-every-courier-drawer",
+      "observed": {
+        "child_drawers": [],
+        "material": "():<ShaderMaterial#-9223371951962061241>"
+      },
+      "status": "PASS"
+    }
+  ],
+  "suite": "courier_pin",
+  "utc": "2026-11-13T17:10:55"
+}
