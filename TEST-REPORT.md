@@ -777,7 +777,7 @@ Claude's reading of the strips (a claim, not a human check): the walk alternates
 
 `python3 -I scripts/session_check_a7.py <session.jsonl> 9ccf078 evidence/assignment-7/session-check/session-check.json`, run on this session's transcript with `HEAD` at `159a006`, read-only git:
 
-- The transcript has no final `result` event. The session ran in the Claude desktop app, whose transcripts do not write one; only a headless `claude -p --output-format stream-json` run does. The check therefore reads the transcript directly: 164 recorded tool calls, 3 tool errors (a browser call made before the pane was open, and two shell commands that exited 1, both retried), and 0 Stop-hook errors.
+- The transcript has no final `result` event. The session ran in the Claude desktop app, whose transcripts do not write one; only a headless `claude -p --output-format stream-json` run does. The check therefore reads the transcript directly: 168 recorded tool calls at the last run of the check, 3 tool errors (a browser call made before the pane was open, and two shell commands that exited 1, both retried), and 0 Stop-hook errors.
 - `9ccf078..159a006` changes 176 files. In `godot/` outside `godot/tests/`, only the eight files the brief names change: the player folder, `progression.gd`, `tuning.gd` and `session.gd`. No out-of-scope path changes: shaders, effects, A3/A5 scenes, audio, assets, UI, enemies, weapons, pickups, world, `game_state.gd` and `project.godot` are all untouched.
 - The wrapper gap from the assignment's list is closed: `scripts/run-test.sh` now also fails on resource-load errors. `scripts/check-run-test.sh` shows that the old wrapper exits 0 on `fixture_resource_load_error.gd` and the new one exits 1, while a passing suite still exits 0.
 
