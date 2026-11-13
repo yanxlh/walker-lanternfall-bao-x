@@ -57,18 +57,18 @@ The cells the courier shows today must not change. The pin decides what "today" 
 | Parts | region rectangles of pc_sheet cell 2 (walk_contact), cell-local: Head x 17–24, y 8–19; Arm x 12–16, y 13–19; Coat x 11–24, y 20–27; Legs x 11–24, y 28–31. The rectangles do not overlap and cover every opaque pixel of the cell. |
 | Pivots (cell-local) | Hips (16, 27), Chest (16, 20), Neck (18, 19) |
 | Keyed properties | `Rig:position`, `Rig/Hips:rotation`, `Rig/Hips/Chest/Neck:rotation`, and `Body:visible` / `Rig:visible` (discrete) |
-| Length | 28 / 60 s |
+| Length | 20 / 60 s |
 | Loop | `Animation.LOOP_NONE` |
 
 Every clip keys `Body:visible` and `Rig:visible` at 0, so whichever clip plays owns the whole visual. The sprite clips show `Body` and hide `Rig`; `dash` does the opposite.
 
-### Phase table (frames at 60 per second; Claude's draft, HUMAN: Bao confirms or changes it after playing)
+### Phase table (frames at 60 per second; revision r1, 13 November 2026, requested by Bao; see Revisions)
 
 | Phase | Frames | Ticks | Gameplay | Pose |
 |---|---|---|---|---|
-| Startup | 0–5 | 6 | the courier stops; input ignored; dash direction already locked | crouch and lean back (anticipation) |
-| Active | 6–15 | 10 | moves at `DASH_SPEED` 330 px/s in the locked direction: 5.5 px per tick, 55 px in all | lean hard into the dash, lamp trailing |
-| Recovery | 16–27 | 12 | the courier stops; input ignored | settle upright with one overshoot |
+| Startup | 0–3 | 4 | the courier stops; input ignored; dash direction already locked | crouch and lean back (anticipation) |
+| Active | 4–13 | 10 | moves at `DASH_SPEED` 330 px/s in the locked direction: 5.5 px per tick, 55 px in all | lean hard into the dash, lamp trailing |
+| Recovery | 14–19 | 6 | the courier stops; input ignored | settle upright with one overshoot |
 | Cooldown | after recovery | 60 | a new dash cannot start | normal states |
 
 Reference: none measured yet. HUMAN: Bao picks a reference dash (a game clip or a Mixamo animation), measures its startup, active and recovery frames, and changes this table if they disagree. The keys follow the table, not the other way round.
@@ -77,15 +77,15 @@ Reference: none measured yet. HUMAN: Bao picks a reference dash (a game clip or 
 
 | Track | Keys |
 |---|---|
-| `Rig:position` | 0 : (0, 0); 4 : (0, 1); 6 : (0, -1); 16 : (0, 0); 20 : (0, 1); 28 : (0, 0) |
-| `Rig/Hips:rotation` | 0 : 0.0; 4 : -0.15; 6 : 0.35; 16 : 0.30; 20 : -0.08; 28 : 0.0 |
-| `Rig/Hips/Chest/Neck:rotation` | 0 : 0.0; 4 : 0.10; 6 : -0.30; 12 : -0.20; 16 : -0.25; 20 : 0.15; 24 : -0.05; 28 : 0.0 |
+| `Rig:position` | 0 : (0, 0); 3 : (0, 1); 4 : (0, -1); 14 : (0, 0); 16 : (0, 1); 20 : (0, 0) |
+| `Rig/Hips:rotation` | 0 : 0.0; 3 : -0.15; 4 : 0.35; 14 : 0.30; 16 : -0.08; 20 : 0.0 |
+| `Rig/Hips/Chest/Neck:rotation` | 0 : 0.0; 3 : 0.10; 4 : -0.30; 10 : -0.20; 14 : -0.25; 16 : 0.15; 18 : -0.05; 20 : 0.0 |
 
-There is a key at every phase boundary (0, 6, 16, 28) on every continuous track. Spacing: keys inside startup use transition 2.0 (ease in, accelerating into the active frames); keys inside recovery use 0.5 (ease out, settling); active keys use 1.0. Rotation is in radians; positive leans forward for a right-facing courier. The whole visual is mirrored with the courier's facing.
+There is a key at every phase boundary (0, 4, 14, 20) on every continuous track. Spacing: keys inside startup use transition 2.0 (ease in, accelerating into the active frames); keys inside recovery use 0.5 (ease out, settling); active keys use 1.0. Rotation is in radians; positive leans forward for a right-facing courier. The whole visual is mirrored with the courier's facing.
 
 ## The dash rules
 
-Tuning (`godot/features/tuning.gd`): `DASH_STARTUP_TICKS = 6`, `DASH_ACTIVE_TICKS = 10`, `DASH_RECOVERY_TICKS = 12`, `DASH_SPEED = 330.0`, `DASH_COOLDOWN_TICKS = 60`.
+Tuning (`godot/features/tuning.gd`): `DASH_STARTUP_TICKS = 4`, `DASH_ACTIVE_TICKS = 10`, `DASH_RECOVERY_TICKS = 6`, `DASH_SPEED = 330.0`, `DASH_COOLDOWN_TICKS = 60`.
 
 - Input: a new action `dash` on Shift and Space (keyboard) and B (joypad). `session._unhandled_input` turns a press into a request only in PLAYING; `player.step()` consumes it on the next tick. A press while locked, during a dash or during the cooldown is dropped, not queued. Space still starts a run from the menu.
 - Direction: the movement input at the tick the dash starts, normalised; with no input, the facing direction. Facing follows the dash direction's x the same way it follows movement. Both stay locked until the dash ends.
@@ -150,3 +150,15 @@ The first version put `Legs` under `Hips`, so leaning the hips would also have s
 
 ### 2026-11-13 — a clip for every cell
 `turn_front` (cell 0) gets a one-key clip too. The game never selects it, but `set_override()` accepts any name in `POSES` (the storyboard capture `godot/tests/capture.gd` shows all ten), and a missing clip would leave the previous cell on screen.
+
+### 2026-11-13 — dash phase table r1: 6 / 10 / 12 → 4 / 10 / 6 (requested by Bao)
+Bao asked for startup 6 → 4 ticks and recovery 12 → 6 ticks. Active stays at 10 ticks, so the speed (330 px/s) and the distance (55 px) do not change; the 60-tick cooldown after the dash does not change either. The reason given: in r0 the courier stood still in recovery for longer than it moved (12 against 10 ticks), and hits still land in recovery. The proposal text came from a Codex review. No reference dash has been measured.
+
+| Phase | r0 (ticks, seconds) | r1 (ticks, seconds) |
+|---|---|---|
+| Startup | 6, 0.100 | 4, 0.067 |
+| Active | 10, 0.167 | 10, 0.167 |
+| Recovery | 12, 0.200 | 6, 0.100 |
+| Whole dash | 28, 0.467 | 20, 0.333 |
+
+The keys move with the phases. The boundaries go from 0 / 6 / 16 / 28 to 0 / 4 / 14 / 20, and each inner key keeps its place within its phase: startup frame 4 → 3; active frame 12 → 10; recovery frames 20 and 24 → 16 and 18. Every value and transition is unchanged. The clip and its read-back expectations change together. The behaviour pins (`test_dash_edges.gd`, `test_courier_states.gd`) are re-pinned in their own commit, with the r0 values kept in this table and in git. The r0 captures stay where they are; the r1 captures go in new folders.
