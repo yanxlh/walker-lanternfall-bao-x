@@ -1,0 +1,853 @@
+{
+  "checks": 68,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "scene-loads",
+      "observed": {
+        "scene": "res://features/player/courier_visual.tscn"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "library-is-the-committed-tres",
+      "observed": {
+        "path": "res://features/player/courier_clips.tres"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "every-track-resolves",
+      "observed": {
+        "problems": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "clip-names",
+      "observed": {
+        "clips": [
+          "cast",
+          "dash",
+          "defeat",
+          "hurt",
+          "idle",
+          "levelup",
+          "sunflare",
+          "victory",
+          "walk"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "callback-mode-manual",
+      "observed": {
+        "callback_mode_process": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "no-autoplay",
+      "observed": {
+        "autoplay": "",
+        "speed_scale": 1.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "body-slices-the-sheet",
+      "observed": {
+        "hframes": 10,
+        "size": [
+          320,
+          32
+        ],
+        "texture": "res://assets/art/pc_sheet.png",
+        "vframes": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "body-registration",
+      "observed": {
+        "centered": false,
+        "offset": [
+          -16.0,
+          -23.0
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "idle-frame-keys",
+      "observed": {
+        "brief": [
+          [
+            1,
+            0
+          ]
+        ],
+        "keys": [
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "idle-frames-inside-sheet",
+      "observed": {
+        "cells": 10,
+        "keys": [
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "idle-discrete",
+      "observed": {
+        "update_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "idle-length-and-loop",
+      "observed": {
+        "length_frames": 1.0,
+        "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "idle-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-frame-keys",
+      "observed": {
+        "brief": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "keys": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            8
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-frames-inside-sheet",
+      "observed": {
+        "cells": 10,
+        "keys": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            8
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-discrete",
+      "observed": {
+        "update_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-length-and-loop",
+      "observed": {
+        "length_frames": 16.0,
+        "loop_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cast-frame-keys",
+      "observed": {
+        "brief": [
+          [
+            4,
+            0
+          ]
+        ],
+        "keys": [
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cast-frames-inside-sheet",
+      "observed": {
+        "cells": 10,
+        "keys": [
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cast-discrete",
+      "observed": {
+        "update_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cast-length-and-loop",
+      "observed": {
+        "length_frames": 1.0,
+        "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cast-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hurt-frame-keys",
+      "observed": {
+        "brief": [
+          [
+            5,
+            0
+          ]
+        ],
+        "keys": [
+          [
+            5,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hurt-frames-inside-sheet",
+      "observed": {
+        "cells": 10,
+        "keys": [
+          [
+            5,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hurt-discrete",
+      "observed": {
+        "update_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hurt-length-and-loop",
+      "observed": {
+        "length_frames": 1.0,
+        "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hurt-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-frame-keys",
+      "observed": {
+        "brief": [
+          [
+            6,
+            0
+          ]
+        ],
+        "keys": [
+          [
+            6,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-frames-inside-sheet",
+      "observed": {
+        "cells": 10,
+        "keys": [
+          [
+            6,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-discrete",
+      "observed": {
+        "update_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-length-and-loop",
+      "observed": {
+        "length_frames": 1.0,
+        "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "levelup-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "sunflare-frame-keys",
+      "observed": {
+        "brief": [
+          [
+            7,
+            0
+          ]
+        ],
+        "keys": [
+          [
+            7,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "sunflare-frames-inside-sheet",
+      "observed": {
+        "cells": 10,
+        "keys": [
+          [
+            7,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "sunflare-discrete",
+      "observed": {
+        "update_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "sunflare-length-and-loop",
+      "observed": {
+        "length_frames": 1.0,
+        "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "sunflare-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "defeat-frame-keys",
+      "observed": {
+        "brief": [
+          [
+            8,
+            0
+          ]
+        ],
+        "keys": [
+          [
+            8,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "defeat-frames-inside-sheet",
+      "observed": {
+        "cells": 10,
+        "keys": [
+          [
+            8,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "defeat-discrete",
+      "observed": {
+        "update_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "defeat-length-and-loop",
+      "observed": {
+        "length_frames": 1.0,
+        "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "defeat-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "victory-frame-keys",
+      "observed": {
+        "brief": [
+          [
+            9,
+            0
+          ]
+        ],
+        "keys": [
+          [
+            9,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "victory-frames-inside-sheet",
+      "observed": {
+        "cells": 10,
+        "keys": [
+          [
+            9,
+            0
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "victory-discrete",
+      "observed": {
+        "update_mode": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "victory-length-and-loop",
+      "observed": {
+        "length_frames": 1.0,
+        "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "victory-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-seam",
+      "observed": {
+        "first": 2,
+        "interval_frames": 8.00000041723251,
+        "last": 3,
+        "tail_frames": 7.99999958276749
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-played-back-cells",
+      "observed": {
+        "shown": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-length-and-loop",
+      "observed": {
+        "length_frames": 28.0,
+        "loop_mode": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-owns-visibility",
+      "observed": {
+        "body_track": 0,
+        "rig_track": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-keys Rig:position",
+      "observed": {
+        "frames": [
+          0,
+          4,
+          6,
+          16,
+          20,
+          28
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-phase-boundaries Rig:position",
+      "observed": {
+        "boundaries": [
+          0,
+          6,
+          16,
+          28
+        ],
+        "frames": [
+          0,
+          4,
+          6,
+          16,
+          20,
+          28
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-spacing Rig:position",
+      "observed": {
+        "transitions": [
+          2.0,
+          2.0,
+          1.0,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-keys Rig/Hips:rotation",
+      "observed": {
+        "frames": [
+          0,
+          4,
+          6,
+          16,
+          20,
+          28
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-phase-boundaries Rig/Hips:rotation",
+      "observed": {
+        "boundaries": [
+          0,
+          6,
+          16,
+          28
+        ],
+        "frames": [
+          0,
+          4,
+          6,
+          16,
+          20,
+          28
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-spacing Rig/Hips:rotation",
+      "observed": {
+        "transitions": [
+          2.0,
+          2.0,
+          1.0,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-keys Rig/Hips/Chest/Neck:rotation",
+      "observed": {
+        "frames": [
+          0,
+          4,
+          6,
+          12,
+          16,
+          20,
+          24,
+          28
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-phase-boundaries Rig/Hips/Chest/Neck:rotation",
+      "observed": {
+        "boundaries": [
+          0,
+          6,
+          16,
+          28
+        ],
+        "frames": [
+          0,
+          4,
+          6,
+          12,
+          16,
+          20,
+          24,
+          28
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-spacing Rig/Hips/Chest/Neck:rotation",
+      "observed": {
+        "transitions": [
+          2.0,
+          2.0,
+          1.0,
+          1.0,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "rig-regions-cover-the-cell",
+      "observed": {
+        "doubled_pixels": 0,
+        "uncovered_pixels": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "rig-part-regions",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "id": "rig-rest-pose-matches-cell",
+      "observed": {
+        "rest": {
+          "Arm": [
+            -4.0,
+            -10.0
+          ],
+          "Coat": [
+            -5.0,
+            -3.0
+          ],
+          "Head": [
+            1.0,
+            -15.0
+          ],
+          "Legs": [
+            -5.0,
+            5.0
+          ]
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "rig-pivots",
+      "observed": {
+        "pivots": {
+          "Rig/Hips": [
+            0.0,
+            4.0
+          ],
+          "Rig/Hips/Chest": [
+            0.0,
+            -3.0
+          ],
+          "Rig/Hips/Chest/Neck": [
+            2.0,
+            -4.0
+          ]
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "dash-played-back-at-boundaries",
+      "observed": {
+        "sampled": {
+          "0": [
+            0.0,
+            0.0,
+            0.0,
+            true,
+            false
+          ],
+          "6": [
+            0.35,
+            -0.3,
+            -1.0,
+            true,
+            false
+          ],
+          "16": [
+            0.3,
+            -0.25,
+            0.0,
+            true,
+            false
+          ],
+          "28": [
+            0.0,
+            0.0,
+            0.0,
+            true,
+            false
+          ]
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "every-part-uses-parent-material",
+      "observed": {
+        "not_using_parent": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "no-godot3-names",
+      "observed": {
+        "found": []
+      },
+      "status": "PASS"
+    }
+  ],
+  "suite": "courier_clips",
+  "utc": "2026-11-13T17:13:28"
+}

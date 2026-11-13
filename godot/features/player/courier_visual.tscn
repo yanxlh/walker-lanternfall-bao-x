@@ -1,0 +1,67 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/art/pc_sheet.png" id="1_262gh"]
+[ext_resource type="AnimationLibrary" path="res://features/player/courier_clips.tres" id="2_y8bmn"]
+
+[node name="CourierVisual" type="Node2D" unique_id=2105373127]
+use_parent_material = true
+
+[node name="Body" type="Sprite2D" parent="." unique_id=1542774130]
+use_parent_material = true
+texture = ExtResource("1_262gh")
+centered = false
+offset = Vector2(-16, -23)
+hframes = 10
+frame = 1
+
+[node name="Rig" type="Node2D" parent="." unique_id=498317370]
+visible = false
+use_parent_material = true
+
+[node name="Legs" type="Sprite2D" parent="Rig" unique_id=366439945]
+use_parent_material = true
+position = Vector2(-5, 5)
+texture = ExtResource("1_262gh")
+centered = false
+region_enabled = true
+region_rect = Rect2(75, 28, 14, 4)
+
+[node name="Hips" type="Node2D" parent="Rig" unique_id=2031244811]
+use_parent_material = true
+position = Vector2(0, 4)
+
+[node name="Coat" type="Sprite2D" parent="Rig/Hips" unique_id=1255985563]
+use_parent_material = true
+position = Vector2(-5, -7)
+texture = ExtResource("1_262gh")
+centered = false
+region_enabled = true
+region_rect = Rect2(75, 20, 14, 8)
+
+[node name="Chest" type="Node2D" parent="Rig/Hips" unique_id=1972036613]
+use_parent_material = true
+position = Vector2(0, -7)
+
+[node name="Arm" type="Sprite2D" parent="Rig/Hips/Chest" unique_id=456525457]
+use_parent_material = true
+position = Vector2(-4, -7)
+texture = ExtResource("1_262gh")
+centered = false
+region_enabled = true
+region_rect = Rect2(76, 13, 5, 7)
+
+[node name="Neck" type="Node2D" parent="Rig/Hips/Chest" unique_id=2048175882]
+use_parent_material = true
+position = Vector2(2, -1)
+
+[node name="Head" type="Sprite2D" parent="Rig/Hips/Chest/Neck" unique_id=1312307905]
+use_parent_material = true
+position = Vector2(-1, -11)
+texture = ExtResource("1_262gh")
+centered = false
+region_enabled = true
+region_rect = Rect2(81, 8, 8, 12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1999000881]
+callback_mode_process = 2
+libraries/ = ExtResource("2_y8bmn")

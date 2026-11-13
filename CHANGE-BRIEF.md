@@ -53,7 +53,7 @@ The cells the courier shows today must not change. The pin decides what "today" 
 | Item | Value |
 |---|---|
 | Route | Cutout rig, baked from code: `res://features/player/build_courier_visual.gd` runs headless, builds the rig and every clip, and saves the scene and the clip library with `ResourceSaver.save()`. Both files are committed; the game and the tests load the saved files, never the builder. |
-| Rig | `Rig` (Node2D) > `Hips` (Node2D pivot) > `Coat`, `Legs` sprites and `Chest` (Node2D pivot) > `Arm` sprite and `Neck` (Node2D pivot) > `Head` sprite |
+| Rig | `Rig` (Node2D) > `Legs` sprite and `Hips` (Node2D pivot) > `Coat` sprite and `Chest` (Node2D pivot) > `Arm` sprite and `Neck` (Node2D pivot) > `Head` sprite. Each part draws before the pivots beside it. |
 | Parts | region rectangles of pc_sheet cell 2 (walk_contact), cell-local: Head x 17–24, y 8–19; Arm x 12–16, y 13–19; Coat x 11–24, y 20–27; Legs x 11–24, y 28–31. The rectangles do not overlap and cover every opaque pixel of the cell. |
 | Pivots (cell-local) | Hips (16, 27), Chest (16, 20), Neck (18, 19) |
 | Keyed properties | `Rig:position`, `Rig/Hips:rotation`, `Rig/Hips/Chest/Neck:rotation`, and `Body:visible` / `Rig:visible` (discrete) |
@@ -142,3 +142,8 @@ Existing tests and their expectations are not changed to make the new code pass.
 - Enemies, weapons, pickups, progression numbers other than adding the card, movement speed, health, i-frames, knockback, the tick rate and the run state machine in `game_state.gd`.
 - Every file in `godot/shaders/` (never edited by an agent), the particle effects and their scenes, audio (no dash sound), the A3 and A5 3D scenes.
 - `pc_sheet.png` and every other generated asset. No `.import` file written by hand; no invented UID.
+
+## Revisions
+
+### 2026-11-13 — the legs hang from the rig root
+The first version put `Legs` under `Hips`, so leaning the hips would also have swung the feet. `Legs` now hangs from `Rig`, so the lean pivots above planted feet. Regions, pivots and keys are unchanged.
