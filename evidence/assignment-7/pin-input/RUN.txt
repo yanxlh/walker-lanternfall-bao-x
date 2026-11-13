@@ -1,0 +1,6 @@
+9ccf078 at 30: exit 0 | courier_pin_input: 11 checks, 0 failures
+9ccf078 at 60: exit 0 | courier_pin_input: 11 checks, 0 failures
+9ccf078 at 144: exit 0 | courier_pin_input: 11 checks, 0 failures
+beb56af+test at 30: exit 0 | courier_pin_input: 11 checks, 0 failures
+beb56af+test at 60: exit 0 | courier_pin_input: 11 checks, 0 failures
+beb56af+test at 144: exit 0 | courier_pin_input: 11 checks, 0 failures

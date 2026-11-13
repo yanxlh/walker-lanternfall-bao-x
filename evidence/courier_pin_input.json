@@ -1,0 +1,495 @@
+{
+  "checks": 11,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "run-states-in-order",
+      "observed": {
+        "expected": [
+          "menu>playing",
+          "playing>playing"
+        ],
+        "observed": [
+          "menu>playing",
+          "playing>playing"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "ticks-are-consecutive",
+      "observed": {
+        "expected": [
+          true,
+          true
+        ],
+        "observed": [
+          true,
+          true
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "cells",
+      "observed": {
+        "expected": [
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            1,
+            29
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            1,
+            22
+          ]
+        ],
+        "observed": [
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            1,
+            29
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            1,
+            22
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "flips",
+      "observed": {
+        "expected": [
+          [
+            1,
+            50
+          ],
+          [
+            -1,
+            100
+          ]
+        ],
+        "observed": [
+          [
+            1,
+            50
+          ],
+          [
+            -1,
+            100
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "poses",
+      "observed": {
+        "expected": [
+          [
+            "walk_contact",
+            1
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "walk_passing",
+            7
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            8
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            1
+          ],
+          [
+            "idle",
+            1
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "idle",
+            2
+          ],
+          [
+            "walk_contact",
+            7
+          ],
+          [
+            "walk_passing",
+            8
+          ],
+          [
+            "walk_contact",
+            5
+          ],
+          [
+            "idle",
+            11
+          ],
+          [
+            "hurt",
+            11
+          ],
+          [
+            "idle",
+            29
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "idle",
+            22
+          ]
+        ],
+        "observed": [
+          [
+            "walk_contact",
+            1
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "walk_passing",
+            7
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            8
+          ],
+          [
+            "walk_contact",
+            8
+          ],
+          [
+            "walk_passing",
+            1
+          ],
+          [
+            "idle",
+            1
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "idle",
+            2
+          ],
+          [
+            "walk_contact",
+            7
+          ],
+          [
+            "walk_passing",
+            8
+          ],
+          [
+            "walk_contact",
+            5
+          ],
+          [
+            "idle",
+            11
+          ],
+          [
+            "hurt",
+            11
+          ],
+          [
+            "idle",
+            29
+          ],
+          [
+            "cast",
+            7
+          ],
+          [
+            "idle",
+            22
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "walk-speed-x-after-40-steps",
+      "observed": {
+        "expected": [
+          60.0,
+          0.0
+        ],
+        "observed": [
+          60.0,
+          0.0
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "x-after-left-walk",
+      "observed": {
+        "expected": [
+          30.0
+        ],
+        "observed": [
+          30.0
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-step",
+      "observed": {
+        "expected": [
+          10,
+          8,
+          48,
+          30.0,
+          32.67
+        ],
+        "observed": [
+          10,
+          8,
+          48,
+          30.0,
+          32.67
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "iframes-run-out",
+      "observed": {
+        "expected": [
+          102
+        ],
+        "observed": [
+          102
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "after-restart-cells",
+      "observed": {
+        "expected": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            20
+          ]
+        ],
+        "observed": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            20
+          ]
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "after-restart-start",
+      "observed": {
+        "expected": [
+          0.0,
+          10,
+          1
+        ],
+        "observed": [
+          0.0,
+          10,
+          1
+        ]
+      },
+      "status": "PASS"
+    }
+  ],
+  "suite": "courier_pin_input",
+  "utc": "2026-11-13T18:24:18"
+}
