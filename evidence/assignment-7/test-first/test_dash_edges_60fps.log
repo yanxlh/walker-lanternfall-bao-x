@@ -1,0 +1,59 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+FAIL locked-press-dropped {"phases":["<null>","<null>","<null>"]}
+FAIL card-offered-while-locked {"eligible":["beam_rate","beam_pierce","moth_new","pass_damage","pass_haste","pass_speed","pass_magnet","pass_hp"]}
+FAIL card-has-text {}
+SCRIPT ERROR: Invalid access to property or key 'dash' on a base object of type 'Dictionary'.
+          at: lines (res://ui/hud.gd:68)
+          GDScript backtrace (most recent call first):
+              [0] lines (res://ui/hud.gd:68)
+              [1] _draw_view (res://ui/hud.gd:97)
+SCRIPT ERROR: Out of bounds get index '0' (on base: 'PackedStringArray')
+          at: _draw_view (res://ui/hud.gd:99)
+          GDScript backtrace (most recent call first):
+              [0] _draw_view (res://ui/hud.gd:99)
+FAIL card-unlocks {"eligible":["beam_rate","beam_pierce","moth_new","pass_damage","pass_haste","pass_speed","pass_magnet","pass_hp"],"state":"playing"}
+FAIL press-is-a-request-until-the-tick {"phase":"<null>"}
+FAIL phase-lengths {"counts":{"":0,"<null>":29,"active":0,"recovery":0,"startup":0}}
+FAIL startup-holds-still {"x":[1.5,3.0,4.5,6.0,7.5,9.0]}
+FAIL active-moves-5.5-per-tick {"x":[9.0,10.5,12.0,13.5,15.0,16.5,18.0,19.5,21.0,22.5,24.0]}
+FAIL active-distance-55 {"x_after_active":24.0}
+FAIL recovery-holds-still {"x":[25.5,27.0,28.5,30.0,31.5,33.0,34.5,36.0,37.5,39.0,40.5,42.0]}
+FAIL walks-again-after {"x":43.5}
+FAIL rig-shown-during-dash {"first":[2,false,"walk_contact"],"last":[3,false,"walk_passing"]}
+PASS sprite-back-after-dash {"after":[3,false,"walk_passing"]}
+FAIL cooldown-starts-when-dash-ends {"cooldown":null}
+FAIL press-on-last-cooldown-tick-dropped {"cooldown":null,"phase":["<null>"]}
+FAIL press-after-cooldown-starts {"phase":["<null>"]}
+FAIL press-during-dash-dropped {"after_press":{"":0,"<null>":84,"active":0,"recovery":0,"startup":0}}
+SCRIPT ERROR: Invalid access to property or key 'dash' on a base object of type 'Dictionary'.
+          at: lines (res://ui/hud.gd:68)
+          GDScript backtrace (most recent call first):
+              [0] lines (res://ui/hud.gd:68)
+              [1] _draw_view (res://ui/hud.gd:97)
+SCRIPT ERROR: Out of bounds get index '0' (on base: 'PackedStringArray')
+          at: _draw_view (res://ui/hud.gd:99)
+          GDScript backtrace (most recent call first):
+              [0] _draw_view (res://ui/hud.gd:99)
+FAIL no-input-dashes-along-facing {"dx":15.0,"facing":1}
+FAIL diagonal-normalised {"d":23.9999942779541}
+SCRIPT ERROR: Invalid access to property or key 'dash' on a base object of type 'Dictionary'.
+          at: lines (res://ui/hud.gd:68)
+          GDScript backtrace (most recent call first):
+              [0] lines (res://ui/hud.gd:68)
+              [1] _draw_view (res://ui/hud.gd:97)
+SCRIPT ERROR: Out of bounds get index '0' (on base: 'PackedStringArray')
+          at: _draw_view (res://ui/hud.gd:99)
+          GDScript backtrace (most recent call first):
+              [0] _draw_view (res://ui/hud.gd:99)
+SCRIPT ERROR: Invalid access to property or key 'dash_phase_changed' on a base object of type 'Node2D (player.gd)'.
+          at: run (res://tests/test_dash_edges.gd:196)
+          GDScript backtrace (most recent call first):
+              [0] run (res://tests/test_dash_edges.gd:196)
+              [1] key (res://tests/test_dash_edges.gd:46)
+FAIL suite-ran-to-end {"hint":"run() aborted early - look for SCRIPT ERROR above"}
+dash_edges_60fps: 20 checks, 19 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-a7/godot/../evidence/dash_edges_60fps.json
+WARNING: 20 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 5 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
