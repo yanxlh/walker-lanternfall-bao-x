@@ -65,6 +65,35 @@ func ticks(n: int, axis: Vector2 = Vector2.ZERO) -> Array:
 		out.append(phase())
 	return out
 
+## The phase a dash shows on frame g with no interrupt; "" once it has ended.
+func natural(g: int) -> String:
+	if g < STARTUP:
+		return "startup"
+	if g < STARTUP + ACTIVE:
+		return "active"
+	if g < TOTAL:
+		return "recovery"
+	return ""
+
+## What a hit on dash frame f does (CHANGE-BRIEF "Interrupts"): the phase changes inside that tick, the phases of
+## the next two ticks, and the cooldown after them. Startup: cancelled, no cooldown. Active: carries on. Recovery:
+## cancelled, the cooldown starts. After the dash ended: an ordinary hit, the cooldown keeps counting.
+func expect_hit(f: int) -> Dictionary:
+	var p := natural(f)
+	var during := []
+	if f > 0 and natural(f - 1) != p:
+		during.append("%s>%s" % [natural(f - 1), p])
+	match p:
+		"startup":
+			during.append("startup>")
+			return {"during": during, "after": ["", ""], "cooldown": 0}
+		"active":
+			return {"during": during, "after": [natural(f + 1), natural(f + 2)], "cooldown": 0}
+		"recovery":
+			during.append("recovery>")
+			return {"during": during, "after": ["", ""], "cooldown": COOLDOWN - 2}
+	return {"during": during, "after": ["", ""], "cooldown": COOLDOWN - (f - TOTAL) - 2}
+
 func rep(v, n: int) -> Array:
 	var out := []
 	out.resize(n)
@@ -100,6 +129,16 @@ class Recorder extends Node:
 	var samples := {}
 	func _physics_process(_d: float) -> void:
 		samples[game.tick_count] = [str(game.player.get("dash_phase")), game.player.position.x]
+
+## Two clocks: on every rendered (process) frame, the clip's playback position beside the gameplay tick it came from,
+## and the process and physics frame counters.
+class FrameRecorder extends Node:
+	var game
+	var rows := []
+	func _process(_d: float) -> void:
+		var anim: AnimationPlayer = game.player.anim
+		rows.append({"process": Engine.get_process_frames(), "physics": Engine.get_physics_frames(), "clip": anim.current_animation,
+			"position": anim.current_animation_position, "dash_ticks": game.player.get("dash_ticks"), "phase": str(game.player.get("dash_phase"))})
 
 ## The render rate this run is pinned to: the median process delta is 1 / N under --fixed-fps N.
 func measured_fps() -> int:
@@ -217,6 +256,28 @@ func run() -> void:
 			"first-recovery":
 				check("hit-first-recovery-tick-cancels-with-cooldown", during == ["active>recovery", "recovery>"] and after == ["", ""] and damaged and game.player.get("dash_cooldown") == COOLDOWN - 2, obs)
 
+	# A hit one frame before, on and one frame after every phase boundary (active begins, recovery begins, the dash
+	# ends): frame f is the tick that shows dash frame f. The expected outcome follows the brief's interrupt rules.
+	for b in [STARTUP, STARTUP + ACTIVE, TOTAL]:
+		for f in [b - 1, b, b + 1]:
+			await fresh()
+			await unlock()
+			var hp_before: int = game.player.hp
+			await key(KEY_SHIFT)
+			ticks(f)
+			var hit_by := wraith_on_courier()
+			var changes := []
+			var log_change := func(from: String, to: String): changes.append("%s>%s" % [from, to])
+			game.player.dash_phase_changed.connect(log_change)
+			var on := ticks(1)
+			game.player.dash_phase_changed.disconnect(log_change)
+			remove(hit_by)
+			var later := ticks(2)
+			var want := expect_hit(f)
+			check("hit-%s-boundary-%d-at-frame-%d" % [["before", "on", "after"][f - b + 1], b, f],
+				changes == want["during"] and later == want["after"] and game.player.hp < hp_before and game.player.get("dash_cooldown") == want["cooldown"],
+				{"changes_in_hit_tick": changes, "phase_after_hit_tick": on[0], "after": later, "cooldown": game.player.get("dash_cooldown"), "expected": want})
+
 	# Level-up in each phase: the dash freezes with the run and resumes on the same tick.
 	for frame in [2, STARTUP + 3, STARTUP + ACTIVE + 4]:
 		await fresh()
@@ -310,6 +371,10 @@ func run() -> void:
 	recorder.game = game
 	recorder.process_physics_priority = 100
 	root.add_child(recorder)
+	var frames := FrameRecorder.new()
+	frames.game = game
+	frames.process_priority = 1000
+	root.add_child(frames)
 	game.test_mode = false
 	var hold := InputEventAction.new()
 	hold.action = "move_right"
@@ -328,6 +393,22 @@ func run() -> void:
 	Input.parse_input_event(release)
 	game.test_mode = true
 	recorder.queue_free()
+	frames.queue_free()
+	# The clip's clock against gameplay's: on every rendered frame that shows the dash, the clip position must equal
+	# the dash tick the gameplay step left, so the two never disagree. The render clock lags the physics clock by
+	# whatever part of a tick has passed since the last step; its largest value is measured from the frame counters.
+	var clip_vs_tick := 0.0
+	var dash_frames := 0
+	var lags := []
+	var f0: Dictionary = frames.rows[0] if not frames.rows.is_empty() else {"process": 0, "physics": 0}
+	for r in frames.rows:
+		if r["clip"] == "dash" and r["phase"] != "":
+			dash_frames += 1
+			clip_vs_tick = maxf(clip_vs_tick, absf(r["position"] - r["dash_ticks"] / 60.0))
+		lags.append((r["process"] - f0["process"]) / float(rate) - (r["physics"] - f0["physics"]) / 60.0)
+	var lag_span: float = (lags.max() - lags.min()) if not lags.is_empty() else -1.0
+	check("two-clocks-at-%dfps" % rate, dash_frames > 0 and clip_vs_tick < 1e-6 and lag_span < 1.0 / 60.0 + 1e-6,
+		{"rendered_dash_frames": dash_frames, "largest_clip_vs_gameplay_s": clip_vs_tick, "render_vs_physics_lag_span_s": snappedf(lag_span, 0.0001), "one_tick_s": snappedf(1.0 / 60.0, 0.0001)})
 	var ordered: Array = recorder.samples.keys()
 	ordered.sort()
 	var loop_phases := ordered.map(func(t): return recorder.samples[t][0])

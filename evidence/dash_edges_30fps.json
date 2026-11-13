@@ -1,5 +1,5 @@
 {
-  "checks": 41,
+  "checks": 51,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -306,6 +306,221 @@
       "status": "PASS"
     },
     {
+      "id": "hit-before-boundary-4-at-frame-3",
+      "observed": {
+        "after": [
+          "",
+          ""
+        ],
+        "changes_in_hit_tick": [
+          "startup>"
+        ],
+        "cooldown": 0,
+        "expected": {
+          "after": [
+            "",
+            ""
+          ],
+          "cooldown": 0,
+          "during": [
+            "startup>"
+          ]
+        },
+        "phase_after_hit_tick": ""
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-on-boundary-4-at-frame-4",
+      "observed": {
+        "after": [
+          "active",
+          "active"
+        ],
+        "changes_in_hit_tick": [
+          "startup>active"
+        ],
+        "cooldown": 0,
+        "expected": {
+          "after": [
+            "active",
+            "active"
+          ],
+          "cooldown": 0,
+          "during": [
+            "startup>active"
+          ]
+        },
+        "phase_after_hit_tick": "active"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-after-boundary-4-at-frame-5",
+      "observed": {
+        "after": [
+          "active",
+          "active"
+        ],
+        "changes_in_hit_tick": [],
+        "cooldown": 0,
+        "expected": {
+          "after": [
+            "active",
+            "active"
+          ],
+          "cooldown": 0,
+          "during": []
+        },
+        "phase_after_hit_tick": "active"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-before-boundary-14-at-frame-13",
+      "observed": {
+        "after": [
+          "recovery",
+          "recovery"
+        ],
+        "changes_in_hit_tick": [],
+        "cooldown": 0,
+        "expected": {
+          "after": [
+            "recovery",
+            "recovery"
+          ],
+          "cooldown": 0,
+          "during": []
+        },
+        "phase_after_hit_tick": "active"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-on-boundary-14-at-frame-14",
+      "observed": {
+        "after": [
+          "",
+          ""
+        ],
+        "changes_in_hit_tick": [
+          "active>recovery",
+          "recovery>"
+        ],
+        "cooldown": 58,
+        "expected": {
+          "after": [
+            "",
+            ""
+          ],
+          "cooldown": 58,
+          "during": [
+            "active>recovery",
+            "recovery>"
+          ]
+        },
+        "phase_after_hit_tick": ""
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-after-boundary-14-at-frame-15",
+      "observed": {
+        "after": [
+          "",
+          ""
+        ],
+        "changes_in_hit_tick": [
+          "recovery>"
+        ],
+        "cooldown": 58,
+        "expected": {
+          "after": [
+            "",
+            ""
+          ],
+          "cooldown": 58,
+          "during": [
+            "recovery>"
+          ]
+        },
+        "phase_after_hit_tick": ""
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-before-boundary-20-at-frame-19",
+      "observed": {
+        "after": [
+          "",
+          ""
+        ],
+        "changes_in_hit_tick": [
+          "recovery>"
+        ],
+        "cooldown": 58,
+        "expected": {
+          "after": [
+            "",
+            ""
+          ],
+          "cooldown": 58,
+          "during": [
+            "recovery>"
+          ]
+        },
+        "phase_after_hit_tick": ""
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-on-boundary-20-at-frame-20",
+      "observed": {
+        "after": [
+          "",
+          ""
+        ],
+        "changes_in_hit_tick": [
+          "recovery>"
+        ],
+        "cooldown": 58,
+        "expected": {
+          "after": [
+            "",
+            ""
+          ],
+          "cooldown": 58,
+          "during": [
+            "recovery>"
+          ]
+        },
+        "phase_after_hit_tick": ""
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hit-after-boundary-20-at-frame-21",
+      "observed": {
+        "after": [
+          "",
+          ""
+        ],
+        "changes_in_hit_tick": [],
+        "cooldown": 57,
+        "expected": {
+          "after": [
+            "",
+            ""
+          ],
+          "cooldown": 57,
+          "during": []
+        },
+        "phase_after_hit_tick": ""
+      },
+      "status": "PASS"
+    },
+    {
       "id": "levelup-freezes-dash-at-frame-2",
       "observed": {
         "dash_ticks": 1,
@@ -455,6 +670,16 @@
       "status": "PASS"
     },
     {
+      "id": "two-clocks-at-30fps",
+      "observed": {
+        "largest_clip_vs_gameplay_s": 0.0,
+        "one_tick_s": 0.0167,
+        "render_vs_physics_lag_span_s": 0.0,
+        "rendered_dash_frames": 10
+      },
+      "status": "PASS"
+    },
+    {
       "id": "real-loop-phase-ticks-at-30fps",
       "observed": {
         "active_distance": 55.0,
@@ -473,5 +698,5 @@
     }
   ],
   "suite": "dash_edges_30fps",
-  "utc": "2026-11-13T18:14:29"
+  "utc": "2026-11-13T18:25:29"
 }
