@@ -1,0 +1,181 @@
+{
+  "source_revision": "6a340da",
+  "mutations": [
+    {
+      "mutation": "walk-frame-track-continuous",
+      "file": "godot/features/player/courier_clips.tres",
+      "applied": true,
+      "diff": "godot/features/player/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 73 checks, 1 failures",
+          "failed_checks": [
+            "walk-discrete"
+          ]
+        }
+      ],
+      "caught": true
+    },
+    {
+      "mutation": "dash-track-path-renamed",
+      "file": "godot/features/player/courier_clips.tres",
+      "applied": true,
+      "diff": "godot/features/player/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 73 checks, 5 failures",
+          "failed_checks": [
+            "every-track-resolves",
+            "dash-keys",
+            "dash-phase-boundaries",
+            "dash-spacing",
+            "dash-played-back-at-boundaries"
+          ]
+        }
+      ],
+      "caught": true
+    },
+    {
+      "mutation": "walk-loop-mode-none",
+      "file": "godot/features/player/courier_clips.tres",
+      "applied": true,
+      "diff": "godot/features/player/courier_clips.tres | 1 -\n 1 file changed, 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 73 checks, 1 failures",
+          "failed_checks": [
+            "walk-length-and-loop"
+          ]
+        }
+      ],
+      "caught": true
+    },
+    {
+      "mutation": "walk-godot3-loop-name",
+      "file": "godot/features/player/courier_clips.tres",
+      "applied": true,
+      "diff": "godot/features/player/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 73 checks, 1 failures",
+          "failed_checks": [
+            "no-godot3-names"
+          ]
+        }
+      ],
+      "caught": true
+    },
+    {
+      "mutation": "walk-key-past-last-cell",
+      "file": "godot/features/player/courier_clips.tres",
+      "applied": true,
+      "diff": "godot/features/player/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 73 checks, 3 failures",
+          "failed_checks": [
+            "walk-frame-keys",
+            "walk-frames-inside-sheet",
+            "walk-played-back-cells"
+          ]
+        }
+      ],
+      "caught": true
+    },
+    {
+      "mutation": "dash-phase-key-one-frame-late",
+      "file": "godot/features/player/courier_clips.tres",
+      "applied": true,
+      "diff": "godot/features/player/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 73 checks, 3 failures",
+          "failed_checks": [
+            "dash-keys",
+            "dash-phase-boundaries",
+            "dash-played-back-at-boundaries"
+          ]
+        },
+        {
+          "suite": "test_courier_states.gd 60",
+          "exit": 1,
+          "summary": "courier_states: 9 checks, 1 failures",
+          "failed_checks": [
+            "clip-boundaries-match-tuning"
+          ]
+        }
+      ],
+      "caught": true
+    },
+    {
+      "mutation": "dash-active-one-tick-longer",
+      "file": "godot/features/tuning.gd",
+      "applied": true,
+      "diff": "godot/features/tuning.gd | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_dash_edges.gd 60",
+          "exit": 1,
+          "summary": "dash_edges_60fps: 41 checks, 13 failures",
+          "failed_checks": [
+            "phase-lengths",
+            "recovery-holds-still",
+            "sprite-back-after-dash",
+            "cooldown-starts-when-dash-ends",
+            "press-after-cooldown-starts",
+            "press-during-dash-dropped",
+            "diagonal-normalised",
+            "hit-last-active-tick-continues",
+            "hit-first-recovery-tick-cancels-with-cooldown",
+            "levelup-keeps-phase-lengths-at-frame-2",
+            "levelup-keeps-phase-lengths-at-frame-9",
+            "levelup-keeps-phase-lengths-at-frame-20",
+            "real-loop-phase-ticks-at-60fps"
+          ]
+        },
+        {
+          "suite": "test_courier_states.gd 60",
+          "exit": 1,
+          "summary": "courier_states: 9 checks, 1 failures",
+          "failed_checks": [
+            "tuning-phase-table"
+          ]
+        }
+      ],
+      "caught": true
+    },
+    {
+      "mutation": "dash-invincible-while-active",
+      "file": "godot/features/player/player.gd",
+      "applied": true,
+      "diff": "godot/features/player/player.gd | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_dash_edges.gd 60",
+          "exit": 1,
+          "summary": "dash_edges_60fps: 41 checks, 4 failures",
+          "failed_checks": [
+            "hit-first-active-tick-continues",
+            "not-invincible-during-active",
+            "hit-last-active-tick-continues",
+            "death-during-dash-shows-defeat"
+          ]
+        }
+      ],
+      "caught": true
+    }
+  ],
+  "all_caught": true
+}
