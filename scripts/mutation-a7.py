@@ -12,7 +12,7 @@ import tempfile
 from pathlib import Path
 
 GODOT = "/Applications/Godot.app/Contents/MacOS/Godot"
-LIB = "godot/features/player/courier_clips.tres"
+LIB = "godot/animations/courier_clips.tres"
 TUNING = "godot/features/tuning.gd"
 
 # (id, file, old text, new text, suites that must fail). Key times follow dash phase table r1 (boundaries 0/4/14/20).

@@ -5,7 +5,7 @@ extends "res://tests/harness.gd"
 ## regions, pivots and rest pose against the sheet; the clock mode; and that no Godot 3 name slipped in.
 ## The expected values below are copied from the brief, not imported from the builder.
 const SCENE := "res://features/player/courier_visual.tscn"
-const LIBRARY := "res://features/player/courier_clips.tres"
+const LIBRARY := "res://animations/courier_clips.tres"
 const SHEET := "res://assets/art/pc_sheet.png"
 const FPS := 60.0
 const ORIGIN := Vector2(16, 23)

@@ -6,7 +6,7 @@ extends SceneTree
 
 const SHEET := "res://assets/art/pc_sheet.png"
 const SCENE := "res://features/player/courier_visual.tscn"
-const LIBRARY := "res://features/player/courier_clips.tres"
+const LIBRARY := "res://animations/courier_clips.tres"
 const FPS := 60.0
 const HFRAMES := 10
 const VFRAMES := 1
