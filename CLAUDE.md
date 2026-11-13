@@ -1,79 +1,98 @@
 @AGENTS.md
 
 # Project context
-
-## Engine and renderer
-- Godot 4.7 (`godot/project.godot:15`); the exact build is 4.7.2.stable.official.ed1daf0bf (`README.md:17`).
-  Use Godot 4 class and property names for 4.7 only. Godot 3 names load without complaint and do nothing:
-  `Animation.loop` (4.7: `loop_mode`), `playback_speed` (4.7: `speed_scale`), `AnimatedSprite.frames` /
-  `playing = true` (4.7: `AnimatedSprite2D.sprite_frames` / `play()`). If unsure a property exists in 4.7, say so.
-- Renderer: `gl_compatibility` for desktop and mobile (`godot/project.godot:34-35`).
-  The 2D canvas uses nearest filtering (`godot/project.godot:33`). The viewport is 640 x 360, shown at 1280 x 720.
-
-## Main scene
-- `res://game/main.tscn` (`godot/project.godot:14`): one `Node2D` named Main with
-  `res://game/session.gd` attached. The session builds everything in code, with no child scenes.
-- The simulation is `session.tick()`, called once per physics frame from `_physics_process` while the run state is
-  PLAYING, at `Tuning.TICK_HZ = 60` (`godot/features/tuning.gd:4`). Tests set `test_mode` and call `step_ticks(n)`.
-
-## The animated object: the courier (player)
-- Created in code: `PlayerScript.new()` in `session.gd`, script `godot/features/player/player.gd` (`Node2D`).
-- Today it draws itself in `_draw()` from the 32 px cells of `res://assets/art/pc_sheet.png`, picking the cell
-  from `pose` (`POSES`, `choose_pose()`); without the sheet it draws a placeholder.
-- `player.material` holds the hurt-tint `ShaderMaterial` (`godot/effects/hurt_tint_presentation.gd`).
-- Level-up cards live in `godot/features/progression/progression.gd` (`CARD_TEXT`, `eligible_cards()`,
-  `apply()`); `session.choose_card()` applies the courier-side effects.
-- Input actions are created in `session._ensure_inputs()`; one-shot presses are handled in
-  `session._unhandled_input()`. Movement is read with `Input.get_vector` in `_physics_process`.
+- Engine: Godot 4.7 (`godot/project.godot:15`), build 4.7.2.stable.official.ed1daf0bf (`README.md:17`).
+  Renderer `gl_compatibility` for desktop and mobile (`godot/project.godot:34-35`); nearest canvas filter
+  (`godot/project.godot:33`); viewport 640 x 360 shown at 1280 x 720 (`godot/project.godot:19-22`).
+- Main scene `res://game/main.tscn` (`godot/project.godot:14`). The session builds the world in code and creates the
+  courier with `PlayerScript.new()` (`godot/game/session.gd:66`). The simulation is `tick()` (`godot/game/session.gd:125`),
+  called from `_physics_process` (`godot/game/session.gd:115`) while the run is PLAYING, at `TICK_HZ = 60`
+  (`godot/features/tuning.gd:4`).
+- The player's state machine is in `godot/features/player/player.gd`: visual states `STATES` (`:22`), the dash phase
+  table `DASH_TRANSITIONS` (`:24`), `current_state()` (`:175`), `clip_and_time()` (`:198`), `_show()` (`:211`), the dash
+  step (`:133`) and hits (`:226`). Dash timings are `DASH_*` in `godot/features/tuning.gd:20-24`.
+- Both clips appear in `res://features/player/courier_visual.tscn`, which `player.gd:57` instances under the courier.
+  Clip resources: `res://animations/courier_clips.tres`, saved by the headless builder
+  `godot/features/player/build_courier_visual.gd`.
+  - `walk` (cycle): Sprite2D with an AnimationPlayer frame track on `Body` (`courier_visual.tscn:9`), sheet
+    `res://assets/art/pc_sheet.png` (`courier_visual.tscn:3`); clip at `courier_clips.tres:387`.
+  - `dash` (committing action): cutout rig `Rig` > `Legs`, `Hips` > `Coat`, `Chest` > `Arm`, `Neck` > `Head`
+    (`courier_visual.tscn:17-57`); clip at `courier_clips.tres:43`.
+  - One AnimationPlayer (`courier_visual.tscn:65`) with `callback_mode_process = 2`, manual (`courier_visual.tscn:66`).
+- Dash input: action `dash` on Shift / Space / B (`godot/game/session.gd:415`), handled in PLAYING
+  (`godot/game/session.gd:381`); unlocked by the `dash` card (`godot/features/progression/progression.gd:23,94,137`,
+  `godot/game/session.gd:350`).
+- The hurt tint puts a ShaderMaterial on the courier (`godot/effects/hurt_tint_presentation.gd:17`); every node of the
+  visual uses its parent's material.
 
 ## Tests, all through `scripts/run-test.sh`
-`./scripts/run-test.sh <test-file.gd> <fps|realtime> [timeout-seconds]`: the file sits in `godot/tests/`; a number
-adds `--fixed-fps N`; timeout 120 s; log in `logs/<test>_<tag>.log`; exit 1 on `SHADER ERROR`/`SCRIPT ERROR` and on
-resource-load failures (`Cannot open file`, `Failed loading resource`, `Resource file not found`, `referenced non-existent
-resource`), which otherwise exit 0. `scripts/check-run-test.sh` checks the wrapper itself.
-It does not import, so after any new asset or scene run
+`./scripts/run-test.sh <test-file.gd> <fps|realtime> [timeout-seconds]`; the file is in `godot/tests/`; a number adds
+`--fixed-fps N`; log in `logs/<test>_<tag>.log`. Exit 1 on a failing suite, a hang (124), `SHADER ERROR`,
+`SCRIPT ERROR` or a resource-load failure such as `Failed loading resource` (`scripts/run-test.sh:37-39`);
+`scripts/check-run-test.sh` checks the wrapper itself. Import first after a clone or a new asset:
 `/Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import`.
-Baseline (A7, `9ccf078`, after an import from an empty cache): `evidence/assignment-7/baseline/RUN.txt`.
-`test_audio.gd realtime`; at `60`: `test_logic`, `test_gameplay`, `test_defeat_sparks_config`,
-`test_extra_particles_config`, `test_particles_state`, `test_particles_edges`, `test_a3_assets`, `test_lantern_gate`,
-`test_a3_camera`, `test_materials`; `test_hurt_tint` at 30, 60 and 144. Each extends `res://tests/harness.gd`,
-writes `evidence/<suite>.json` and quits 1 on any failure or an unfinished `run()`.
-Inject input with `Input.parse_input_event()`. `Input.action_press()` never reaches `_input` or `_unhandled_input`.
-Parsed events are delivered on the next process frame, so await `process_frame` before stepping.
+- `test_audio.gd realtime`; at `60`: `test_logic`, `test_gameplay`, `test_defeat_sparks_config`,
+  `test_extra_particles_config`, `test_particles_state`, `test_particles_edges`, `test_a3_assets`, `test_lantern_gate`,
+  `test_a3_camera`, `test_materials`; `test_hurt_tint` at 30, 60 and 144 (baseline:
+  `evidence/assignment-7/baseline/RUN.txt`).
+- A7: `test_courier_pin`, `test_courier_pin_input`, `test_courier_clips`, `test_courier_states` at 60;
+  `test_dash_edges` at 30, 60 and 144.
+- Inject input with `Input.parse_input_event()`; `Input.action_press()` never reaches `_input` or `_unhandled_input`.
 
 # Current change
 @CHANGE-BRIEF.md
 
+# Ownership
+- Bao writes CHANGE-BRIEF.md, the phase table, the cycle spec, every prediction and every verdict, approves every
+  change before it is made, and runs every capture. An agent never records a human check as done.
+- Bao hand-wrote the shaders. An agent never edits, creates, renames or deletes any file in `godot/shaders/`,
+  `.uid` files included.
+- Clips live as resources in `godot/animations/` or in the scene that owns them, and are never built in code at
+  runtime. A headless tool script may build a clip and save it with `ResourceSaver.save()`; the game loads the file.
+
+# One authority
+Exactly one node writes to each animated node. Never add a second writer to a node that already has one.
+- `Body`, `Rig` and every rig part (`courier_visual.tscn`): only the AnimationPlayer, through its clips.
+- The AnimationPlayer: only `player.gd` `_show()` calls `play()` and `seek()` (`player.gd:217-218`).
+- `CourierVisual.scale.x` (facing): only `player.gd` `_show()` (`player.gd:215`); no clip keys it.
+- The courier's `modulate` (blink): only `player.gd:112`. Its `material`: only the hurt-tint presentation.
+
+# Godot 4 names
+Use Godot 4 class and property names for 4.7 only: `Animation.loop_mode`, not a boolean `loop`;
+`AnimationMixer.speed_scale`, not `playback_speed`; `AnimatedSprite2D` with `sprite_frames` and `play()`, not
+`AnimatedSprite`, `frames` or `playing`. If unsure a property exists in 4.7, say so instead of guessing.
+
 # Sessions and git
 - Git: read-only commands (`status`, `diff`, `log`, `show`) at any time. Commit only on the assignment branch, one
   completed step per commit. Never push, tag, reset, rebase, force or rewrite history; Bao pushes.
-- After every agent session: a headless `claude -p --output-format stream-json` run ends with one `result` event; read
-  it and stop if `is_error` is true or `subtype` is not `success`. A desktop session has no `result` event, so run
-  `python3 -I scripts/session_check_a7.py <session.jsonl> <base> <out.json>` (tool errors, Stop-hook errors, files
-  changed, any out-of-scope path) and read `git diff --stat <base>..HEAD` and `git status --short` before going on.
-- Resuming an interrupted session: first `git status --short` and `git log --oneline -10`. Uncommitted changes are
-  unreviewed: read `git diff`, then keep them or restore named files (never `git checkout .` or `git reset --hard`).
-  Find the last finished step in TEST-REPORT ("Order of work") and re-run that step's suites through
-  `scripts/run-test.sh` before the next step. Do not redo a step that has a commit, and do not re-run a builder or a
-  capture that overwrites committed evidence without saying so first.
-
-# Ownership
-Bao chose the dash and its rules. Bao plays the build and gives every keep or change verdict, confirms or
-changes the phase table, and watches the film. An agent never records a human check as done.
-Bao hand-wrote `hurt_tint.gdshader` and `cobblestone_surface.gdshader`. An agent never edits, creates, renames or
-deletes any file in `godot/shaders/`, `.uid` files included; it may read them and reference them.
+- After every agent session: read the final `result` event of a `claude -p --output-format stream-json` run (stop
+  if `is_error` or not `success`); a desktop session has none, so run `python3 -I scripts/session_check_a7.py
+  <session.jsonl> <base> <out.json>`. Then `git diff --stat godot/shaders/` must print nothing, and read
+  `git diff scripts/run-test.sh`.
+- Resuming an interrupted session: do not continue it. Re-run the tests to establish what is true, read
+  `git status --short`, `git diff` and `git log --oneline -10`, and start a new session that states what is done and
+  what is not. Bao records the interruption in FRICTIONAL.md.
 
 # Headless facts
-Confirmed on this Mac, Godot 4.7.2 (`godot/tests/probe_headless_facts.gd`, `evidence/assignment-5/headless-facts/`):
-- A headless run draws nothing: `RenderingServer.frame_post_draw` fired 0 times in 288 frames. Frame strips and
-  pixel checks need a window.
-- `--fixed-fps N` keeps 60 physics ticks per game second: 1 per frame at 60, 2 at 30, 0 or 1 at 144.
-  A headless run says nothing about colour or look.
+Confirmed on this Mac, Godot 4.7.2 (`evidence/assignment-7/headless-facts/probe.log`):
+- A headless run advances clips and reads their structure. It draws nothing (`frame_post_draw` 0 times in 30 frames),
+  so whether the motion reads is not observable here.
+- Key times are 32-bit floats (8/60 reads back as 0.13333334); compare them with a tolerance.
+- `value_track_get_update_mode` applies only to value tracks; on a 3D position track it errors and answers
+  `UPDATE_CONTINUOUS`.
+- Frame strips come from a windowed Movie Maker run, which Bao starts.
+- `--fixed-fps N` keeps 60 physics ticks per game second: 2 per frame at 30, 1 at 60, 0 or 1 at 144
+  (`evidence/assignment-5/headless-facts/`).
 
 # Out of scope
-- Enemies, weapons, pickups, the run state machine in `game_state.gd`, movement speed, health, i-frames, knockback,
-  progression numbers and the tick rate. The dash adds rules; it changes none of these.
-- Every file in `godot/shaders/`, the particle effects, audio, and the A3 and A5 3D scenes.
-- `pc_sheet.png` and every generated asset. No `.import` file written by hand and no invented UID.
-- Existing tests and their expectations. New checks go in new test files. An existing pin changes only in its own
-  re-pin commit, after play, with the old and new values recorded.
+- Collision, movement speed, health, i-frames, knockback, progression numbers, the tick rate, enemies, weapons,
+  pickups and the run state machine (`godot/game/game_state.gd`). The dash adds rules; it changes none of these.
+- `godot/shaders/`, the Assignment 6 effects (`godot/effects/`), audio, the A3 and A5 scenes.
+- `pc_sheet.png` as committed, and every generated asset. No hand-written `.import` file, no invented UID.
+- Existing tests and pins. New checks go in new files; a pin changes only in its own commit, with the reason.
+- Presentation code may read game state; it never writes it.
+
+# Unconfirmed
+- The course sprite set's path and licence: the assignment page leaves both as placeholders; this project uses its own
+  Assignment 2 sheet instead.
+- No reference dash has been measured for the phase table.

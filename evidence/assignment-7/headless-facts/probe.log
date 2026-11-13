@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "t->type != TYPE_VALUE" is true. Returning: UPDATE_CONTINUOUS
+   at: value_track_get_update_mode (scene/resources/animation.cpp:2756)
+   GDScript backtrace (most recent call first):
+       [0] _main (res://tests/probe_headless_a7.gd:43)
+PROBE {"display_driver":"headless","engine":"4.7.2-stable (official)","frame_post_draw_in_30_frames":0,"headless_advances_clip":{"frame_after_9_ticks":3},"key_time_round_trip":{"abs_diff":0.00000000695387522564594,"equal":false,"read":0.133333340287209,"written":0.133333333333333},"update_mode_on_position_3d_track":{"UPDATE_CONTINUOUS":0,"returned":0}}
