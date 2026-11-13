@@ -6,7 +6,8 @@ extends SceneTree
 ##     --write-movie <dir>/movie/frame.png --script res://tests/capture_courier.gd -- --scenario <name> --out <dir>
 ## Disclosed fixtures, applied after the scene loads: no enemy spawns; the run starts with seed 1 (start_run(1));
 ## the particle presentation is hidden for --scenario pin, whose crops are compared pixel for pixel before and
-## after a change; the courier's collision circle is shown (F3 state) so --debug-collisions has something to show.
+## after a change; the courier's collision circle is shown (F3 state) so --debug-collisions has something to show;
+## --scenario dash unlocks the dash directly (progression apply + dash_unlocked) instead of through a level-up.
 ## Scenarios: pin (walk, stop, walk left, one wraith hit, level-up), walk (walk cycle), dash (unlock and dashes).
 ## The game never loads this script.
 const GS = preload("res://game/game_state.gd")
