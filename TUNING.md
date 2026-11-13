@@ -118,3 +118,35 @@ Running-game keep/revert verdict: pending.
 ## 29 October 2026 — Effect A scale trial r1 kept
 
 After playing the game with `scale_amount_max` 1.8, the student replied “保留 更清晰了” (keep it; clearer). Verdict: keep r1. This running-game verdict is separate from the fixture comparison above, which measured a modest increase in lit spark area without a larger footprint or longer fade. No further A setting change is made. This completes A's observation-driven revision cycle: r0 strip, reading, prediction, approval, one-value edit, r1 strip, comparison and running-game verdict.
+
+# Assignment 7 — dash timing (phase table)
+
+Strips are fixture captures. Claude's or Codex's reading of a strip is a claim; the verdict is Bao's, in the running game.
+
+## r0 → r1, 13 November 2026: 6 / 10 / 12 → 4 / 10 / 6 frames at 60 per second
+
+| | |
+|---|---|
+| What Bao saw in play | not recorded |
+| Reading | Codex's review of the r0 strips, not Bao's observation: in r0 the courier stood still in recovery (12 frames) for longer than it moved (10), while hits still land in recovery |
+| Change | `DASH_STARTUP_TICKS` 6 → 4, `DASH_RECOVERY_TICKS` 12 → 6; keys retimed to the boundaries 0 / 4 / 14 / 20 (CHANGE-BRIEF revision r1, `25603f8`; change `39bbf18`) |
+| Prediction | none recorded |
+| Strips | r0: `captures/assignment-7/dash/strip-dash-1.png`, `captures/assignment-7/clip-strips/strip-dash.png`; r1: `captures/assignment-7/dash-r1/strip-dash-1.png`, `captures/assignment-7/clip-strips-r1/strip-dash.png` (60 fps game captures and 8x clip frames, run by Claude Code from the terminal) |
+| Comparison | the same poses in the same order, startup and recovery compressed (Claude's reading) |
+| Bao's verdict | "Keep 4/10/6." |
+
+This revision does not count as observation-driven: it came from a reading, not from something Bao saw in play.
+
+## r1 → r2 (Bao) — to be driven by something seen in the running game
+
+Run `scripts/capture-strip.command watch dash` and play `scripts/play-dash.command` (and `slow`). Write the first verdict here before asking Claude to read anything.
+
+| | |
+|---|---|
+| What Bao saw in play, at normal speed and at 0.25 | |
+| Claude's reading of `captures/dash/r1/` | |
+| Change (phase table or one key's transition) | |
+| Claude's prediction for r2 | |
+| Strips | `captures/dash/r1/`, `captures/dash/r2/` (`scripts/capture-strip.command dash r1`, then `dash r2`) |
+| Claude's comparison | |
+| Bao's verdict | |
