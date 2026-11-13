@@ -1,6 +1,6 @@
 # walker-lanternfall-bao-x — Lanternfall
 
-**CSYE 7270 · Assignments 2, 3, 5 and 6 · Bao Xing**
+**CSYE 7270 · Assignments 2, 3, 5, 6 and 7 · Bao Xing**
 
 A lamp-headed courier is trapped in a fog-bound midnight market, and the light on his shoulders is his only weapon. Keep moving, grow the light, and survive three minutes until the fog lifts.
 
@@ -24,6 +24,7 @@ A **blank Godot 4.7.2 project**. The protagonist concept is carried over from my
 |---|---|---|
 | Start | Enter / Space | A |
 | Move | WASD / arrow keys | left stick |
+| Dash (after the Courier's Dash card) | Shift / Space | B |
 | Pick a level-up card | 1 / 2 / 3, or ← → + Enter | d-pad + A |
 | Pause / resume | Esc / P | Start |
 | Restart | R | Y |
@@ -232,3 +233,44 @@ The ten earlier suites run as listed in `CLAUDE.md`. Windowed captures: `godot/t
 - After the editor conversion, the scratch scene's textures load from `.godot/imported/` rather than the source PNGs; it is a study scene only.
 
 **Film:** “Lanternfall, Shaded” (godot-gamedev + walker, source revision `4246f94`): `youtube/claude-liam-walker-lanternfall-bao-x-shaders-gamedev/`. The rendered file `claude-liam-walker-lanternfall-bao-x-shaders-gamedev.mp4` (3840 × 2160, 10:57, SHA-256 `c6f001c100758306c45d279ee52ed207d43900db72e001b7328d1fa99e50a1b7`) is not in git. Film link: https://drive.google.com/file/d/1OrMAd0rjbFPE_YxJnqdJIA_WRuu7EQIF/view (opened without signing in on 2026-11-01; Drive's player lists 10:57). Bao watched and listened to the whole final export on 2026-11-01.
+
+## Assignment 7 — animation with Claude and Godot (13 November 2026)
+
+Engine and renderer as above: Godot 4.7.2, GL Compatibility. Built on this repository after `a5` (branch `assignment-7`).
+
+**What it adds**
+
+- **Two clips on one AnimationPlayer**, both driven by the courier's state machine in `godot/features/player/player.gd`:
+  - `walk`, a looping **sprite** cycle: a Sprite2D slicing `pc_sheet.png` (10 x 1 cells of 32 px) with a discrete frame track, cells 2 and 3, 8 ticks each.
+  - `dash`, a one-shot **cutout rig**: head, arm, coat and legs cut as region rectangles of cell 2, under Hips, Chest and Neck pivots, keyed on position and rotation at every phase boundary (startup 6, active 10, recovery 12 ticks).
+- `godot/features/player/build_courier_visual.gd` builds both from the brief and saves `courier_visual.tscn` and `courier_clips.tres` with ResourceSaver; the game loads the saved files.
+- **The dash**, as Bao specified it: unlocked by a new level-up card, Courier's Dash; Shift / Space / B; 55 px at 330 px/s; not invincible; a 60-tick gap after every dash.
+- The courier used to draw itself in `_draw()`; it now shows the same cells through the Sprite2D. The pin and a Movie Maker replay show the switch changed nothing on screen.
+
+**Run it**
+
+- Play normally: the card appears among the level-up offers.
+- Try the dash straight away: `scripts/play-dash.command` (the dash is unlocked at the start of every run), or `scripts/play-dash.command slow` for `--time-scale 0.25`.
+
+**Checks** (all through `scripts/run-test.sh`; results in the A7 section of [TEST-REPORT.md](TEST-REPORT.md))
+
+```bash
+./scripts/run-test.sh test_courier_pin.gd 60      # pin of what the courier showed before the change
+./scripts/run-test.sh test_courier_clips.gd 60    # read-back of every clip against the brief
+./scripts/run-test.sh test_courier_states.gd 60   # state machine structure
+./scripts/run-test.sh test_dash_edges.gd 30       # dash rules at every phase boundary; also at 60 and 144
+python3 -I scripts/mutation-a7.py evidence/assignment-7/mutations/mutations.json
+```
+
+Movie Maker replays: `godot/tests/capture_courier.gd` (`--scenario pin|walk|dash`, command in its header), clip strips: `godot/tests/capture_courier_clip_strip.gd`, strips and pixel comparison: `scripts/courier_frames.py`.
+
+**Read**
+
+[CHANGE-BRIEF.md](CHANGE-BRIEF.md) (the A7 contract and its revisions), [CLAUDE.md](CLAUDE.md), [TEST-REPORT.md](TEST-REPORT.md), [CONTRIBUTIONS-assignment-7.md](CONTRIBUTIONS-assignment-7.md), [SUBMISSION-assignment-7.md](SUBMISSION-assignment-7.md).
+
+**Known limitations**
+
+- The rig is cut from one 32 px cell, so at the strongest lean (active frames) a gap opens between the coat and the legs in the clip strip.
+- The phase table is Claude's draft. Bao has not yet measured a reference dash or played the build.
+- Adding the card changes which cards a seeded run is offered; no existing test pinned the offers.
+- No dash sound and no cooldown display on the HUD.

@@ -690,3 +690,101 @@ Set by `tools/a5/set_texture_imports.py` on the `.import` files Godot generated 
 ### What a headless run cannot show
 
 Any colour, brightness or readability on screen; whether the stones read as raised; the look of the sweep; what the GPU allocates. Rendered PNG inspection and the reported playtest above provide separate visual evidence; neither is inferred from a headless pass.
+
+## Assignment 7 — animation with Claude and Godot (13 November 2026)
+
+Godot 4.7.2.stable.official.ed1daf0bf, renderer GL Compatibility (driver `opengl3`, Apple M4), macOS 26. Branch `assignment-7`, started from `9ccf078` (the `a5` commit). Every headless run goes through `scripts/run-test.sh`. The contract is [CHANGE-BRIEF.md](CHANGE-BRIEF.md). Rows marked HUMAN CHECK are Bao's; none has been done yet.
+
+### Routes (named per clip)
+
+| Clip | Kind | Route | Driven by |
+|---|---|---|---|
+| `walk` | looping sprite cycle | Sprite2D with an AnimationPlayer frame track (`Body:frame`, discrete, nearest) | the courier's state machine (`player.gd`) |
+| `dash` | committing action, startup / active / recovery | cutout rig baked from code (`build_courier_visual.gd`, saved with `ResourceSaver.save()` to `courier_visual.tscn` and `courier_clips.tres`) | the courier's state machine (`player.gd`) |
+
+Both clips sit in one AnimationPlayer with `callback_mode_process = ANIMATION_CALLBACK_MODE_PROCESS_MANUAL`; `player.gd` is the only code that calls `play()` or `seek()` on it, once per simulation tick and on every override. Nothing advances on the idle or physics clock by itself; no AnimatedSprite2D, AnimationTree or method track; no gameplay fact is keyed in a clip. The dash press arrives in `session._unhandled_input` and is consumed by the next `player.step()`.
+
+### Order of work
+
+| Step | Commit | What |
+|---|---|---|
+| Brief | `72237fd` | CHANGE-BRIEF (A7) and CLAUDE.md committed before any code; baseline |
+| Pin | `164d336` | `test_courier_pin.gd` and a Movie Maker replay of its timeline, on unchanged code |
+| Make the clips | `7decc27` | builder, saved scene and library, read-back test; not wired |
+| Wire, no behaviour change | `77d193e` | `player.gd` hosts the visual; pin unchanged; replay identical |
+| Dash tests first | `9a2c230` | structure and edge suites, failing on `77d193e` |
+| The dash | `6b5edab` | tuning, card, input, phases, interrupts; all suites pass |
+| Mutations | `09f2add` | eight mutations in `git worktree`s; Godot 3 names probe |
+
+### Results
+
+| Check | Evidence | Result |
+|---|---|---|
+| Baseline, before any change | `evidence/assignment-7/baseline/RUN.txt` (import from an empty cache) | 14 runs, all exit 0: 459 checks over 12 suites, 543 assertions counting `test_hurt_tint` at 30, 60 and 144 |
+| Pin on unchanged code | `evidence/assignment-7/pin/test_courier_pin_60fps.log` | 23 / 0: the cell, mirroring and pose tick by tick for walking, stopping, walking left, the facing dead zone, a hit, a level-up, the evolution, defeat, victory, restart and the missing-art placeholder; the tint path |
+| Pin after the refactor and after the dash | `evidence/assignment-7/after-refactor/`, `evidence/assignment-7/after-dash/` | 23 / 0 both times, test file unchanged |
+| Pixel pin, refactor | `captures/assignment-7/pin-after/compare.json` | the 216 Movie Maker frames of the pin timeline are identical to `pin-before`, whole frame and courier crop; the 216 log lines match |
+| Pixel pin, dash added (still locked) | `captures/assignment-7/pin-after-dash/compare.json` | identical through frame 185. From frame 186 the level-up shows different cards: the seeded offer changed because the pool now holds the dash card, and the card picked with "1" raised max HP (HP 8 → 12). Expected from the brief; no existing test pins the offers |
+| Read-back | `evidence/courier_clips.json` | 73 / 0: every track resolves (the assignment's `track_problems`); frame keys, times and values for all nine sprite clips; discrete updates; every key below `hframes * vframes` (10); loop modes; walk seam (last key 3 ≠ first key 2; gap to the end 8 frames = key interval); dash keys, values and transitions per phase; a key at 0, 6, 16 and 28 on every continuous track; region rectangles cover the cell's opaque pixels once; rest pose and pivots on the cell; manual clock; no autoplay; no Godot 3 names |
+| State machine structure | `evidence/courier_states.json` | 9 / 0: priority `override > dash > hurt > cast > walk > idle`; a clip for every state and override; the dash transition table; Tuning's phase ticks equal the clip's boundary keys; one animation driver; no other script plays, seeks or sets the frame; clip and cell follow the pose for 82 ticks of walking, cast, a hit and a level-up |
+| Dash edges | `evidence/dash_edges_30fps.json`, `_60fps`, `_144fps` | 41 / 0 at each rate (below) |
+| Tests first | `evidence/assignment-7/test-first/` | on `77d193e`: structure 3 failures of 9, edges 19 failures of 20 (the run stops when the missing card is applied) |
+| Regression after the dash | `evidence/assignment-7/after-dash/RUN.txt` | the 14 baseline runs, same counts, all exit 0 |
+| Mutations | `evidence/assignment-7/mutations/mutations.json` | 8 of 8 caught (below) |
+
+Dash edges, through `Input.parse_input_event` and real contact with a wraith placed on the courier: a press while locked does nothing; the card is offered while locked and unlocks the dash; the press is a request until the next tick; phases 6 / 10 / 12 ticks; startup and recovery hold still with input held; 5.5 px per active tick, 55 px; walking resumes after; the rig shows for all 28 ticks and the sprite returns after; the cooldown starts at 60 when the dash ends; a press after 59 cooldown ticks is dropped and a press after 60 starts a dash; a press during a dash is dropped and not queued (checked past the cooldown); no input dashes along the facing, input during the dash does not steer it, and a diagonal is normalised; a hit on the last startup tick cancels with no cooldown, shows hurt, and allows a new dash; a hit on the first or last active tick lands (damage, i-frames) and the dash continues, keeping the dash pose; a hit on the first recovery tick cancels with the cooldown started; a level-up at startup frame 2, active frame 9 and recovery frame 20 freezes the dash with the run, shows the level-up cell, and resumes with the phase lengths unchanged; death during the dash shows defeat; R restarts with the dash locked and cleared; the arena edge and a market stall stop the dash; the beam keeps firing and the dash pose outranks the cast pose; `Input.action_press("dash")` never reaches `_unhandled_input`; every phase change seen is in the table; and in the real physics loop, with `move_right` held and Shift parsed, a recorder after the session logs 60 consecutive ticks with 6 / 10 / 12 ticks and 55 px at 30, 60 and 144 fps.
+
+Mutations, each in its own detached `git worktree` of `6a340da` with an import from an empty cache:
+
+| Mutation | Caught by |
+|---|---|
+| walk frame track set to continuous | `walk-discrete` only: with nearest interpolation and adjacent cells 2 and 3 the cells played back are unchanged |
+| `Rig/Hips:rotation` renamed `Rig/Hip:rotation` | `every-track-resolves`, dash keys, boundaries, spacing, playback |
+| walk `loop_mode` removed | `walk-length-and-loop` |
+| walk `loop_mode = 1` replaced by Godot 3 `loop = true` | `no-godot3-names` only (the clip still loops, see the probe) |
+| walk key 3 changed to 10, past the last cell | frame keys, frames inside the sheet, playback |
+| dash Hips key at frame 6 moved to frame 7 | dash keys, boundaries, playback; `clip-boundaries-match-tuning` |
+| `DASH_ACTIVE_TICKS` 10 → 11 | 13 dash edges; `tuning-phase-table` |
+| hits ignored during the active phase | the two active-hit edges, `not-invincible-during-active`, death during the dash |
+
+Godot 3 names in 4.7.2 (`godot/tests/probe_godot3_names.gd`, `evidence/assignment-7/godot3-names/probe.json`): setting `loop = true` on an Animation, from script or in a `.tres`, gives `loop_mode = 1` (linear), so in this version it does loop; `playback_speed = 2` on an AnimationPlayer leaves `speed_scale` at 1; on an AnimatedSprite2D `frames` is accepted as `sprite_frames`, and `playing = true` does not play. A continuous frame track with linear interpolation shows cells 2,2,2,2,3,3,3,3,3 between keys 2 and 3 at 0 and 8 frames (it switches four ticks early) and sweeps 2,3,3,4,4,5,5,5,6 between 2 and 6.
+
+Registration (measured from the PNG): the walk cells share the foot line y = 31; coat centroids (16.2, 22.3) and (16.3, 22.5); lamp centroids (20.0, 14.8) and (20.2, 14.7). Drift under one pixel; no offset track.
+
+### Frame strips (Movie Maker, 60 fps, `--debug-collisions`; movie frame N is log line N)
+
+| Capture | Files |
+|---|---|
+| Pin timeline, before and after | `captures/assignment-7/pin-before/`, `pin-after/`, `pin-after-dash/` (`frames.log`, `compare.json`, strips) |
+| Walk cycle, two cycles | `captures/assignment-7/walk/strip-walk-2cycles.png`, `frames.log` |
+| Dash, the first dash, a press dropped in the cooldown, the second dash | `captures/assignment-7/dash/strip-dash-1.png`, `strip-dash-2.png`, `frames.log` |
+| Each clip frame alone, 8x on grey | `captures/assignment-7/clip-strips/strip-walk.png`, `strip-dash.png` |
+
+Claude's reading of the strips (a claim, not a human check): the walk alternates cells 2 and 3 every 8 ticks with no visible jump between them. In the dash, startup shows a small dip and backward lean. Active shows the body lifted a pixel and leaning about 20° forward with the lamp trailing. Recovery settles back with a slight overshoot to the rest pose, which is cell 2. At the strongest lean the coat separates from the legs. In play the courier is small and dark on a dark ground, so the lean is subtle at 1280 x 720.
+
+### HUMAN CHECKS — Bao, not yet done
+
+| Check | How | Result |
+|---|---|---|
+| The walk cycle reads at normal speed and at 0.25 | `scripts/play-dash.command`, then `scripts/play-dash.command slow` | pending |
+| The dash reads: anticipation, commitment, settle | same | pending |
+| The 60-tick gap between dashes is felt | same | pending |
+| Registration drift or the coat–legs gap visible in play | same | pending |
+| The phase table: keep, or change from a measured reference | measure a reference dash; then the tuning prompt below | pending |
+| The film watched and listened to in full | — | pending |
+
+The tuning prompt, filled in for this project, for one change after play:
+
+```text
+Read CLAUDE.md first. The current capture is in captures/assignment-7/dash/ and its per-frame log is
+captures/assignment-7/dash/frames.log. What I saw playing at normal speed and at --time-scale 0.25:
+<what you saw, in visual terms>.
+
+Read the frames at each phase boundary in CHANGE-BRIEF.md (0, 6, 16, 28), with the log lines for the
+same frames, and say where the motion and the table disagree. Then propose one change, to the phase
+table or to one key's transition. Before editing, say what the capture should show afterward. After I
+approve, make only that change, update the read-back test's expected values, and stop so I can
+recapture and play. Do not commit.
+```
+
+The tuning prompt changes a clip and its read-back expectations together. That is allowed because the read-back pins the clip's structure, not the game's behaviour. A phase-length change also changes the dash rules, so `test_dash_edges.gd` would be re-pinned in its own commit, after play.

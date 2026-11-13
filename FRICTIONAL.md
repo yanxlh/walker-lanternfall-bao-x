@@ -483,3 +483,10 @@ The language notes in my own words, with every line reference pointing at a real
 - A fresh clone of `8d92511`: import from an empty cache with no errors, 332 earlier checks, `test_hurt_tint` 28/28 at 30, 60 and 144 fps, `test_materials` 127/127. The repository audit found 0 problems.
 - Trace: `7aeb20f` film package · `8d92511` film link · `a3b2b93` mutation JSON.
 
+
+## 2026-11-13 (Fri) — Assignment 7: the dash
+
+- The committing action is a dash. My rules: "Add a dash. The dash is not invincible, but there is a time gap between every two dashes, and the dash has to be obtained through an in-game level-up card."
+- Trace: `72237fd` brief · `164d336` pin · `7decc27` clips · `77d193e` wiring · `9a2c230` tests first · `6b5edab` the dash · `09f2add` mutations.
+
+**Still to do:** play it, at normal speed and at 0.25, and decide whether the phase table stays.

@@ -149,3 +149,7 @@ The walking pose was first made with FLUX quantized to 4-bit at load; the re-run
 - **Claude Code (Claude Opus 5.5):** CLAUDE.md draft (scoped `claude -p`, `8d5b348`) and review (`8cd444a`); the hurt-tint driver and `test_hurt_tint.gd` (scoped `claude -p` plan and implementation sessions after my approval, `872aac6`); the material audit `godot/MATERIALS.md` and `test_materials.gd` (scoped `claude -p`, `52ee2db`) and its review; the import-settings script, the material and scene builder, the probes, both capture tools (two of them written by Claude subagents and reviewed in the main session), and the record files. Prompts and transcripts are in `evidence/assignment-5/agent/`.
 - **My decisions and checks:** the hurt state, every line of the brief's design, predictions and short answers, the three shader mutations (run by me in the terminal), the approval of each agent plan, the inherited A5 scene, the PlaneMesh floor, keeping the A3 ambient source, the editor conversion, LANGUAGE-NOTES and every HUMAN CHECK in TEST-REPORT.
 - No generative model was used for Assignment 5.
+
+## Assignment 7 — animation (13 November 2026)
+
+No new asset. Both clips use `godot/assets/art/pc_sheet.png` (ART-PC-01 above, FLUX.1-schnell, Apache-2.0), unedited. The walk clip shows cells 2 and 3. The dash rig draws four region rectangles of cell 2. The scene, the clip library and the builder that writes them are code and text in this repository (`godot/features/player/`).
