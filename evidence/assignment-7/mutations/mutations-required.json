@@ -1,0 +1,309 @@
+{
+  "source_revision": "e899392",
+  "mutations": [
+    {
+      "mutation": "required-1-track-subname-broken",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 5 failures",
+          "failed_checks": [
+            "every-track-resolves",
+            "dash-keys",
+            "dash-phase-boundaries",
+            "dash-spacing",
+            "dash-played-back-at-boundaries"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "required-2-cycle-loop-mode-none",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 1 failures",
+          "failed_checks": [
+            "walk-length-and-loop"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "required-3-key-a-cell-the-sheet-lacks",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 3 failures",
+          "failed_checks": [
+            "walk-frame-keys",
+            "walk-frames-inside-sheet",
+            "walk-played-back-cells"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "required-4-reimport-from-empty-cache",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "pass",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 0,
+          "summary": "courier_clips: 83 checks, 0 failures",
+          "failed_checks": []
+        },
+        {
+          "suite": "test_courier_states.gd 60",
+          "exit": 0,
+          "summary": "courier_states: 9 checks, 0 failures",
+          "failed_checks": []
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "walk-step-left-at-default",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 1 -\n 1 file changed, 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 1 failures",
+          "failed_checks": [
+            "walk-step"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "walk-frame-track-continuous",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 1 failures",
+          "failed_checks": [
+            "walk-discrete"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "dash-track-path-renamed",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 5 failures",
+          "failed_checks": [
+            "every-track-resolves",
+            "dash-keys",
+            "dash-phase-boundaries",
+            "dash-spacing",
+            "dash-played-back-at-boundaries"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "walk-loop-mode-none",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 1 -\n 1 file changed, 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 1 failures",
+          "failed_checks": [
+            "walk-length-and-loop"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "walk-godot3-loop-name",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 1 failures",
+          "failed_checks": [
+            "no-godot3-names"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "walk-key-past-last-cell",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 3 failures",
+          "failed_checks": [
+            "walk-frame-keys",
+            "walk-frames-inside-sheet",
+            "walk-played-back-cells"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "dash-phase-key-one-frame-late",
+      "file": "godot/animations/courier_clips.tres",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/animations/courier_clips.tres | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_courier_clips.gd 60",
+          "exit": 1,
+          "summary": "courier_clips: 83 checks, 3 failures",
+          "failed_checks": [
+            "dash-keys",
+            "dash-phase-boundaries",
+            "dash-played-back-at-boundaries"
+          ]
+        },
+        {
+          "suite": "test_courier_states.gd 60",
+          "exit": 1,
+          "summary": "courier_states: 9 checks, 1 failures",
+          "failed_checks": [
+            "clip-boundaries-match-tuning"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "dash-active-one-tick-longer",
+      "file": "godot/features/tuning.gd",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/features/tuning.gd | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_dash_edges.gd 60",
+          "exit": 1,
+          "summary": "dash_edges_60fps: 51 checks, 17 failures",
+          "failed_checks": [
+            "phase-lengths",
+            "recovery-holds-still",
+            "sprite-back-after-dash",
+            "cooldown-starts-when-dash-ends",
+            "press-after-cooldown-starts",
+            "press-during-dash-dropped",
+            "diagonal-normalised",
+            "hit-last-active-tick-continues",
+            "hit-first-recovery-tick-cancels-with-cooldown",
+            "hit-before-boundary-14-at-frame-13",
+            "hit-on-boundary-14-at-frame-14",
+            "hit-after-boundary-14-at-frame-15",
+            "hit-after-boundary-20-at-frame-21",
+            "levelup-keeps-phase-lengths-at-frame-2",
+            "levelup-keeps-phase-lengths-at-frame-7",
+            "levelup-keeps-phase-lengths-at-frame-18",
+            "real-loop-phase-ticks-at-60fps"
+          ]
+        },
+        {
+          "suite": "test_courier_states.gd 60",
+          "exit": 1,
+          "summary": "courier_states: 9 checks, 1 failures",
+          "failed_checks": [
+            "tuning-phase-table"
+          ]
+        }
+      ],
+      "as_expected": true
+    },
+    {
+      "mutation": "dash-invincible-while-active",
+      "file": "godot/features/player/player.gd",
+      "expect": "fail",
+      "cache_empty_before_import": true,
+      "applied": true,
+      "diff": "godot/features/player/player.gd | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+      "runs": [
+        {
+          "suite": "test_dash_edges.gd 60",
+          "exit": 1,
+          "summary": "dash_edges_60fps: 51 checks, 7 failures",
+          "failed_checks": [
+            "hit-first-active-tick-continues",
+            "not-invincible-during-active",
+            "hit-last-active-tick-continues",
+            "hit-on-boundary-4-at-frame-4",
+            "hit-after-boundary-4-at-frame-5",
+            "hit-before-boundary-14-at-frame-13",
+            "death-during-dash-shows-defeat"
+          ]
+        }
+      ],
+      "as_expected": true
+    }
+  ],
+  "all_as_expected": true
+}

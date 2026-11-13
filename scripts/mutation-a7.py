@@ -15,8 +15,28 @@ GODOT = "/Applications/Godot.app/Contents/MacOS/Godot"
 LIB = "godot/animations/courier_clips.tres"
 TUNING = "godot/features/tuning.gd"
 
-# (id, file, old text, new text, suites that must fail). Key times follow dash phase table r1 (boundaries 0/4/14/20).
-MUTATIONS = [
+# (id, file, old text, new text, suites, expect). Key times follow dash phase table r1 (boundaries 0/4/14/20).
+# The assignment's four (Step 6) come first; the rest are extra. An empty old text means no edit; "pass" means
+# every suite must exit 0, "fail" that every suite must exit 1. Each worktree starts with no godot/.godot cache.
+REQUIRED = [
+    ("required-1-track-subname-broken", LIB,
+     'NodePath("Rig/Hips:rotation")', 'NodePath("Rig/Hips:rotaton")',
+     ["test_courier_clips.gd 60"], "fail"),
+    ("required-2-cycle-loop-mode-none", LIB,
+     "length = 0.26666666666666666\nloop_mode = 1\n", "length = 0.26666666666666666\nloop_mode = 0\n",
+     ["test_courier_clips.gd 60"], "fail"),
+    ("required-3-key-a-cell-the-sheet-lacks", LIB,
+     '"update": 1,\n"values": [2, 3]', '"update": 1,\n"values": [2, 10]',
+     ["test_courier_clips.gd 60"], "fail"),
+    # The rig is a cutout rig, not imported, so an empty cache has nothing to lose: the read-back must still pass.
+    ("required-4-reimport-from-empty-cache", LIB, "", "",
+     ["test_courier_clips.gd 60", "test_courier_states.gd 60"], "pass"),
+]
+
+EXTRA = [
+    ("walk-step-left-at-default", LIB,
+     "length = 0.26666666666666666\nloop_mode = 1\nstep = 0.016666668\n", "length = 0.26666666666666666\nloop_mode = 1\n",
+     ["test_courier_clips.gd 60"]),
     ("walk-frame-track-continuous", LIB,
      '"times": PackedFloat32Array(0, 0.13333334),\n"transitions": PackedFloat32Array(1, 1),\n"update": 1,',
      '"times": PackedFloat32Array(0, 0.13333334),\n"transitions": PackedFloat32Array(1, 1),\n"update": 0,',
@@ -51,22 +71,26 @@ def run(cmd, cwd):
     return subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
 
 
+MUTATIONS = REQUIRED + [m + ("fail",) for m in EXTRA]
+
+
 def main() -> int:
     out = Path(sys.argv[1]).resolve()
     parent = Path(sys.argv[2]) if len(sys.argv) > 2 else Path(tempfile.mkdtemp(prefix="a7-mutations-"))
     repo = Path(run(["git", "rev-parse", "--show-toplevel"], ".").stdout.strip())
     head = run(["git", "rev-parse", "--short", "HEAD"], repo).stdout.strip()
     results = []
-    for mid, rel, old, new, suites in MUTATIONS:
+    for mid, rel, old, new, suites, expect in MUTATIONS:
         wt = parent / mid
         if wt.exists():
             run(["git", "worktree", "remove", "--force", str(wt)], repo)
         run(["git", "worktree", "add", "--detach", str(wt), "HEAD"], repo)
         path = wt / rel
         text = path.read_text()
-        applied = text.count(old) == 1
-        if applied:
+        applied = old == "" or text.count(old) == 1
+        if applied and old:
             path.write_text(text.replace(old, new))
+        cache_empty = not (wt / "godot" / ".godot").exists()
         diff = run(["git", "diff", "--stat"], wt).stdout.strip()
         run([GODOT, "--headless", "--path", "godot", "--import"], wt)
         runs = []
@@ -77,16 +101,18 @@ def main() -> int:
             summary = [l for l in r.stdout.splitlines() if " checks, " in l]
             runs.append({"suite": suite, "exit": r.returncode, "summary": summary[-1].split(" -> ")[0] if summary else "",
                          "failed_checks": [f.split(" ")[1] for f in fails]})
-        caught = applied and all(x["exit"] == 1 for x in runs)
-        results.append({"mutation": mid, "file": rel, "applied": applied, "diff": diff, "runs": runs, "caught": caught})
-        print("%-32s applied=%s caught=%s %s" % (mid, applied, caught, [(x["suite"], x["exit"], len(x["failed_checks"])) for x in runs]))
+        want = 0 if expect == "pass" else 1
+        caught = applied and all(x["exit"] == want for x in runs)
+        results.append({"mutation": mid, "file": rel, "expect": expect, "cache_empty_before_import": cache_empty,
+                        "applied": applied, "diff": diff, "runs": runs, "as_expected": caught})
+        print("%-40s expect=%s applied=%s as_expected=%s %s" % (mid, expect, applied, caught, [(x["suite"], x["exit"], len(x["failed_checks"])) for x in runs]))
         run(["git", "worktree", "remove", "--force", str(wt)], repo)
     shutil.rmtree(parent, ignore_errors=True)
     run(["git", "worktree", "prune"], repo)
-    report = {"source_revision": head, "mutations": results, "all_caught": all(r["caught"] for r in results)}
+    report = {"source_revision": head, "mutations": results, "all_as_expected": all(r["as_expected"] for r in results)}
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, indent=2) + "\n")
-    return 0 if report["all_caught"] else 1
+    return 0 if report["all_as_expected"] else 1
 
 
 if __name__ == "__main__":
