@@ -12,7 +12,8 @@ const PRIORITY := ["override", "dash", "hurt", "cast", "walk", "idle"]
 const STATE_CLIP := {"dash": "dash", "hurt": "hurt", "cast": "cast", "walk": "walk", "idle": "idle"}
 const OVERRIDES := ["levelup", "sunflare", "defeat", "victory"]
 const TRANSITIONS := {"": ["startup"], "startup": ["active", ""], "active": ["recovery"], "recovery": [""]}
-const PHASE_TICKS := {"DASH_STARTUP_TICKS": 6, "DASH_ACTIVE_TICKS": 10, "DASH_RECOVERY_TICKS": 12, "DASH_COOLDOWN_TICKS": 60}
+## Re-pinned for phase table r1 (CHANGE-BRIEF Revisions): r0 was 6 / 10 / 12.
+const PHASE_TICKS := {"DASH_STARTUP_TICKS": 4, "DASH_ACTIVE_TICKS": 10, "DASH_RECOVERY_TICKS": 6, "DASH_COOLDOWN_TICKS": 60}
 const FPS := 60.0
 
 var game

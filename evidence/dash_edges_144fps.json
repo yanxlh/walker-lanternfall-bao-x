@@ -66,8 +66,8 @@
         "counts": {
           "": 1,
           "active": 10,
-          "recovery": 12,
-          "startup": 6
+          "recovery": 6,
+          "startup": 4
         }
       },
       "status": "PASS"
@@ -76,8 +76,6 @@
       "id": "startup-holds-still",
       "observed": {
         "x": [
-          0.0,
-          0.0,
           0.0,
           0.0,
           0.0,
@@ -116,12 +114,6 @@
       "id": "recovery-holds-still",
       "observed": {
         "x": [
-          55.0,
-          55.0,
-          55.0,
-          55.0,
-          55.0,
-          55.0,
           55.0,
           55.0,
           55.0,
@@ -198,7 +190,7 @@
         "after_press": {
           "": 65,
           "active": 7,
-          "recovery": 12,
+          "recovery": 6,
           "startup": 0
         }
       },
@@ -334,16 +326,16 @@
         "counts": {
           "": 0,
           "active": 10,
-          "recovery": 12,
-          "startup": 6
+          "recovery": 6,
+          "startup": 4
         }
       },
       "status": "PASS"
     },
     {
-      "id": "levelup-freezes-dash-at-frame-9",
+      "id": "levelup-freezes-dash-at-frame-7",
       "observed": {
-        "dash_ticks": 8,
+        "dash_ticks": 6,
         "levelup_view": [
           6,
           false
@@ -356,21 +348,21 @@
       "status": "PASS"
     },
     {
-      "id": "levelup-keeps-phase-lengths-at-frame-9",
+      "id": "levelup-keeps-phase-lengths-at-frame-7",
       "observed": {
         "counts": {
           "": 0,
           "active": 10,
-          "recovery": 12,
-          "startup": 6
+          "recovery": 6,
+          "startup": 4
         }
       },
       "status": "PASS"
     },
     {
-      "id": "levelup-freezes-dash-at-frame-20",
+      "id": "levelup-freezes-dash-at-frame-18",
       "observed": {
-        "dash_ticks": 19,
+        "dash_ticks": 17,
         "levelup_view": [
           6,
           false
@@ -383,13 +375,13 @@
       "status": "PASS"
     },
     {
-      "id": "levelup-keeps-phase-lengths-at-frame-20",
+      "id": "levelup-keeps-phase-lengths-at-frame-18",
       "observed": {
         "counts": {
           "": 0,
           "active": 10,
-          "recovery": 12,
-          "startup": 6
+          "recovery": 6,
+          "startup": 4
         }
       },
       "status": "PASS"
@@ -429,7 +421,7 @@
     {
       "id": "beam-fires-during-dash",
       "observed": {
-        "cast_ticks": 6,
+        "cast_ticks": 8,
         "pose": "dash",
         "shots": [
           1,
@@ -467,10 +459,10 @@
       "observed": {
         "active_distance": 55.0,
         "counts": {
-          "": 32,
+          "": 40,
           "active": 10,
-          "recovery": 12,
-          "startup": 6
+          "recovery": 6,
+          "startup": 4
         },
         "missing_ticks": 0,
         "physics_frames_awaited": 60,
@@ -481,5 +473,5 @@
     }
   ],
   "suite": "dash_edges_144fps",
-  "utc": "2026-11-13T17:38:08"
+  "utc": "2026-11-13T18:13:30"
 }

@@ -10,9 +10,11 @@ const Session = preload("res://game/session.gd")
 const GS = preload("res://game/game_state.gd")
 const Tuning = preload("res://features/tuning.gd")
 
-const STARTUP := 6
+## Re-pinned for phase table r1 (CHANGE-BRIEF Revisions): r0 was 6 / 10 / 12.
+const STARTUP := 4
 const ACTIVE := 10
-const RECOVERY := 12
+const RECOVERY := 6
+const TOTAL := STARTUP + ACTIVE + RECOVERY
 const COOLDOWN := 60
 const SPEED := 330.0
 const DISTANCE := 55.0
@@ -132,22 +134,22 @@ func run() -> void:
 	var phases := []
 	var xs := []
 	var shown := []
-	for i in 29:
+	for i in TOTAL + 1:
 		game.tick()
 		phases.append(phase())
 		xs.append(game.player.position.x - x0)
 		shown.append([cell(), rig_shown(), game.player.pose])
-	check("phase-lengths", phases.slice(0, 28) == rep("startup", STARTUP) + rep("active", ACTIVE) + rep("recovery", RECOVERY) and phases[28] == "", {"counts": counts(phases)})
+	check("phase-lengths", phases.slice(0, TOTAL) == rep("startup", STARTUP) + rep("active", ACTIVE) + rep("recovery", RECOVERY) and phases[TOTAL] == "", {"counts": counts(phases)})
 	check("startup-holds-still", xs.slice(0, STARTUP).all(func(x): return is_zero_approx(x)), {"x": xs.slice(0, STARTUP)})
 	var steps_ok := true
 	for i in range(STARTUP, STARTUP + ACTIVE):
 		steps_ok = steps_ok and is_equal_approx(xs[i] - (xs[i - 1] if i > 0 else 0.0), SPEED / Tuning.TICK_HZ)
 	check("active-moves-5.5-per-tick", steps_ok, {"x": xs.slice(STARTUP - 1, STARTUP + ACTIVE)})
 	check("active-distance-55", is_equal_approx(xs[STARTUP + ACTIVE - 1], DISTANCE), {"x_after_active": xs[STARTUP + ACTIVE - 1]})
-	check("recovery-holds-still", xs.slice(STARTUP + ACTIVE, 28).all(func(x): return is_equal_approx(x, DISTANCE)), {"x": xs.slice(STARTUP + ACTIVE, 28)})
-	check("walks-again-after", xs[28] > DISTANCE, {"x": xs[28]})
-	check("rig-shown-during-dash", shown.slice(0, 28).all(func(s): return s[0] == -1 and s[1] and s[2] == "dash"), {"first": shown[0], "last": shown[27]})
-	check("sprite-back-after-dash", shown[28][0] in [2, 3, 4] and not shown[28][1], {"after": shown[28]})
+	check("recovery-holds-still", xs.slice(STARTUP + ACTIVE, TOTAL).all(func(x): return is_equal_approx(x, DISTANCE)), {"x": xs.slice(STARTUP + ACTIVE, TOTAL)})
+	check("walks-again-after", xs[TOTAL] > DISTANCE, {"x": xs[TOTAL]})
+	check("rig-shown-during-dash", shown.slice(0, TOTAL).all(func(s): return s[0] == -1 and s[1] and s[2] == "dash"), {"first": shown[0], "last": shown[TOTAL - 1]})
+	check("sprite-back-after-dash", shown[TOTAL][0] in [2, 3, 4] and not shown[TOTAL][1], {"after": shown[TOTAL]})
 	check("cooldown-starts-when-dash-ends", game.player.get("dash_cooldown") == COOLDOWN, {"cooldown": game.player.get("dash_cooldown")})
 
 	# Cooldown boundary: the press after 59 cooldown ticks is dropped, the press after 60 starts a dash.
@@ -162,7 +164,7 @@ func run() -> void:
 	# A press during a dash is dropped, not queued.
 	ticks(STARTUP + 2)
 	await key(KEY_SHIFT)
-	var rest := ticks(28 - (STARTUP + 3) + COOLDOWN + 5)
+	var rest := ticks(TOTAL - (STARTUP + 3) + COOLDOWN + 5)
 	check("press-during-dash-dropped", not ("startup" in rest) and game.player.get("dash_requested") == false, {"after_press": counts(rest)})
 
 	# Direction: locked at the start; no input means the facing direction; a diagonal is normalised.
@@ -202,7 +204,7 @@ func run() -> void:
 		var damaged: bool = game.player.hp < hp0
 		match case[0]:
 			"last-startup":
-				check("hit-last-startup-tick-cancels-no-cooldown", during == ["startup>"] and before.size() == 5 and before.all(func(x): return x == "startup") and after == ["", ""] and damaged and game.player.get("dash_cooldown") == 0, obs)
+				check("hit-last-startup-tick-cancels-no-cooldown", during == ["startup>"] and before.size() == STARTUP - 1 and before.all(func(x): return x == "startup") and after == ["", ""] and damaged and game.player.get("dash_cooldown") == 0, obs)
 				check("hurt-pose-after-startup-cancel", game.player.pose == "hurt" and cell() == 5, {"pose": game.player.pose})
 				await key(KEY_SHIFT)
 				check("dash-again-after-startup-cancel", ticks(1) == ["startup"], {})
@@ -231,11 +233,11 @@ func run() -> void:
 		game.offered = Array(["heal", "heal", "heal"], TYPE_STRING, "", null)
 		await key(KEY_1)
 		var resumed_view := [cell(), rig_shown()]
-		var second := ticks(30 - frame)
+		var second := ticks(TOTAL + 2 - frame)
 		var all := first + second
 		check("levelup-freezes-dash-at-frame-%d" % frame, in_levelup and still_frozen and frozen_view == [6, false] and resumed_view == [-1, true],
 			{"dash_ticks": frozen_at, "levelup_view": frozen_view, "resumed_view": resumed_view})
-		check("levelup-keeps-phase-lengths-at-frame-%d" % frame, counts(all.slice(0, 28)) == {"startup": STARTUP, "active": ACTIVE, "recovery": RECOVERY, "": 0}, {"counts": counts(all.slice(0, 28))})
+		check("levelup-keeps-phase-lengths-at-frame-%d" % frame, counts(all.slice(0, TOTAL)) == {"startup": STARTUP, "active": ACTIVE, "recovery": RECOVERY, "": 0}, {"counts": counts(all.slice(0, TOTAL))})
 
 	# Death during the dash shows defeat; restart clears everything.
 	await fresh()

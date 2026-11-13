@@ -52,8 +52,8 @@
         "tuning": {
           "DASH_ACTIVE_TICKS": 10,
           "DASH_COOLDOWN_TICKS": 60,
-          "DASH_RECOVERY_TICKS": 12,
-          "DASH_STARTUP_TICKS": 6
+          "DASH_RECOVERY_TICKS": 6,
+          "DASH_STARTUP_TICKS": 4
         }
       },
       "status": "PASS"
@@ -63,11 +63,11 @@
       "observed": {
         "boundary_ticks": [
           0,
-          6,
-          16,
-          28
+          4,
+          14,
+          20
         ],
-        "length_ticks": 28.0
+        "length_ticks": 20.0
       },
       "status": "PASS"
     },
@@ -108,5 +108,5 @@
     }
   ],
   "suite": "courier_states",
-  "utc": "2026-11-13T17:38:09"
+  "utc": "2026-11-13T18:13:29"
 }
