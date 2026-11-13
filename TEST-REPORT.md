@@ -716,9 +716,14 @@ Both clips sit in one AnimationPlayer with `callback_mode_process = ANIMATION_CA
 | The dash | `6b5edab` | tuning, card, input, phases, interrupts; all suites pass |
 | Mutations | `09f2add` | eight mutations in `git worktree`s; Godot 3 names probe |
 | Records, fresh clone | `5783447`, `159a006` | README, TEST-REPORT, SUBMISSION, CONTRIBUTIONS; all 20 runs from a fresh clone |
-| Wrapper and session rules | the commit after `159a006` | `run-test.sh` fails on resource-load errors, with a self-check; resume and git rules in CLAUDE.md; the four objectives; the session check |
+| Wrapper and session rules | `a0b149c` | `run-test.sh` fails on resource-load errors, with a self-check; resume and git rules in CLAUDE.md; the four objectives; the session check |
+| Phase table r1 | `25603f8`, `39bbf18`, `b72ffdd` | brief revision (Bao's request, Codex's proposal); tuning, keys and read-back together; behaviour pins left failing; r1 captures |
+| Re-pin after Bao kept r1 | `eef8ce8`, `9f28e77`, `eddbf66` | dash edges and structure re-pinned in their own commit; mutations and all runs on r1; records |
+| Gaps against the full assignment text | `beb56af` … `3b7f56b` | clips in `godot/animations/`; CLAUDE.md agent draft r2; pin through real input; `Animation.step` pinned; hits before/on/after every boundary; two clocks measured; the four required mutations; sprite credits; frame-strip kit; facts sheet; SUBMISSION and TUNING; structure test through real input |
 
-### Results
+### Results (r0, 6 / 10 / 12, at `6a340da`)
+
+This table and the edge and mutation paragraphs below are the r0 results, kept as they were. The r1 results and the checks the full assignment text asks for are in "Use It, against the full assignment text" below.
 
 | Check | Evidence | Result |
 |---|---|---|
@@ -770,8 +775,8 @@ Claude's reading of the strips (a claim, not a human check): the walk alternates
 |---|---|---|
 | **Tracks of keys.** A clip is tracks, each a node path and a property, holding keys at times. | `courier_clips.tres`: `Body:frame` (discrete, nearest) in every sprite clip; `Rig:position`, `Rig/Hips:rotation`, `Rig/Hips/Chest/Neck:rotation` (continuous) in `dash`; `Body:visible` / `Rig:visible` in every clip | `every-track-resolves` and the key checks in the read-back; the renamed-path and key-past-the-last-cell mutations fail it; the probe shows what a continuous frame track does |
 | **One authority.** Exactly one thing decides what the courier shows. | `player.gd` alone plays and seeks the AnimationPlayer, once per tick and on every override; every clip keys both visibility tracks, so no clip leaves the previous one's state behind | `one-authority-in-source` and `one-animation-driver` (structure test); `clip-and-cell-follow-the-state`; the level-up and death edges, where an override takes over mid-dash and hands back |
-| **Two clocks.** The simulation ticks at 60 Hz; frames render at whatever rate the window runs. | AnimationPlayer in manual mode, seeked from integer tick counters; the dash press arrives on the process side and is consumed on the next physics tick; no gameplay fact is keyed in a clip | `real-loop-phase-ticks` gives the same 6 / 10 / 12 ticks and 55 px at 30, 60 and 144 fps; the level-up edges freeze the dash with the run; `press-is-a-request-until-the-tick` |
-| **Feel designed in frames.** Timing is written as frames per phase before it is keyed. | The phase table in CHANGE-BRIEF (startup 6, active 10, recovery 12 ticks; cooldown 60), keyed at 0, 6, 16 and 28 with ease-in through startup and ease-out through recovery; interrupts defined per phase | `clip-boundaries-match-tuning`; the hit edges on both sides of every phase boundary; the one-frame-late key and one-tick-longer mutations. Whether the timing *feels* right is the HUMAN CHECK below |
+| **Two clocks.** The simulation ticks at 60 Hz; frames render at whatever rate the window runs. | AnimationPlayer in manual mode, seeked from integer tick counters; the dash press arrives on the process side and is consumed on the next physics tick; no gameplay fact is keyed in a clip | `real-loop-phase-ticks` gives the same 4 / 10 / 6 ticks (r1) and 55 px at 30, 60 and 144 fps; `two-clocks-at-<rate>` measures 0 s between the clip and the gameplay tick; the level-up edges freeze the dash with the run; `press-is-a-request-until-the-tick` |
+| **Feel designed in frames.** Timing is written as frames per phase before it is keyed. | The phase table in CHANGE-BRIEF (r1: startup 4, active 10, recovery 6 ticks, from r0's 6 / 10 / 12; cooldown 60), keyed at 0, 4, 14 and 20 with ease-in through startup and ease-out through recovery; interrupts defined per phase | `clip-boundaries-match-tuning`; the hit edges on both sides of every phase boundary; the one-frame-late key and one-tick-longer mutations. Whether the timing *feels* right is the HUMAN CHECK below |
 
 ### After the agent session
 
@@ -789,17 +794,23 @@ Claude's reading of the strips (a claim, not a human check): the walk alternates
 | The dash reads: anticipation, commitment, settle | same | pending |
 | The 60-tick gap between dashes is felt | same | pending |
 | Registration drift or the coat–legs gap visible in play | same | pending |
-| The phase table: keep, or change from a measured reference | measure a reference dash; then the tuning prompt below | pending |
+| The phase table | Bao asked for 4 / 10 / 6 and kept it | "Keep 4/10/6." (13 November); no reference measured |
+| One revision driven by what Bao saw in play, with a prediction, two strips and the verdict | TUNING.md, r1 → r2 | pending |
+| The cycle seam: at least five wraps at normal speed, no stutter, duplicate or jump | `scripts/play-dash.command` | pending |
+| The action in play many times, with an interrupt in each phase; startup, active and recovery read as distinct | same | pending |
+| Registration: the cycle's strip shows no drift within the cells | `scripts/capture-strip.command walk r1` | pending |
+| Both clips over the darkest and the lightest stretch of the level | in play | pending |
+| Claude's strip readings beside Bao's verdicts, at least one disagreement or "none" | TUNING.md | pending |
 | The film watched and listened to in full | — | pending |
 
 The tuning prompt, filled in for this project, for one change after play:
 
 ```text
-Read CLAUDE.md first. The current capture is in captures/assignment-7/dash/ and its per-frame log is
-captures/assignment-7/dash/frames.log. What I saw playing at normal speed and at --time-scale 0.25:
+Read CLAUDE.md first. The current capture is in captures/dash/r<N>/ and its per-frame log is
+captures/dash/r<N>/frames.log. What I saw playing at normal speed and at --time-scale 0.25:
 <what you saw, in visual terms>.
 
-Read the frames at each phase boundary in CHANGE-BRIEF.md (0, 6, 16, 28), with the log lines for the
+Read the frames at each phase boundary in CHANGE-BRIEF.md (0, 4, 14, 20), with the log lines for the
 same frames, and say where the motion and the table disagree. Then propose one change, to the phase
 table or to one key's transition. Before editing, say what the capture should show afterward. After I
 approve, make only that change, update the read-back test's expected values, and stop so I can
@@ -807,3 +818,40 @@ recapture and play. Do not commit.
 ```
 
 The tuning prompt changes a clip and its read-back expectations together. That is allowed because the read-back pins the clip's structure, not the game's behaviour. A phase-length change also changes the dash rules, so `test_dash_edges.gd` would be re-pinned in its own commit, after play.
+
+### Use It, against the full assignment text (13 November 2026, phase table r1)
+
+Canvas replaced the assignment page with the full text on 13 November 2026 (18:08 UTC; due Sun 22 November 23:59). The checks it lists, at `3b7f56b`, every headless run through `scripts/run-test.sh` (`evidence/assignment-7/full-text-gaps/RUN.txt`):
+
+| Check | Evidence | Result |
+|---|---|---|
+| Baseline | `evidence/assignment-7/baseline/RUN.txt` (before), `evidence/assignment-7/full-text-gaps/RUN.txt` (after) | the 14 earlier runs, same counts before and after: 459 checks over 12 suites (543 assertions with `test_hurt_tint` at three rates), all exit 0 |
+| Pins | `test_courier_pin.gd` (committed before the change, `164d336`); `test_courier_pin_input.gd` (real input, added after the change) | `courier_pin` 23 / 0 before and after. `courier_pin_input` 11 / 0 at 30, 60 and 144 fps, both on `9ccf078` (a worktree, before any A7 change) and now: run states in order, the cell, mirroring and pose each step, walk speed (60 px after 40 steps), the hit (hp 10 → 8, i-frames 48, knockback). Nothing changed that the brief did not predict; the seeded card offer changes with the new card (pixel pin, frame 186) |
+| Read-back | `evidence/courier_clips.json` | 83 / 0: `every-track-resolves` (the assignment's `track_problems`), `<clip>-frame-keys`, `<clip>-step` (1/60 s on all ten clips), `<clip>-length-and-loop` (`LOOP_LINEAR` walk, `LOOP_NONE` others), `<clip>-discrete`, `<clip>-frames-inside-sheet` (below `hframes * vframes` = 10), `walk-seam`, `dash-keys` / `dash-phase-boundaries` / `dash-spacing` at 0 / 4 / 14 / 20 |
+| Mutations | `evidence/assignment-7/mutations/mutations-required.json`, each in a fresh `git worktree` with no `godot/.godot` | the four required: track subname `rotation` → `rotaton` fails 5 checks including `every-track-resolves`; walk `loop_mode = 0` fails `walk-length-and-loop`; a key on cell 10 fails 3; reimport from an empty cache passes read-back and structure (a cutout rig has no importer settings to lose). Nine extra, all fail as expected, including `Animation.step` left at its default (`walk-step`) |
+| Fresh cache | the same run, and `evidence/assignment-7/fresh-clone/` | every mutation worktree imports from an empty cache before its run; the rig read-back passes there |
+| State machine | `evidence/courier_states.json` | 10 / 0: the table against the resource (priority, a clip for every state and override, the transition table, Tuning against the clip's boundary keys, one driver, one authority in source) and `real-input-clip-and-cell-follow-the-state`: 160 real-loop steps with parsed movement, dash and card keys; the current clip is read through `current_animation` (AnimationPlayer route); all six states seen |
+| Edges | `evidence/dash_edges_30fps.json`, `_60fps`, `_144fps` | 51 / 0 at each rate: a hit one frame before, on and after each boundary (frames 3/4/5, 13/14/15, 19/20/21) with the brief's outcome, plus the r0-era edges re-pinned for r1 |
+| Frame strips (fixture) | r0 and r1 60 fps game captures in `captures/assignment-7/`; the 30 fps preview kit `scripts/capture-strip.command` | the kit is smoke-tested headless only; the 30 fps strips are Bao's to record (the assignment: the student runs every capture) |
+| Two clocks | `two-clocks-at-<rate>` in `test_dash_edges.gd` | the clip advances only when the physics tick seeks it; gameplay reads the dash on the same tick: 0 s apart at 30, 60 and 144 fps. Rendered frames trail the physics step by a span of 0, 0 and 15.3 ms |
+| The cycle seam, the action in play, registration, against the background (HUMAN CHECKS) | — | pending (table above) |
+| Claude against you | TUNING.md | pending |
+
+What the headless runs cannot show: whether the walk wraps without a visible seam, whether the three dash phases read in play, whether the courier is readable over the darkest and lightest ground, and whether the timing feels right. Claude's readings of the strips are claims.
+
+Departures from the assignment's order, recorded rather than rewritten:
+- The resource-load rule in `scripts/run-test.sh` was committed after the first setup (`a0b149c`), not before Step 1.
+- The real-input pin was written after the change and shown to pass on `9ccf078` in a worktree.
+- CHANGE-BRIEF.md and the phase tables were drafted by agents (Claude Code for r0, a Codex proposal for r1); Bao's own rewrite is pending.
+- The work ran in one desktop session from the brief, not from the chapter's prompt files.
+- The 60 fps captures were run by Claude Code from the terminal.
+
+Agent mistakes caught while building (each by reading output, not a pass count):
+- The first pin record failed with a `SCRIPT ERROR` (an int compared with a String). The pin also first read the i-frames 60 ticks after the hit, and the input pin read the step before the hit. Both were fixed after reading the recorded values.
+- The edge test first read the phase after the hit tick and reported the hit as landing on no dash. It now records the phase changes inside the tick.
+- The structure test first compared the clip with the state after the whole tick. The clip follows the pose chosen inside `step()`, and that one-tick lag is pinned behaviour.
+- The r1 re-pin missed a literal `before.size() == 5`; it failed at all three rates until fixed.
+- Parse errors caught by the wrapper's `SCRIPT ERROR` rule: a typed array assigned an untyped one, an `Array.repeat` that does not exist, and a static call on a preloaded script.
+- A header edit failed inside a chained command and the commit went through without it; it was caught in the output and fixed in `6a340da`.
+- The session-check count in this report did not match its JSON; fixed in `ce8d1c6`.
+- Movie Maker printed "156 frames" for a capture that wrote 211 PNGs. Counting the files confirmed 211, one per log line.

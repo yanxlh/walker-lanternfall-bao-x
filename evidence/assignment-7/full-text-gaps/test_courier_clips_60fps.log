@@ -1,0 +1,86 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS scene-loads {"scene":"res://features/player/courier_visual.tscn"}
+PASS library-is-the-committed-tres {"path":"res://animations/courier_clips.tres"}
+PASS every-track-resolves {"problems":[]}
+PASS clip-names {"clips":["cast","dash","defeat","hurt","idle","levelup","sunflare","turn_front","victory","walk"]}
+PASS callback-mode-manual {"callback_mode_process":2}
+PASS no-autoplay {"autoplay":"","speed_scale":1.0}
+PASS body-slices-the-sheet {"hframes":10,"size":[320,32],"texture":"res://assets/art/pc_sheet.png","vframes":1}
+PASS body-registration {"centered":false,"offset":[-16.0,-23.0]}
+PASS turn_front-frame-keys {"brief":[[0,0]],"keys":[[0,0]]}
+PASS turn_front-frames-inside-sheet {"cells":10,"keys":[[0,0]]}
+PASS turn_front-discrete {"update_mode":1}
+PASS turn_front-length-and-loop {"length_frames":1.0,"loop_mode":0}
+PASS turn_front-step {"step":0.0166666675359011}
+PASS turn_front-owns-visibility {"body_track":0,"rig_track":1}
+PASS idle-frame-keys {"brief":[[1,0]],"keys":[[1,0]]}
+PASS idle-frames-inside-sheet {"cells":10,"keys":[[1,0]]}
+PASS idle-discrete {"update_mode":1}
+PASS idle-length-and-loop {"length_frames":1.0,"loop_mode":0}
+PASS idle-step {"step":0.0166666675359011}
+PASS idle-owns-visibility {"body_track":0,"rig_track":1}
+PASS walk-frame-keys {"brief":[[2,0],[3,8]],"keys":[[2,0],[3,8]]}
+PASS walk-frames-inside-sheet {"cells":10,"keys":[[2,0],[3,8]]}
+PASS walk-discrete {"update_mode":1}
+PASS walk-length-and-loop {"length_frames":16.0,"loop_mode":1}
+PASS walk-step {"step":0.0166666675359011}
+PASS walk-owns-visibility {"body_track":0,"rig_track":1}
+PASS cast-frame-keys {"brief":[[4,0]],"keys":[[4,0]]}
+PASS cast-frames-inside-sheet {"cells":10,"keys":[[4,0]]}
+PASS cast-discrete {"update_mode":1}
+PASS cast-length-and-loop {"length_frames":1.0,"loop_mode":0}
+PASS cast-step {"step":0.0166666675359011}
+PASS cast-owns-visibility {"body_track":0,"rig_track":1}
+PASS hurt-frame-keys {"brief":[[5,0]],"keys":[[5,0]]}
+PASS hurt-frames-inside-sheet {"cells":10,"keys":[[5,0]]}
+PASS hurt-discrete {"update_mode":1}
+PASS hurt-length-and-loop {"length_frames":1.0,"loop_mode":0}
+PASS hurt-step {"step":0.0166666675359011}
+PASS hurt-owns-visibility {"body_track":0,"rig_track":1}
+PASS levelup-frame-keys {"brief":[[6,0]],"keys":[[6,0]]}
+PASS levelup-frames-inside-sheet {"cells":10,"keys":[[6,0]]}
+PASS levelup-discrete {"update_mode":1}
+PASS levelup-length-and-loop {"length_frames":1.0,"loop_mode":0}
+PASS levelup-step {"step":0.0166666675359011}
+PASS levelup-owns-visibility {"body_track":0,"rig_track":1}
+PASS sunflare-frame-keys {"brief":[[7,0]],"keys":[[7,0]]}
+PASS sunflare-frames-inside-sheet {"cells":10,"keys":[[7,0]]}
+PASS sunflare-discrete {"update_mode":1}
+PASS sunflare-length-and-loop {"length_frames":1.0,"loop_mode":0}
+PASS sunflare-step {"step":0.0166666675359011}
+PASS sunflare-owns-visibility {"body_track":0,"rig_track":1}
+PASS defeat-frame-keys {"brief":[[8,0]],"keys":[[8,0]]}
+PASS defeat-frames-inside-sheet {"cells":10,"keys":[[8,0]]}
+PASS defeat-discrete {"update_mode":1}
+PASS defeat-length-and-loop {"length_frames":1.0,"loop_mode":0}
+PASS defeat-step {"step":0.0166666675359011}
+PASS defeat-owns-visibility {"body_track":0,"rig_track":1}
+PASS victory-frame-keys {"brief":[[9,0]],"keys":[[9,0]]}
+PASS victory-frames-inside-sheet {"cells":10,"keys":[[9,0]]}
+PASS victory-discrete {"update_mode":1}
+PASS victory-length-and-loop {"length_frames":1.0,"loop_mode":0}
+PASS victory-step {"step":0.0166666675359011}
+PASS victory-owns-visibility {"body_track":0,"rig_track":1}
+PASS walk-seam {"first":2,"interval_frames":8.00000041723251,"last":3,"tail_frames":7.99999958276749}
+PASS walk-played-back-cells {"shown":[2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3]}
+PASS dash-length-and-loop {"length_frames":20.0,"loop_mode":0}
+PASS dash-step {"step":0.0166666675359011}
+PASS dash-owns-visibility {"body_track":0,"rig_track":1}
+PASS dash-keys Rig:position {"frames":[0,3,4,14,16,20]}
+PASS dash-phase-boundaries Rig:position {"boundaries":[0,4,14,20],"frames":[0,3,4,14,16,20]}
+PASS dash-spacing Rig:position {"transitions":[2.0,2.0,1.0,0.5,0.5,0.5]}
+PASS dash-keys Rig/Hips:rotation {"frames":[0,3,4,14,16,20]}
+PASS dash-phase-boundaries Rig/Hips:rotation {"boundaries":[0,4,14,20],"frames":[0,3,4,14,16,20]}
+PASS dash-spacing Rig/Hips:rotation {"transitions":[2.0,2.0,1.0,0.5,0.5,0.5]}
+PASS dash-keys Rig/Hips/Chest/Neck:rotation {"frames":[0,3,4,10,14,16,18,20]}
+PASS dash-phase-boundaries Rig/Hips/Chest/Neck:rotation {"boundaries":[0,4,14,20],"frames":[0,3,4,10,14,16,18,20]}
+PASS dash-spacing Rig/Hips/Chest/Neck:rotation {"transitions":[2.0,2.0,1.0,1.0,0.5,0.5,0.5,0.5]}
+PASS rig-regions-cover-the-cell {"doubled_pixels":0,"uncovered_pixels":0}
+PASS rig-part-regions {}
+PASS rig-rest-pose-matches-cell {"rest":{"Arm":[-4.0,-10.0],"Coat":[-5.0,-3.0],"Head":[1.0,-15.0],"Legs":[-5.0,5.0]}}
+PASS rig-pivots {"pivots":{"Rig/Hips":[0.0,4.0],"Rig/Hips/Chest":[0.0,-3.0],"Rig/Hips/Chest/Neck":[2.0,-4.0]}}
+PASS dash-played-back-at-boundaries {"sampled":{"0":[0.0,0.0,0.0,true,false],"4":[0.35,-0.3,-1.0,true,false],"14":[0.3,-0.25,0.0,true,false],"20":[0.0,0.0,0.0,true,false]}}
+PASS every-part-uses-parent-material {"not_using_parent":[]}
+PASS no-godot3-names {"found":[]}
+courier_clips: 83 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-a7/godot/../evidence/courier_clips.json
