@@ -176,13 +176,22 @@ This animation design gives the courier two distinct movement presentations: wal
 
 Dashing uses a cutout rig with separate head, arm, coat, and leg sprites. Pivot rotations and root movement create a slight dip with a backward lean, a forward lean, and recovery. This route allows independent body-part motion while reusing the existing artwork instead of relying only on whole-sprite changes. godot/features/player/build_courier_visual.gd saves the scene and godot/animations/courier_clips.tres; the game loads these resources rather than building animations at runtime.
 
-Both clips use godot/assets/art/pc_sheet.png, generated for this project in Assignment 2 with FLUX.1-schnell. The model licence is Apache-2.0. The image is 320×32 pixels, divided into a 10×1 grid of 32×32 cells without padding. Frame order is 0 turn_front, 1 idle, 2 walk_contact, 3 walk_passing, 4 cast, 5 hurt, 6 levelup, 7 sunflare, 8 defeat, and 9 victory. Source and processing records are in godot/assets/art/ATTRIBUTION.md, gen/log/ART-PC-01/, and gen/mappings/ART-PC-01.json. The source image remains unchanged, and the dash uses regions of cell 2.
+Both clips use godot/assets/art/pc_sheet.png, generated for this project in Assignment 2 with FLUX.1-schnell. The model licence is Apache-2.0, checked on 13 November 2026. The image is 320×32 pixels, divided into a 10×1 grid of 32×32 cells without padding. Frame order is 0 turn_front, 1 idle, 2 walk_contact, 3 walk_passing, 4 cast, 5 hurt, 6 levelup, 7 sunflare, 8 defeat, and 9 victory. Source and processing records are in godot/assets/art/ATTRIBUTION.md, gen/log/ART-PC-01/, and gen/mappings/ART-PC-01.json. The source image remains unchanged, and the dash uses regions of cell 2.
 
 Walking alternates cells 2 and 3, holding each for eight simulation ticks in a 16/60-second cycle. It uses Animation.LOOP_LINEAR, Animation.UPDATE_DISCRETE, and Animation.INTERPOLATION_NEAREST. The first key is cell 2 and the last key is cell 3; the final-key-to-end interval is eight ticks, matching the earlier interval. An additional first-frame hold at the end could create a recurring hesitation.
 
 All timing uses 60 simulation ticks per second, with Animation.step = 1/60. This is an editing increment, not the runtime frame rate, and it does not automatically rewrite saved keys.
 
-Dash startup occupies ticks 0–3, dipping one pixel and leaning back while the direction is locked. Active movement occupies ticks 4–13, travelling 55 pixels at 330 pixels per second. Recovery occupies ticks 14–19, returning upright while ordinary movement remains locked. At tick 20, the dash ends, ordinary states resume, and a 60-tick cooldown begins. Existing knockback remains applicable during every phase. Gameplay reads dash_phase, dash_ticks, and dash_cooldown on simulation ticks rather than inferring behavior from the animation. The dash requires an upgrade card and grants no invulnerability. A startup hit cancels without cooldown; an active hit applies damage while the dash continues; a recovery hit cancels the remaining recovery and starts cooldown.
+All dash timing is at 60 simulation ticks per second.
+
+| Phase | Frames | What the player may do | What the game reads |
+|---|---|---|---|
+| Startup | 4, ticks 0–3, begins on 0 | Dipping one pixel and leaning back while the direction is locked; no ordinary movement | `dash_phase`, `dash_ticks`; a startup hit cancels without cooldown |
+| Active | 10, ticks 4–13, begins on 4 | Travelling 55 pixels at 330 pixels per second in the locked direction | `dash_phase`, `dash_ticks`; an active hit applies damage while the dash continues |
+| Recovery | 6, ticks 14–19, begins on 14 | Returning upright while ordinary movement remains locked | `dash_phase`, `dash_ticks`; a recovery hit cancels the remaining recovery and starts cooldown |
+| Cooldown | 60, from tick 20 | At tick 20, the dash ends and ordinary states resume; another dash is unavailable | `dash_cooldown` |
+
+Existing knockback remains applicable during every phase. Gameplay reads dash_phase, dash_ticks, and dash_cooldown on simulation ticks rather than inferring behavior from the animation. The dash requires an upgrade card and grants no invulnerability. A startup hit cancels without cooldown; an active hit applies damage while the dash continues; a recovery hit cancels the remaining recovery and starts cooldown.
 
 Root-position, hip-rotation, and neck-rotation tracks have keys at boundaries 0, 4, 14, and 20. Startup uses transition 2.0, active movement 1.0, and recovery 0.5.
 
@@ -229,11 +238,6 @@ Predicted failures and detection methods are: body/background blending, checked 
 7. *If your rig is imported: where does loop mode have to live so that a reimport keeps it, and how will you prove it survived an empty import cache?*
 
    Imported-rig loop configuration is not applicable because this project saves its cutout scene and animation resources directly. For an imported rig, set the loop mode in the source asset’s Advanced Import Settings and preserve the import configuration instead of modifying only regenerated cached resources. Verify persistence by clearing the .godot import cache, reimporting, and reading back the loop mode, tracks, and keys. The passing empty-cache check establishes reproducibility of the current cutout route, not correctness of an unused imported-rig configuration.
-
-### Still to add (Bao)
-
-- The date the sheet's licence was checked (13 November 2026, recorded in `godot/assets/art/ATTRIBUTION.md`).
-- The phase table in the template's form: Phase | Frames | What the player may do | What the game reads, with the frame each phase begins on.
 
 ### Corrections made at Bao's request (Claude Code, 18 November 2026)
 
