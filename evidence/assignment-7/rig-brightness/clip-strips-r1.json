@@ -1,0 +1,100 @@
+{
+  "folder": "captures/assignment-7/clip-strips-r1",
+  "frames": {
+    "walk-00": {
+      "pixels": 11648,
+      "mean_luminance": 64.55,
+      "mean_rgb": [
+        76.0,
+        62.4,
+        51.8
+      ]
+    },
+    "walk-08": {
+      "pixels": 10560,
+      "mean_luminance": 63.6,
+      "mean_rgb": [
+        75.6,
+        61.2,
+        52.4
+      ]
+    },
+    "dash-00": {
+      "pixels": 11648,
+      "mean_luminance": 64.55,
+      "mean_rgb": [
+        76.0,
+        62.4,
+        51.8
+      ]
+    },
+    "dash-02": {
+      "pixels": 11616,
+      "mean_luminance": 64.67,
+      "mean_rgb": [
+        76.1,
+        62.5,
+        51.9
+      ]
+    },
+    "dash-04": {
+      "pixels": 11114,
+      "mean_luminance": 66.15,
+      "mean_rgb": [
+        78.3,
+        64.0,
+        52.0
+      ]
+    },
+    "dash-05": {
+      "pixels": 11141,
+      "mean_luminance": 65.95,
+      "mean_rgb": [
+        78.1,
+        63.8,
+        51.9
+      ]
+    },
+    "dash-10": {
+      "pixels": 11253,
+      "mean_luminance": 65.7,
+      "mean_rgb": [
+        77.6,
+        63.5,
+        52.0
+      ]
+    },
+    "dash-14": {
+      "pixels": 11200,
+      "mean_luminance": 65.88,
+      "mean_rgb": [
+        77.9,
+        63.7,
+        52.0
+      ]
+    },
+    "dash-16": {
+      "pixels": 11561,
+      "mean_luminance": 64.83,
+      "mean_rgb": [
+        76.4,
+        62.7,
+        51.9
+      ]
+    },
+    "dash-20": {
+      "pixels": 11648,
+      "mean_luminance": 64.55,
+      "mean_rgb": [
+        76.0,
+        62.4,
+        51.8
+      ]
+    }
+  },
+  "rig_colours_not_in_walk_cell": [],
+  "luminance_range": [
+    63.6,
+    66.15
+  ]
+}
