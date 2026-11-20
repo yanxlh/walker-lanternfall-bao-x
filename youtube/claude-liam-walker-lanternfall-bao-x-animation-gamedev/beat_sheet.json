@@ -1,0 +1,1849 @@
+{
+  "metadata": {
+    "title": "Lanternfall in Frames",
+    "slug": "claude-liam-walker-lanternfall-bao-x-animation-gamedev",
+    "topic": "WALKER · GODOT ANIMATION",
+    "kind": "godot-gamedev",
+    "modifier": "walker",
+    "playlist": "CSYE 7270",
+    "brand": "claude-liam",
+    "audience": "CSYE 7270 classmates and instructors",
+    "register": "Teardown",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "ground": "#FAF9F5",
+    "aspect_ratio": "16:9",
+    "fit": "contain",
+    "captions": false,
+    "channel_title": "",
+    "channel": "@NikBearBrown",
+    "folderLabel": "@NikBearBrown",
+    "channel_title_note": "empty on purpose: B00's composer already shows @NikBearBrown (OUTRO-LOCK: one handle per beat)",
+    "greeting": "Hola, Liam",
+    "greeting_note": "hello lexicon: Hola (Spanish); earlier Lanternfall films used Merhaba (A2), Hej (A3), Ciao (A5), Bonjour (A6). Liam never takes Wagwan (IN-FOR-BEAR LAW).",
+    "persona": "Liam (in for Bear)",
+    "presenter": "Liam (in for Bear)",
+    "in_for_bear": true,
+    "game": {
+      "repo": "https://github.com/yanxlh/walker-lanternfall-bao-x",
+      "project_dir": "godot",
+      "source_revision": "5f09b7fa0f8555f588d68c9d63a1166d3daa23a1",
+      "godot": "4.7.2.stable.official.ed1daf0bf"
+    },
+    "teaching_contract": "code-then-result-v1",
+    "note": "godot-gamedev + walker teardown of Bao Xing's CSYE 7270 animation assignment. Every code panel is a verbatim excerpt of godot/ at 5f09b7fa0f8555f588d68c9d63a1166d3daa23a1 (read with git show, never the working tree); the gameplay take is a real Movie Maker capture of an isolated copy of that revision, recorded by Bao with the disclosed film driver; strips are Bao's fixture captures; tool output is recorded. No paid call, no upload.",
+    "links": {
+      "repo": "https://github.com/yanxlh/walker-lanternfall-bao-x"
+    },
+    "tags": [
+      "Godot 4",
+      "godot-gamedev",
+      "Walker",
+      "AnimationPlayer",
+      "sprite sheet",
+      "cutout rig",
+      "state machine",
+      "CSYE 7270",
+      "Teardown register",
+      "Kokoro"
+    ],
+    "build": {
+      "at": "2026-11-20T16:18:21",
+      "cut": "master",
+      "filled": 24,
+      "of": 24,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "ASK",
+      "role_note": "COLD OPEN LAW — Claude composer; reconstructed Walker prompt from Bao's CHANGE-BRIEF.md (not a recorded session). Liam introduces himself.",
+      "narration_text": "Hola, this is Liam, in for Bear. Bao Xing's animation assignment for Lanternfall: two clips, one made from a sprite sheet and one that moves a rig. One loops, one commits. One authority drives them both. And four ideas to explain, each at a line of Bao's own clip, test or brief. Here's the ask, rebuilt from Bao's change brief.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.02",
+            "event": "composer card on cream; greeting 'Hola, Liam'"
+          },
+          {
+            "at": "0.25",
+            "event": "the reconstructed Walker prompt types in"
+          },
+          {
+            "at": "0.62",
+            "event": "send arms; running line names the brief and the player script"
+          },
+          {
+            "at": "0.75",
+            "event": "three result lines: the walk, the dash, checks and revision"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Hola, Liam",
+            "topic": "WALKER · GODOT ANIMATION",
+            "segment": "Lanternfall",
+            "command": "Please use Walker to convert my game design document about Lanternfall, a lamp-headed courier surviving three minutes in a fog-bound night market, into two Godot 4 animations: a two-frame walk cycle sliced from my own sprite sheet, and a cutout-rig dash unlocked by a level-up card, with startup, active and recovery frames. Pin what the courier shows today before you change anything, and give every clip a read-back test.",
+            "runningText": "reading CHANGE-BRIEF.md · CLAUDE.md · godot/features/player/player.gd…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "walk: Sprite2D + AnimationPlayer frame track, cells 2 and 3, 8 ticks each",
+              "dash: cutout rig, startup 4 · active 10 · recovery 6 frames at 60 per second",
+              "pin 23 · read-back 86 · edges 51 at 30/60/144 fps · source revision 5f09b7f"
+            ]
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-11-20T17:37:15.661323+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.39,
+      "audio_file": "mp3/beat-B00.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B00.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 17.4,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B00.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF",
+      "role_note": "EXECUTIVE-SUMMARY LAW — hesitant writer. The framing a viewer arrives with ('an animation is a movie') is corrected to what the film shows ('a list of keys').",
+      "narration_text": "The short version. An animation isn't a movie, it's a list of keys. Here, a few tracks of numbers, one driver and a phase table written in frames decide what you see. And whether the motion reads is something only Bao, playing the game, could judge.",
+      "estimated_duration_s": 15,
+      "lead_silence_s": 0.8,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on-correct",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "cream page; 'An animation is a movie' types"
+          },
+          {
+            "at": "0.3",
+            "event": "'movie' typed in terracotta, deleted, 'list of keys' typed in its place"
+          },
+          {
+            "at": "0.6",
+            "event": "'tracks, a driver, a table' and 'judged in play' type in"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "text": "An animation is a movie\ntracks, a driver, a table\njudged in play",
+            "triggerWords": "movie",
+            "replacementWords": "list of keys",
+            "fontSize": 145,
+            "lineSpacing": 1.9,
+            "align": "center",
+            "seed": "5288",
+            "mistakeRate": 2,
+            "hesitateWithin": 0,
+            "hesitateBetween": 1,
+            "ink": "#3D3929",
+            "accent": "#D97757",
+            "bg": "#FAF9F5"
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-11-20T20:54:14.142575+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 13.38,
+      "audio_file": "mp3/beat-B01.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B01.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 13.4,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B01.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "ASSIGNMENT",
+      "role_note": "Assignment requirements as Bao's brief answers them; the excerpt is the first sentence of Bao's rewrite, verbatim.",
+      "narration_text": "What the assignment asks, and how Bao answered it. One clip from a sprite sheet: the courier's walk, two cells of Bao's own sheet from Assignment 2. One clip that moves a rig: a dash, cut from one of those cells into head, arm, coat and legs. The walk loops; the dash commits, with startup, active and recovery. One authority drives both. And four ideas Bao has to explain: what a clip is, one authority, two clocks, and feel designed in frames.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "card-cues",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "CHANGE-BRIEF.md · Bao's brief excerpt beside 4 cards"
+          },
+          {
+            "at": "One clip from a sprite sheet",
+            "event": "card 1 highlights"
+          },
+          {
+            "at": "One clip that moves a rig",
+            "event": "card 2 highlights"
+          },
+          {
+            "at": "One authority",
+            "event": "card 3 highlights"
+          },
+          {
+            "at": "four ideas",
+            "event": "card 4 highlights"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "What the assignment asks",
+            "section": "CHANGE-BRIEF.md · Bao's brief",
+            "excerpt": "This animation design gives the courier two distinct movement presentations: walking communicates continuous movement, while dashing communicates preparation, active movement, and recovery of control.",
+            "source": "CHANGE-BRIEF.md line 175, first sentence, verbatim, at 32bcec6 · the assignment's parts as the brief answers them",
+            "status": "Bao's brief, 18 November 2026: the current contract",
+            "visualLabel": "The assignment, and where this game answers it",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "1 · A sprite clip that loops",
+                "text": "walk: cells 2 and 3 of Bao's own Assignment 2 sheet, on an AnimationPlayer frame track"
+              },
+              {
+                "label": "2 · A rig clip that commits",
+                "text": "dash: head, arm, coat and legs cut from cell 2, under hips, chest and neck pivots"
+              },
+              {
+                "label": "3 · One authority",
+                "text": "player.gd is the only code that plays or seeks the courier's AnimationPlayer"
+              },
+              {
+                "label": "4 · Four ideas, and their tests",
+                "text": "a clip · one authority · two clocks · feel in frames; pins, read-backs, edges, mutations"
+              }
+            ],
+            "cues": [
+              {
+                "at": 2.3,
+                "card": 0
+              },
+              {
+                "at": 7.21,
+                "card": 1
+              },
+              {
+                "at": 15.38,
+                "card": 2
+              },
+              {
+                "at": 16.93,
+                "card": 3
+              }
+            ],
+            "durationSeconds": 22.29
+          },
+          "rendered": {
+            "out": "media/B02.mp4",
+            "at": "2026-11-20T17:40:13.940043+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 22.29,
+      "audio_file": "mp3/beat-B02.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B02.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 22.3,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B02.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "PREDICT",
+      "role_note": "Bao's dash rules, verbatim (brief line 194); the cards restate Bao's phase table (lines 187-192) and predicted failures from the same brief.",
+      "narration_text": "Bao's brief, rewritten in Bao's own words, sets the dash down in frames at sixty a second. Startup, four frames: the courier dips and leans back, direction locked. Active, ten frames: fifty-five pixels at three hundred thirty a second. Recovery, six frames, still locked. Then a one-second cooldown. It's not invincible: each phase has its own rule for a hit. And the predicted failures, each with the check that would catch it: the body blending into dark ground, a gap between coat and legs, a hesitation at the loop, and cast frames mistaken for loop errors.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "card-cues",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "CHANGE-BRIEF.md · Bao's dash rules excerpt beside 4 cards"
+          },
+          {
+            "at": "Startup, four frames",
+            "event": "card 1 highlights"
+          },
+          {
+            "at": "Active, ten frames",
+            "event": "card 2 highlights"
+          },
+          {
+            "at": "Recovery, six frames",
+            "event": "card 3 highlights"
+          },
+          {
+            "at": "predicted failures",
+            "event": "card 4 highlights"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "Designed in frames, before the clip",
+            "section": "CHANGE-BRIEF.md · Bao's dash rules",
+            "excerpt": "Existing knockback remains applicable during every phase. Gameplay reads dash_phase, dash_ticks, and dash_cooldown on simulation ticks rather than inferring behavior from the animation. The dash requires an upgrade card and grants no invulnerability.",
+            "source": "CHANGE-BRIEF.md line 194, first three sentences, verbatim, at 32bcec6 · cards: Bao's phase table, lines 187–192",
+            "status": "Bao's table: what the keys are built from",
+            "visualLabel": "Bao's brief: rules and predictions",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "Startup, 4 frames",
+                "text": "dip and lean back, direction locked; a hit cancels with no cooldown"
+              },
+              {
+                "label": "Active, 10 frames",
+                "text": "55 pixels at 330 pixels per second; a hit lands and the dash carries on"
+              },
+              {
+                "label": "Recovery, 6 frames",
+                "text": "upright again, still locked; a hit cancels and the cooldown starts"
+              },
+              {
+                "label": "Predicted failures",
+                "text": "body blending into dark ground · coat-leg gaps · loop hesitation · cast frames read as loop errors"
+              }
+            ],
+            "cues": [
+              {
+                "at": 4.74,
+                "card": 0
+              },
+              {
+                "at": 8.75,
+                "card": 1
+              },
+              {
+                "at": 12.7,
+                "card": 2
+              },
+              {
+                "at": 19.94,
+                "card": 3
+              }
+            ],
+            "durationSeconds": 30.78
+          },
+          "rendered": {
+            "out": "media/B03.mp4",
+            "at": "2026-11-20T20:46:31.444673+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 30.78,
+      "audio_file": "mp3/beat-B03.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B03.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 30.8,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B03.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/features/player/courier_visual.tscn lines 9-15 at 5f09b7f, read verbatim; the next beat shows the result.",
+      "narration_text": "Here's the slicing, in the scene file. Body is a Sprite two D, and this line points it at Bao's sheet. Centered false, with that offset, puts the cell's pixel sixteen, twenty-three on the courier's origin, the centre of the courier's hurtbox. Then hframes ten cuts the sheet into ten frames across. Which picture frame three is, is decided by that number, not by the image.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on features/player/courier_visual.tscn, lines 9-15"
+          },
+          {
+            "at": "this line points it",
+            "event": "line 11 highlights — texture = Bao's pc_sheet.png"
+          },
+          {
+            "at": "with that offset",
+            "event": "line 13 highlights — offset (-16, -23): cell pixel (16, 23) on the origin"
+          },
+          {
+            "at": "hframes ten",
+            "event": "line 14 highlights — hframes = 10, vframes left at 1"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The sheet, sliced by a number.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://features/player/courier_visual.tscn",
+            "source": "godot/features/player/courier_visual.tscn · lines 9–15 · source revision 5f09b7f · Godot editor reconstruction",
+            "code": "[node name=\"Body\" type=\"Sprite2D\" parent=\".\" unique_id=1103893166]\nuse_parent_material = true\ntexture = ExtResource(\"1_262gh\")\ncentered = false\noffset = Vector2(-16, -23)\nhframes = 10\nframe = 1",
+            "startLine": 9,
+            "codeFontSize": 30,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Sheet",
+                "value": "320 x 32 · 32 px cells · 10 x 1"
+              },
+              {
+                "label": "Walk cells",
+                "value": "2 walk_contact · 3 walk_passing"
+              },
+              {
+                "label": "Credits",
+                "value": "ATTRIBUTION.md · Apache-2.0"
+              }
+            ],
+            "output": [
+              "Built by godot/features/player/build_courier_visual.gd and saved with ResourceSaver"
+            ],
+            "cues": [
+              {
+                "at": 3.26,
+                "line": 11,
+                "label": "texture = Bao's pc_sheet.png"
+              },
+              {
+                "at": 5.99,
+                "line": 13,
+                "label": "offset (-16, -23): cell pixel (16, 23) on the origin"
+              },
+              {
+                "at": 12.76,
+                "line": 14,
+                "label": "hframes = 10, vframes left at 1"
+              }
+            ],
+            "durationSeconds": 19.56
+          },
+          "rendered": {
+            "out": "media/B04.mp4",
+            "at": "2026-11-20T17:26:45.840792+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 19.56,
+      "audio_file": "mp3/beat-B04.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B04.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.566666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B04.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B04. The committed sheet and Bao's committed walk strip (fixture capture, recorded by Bao).",
+      "narration_text": "Here's the sheet, cut the way hframes says: ten cells, thirty-two pixels each. The walk uses cells two and three. In Bao's own strip at thirty frames a second, the first three frames are the cast pose, the auto-attack firing, and the log says pose equals cast: not a broken loop. Then cell three for four frames, cell two for four. Bao checked the strip for drift: none.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "pc_sheet.png, 8x, with the 10 x 1 grid and cell numbers"
+          },
+          {
+            "at": "Bao's own strip",
+            "event": "captures/walk/r1, Bao's 30 fps fixture strip, frames labelled with cell and pose from frames.log"
+          },
+          {
+            "at": "for drift",
+            "event": "Bao's verdict on the strip, quoted"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B05.mp4"
+      },
+      "observation": "The 320 x 32 sheet is cut into ten 32-pixel cells; the walk uses cells 2 and 3. In Bao's 30 fps walk strip (captures/walk/r1, recorded by Bao) frames 1-3 are the cast pose logged as pose=cast, then cell 3 holds four frames and cell 2 four frames; Bao: 'Looked at it; no drift.'",
+      "actual_duration_s": 19.01,
+      "audio_file": "mp3/beat-B05.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B05.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.033333333333335,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B05.mp4",
+        "filled_by": "media",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/animations/courier_clips.tres lines 415-425 at 5f09b7f, read verbatim; the next beat shows the result.",
+      "narration_text": "A clip is a list of keys, not a movie. This is the walk's frame track, in the clip resource. The path line names a node and a property: Body, frame. The times are zero and eight sixtieths of a second; the values, cells two and three. Update one means discrete: hold each value until the next key. And if the path named a property that didn't exist? Nothing would complain. The track would just do nothing.",
+      "estimated_duration_s": 26,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on animations/courier_clips.tres, lines 415-425"
+          },
+          {
+            "at": "The path line",
+            "event": "line 418 highlights — NodePath(\"Body:frame\")"
+          },
+          {
+            "at": "The times",
+            "event": "line 422 highlights — keys at 0 and 8/60 s"
+          },
+          {
+            "at": "Update one",
+            "event": "line 424 highlights — update 1 = UPDATE_DISCRETE"
+          },
+          {
+            "at": "the values",
+            "event": "line 425 highlights — cells 2 and 3"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "A clip is a list of keys.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://animations/courier_clips.tres",
+            "source": "godot/animations/courier_clips.tres · lines 415–425 · source revision 5f09b7f · Godot editor reconstruction",
+            "code": "tracks/2/type = \"value\"\ntracks/2/imported = false\ntracks/2/enabled = true\ntracks/2/path = NodePath(\"Body:frame\")\ntracks/2/interp = 0\ntracks/2/loop_wrap = true\ntracks/2/keys = {\n\"times\": PackedFloat32Array(0, 0.13333334),\n\"transitions\": PackedFloat32Array(1, 1),\n\"update\": 1,\n\"values\": [2, 3]",
+            "startLine": 415,
+            "codeFontSize": 30,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Lines 388–390",
+                "value": "16/60 s · LOOP_LINEAR · step 1/60"
+              },
+              {
+                "label": "Line 419",
+                "value": "interp 0: nearest"
+              },
+              {
+                "label": "Seam",
+                "value": "tail 8 = interval 8"
+              }
+            ],
+            "output": [
+              "Saved by the builder; the game loads the file, never builds a clip at runtime"
+            ],
+            "cues": [
+              {
+                "at": 4.27,
+                "line": 418,
+                "label": "NodePath(\"Body:frame\")"
+              },
+              {
+                "at": 6.99,
+                "line": 422,
+                "label": "keys at 0 and 8/60 s"
+              },
+              {
+                "at": 11.13,
+                "line": 424,
+                "label": "update 1 = UPDATE_DISCRETE"
+              },
+              {
+                "at": 9.52,
+                "line": 425,
+                "label": "cells 2 and 3"
+              }
+            ],
+            "durationSeconds": 19.69
+          },
+          "rendered": {
+            "out": "media/B06.mp4",
+            "at": "2026-11-20T20:59:38.071874+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 19.69,
+      "audio_file": "mp3/beat-B06.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B06.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.7,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B06.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B06. The film's take (scripted input, fixtures labelled) and recorded read-back output.",
+      "narration_text": "In the running game, from a scripted take: the walk under the courier, with the clip's cell beside it, read from the take's own per-frame log. Two, then three, every four movie frames, which is eight ticks. The seam rule for a frame track: no duplicate across the wrap, and the gap from the last key to the end equals the key interval. Eight and eight. Bao watched it wrap at normal speed: no stutter.",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "take, 4K, walking: courier and the live cell readout from the take's log"
+          },
+          {
+            "at": "The seam rule",
+            "event": "read-back numbers: last key 3, interval 8, tail 8 (test_courier_clips walk-seam)"
+          },
+          {
+            "at": "Bao watched",
+            "event": "Bao's human check, quoted"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B07.mp4"
+      },
+      "observation": "In the take, during the walk the logged cell alternates 2 and 3 every four movie frames (eight ticks) under the courier; the read-back's seam numbers (last key 3, 8 frames to the end, interval 8) are shown beside it.",
+      "actual_duration_s": 19.31,
+      "audio_file": "mp3/beat-B07.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B07.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.333333333333332,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B07.mp4",
+        "filled_by": "media",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/features/player/build_courier_visual.gd lines 45-53 at 5f09b7f, read verbatim; the next beat shows the result.",
+      "narration_text": "Feel is designed in frames. The builder carries Bao's phase table: four, ten, six, at sixty a second. Every track has a key at each phase boundary: zero, four, fourteen and twenty. The spacing follows the phase: transition two through startup, an ease-in that accelerates into the push; one, linear, while active; point five through recovery, settling. When play says the timing is wrong, the table changes, and the keys follow.",
+      "estimated_duration_s": 26,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on features/player/build_courier_visual.gd, lines 45-53"
+          },
+          {
+            "at": "four, ten, six",
+            "event": "line 46 highlights — DASH_STARTUP 4 · ACTIVE 10 · RECOVERY 6"
+          },
+          {
+            "at": "Every track has a key",
+            "event": "line 50 highlights — Rig:position keys at 0, 3, 4, 14, 16, 20"
+          },
+          {
+            "at": "zero, four, fourteen",
+            "event": "line 51 highlights — Hips keys on the same boundaries"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Feel is designed in frames.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://features/player/build_courier_visual.gd",
+            "source": "godot/features/player/build_courier_visual.gd · lines 45–53 · source revision 5f09b7f · Godot editor reconstruction",
+            "code": "## Dash phase table (ticks at 60 per second) and keys: [tick, value].\nconst DASH_STARTUP := 4\nconst DASH_ACTIVE := 10\nconst DASH_RECOVERY := 6\nconst DASH_TRACKS := {\n\t\"Rig:position\": [[0, Vector2(0, 0)], [3, Vector2(0, 1)], [4, Vector2(0, -1)], [14, Vector2(0, 0)], [16, Vector2(0, 1)], [20, Vector2(0, 0)]],\n\t\"Rig/Hips:rotation\": [[0, 0.0], [3, -0.15], [4, 0.35], [14, 0.30], [16, -0.08], [20, 0.0]],\n\t\"Rig/Hips/Chest/Neck:rotation\": [[0, 0.0], [3, 0.10], [4, -0.30], [10, -0.20], [14, -0.25], [16, 0.15], [18, -0.05], [20, 0.0]],\n}",
+            "startLine": 45,
+            "codeFontSize": 22,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Lines 58–60",
+                "value": "transitions 2.0 · 1.0 · 0.5"
+              },
+              {
+                "label": "r0 → r1",
+                "value": "6/10/12 → 4/10/6, kept by Bao"
+              },
+              {
+                "label": "Key times",
+                "value": "frame f at f/60 s · step 1/60"
+              }
+            ],
+            "output": [
+              "The game loads godot/animations/courier_clips.tres; this script never runs in the game"
+            ],
+            "cues": [
+              {
+                "at": 3.22,
+                "line": 46,
+                "label": "DASH_STARTUP 4 · ACTIVE 10 · RECOVERY 6"
+              },
+              {
+                "at": 5.04,
+                "line": 50,
+                "label": "Rig:position keys at 0, 3, 4, 14, 16, 20"
+              },
+              {
+                "at": 7.42,
+                "line": 51,
+                "label": "Hips keys on the same boundaries"
+              }
+            ],
+            "durationSeconds": 22.19
+          },
+          "rendered": {
+            "out": "media/B08.mp4",
+            "at": "2026-11-20T17:53:53.893497+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 22.19,
+      "audio_file": "mp3/beat-B08.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B08.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 22.2,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B08.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B08. The committed brief and Bao's committed dash strip r1 (fixture capture, recorded by Bao).",
+      "narration_text": "Here's the table beside the keys built from it: frame four is four sixtieths of a second, fourteen is fourteen sixtieths, twenty is a third. And Bao's strip at thirty frames a second, read at each boundary against the log: the trigger frame, upright; active begins, leaning in; recovery begins, settling; then back on the walk sprite. The table started at six, ten, twelve. A Codex reading pointed out that recovery stood still longer than the dash moved, and Bao asked for four, ten, six, and kept it.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "phase table rows beside key times in seconds"
+          },
+          {
+            "at": "Bao's strip",
+            "event": "captures/dash/r1, Bao's fixture strip: frames 5, 7, 12, 15 with tick and dash frame from frames.log"
+          },
+          {
+            "at": "six, ten, twelve",
+            "event": "the r0 → r1 revision, from CHANGE-BRIEF Revisions and TUNING"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B09.mp4"
+      },
+      "observation": "The phase table's boundaries 0, 4, 14 and 20 sit beside key times 0, 4/60, 14/60 and 20/60 s; Bao's 30 fps dash strip r1 shows the trigger frame (dash frame 0), active begins (4), recovery begins (14) and the walk sprite again after the dash, each matching frames.log.",
+      "actual_duration_s": 27.64,
+      "audio_file": "mp3/beat-B09.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B09.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 27.666666666666668,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B09.mp4",
+        "filled_by": "media",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/features/player/player.gd lines 209-218 at 5f09b7f, read verbatim; the next beat shows the result.",
+      "narration_text": "One authority. This function is the only code that plays or seeks the courier's Animation Player. It asks the state machine for a clip and a time, both from integer tick counters: the walk ticks, or the dash ticks over sixty. Then play, and seek. The player is in manual mode, so it never advances on a clock of its own. The clip moves only when the sixty-hertz simulation ticks, which is the same tick gameplay reads the dash on.",
+      "estimated_duration_s": 26,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on features/player/player.gd, lines 209-218"
+          },
+          {
+            "at": "asks the state machine",
+            "event": "line 216 highlights — clip_and_time(): clip and time from tick counters"
+          },
+          {
+            "at": "Then play, and seek",
+            "event": "line 217 highlights — anim.play(clip); anim.seek(time, true)"
+          },
+          {
+            "at": "manual mode",
+            "event": "line 209 highlights — manual mode: moves only when the simulation ticks"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "One authority, one clock.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://features/player/player.gd",
+            "source": "godot/features/player/player.gd · lines 209–218 · source revision 5f09b7f · Godot editor reconstruction",
+            "code": "## The only place that drives the AnimationPlayer. It runs in manual mode, so the clip moves only when the\n## simulation ticks or an override is set; a frozen run freezes the courier.\nfunc _show() -> void:\n\tif anim == null:\n\t\treturn\n\tvisual.visible = sheet != null\n\tvisual.scale.x = facing\n\tvar shown := clip_and_time()\n\tanim.play(shown[0])\n\tanim.seek(shown[1], true)",
+            "startLine": 209,
+            "codeFontSize": 24,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Lines 198–207",
+                "value": "time = tick count / 60"
+              },
+              {
+                "label": "courier_visual.tscn:66",
+                "value": "callback_mode_process = 2 (manual)"
+              },
+              {
+                "label": "Two writers?",
+                "value": "the last to run in the frame wins"
+              }
+            ],
+            "output": [
+              "test_courier_states.gd: one-authority-in-source, one-animation-driver"
+            ],
+            "cues": [
+              {
+                "at": 4.75,
+                "line": 216,
+                "label": "clip_and_time(): clip and time from tick counters"
+              },
+              {
+                "at": 10.94,
+                "line": 217,
+                "label": "anim.play(clip); anim.seek(time, true)"
+              },
+              {
+                "at": 12.82,
+                "line": 209,
+                "label": "manual mode: moves only when the simulation ticks"
+              }
+            ],
+            "durationSeconds": 21.29
+          },
+          "rendered": {
+            "out": "media/B10.mp4",
+            "at": "2026-11-20T18:00:52.499720+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 21.29,
+      "audio_file": "mp3/beat-B10.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B10.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 21.3,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B10.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B10. The film's take and recorded test output.",
+      "narration_text": "The real game, through the real input map, from the scripted take. A level-up offers the Courier's Dash card. The fixture puts it first, and a real one key picks it. The courier walks, then dashes: startup, active, recovery, read live from the take's log, and the rig replaces the sprite. Measured by the edge tests on every rendered frame: zero seconds between the clip's time and the gameplay tick, at thirty, sixty and a hundred forty-four frames per second.",
+      "estimated_duration_s": 28,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "take: level-up screen, the Courier's Dash card first (fixture), key 1"
+          },
+          {
+            "at": "then dashes",
+            "event": "take: the first dash, with state, phase and dash frame from the take's log"
+          },
+          {
+            "at": "Measured by the edge tests",
+            "event": "recorded output: two-clocks-at-30/60/144fps"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B11.mp4"
+      },
+      "observation": "In the take, the level-up shows the Courier's Dash card first (fixture), the parsed key 1 picks it, and the first dash runs startup, active and recovery from the log with the rig replacing the sprite; the edge tests' measured clip-versus-tick difference (0 s at 30, 60 and 144 fps) is shown beside it.",
+      "actual_duration_s": 22.78,
+      "audio_file": "mp3/beat-B11.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B11.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 22.8,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B11.mp4",
+        "filled_by": "media",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/features/player/player.gd lines 233-240 at 5f09b7f, read verbatim; the next beat shows the result.",
+      "narration_text": "Not invincible. A hit lands in every phase. Then the match on the dash phase applies Bao's rules: in startup, the dash is cancelled and no cooldown starts, because no dash happened. In recovery, the rest is cut, and the cooldown starts. An active dash carries on, damage and all.",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on features/player/player.gd, lines 233-240"
+          },
+          {
+            "at": "A hit lands",
+            "event": "line 233 highlights — the hit lands in every phase"
+          },
+          {
+            "at": "in startup",
+            "event": "line 236 highlights — startup: cancel, no cooldown"
+          },
+          {
+            "at": "In recovery",
+            "event": "line 239 highlights — recovery: end the dash, cooldown starts"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Not invincible.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://features/player/player.gd",
+            "source": "godot/features/player/player.gd · lines 233–240 · source revision 5f09b7f · Godot editor reconstruction",
+            "code": "\t# Not invincible: the hit lands in every phase. It cancels startup (no dash happened, so no cooldown) and the\n\t# rest of recovery (the cooldown starts); an active dash carries on.\n\tmatch dash_phase:\n\t\t\"startup\":\n\t\t\t_set_dash_phase(\"\")\n\t\t\tdash_ticks = 0\n\t\t\"recovery\":\n\t\t\t_end_dash()",
+            "startLine": 233,
+            "codeFontSize": 26,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Lines 226–232",
+                "value": "i-frames gate the hit; hp, knockback"
+              },
+              {
+                "label": "Lines 133–149",
+                "value": "phases advance from dash_ticks"
+              },
+              {
+                "label": "Edges",
+                "value": "hit before / on / after each boundary"
+              }
+            ],
+            "output": [
+              "The interrupt rules are Bao's (CHANGE-BRIEF, design decisions and Bao's brief)"
+            ],
+            "cues": [
+              {
+                "at": 0.64,
+                "line": 233,
+                "label": "the hit lands in every phase"
+              },
+              {
+                "at": 5.18,
+                "line": 236,
+                "label": "startup: cancel, no cooldown"
+              },
+              {
+                "at": 9.83,
+                "line": 239,
+                "label": "recovery: end the dash, cooldown starts"
+              }
+            ],
+            "durationSeconds": 15.45
+          },
+          "rendered": {
+            "out": "media/B12.mp4",
+            "at": "2026-11-20T17:56:00.175052+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 15.45,
+      "audio_file": "mp3/beat-B12.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B12.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 15.466666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B12.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B12. The film's take (placed wraith disclosed) and recorded edge-test output.",
+      "narration_text": "In play, three more dashes, each hit once. A wraith is placed on the courier for one step, a disclosed fixture. Hit on startup frame two: the dash is gone, the hurt pose shows, no cooldown. Hit on active frame eight: damage, and the dash keeps going. Hit on recovery frame sixteen: cancelled, and the sixty-tick cooldown starts. The edge tests check every boundary a frame before, on, and a frame after, at three frame rates.",
+      "estimated_duration_s": 28,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "take: dash with a hit on startup frame 2 (placed wraith, fixture)"
+          },
+          {
+            "at": "active frame",
+            "event": "take: hit on active frame 8, the dash continues"
+          },
+          {
+            "at": "recovery frame",
+            "event": "take: hit on recovery frame 16, cancelled, cooldown 60"
+          },
+          {
+            "at": "The edge tests",
+            "event": "recorded output: hit-before/on/after at boundaries 4, 14, 20"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B13.mp4"
+      },
+      "observation": "In the take, three dashes are each hit once by a placed wraith: on startup frame 2 the dash is cancelled with no cooldown (hp 10 to 8); on active frame 8 it continues (hp 8 to 6) and the cooldown starts when it ends; on recovery frame 16 it is cancelled and the 60-tick cooldown starts (hp 6 to 4).",
+      "actual_duration_s": 21.4,
+      "audio_file": "mp3/beat-B13.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B13.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 21.4,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B13.mp4",
+        "filled_by": "media",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B14",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/tests/test_courier_clips.gd lines 56-66 at 5f09b7f, read verbatim; the next beat shows the result.",
+      "narration_text": "The read-back. This check walks every track of every clip and resolves it: first the node, then the property, or a bone for a 3D transform track, or a blend shape. The last branch is the one that matters here: a property name that isn't on the node gets reported, instead of failing in silence. It proves a track points at something real, not that it points at the right thing.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on tests/test_courier_clips.gd, lines 56-66"
+          },
+          {
+            "at": "a bone",
+            "event": "line 57 highlights — 3D transform tracks name a bone, not a property"
+          },
+          {
+            "at": "a blend shape",
+            "event": "line 61 highlights — blend-shape tracks name a shape on the mesh"
+          },
+          {
+            "at": "The last branch",
+            "event": "line 64 highlights — property tracks: sub in node"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Every track resolves, or the test says so.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://tests/test_courier_clips.gd",
+            "source": "godot/tests/test_courier_clips.gd · lines 56–66 · source revision 5f09b7f · Godot editor reconstruction",
+            "code": "\t\t\t\t\tvar skeleton := node as Skeleton3D\n\t\t\t\t\tif skeleton == null or skeleton.find_bone(sub) == -1:\n\t\t\t\t\t\tproblems.append(\"%s track %d: no bone %s on %s\" % [clip_name, t, sub, node.name])\n\t\t\t\tAnimation.TYPE_BLEND_SHAPE:\n\t\t\t\t\tvar mesh := node as MeshInstance3D\n\t\t\t\t\tif mesh == null or mesh.find_blend_shape_by_name(sub) == -1:\n\t\t\t\t\t\tproblems.append(\"%s track %d: no blend shape %s on %s\" % [clip_name, t, sub, node.name])\n\t\t\t\t_:\n\t\t\t\t\tif not (sub in node):\n\t\t\t\t\t\tproblems.append(\"%s track %d: %s has no property %s\" % [clip_name, t, node.name, sub])\n\treturn problems",
+            "startLine": 56,
+            "codeFontSize": 22,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Lines 40–55",
+                "value": "each track: the node, then the subname"
+              },
+              {
+                "label": "Also checked",
+                "value": "keys · step · loop · discrete · cells < 10"
+              },
+              {
+                "label": "Run",
+                "value": "run-test.sh test_courier_clips.gd 60"
+              }
+            ],
+            "output": [
+              "The assignment's track_problems, unchanged apart from indentation"
+            ],
+            "cues": [
+              {
+                "at": 5.35,
+                "line": 57,
+                "label": "3D transform tracks name a bone, not a property"
+              },
+              {
+                "at": 7.13,
+                "line": 61,
+                "label": "blend-shape tracks name a shape on the mesh"
+              },
+              {
+                "at": 7.87,
+                "line": 64,
+                "label": "property tracks: sub in node"
+              }
+            ],
+            "durationSeconds": 18.67
+          },
+          "rendered": {
+            "out": "media/B14.mp4",
+            "at": "2026-11-20T18:05:58.562464+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 18.67,
+      "audio_file": "mp3/beat-B14.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B14.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 18.7,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B14.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B15",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B14. Recorded tool output: evidence/courier_clips.json, evidence/assignment-7/mutations/mutations-required.json, evidence/assignment-7/godot3-names/probe.json.",
+      "narration_text": "Recorded output: eighty-six of eighty-six read-back checks. Then the assignment's four mutations, each in its own git worktree. Rename the rotation property, and track problems reports it. Switch the walk's loop off, and the loop check fails. Key cell ten on a ten-cell sheet, and three checks fail. Reimport from an empty cache, and everything still passes, because a cutout rig has no importer setting to lose. One surprise: in Godot four point seven, a Godot three style loop equals true still loops; only the name scan catches it. What no headless run can show is whether the motion reads.",
+      "estimated_duration_s": 32,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "recorded: courier_clips 86/0, assertion groups"
+          },
+          {
+            "at": "four mutations",
+            "event": "recorded mutations-required.json: 5, 1, 3 failures; empty cache passes"
+          },
+          {
+            "at": "One surprise",
+            "event": "recorded probe: loop = true loads as LOOP_LINEAR in 4.7.2"
+          },
+          {
+            "at": "What no headless run",
+            "event": "what a headless run cannot show"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B15.mp4"
+      },
+      "observation": "Recorded output: courier_clips 86/0 with the assertion groups named; the four required mutations (subname rotation->rotaton fails 5 checks including every-track-resolves; loop_mode 0 fails 1; a key on cell 10 fails 3; an empty-cache reimport passes); and the Godot 4.7.2 probe in which loop = true loads as LOOP_LINEAR.",
+      "actual_duration_s": 32.4,
+      "audio_file": "mp3/beat-B15.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B15.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 32.4,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B15.mp4",
+        "filled_by": "media",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B16",
+      "act": "CODE",
+      "kind": "code",
+      "role_note": "Code beat (code-then-result-v1): godot/features/player/build_courier_visual.gd lines 208-218 at 5f09b7f, read verbatim; the next beat shows the result.",
+      "narration_text": "Revision two came from Bao's own eyes. On the dark slate, the coat and legs disappeared; only the lamp read. Bao predicted a thin, low-brightness outline would separate the body. This function finds the outer ring of the cell's silhouette: transparent pixels touching an opaque one. Then it keeps only the ring pixels next to the coat and the legs, and the builder draws them behind each part.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "line-highlight",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Godot editor reconstruction opens on features/player/build_courier_visual.gd, lines 208-218"
+          },
+          {
+            "at": "outer ring",
+            "event": "line 208 highlights — every pixel of the cell, and one beyond each edge"
+          },
+          {
+            "at": "transparent pixels touching",
+            "event": "line 210 highlights — skip opaque pixels; test the four neighbours"
+          },
+          {
+            "at": "next to the coat and the legs",
+            "event": "line 216 highlights — neighbour inside the part's region"
+          },
+          {
+            "at": "notes",
+            "event": "source-notes panel (not Inspector values) lists related lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Revision two, from Bao's eyes.",
+            "project": "walker-lanternfall-bao-x",
+            "path": "res://features/player/build_courier_visual.gd",
+            "source": "godot/features/player/build_courier_visual.gd · lines 208–218 · source revision 5f09b7f · Godot editor reconstruction",
+            "code": "\tfor y in range(-1, 33):\n\t\tfor x in range(-1, 33):\n\t\t\tif opaque.call(x, y):\n\t\t\t\tcontinue\n\t\t\tfor part in OUTLINE_PARTS:\n\t\t\t\tvar region: Rect2 = PARTS[part][\"region\"]\n\t\t\t\tfor d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:\n\t\t\t\t\tvar n: Vector2i = Vector2i(x, y) + d\n\t\t\t\t\tif opaque.call(n.x, n.y) and region.has_point(Vector2(n) + Vector2(0.5, 0.5)):\n\t\t\t\t\t\trings[part].append(Vector2i(x, y))\n\t\t\t\t\t\tbreak",
+            "startLine": 208,
+            "codeFontSize": 24,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "Lines 54–56",
+                "value": "Coat, Legs · #4A5A80"
+              },
+              {
+                "label": "Bao's prediction",
+                "value": "TUNING.md, before any strip"
+              },
+              {
+                "label": "Read-back",
+                "value": "coat 20 px · legs 18 px · none on head"
+              }
+            ],
+            "output": [
+              "Approved by Bao: \"Approve.\" Walk sprite, keys and timing unchanged"
+            ],
+            "cues": [
+              {
+                "at": 9.78,
+                "line": 208,
+                "label": "every pixel of the cell, and one beyond each edge"
+              },
+              {
+                "at": 11.6,
+                "line": 210,
+                "label": "skip opaque pixels; test the four neighbours"
+              },
+              {
+                "at": 15.46,
+                "line": 216,
+                "label": "neighbour inside the part's region"
+              }
+            ],
+            "durationSeconds": 19.41
+          },
+          "rendered": {
+            "out": "media/B16.mp4",
+            "at": "2026-11-20T17:58:18.384239+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 19.41,
+      "audio_file": "mp3/beat-B16.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B16.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.433333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B16.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B17",
+      "act": "RESULT",
+      "kind": "result",
+      "role_note": "Result of B16. Bao's committed strips r1 and r2 (fixture captures, recorded by Bao) and TUNING.md.",
+      "narration_text": "Bao's two strips, same position, same ticks: r one above, r two below. The logs match tick for tick; the outline appears on frames five, seven and twelve. Claude's reading: on the back of the coat, the sheet's dark ink sits between the outline and the visible coat, so the edge can look detached. Bao judged it in the running game: keep it, it's clearer. That's the disagreement, recorded, and the verdict is Bao's.",
+      "estimated_duration_s": 26,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Bao's strips r1 (top) and r2 (bottom), frames 4, 5, 7, 12, 15"
+          },
+          {
+            "at": "Claude's reading",
+            "event": "TUNING.md: Claude's comparison, a claim"
+          },
+          {
+            "at": "Bao judged it",
+            "event": "TUNING.md: Bao's verdict, quoted"
+          }
+        ],
+        "treatment": "none",
+        "evidence_media": "media/B17.mp4"
+      },
+      "observation": "Bao's dash strips r1 and r2 (same position, logs identical tick for tick): the r2 frames 5, 7 and 12 show the outline on the coat and legs; Claude's reading (the back-of-coat outline sits outside the sheet's dark ink) and Bao's verdict 'Keep. It is clearer.' are shown side by side.",
+      "actual_duration_s": 20.42,
+      "audio_file": "mp3/beat-B17.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B17.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 20.433333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B17.mp4",
+        "filled_by": "media",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B18",
+      "act": "ANSWERS",
+      "role_note": "Recap of the four ideas; the excerpt is the first sentence of Bao's answer 5 in the brief, verbatim.",
+      "narration_text": "So, the four ideas, each at a line. What a clip is: keys on a node and a property, and a missing property fails silently unless the read-back resolves it. What one authority means: only the show function plays and seeks; a second writer would win by node order, not by design. What the two clocks are: the clip is seeked on the same sixty-hertz tick gameplay reads, measured zero seconds apart. And what feel in frames means: Bao's table, four, ten, six, became keys at zero, four, fourteen and twenty.",
+      "estimated_duration_s": 28,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "card-cues",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "CHANGE-BRIEF.md · Bao's answer 5 excerpt beside 4 cards"
+          },
+          {
+            "at": "What a clip is",
+            "event": "card 1 highlights"
+          },
+          {
+            "at": "one authority",
+            "event": "card 2 highlights"
+          },
+          {
+            "at": "two clocks",
+            "event": "card 3 highlights"
+          },
+          {
+            "at": "feel in frames",
+            "event": "card 4 highlights"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "Four ideas, each at a line",
+            "section": "CHANGE-BRIEF.md · Bao's answer 5",
+            "excerpt": "Both animations follow the 60 Hz simulation: walking uses walk_ticks, and dashing uses dash_ticks.",
+            "source": "CHANGE-BRIEF.md line 232, first sentence of Bao's answer 5, verbatim, at 32bcec6",
+            "status": "Each answer points at a line of Bao's own clip, test or brief",
+            "visualLabel": "The four ideas, answered",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "A clip",
+                "text": "keys on a node and a property: courier_clips.tres:418 · a missing property fails silently (test_courier_clips.gd:64)"
+              },
+              {
+                "label": "One authority",
+                "text": "only player.gd:217–218 plays and seeks; a second writer would win by node order"
+              },
+              {
+                "label": "Two clocks",
+                "text": "manual mode, seeked on the 60 Hz tick (courier_visual.tscn:66); measured 0 s apart"
+              },
+              {
+                "label": "Feel in frames",
+                "text": "Bao's table 4 / 10 / 6 → keys at 0, 4, 14, 20 (build_courier_visual.gd:46–52)"
+              }
+            ],
+            "cues": [
+              {
+                "at": 1.77,
+                "card": 0
+              },
+              {
+                "at": 8.74,
+                "card": 1
+              },
+              {
+                "at": 15.83,
+                "card": 2
+              },
+              {
+                "at": 22.46,
+                "card": 3
+              }
+            ],
+            "durationSeconds": 28.22
+          },
+          "rendered": {
+            "out": "media/B18.mp4",
+            "at": "2026-11-20T17:45:54.079104+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 28.22,
+      "audio_file": "mp3/beat-B18.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B18.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 28.233333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B18.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B19",
+      "act": "LIMITS",
+      "kind": "evidence",
+      "role_note": "Agent mistakes from TEST-REPORT.md, shortened; open items from TEST-REPORT.md and README.md Known limitations.",
+      "narration_text": "What the agent got wrong, as the test report lists it: a pin that read the hit sixty ticks late, an edge test that read the phase after the hit, a structure test that compared the clip with the wrong moment, a re-pin that missed a hard-coded five, and a header edit lost in a chained command. Still uncertain: no reference dash was measured, the four, ten, six timing came from a reading rather than from play, and the real-input pin was added after the change. The next step: measure a reference dash, and retime from it.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "TEST-REPORT.md 'Agent mistakes caught while building'"
+          },
+          {
+            "at": "Still uncertain",
+            "event": "TEST-REPORT.md departures and README Known limitations"
+          },
+          {
+            "at": "next step",
+            "event": "one next step"
+          }
+        ],
+        "treatment": "none"
+      },
+      "actual_duration_s": 28.35,
+      "audio_file": "mp3/beat-B19.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B19.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 28.366666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B19.mp4",
+        "filled_by": "media",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B20",
+      "act": "ROLES",
+      "kind": "evidence",
+      "role_note": "Roles from CONTRIBUTIONS-assignment-7.md and prompts/assignment-7.md; sheet credits from godot/assets/art/ATTRIBUTION.md.",
+      "narration_text": "Who did what. Bao chose the dash and its rules, wrote the brief and the seven answers, saw the body vanish on dark ground and predicted the fix, approved it, recorded every thirty-frame strip, and gave every verdict. Claude Code wrote the builder, the clips, the state machine, the dash, the tests and this film. Codex proposed the four, ten, six timing. The sheet is Bao's own, generated in Assignment two with FLUX one schnell, Apache two point oh. The code you saw is revision five f zero nine b seven f.",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "CONTRIBUTIONS-assignment-7.md: Bao's work and decisions"
+          },
+          {
+            "at": "Claude Code",
+            "event": "what Claude Code wrote; prompts in prompts/assignment-7.md"
+          },
+          {
+            "at": "The sheet",
+            "event": "godot/assets/art/ATTRIBUTION.md"
+          },
+          {
+            "at": "revision",
+            "event": "source revision 5f09b7f"
+          }
+        ],
+        "treatment": "none"
+      },
+      "actual_duration_s": 28.56,
+      "audio_file": "mp3/beat-B20.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B20.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 28.566666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B20.mp4",
+        "filled_by": "media",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B21",
+      "act": "VERDICT",
+      "role_note": "ClaudeVerdictArtifact — implemented work, limitations, human judgment; shows the source revision.",
+      "narration_text": "The verdict. Implemented: a walk on a frame track and a dash on a cutout rig, driven by one authority, with Bao's rules for every phase. Checked: pins before and after, eighty-six read-back checks, edges at three frame rates, four mutations, and two clocks measured zero seconds apart. The limits are written down. And the human judgments, the strips, the play checks, keep four, ten, six, keep the outline, are Bao's own.",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "artifact-reveal",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "artifact card 'Verdict', heading with the source revision"
+          },
+          {
+            "at": "0.2",
+            "event": "implemented line"
+          },
+          {
+            "at": "0.45",
+            "event": "checked line"
+          },
+          {
+            "at": "0.65",
+            "event": "limits line"
+          },
+          {
+            "at": "0.85",
+            "event": "human-judgment line"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Verdict",
+            "artifactHeading": "Lanternfall animation · source revision 5f09b7f",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Implemented: walk frame track, dash cutout rig, one authority, Bao's phase rules.",
+              "Checked: pins, read-back 86/86, edges at 30/60/144, four mutations, clocks 0 s apart.",
+              "Limits: no reference dash measured; r1 came from a reading; the outline can read detached.",
+              "Human judgment: Bao's strips, play checks and verdicts, quoted as Bao gave them."
+            ]
+          },
+          "rendered": {
+            "out": "media/B21.mp4",
+            "at": "2026-11-20T17:48:07.067701+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 21.08,
+      "audio_file": "mp3/beat-B21.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B21.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 21.1,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B21.mp4",
+        "filled_by": "remotion:ClaudeVerdictArtifact",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B22",
+      "act": "HANDOFF",
+      "role_note": "HANDOFF LAW — Your Turn: one bounded change through the phase table plus a prediction and a strip. Liam reads the prompt, discusses it and signs off.",
+      "narration_text": "Your turn. Paste this: Please use Walker to read the dash in my Lanternfall clip library. In my phase table, change only the recovery from six frames to nine, and let it flow down: the builder's keys, the read-back's expected times, and a re-pin of the edge tests in its own commit. Before running anything, predict which strip frames change and what the courier shows on dash frame sixteen. Then record strip r three and compare it with your prediction. It tests whether you believe the table, not the keys, is the design. Write the prediction first. Liam, in for Bear.",
+      "estimated_duration_s": 32,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.02",
+            "event": "composer card; greeting 'Your turn.'"
+          },
+          {
+            "at": "0.1",
+            "event": "the paste-ready prompt types in"
+          },
+          {
+            "at": "0.7",
+            "event": "three output lines: prediction first, strip, re-pin"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "WALKER · GODOT ANIMATION",
+            "segment": "Lanternfall",
+            "command": "Please use Walker to read the dash in godot/animations/courier_clips.tres in my Lanternfall project. In my phase table, change only the recovery from 6 frames to 9 and let it flow down: the builder's keys, the read-back's expected times, and a re-pin of the edge tests in its own commit. Before running anything, predict which strip frames change and what the courier shows on dash frame 16. Then record strip r3 and compare it with your prediction.",
+            "runningText": "paste this into Claude…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Prediction written before the strip.",
+              "Strip r3 recorded: compare with your prediction.",
+              "Edge tests re-pinned in their own commit."
+            ],
+            "animateTyping": true
+          },
+          "rendered": {
+            "out": "media/B22.mp4",
+            "at": "2026-11-20T17:50:09.563163+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 30.78,
+      "audio_file": "mp3/beat-B22.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B22.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 30.8,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B22.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-11-20T16:18:21"
+      }
+    },
+    {
+      "beat_id": "B23",
+      "act": "OUTRO",
+      "role_note": "OUTRO LAW — ClaudeTitleOutro: exact title, @NikBearBrown, slug-seeded mascot, stock jingle only, no narration.",
+      "narration_text": "",
+      "estimated_duration_s": 10.36,
+      "actual_duration_s": 10.36,
+      "audio_file": "mp3/beat-B23.wav",
+      "audio_note": "stock @NikBearBrown jingle logos/bear-brown/bear-brown-3.mp3, picked by the slug seed (char-sum 5288 mod 6 pool files = 2), never cut: padded with 1.0 s of silence (9.36 s + 1.0 s); no narration (Liam signs off in B22)",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "mascot-title",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title 'Lanternfall in Frames'"
+          },
+          {
+            "at": "0.25",
+            "event": "@NikBearBrown"
+          },
+          {
+            "at": "0.45",
+            "event": "slug-seeded mascot"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Lanternfall in Frames",
+            "slug": "claude-liam-walker-lanternfall-bao-x-animation-gamedev",
+            "durationSeconds": 10.36
+          },
+          "rendered": {
+            "out": "media/B23.mp4",
+            "at": "2026-11-20T17:50:56.562444+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 10.366666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B23.mp4",
+        "filled_by": "remotion:ClaudeTitleOutro",
+        "at": "2026-11-20T16:18:21"
+      }
+    }
+  ]
+}

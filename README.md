@@ -269,6 +269,8 @@ Frame strips (Bao runs them): `scripts/capture-strip.command watch dash`, `scrip
 
 [CHANGE-BRIEF.md](CHANGE-BRIEF.md) (the A7 contract and its revisions), [CLAUDE.md](CLAUDE.md), [TUNING.md](TUNING.md) (A7 section), [TEST-REPORT.md](TEST-REPORT.md), [prompts/assignment-7.md](prompts/assignment-7.md), [godot/assets/art/ATTRIBUTION.md](godot/assets/art/ATTRIBUTION.md), [CONTRIBUTIONS-assignment-7.md](CONTRIBUTIONS-assignment-7.md), [SUBMISSION-assignment-7.md](SUBMISSION-assignment-7.md).
 
+**Film:** “Lanternfall in Frames” (godot-gamedev + walker, source revision `5f09b7f`): [`youtube/claude-liam-walker-lanternfall-bao-x-animation-gamedev/`](youtube/claude-liam-walker-lanternfall-bao-x-animation-gamedev/README.md). The take it shows was recorded by Bao. The rendered file `claude-liam-walker-lanternfall-bao-x-animation-gamedev.mp4` (3840 × 2160, 8:51, SHA-256 `3ce7f3f2579b8acad07f1a9155b1bbcc5cca062049ca56b2f7663595aa2b131b`) is not in git. Film link: pending (Bao uploads it to Google Drive).
+
 **Known limitations**
 
 - The rig is cut from one 32 px cell, so at the strongest lean (active frames) a gap opens between the coat and the legs in the clip strip.
