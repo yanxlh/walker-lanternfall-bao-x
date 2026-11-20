@@ -21,7 +21,7 @@
 
 ## Roles in this film
 
-- **Bao:** recorded the take and the three 30 fps strips; wrote the brief and the seven answers; gave every verdict quoted; will watch the final export.
+- **Bao:** recorded the take and the three 30 fps strips; wrote the brief and the seven answers; gave every verdict quoted; watched the final export ("Watched it. Good.", 20 November 2026).
 - **Claude Code (Claude Opus 5.5):** the film driver and its command, the beat sheet, the narration text, the evidence-beat compositor and every other tool in `tools/`, the edit and the checks.
 - **Codex:** proposed the 4 / 10 / 6 phase table (shown as such in B09); no part of the film.
 

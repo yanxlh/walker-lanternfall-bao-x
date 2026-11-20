@@ -51,4 +51,4 @@ Master: `exports/landscape/claude-liam-walker-lanternfall-bao-x-animation-gamede
 
 ## Not covered by this pass
 
-Bao has not yet watched or listened to the whole film (content, pacing, voice, every narration transition). Only Bao can do that.
+A human viewing and listening of the whole film (content, pacing, voice, every narration transition) is beyond this pass. Bao watched the final export (8:51, SHA-256 `3ce7f3f2…b131b`) on 20 November 2026: "Watched it. Good."
