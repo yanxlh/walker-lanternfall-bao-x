@@ -248,3 +248,12 @@ Predicted failures and detection methods are: body/background blending, checked 
 | "an abrupt transition from the brighter dash rig to the darker walking sprite" | "an abrupt-looking switch from the dash rig back to the walking sprite" | Measured: the rig uses only colours of the walk cell, and mean luminance stays between 63.6 and 66.15 across walk and dash frames, at most 2.5 % above walk frame 0 (`evidence/assignment-7/rig-brightness/clip-strips-r1.json`, `scripts/measure_rig_brightness.py`). |
 | "dash brightening obscuring hurt feedback" | "the dash pose obscuring hurt feedback" | Same measurement. |
 | "“Brightness discontinuity” specifically means the transition from the brightened dash rig to the original walking sprite, not the existing hit flash or yellow tint." | removed | It defined a term on the measured-false premise. |
+
+### 2026-11-20 — revision r2: an outline on the rig's coat and legs (Bao)
+
+Bao's observation in play and Bao's prediction are in TUNING.md (r1 → r2). Bao approved this change: "Approve."
+- The dash rig's `Coat` and `Legs` get a 1-pixel outline, colour `#4A5A80` (luminance about 80). It sits above the slate's base `#1F2540` (38) and highlight `#3B4A6B` (73), and far below the lamp `#F2B84B` (188). Their inside colours do not change.
+- The outline is the outer ring of cell 2's silhouette: every transparent pixel 4-adjacent to an opaque pixel. A ring pixel belongs to `Coat` or `Legs` when it touches that part's pixels. Ring pixels that touch only the head or the arm get no outline.
+- Built by `build_courier_visual.gd` as one Polygon2D of pixel squares per part (`CoatOutline` under `Hips`, `LegsOutline` under `Rig`), drawn just behind its part. Each outline moves with its part's pivot and uses the parent material.
+- The walk sprite, the sheet, every key, the phase table and the dash rules are unchanged.
+
