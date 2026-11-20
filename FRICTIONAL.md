@@ -505,5 +505,7 @@ I accepted the AI's analysis of the phase lengths, the tracks and the tests, but
 
 - In play on the dark slate ground, the coat and leg edges blend into the background and the lean and the return to upright are not clear enough; this starts revision r2 (TUNING.md).
 - Trace: `25603f8`, `39bbf18`, `eef8ce8` 4/10/6 · `66133e2` my brief · `evidence/assignment-7/rig-brightness/` the colour comparison · `fd5f1c7` my observation and prediction for r2.
+- r2: I recorded the r1 strips (dash, walk) and the r2 strip myself. The outline on the coat and legs made the body clearer in play, and I kept it: "Keep. It is clearer." Claude read the back-of-coat outline as a detached line; I judged it in the running game.
+- Trace: `fd5f1c7` observation and prediction · `b112e52`, `b613348` r1 strips · `936b13f` approval and Claude's prediction · `5f09b7f` outline · `a783c74` r2 strip and verdict.
 
-**Still to do:** the r1 and r2 strips, my r2 verdict, the film.
+**Still to do:** the film.

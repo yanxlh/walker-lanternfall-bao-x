@@ -8,7 +8,7 @@ On 18 November I rewrote CHANGE-BRIEF.md in my own words, with the predicted fai
 
 On 20 November I checked every reference in Claude Code's CLAUDE.md draft; nothing needed changing, so there is no correction commit, only this record.
 
-Not yet done, and mine to do (the assignment: I write the brief, the phase table, the cycle spec, every prediction and verdict, approve every change and run every capture): record the 30 fps strips; one revision driven by what I see in play, with a prediction, two strips and my verdict in TUNING.md; the human checks in TEST-REPORT; watch and listen to the whole film; push; submit on Canvas.
+On 20 November I reported the human checks, recorded the r1 and r2 frame strips myself, made revision r2 from what I saw in play (my observation and prediction in TUNING.md; I approved the outline) and kept it: "Keep. It is clearer." Not yet done, and mine to do: watch and listen to the whole film; push; submit on Canvas.
 
 ## AI assistance
 
