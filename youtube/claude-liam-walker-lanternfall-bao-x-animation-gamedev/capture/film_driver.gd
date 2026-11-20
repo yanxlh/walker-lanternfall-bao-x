@@ -9,14 +9,14 @@ extends Node
 ##   godot --path . res://film_main.tscn --write-movie <out>/take-dash.avi --fixed-fps 30 -- <out>/take-dash-log.jsonl
 ##   godot --headless --path . res://film_main.tscn --fixed-fps 30 -- <out>/take-dash-dryrun.jsonl
 ##
-## Timeline, in physics steps (60 per second): right held from 0; level-up at 40, card screen until 220, card "1";
-## dash at 320 (no interrupt); left from 420; dash at 470 with a hit on startup frame 2; dash at 560 with a hit on
-## active frame 8; right from 650; dash at 670 with a hit on recovery frame 16; end at 840.
+## Timeline, in physics steps (60 per second): right held from 0; level-up at 40, card screen until 200, card "1";
+## walk; dash at 440 (no interrupt); left from 560; dash at 620 with a hit on startup frame 2; dash at 760 with a hit
+## on active frame 8; right from 860; dash at 900 with a hit on recovery frame 16; keys up at 1060; end at 1120.
 ## One log row per rendered frame: movie frame N is row N.
 
 const GS = preload("res://game/game_state.gd")
 const MAIN := "res://game/main.tscn"
-const END_STEP := 840
+const END_STEP := 1120
 const LABEL := "Real engine capture · scripted input · fixtures: no spawns, the dash card set first in the offer, a wraith placed for each hit"
 
 var game
@@ -94,23 +94,23 @@ func _drive() -> void:
 		41:
 			game.offered = Array(["dash", "heal", "heal"], TYPE_STRING, "", null)
 			events.append("offer set: dash, heal, heal")
-		220:
+		200:
 			_key(KEY_1)
 			events.append("card key 1")
-		320, 470, 560, 670:
+		440, 620, 760, 900:
 			_key(KEY_SHIFT)
 			events.append("dash key")
-		420:
+		560:
 			_action("move_right", false)
 			_action("move_left", true)
-		472, 568, 686:
+		622, 768, 916:
 			_place_wraith()
-		473, 569, 687:
+		623, 769, 917:
 			_remove_wraith()
-		650:
+		860:
 			_action("move_left", false)
 			_action("move_right", true)
-		END_STEP:
+		1060:
 			_action("move_right", false)
 	Input.flush_buffered_events()
 	step += 1
