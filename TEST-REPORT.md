@@ -798,7 +798,7 @@ Claude's reading of the strips (a claim, not a human check): the walk alternates
 | One revision driven by what Bao saw in play, with a prediction, two strips and the verdict | TUNING.md, r1 → r2 | pending |
 | The cycle seam: at least five wraps at normal speed, no stutter, duplicate or jump | `scripts/play-dash.command` | no problem reported (20 November) |
 | The action in play many times, with an interrupt in each phase; startup, active and recovery read as distinct | same | no problem reported (20 November) |
-| Registration: the cycle's strip shows no drift within the cells | `scripts/capture-strip.command walk r1` | pending |
+| Registration: the cycle's strip shows no drift within the cells | `captures/walk/r1/` (recorded by Bao, 20 November, 30 fps) | Bao's verdict on the strip: pending. Claude's reading (a claim): frames 1–3 are the cast pose after the first beam (`pose=cast` in `frames.log`), not a loop skip; frames 4–15 run 3, 2, 3, four frames each (8 ticks at 30 fps); no duplicate at the 3 → 2 seam on frame 8; no visible drift between cells 2 and 3, consistent with the measured sub-pixel registration |
 | Both clips over the darkest and the lightest stretch of the level | in play | on the dark slate the coat and leg edges blend into the ground (Bao, 20 November); revision r2 |
 | Claude's strip readings beside Bao's verdicts, at least one disagreement or "none" | TUNING.md | pending |
 | The film watched and listened to in full | — | pending |
