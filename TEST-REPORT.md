@@ -832,17 +832,17 @@ Canvas replaced the assignment page with the full text on 13 November 2026 (18:0
 | Fresh cache | the same run, and `evidence/assignment-7/fresh-clone/` | every mutation worktree imports from an empty cache before its run; the rig read-back passes there |
 | State machine | `evidence/courier_states.json` | 10 / 0: the table against the resource (priority, a clip for every state and override, the transition table, Tuning against the clip's boundary keys, one driver, one authority in source) and `real-input-clip-and-cell-follow-the-state`: 160 real-loop steps with parsed movement, dash and card keys; the current clip is read through `current_animation` (AnimationPlayer route); all six states seen |
 | Edges | `evidence/dash_edges_30fps.json`, `_60fps`, `_144fps` | 51 / 0 at each rate: a hit one frame before, on and after each boundary (frames 3/4/5, 13/14/15, 19/20/21) with the brief's outcome, plus the r0-era edges re-pinned for r1 |
-| Frame strips (fixture) | r0 and r1 60 fps game captures in `captures/assignment-7/`; the 30 fps preview kit `scripts/capture-strip.command` | the kit is smoke-tested headless only; the 30 fps strips are Bao's to record (the assignment: the student runs every capture) |
+| Frame strips (fixture) | 30 fps preview strips recorded by Bao: `captures/dash/r1/`, `captures/dash/r2/`, `captures/walk/r1/`; earlier 60 fps game captures run by Claude Code in `captures/assignment-7/` | trigger and phase-boundary frames 4/5/7/12/15 kept for each dash revision, read against `frames.log` |
 | Two clocks | `two-clocks-at-<rate>` in `test_dash_edges.gd` | the clip advances only when the physics tick seeks it; gameplay reads the dash on the same tick: 0 s apart at 30, 60 and 144 fps. Rendered frames trail the physics step by a span of 0, 0 and 15.3 ms |
-| The cycle seam, the action in play, registration, against the background (HUMAN CHECKS) | — | pending (table above) |
-| Claude against you | TUNING.md | pending |
+| The cycle seam, the action in play, registration, against the background (HUMAN CHECKS) | the HUMAN CHECKS table above | reported by Bao on 20 November; the dark-slate finding led to revision r2 |
+| Claude against you | TUNING.md | one disagreement recorded: the r2 outline on the coat's back (TUNING.md, r1 → r2) |
 
 What the headless runs cannot show: whether the walk wraps without a visible seam, whether the three dash phases read in play, whether the courier is readable over the darkest and lightest ground, and whether the timing feels right. Claude's readings of the strips are claims.
 
 Departures from the assignment's order, recorded rather than rewritten:
 - The resource-load rule in `scripts/run-test.sh` was committed after the first setup (`a0b149c`), not before Step 1.
 - The real-input pin was written after the change and shown to pass on `9ccf078` in a worktree.
-- CHANGE-BRIEF.md and the phase tables were drafted by agents (Claude Code for r0, a Codex proposal for r1); Bao's own rewrite is pending.
+- The first CHANGE-BRIEF.md and the phase tables were drafted by agents (Claude Code for r0, a Codex proposal for r1). Bao's own rewrite, with the seven short answers, became the contract on 18 November.
 - The work ran in one desktop session from the brief, not from the chapter's prompt files.
 - The 60 fps captures were run by Claude Code from the terminal.
 
