@@ -801,7 +801,7 @@ Claude's reading of the strips (a claim, not a human check): the walk alternates
 | Registration: the cycle's strip shows no drift within the cells | `captures/walk/r1/` (recorded by Bao, 20 November, 30 fps) | Bao's verdict on the strip (20 November): "Looked at it; no drift." Claude's reading (a claim): frames 1–3 are the cast pose after the first beam (`pose=cast` in `frames.log`), not a loop skip; frames 4–15 run 3, 2, 3, four frames each (8 ticks at 30 fps); no duplicate at the 3 → 2 seam on frame 8; no visible drift between cells 2 and 3, consistent with the measured sub-pixel registration |
 | Both clips over the darkest and the lightest stretch of the level | in play | on the dark slate the coat and leg edges blend into the ground (Bao, 20 November); revision r2 |
 | Claude's strip readings beside Bao's verdicts, at least one disagreement or "none" | TUNING.md | one: on r2 Claude reads the back-of-coat outline as a detached line (dark ink between it and the coat); Bao finds the body clearer in play and keeps it. Also earlier: Bao's brief called the rig brighter, and Claude's measurement found the same colours |
-| The film watched and listened to in full | the final export, `claude-liam-walker-lanternfall-bao-x-animation-gamedev.mp4` (8:51, SHA-256 `3ce7f3f2…b131b`) | Bao, 20 November 2026: "Watched it. Good." |
+| The film watched and listened to in full | the final export, `claude-liam-walker-lanternfall-bao-x-animation-gamedev.mp4` (8:51, SHA-256 `3ce7f3f2…b131b`) | Bao, 20 November 2026: "Watched it. Good." Asked whether that was the whole film with the sound on: "Yes, I watched all of it." |
 
 The tuning prompt, filled in for this project, for one change after play:
 
