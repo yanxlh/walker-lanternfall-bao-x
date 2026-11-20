@@ -495,4 +495,15 @@ The language notes in my own words, with every line reference pointing at a real
 - 18 November: I rewrote CHANGE-BRIEF.md and answered the seven questions. Claude Code checked it against the code and measured the rig's brightness. Two of my statements were wrong: the startup does not compress the body, and the dash rig is not brighter (same colours, within 2.5 % luminance). Claude Code corrected both at my request.
 - 20 November: I checked every reference in CLAUDE.md (the agent's draft r2, `7d97707`); nothing needs changing.
 
-**Still to do:** say how the walk, the dash and the cooldown read in play.
+## 2026-11-20 (Fri) — Assignment 7: what I tried, checked and learned
+
+For A7 I first set the dash's basic rules: it is unlocked by a level-up card, it gives no invincibility, and there is a cooldown between two dashes. I wanted the player to see the three phases (preparation, the push and the recovery) without the move slowing the controls down. I had the tools check the implementation, run the tests and record strips, and I compared the original 6/10/12 with the adjusted 4/10/6. In the original the recovery was longer than the actual push, so I accepted and kept 4/10/6, with the dash distance and the cooldown unchanged. That change came from code and strip analysis, though, and does not count as a change made after I found a problem in play myself.
+
+While checking, I found that some descriptions could not be accepted as they were, for example "a brighter rig". The comparison afterwards showed that the rig uses the sprite sheet's own colours, so it cannot be called brighter on feel alone, and I changed that wording. A temporary brightening trial made the body's outline clearer, but it also caused an obvious brightness change when the dash ended and switched back to walking, so I did not make brightening the final version. Another issue: the auto-attack inserts the cast pose, so other frames in the walking preview are not necessarily loop skips; the pose log has to be used to judge them.
+
+I accepted the AI's analysis of the phase lengths, the tracks and the tests, but I corrected picture descriptions that lacked evidence, and I did not treat passing tests as the feel being right. I learned that read-back tests prove the animation configuration and the behaviour rules, strips help locate picture problems, and only continuous play can judge whether a move looks natural. These kinds of evidence need to be recorded separately, and human checks that are not finished cannot be written down as passed in advance.
+
+- In play on the dark slate ground, the coat and leg edges blend into the background and the lean and the return to upright are not clear enough; this starts revision r2 (TUNING.md).
+- Trace: `25603f8`, `39bbf18`, `eef8ce8` 4/10/6 · `66133e2` my brief · `evidence/assignment-7/rig-brightness/` the colour comparison · `fd5f1c7` my observation and prediction for r2.
+
+**Still to do:** the r1 and r2 strips, my r2 verdict, the film.

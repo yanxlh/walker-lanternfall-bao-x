@@ -786,20 +786,20 @@ Claude's reading of the strips (a claim, not a human check): the walk alternates
 - `9ccf078..159a006` changes 176 files. In `godot/` outside `godot/tests/`, only the eight files the brief names change: the player folder, `progression.gd`, `tuning.gd` and `session.gd`. No out-of-scope path changes: shaders, effects, A3/A5 scenes, audio, assets, UI, enemies, weapons, pickups, world, `game_state.gd` and `project.godot` are all untouched.
 - The wrapper gap from the assignment's list is closed: `scripts/run-test.sh` now also fails on resource-load errors. `scripts/check-run-test.sh` shows that the old wrapper exits 0 on `fixture_resource_load_error.gd` and the new one exits 1, while a passing suite still exits 0.
 
-### HUMAN CHECKS — Bao, not yet done
+### HUMAN CHECKS — Bao
 
 | Check | How | Result |
 |---|---|---|
-| The walk cycle reads at normal speed and at 0.25 | `scripts/play-dash.command`, then `scripts/play-dash.command slow` | pending |
-| The dash reads: anticipation, commitment, settle | same | pending |
-| The 60-tick gap between dashes is felt | same | pending |
-| Registration drift or the coat–legs gap visible in play | same | pending |
+| The walk cycle reads at normal speed and at 0.25 | `scripts/play-dash.command`, then `scripts/play-dash.command slow` | Bao, 20 November: "The human checks all showed no problem." |
+| The dash reads: anticipation, commitment, settle | same | no problem reported (20 November); on the dark slate the lean and the return to upright are not clear enough (Bao's r2 observation, TUNING.md) |
+| The 60-tick gap between dashes is felt | same | no problem reported (20 November) |
+| Registration drift or the coat–legs gap visible in play | same | no problem reported (20 November) |
 | The phase table | Bao asked for 4 / 10 / 6 and kept it | "Keep 4/10/6." (13 November); no reference measured |
 | One revision driven by what Bao saw in play, with a prediction, two strips and the verdict | TUNING.md, r1 → r2 | pending |
-| The cycle seam: at least five wraps at normal speed, no stutter, duplicate or jump | `scripts/play-dash.command` | pending |
-| The action in play many times, with an interrupt in each phase; startup, active and recovery read as distinct | same | pending |
+| The cycle seam: at least five wraps at normal speed, no stutter, duplicate or jump | `scripts/play-dash.command` | no problem reported (20 November) |
+| The action in play many times, with an interrupt in each phase; startup, active and recovery read as distinct | same | no problem reported (20 November) |
 | Registration: the cycle's strip shows no drift within the cells | `scripts/capture-strip.command walk r1` | pending |
-| Both clips over the darkest and the lightest stretch of the level | in play | pending |
+| Both clips over the darkest and the lightest stretch of the level | in play | on the dark slate the coat and leg edges blend into the ground (Bao, 20 November); revision r2 |
 | Claude's strip readings beside Bao's verdicts, at least one disagreement or "none" | TUNING.md | pending |
 | The film watched and listened to in full | — | pending |
 
