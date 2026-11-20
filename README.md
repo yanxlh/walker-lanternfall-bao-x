@@ -272,6 +272,7 @@ Frame strips (Bao runs them): `scripts/capture-strip.command watch dash`, `scrip
 **Known limitations**
 
 - The rig is cut from one 32 px cell, so at the strongest lean (active frames) a gap opens between the coat and the legs in the clip strip.
-- The phase table is r1 (4 / 10 / 6), asked for and kept by Bao; no reference dash was measured. The walk, dash-readability, cooldown and seam checks are still Bao's to report.
+- The phase table is r1 (4 / 10 / 6), asked for and kept by Bao; no reference dash was measured.
 - Adding the card changes which cards a seeded run is offered; no existing test pinned the offers.
 - No dash sound and no cooldown display on the HUD.
+- Revision r2 outlines the rig's coat and legs (`#4A5A80`). The sheet draws the back of the coat in dark ink, the colour of the slate's cracks, so on dark ground the outline there can read as a line a few pixels off the coat. The walk sprite has no outline.
