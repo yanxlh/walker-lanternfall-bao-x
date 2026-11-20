@@ -145,7 +145,7 @@ Run `scripts/capture-strip.command watch dash` and play `scripts/play-dash.comma
 |---|---|
 | What Bao saw in play (20 November 2026) | "On the market's dark blue slate ground the yellow head stands out, but the edges of the coat and the legs easily blend into the background. When I look at the courier my attention goes to the head, and the body's forward lean and the return to upright in recovery are not clear enough." |
 | Bao's prediction | "If only the outer edges of the coat and the legs get a thin, low-brightness outline, with the inside colours unchanged, the body should separate from the ground more easily and the lean and the return to upright should be easier to read, with less of a brightness jump on the switch back to walking than brightening the whole coat would cause. Before-and-after recordings at the same position have to confirm it." |
-| Claude's reading of `captures/dash/r1/` | |
+| Claude's reading of `captures/dash/r1/` (a claim) | The timing matches the table and the log: frames 5, 7 and 12 show dash frames 0, 4 and 14, and frame 15 is back on the walk sprite. The readability does not. In all five frames the lamp head is the clearest shape. The coat (#2E3A59, luminance 58) and its outline ink (#14121C, 19) sit on slate of #1F2540 (38) with cracks of the same #14121C, so the coat and leg edges merge with the stones and cracks. In frame 7 the lean shows mainly through the lamp's offset; in frame 12 the body outline is the hardest to find. Agrees with Bao's observation. |
 | Change | |
 | Claude's prediction for r2 | |
 | Strips | `captures/dash/r1/`, `captures/dash/r2/` (`scripts/capture-strip.command dash r1`, then `dash r2`) |
