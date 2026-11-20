@@ -31,6 +31,9 @@ const DASH_KEYS := {
 const RIG_CELL := 2
 const PART_REGIONS := {"Head": Rect2(17, 8, 8, 12), "Arm": Rect2(12, 13, 5, 7), "Coat": Rect2(11, 20, 14, 8), "Legs": Rect2(11, 28, 14, 4)}
 const PIVOTS := {"Rig/Hips": Vector2(16, 27), "Rig/Hips/Chest": Vector2(16, 20), "Rig/Hips/Chest/Neck": Vector2(18, 19)}
+## Revision r2: outlines on these parts, with the node each hangs from and its part sprite beside it.
+const OUTLINES := {"Coat": "Rig/Hips/CoatOutline", "Legs": "Rig/LegsOutline"}
+const OUTLINE_COLOR := Color("#4A5A80")
 
 ## Every track in every clip resolves to a real node, and to a real property, bone or blend shape where the track
 ## names one (the assignment's check, unchanged apart from the indentation).
@@ -215,6 +218,36 @@ func run() -> void:
 		pivots_ok = pivots_ok and at.is_equal_approx(PIVOTS[path] - ORIGIN)
 	check("rig-pivots", pivots_ok, {"pivots": pivots})
 
+	# Revision r2: the outlines are exactly the outer silhouette ring next to each part's pixels, recomputed here
+	# from the sheet with the brief's rule, drawn just behind the part, in the brief's colour, on no other part.
+	for part in OUTLINES:
+		var outline := visual.get_node_or_null(OUTLINES[part]) as Polygon2D
+		var region: Rect2 = PART_REGIONS[part]
+		var ring := []
+		for y in range(-1, 33):
+			for x in range(-1, 33):
+				if _opaque(img, x, y):
+					continue
+				for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+					var nb: Vector2i = Vector2i(x, y) + d
+					if _opaque(img, nb.x, nb.y) and region.has_point(Vector2(nb) + Vector2(0.5, 0.5)):
+						ring.append(Vector2i(x, y))
+						break
+		var got := []
+		var ok := outline != null and outline.color.is_equal_approx(OUTLINE_COLOR) and outline.use_parent_material
+		if outline:
+			var parent := outline.get_parent()
+			var pivot: Vector2 = PIVOTS.get(str(visual.get_path_to(parent)), ORIGIN)
+			ok = ok and outline.get_index() < parent.get_node(part).get_index()
+			for square in outline.polygons:
+				got.append(Vector2i(outline.polygon[square[0]] + pivot))
+		got.sort()
+		ring.sort()
+		check("outline-%s" % part.to_lower(), ok and got == ring and not ring.is_empty(),
+			{"node": OUTLINES[part], "pixels": got.size(), "expected_pixels": ring.size(), "behind_part": outline != null and outline.get_index() < outline.get_parent().get_node(part).get_index()})
+	check("no-outline-on-head-or-arm", visual.find_children("HeadOutline", "", true, false).is_empty() and visual.find_children("ArmOutline", "", true, false).is_empty()
+		and visual.find_children("*", "Polygon2D", true, false).size() == OUTLINES.size(), {"polygons": visual.find_children("*", "Polygon2D", true, false).map(func(n): return str(visual.get_path_to(n)))})
+
 	# Played back: the pose at each phase boundary.
 	var hips: Node2D = visual.get_node("Rig/Hips")
 	var neck: Node2D = visual.get_node("Rig/Hips/Chest/Neck")
@@ -246,6 +279,9 @@ func run() -> void:
 	check("no-godot3-names", godot3.is_empty(), {"found": godot3})
 	visual.free()
 	completed = true
+
+func _opaque(img: Image, x: int, y: int) -> bool:
+	return x >= 0 and y >= 0 and x < 32 and y < 32 and img.get_pixel(RIG_CELL * 32 + x, y).a > 0.5
 
 func _check_visibility(clip_name: String, clip: Animation, body_shown: bool) -> void:
 	var tb := clip.find_track(NodePath("Body:visible"), Animation.TYPE_VALUE)

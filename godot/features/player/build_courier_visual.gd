@@ -51,6 +51,9 @@ const DASH_TRACKS := {
 	"Rig/Hips:rotation": [[0, 0.0], [3, -0.15], [4, 0.35], [14, 0.30], [16, -0.08], [20, 0.0]],
 	"Rig/Hips/Chest/Neck:rotation": [[0, 0.0], [3, 0.10], [4, -0.30], [10, -0.20], [14, -0.25], [16, 0.15], [18, -0.05], [20, 0.0]],
 }
+## Revision r2 (Bao, 2026-11-20): a 1-pixel outline on these parts only, outside cell 2's silhouette.
+const OUTLINE_PARTS := ["Coat", "Legs"]
+const OUTLINE_COLOR := Color("#4A5A80")
 ## Spacing per phase: ease in through startup, linear through active, ease out through recovery.
 const STARTUP_TRANSITION := 2.0
 const ACTIVE_TRANSITION := 1.0
@@ -165,6 +168,26 @@ func _visual(sheet: Texture2D, library: AnimationLibrary) -> Node2D:
 		parent.add_child(sprite)
 		# Each part draws before the pivots under the same parent, so the head and arm stay over the coat and legs.
 		parent.move_child(sprite, 0)
+	var rings := _outline_rings(sheet.get_image())
+	for part in OUTLINE_PARTS:
+		var spec: Dictionary = PARTS[part]
+		var outline := Polygon2D.new()
+		outline.name = part + "Outline"
+		outline.color = OUTLINE_COLOR
+		outline.use_parent_material = true
+		var points := PackedVector2Array()
+		var squares := []
+		for px in rings[part]:
+			var at: Vector2 = Vector2(px) - _pivot_of(spec["parent"])
+			var i := points.size()
+			points.append_array([at, at + Vector2(1, 0), at + Vector2(1, 1), at + Vector2(0, 1)])
+			squares.append(PackedInt32Array([i, i + 1, i + 2, i + 3]))
+		outline.polygon = points
+		outline.polygons = squares
+		var parent := visual.get_node(spec["parent"])
+		parent.add_child(outline)
+		# Just behind its part: the part sprite is child 0 of its parent, so the outline goes first.
+		parent.move_child(outline, 0)
 	var player := AnimationPlayer.new()
 	player.name = "AnimationPlayer"
 	player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
@@ -173,6 +196,27 @@ func _visual(sheet: Texture2D, library: AnimationLibrary) -> Node2D:
 	for n in visual.find_children("*", "", true, false):
 		n.owner = visual
 	return visual
+
+## The outer ring of the rig cell's silhouette (transparent pixels 4-adjacent to an opaque pixel), split by part:
+## a ring pixel belongs to a part when it touches that part's opaque pixels. Returns {part: [Vector2i, ...]}.
+func _outline_rings(img: Image) -> Dictionary:
+	var opaque := func(x: int, y: int) -> bool:
+		return x >= 0 and y >= 0 and x < 32 and y < 32 and img.get_pixel(RIG_CELL * 32 + x, y).a > 0.5
+	var rings := {}
+	for part in OUTLINE_PARTS:
+		rings[part] = []
+	for y in range(-1, 33):
+		for x in range(-1, 33):
+			if opaque.call(x, y):
+				continue
+			for part in OUTLINE_PARTS:
+				var region: Rect2 = PARTS[part]["region"]
+				for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+					var n: Vector2i = Vector2i(x, y) + d
+					if opaque.call(n.x, n.y) and region.has_point(Vector2(n) + Vector2(0.5, 0.5)):
+						rings[part].append(Vector2i(x, y))
+						break
+	return rings
 
 ## Cell-local position of a pivot path; the rig root sits on the courier's origin.
 func _pivot_of(path: String) -> Vector2:

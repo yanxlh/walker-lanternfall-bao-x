@@ -1,5 +1,5 @@
 {
-  "checks": 83,
+  "checks": 86,
   "engine": "4.7.2-stable (official)",
   "failures": 0,
   "results": [
@@ -923,6 +923,36 @@
       "status": "PASS"
     },
     {
+      "id": "outline-coat",
+      "observed": {
+        "behind_part": true,
+        "expected_pixels": 20,
+        "node": "Rig/Hips/CoatOutline",
+        "pixels": 20
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "outline-legs",
+      "observed": {
+        "behind_part": true,
+        "expected_pixels": 18,
+        "node": "Rig/LegsOutline",
+        "pixels": 18
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "no-outline-on-head-or-arm",
+      "observed": {
+        "polygons": [
+          "Rig/LegsOutline",
+          "Rig/Hips/CoatOutline"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
       "id": "dash-played-back-at-boundaries",
       "observed": {
         "sampled": {
@@ -974,5 +1004,5 @@
     }
   ],
   "suite": "courier_clips",
-  "utc": "2026-11-13T20:32:06"
+  "utc": "2026-11-20T17:03:41"
 }
