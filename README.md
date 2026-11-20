@@ -267,7 +267,7 @@ Frame strips (Bao runs them): `scripts/capture-strip.command watch dash`, `scrip
 
 **Read**
 
-[CHANGE-BRIEF.md](CHANGE-BRIEF.md) (the A7 contract and its revisions), [CLAUDE.md](CLAUDE.md), [TUNING.md](TUNING.md) (A7 section), [TEST-REPORT.md](TEST-REPORT.md), [godot/assets/art/ATTRIBUTION.md](godot/assets/art/ATTRIBUTION.md), [CONTRIBUTIONS-assignment-7.md](CONTRIBUTIONS-assignment-7.md), [SUBMISSION-assignment-7.md](SUBMISSION-assignment-7.md).
+[CHANGE-BRIEF.md](CHANGE-BRIEF.md) (the A7 contract and its revisions), [CLAUDE.md](CLAUDE.md), [TUNING.md](TUNING.md) (A7 section), [TEST-REPORT.md](TEST-REPORT.md), [prompts/assignment-7.md](prompts/assignment-7.md), [godot/assets/art/ATTRIBUTION.md](godot/assets/art/ATTRIBUTION.md), [CONTRIBUTIONS-assignment-7.md](CONTRIBUTIONS-assignment-7.md), [SUBMISSION-assignment-7.md](SUBMISSION-assignment-7.md).
 
 **Known limitations**
 
