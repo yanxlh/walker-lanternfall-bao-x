@@ -6,7 +6,9 @@ I chose the committing action and set its rules on 13 November 2026: "Add a dash
 
 On 18 November I rewrote CHANGE-BRIEF.md in my own words, with the predicted failures and the seven short answers. At my request Claude Code corrected two statements in it (the startup "compression" and the "brighter dash rig"); the brief lists each correction and the measurement behind it.
 
-Not yet done, and mine to do (the assignment: I write the brief, the phase table, the cycle spec, every prediction and verdict, approve every change and run every capture): review CLAUDE.md and commit my corrections separately; record the 30 fps strips; one revision driven by what I see in play, with a prediction, two strips and my verdict in TUNING.md; the human checks in TEST-REPORT; watch and listen to the whole film; push; submit on Canvas.
+On 20 November I checked every reference in Claude Code's CLAUDE.md draft; nothing needed changing, so there is no correction commit, only this record.
+
+Not yet done, and mine to do (the assignment: I write the brief, the phase table, the cycle spec, every prediction and verdict, approve every change and run every capture): record the 30 fps strips; one revision driven by what I see in play, with a prediction, two strips and my verdict in TUNING.md; the human checks in TEST-REPORT; watch and listen to the whole film; push; submit on Canvas.
 
 ## AI assistance
 

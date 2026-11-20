@@ -493,5 +493,6 @@ The language notes in my own words, with every line reference pointing at a real
 - Trace: `25603f8` brief r1 · `39bbf18` change · `b72ffdd` captures · `eef8ce8` re-pin.
 
 - 18 November: I rewrote CHANGE-BRIEF.md and answered the seven questions. Claude Code checked it against the code and measured the rig's brightness. Two of my statements were wrong: the startup does not compress the body, and the dash rig is not brighter (same colours, within 2.5 % luminance). Claude Code corrected both at my request.
+- 20 November: I checked every reference in CLAUDE.md (the agent's draft r2, `7d97707`); nothing needs changing.
 
 **Still to do:** say how the walk, the dash and the cooldown read in play.
