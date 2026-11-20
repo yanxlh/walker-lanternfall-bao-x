@@ -143,9 +143,10 @@ Run `scripts/capture-strip.command watch dash` and play `scripts/play-dash.comma
 
 | | |
 |---|---|
-| What Bao saw in play, at normal speed and at 0.25 | |
+| What Bao saw in play (20 November 2026) | "On the market's dark blue slate ground the yellow head stands out, but the edges of the coat and the legs easily blend into the background. When I look at the courier my attention goes to the head, and the body's forward lean and the return to upright in recovery are not clear enough." |
+| Bao's prediction | "If only the outer edges of the coat and the legs get a thin, low-brightness outline, with the inside colours unchanged, the body should separate from the ground more easily and the lean and the return to upright should be easier to read, with less of a brightness jump on the switch back to walking than brightening the whole coat would cause. Before-and-after recordings at the same position have to confirm it." |
 | Claude's reading of `captures/dash/r1/` | |
-| Change (phase table or one key's transition) | |
+| Change | |
 | Claude's prediction for r2 | |
 | Strips | `captures/dash/r1/`, `captures/dash/r2/` (`scripts/capture-strip.command dash r1`, then `dash r2`) |
 | Claude's comparison | |
