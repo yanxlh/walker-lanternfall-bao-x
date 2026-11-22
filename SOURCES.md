@@ -153,3 +153,18 @@ The walking pose was first made with FLUX quantized to 4-bit at load; the re-run
 ## Assignment 7 — animation (13 November 2026)
 
 No new asset. Both clips use `godot/assets/art/pc_sheet.png` (ART-PC-01 above, FLUX.1-schnell, Apache-2.0), unedited. The walk clip shows cells 2 and 3. The dash rig draws four region rectangles of cell 2. The scene, the clip library and the builder that writes them are code and text in this repository (`godot/features/player/`).
+
+- **Starting point:** this repository at tag `a5` (`9ccf078`), branch `assignment-7`.
+- **Sprite sheet:** `godot/assets/art/pc_sheet.png`, my own Assignment 2 sheet (ART-PC-01), generated with FLUX.1-schnell revision `741f7c3`, run locally, Apache-2.0, licence checked 13 November 2026. Credits next to the asset: [godot/assets/art/ATTRIBUTION.md](godot/assets/art/ATTRIBUTION.md).
+- **Tools:** Godot 4.7.2 (GL Compatibility) and its Movie Maker; Claude Code (Claude Opus 5.5) in the Claude desktop app; Codex, for one review; for the film, the course's Brutalist toolkit (the godot-gamedev skill with the walker modifier, its Remotion scenes and checks, the stock outro jingle `bear-brown-3.mp3`), Kokoro-82M v1.0 (`am_onyx`, local, Apache-2.0), ffmpeg, Pillow and numpy. No paid service.
+- **People:** nobody else worked on this.
+
+| | Claude (Claude Code) | Other AI | Me |
+|---|---|---|---|
+| **Brief and CLAUDE.md** | drafted CHANGE-BRIEF.md on 13 November (kept as the original) and the A7 CLAUDE.md; corrected two statements in my rewrite at my request | — | chose the dash and its rules; rewrote the brief on 18 November with my predictions and the seven answers; checked every reference in CLAUDE.md (no change needed) |
+| **Clips** | wrote the builder `build_courier_visual.gd`, which saves `courier_visual.tscn` and `godot/animations/courier_clips.tres` from the phase table; added the r2 outline after I approved it | Codex proposed the 4 / 10 / 6 phase table | asked for 4 / 10 / 6 and kept it ("Keep 4/10/6."); predicted and approved the r2 outline; kept it ("Keep. It is clearer.") |
+| **Slicing** | set `hframes = 10` and the offset `(-16, -23)` on the Sprite2D and keyed cells 2 and 3; checked by the read-back | — | read the walk strip: "Looked at it; no drift." |
+| **State machine and dash** | wrote the state machine and `_show()` in `player.gd`, the dash phases, the interrupt rules as code, the card and the input | — | specified the dash: a card unlocks it, it is not invincible, and there is a gap between dashes; set the rule for a hit in each phase in my brief |
+| **Tests** | wrote and ran the pins, the read-back, the structure and edge tests, the probes and the four mutations | — | played the dash and reported the human checks (TEST-REPORT, HUMAN CHECKS) |
+| **Strip readings** | read every strip; its readings are claims in TUNING.md and TEST-REPORT.md | Codex reviewed the 13 November strips | recorded the 30 fps strips (dash r1, walk r1, dash r2); overruled Claude's reading of the r2 outline after play |
+| **Film and narration** | wrote the take driver, the beat sheet and the narration text; built the evidence beats; edited and checked the film ([youtube/…/SOURCES.md](youtube/claude-liam-walker-lanternfall-bao-x-animation-gamedev/SOURCES.md)) | Kokoro-82M read the narration in the stock voice `am_onyx` | recorded the film's take; watched the whole final film ("Watched it. Good.") |
