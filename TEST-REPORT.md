@@ -795,6 +795,7 @@ Claude's reading of the strips (a claim, not a human check): the walk alternates
 | The 60-tick gap between dashes is felt | same | no problem reported (20 November) |
 | Registration drift or the coat–legs gap visible in play | same | no problem reported (20 November) |
 | The phase table | Bao asked for 4 / 10 / 6 and kept it | "Keep 4/10/6." (13 November); no reference measured |
+| The committing action's strip read at each phase boundary against the phase table | `captures/dash/r2/` frames 5, 7, 12 and 15 (dash frames 0, 4, 14 and the walk sprite after 20; `frames.log`) | Bao, 22 November 2026: "All four frames match." |
 | One revision driven by what Bao saw in play, with a prediction, two strips and the verdict | TUNING.md, r1 → r2 | done: Bao's observation and prediction (`fd5f1c7`), strips r1 and r2 recorded by Bao (`captures/dash/`), the outline (`5f09b7f`), Bao's verdict "Keep. It is clearer." |
 | The cycle seam: at least five wraps at normal speed, no stutter, duplicate or jump | `scripts/play-dash.command` | no problem reported (20 November) |
 | The action in play many times, with an interrupt in each phase; startup, active and recovery read as distinct | same | no problem reported (20 November) |
