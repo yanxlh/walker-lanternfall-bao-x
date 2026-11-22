@@ -21,6 +21,6 @@ A 4K landscape teardown of this repository's animation assignment (Assignment 7)
 | `capture/` | the film driver, its scene and command, the take's log and dry run, the take hash (the AVI is not committed) |
 | `tools/` | the scripts that build the sheet, the evidence beats, the ledger, the shot list, the script and the QC sheets |
 
-Final master: `exports/landscape/claude-liam-walker-lanternfall-bao-x-animation-gamedev.mp4`, 3840 × 2160, 30 fps, 8:51 (530.77 s), 100,385,291 bytes, SHA-256 `3ce7f3f2579b8acad07f1a9155b1bbcc5cca062049ca56b2f7663595aa2b131b`.
+Final master: `exports/landscape/claude-liam-walker-lanternfall-bao-x-animation-gamedev.mp4`, 3840 × 2160, 30 fps, 8:51 (530.77 s), 100,385,291 bytes, SHA-256 `3ce7f3f2579b8acad07f1a9155b1bbcc5cca062049ca56b2f7663595aa2b131b`. Film link: https://drive.google.com/file/d/18xYxRfM-5jnPmh7SeFib45umr0IbmMC_/view
 
 The rendered film (`exports/landscape/…mp4`), the take (`capture/take-dash.avi`), the narration audio (`mp3/`) and every intermediate video (`media/`) stay out of git.

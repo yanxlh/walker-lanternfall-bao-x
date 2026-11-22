@@ -820,6 +820,12 @@ recapture and play. Do not commit.
 
 The tuning prompt changes a clip and its read-back expectations together. That is allowed because the read-back pins the clip's structure, not the game's behaviour. A phase-length change also changes the dash rules, so `test_dash_edges.gd` would be re-pinned in its own commit, after play.
 
+### Fresh clone before the tag (22 November 2026)
+
+`assignment-7` at `b744a09` was cloned into an empty folder, imported once with `/Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import` (exit 0), and then run through `scripts/run-all-a7.sh`. All 23 runs passed, and their counts are identical to `evidence/assignment-7/r2/RUN.txt`. No line reading SCRIPT ERROR, SHADER ERROR or Failed loading resource appeared in the import or in any test log, and no tracked file under `godot/` changed. Output: `evidence/assignment-7/fresh-clone-b744a09/RUN.txt`.
+
+The commits after `b744a09` change only records: the human checks, FRICTIONAL, the film link and SUBMISSION. `godot/` is identical from the film's source revision `5f09b7f` to the submitted commit (`git diff 5f09b7f a7 -- godot` is empty). A first attempt that day called `godot` without the app path, so it never imported, and its results were discarded.
+
 ### Use It, against the full assignment text (13 November 2026, phase table r1)
 
 Canvas replaced the assignment page with the full text on 13 November 2026 (18:08 UTC; due Sun 22 November 23:59). The checks it lists, at `3b7f56b`, every headless run through `scripts/run-test.sh` (`evidence/assignment-7/full-text-gaps/RUN.txt`):

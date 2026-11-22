@@ -1,0 +1,24 @@
+Fresh clone of assignment-7 at b744a09 into an empty folder, 2026-11-22; /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --import exit 0, 0 SCRIPT ERROR / SHADER ERROR / Failed loading resource lines in the import or in any test log; no tracked file under godot/ changed (the suites rewrite their evidence/*.json reports); counts identical to evidence/assignment-7/r2/RUN.txt
+./scripts/run-test.sh test_audio.gd realtime -> exit 0 | audio: 25 checks, 0 failures
+./scripts/run-test.sh test_logic.gd 60 -> exit 0 | logic: 32 checks, 0 failures
+./scripts/run-test.sh test_gameplay.gd 60 -> exit 0 | gameplay: 65 checks, 0 failures
+./scripts/run-test.sh test_defeat_sparks_config.gd 60 -> exit 0 | defeat_sparks_config: 39 checks, 0 failures
+./scripts/run-test.sh test_extra_particles_config.gd 60 -> exit 0 | extra_particles_config: 79 checks, 0 failures
+./scripts/run-test.sh test_particles_state.gd 60 -> exit 0 | particles_state: 34 checks, 0 failures
+./scripts/run-test.sh test_particles_edges.gd 60 -> exit 0 | particles_edges: 18 checks, 0 failures
+./scripts/run-test.sh test_a3_assets.gd 60 -> exit 0 | a3-assets: 17 checks, 0 failures
+./scripts/run-test.sh test_lantern_gate.gd 60 -> exit 0 | a3-lantern-gate: 14 checks, 0 failures
+./scripts/run-test.sh test_a3_camera.gd 60 -> exit 0 | a3-camera: 9 checks, 0 failures
+./scripts/run-test.sh test_materials.gd 60 -> exit 0 | test_materials: 127 checks, 0 failures
+./scripts/run-test.sh test_hurt_tint.gd 30 -> exit 0 | hurt_tint: 28 checks, 0 failures
+./scripts/run-test.sh test_hurt_tint.gd 60 -> exit 0 | hurt_tint: 28 checks, 0 failures
+./scripts/run-test.sh test_hurt_tint.gd 144 -> exit 0 | hurt_tint: 28 checks, 0 failures
+./scripts/run-test.sh test_courier_pin.gd 60 -> exit 0 | courier_pin: 23 checks, 0 failures
+./scripts/run-test.sh test_courier_pin_input.gd 30 -> exit 0 | courier_pin_input: 11 checks, 0 failures
+./scripts/run-test.sh test_courier_pin_input.gd 60 -> exit 0 | courier_pin_input: 11 checks, 0 failures
+./scripts/run-test.sh test_courier_pin_input.gd 144 -> exit 0 | courier_pin_input: 11 checks, 0 failures
+./scripts/run-test.sh test_courier_clips.gd 60 -> exit 0 | courier_clips: 86 checks, 0 failures
+./scripts/run-test.sh test_courier_states.gd 60 -> exit 0 | courier_states: 10 checks, 0 failures
+./scripts/run-test.sh test_dash_edges.gd 30 -> exit 0 | dash_edges_30fps: 51 checks, 0 failures
+./scripts/run-test.sh test_dash_edges.gd 60 -> exit 0 | dash_edges_60fps: 51 checks, 0 failures
+./scripts/run-test.sh test_dash_edges.gd 144 -> exit 0 | dash_edges_144fps: 51 checks, 0 failures

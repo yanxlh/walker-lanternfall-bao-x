@@ -509,3 +509,11 @@ I accepted the AI's analysis of the phase lengths, the tracks and the tests, but
 - Trace: `fd5f1c7` observation and prediction · `b112e52`, `b613348` r1 strips · `936b13f` approval and Claude's prediction · `5f09b7f` outline · `a783c74` r2 strip and verdict.
 
 **Still to do:** the film.
+
+## 2026-11-22 (Sun) — Assignment 7: closing
+
+This work made me realise that passing tests does not mean an animation is clear in the game. The AI helped me check the animation tracks, the state transitions and the dash boundaries. I accepted and kept the 4/10/6 phase layout, and kept the dash distance and cooldown unchanged. But I changed the description "a brighter rig": the original rig uses the same sprite sheet, so a change of pose cannot be explained as an increase in brightness. A temporary brightening trial made the body's outline clearer, but it also caused a brightness jump on the switch back to walking, so it did not become the final solution. I also learned that the auto-attack inserts a cast pose, so judging whether the walk skips frames needs the state log. In the end I recorded the resource read-back, the behaviour tests, the strip observations and the actual feel separately: I accepted suggestions backed by evidence, corrected inaccurate descriptions, and left human checks that were not yet done open instead of writing them up as passed in advance.
+
+- Trace: `32bcec6`, `9e2e958` film take kit · `42f0fc1` film · `0a73944`, `10736ea` my viewing of the film · `f866256` my reading of the r2 strip at each phase boundary.
+
+**Still to do:** the tag, push and Canvas submission.

@@ -8,7 +8,7 @@ On 18 November I rewrote CHANGE-BRIEF.md in my own words, with the predicted fai
 
 On 20 November I checked every reference in Claude Code's CLAUDE.md draft; nothing needed changing, so there is no correction commit, only this record.
 
-On 20 November I reported the human checks, recorded the r1 and r2 frame strips and the film's take myself, made revision r2 from what I saw in play (my observation and prediction in TUNING.md; I approved the outline) and kept it: "Keep. It is clearer." I watched the whole final film (8:51, SHA-256 `3ce7f3f2…b131b`): "Watched it. Good." Not yet done, and mine to do: upload the film; push; submit on Canvas.
+On 20 November I reported the human checks, recorded the r1 and r2 frame strips and the film's take myself, made revision r2 from what I saw in play (my observation and prediction in TUNING.md; I approved the outline) and kept it: "Keep. It is clearer." I watched the whole final film (8:51, SHA-256 `3ce7f3f2…b131b`): "Watched it. Good." I uploaded it to Google Drive with link sharing on 22 November. Not yet done, and mine to do: push; submit on Canvas.
 
 ## AI assistance
 
