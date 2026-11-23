@@ -1,0 +1,956 @@
+{
+  "metadata": {
+    "title": "Lanternfall: First Delivery",
+    "slug": "lanternfall-first-delivery-pitch",
+    "topic": "FINAL PROJECT PITCH",
+    "kind": "godot-gdd",
+    "modifier": "",
+    "assignment": "CSYE 7270 Assignment 8 — Final Project Pitch Film",
+    "author": "Bao Xing",
+    "playlist": "CSYE 7270",
+    "audience": "CSYE 7270 instructor and TAs; a hiring manager or lead gameplay engineer",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "persona": "Bao Xing (AI voice reading Bao's script; disclosed in B00)",
+    "presenter": "Bao Xing",
+    "in_for_bear": false,
+    "persona_note": "Assignment 8: AI narration speaks as the student; no instructor name, persona or credit line.",
+    "palette": "claude",
+    "style_preset": "claude",
+    "ground": "#FAF9F5",
+    "aspect_ratio": "16:9",
+    "fit": "contain",
+    "captions": false,
+    "channel": "",
+    "channel_title": "",
+    "game": {
+      "repo": "https://github.com/yanxlh/walker-lanternfall-bao-x",
+      "project_dir": "godot",
+      "source_tag": "a7",
+      "source_revision": "5f09b7fa0f8555f588d68c9d63a1166d3daa23a1",
+      "godot": "4.7.2.stable.official.ed1daf0bf"
+    },
+    "gdd": {
+      "path": "gdd/GDD-v0.3.md",
+      "converted_from": "gdd/Lanternfall_Game_Design_Document.docx",
+      "version": "0.3",
+      "date": "2026-10-17"
+    },
+    "note": "Pitch film for Bao Xing's CSYE 7270 final project, built with the godot-gdd skill's structure. Gameplay is a real Movie Maker capture of an isolated copy of tag a7 with scripted input (capture/pitch_driver.gd); every diagram of a feature that does not exist yet is labelled constructed; GDD excerpts are exact lines of gdd/GDD-v0.3.md. Free local pipeline: Kokoro, Pillow, ffmpeg. No paid call, no upload.",
+    "links": {
+      "repo": "https://github.com/yanxlh/walker-lanternfall-bao-x"
+    },
+    "tags": [
+      "Godot 4",
+      "godot-gdd",
+      "pitch",
+      "CSYE 7270",
+      "Kokoro"
+    ],
+    "build": {
+      "at": "2026-11-23T17:39:13",
+      "cut": "master",
+      "filled": 14,
+      "of": 14,
+      "slates": [],
+      "skin_warnings": [
+        "NO RENDERABLE BEATS: no beat carries a shot.remotion.pattern or Manim annotation — the pipeline will render NOTHING and every slot becomes a YOU-slate. The sheet was authored without the scene contract.",
+        "B00: palette=claude but the cold open is 'un-annotated' — COLD OPEN LAW wants ClaudeComposerAsk",
+        "B13: palette=claude but the outro is 'un-annotated' — OUTRO LAW wants ClaudeTitleOutro"
+      ]
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "OPEN",
+      "role_note": "Title. The narration discloses the AI voice and says it speaks for Bao.",
+      "narration_text": "Hola. I'm Bao Xing, and this is an AI voice reading my script. This is the pitch for my final project: Lanternfall, First Delivery.",
+      "estimated_duration_s": 10,
+      "lead_silence_s": 0.6,
+      "actual_duration_s": 9.03,
+      "audio_file": "mp3/beat-B00.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B00.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11,adelay=600:all=1"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title card: Lanternfall: First Delivery; Bao Xing; AI narration disclosed on screen"
+          }
+        ],
+        "media": "media/B00.mp4",
+        "built_by": "tools/build_media.py"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 9.033333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B00.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "BODY",
+      "role_note": "What exists today: real Movie Maker capture of tag a7 (godot/ 5f09b7f), scripted input, seed 21.",
+      "narration_text": "First, what exists today. This is a real capture of my game at tag A-seven, driven by scripted input. I only move. The Beam fires on its own. Enemies break into lamp oil, and a full gauge pauses the run for three cards. Max out both weapons and they fuse into Sunflare. Survive three minutes, and the fog lifts.",
+      "estimated_duration_s": 26,
+      "tail_silence_s": 1.5,
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "capture label band",
+            "box": [
+              0.0833,
+              0.8935,
+              0.9167,
+              0.9306
+            ]
+          },
+          {
+            "label": "segment chip",
+            "box": [
+              0.5859,
+              0.8218,
+              0.9036,
+              0.8611
+            ]
+          }
+        ],
+        "contrast_reason": "real game footage of a dark fog market; the whole-frame average is the game's own palette, so contrast is measured on the two text regions the film adds"
+      },
+      "design_status": "implemented",
+      "actual_duration_s": 18.99,
+      "audio_file": "mp3/beat-B01.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B01.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11,apad=pad_dur=1.5"
+      },
+      "shot": {
+        "type": "VIDEO",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "real-footage",
+        "show": [
+          {
+            "at": "I only move",
+            "event": "run start: courier moving, Beam firing"
+          },
+          {
+            "at": "full gauge",
+            "event": "the card screen"
+          },
+          {
+            "at": "Max out",
+            "event": "the Sunflare card, then the burst"
+          },
+          {
+            "at": "Survive three minutes",
+            "event": "3:00, the win panel"
+          }
+        ],
+        "media": "media/B01.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "I only move",
+            "at": 5.65
+          },
+          {
+            "phrase": "full gauge",
+            "at": 9.49
+          },
+          {
+            "phrase": "Max out",
+            "at": 12.05
+          },
+          {
+            "phrase": "Survive three minutes",
+            "at": 14.97
+          }
+        ],
+        "remotion": {
+          "pattern": "",
+          "note": "no Remotion render; the board is drawn by tools/build_media.py",
+          "props": {
+            "excerpt": "| F-01 | Three-minute survival route | Implemented | Core |\n| F-02 | Automatic combat and movement | Implemented | Core |\n| F-03 | Run upgrades and Sunflare | Implemented | Core |",
+            "source_lines": [
+              209,
+              211
+            ]
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 19.0,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B01.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "BODY",
+      "role_note": "What it will be, in one sentence; the GDD's next milestone (Development Scope) and its version.",
+      "narration_text": "What I'll build is the next milestone from my game design document, version zero point three, from October seventeenth. In one sentence: a playable Mac build where one run becomes one delivery. A post office menu, one contract across the market, the Lantern Gate at the end, and a second courier, the Engineer, who places turrets.",
+      "estimated_duration_s": 24,
+      "design_status": "proposed",
+      "actual_duration_s": 17.88,
+      "audio_file": "mp3/beat-B02.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B02.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "GDD Development Scope excerpt"
+          },
+          {
+            "at": "post office menu",
+            "event": "four parts of the slice appear in turn"
+          }
+        ],
+        "media": "media/B02.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "post office menu",
+            "at": 10.41
+          },
+          {
+            "phrase": "one contract",
+            "at": 11.41
+          },
+          {
+            "phrase": "Lantern Gate",
+            "at": 13.15
+          },
+          {
+            "phrase": "the Engineer",
+            "at": 15.43
+          }
+        ],
+        "remotion": {
+          "pattern": "",
+          "note": "no Remotion render; the board is drawn by tools/build_media.py",
+          "props": {
+            "excerpt": "The course version should first polish the existing three-minute loop: clearer enemy readability, stronger integration of the Lantern Gate, Supply Stack, and Lamp-oil Shrine, and continued balance testing. The next playable milestone should add the post-office hub, a simple contract and difficulty selector, persistent destination improvements, and one additional courier: an engineer who places automatic turrets.",
+            "source_lines": [
+              201,
+              201
+            ]
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 17.9,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B02.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "BODY",
+      "role_note": "Why anyone would care: the run goes somewhere, and the change persists (PX-03; final's saved data).",
+      "narration_text": "Why would anyone care? Because the run goes somewhere. When a delivery succeeds, the destination changes, and it's still changed the next time you play, even after a restart. My design doc calls this a visible consequence.",
+      "estimated_duration_s": 17,
+      "design_status": "proposed",
+      "actual_duration_s": 12.22,
+      "audio_file": "mp3/beat-B03.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B03.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "constructed diagram: route to an unlit gate"
+          },
+          {
+            "at": "delivery succeeds",
+            "event": "gate lit"
+          },
+          {
+            "at": "still changed",
+            "event": "restart, gate still lit"
+          }
+        ],
+        "media": "media/B03.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "delivery succeeds",
+            "at": 2.75
+          },
+          {
+            "phrase": "still changed",
+            "at": 5.47
+          },
+          {
+            "phrase": "visible consequence",
+            "at": 10.35
+          }
+        ],
+        "remotion": {
+          "pattern": "",
+          "note": "no Remotion render; the board is drawn by tools/build_media.py",
+          "props": {
+            "excerpt": "PX-03 Visible consequence. A successful delivery should produce a destination change the player can recognize on the next visit.",
+            "source_lines": [
+              35,
+              35
+            ]
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 12.233333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B03.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "BODY",
+      "role_note": "Comparable games Bao has played (card answer, 23 November 2026) and the one specific difference.",
+      "narration_text": "I've played Vampire Survivors, Brotato, Twenty Minutes Till Dawn and Halls of Torment. In Vampire Survivors, a run's goal is to outlast the clock. In Brotato, it's to outlast twenty waves. Lanternfall gives a player who likes short runs a destination, and a place that remembers they got there.",
+      "estimated_duration_s": 20,
+      "design_status": "comparison",
+      "actual_duration_s": 16.77,
+      "audio_file": "mp3/beat-B04.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B04.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "four games Bao played"
+          },
+          {
+            "at": "Lanternfall gives",
+            "event": "the difference"
+          }
+        ],
+        "media": "media/B04.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "Vampire Survivors, a run",
+            "at": 4.73
+          },
+          {
+            "phrase": "Brotato, it's",
+            "at": 8.65
+          },
+          {
+            "phrase": "Lanternfall gives",
+            "at": 10.99
+          }
+        ]
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 16.8,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B04.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "BODY",
+      "role_note": "The Engineer: roster rule and trade-off from the GDD; the turret state machine as the planned A9 technique.",
+      "narration_text": "The second courier is the Engineer. My roster rule gives every courier one advantage, one rule change and one weakness. The Engineer's turret holds an area, at the cost of lower damage and speed. The turret will run on its own state machine: idle, track, fire, cool down. That's my plan for the game AI technique in Assignment nine.",
+      "estimated_duration_s": 22,
+      "design_status": "proposed",
+      "actual_duration_s": 18.24,
+      "audio_file": "mp3/beat-B05.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B05.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "GDD roster row: Engineer"
+          },
+          {
+            "at": "turret holds an area",
+            "event": "constructed turret diagram"
+          },
+          {
+            "at": "state machine",
+            "event": "four states with transitions"
+          }
+        ],
+        "media": "media/B05.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "turret holds an area",
+            "at": 6.99
+          },
+          {
+            "phrase": "state machine",
+            "at": 11.23
+          },
+          {
+            "phrase": "Assignment nine",
+            "at": 16.59
+          }
+        ],
+        "remotion": {
+          "pattern": "",
+          "note": "no Remotion render; the board is drawn by tools/build_media.py",
+          "props": {
+            "excerpt": "| Engineer | Deployable turret | Controls safe areas and defends routes | Lower direct damage and speed |",
+            "source_lines": [
+              86,
+              86
+            ]
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 18.266666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B05.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "BODY",
+      "role_note": "Who opens it: target role, reader, the first sixty seconds; the stack and export target.",
+      "narration_text": "Who opens it? I'm aiming at gameplay programmer jobs, so the reader is a hiring manager or a lead gameplay engineer. In the first minute, they open the Mac build, land on the post office menu with keyboard focus already set, read the keys on that screen, press Enter, and they're moving. No manual. Then the lead runs one test command from the readme. It's Godot four point seven point two, Compatibility renderer, exported for macOS.",
+      "estimated_duration_s": 27,
+      "design_status": "proposed",
+      "actual_duration_s": 22.06,
+      "audio_file": "mp3/beat-B06.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B06.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "constructed storyboard of the first sixty seconds"
+          },
+          {
+            "at": "one test command",
+            "event": "the README command"
+          },
+          {
+            "at": "Godot four",
+            "event": "stack line"
+          }
+        ],
+        "media": "media/B06.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "In the first minute",
+            "at": 6.09
+          },
+          {
+            "phrase": "press Enter",
+            "at": 11.89
+          },
+          {
+            "phrase": "one test command",
+            "at": 14.89
+          },
+          {
+            "phrase": "Godot four",
+            "at": 18.0
+          }
+        ]
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 22.066666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B06.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "BODY",
+      "role_note": "What it proves: course skills with existing evidence (tags a5, a6, a7) and what it cannot prove.",
+      "narration_text": "What does it prove? That I can add new systems to a working game and pin each one with tests a stranger can rerun. The course skills already have evidence: hand-written shaders at tag A-five, particle effects with a cost report at tag A-six, and animation driven by state at tag A-seven, where twenty-three headless runs pass from a fresh clone, and eight of eight mutations are caught. What it can't prove is that the game is fun.",
+      "estimated_duration_s": 27,
+      "design_status": "observed",
+      "actual_duration_s": 20.99,
+      "audio_file": "mp3/beat-B07.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B07.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "hand-written shaders",
+            "event": "a5 capture"
+          },
+          {
+            "at": "particle effects",
+            "event": "a6 capture"
+          },
+          {
+            "at": "animation driven",
+            "event": "a7 capture"
+          },
+          {
+            "at": "can't prove",
+            "event": "the limit"
+          }
+        ],
+        "media": "media/B07.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "hand-written shaders",
+            "at": 7.27
+          },
+          {
+            "phrase": "particle effects",
+            "at": 9.07
+          },
+          {
+            "phrase": "animation driven",
+            "at": 11.39
+          },
+          {
+            "phrase": "can't prove",
+            "at": 18.47
+          }
+        ]
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 21.0,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B07.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "BODY",
+      "role_note": "In and out, with the GDD's R-01 mitigation as the reason for the cut.",
+      "narration_text": "What's in: the delivery, the post office menu, one contract, the Engineer, one saved record, the lit gate, and a Mac export. What's out, on purpose: the other four couriers, a difficulty selector, more maps, the fog boss, multiplayer, web and mobile. My own risk table says it: one screen, one contract and the Engineer, before anything else.",
+      "estimated_duration_s": 22,
+      "design_status": "proposed",
+      "actual_duration_s": 17.94,
+      "audio_file": "mp3/beat-B08.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B08.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "in list"
+          },
+          {
+            "at": "What's out",
+            "event": "out list"
+          },
+          {
+            "at": "My own risk table",
+            "event": "R-01 highlighted"
+          }
+        ],
+        "media": "media/B08.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "What's out",
+            "at": 6.35
+          },
+          {
+            "phrase": "My own risk table",
+            "at": 12.73
+          }
+        ],
+        "remotion": {
+          "pattern": "",
+          "note": "no Remotion render; the board is drawn by tools/build_media.py",
+          "props": {
+            "excerpt": "| R-01 | The hub, roster, and meta-progression expand scope too quickly. | Build one post-office screen, one contract, and the Engineer before adding more content. |",
+            "source_lines": [
+              232,
+              232
+            ]
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 17.966666666666665,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B08.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "BODY",
+      "role_note": "The first playable piece (F-04), Bao's answer to Q-01 for this slice, and how anyone would know it ran.",
+      "narration_text": "First comes the delivery objective, on the route that already exists. My doc left open how a delivery ends. For this slice: survive until the fog lifts, then reach the gate. You'll know it ran when a headless test with a fixed seed drives a run to delivered, and the result panel says so on screen.",
+      "estimated_duration_s": 20,
+      "design_status": "comparison",
+      "actual_duration_s": 16.06,
+      "audio_file": "mp3/beat-B09.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B09.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "today's real win panel (tag a7)"
+          },
+          {
+            "at": "For this slice",
+            "event": "proposed flow"
+          },
+          {
+            "at": "You'll know it ran",
+            "event": "the planned test"
+          }
+        ],
+        "media": "media/B09.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "For this slice",
+            "at": 5.69
+          },
+          {
+            "phrase": "You'll know it ran",
+            "at": 9.37
+          }
+        ],
+        "remotion": {
+          "pattern": "",
+          "note": "no Remotion render; the board is drawn by tools/build_media.py",
+          "props": {
+            "excerpt": "- Q-01 Should every delivery end by surviving a timer, reaching an exit, or satisfying a contract-specific condition?",
+            "source_lines": [
+              240,
+              240
+            ]
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 16.066666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B09.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "BODY",
+      "role_note": "The concrete risk (GDD R-03) against measured A6 cost evidence; the mitigation.",
+      "narration_text": "What could sink it? Turrets. Every turret hit can spawn the sparks I built in Assignment six, in the busiest minute of the run. And on my Mac, Godot reports zero milliseconds of GPU time under the Compatibility renderer, so I can't read that cost there. So I'll cap the turrets, reuse their shots, measure CPU frame time at the peak wave the way my Assignment six cost test did, use the Vulkan proxy for the GPU, and cut turret sparks first.",
+      "estimated_duration_s": 29,
+      "design_status": "comparison",
+      "actual_duration_s": 22.42,
+      "audio_file": "mp3/beat-B10.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B10.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "GDD R-03"
+          },
+          {
+            "at": "zero milliseconds",
+            "event": "A6 cost report readings"
+          },
+          {
+            "at": "So I'll cap",
+            "event": "mitigation steps"
+          }
+        ],
+        "media": "media/B10.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "zero milliseconds",
+            "at": 7.19
+          },
+          {
+            "phrase": "So I'll cap",
+            "at": 12.07
+          }
+        ],
+        "remotion": {
+          "pattern": "",
+          "note": "no Remotion render; the board is drawn by tools/build_media.py",
+          "props": {
+            "excerpt": "| R-03 | Turrets create pathing clutter or excessive runtime cost. | Limit active turrets, reuse objects, and test readability and frame time under maximum enemy load. |",
+            "source_lines": [
+              234,
+              234
+            ]
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 22.433333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B10.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "BODY",
+      "role_note": "Why this project: Bao's answers (23 November 2026) on new versus existing skills, with evidence.",
+      "narration_text": "Why this project? Both reasons: learning, and showing what I have. New to me in this course: Godot and GDScript, shaders and materials, and particles. Animation, state machines and testing, I already had, and tag A-seven is my evidence. The delivery, the save and the turret will be new code in this game.",
+      "estimated_duration_s": 20,
+      "design_status": "comparison",
+      "actual_duration_s": 16.28,
+      "audio_file": "mp3/beat-B11.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B11.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "New to me",
+            "event": "new column"
+          },
+          {
+            "at": "I already had",
+            "event": "already-had column with a7"
+          },
+          {
+            "at": "new code",
+            "event": "new code row"
+          }
+        ],
+        "media": "media/B11.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "New to me",
+            "at": 3.05
+          },
+          {
+            "phrase": "I already had",
+            "at": 9.71
+          },
+          {
+            "phrase": "new code",
+            "at": 14.51
+          }
+        ]
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 16.3,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B11.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "BODY",
+      "role_note": "Exists versus will exist, by the GDD's own status convention.",
+      "narration_text": "To be exact about what's real: everything on the left exists, with a tag you can check out. Nothing on the right exists yet, and there's no export yet either. The finished slice is due on December twentieth, tagged A-ten.",
+      "estimated_duration_s": 16,
+      "design_status": "comparison",
+      "actual_duration_s": 11.9,
+      "audio_file": "mp3/beat-B12.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B12.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "exists today, with tags"
+          },
+          {
+            "at": "Nothing on the right",
+            "event": "will exist"
+          }
+        ],
+        "media": "media/B12.mp4",
+        "built_by": "tools/build_media.py",
+        "cues": [
+          {
+            "phrase": "Nothing on the right",
+            "at": 4.53
+          },
+          {
+            "phrase": "December twentieth",
+            "at": 9.31
+          }
+        ],
+        "remotion": {
+          "pattern": "",
+          "note": "no Remotion render; the board is drawn by tools/build_media.py",
+          "props": {
+            "excerpt": "Status convention. Current prototype identifies behavior already present in the build. Verified identifies behavior covered by existing project checks. Planned identifies an approved design direction that has not yet been implemented or verified.",
+            "source_lines": [
+              11,
+              11
+            ]
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 11.9,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B12.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "OUTRO",
+      "role_note": "Closing title card (not the instructor's outro).",
+      "narration_text": "Lanternfall, First Delivery. A pitch by Bao Xing.",
+      "estimated_duration_s": 6,
+      "tail_silence_s": 1.0,
+      "actual_duration_s": 4.54,
+      "audio_file": "mp3/beat-B13.wav",
+      "audio_levelled": {
+        "from": "mp3/beat-B13.mp3",
+        "filter": "loudnorm=I=-16:TP=-1.5:LRA=11,apad=pad_dur=1.0"
+      },
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "own",
+        "motion": "board-reveals",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title, repository, tag a8"
+          }
+        ],
+        "media": "media/B13.mp4",
+        "built_by": "tools/build_media.py"
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "render_duration_s": 4.566666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B13.mp4",
+        "filled_by": "media",
+        "at": "2026-11-23T17:39:13"
+      }
+    }
+  ]
+}

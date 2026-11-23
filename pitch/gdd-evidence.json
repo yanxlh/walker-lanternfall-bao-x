@@ -1,0 +1,218 @@
+{
+ "schema_version": 1,
+ "document": {
+  "path": "gdd/GDD-v0.3.md",
+  "sha256": "ee8494894728d434ede3eb7e178634d673170ec65aa78a7d5bddbdd7f43b1a2a",
+  "version": "0.3",
+  "date": "2026-10-17",
+  "converted_from_sha256": "928c2258753b90efaafca5421cce5bceb2649969bf13e2671059836731f4477e"
+ },
+ "sections": [
+  {
+   "heading": "Game Name",
+   "beat_ids": [
+    "B00"
+   ]
+  },
+  {
+   "heading": "Concept",
+   "beat_ids": [
+    "B02",
+    "B03"
+   ]
+  },
+  {
+   "heading": "Game Flow",
+   "beat_ids": [
+    "B01",
+    "B09"
+   ]
+  },
+  {
+   "heading": "Game Elements and Assets",
+   "beat_ids": [
+    "B01",
+    "B05"
+   ]
+  },
+  {
+   "heading": "Main Characters",
+   "beat_ids": [
+    "B05"
+   ]
+  },
+  {
+   "heading": "Story",
+   "beat_ids": [
+    "B03"
+   ]
+  },
+  {
+   "heading": "Gameplay",
+   "beat_ids": [
+    "B01",
+    "B09"
+   ]
+  },
+  {
+   "heading": "Systems and Progression",
+   "beat_ids": [
+    "B03",
+    "B08"
+   ]
+  },
+  {
+   "heading": "Graphics and Styling",
+   "exclusion": "The art direction has existed since Assignment 2 and the final project adds no new art direction; the pixel art, palettes and camera are shown only in B01's real capture, not explained."
+  },
+  {
+   "heading": "Music and Sound Effects",
+   "exclusion": "Music and effects have existed since Assignment 2 and the final project adds no audio work; the film's footage is shown with game sound off, so audio claims would be unshown."
+  },
+  {
+   "heading": "Technical Description",
+   "beat_ids": [
+    "B06",
+    "B10"
+   ]
+  },
+  {
+   "heading": "Development Scope",
+   "beat_ids": [
+    "B02",
+    "B08"
+   ]
+  },
+  {
+   "heading": "Out of Scope",
+   "beat_ids": [
+    "B08"
+   ]
+  },
+  {
+   "heading": "Risks and Mitigations",
+   "beat_ids": [
+    "B08",
+    "B10"
+   ]
+  },
+  {
+   "heading": "Open Questions",
+   "beat_ids": [
+    "B09"
+   ]
+  },
+  {
+   "heading": "Revision History",
+   "beat_ids": [
+    "B02"
+   ]
+  }
+ ],
+ "excerpts": [
+  {
+   "beat_id": "B01",
+   "start_line": 209,
+   "end_line": 211,
+   "text": "| F-01 | Three-minute survival route | Implemented | Core |\n| F-02 | Automatic combat and movement | Implemented | Core |\n| F-03 | Run upgrades and Sunflare | Implemented | Core |"
+  },
+  {
+   "beat_id": "B02",
+   "start_line": 201,
+   "end_line": 201,
+   "text": "The course version should first polish the existing three-minute loop: clearer enemy readability, stronger integration of the Lantern Gate, Supply Stack, and Lamp-oil Shrine, and continued balance testing. The next playable milestone should add the post-office hub, a simple contract and difficulty selector, persistent destination improvements, and one additional courier: an engineer who places automatic turrets."
+  },
+  {
+   "beat_id": "B03",
+   "start_line": 35,
+   "end_line": 35,
+   "text": "PX-03 Visible consequence. A successful delivery should produce a destination change the player can recognize on the next visit."
+  },
+  {
+   "beat_id": "B05",
+   "start_line": 86,
+   "end_line": 86,
+   "text": "| Engineer | Deployable turret | Controls safe areas and defends routes | Lower direct damage and speed |"
+  },
+  {
+   "beat_id": "B08",
+   "start_line": 232,
+   "end_line": 232,
+   "text": "| R-01 | The hub, roster, and meta-progression expand scope too quickly. | Build one post-office screen, one contract, and the Engineer before adding more content. |"
+  },
+  {
+   "beat_id": "B09",
+   "start_line": 240,
+   "end_line": 240,
+   "text": "- Q-01 Should every delivery end by surviving a timer, reaching an exit, or satisfying a contract-specific condition?"
+  },
+  {
+   "beat_id": "B10",
+   "start_line": 234,
+   "end_line": 234,
+   "text": "| R-03 | Turrets create pathing clutter or excessive runtime cost. | Limit active turrets, reuse objects, and test readability and frame time under maximum enemy load. |"
+  },
+  {
+   "beat_id": "B12",
+   "start_line": 11,
+   "end_line": 11,
+   "text": "Status convention. Current prototype identifies behavior already present in the build. Verified identifies behavior covered by existing project checks. Planned identifies an approved design direction that has not yet been implemented or verified."
+  }
+ ],
+ "evidence": [
+  {
+   "path": "capture/take-pitch-seed21-log.jsonl",
+   "sha256": "2ff6b20a951aa22613e754b619ed9270b72939bbb67994069fea6b7a83bb891a",
+   "method": "pitch_driver.gd log written during the windowed Movie Maker take of an isolated git-archive copy of tag a7 (seed 21, scripted input, 30 fps)",
+   "supports": "B01: the run starts at physics frame 180, eight cards are picked (Sunflare at frame 5336), the run ends won at 180.0 s with Sunflare evolved"
+  },
+  {
+   "path": "capture/take-pitch-seed21-dryrun.jsonl",
+   "sha256": "ba593ba9a613318bd2b1d785e495a2bd56dfb1291d6e558697ea2e9cdfebb4af",
+   "method": "the same driver and seed run headless right after the take",
+   "supports": "B01: the take's 264 log rows are identical to the dry run's apart from process-frame counters, so the footage is the scripted run and nothing else"
+  },
+  {
+   "path": "capture/takes.sha256",
+   "sha256": "6aaf00f3c1e0863401c428a0f719fc872729da44b4226f38c2c28ca46f99a9a3",
+   "method": "shasum -a 256 of the raw take and its log, written by capture-pitch-take.command",
+   "supports": "B01: the raw AVI (not in git) is identified by hash"
+  },
+  {
+   "path": "capture/clean/take-pitch-seed21.json",
+   "sha256": "4626deda1580b4252d27c9906a65771212feda4efd67cf61e068d77e50bf4d6e",
+   "method": "tools/clean_take.py record: stale Movie Maker frames dropped while the window could not draw; the game was paused during those frames",
+   "supports": "B01, B00, B06, B09: the cleaned take's spans and hash; no frame retimed"
+  },
+  {
+   "path": "evidence/a7-suite-20261123/RUN.txt",
+   "sha256": "68b5d13881232145aa8778d3e99bd73cd96897e72e54c10ac18066e1eb403294",
+   "method": "scripts/run-all-a7.sh in this worktree at 124086c (godot/ = tag a7), after a headless import, 23 November 2026",
+   "supports": "B07, B11: 23 headless runs exit 0 today; godot/ unchanged (HEAD.txt)"
+  },
+  {
+   "path": "evidence/a7-fresh-clone-b744a09-RUN.txt",
+   "sha256": "db30dea45481de81a32273edfd5f4f163f3b640da6838dad257baf7e50a0fc7e",
+   "method": "copy of evidence/assignment-7/fresh-clone-b744a09/RUN.txt",
+   "supports": "B07, B11: 23 runs pass from a fresh clone (Assignment 7 record)"
+  },
+  {
+   "path": "evidence/a7-mutations-r1.json",
+   "sha256": "48bb3b13c5c6aa39e4125a3e0b077d904da85283442624f86fd7b48a8c2adf30",
+   "method": "copy of evidence/assignment-7/mutations/mutations-r1.json",
+   "supports": "B07, B11: 8 of 8 mutations caught on the kept r1 phase table"
+  },
+  {
+   "path": "evidence/a6-COST-REPORT.md",
+   "sha256": "44735ec9f6ee3340cd739269cd3a91e0e35daa9a3683cc6177e802ae545e8143",
+   "method": "copy of evidence/assignment-6/cost/COST-REPORT.md (29 October 2026)",
+   "supports": "B10: GPU time reads 0.000 ms under GL Compatibility on the Apple M4; sparks at the cap add +0.025 ms CPU per frame against a 1.0 ms budget"
+  },
+  {
+   "path": "PROJECT-BRIEF.md",
+   "sha256": "e3af64a8f6a3a4370cff810018009cdb4ecd72c0fb5689a92991fdde3e9fb601",
+   "method": "Bao's seven answers, drafted with Claude from Bao's 23 November answers and the A4 GDD",
+   "supports": "B02-B12: scope, comparables, role, first piece, risk, exists and will-exist lists"
+  }
+ ]
+}

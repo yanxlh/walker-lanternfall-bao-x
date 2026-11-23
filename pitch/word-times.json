@@ -1,0 +1,3700 @@
+{
+ "B00": [
+  {
+   "w": "Ola,",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "w": "I'm",
+   "start": 0.44,
+   "end": 0.58
+  },
+  {
+   "w": "Bousing,",
+   "start": 0.58,
+   "end": 1.02
+  },
+  {
+   "w": "and",
+   "start": 1.3,
+   "end": 1.32
+  },
+  {
+   "w": "this",
+   "start": 1.32,
+   "end": 1.48
+  },
+  {
+   "w": "is",
+   "start": 1.48,
+   "end": 1.6
+  },
+  {
+   "w": "an",
+   "start": 1.6,
+   "end": 1.72
+  },
+  {
+   "w": "AI",
+   "start": 1.72,
+   "end": 1.92
+  },
+  {
+   "w": "voice",
+   "start": 1.92,
+   "end": 2.4
+  },
+  {
+   "w": "reading",
+   "start": 2.4,
+   "end": 2.74
+  },
+  {
+   "w": "my",
+   "start": 2.74,
+   "end": 3.02
+  },
+  {
+   "w": "script.",
+   "start": 3.02,
+   "end": 3.38
+  },
+  {
+   "w": "This",
+   "start": 4.08,
+   "end": 4.12
+  },
+  {
+   "w": "is",
+   "start": 4.12,
+   "end": 4.24
+  },
+  {
+   "w": "the",
+   "start": 4.24,
+   "end": 4.4
+  },
+  {
+   "w": "pitch",
+   "start": 4.4,
+   "end": 4.56
+  },
+  {
+   "w": "for",
+   "start": 4.56,
+   "end": 4.78
+  },
+  {
+   "w": "my",
+   "start": 4.78,
+   "end": 4.94
+  },
+  {
+   "w": "final",
+   "start": 4.94,
+   "end": 5.32
+  },
+  {
+   "w": "project,",
+   "start": 5.32,
+   "end": 5.8
+  },
+  {
+   "w": "Lanternfall,",
+   "start": 6.42,
+   "end": 6.74
+  },
+  {
+   "w": "First",
+   "start": 7.0,
+   "end": 7.16
+  },
+  {
+   "w": "Delivery.",
+   "start": 7.16,
+   "end": 7.48
+  }
+ ],
+ "B01": [
+  {
+   "w": "First,",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "w": "what",
+   "start": 0.32,
+   "end": 0.44
+  },
+  {
+   "w": "exists",
+   "start": 0.44,
+   "end": 0.64
+  },
+  {
+   "w": "today?",
+   "start": 0.64,
+   "end": 1.12
+  },
+  {
+   "w": "This",
+   "start": 1.72,
+   "end": 1.74
+  },
+  {
+   "w": "is",
+   "start": 1.74,
+   "end": 1.86
+  },
+  {
+   "w": "a",
+   "start": 1.86,
+   "end": 1.98
+  },
+  {
+   "w": "real",
+   "start": 1.98,
+   "end": 2.12
+  },
+  {
+   "w": "capture",
+   "start": 2.12,
+   "end": 2.56
+  },
+  {
+   "w": "of",
+   "start": 2.56,
+   "end": 2.74
+  },
+  {
+   "w": "my",
+   "start": 2.74,
+   "end": 2.86
+  },
+  {
+   "w": "game",
+   "start": 2.86,
+   "end": 3.06
+  },
+  {
+   "w": "at",
+   "start": 3.06,
+   "end": 3.22
+  },
+  {
+   "w": "Tag",
+   "start": 3.22,
+   "end": 3.42
+  },
+  {
+   "w": "A7,",
+   "start": 3.42,
+   "end": 3.9
+  },
+  {
+   "w": "driven",
+   "start": 4.1,
+   "end": 4.18
+  },
+  {
+   "w": "by",
+   "start": 4.18,
+   "end": 4.5
+  },
+  {
+   "w": "scripted",
+   "start": 4.5,
+   "end": 4.8
+  },
+  {
+   "w": "input.",
+   "start": 4.8,
+   "end": 5.16
+  },
+  {
+   "w": "I",
+   "start": 5.8,
+   "end": 5.86
+  },
+  {
+   "w": "only",
+   "start": 5.86,
+   "end": 6.0
+  },
+  {
+   "w": "move,",
+   "start": 6.0,
+   "end": 6.28
+  },
+  {
+   "w": "the",
+   "start": 6.44,
+   "end": 6.56
+  },
+  {
+   "w": "beam",
+   "start": 6.56,
+   "end": 6.7
+  },
+  {
+   "w": "fires",
+   "start": 6.7,
+   "end": 6.98
+  },
+  {
+   "w": "on",
+   "start": 6.98,
+   "end": 7.32
+  },
+  {
+   "w": "its",
+   "start": 7.32,
+   "end": 7.46
+  },
+  {
+   "w": "own.",
+   "start": 7.46,
+   "end": 7.68
+  },
+  {
+   "w": "Enemies",
+   "start": 8.28,
+   "end": 8.28
+  },
+  {
+   "w": "break",
+   "start": 8.28,
+   "end": 8.54
+  },
+  {
+   "w": "into",
+   "start": 8.54,
+   "end": 8.78
+  },
+  {
+   "w": "lamp",
+   "start": 8.78,
+   "end": 8.98
+  },
+  {
+   "w": "oil",
+   "start": 8.98,
+   "end": 9.3
+  },
+  {
+   "w": "and",
+   "start": 9.3,
+   "end": 9.56
+  },
+  {
+   "w": "a",
+   "start": 9.56,
+   "end": 9.64
+  },
+  {
+   "w": "full",
+   "start": 9.64,
+   "end": 9.82
+  },
+  {
+   "w": "gauge",
+   "start": 9.82,
+   "end": 10.06
+  },
+  {
+   "w": "pauses",
+   "start": 10.06,
+   "end": 10.5
+  },
+  {
+   "w": "the",
+   "start": 10.5,
+   "end": 10.76
+  },
+  {
+   "w": "run",
+   "start": 10.76,
+   "end": 10.9
+  },
+  {
+   "w": "for",
+   "start": 10.9,
+   "end": 11.12
+  },
+  {
+   "w": "three",
+   "start": 11.12,
+   "end": 11.3
+  },
+  {
+   "w": "cards.",
+   "start": 11.3,
+   "end": 11.64
+  },
+  {
+   "w": "Max",
+   "start": 12.2,
+   "end": 12.26
+  },
+  {
+   "w": "out",
+   "start": 12.26,
+   "end": 12.5
+  },
+  {
+   "w": "both",
+   "start": 12.5,
+   "end": 12.7
+  },
+  {
+   "w": "weapons",
+   "start": 12.7,
+   "end": 12.98
+  },
+  {
+   "w": "and",
+   "start": 12.98,
+   "end": 13.38
+  },
+  {
+   "w": "they",
+   "start": 13.38,
+   "end": 13.52
+  },
+  {
+   "w": "fuse",
+   "start": 13.52,
+   "end": 13.72
+  },
+  {
+   "w": "into",
+   "start": 13.72,
+   "end": 13.94
+  },
+  {
+   "w": "sunflare.",
+   "start": 13.94,
+   "end": 14.56
+  },
+  {
+   "w": "Survive",
+   "start": 15.12,
+   "end": 15.12
+  },
+  {
+   "w": "three",
+   "start": 15.12,
+   "end": 15.44
+  },
+  {
+   "w": "minutes",
+   "start": 15.44,
+   "end": 15.78
+  },
+  {
+   "w": "and",
+   "start": 15.78,
+   "end": 16.04
+  },
+  {
+   "w": "the",
+   "start": 16.04,
+   "end": 16.14
+  },
+  {
+   "w": "fog",
+   "start": 16.14,
+   "end": 16.3
+  },
+  {
+   "w": "lifts.",
+   "start": 16.3,
+   "end": 16.62
+  }
+ ],
+ "B02": [
+  {
+   "w": "What",
+   "start": 0.0,
+   "end": 0.1
+  },
+  {
+   "w": "I'll",
+   "start": 0.1,
+   "end": 0.26
+  },
+  {
+   "w": "build",
+   "start": 0.26,
+   "end": 0.46
+  },
+  {
+   "w": "is",
+   "start": 0.46,
+   "end": 0.66
+  },
+  {
+   "w": "the",
+   "start": 0.66,
+   "end": 0.78
+  },
+  {
+   "w": "next",
+   "start": 0.78,
+   "end": 0.94
+  },
+  {
+   "w": "milestone",
+   "start": 0.94,
+   "end": 1.26
+  },
+  {
+   "w": "from",
+   "start": 1.26,
+   "end": 1.76
+  },
+  {
+   "w": "my",
+   "start": 1.76,
+   "end": 1.92
+  },
+  {
+   "w": "game",
+   "start": 1.92,
+   "end": 2.12
+  },
+  {
+   "w": "design",
+   "start": 2.12,
+   "end": 2.4
+  },
+  {
+   "w": "document,",
+   "start": 2.4,
+   "end": 2.96
+  },
+  {
+   "w": "version",
+   "start": 3.24,
+   "end": 3.36
+  },
+  {
+   "w": "0",
+   "start": 3.36,
+   "end": 3.82
+  },
+  {
+   "w": ".3",
+   "start": 3.82,
+   "end": 4.5
+  },
+  {
+   "w": "from",
+   "start": 4.5,
+   "end": 4.74
+  },
+  {
+   "w": "October",
+   "start": 4.74,
+   "end": 4.94
+  },
+  {
+   "w": "17th.",
+   "start": 4.94,
+   "end": 5.98
+  },
+  {
+   "w": "In",
+   "start": 6.54,
+   "end": 6.56
+  },
+  {
+   "w": "one",
+   "start": 6.56,
+   "end": 6.7
+  },
+  {
+   "w": "sentence,",
+   "start": 6.7,
+   "end": 7.06
+  },
+  {
+   "w": "a",
+   "start": 7.42,
+   "end": 7.48
+  },
+  {
+   "w": "playable",
+   "start": 7.48,
+   "end": 7.76
+  },
+  {
+   "w": "Mac",
+   "start": 7.76,
+   "end": 8.02
+  },
+  {
+   "w": "build",
+   "start": 8.02,
+   "end": 8.3
+  },
+  {
+   "w": "where",
+   "start": 8.3,
+   "end": 8.52
+  },
+  {
+   "w": "one",
+   "start": 8.52,
+   "end": 8.7
+  },
+  {
+   "w": "run",
+   "start": 8.7,
+   "end": 8.94
+  },
+  {
+   "w": "becomes",
+   "start": 8.94,
+   "end": 9.28
+  },
+  {
+   "w": "one",
+   "start": 9.28,
+   "end": 9.56
+  },
+  {
+   "w": "delivery,",
+   "start": 9.56,
+   "end": 9.84
+  },
+  {
+   "w": "a",
+   "start": 10.5,
+   "end": 10.56
+  },
+  {
+   "w": "post",
+   "start": 10.56,
+   "end": 10.74
+  },
+  {
+   "w": "office",
+   "start": 10.74,
+   "end": 10.96
+  },
+  {
+   "w": "menu,",
+   "start": 10.96,
+   "end": 11.42
+  },
+  {
+   "w": "one",
+   "start": 11.56,
+   "end": 11.72
+  },
+  {
+   "w": "contract",
+   "start": 11.72,
+   "end": 12.14
+  },
+  {
+   "w": "across",
+   "start": 12.14,
+   "end": 12.38
+  },
+  {
+   "w": "the",
+   "start": 12.38,
+   "end": 12.72
+  },
+  {
+   "w": "market,",
+   "start": 12.72,
+   "end": 13.02
+  },
+  {
+   "w": "the",
+   "start": 13.26,
+   "end": 13.3
+  },
+  {
+   "w": "lantern",
+   "start": 13.3,
+   "end": 13.48
+  },
+  {
+   "w": "gate",
+   "start": 13.48,
+   "end": 13.82
+  },
+  {
+   "w": "at",
+   "start": 13.82,
+   "end": 13.98
+  },
+  {
+   "w": "the",
+   "start": 13.98,
+   "end": 14.1
+  },
+  {
+   "w": "end,",
+   "start": 14.1,
+   "end": 14.3
+  },
+  {
+   "w": "and",
+   "start": 14.66,
+   "end": 14.7
+  },
+  {
+   "w": "a",
+   "start": 14.7,
+   "end": 14.8
+  },
+  {
+   "w": "second",
+   "start": 14.8,
+   "end": 15.04
+  },
+  {
+   "w": "courier",
+   "start": 15.04,
+   "end": 15.36
+  },
+  {
+   "w": "of",
+   "start": 15.36,
+   "end": 15.58
+  },
+  {
+   "w": "the",
+   "start": 15.58,
+   "end": 15.66
+  },
+  {
+   "w": "engineer",
+   "start": 15.66,
+   "end": 15.98
+  },
+  {
+   "w": "who",
+   "start": 15.98,
+   "end": 16.34
+  },
+  {
+   "w": "places",
+   "start": 16.34,
+   "end": 16.6
+  },
+  {
+   "w": "turrets.",
+   "start": 16.6,
+   "end": 16.96
+  }
+ ],
+ "B03": [
+  {
+   "w": "Why",
+   "start": 0.0,
+   "end": 0.12
+  },
+  {
+   "w": "would",
+   "start": 0.12,
+   "end": 0.22
+  },
+  {
+   "w": "anyone",
+   "start": 0.22,
+   "end": 0.38
+  },
+  {
+   "w": "care",
+   "start": 0.38,
+   "end": 0.76
+  },
+  {
+   "w": "because",
+   "start": 0.76,
+   "end": 1.12
+  },
+  {
+   "w": "the",
+   "start": 1.12,
+   "end": 1.28
+  },
+  {
+   "w": "run",
+   "start": 1.28,
+   "end": 1.48
+  },
+  {
+   "w": "goes",
+   "start": 1.48,
+   "end": 1.74
+  },
+  {
+   "w": "somewhere?",
+   "start": 1.74,
+   "end": 2.04
+  },
+  {
+   "w": "When",
+   "start": 2.8,
+   "end": 2.82
+  },
+  {
+   "w": "a",
+   "start": 2.82,
+   "end": 2.9
+  },
+  {
+   "w": "delivery",
+   "start": 2.9,
+   "end": 3.12
+  },
+  {
+   "w": "succeeds,",
+   "start": 3.12,
+   "end": 3.64
+  },
+  {
+   "w": "the",
+   "start": 3.98,
+   "end": 4.0
+  },
+  {
+   "w": "destination",
+   "start": 4.0,
+   "end": 4.4
+  },
+  {
+   "w": "changes,",
+   "start": 4.4,
+   "end": 5.04
+  },
+  {
+   "w": "and",
+   "start": 5.52,
+   "end": 5.54
+  },
+  {
+   "w": "it",
+   "start": 5.54,
+   "end": 5.62
+  },
+  {
+   "w": "still",
+   "start": 5.62,
+   "end": 5.84
+  },
+  {
+   "w": "changed",
+   "start": 5.84,
+   "end": 6.18
+  },
+  {
+   "w": "the",
+   "start": 6.18,
+   "end": 6.42
+  },
+  {
+   "w": "next",
+   "start": 6.42,
+   "end": 6.58
+  },
+  {
+   "w": "time",
+   "start": 6.58,
+   "end": 6.86
+  },
+  {
+   "w": "you",
+   "start": 6.86,
+   "end": 7.02
+  },
+  {
+   "w": "play",
+   "start": 7.02,
+   "end": 7.22
+  },
+  {
+   "w": "even",
+   "start": 7.22,
+   "end": 7.64
+  },
+  {
+   "w": "after",
+   "start": 7.64,
+   "end": 8.0
+  },
+  {
+   "w": "a",
+   "start": 8.0,
+   "end": 8.12
+  },
+  {
+   "w": "restart,",
+   "start": 8.12,
+   "end": 8.42
+  },
+  {
+   "w": "my",
+   "start": 9.1,
+   "end": 9.18
+  },
+  {
+   "w": "design",
+   "start": 9.18,
+   "end": 9.36
+  },
+  {
+   "w": "doc",
+   "start": 9.36,
+   "end": 9.82
+  },
+  {
+   "w": "calls",
+   "start": 9.82,
+   "end": 10.2
+  },
+  {
+   "w": "this",
+   "start": 10.2,
+   "end": 10.4
+  },
+  {
+   "w": "a",
+   "start": 10.4,
+   "end": 10.5
+  },
+  {
+   "w": "visible",
+   "start": 10.5,
+   "end": 10.72
+  },
+  {
+   "w": "consequence.",
+   "start": 10.72,
+   "end": 11.26
+  }
+ ],
+ "B04": [
+  {
+   "w": "I've",
+   "start": 0.0,
+   "end": 0.12
+  },
+  {
+   "w": "played",
+   "start": 0.12,
+   "end": 0.3
+  },
+  {
+   "w": "vampire",
+   "start": 0.3,
+   "end": 0.56
+  },
+  {
+   "w": "survivors,",
+   "start": 0.56,
+   "end": 1.32
+  },
+  {
+   "w": "Brotado,",
+   "start": 1.62,
+   "end": 1.94
+  },
+  {
+   "w": "20",
+   "start": 2.36,
+   "end": 2.48
+  },
+  {
+   "w": "minutes",
+   "start": 2.48,
+   "end": 2.68
+  },
+  {
+   "w": "till",
+   "start": 2.68,
+   "end": 3.0
+  },
+  {
+   "w": "dawn",
+   "start": 3.0,
+   "end": 3.18
+  },
+  {
+   "w": "and",
+   "start": 3.18,
+   "end": 3.48
+  },
+  {
+   "w": "halls",
+   "start": 3.48,
+   "end": 3.68
+  },
+  {
+   "w": "of",
+   "start": 3.68,
+   "end": 3.88
+  },
+  {
+   "w": "torment.",
+   "start": 3.88,
+   "end": 4.12
+  },
+  {
+   "w": "In",
+   "start": 4.84,
+   "end": 4.88
+  },
+  {
+   "w": "vampire",
+   "start": 4.88,
+   "end": 5.08
+  },
+  {
+   "w": "survivors,",
+   "start": 5.08,
+   "end": 5.74
+  },
+  {
+   "w": "a",
+   "start": 6.08,
+   "end": 6.1
+  },
+  {
+   "w": "run's",
+   "start": 6.1,
+   "end": 6.4
+  },
+  {
+   "w": "goal",
+   "start": 6.4,
+   "end": 6.54
+  },
+  {
+   "w": "is",
+   "start": 6.54,
+   "end": 6.8
+  },
+  {
+   "w": "to",
+   "start": 6.8,
+   "end": 6.94
+  },
+  {
+   "w": "outlast",
+   "start": 6.94,
+   "end": 7.26
+  },
+  {
+   "w": "the",
+   "start": 7.26,
+   "end": 7.5
+  },
+  {
+   "w": "clock.",
+   "start": 7.5,
+   "end": 7.62
+  },
+  {
+   "w": "In",
+   "start": 8.24,
+   "end": 8.28
+  },
+  {
+   "w": "Brotado,",
+   "start": 8.28,
+   "end": 8.76
+  },
+  {
+   "w": "it's",
+   "start": 9.1,
+   "end": 9.2
+  },
+  {
+   "w": "to",
+   "start": 9.2,
+   "end": 9.32
+  },
+  {
+   "w": "outlast",
+   "start": 9.32,
+   "end": 9.66
+  },
+  {
+   "w": "20",
+   "start": 9.66,
+   "end": 10.0
+  },
+  {
+   "w": "waves.",
+   "start": 10.0,
+   "end": 10.3
+  },
+  {
+   "w": "Lanternfall",
+   "start": 11.14,
+   "end": 11.38
+  },
+  {
+   "w": "gives",
+   "start": 11.38,
+   "end": 11.66
+  },
+  {
+   "w": "a",
+   "start": 11.66,
+   "end": 11.82
+  },
+  {
+   "w": "player",
+   "start": 11.82,
+   "end": 12.04
+  },
+  {
+   "w": "who",
+   "start": 12.04,
+   "end": 12.28
+  },
+  {
+   "w": "likes",
+   "start": 12.28,
+   "end": 12.46
+  },
+  {
+   "w": "short",
+   "start": 12.46,
+   "end": 12.76
+  },
+  {
+   "w": "runs",
+   "start": 12.76,
+   "end": 13.06
+  },
+  {
+   "w": "a",
+   "start": 13.06,
+   "end": 13.3
+  },
+  {
+   "w": "destination,",
+   "start": 13.3,
+   "end": 13.66
+  },
+  {
+   "w": "and",
+   "start": 14.28,
+   "end": 14.3
+  },
+  {
+   "w": "a",
+   "start": 14.3,
+   "end": 14.38
+  },
+  {
+   "w": "place",
+   "start": 14.38,
+   "end": 14.6
+  },
+  {
+   "w": "that",
+   "start": 14.6,
+   "end": 14.84
+  },
+  {
+   "w": "remembers",
+   "start": 14.84,
+   "end": 15.22
+  },
+  {
+   "w": "they",
+   "start": 15.22,
+   "end": 15.58
+  },
+  {
+   "w": "got",
+   "start": 15.58,
+   "end": 15.76
+  },
+  {
+   "w": "there.",
+   "start": 15.76,
+   "end": 16.06
+  }
+ ],
+ "B05": [
+  {
+   "w": "The",
+   "start": 0.0,
+   "end": 0.08
+  },
+  {
+   "w": "second",
+   "start": 0.08,
+   "end": 0.32
+  },
+  {
+   "w": "courier",
+   "start": 0.32,
+   "end": 0.64
+  },
+  {
+   "w": "is",
+   "start": 0.64,
+   "end": 0.96
+  },
+  {
+   "w": "the",
+   "start": 0.96,
+   "end": 1.06
+  },
+  {
+   "w": "engineer.",
+   "start": 1.06,
+   "end": 1.26
+  },
+  {
+   "w": "My",
+   "start": 1.94,
+   "end": 1.96
+  },
+  {
+   "w": "roster",
+   "start": 1.96,
+   "end": 2.16
+  },
+  {
+   "w": "rule",
+   "start": 2.16,
+   "end": 2.54
+  },
+  {
+   "w": "gives",
+   "start": 2.54,
+   "end": 2.82
+  },
+  {
+   "w": "every",
+   "start": 2.82,
+   "end": 3.06
+  },
+  {
+   "w": "courier",
+   "start": 3.06,
+   "end": 3.36
+  },
+  {
+   "w": "one",
+   "start": 3.36,
+   "end": 3.68
+  },
+  {
+   "w": "advantage,",
+   "start": 3.68,
+   "end": 4.16
+  },
+  {
+   "w": "one",
+   "start": 4.32,
+   "end": 4.52
+  },
+  {
+   "w": "rule",
+   "start": 4.52,
+   "end": 4.76
+  },
+  {
+   "w": "change",
+   "start": 4.76,
+   "end": 5.02
+  },
+  {
+   "w": "and",
+   "start": 5.02,
+   "end": 5.42
+  },
+  {
+   "w": "one",
+   "start": 5.42,
+   "end": 5.62
+  },
+  {
+   "w": "weakness.",
+   "start": 5.62,
+   "end": 5.96
+  },
+  {
+   "w": "The",
+   "start": 6.7,
+   "end": 6.72
+  },
+  {
+   "w": "engineer's",
+   "start": 6.72,
+   "end": 7.14
+  },
+  {
+   "w": "turret",
+   "start": 7.14,
+   "end": 7.28
+  },
+  {
+   "w": "holds",
+   "start": 7.28,
+   "end": 7.66
+  },
+  {
+   "w": "an",
+   "start": 7.66,
+   "end": 7.86
+  },
+  {
+   "w": "area",
+   "start": 7.86,
+   "end": 8.1
+  },
+  {
+   "w": "at",
+   "start": 8.1,
+   "end": 8.32
+  },
+  {
+   "w": "the",
+   "start": 8.32,
+   "end": 8.38
+  },
+  {
+   "w": "cost",
+   "start": 8.38,
+   "end": 8.6
+  },
+  {
+   "w": "of",
+   "start": 8.6,
+   "end": 8.78
+  },
+  {
+   "w": "lower",
+   "start": 8.78,
+   "end": 9.0
+  },
+  {
+   "w": "damage",
+   "start": 9.0,
+   "end": 9.4
+  },
+  {
+   "w": "and",
+   "start": 9.4,
+   "end": 9.58
+  },
+  {
+   "w": "speed.",
+   "start": 9.58,
+   "end": 9.84
+  },
+  {
+   "w": "The",
+   "start": 10.38,
+   "end": 10.42
+  },
+  {
+   "w": "turret",
+   "start": 10.42,
+   "end": 10.6
+  },
+  {
+   "w": "will",
+   "start": 10.6,
+   "end": 10.86
+  },
+  {
+   "w": "run",
+   "start": 10.86,
+   "end": 11.04
+  },
+  {
+   "w": "on",
+   "start": 11.04,
+   "end": 11.16
+  },
+  {
+   "w": "its",
+   "start": 11.16,
+   "end": 11.28
+  },
+  {
+   "w": "own",
+   "start": 11.28,
+   "end": 11.38
+  },
+  {
+   "w": "state",
+   "start": 11.38,
+   "end": 11.62
+  },
+  {
+   "w": "machine,",
+   "start": 11.62,
+   "end": 11.92
+  },
+  {
+   "w": "idle,",
+   "start": 12.34,
+   "end": 12.54
+  },
+  {
+   "w": "track,",
+   "start": 12.72,
+   "end": 12.82
+  },
+  {
+   "w": "fire,",
+   "start": 13.48,
+   "end": 13.48
+  },
+  {
+   "w": "cool",
+   "start": 13.74,
+   "end": 13.76
+  },
+  {
+   "w": "down.",
+   "start": 13.76,
+   "end": 14.12
+  },
+  {
+   "w": "That's",
+   "start": 14.6,
+   "end": 14.74
+  },
+  {
+   "w": "my",
+   "start": 14.74,
+   "end": 14.86
+  },
+  {
+   "w": "plan",
+   "start": 14.86,
+   "end": 15.18
+  },
+  {
+   "w": "for",
+   "start": 15.18,
+   "end": 15.34
+  },
+  {
+   "w": "the",
+   "start": 15.34,
+   "end": 15.46
+  },
+  {
+   "w": "game",
+   "start": 15.46,
+   "end": 15.62
+  },
+  {
+   "w": "AI",
+   "start": 15.62,
+   "end": 15.86
+  },
+  {
+   "w": "technique",
+   "start": 15.86,
+   "end": 16.5
+  },
+  {
+   "w": "in",
+   "start": 16.5,
+   "end": 16.74
+  },
+  {
+   "w": "Assignment",
+   "start": 16.74,
+   "end": 16.92
+  },
+  {
+   "w": "9.",
+   "start": 16.92,
+   "end": 17.48
+  }
+ ],
+ "B06": [
+  {
+   "w": "Who",
+   "start": 0.0,
+   "end": 0.1
+  },
+  {
+   "w": "opens",
+   "start": 0.1,
+   "end": 0.38
+  },
+  {
+   "w": "it,",
+   "start": 0.38,
+   "end": 0.62
+  },
+  {
+   "w": "I'm",
+   "start": 0.78,
+   "end": 0.9
+  },
+  {
+   "w": "aiming",
+   "start": 0.9,
+   "end": 0.96
+  },
+  {
+   "w": "at",
+   "start": 0.96,
+   "end": 1.22
+  },
+  {
+   "w": "gameplay",
+   "start": 1.22,
+   "end": 1.36
+  },
+  {
+   "w": "programmer",
+   "start": 1.36,
+   "end": 2.0
+  },
+  {
+   "w": "jobs,",
+   "start": 2.0,
+   "end": 2.26
+  },
+  {
+   "w": "so",
+   "start": 2.74,
+   "end": 2.74
+  },
+  {
+   "w": "the",
+   "start": 2.74,
+   "end": 2.84
+  },
+  {
+   "w": "reader",
+   "start": 2.84,
+   "end": 2.98
+  },
+  {
+   "w": "is",
+   "start": 2.98,
+   "end": 3.24
+  },
+  {
+   "w": "a",
+   "start": 3.24,
+   "end": 3.3
+  },
+  {
+   "w": "hiring",
+   "start": 3.3,
+   "end": 3.52
+  },
+  {
+   "w": "manager",
+   "start": 3.52,
+   "end": 4.02
+  },
+  {
+   "w": "or",
+   "start": 4.02,
+   "end": 4.36
+  },
+  {
+   "w": "a",
+   "start": 4.36,
+   "end": 4.5
+  },
+  {
+   "w": "lead",
+   "start": 4.5,
+   "end": 4.58
+  },
+  {
+   "w": "gameplay",
+   "start": 4.58,
+   "end": 4.82
+  },
+  {
+   "w": "engineer.",
+   "start": 4.82,
+   "end": 5.3
+  },
+  {
+   "w": "In",
+   "start": 6.24,
+   "end": 6.28
+  },
+  {
+   "w": "the",
+   "start": 6.28,
+   "end": 6.34
+  },
+  {
+   "w": "first",
+   "start": 6.34,
+   "end": 6.52
+  },
+  {
+   "w": "minute",
+   "start": 6.52,
+   "end": 6.76
+  },
+  {
+   "w": "they",
+   "start": 6.76,
+   "end": 6.96
+  },
+  {
+   "w": "open",
+   "start": 6.96,
+   "end": 7.12
+  },
+  {
+   "w": "the",
+   "start": 7.12,
+   "end": 7.28
+  },
+  {
+   "w": "Mac",
+   "start": 7.28,
+   "end": 7.44
+  },
+  {
+   "w": "build,",
+   "start": 7.44,
+   "end": 7.7
+  },
+  {
+   "w": "land",
+   "start": 7.96,
+   "end": 8.12
+  },
+  {
+   "w": "on",
+   "start": 8.12,
+   "end": 8.32
+  },
+  {
+   "w": "the",
+   "start": 8.32,
+   "end": 8.42
+  },
+  {
+   "w": "post",
+   "start": 8.42,
+   "end": 8.62
+  },
+  {
+   "w": "office",
+   "start": 8.62,
+   "end": 8.84
+  },
+  {
+   "w": "menu",
+   "start": 8.84,
+   "end": 9.24
+  },
+  {
+   "w": "with",
+   "start": 9.24,
+   "end": 9.42
+  },
+  {
+   "w": "keyboard",
+   "start": 9.42,
+   "end": 9.6
+  },
+  {
+   "w": "focus",
+   "start": 9.6,
+   "end": 10.1
+  },
+  {
+   "w": "already",
+   "start": 10.1,
+   "end": 10.42
+  },
+  {
+   "w": "set,",
+   "start": 10.42,
+   "end": 10.74
+  },
+  {
+   "w": "read",
+   "start": 10.96,
+   "end": 11.02
+  },
+  {
+   "w": "the",
+   "start": 11.02,
+   "end": 11.16
+  },
+  {
+   "w": "keys",
+   "start": 11.16,
+   "end": 11.36
+  },
+  {
+   "w": "on",
+   "start": 11.36,
+   "end": 11.54
+  },
+  {
+   "w": "that",
+   "start": 11.54,
+   "end": 11.64
+  },
+  {
+   "w": "screen,",
+   "start": 11.64,
+   "end": 11.96
+  },
+  {
+   "w": "press",
+   "start": 12.04,
+   "end": 12.28
+  },
+  {
+   "w": "enter,",
+   "start": 12.28,
+   "end": 12.56
+  },
+  {
+   "w": "and",
+   "start": 12.7,
+   "end": 12.78
+  },
+  {
+   "w": "they're",
+   "start": 12.78,
+   "end": 12.92
+  },
+  {
+   "w": "moving.",
+   "start": 12.92,
+   "end": 13.18
+  },
+  {
+   "w": "No",
+   "start": 13.72,
+   "end": 13.76
+  },
+  {
+   "w": "manual.",
+   "start": 13.76,
+   "end": 13.98
+  },
+  {
+   "w": "Then",
+   "start": 14.5,
+   "end": 14.52
+  },
+  {
+   "w": "the",
+   "start": 14.52,
+   "end": 14.64
+  },
+  {
+   "w": "lead",
+   "start": 14.64,
+   "end": 14.8
+  },
+  {
+   "w": "runs",
+   "start": 14.8,
+   "end": 15.04
+  },
+  {
+   "w": "one",
+   "start": 15.04,
+   "end": 15.3
+  },
+  {
+   "w": "test",
+   "start": 15.3,
+   "end": 15.56
+  },
+  {
+   "w": "command",
+   "start": 15.56,
+   "end": 15.84
+  },
+  {
+   "w": "from",
+   "start": 15.84,
+   "end": 16.14
+  },
+  {
+   "w": "the",
+   "start": 16.14,
+   "end": 16.26
+  },
+  {
+   "w": "readme.",
+   "start": 16.26,
+   "end": 16.58
+  },
+  {
+   "w": "It's",
+   "start": 16.98,
+   "end": 17.14
+  },
+  {
+   "w": "got",
+   "start": 17.14,
+   "end": 17.28
+  },
+  {
+   "w": "out",
+   "start": 17.28,
+   "end": 17.44
+  },
+  {
+   "w": "4",
+   "start": 17.44,
+   "end": 17.68
+  },
+  {
+   "w": ".7",
+   "start": 17.68,
+   "end": 18.24
+  },
+  {
+   "w": ".2,",
+   "start": 18.24,
+   "end": 18.76
+  },
+  {
+   "w": "compatibility",
+   "start": 18.98,
+   "end": 19.22
+  },
+  {
+   "w": "renderer,",
+   "start": 19.22,
+   "end": 19.96
+  },
+  {
+   "w": "exported",
+   "start": 20.14,
+   "end": 20.4
+  },
+  {
+   "w": "from",
+   "start": 20.4,
+   "end": 20.76
+  },
+  {
+   "w": "Mac",
+   "start": 20.76,
+   "end": 20.94
+  },
+  {
+   "w": "OS.",
+   "start": 20.94,
+   "end": 21.2
+  }
+ ],
+ "B07": [
+  {
+   "w": "What",
+   "start": 0.0,
+   "end": 0.08
+  },
+  {
+   "w": "does",
+   "start": 0.08,
+   "end": 0.18
+  },
+  {
+   "w": "it",
+   "start": 0.18,
+   "end": 0.26
+  },
+  {
+   "w": "prove",
+   "start": 0.26,
+   "end": 0.5
+  },
+  {
+   "w": "that",
+   "start": 0.5,
+   "end": 0.72
+  },
+  {
+   "w": "I",
+   "start": 0.72,
+   "end": 0.8
+  },
+  {
+   "w": "can",
+   "start": 0.8,
+   "end": 0.92
+  },
+  {
+   "w": "add",
+   "start": 0.92,
+   "end": 1.08
+  },
+  {
+   "w": "new",
+   "start": 1.08,
+   "end": 1.26
+  },
+  {
+   "w": "systems",
+   "start": 1.26,
+   "end": 1.48
+  },
+  {
+   "w": "to",
+   "start": 1.48,
+   "end": 1.8
+  },
+  {
+   "w": "a",
+   "start": 1.8,
+   "end": 1.86
+  },
+  {
+   "w": "working",
+   "start": 1.86,
+   "end": 2.06
+  },
+  {
+   "w": "game",
+   "start": 2.06,
+   "end": 2.34
+  },
+  {
+   "w": "and",
+   "start": 2.34,
+   "end": 2.5
+  },
+  {
+   "w": "pin",
+   "start": 2.5,
+   "end": 2.7
+  },
+  {
+   "w": "each",
+   "start": 2.7,
+   "end": 2.9
+  },
+  {
+   "w": "one",
+   "start": 2.9,
+   "end": 3.06
+  },
+  {
+   "w": "with",
+   "start": 3.06,
+   "end": 3.2
+  },
+  {
+   "w": "tests",
+   "start": 3.2,
+   "end": 3.4
+  },
+  {
+   "w": "a",
+   "start": 3.4,
+   "end": 3.72
+  },
+  {
+   "w": "stranger",
+   "start": 3.72,
+   "end": 3.96
+  },
+  {
+   "w": "can",
+   "start": 3.96,
+   "end": 4.4
+  },
+  {
+   "w": "rerun?",
+   "start": 4.4,
+   "end": 4.74
+  },
+  {
+   "w": "The",
+   "start": 5.46,
+   "end": 5.6
+  },
+  {
+   "w": "course",
+   "start": 5.6,
+   "end": 5.74
+  },
+  {
+   "w": "skills",
+   "start": 5.74,
+   "end": 6.06
+  },
+  {
+   "w": "already",
+   "start": 6.06,
+   "end": 6.4
+  },
+  {
+   "w": "have",
+   "start": 6.4,
+   "end": 6.6
+  },
+  {
+   "w": "evidence,",
+   "start": 6.6,
+   "end": 6.94
+  },
+  {
+   "w": "handwritten",
+   "start": 7.42,
+   "end": 7.6
+  },
+  {
+   "w": "shaders",
+   "start": 7.6,
+   "end": 8.14
+  },
+  {
+   "w": "at",
+   "start": 8.14,
+   "end": 8.3
+  },
+  {
+   "w": "Tag",
+   "start": 8.3,
+   "end": 8.48
+  },
+  {
+   "w": "A5,",
+   "start": 8.48,
+   "end": 8.88
+  },
+  {
+   "w": "particle",
+   "start": 9.22,
+   "end": 9.38
+  },
+  {
+   "w": "effects",
+   "start": 9.38,
+   "end": 9.74
+  },
+  {
+   "w": "with",
+   "start": 9.74,
+   "end": 10.0
+  },
+  {
+   "w": "a",
+   "start": 10.0,
+   "end": 10.06
+  },
+  {
+   "w": "cost",
+   "start": 10.06,
+   "end": 10.26
+  },
+  {
+   "w": "report",
+   "start": 10.26,
+   "end": 10.5
+  },
+  {
+   "w": "at",
+   "start": 10.5,
+   "end": 10.72
+  },
+  {
+   "w": "Tag",
+   "start": 10.72,
+   "end": 10.9
+  },
+  {
+   "w": "A6,",
+   "start": 10.9,
+   "end": 11.28
+  },
+  {
+   "w": "an",
+   "start": 11.52,
+   "end": 11.54
+  },
+  {
+   "w": "animation",
+   "start": 11.54,
+   "end": 11.84
+  },
+  {
+   "w": "driven",
+   "start": 11.84,
+   "end": 12.24
+  },
+  {
+   "w": "by",
+   "start": 12.24,
+   "end": 12.56
+  },
+  {
+   "w": "state",
+   "start": 12.56,
+   "end": 12.8
+  },
+  {
+   "w": "at",
+   "start": 12.8,
+   "end": 12.98
+  },
+  {
+   "w": "Tag",
+   "start": 12.98,
+   "end": 13.16
+  },
+  {
+   "w": "A7,",
+   "start": 13.16,
+   "end": 13.62
+  },
+  {
+   "w": "where",
+   "start": 13.92,
+   "end": 14.04
+  },
+  {
+   "w": "23",
+   "start": 14.04,
+   "end": 14.28
+  },
+  {
+   "w": "headless",
+   "start": 14.28,
+   "end": 14.82
+  },
+  {
+   "w": "runs",
+   "start": 14.82,
+   "end": 15.06
+  },
+  {
+   "w": "pass",
+   "start": 15.06,
+   "end": 15.36
+  },
+  {
+   "w": "from",
+   "start": 15.36,
+   "end": 15.64
+  },
+  {
+   "w": "a",
+   "start": 15.64,
+   "end": 15.72
+  },
+  {
+   "w": "fresh",
+   "start": 15.72,
+   "end": 15.9
+  },
+  {
+   "w": "clone,",
+   "start": 15.9,
+   "end": 16.18
+  },
+  {
+   "w": "and",
+   "start": 16.64,
+   "end": 16.66
+  },
+  {
+   "w": "8",
+   "start": 16.66,
+   "end": 16.78
+  },
+  {
+   "w": "of",
+   "start": 16.78,
+   "end": 16.88
+  },
+  {
+   "w": "8",
+   "start": 16.88,
+   "end": 16.98
+  },
+  {
+   "w": "mutations",
+   "start": 16.98,
+   "end": 17.4
+  },
+  {
+   "w": "are",
+   "start": 17.4,
+   "end": 17.7
+  },
+  {
+   "w": "caught.",
+   "start": 17.7,
+   "end": 17.88
+  },
+  {
+   "w": "What",
+   "start": 18.52,
+   "end": 18.56
+  },
+  {
+   "w": "it",
+   "start": 18.56,
+   "end": 18.62
+  },
+  {
+   "w": "can't",
+   "start": 18.62,
+   "end": 18.92
+  },
+  {
+   "w": "prove",
+   "start": 18.92,
+   "end": 19.16
+  },
+  {
+   "w": "is",
+   "start": 19.16,
+   "end": 19.38
+  },
+  {
+   "w": "that",
+   "start": 19.38,
+   "end": 19.54
+  },
+  {
+   "w": "the",
+   "start": 19.54,
+   "end": 19.66
+  },
+  {
+   "w": "game",
+   "start": 19.66,
+   "end": 19.84
+  },
+  {
+   "w": "is",
+   "start": 19.84,
+   "end": 20.0
+  },
+  {
+   "w": "fun.",
+   "start": 20.0,
+   "end": 20.22
+  }
+ ],
+ "B08": [
+  {
+   "w": "What's",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "w": "in",
+   "start": 0.2,
+   "end": 0.3
+  },
+  {
+   "w": "the",
+   "start": 0.3,
+   "end": 0.44
+  },
+  {
+   "w": "delivery,",
+   "start": 0.44,
+   "end": 0.74
+  },
+  {
+   "w": "the",
+   "start": 0.94,
+   "end": 1.02
+  },
+  {
+   "w": "post",
+   "start": 1.02,
+   "end": 1.2
+  },
+  {
+   "w": "office",
+   "start": 1.2,
+   "end": 1.44
+  },
+  {
+   "w": "menu,",
+   "start": 1.44,
+   "end": 1.9
+  },
+  {
+   "w": "one",
+   "start": 2.04,
+   "end": 2.12
+  },
+  {
+   "w": "contract,",
+   "start": 2.12,
+   "end": 2.52
+  },
+  {
+   "w": "the",
+   "start": 2.76,
+   "end": 2.84
+  },
+  {
+   "w": "engineer,",
+   "start": 2.84,
+   "end": 3.08
+  },
+  {
+   "w": "one",
+   "start": 3.44,
+   "end": 3.5
+  },
+  {
+   "w": "saved",
+   "start": 3.5,
+   "end": 3.8
+  },
+  {
+   "w": "record,",
+   "start": 3.8,
+   "end": 4.1
+  },
+  {
+   "w": "the",
+   "start": 4.5,
+   "end": 4.52
+  },
+  {
+   "w": "lit",
+   "start": 4.52,
+   "end": 4.66
+  },
+  {
+   "w": "gate,",
+   "start": 4.66,
+   "end": 4.86
+  },
+  {
+   "w": "and",
+   "start": 5.14,
+   "end": 5.18
+  },
+  {
+   "w": "a",
+   "start": 5.18,
+   "end": 5.26
+  },
+  {
+   "w": "Mac",
+   "start": 5.26,
+   "end": 5.4
+  },
+  {
+   "w": "export.",
+   "start": 5.4,
+   "end": 5.72
+  },
+  {
+   "w": "What's",
+   "start": 6.5,
+   "end": 6.64
+  },
+  {
+   "w": "out",
+   "start": 6.64,
+   "end": 6.76
+  },
+  {
+   "w": "on",
+   "start": 6.76,
+   "end": 6.94
+  },
+  {
+   "w": "purpose,",
+   "start": 6.94,
+   "end": 7.26
+  },
+  {
+   "w": "the",
+   "start": 7.32,
+   "end": 7.54
+  },
+  {
+   "w": "other",
+   "start": 7.54,
+   "end": 7.64
+  },
+  {
+   "w": "four",
+   "start": 7.64,
+   "end": 7.86
+  },
+  {
+   "w": "couriers,",
+   "start": 7.86,
+   "end": 8.3
+  },
+  {
+   "w": "difficulty",
+   "start": 8.5,
+   "end": 8.7
+  },
+  {
+   "w": "selector,",
+   "start": 8.7,
+   "end": 9.16
+  },
+  {
+   "w": "more",
+   "start": 9.54,
+   "end": 9.64
+  },
+  {
+   "w": "maps,",
+   "start": 9.64,
+   "end": 9.88
+  },
+  {
+   "w": "the",
+   "start": 10.2,
+   "end": 10.26
+  },
+  {
+   "w": "fog",
+   "start": 10.26,
+   "end": 10.42
+  },
+  {
+   "w": "boss,",
+   "start": 10.42,
+   "end": 10.78
+  },
+  {
+   "w": "multiplayer,",
+   "start": 11.1,
+   "end": 11.18
+  },
+  {
+   "w": "web",
+   "start": 11.76,
+   "end": 11.8
+  },
+  {
+   "w": "and",
+   "start": 11.8,
+   "end": 11.96
+  },
+  {
+   "w": "mobile.",
+   "start": 11.96,
+   "end": 12.14
+  },
+  {
+   "w": "My",
+   "start": 12.88,
+   "end": 12.9
+  },
+  {
+   "w": "own",
+   "start": 12.9,
+   "end": 13.06
+  },
+  {
+   "w": "risk",
+   "start": 13.06,
+   "end": 13.24
+  },
+  {
+   "w": "table",
+   "start": 13.24,
+   "end": 13.52
+  },
+  {
+   "w": "says",
+   "start": 13.52,
+   "end": 13.92
+  },
+  {
+   "w": "it.",
+   "start": 13.92,
+   "end": 14.1
+  },
+  {
+   "w": "One",
+   "start": 14.42,
+   "end": 14.44
+  },
+  {
+   "w": "screen,",
+   "start": 14.44,
+   "end": 14.7
+  },
+  {
+   "w": "one",
+   "start": 15.0,
+   "end": 15.14
+  },
+  {
+   "w": "contract,",
+   "start": 15.14,
+   "end": 15.56
+  },
+  {
+   "w": "and",
+   "start": 15.66,
+   "end": 15.8
+  },
+  {
+   "w": "the",
+   "start": 15.8,
+   "end": 15.92
+  },
+  {
+   "w": "engineer",
+   "start": 15.92,
+   "end": 16.24
+  },
+  {
+   "w": "before",
+   "start": 16.24,
+   "end": 16.5
+  },
+  {
+   "w": "anything",
+   "start": 16.5,
+   "end": 16.82
+  },
+  {
+   "w": "else.",
+   "start": 16.82,
+   "end": 17.18
+  }
+ ],
+ "B09": [
+  {
+   "w": "First",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "w": "comes",
+   "start": 0.18,
+   "end": 0.42
+  },
+  {
+   "w": "the",
+   "start": 0.42,
+   "end": 0.64
+  },
+  {
+   "w": "delivery",
+   "start": 0.64,
+   "end": 0.86
+  },
+  {
+   "w": "objective",
+   "start": 0.86,
+   "end": 1.24
+  },
+  {
+   "w": "on",
+   "start": 1.24,
+   "end": 1.82
+  },
+  {
+   "w": "the",
+   "start": 1.82,
+   "end": 1.94
+  },
+  {
+   "w": "route",
+   "start": 1.94,
+   "end": 2.1
+  },
+  {
+   "w": "that",
+   "start": 2.1,
+   "end": 2.36
+  },
+  {
+   "w": "already",
+   "start": 2.36,
+   "end": 2.58
+  },
+  {
+   "w": "exists.",
+   "start": 2.58,
+   "end": 3.02
+  },
+  {
+   "w": "My",
+   "start": 3.62,
+   "end": 3.64
+  },
+  {
+   "w": "dock",
+   "start": 3.64,
+   "end": 3.88
+  },
+  {
+   "w": "left",
+   "start": 3.88,
+   "end": 4.16
+  },
+  {
+   "w": "open",
+   "start": 4.16,
+   "end": 4.5
+  },
+  {
+   "w": "how",
+   "start": 4.5,
+   "end": 4.8
+  },
+  {
+   "w": "a",
+   "start": 4.8,
+   "end": 4.9
+  },
+  {
+   "w": "delivery",
+   "start": 4.9,
+   "end": 5.06
+  },
+  {
+   "w": "ends,",
+   "start": 5.06,
+   "end": 5.58
+  },
+  {
+   "w": "for",
+   "start": 5.84,
+   "end": 5.92
+  },
+  {
+   "w": "this",
+   "start": 5.92,
+   "end": 6.02
+  },
+  {
+   "w": "slice,",
+   "start": 6.02,
+   "end": 6.28
+  },
+  {
+   "w": "survive",
+   "start": 6.64,
+   "end": 6.88
+  },
+  {
+   "w": "until",
+   "start": 6.88,
+   "end": 7.18
+  },
+  {
+   "w": "the",
+   "start": 7.18,
+   "end": 7.32
+  },
+  {
+   "w": "fog",
+   "start": 7.32,
+   "end": 7.48
+  },
+  {
+   "w": "lifts",
+   "start": 7.48,
+   "end": 7.82
+  },
+  {
+   "w": "then",
+   "start": 7.82,
+   "end": 8.16
+  },
+  {
+   "w": "reach",
+   "start": 8.16,
+   "end": 8.36
+  },
+  {
+   "w": "the",
+   "start": 8.36,
+   "end": 8.6
+  },
+  {
+   "w": "gate.",
+   "start": 8.6,
+   "end": 8.8
+  },
+  {
+   "w": "You'll",
+   "start": 9.52,
+   "end": 9.58
+  },
+  {
+   "w": "know",
+   "start": 9.58,
+   "end": 9.72
+  },
+  {
+   "w": "it",
+   "start": 9.72,
+   "end": 9.84
+  },
+  {
+   "w": "ran",
+   "start": 9.84,
+   "end": 10.04
+  },
+  {
+   "w": "when",
+   "start": 10.04,
+   "end": 10.26
+  },
+  {
+   "w": "a",
+   "start": 10.26,
+   "end": 10.36
+  },
+  {
+   "w": "headless",
+   "start": 10.36,
+   "end": 10.64
+  },
+  {
+   "w": "test",
+   "start": 10.64,
+   "end": 10.9
+  },
+  {
+   "w": "with",
+   "start": 10.9,
+   "end": 11.2
+  },
+  {
+   "w": "a",
+   "start": 11.2,
+   "end": 11.26
+  },
+  {
+   "w": "fixed",
+   "start": 11.26,
+   "end": 11.48
+  },
+  {
+   "w": "seed",
+   "start": 11.48,
+   "end": 11.84
+  },
+  {
+   "w": "drives",
+   "start": 11.84,
+   "end": 12.18
+  },
+  {
+   "w": "a",
+   "start": 12.18,
+   "end": 12.42
+  },
+  {
+   "w": "run",
+   "start": 12.42,
+   "end": 12.58
+  },
+  {
+   "w": "to",
+   "start": 12.58,
+   "end": 12.78
+  },
+  {
+   "w": "delivered,",
+   "start": 12.78,
+   "end": 13.04
+  },
+  {
+   "w": "and",
+   "start": 13.48,
+   "end": 13.52
+  },
+  {
+   "w": "the",
+   "start": 13.52,
+   "end": 13.62
+  },
+  {
+   "w": "result",
+   "start": 13.62,
+   "end": 13.86
+  },
+  {
+   "w": "panel",
+   "start": 13.86,
+   "end": 14.22
+  },
+  {
+   "w": "says",
+   "start": 14.22,
+   "end": 14.54
+  },
+  {
+   "w": "so",
+   "start": 14.54,
+   "end": 14.74
+  },
+  {
+   "w": "on",
+   "start": 14.74,
+   "end": 14.88
+  },
+  {
+   "w": "screen.",
+   "start": 14.88,
+   "end": 15.14
+  }
+ ],
+ "B10": [
+  {
+   "w": "What",
+   "start": 0.0,
+   "end": 0.1
+  },
+  {
+   "w": "could",
+   "start": 0.1,
+   "end": 0.24
+  },
+  {
+   "w": "sync",
+   "start": 0.24,
+   "end": 0.48
+  },
+  {
+   "w": "it,",
+   "start": 0.48,
+   "end": 0.7
+  },
+  {
+   "w": "turrets?",
+   "start": 0.84,
+   "end": 0.92
+  },
+  {
+   "w": "Every",
+   "start": 1.62,
+   "end": 1.62
+  },
+  {
+   "w": "turret",
+   "start": 1.62,
+   "end": 1.88
+  },
+  {
+   "w": "hit",
+   "start": 1.88,
+   "end": 2.12
+  },
+  {
+   "w": "can",
+   "start": 2.12,
+   "end": 2.3
+  },
+  {
+   "w": "spawn",
+   "start": 2.3,
+   "end": 2.5
+  },
+  {
+   "w": "the",
+   "start": 2.5,
+   "end": 2.7
+  },
+  {
+   "w": "sparks",
+   "start": 2.7,
+   "end": 2.88
+  },
+  {
+   "w": "I",
+   "start": 2.88,
+   "end": 3.2
+  },
+  {
+   "w": "built",
+   "start": 3.2,
+   "end": 3.4
+  },
+  {
+   "w": "in",
+   "start": 3.4,
+   "end": 3.56
+  },
+  {
+   "w": "Assignment",
+   "start": 3.56,
+   "end": 3.7
+  },
+  {
+   "w": "6",
+   "start": 3.7,
+   "end": 4.16
+  },
+  {
+   "w": "in",
+   "start": 4.16,
+   "end": 4.42
+  },
+  {
+   "w": "the",
+   "start": 4.42,
+   "end": 4.46
+  },
+  {
+   "w": "busiest",
+   "start": 4.46,
+   "end": 4.7
+  },
+  {
+   "w": "minute",
+   "start": 4.7,
+   "end": 5.02
+  },
+  {
+   "w": "of",
+   "start": 5.02,
+   "end": 5.14
+  },
+  {
+   "w": "the",
+   "start": 5.14,
+   "end": 5.22
+  },
+  {
+   "w": "run.",
+   "start": 5.22,
+   "end": 5.4
+  },
+  {
+   "w": "And",
+   "start": 6.2,
+   "end": 6.24
+  },
+  {
+   "w": "on",
+   "start": 6.24,
+   "end": 6.3
+  },
+  {
+   "w": "my",
+   "start": 6.3,
+   "end": 6.46
+  },
+  {
+   "w": "Mac,",
+   "start": 6.46,
+   "end": 6.7
+  },
+  {
+   "w": "Got",
+   "start": 7.02,
+   "end": 7.02
+  },
+  {
+   "w": "-Out",
+   "start": 7.02,
+   "end": 7.14
+  },
+  {
+   "w": "reports",
+   "start": 7.14,
+   "end": 7.34
+  },
+  {
+   "w": "zero",
+   "start": 7.34,
+   "end": 7.76
+  },
+  {
+   "w": "milliseconds",
+   "start": 7.76,
+   "end": 8.06
+  },
+  {
+   "w": "of",
+   "start": 8.06,
+   "end": 8.42
+  },
+  {
+   "w": "GPU",
+   "start": 8.42,
+   "end": 8.6
+  },
+  {
+   "w": "time",
+   "start": 8.6,
+   "end": 9.1
+  },
+  {
+   "w": "under",
+   "start": 9.1,
+   "end": 9.28
+  },
+  {
+   "w": "the",
+   "start": 9.28,
+   "end": 9.42
+  },
+  {
+   "w": "compatibility",
+   "start": 9.42,
+   "end": 9.72
+  },
+  {
+   "w": "renderer,",
+   "start": 9.72,
+   "end": 10.36
+  },
+  {
+   "w": "so",
+   "start": 10.6,
+   "end": 10.66
+  },
+  {
+   "w": "I",
+   "start": 10.66,
+   "end": 10.76
+  },
+  {
+   "w": "can't",
+   "start": 10.76,
+   "end": 11.02
+  },
+  {
+   "w": "read",
+   "start": 11.02,
+   "end": 11.14
+  },
+  {
+   "w": "that",
+   "start": 11.14,
+   "end": 11.28
+  },
+  {
+   "w": "cost",
+   "start": 11.28,
+   "end": 11.5
+  },
+  {
+   "w": "there.",
+   "start": 11.5,
+   "end": 11.8
+  },
+  {
+   "w": "So",
+   "start": 12.22,
+   "end": 12.3
+  },
+  {
+   "w": "I'll",
+   "start": 12.3,
+   "end": 12.4
+  },
+  {
+   "w": "cap",
+   "start": 12.4,
+   "end": 12.58
+  },
+  {
+   "w": "the",
+   "start": 12.58,
+   "end": 12.74
+  },
+  {
+   "w": "turrets,",
+   "start": 12.74,
+   "end": 12.92
+  },
+  {
+   "w": "reuse",
+   "start": 13.22,
+   "end": 13.34
+  },
+  {
+   "w": "their",
+   "start": 13.34,
+   "end": 13.64
+  },
+  {
+   "w": "shots,",
+   "start": 13.64,
+   "end": 13.86
+  },
+  {
+   "w": "measure",
+   "start": 14.44,
+   "end": 14.44
+  },
+  {
+   "w": "CPU",
+   "start": 14.44,
+   "end": 14.78
+  },
+  {
+   "w": "frame",
+   "start": 14.78,
+   "end": 15.18
+  },
+  {
+   "w": "time",
+   "start": 15.18,
+   "end": 15.48
+  },
+  {
+   "w": "at",
+   "start": 15.48,
+   "end": 15.68
+  },
+  {
+   "w": "the",
+   "start": 15.68,
+   "end": 15.78
+  },
+  {
+   "w": "peak",
+   "start": 15.78,
+   "end": 15.9
+  },
+  {
+   "w": "wave",
+   "start": 15.9,
+   "end": 16.18
+  },
+  {
+   "w": "the",
+   "start": 16.18,
+   "end": 16.36
+  },
+  {
+   "w": "way",
+   "start": 16.36,
+   "end": 16.46
+  },
+  {
+   "w": "my",
+   "start": 16.46,
+   "end": 16.6
+  },
+  {
+   "w": "Assignment",
+   "start": 16.6,
+   "end": 16.78
+  },
+  {
+   "w": "6",
+   "start": 16.78,
+   "end": 17.22
+  },
+  {
+   "w": "cost",
+   "start": 17.22,
+   "end": 17.46
+  },
+  {
+   "w": "tested,",
+   "start": 17.46,
+   "end": 17.94
+  },
+  {
+   "w": "use",
+   "start": 18.38,
+   "end": 18.54
+  },
+  {
+   "w": "the",
+   "start": 18.54,
+   "end": 18.72
+  },
+  {
+   "w": "Vulcan",
+   "start": 18.72,
+   "end": 18.94
+  },
+  {
+   "w": "proxy",
+   "start": 18.94,
+   "end": 19.28
+  },
+  {
+   "w": "for",
+   "start": 19.28,
+   "end": 19.62
+  },
+  {
+   "w": "the",
+   "start": 19.62,
+   "end": 19.74
+  },
+  {
+   "w": "GPU",
+   "start": 19.74,
+   "end": 19.9
+  },
+  {
+   "w": "and",
+   "start": 20.26,
+   "end": 20.46
+  },
+  {
+   "w": "cut",
+   "start": 20.46,
+   "end": 20.64
+  },
+  {
+   "w": "turret",
+   "start": 20.64,
+   "end": 20.94
+  },
+  {
+   "w": "sparks",
+   "start": 20.94,
+   "end": 21.16
+  },
+  {
+   "w": "first.",
+   "start": 21.16,
+   "end": 21.68
+  }
+ ],
+ "B11": [
+  {
+   "w": "Why",
+   "start": 0.0,
+   "end": 0.1
+  },
+  {
+   "w": "this",
+   "start": 0.1,
+   "end": 0.22
+  },
+  {
+   "w": "project",
+   "start": 0.22,
+   "end": 0.62
+  },
+  {
+   "w": "both",
+   "start": 0.62,
+   "end": 0.96
+  },
+  {
+   "w": "reasons",
+   "start": 0.96,
+   "end": 1.26
+  },
+  {
+   "w": "learning",
+   "start": 1.26,
+   "end": 1.78
+  },
+  {
+   "w": "and",
+   "start": 1.78,
+   "end": 2.08
+  },
+  {
+   "w": "showing",
+   "start": 2.08,
+   "end": 2.32
+  },
+  {
+   "w": "what",
+   "start": 2.32,
+   "end": 2.56
+  },
+  {
+   "w": "I",
+   "start": 2.56,
+   "end": 2.68
+  },
+  {
+   "w": "have.",
+   "start": 2.68,
+   "end": 2.92
+  },
+  {
+   "w": "Knew",
+   "start": 3.46,
+   "end": 3.5
+  },
+  {
+   "w": "to",
+   "start": 3.5,
+   "end": 3.64
+  },
+  {
+   "w": "me",
+   "start": 3.64,
+   "end": 3.74
+  },
+  {
+   "w": "in",
+   "start": 3.74,
+   "end": 3.82
+  },
+  {
+   "w": "this",
+   "start": 3.82,
+   "end": 3.94
+  },
+  {
+   "w": "course,",
+   "start": 3.94,
+   "end": 4.2
+  },
+  {
+   "w": "Godot",
+   "start": 4.56,
+   "end": 4.76
+  },
+  {
+   "w": "and",
+   "start": 4.76,
+   "end": 4.92
+  },
+  {
+   "w": "GD",
+   "start": 4.92,
+   "end": 5.14
+  },
+  {
+   "w": "script,",
+   "start": 5.14,
+   "end": 5.56
+  },
+  {
+   "w": "shaders",
+   "start": 5.9,
+   "end": 6.18
+  },
+  {
+   "w": "and",
+   "start": 6.18,
+   "end": 6.4
+  },
+  {
+   "w": "materials",
+   "start": 6.4,
+   "end": 6.66
+  },
+  {
+   "w": "and",
+   "start": 6.66,
+   "end": 7.04
+  },
+  {
+   "w": "particles,",
+   "start": 7.04,
+   "end": 7.28
+  },
+  {
+   "w": "animation,",
+   "start": 7.92,
+   "end": 8.14
+  },
+  {
+   "w": "state",
+   "start": 8.7,
+   "end": 8.72
+  },
+  {
+   "w": "machines",
+   "start": 8.72,
+   "end": 8.92
+  },
+  {
+   "w": "and",
+   "start": 8.92,
+   "end": 9.24
+  },
+  {
+   "w": "testing,",
+   "start": 9.24,
+   "end": 9.48
+  },
+  {
+   "w": "I",
+   "start": 9.86,
+   "end": 9.88
+  },
+  {
+   "w": "already",
+   "start": 9.88,
+   "end": 10.1
+  },
+  {
+   "w": "had",
+   "start": 10.1,
+   "end": 10.44
+  },
+  {
+   "w": "and",
+   "start": 10.44,
+   "end": 10.66
+  },
+  {
+   "w": "Tag",
+   "start": 10.66,
+   "end": 10.88
+  },
+  {
+   "w": "A7",
+   "start": 10.88,
+   "end": 11.36
+  },
+  {
+   "w": "is",
+   "start": 11.36,
+   "end": 11.56
+  },
+  {
+   "w": "my",
+   "start": 11.56,
+   "end": 11.74
+  },
+  {
+   "w": "evidence.",
+   "start": 11.74,
+   "end": 12.06
+  },
+  {
+   "w": "The",
+   "start": 12.8,
+   "end": 12.82
+  },
+  {
+   "w": "delivery,",
+   "start": 12.82,
+   "end": 13.06
+  },
+  {
+   "w": "the",
+   "start": 13.4,
+   "end": 13.46
+  },
+  {
+   "w": "save",
+   "start": 13.46,
+   "end": 13.66
+  },
+  {
+   "w": "and",
+   "start": 13.66,
+   "end": 13.98
+  },
+  {
+   "w": "the",
+   "start": 13.98,
+   "end": 14.1
+  },
+  {
+   "w": "turret",
+   "start": 14.1,
+   "end": 14.3
+  },
+  {
+   "w": "will",
+   "start": 14.3,
+   "end": 14.56
+  },
+  {
+   "w": "be",
+   "start": 14.56,
+   "end": 14.66
+  },
+  {
+   "w": "new",
+   "start": 14.66,
+   "end": 14.8
+  },
+  {
+   "w": "code",
+   "start": 14.8,
+   "end": 14.98
+  },
+  {
+   "w": "in",
+   "start": 14.98,
+   "end": 15.18
+  },
+  {
+   "w": "this",
+   "start": 15.18,
+   "end": 15.28
+  },
+  {
+   "w": "game.",
+   "start": 15.28,
+   "end": 15.5
+  }
+ ],
+ "B12": [
+  {
+   "w": "To",
+   "start": 0.0,
+   "end": 0.08
+  },
+  {
+   "w": "be",
+   "start": 0.08,
+   "end": 0.18
+  },
+  {
+   "w": "exact",
+   "start": 0.18,
+   "end": 0.38
+  },
+  {
+   "w": "about",
+   "start": 0.38,
+   "end": 0.72
+  },
+  {
+   "w": "what's",
+   "start": 0.72,
+   "end": 1.02
+  },
+  {
+   "w": "real,",
+   "start": 1.02,
+   "end": 1.2
+  },
+  {
+   "w": "everything",
+   "start": 1.82,
+   "end": 1.82
+  },
+  {
+   "w": "on",
+   "start": 1.82,
+   "end": 2.12
+  },
+  {
+   "w": "the",
+   "start": 2.12,
+   "end": 2.24
+  },
+  {
+   "w": "left",
+   "start": 2.24,
+   "end": 2.38
+  },
+  {
+   "w": "exists",
+   "start": 2.38,
+   "end": 2.72
+  },
+  {
+   "w": "with",
+   "start": 2.72,
+   "end": 3.14
+  },
+  {
+   "w": "a",
+   "start": 3.14,
+   "end": 3.22
+  },
+  {
+   "w": "tag",
+   "start": 3.22,
+   "end": 3.42
+  },
+  {
+   "w": "you",
+   "start": 3.42,
+   "end": 3.6
+  },
+  {
+   "w": "can",
+   "start": 3.6,
+   "end": 3.74
+  },
+  {
+   "w": "check",
+   "start": 3.74,
+   "end": 3.96
+  },
+  {
+   "w": "out.",
+   "start": 3.96,
+   "end": 4.22
+  },
+  {
+   "w": "Nothing",
+   "start": 4.68,
+   "end": 4.84
+  },
+  {
+   "w": "on",
+   "start": 4.84,
+   "end": 5.14
+  },
+  {
+   "w": "the",
+   "start": 5.14,
+   "end": 5.24
+  },
+  {
+   "w": "right",
+   "start": 5.24,
+   "end": 5.38
+  },
+  {
+   "w": "exists",
+   "start": 5.38,
+   "end": 5.74
+  },
+  {
+   "w": "yet,",
+   "start": 5.74,
+   "end": 6.14
+  },
+  {
+   "w": "and",
+   "start": 6.3,
+   "end": 6.36
+  },
+  {
+   "w": "there's",
+   "start": 6.36,
+   "end": 6.54
+  },
+  {
+   "w": "no",
+   "start": 6.54,
+   "end": 6.74
+  },
+  {
+   "w": "export",
+   "start": 6.74,
+   "end": 6.98
+  },
+  {
+   "w": "yet",
+   "start": 6.98,
+   "end": 7.46
+  },
+  {
+   "w": "either.",
+   "start": 7.46,
+   "end": 7.78
+  },
+  {
+   "w": "The",
+   "start": 8.26,
+   "end": 8.3
+  },
+  {
+   "w": "finished",
+   "start": 8.3,
+   "end": 8.5
+  },
+  {
+   "w": "slice",
+   "start": 8.5,
+   "end": 8.76
+  },
+  {
+   "w": "is",
+   "start": 8.76,
+   "end": 9.06
+  },
+  {
+   "w": "due",
+   "start": 9.06,
+   "end": 9.24
+  },
+  {
+   "w": "on",
+   "start": 9.24,
+   "end": 9.46
+  },
+  {
+   "w": "December",
+   "start": 9.46,
+   "end": 9.58
+  },
+  {
+   "w": "20th,",
+   "start": 9.58,
+   "end": 10.42
+  },
+  {
+   "w": "tagged",
+   "start": 10.5,
+   "end": 10.54
+  },
+  {
+   "w": "810.",
+   "start": 10.54,
+   "end": 11.14
+  }
+ ],
+ "B13": [
+  {
+   "w": "Lanternfall",
+   "start": 0.0,
+   "end": 0.5
+  },
+  {
+   "w": "first",
+   "start": 0.5,
+   "end": 0.88
+  },
+  {
+   "w": "delivery,",
+   "start": 0.88,
+   "end": 1.2
+  },
+  {
+   "w": "a",
+   "start": 1.64,
+   "end": 1.68
+  },
+  {
+   "w": "pitch",
+   "start": 1.68,
+   "end": 1.86
+  },
+  {
+   "w": "by",
+   "start": 1.86,
+   "end": 2.12
+  },
+  {
+   "w": "Bao",
+   "start": 2.12,
+   "end": 2.4
+  },
+  {
+   "w": "Xing.",
+   "start": 2.4,
+   "end": 2.74
+  }
+ ]
+}

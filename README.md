@@ -1,6 +1,6 @@
 # walker-lanternfall-bao-x — Lanternfall
 
-**CSYE 7270 · Assignments 2, 3, 5, 6 and 7 · Bao Xing**
+**CSYE 7270 · Assignments 2, 3, 5, 6, 7 and 8 · Bao Xing**
 
 A lamp-headed courier is trapped in a fog-bound midnight market, and the light on his shoulders is his only weapon. Keep moving, grow the light, and survive three minutes until the fog lifts.
 
@@ -278,3 +278,7 @@ Frame strips (Bao runs them): `scripts/capture-strip.command watch dash`, `scrip
 - Adding the card changes which cards a seeded run is offered; no existing test pinned the offers.
 - No dash sound and no cooldown display on the HUD.
 - Revision r2 outlines the rig's coat and legs (`#4A5A80`). The sheet draws the back of the coat in dark ink, the colour of the slate's cracks, so on dark ground the outline there can read as a line a few pixels off the coat. The walk sprite has no outline.
+
+## Assignment 8 — final project pitch film (23 November 2026)
+
+The pitch for the final project, **Lanternfall: First Delivery**, is in [`pitch/`](pitch/): the film's README with the link and checksum, [PROJECT-BRIEF.md](pitch/PROJECT-BRIEF.md) (the seven answers, what exists today and what will exist), the beat sheet, the build prompt, sources, gate reports and FRICTIONAL. `godot/` is unchanged from tag `a7`.

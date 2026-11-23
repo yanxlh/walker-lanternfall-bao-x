@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS start-cell-flip-pose {"expected":[1,1,"idle"],"observed":[1,1,"idle"]}
+PASS walk-right-cells {"expected":[[2,1],[4,7],[3,7],[2,8],[3,8],[2,8],[3,1]],"observed":[[2,1],[4,7],[3,7],[2,8],[3,8],[2,8],[3,1]]}
+PASS walk-right-flips {"expected":[[1,40]],"observed":[[1,40]]}
+PASS walk-right-poses {"expected":[["walk_contact",1],["cast",7],["walk_passing",7],["walk_contact",8],["walk_passing",8],["walk_contact",8],["walk_passing",1]],"observed":[["walk_contact",1],["cast",7],["walk_passing",7],["walk_contact",8],["walk_passing",8],["walk_contact",8],["walk_passing",1]]}
+PASS stop-cells {"expected":[[1,1],[4,7],[1,2]],"observed":[[1,1],[4,7],[1,2]]}
+PASS walk-left-cells {"expected":[[2,7],[3,8],[2,5]],"observed":[[2,7],[3,8],[2,5]]}
+PASS walk-left-flips {"expected":[[-1,20]],"observed":[[-1,20]]}
+PASS deadzone-cells {"expected":[[2,3],[3,8],[4,1]],"observed":[[2,3],[3,8],[4,1]]}
+PASS deadzone-flips {"expected":[[-1,12]],"observed":[[-1,12]]}
+PASS hurt-iframes-at-hit {"expected":[48,8],"observed":[48,8]}
+PASS hurt-cells {"expected":[[4,1],[5,11],[1,24],[4,7],[1,17]],"observed":[[4,1],[5,11],[1,24],[4,7],[1,17]]}
+PASS walk-after-hurt-cells {"expected":[[2,7],[3,8],[2,1],[4,4]],"observed":[[2,7],[3,8],[2,1],[4,4]]}
+PASS levelup-state {"expected":[true],"observed":[true]}
+PASS levelup-cells {"expected":[[6,6],[4,3],[2,7],[3,1]],"observed":[[6,6],[4,3],[2,7],[3,1]]}
+PASS evolve-cells {"expected":[[7,60],[1,11]],"observed":[[7,60],[1,11]]}
+PASS defeat-cells {"expected":[[8,3]],"observed":[[8,3]]}
+PASS defeat-state {"expected":[true],"observed":[true]}
+PASS victory-cells {"expected":[[9,3]],"observed":[[9,3]]}
+PASS restart-cell-flip {"expected":[1,1],"observed":[1,1]}
+PASS restart-cells {"expected":[[1,1],[4,1]],"observed":[[1,1],[4,1]]}
+PASS no-art-cells {"expected":[[-1,30]],"observed":[[-1,30]]}
+PASS no-art-same-poses {"with":[["walk_contact",1],["cast",7],["walk_passing",7],["walk_contact",8],["walk_passing",7]],"without":[["walk_contact",1],["cast",7],["walk_passing",7],["walk_contact",8],["walk_passing",7]]}
+PASS tint-reaches-every-courier-drawer {"child_drawers":["CourierVisual/Body","CourierVisual/Rig/LegsOutline","CourierVisual/Rig/Legs","CourierVisual/Rig/Hips/CoatOutline","CourierVisual/Rig/Hips/Coat","CourierVisual/Rig/Hips/Chest/Arm","CourierVisual/Rig/Hips/Chest/Neck/Head"],"material":"():<ShaderMaterial#-9223371951139977628>"}
+courier_pin: 23 checks, 0 failures -> /Users/yxlh/Documents/csye 7270/walker-lanternfall-a8/godot/../evidence/courier_pin.json
+WARNING: 60 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 9 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
