@@ -88,4 +88,4 @@ Fixed earlier, in the beat renders:
 - Whether the proposed scope fits four weeks.
 - Whether the AI voice sounds like the student's intent.
 
-Bao's own viewing of the whole film is recorded separately, in FRICTIONAL.md, once it has happened.
+Bao's viewing is recorded in FRICTIONAL.md, in Bao's words.

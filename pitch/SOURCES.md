@@ -5,7 +5,7 @@
 | Item | What it is | Licence / rights |
 |---|---|---|
 | My game, tag `a7` (`godot/` = `5f09b7f`) | the playable build shown in B00, B01, B06, B09 | my own work; asset credits in the repository's root `SOURCES.md` and `ASSET-LOG.md` |
-| My A4 GDD v0.3 (17 October 2026) | `gdd/Lanternfall_Game_Design_Document.docx` and `.pdf`, converted to `gdd/GDD-v0.3.md` | my own design document, submitted for Assignment 4. The .docx was produced by a Python script, `build_lanternfall_gdd.py`, kept outside this repository |
+| My A4 GDD v0.3 (17 October 2026) | `gdd/Lanternfall_Game_Design_Document.docx` and `.pdf`, converted to `gdd/GDD-v0.3.md` | my own design document, submitted for Assignment 4. The .docx was produced by a Python script I wrote, `build_lanternfall_gdd.py`, kept outside this repository |
 | Earlier captures in this repository | A3 gate room (`evidence/a3/`), A5 material room (`captures/a5-materials/`), A6 sparks (`captures/defeat_sparks/`), A7 dash strip (`captures/dash/r1/`) | my own project's captures |
 | A6 cost report | `evidence/assignment-6/cost/COST-REPORT.md`, copied to `evidence/a6-COST-REPORT.md` | my own project's record |
 | Godot 4.7.2 | engine; Movie Maker for the capture | MIT |

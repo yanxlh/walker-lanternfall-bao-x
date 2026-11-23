@@ -31,9 +31,10 @@ Bao Xing. Roles: Bao chose the project, answered the questions only Bao can answ
   - The closing card was too empty.
 - Fixes: the boards were scaled into the safe area; the footage was framed inside it, with its two text regions declared for the contrast check; real stills were added to the closing card.
 - Second run: clean. Master: 3:45.5, 3840 × 2160, SHA-256 `02e49cb8…aa5bbb`.
+- My verdict on the film (SHA-256 `02e49cb8…aa5bbb`): "Watched, it's good."
+- The A4 GDD and the script that produced its .docx: "I wrote it."
 
 ## Still to do (Bao)
 
-- Watch the whole film with sound, and say what is wrong or what to keep.
 - Read PROJECT-BRIEF.md. The scope decisions in it were drafted by Claude from my answers; change anything I do not agree with.
 - Upload the MP4 to Google Drive, push the branch and tag `a8`, and submit on Canvas.
