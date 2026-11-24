@@ -34,6 +34,10 @@ Bao Xing. Roles: Bao chose the project, answered the questions only Bao can answ
 - My verdict on the film (SHA-256 `02e49cb8…aa5bbb`): "Watched, it's good."
 - The A4 GDD and the script that produced its .docx: "I wrote it."
 
+## Closing reflection (Bao, in my own words)
+
+Looking back, the hardest part was deciding what to show in the pitch. I wanted the video to communicate the experience of Lanternfall, but I also needed to make the progress visible and easy to understand. This helped me see that finishing a feature and explaining its value are two different tasks. Next time, I would plan the recording earlier so I have more time to review the pacing and clarity.
+
 ## Still to do (Bao)
 
 - Read PROJECT-BRIEF.md. The scope decisions in it were drafted by Claude from my answers; change anything I do not agree with.
