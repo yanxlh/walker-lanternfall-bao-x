@@ -9,7 +9,7 @@
 | Runtime | Godot 4.7.2 (`4.7.2.stable.official.ed1daf0bf`), GDScript, GL Compatibility renderer; export target macOS desktop (Apple Silicon) |
 | Game shown | tag `a7` (`godot/` = `5f09b7f`); `godot/` is unchanged on this branch |
 | Design source | my Assignment 4 GDD v0.3, 17 October 2026: [`gdd/`](gdd/) |
-| Film | Google Drive link: to be added after upload |
+| Film | Google Drive: https://drive.google.com/file/d/1tM613ITsd_7WqycibXfJFZx7mFv35mDY/view (anyone with the link can view) |
 | File | `exports/landscape/lanternfall-first-delivery-pitch.mp4` (not in git) |
 | SHA-256 | `02e49cb8605ef5babc4e575d2ee10a653862adfab021dafa3d4b684629aa5bbb` |
 | Length, format | 3:45.5 (225.53 s), H.264 3840 × 2160, 30 fps, AAC stereo, 126,312,291 bytes |

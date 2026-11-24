@@ -14,6 +14,14 @@ All checks run on 23 November 2026 on an Apple M4 Mac (macOS 26).
 | Length | 225.53 s (3:45.5), inside the assignment's 2–4 minutes |
 | Toolkit record | `exports/landscape/lanternfall-first-delivery-pitch.verified.json` (status `ready`, input hashes) |
 
+## Reviewer access to the film
+
+- Link: https://drive.google.com/file/d/1tM613ITsd_7WqycibXfJFZx7mFv35mDY/view
+- Checked on 23 November 2026 with `curl` and no Google cookies:
+  - The view page answered 200 with the title `lanternfall-first-delivery-pitch.mp4 - Google Drive`.
+  - The download answered 200, `video/mp4`, 126,312,291 bytes.
+  - Its SHA-256 was `02e49cb8605ef5babc4e575d2ee10a653862adfab021dafa3d4b684629aa5bbb`, the same as the master.
+
 ## Gates
 
 | Gate | Result | Report |

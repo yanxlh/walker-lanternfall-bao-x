@@ -38,7 +38,10 @@ Bao Xing. Roles: Bao chose the project, answered the questions only Bao can answ
 
 Looking back, the hardest part was deciding what to show in the pitch. I wanted the video to communicate the experience of Lanternfall, but I also needed to make the progress visible and easy to understand. This helped me see that finishing a feature and explaining its value are two different tasks. Next time, I would plan the recording earlier so I have more time to review the pacing and clarity.
 
-## Still to do (Bao)
+## Submission
 
-- Read PROJECT-BRIEF.md. The scope decisions in it were drafted by Claude from my answers; change anything I do not agree with.
-- Upload the MP4 to Google Drive, push the branch and tag `a8`, and submit on Canvas.
+- I uploaded the master to Google Drive, shared as "anyone with the link can view": https://drive.google.com/file/d/1tM613ITsd_7WqycibXfJFZx7mFv35mDY/view
+- The link was opened without signing in. The downloaded file is the same as the master (SHA-256 `02e49cb8…aa5bbb`, 126,312,291 bytes); see CHECKS-REPORT.md.
+- Instruction to Claude: "Then submit the assignment." The commit that adds this section is tagged `a8`.
+- The scope decisions in PROJECT-BRIEF.md were drafted by Claude from my answers. They were not changed before the tag.
+- After the tag: I push the branch and the tag, a fresh clone from GitHub is checked, and I submit the ZIP on Canvas.
